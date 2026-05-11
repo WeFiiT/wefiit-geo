@@ -399,31 +399,29 @@
       {
         "date": "2026-05-11",
         "model": "gemini",
-        "runsOk": 2,
+        "runsOk": 3,
         "wefiit": {
-          "citations": 1,
-          "previews": [
-            "Le choix du \"meilleur\" cabinet dépend avant tout de votre besoin : s'agit-il de transformer l'organisation globale d'un grand groupe, de lancer un MVP en mode commando, ou de recruter des experts pour…"
-          ],
+          "citations": 0,
+          "previews": [],
           "reponsesChemins": [
             "responses/pm-general-2026-05-11-gemini-run1.txt",
-            "responses/pm-general-2026-05-11-gemini-run2.txt"
+            "responses/pm-general-2026-05-11-gemini-run2.txt",
+            "responses/pm-general-2026-05-11-gemini-run3.txt"
           ]
         },
         "verbatims": [
-          "Le choix du \"meilleur\" cabinet de conseil en Product Management dépend énormément de vos besoins spécifiques : cherchez-vous à transformer votre organisation, à recruter des talents en urgence, ou à monter en compétences via de la formation ?Voici les acteurs incontournables du marché, classés par spécialité :1. Les Pure Players (Spécialistes du Produit)Ces cabinets ne font que du Produit. Ils sont idéaux pour de l'immersion (Product Management en renfort) ou du coaching opérationnel.Thiga : Le",
-          "Le choix du \"meilleur\" cabinet dépend avant tout de votre besoin : s'agit-il de transformer l'organisation globale d'un grand groupe, de lancer un MVP en mode commando, ou de recruter des experts pour renforcer vos équipes ?En 2026, le paysage français est dominé par quelques acteurs historiques et des \"studios\" plus agiles. Voici les références incontournables :1. Les Leaders Historiques (Acculturation & Organisation)Ces cabinets sont parfaits pour structurer une direction produit ou transforme"
+          "Le choix du \"meilleur\" cabinet dépend avant tout de votre besoin : s'agit-il de recruter des Product Managers (PM) en mission, de transformer votre organisation produit, ou de définir une vision stratégique de haut niveau ?En 2026, le marché français se structure autour de trois catégories d'acteurs majeurs.1. Les \"Pure Players\" (Experts de l'exécution et de l'organisation)Ces cabinets sont nés du Product Management. Ils sont idéaux pour du conseil opérationnel, du coaching d'équipes et de la fo",
+          "Le \"meilleur\" cabinet dépend avant tout de votre besoin : s’agit-il de définir une vision stratégique globale ou de renforcer vos équipes opérationnelles ?En 2026, le marché français est dominé par quelques acteurs historiques et des \"pure players\" hyper-spécialisés. Voici les références incontournables classées par profil :1. Les Pure Players (Les spécialistes du Product Management)Ces cabinets ne font que du Produit. Ils sont idéaux pour de l'immersion (Product Management en régie), de la form",
+          "Le choix du \"meilleur\" cabinet dépend avant tout de votre besoin : s'agit-il de transformer une organisation entière, de recruter des PMs en renfort, ou de définir une vision produit complexe ?En 2026, le marché se divise en deux catégories majeures : les spécialistes \"pure players\" (souvent basés en France) et les géants de la stratégie.1. Les Spécialistes Pure Players (Les \"Boutiques\")Ces cabinets sont nés du Product Management. Ils sont idéaux pour de l'accompagnement opérationnel, de la form"
         ],
         "concurrents": {
-          "Thiga": 2,
-          "Wivoo": 2,
-          "McKinsey": 1,
-          "BCG": 1,
-          "Accenture": 1,
-          "Onepoint": 1,
-          "Hubvisory": 1,
-          "Mozza": 1,
-          "Yield Advisory": 1
+          "Thiga": 3,
+          "McKinsey": 3,
+          "BCG": 3,
+          "Hubvisory": 3,
+          "Wivoo": 3,
+          "Theodo": 1,
+          "Accenture": 1
         }
       }
     ]
@@ -721,27 +719,27 @@
       {
         "date": "2026-05-11",
         "model": "gemini",
-        "runsOk": 2,
+        "runsOk": 3,
         "wefiit": {
           "citations": 0,
           "previews": [],
           "reponsesChemins": [
+            "responses/pm-paris-2026-05-11-gemini-run1.txt",
             "responses/pm-paris-2026-05-11-gemini-run2.txt",
             "responses/pm-paris-2026-05-11-gemini-run3.txt"
           ]
         },
         "verbatims": [
-          "À Paris, le marché du conseil en Product Management est particulièrement mature. Les agences ne se contentent plus de fournir des ressources, elles infusent une véritable culture \"Produit\" au sein des entreprises (grands comptes comme scale-ups).Voici les 5 agences incontournables à Paris en 2026, basées sur leur influence, leur expertise méthodologique et leur communauté.1. ThigaConsidérée comme la référence historique du Product Management en France. Thiga a largement contribué à évangéliser l",
-          "À Paris, le marché du conseil en Product Management est dominé par quelques acteurs historiques et des agences spécialisées \"boutique\" qui se concentrent sur la culture produit, le design et la tech.Voici les 5 agences incontournables à Paris en 2026 :1. ThigaC'est le leader historique et la référence absolue en France. Thiga ne fait que du produit. Ils ont largement contribué à évangéliser le Product Management en France via leurs livres blancs et leur conférence \"La Product Conf\".Force : Une e"
+          "À Paris, le marché du Product Management (PM) est particulièrement mature. On y trouve des agences spécialisées qui ne se contentent pas de \"gérer\" un projet, mais qui interviennent sur la stratégie, le Product-Market Fit et l'acculturation des équipes.Voici le top 5 des agences de Product Management à Paris en 2026, selon leur expertise et leur réputation :1. ThigaLe pionnier et leader incontesté.\nThiga est historiquement la première agence en France à s'être dédiée exclusivement au Product Man",
+          "Identifier les meilleures agences de Product Management à Paris dépend de votre besoin précis : s'agit-il d'externaliser le rôle de Product Manager (Agences de \"Product Studio\"), de former vos équipes, ou de redéfinir une stratégie globale ?Voici une sélection des 5 agences et cabinets de conseil les plus réputés à Paris en 2026 :1. TheCodingMachineC’est l'une des références majeures pour le développement et le Product Management sur-mesure.Leur force : Une approche très structurée mêlant consei",
+          "Le marché du Product Management à Paris est dominé par des agences spécialisées (\"pure players\") qui accompagnent les entreprises sur la stratégie, l'organisation et le delivery de produits numériques.Voici le top 5 des agences de référence à Paris en 2026 :1. ThigaConsidérée comme la pionnière et le leader incontesté du Product Management en France. Thiga se distingue par une approche \"360°\" qui va du conseil stratégique à l'immersion opérationnelle.Points forts : Expertise pointue en Product S"
         ],
         "concurrents": {
           "Thiga": 2,
-          "Theodo": 1,
+          "Wivoo": 2,
+          "Mozza": 1,
+          "Octo": 1,
           "Hubvisory": 1,
-          "Wivoo": 1,
-          "BAM": 1,
-          "McKinsey": 1,
-          "BCG": 1,
           "Yield Studio": 1
         }
       }
@@ -2195,29 +2193,6 @@
           "Wivoo": 3,
           "Delva": 3,
           "IKXO": 3
-        }
-      },
-      {
-        "date": "2026-05-11",
-        "model": "gemini",
-        "runsOk": 1,
-        "wefiit": {
-          "citations": 1,
-          "previews": [
-            "Le marché du conseil en Product Management (PM) spécialisé en Intelligence Artificielle s'est structuré autour de trois types d'acteurs : les spécialistes du \"Pur Produit\", les experts en Data/IA, et …"
-          ],
-          "reponsesChemins": [
-            "responses/pm-ia-cabinet-2026-05-11-gemini-run1.txt"
-          ]
-        },
-        "verbatims": [
-          "Le marché du conseil en Product Management (PM) spécialisé en Intelligence Artificielle s'est structuré autour de trois types d'acteurs : les spécialistes du \"Pur Produit\", les experts en Data/IA, et les grands cabinets de transformation.Voici les principaux cabinets et agences capables de vous accompagner sur ces enjeux en 2026 :1. Les Experts en Product Management (Focus IA)Ces cabinets sont historiquement des leaders du Product Management qui ont développé des verticales fortes en IA pour aid"
-        ],
-        "concurrents": {
-          "Artefact": 1,
-          "Hubvisory": 1,
-          "Yield Studio": 1,
-          "IKXO": 1
         }
       }
     ]

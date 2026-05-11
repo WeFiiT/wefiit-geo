@@ -1,0 +1,20 @@
+[
+  {
+    "jobId": "job-20260511-182230-5f282e",
+    "démarré": "2026-05-11T18:22:30.565Z",
+    "terminé": "2026-05-11T18:24:20.144Z",
+    "durée": 110,
+    "mode": "pm-paris --model gemini",
+    "requêtes": 1,
+    "modèles": [
+      "gemini"
+    ],
+    "statut": "succès",
+    "résumé": {
+      "ok": 3,
+      "timeout": 0,
+      "erreur": 0,
+      "ignoré": 0
+    }
+  }
+]
