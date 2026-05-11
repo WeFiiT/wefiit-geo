@@ -11,6 +11,7 @@
 
 import { chromium } from 'playwright';
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
+import { randomBytes } from 'crypto';
 
 const NB_RUNS = 3;
 const BASE_DIR = decodeURIComponent(new URL('.', import.meta.url).pathname.replace(/^\//, '').replace(/\/$/, ''));
@@ -19,6 +20,8 @@ const HISTORIQUE_PATH = `${BASE_DIR}/historique.json`;
 const SCREENSHOTS_BASE = `${BASE_DIR}/screenshots`;
 const RESPONSES_BASE = `${BASE_DIR}/responses`;
 const GEMINI_SESSION_PATH = `${BASE_DIR}/gemini-session.json`;
+const JOBS_PATH  = `${BASE_DIR}/jobs.json`;
+const AUDIT_PATH = `${BASE_DIR}/audit.json`;
 
 const MOTS_CLES_WEFIIT = [/wefiit/i, /we\s*fiit/i, /wefiit\.com/i, /cabinet\s+wefiit/i];
 
@@ -94,6 +97,30 @@ function extraireConcurrents(texte) {
     }
   }
   return trouves;
+}
+
+// ─────────────────────────────────────────────
+// Audit — journal de jobs et de runs
+// ─────────────────────────────────────────────
+
+function generateJobId() {
+  const ts = new Date().toISOString().replace(/[-:.TZ]/g, '').slice(0, 14);
+  const suffix = randomBytes(3).toString('hex');
+  return `job-${ts.slice(0, 8)}-${ts.slice(8, 14)}-${suffix}`;
+}
+
+function appendToLog(filePath, entry) {
+  let arr = [];
+  try {
+    if (existsSync(filePath)) arr = JSON.parse(readFileSync(filePath, 'utf-8'));
+  } catch (_) { arr = []; }
+  arr.push(entry);
+  writeFileSync(filePath, JSON.stringify(arr, null, 2), 'utf-8');
+}
+
+function safeAppendToLog(filePath, entry) {
+  try { appendToLog(filePath, entry); }
+  catch (err) { console.log(`⚠️  Audit log write failed: ${err.message}`); }
 }
 
 // ─────────────────────────────────────────────
@@ -256,11 +283,13 @@ async function runGemini(page, libelle) {
   const loginWall = await page.$('input[type="email"], form[action*="signin"]');
   if (loginWall) throw new Error('login-wall');
 
-  // Taper directement via le locator Playwright (contourne les checks elementHandle)
-  const inputSel = 'div.ql-editor';
-  await page.click(inputSel, { force: true });
+  // Focus via JS (Quill n'accepte pas page.type, keyboard.type fonctionne)
+  await page.evaluate(() => {
+    const el = document.querySelector('div.ql-editor');
+    if (el) { el.focus(); el.click(); }
+  });
   await page.waitForTimeout(300);
-  await page.type(inputSel, libelle, { delay: 30 });
+  await page.keyboard.type(libelle, { delay: 40 });
   await page.waitForTimeout(800);
 
   // Bouton envoi — forcer aussi avec JS si disabled
@@ -281,7 +310,7 @@ async function runGemini(page, libelle) {
 // ─────────────────────────────────────────────
 
 // context est soit un BrowserContext partagé (Gemini), soit un Browser (ChatGPT — crée un context par requête)
-async function lancerRequete(requete, historique, browserOrContext, model = 'chatgpt') {
+async function lancerRequete(requete, historique, browserOrContext, model = 'chatgpt', jobId = null) {
   const { id, libelle } = requete;
   const dateJour = dateAujourdhui();
   const pauseInterRuns = model === 'gemini' ? 12000 : 8000;
@@ -294,7 +323,13 @@ async function lancerRequete(requete, historique, browserOrContext, model = 'cha
   // Vérifier doublon (par date ET par modèle) — ignorer les entrées fantômes (runsOk: 0)
   if (historique[id].runs.find(r => r.date === dateJour && (r.model ?? 'chatgpt') === model && r.runsOk > 0)) {
     console.log(`⚠️  [${id}/${model}] Run déjà effectué aujourd'hui (${dateJour}) — ignoré.`);
-    return;
+    safeAppendToLog(AUDIT_PATH, {
+      jobId, requêteId: id, modèle: model, run: null,
+      démarré: null, terminé: null, durée: null,
+      statut: 'ignoré', wefiit: null, erreurDétail: null,
+      cheminReponse: null, ignoré: true, raisonIgnoré: `duplicate:${dateJour}`,
+    });
+    return { ok: 0, timeout: 0, erreur: 0, loginWall: 0, ignoré: 1 };
   }
 
   console.log(`\n=== [${id}/${model}] "${libelle}" ===`);
@@ -316,51 +351,80 @@ async function lancerRequete(requete, historique, browserOrContext, model = 'cha
 
   for (let run = 1; run <= NB_RUNS; run++) {
     console.log(`  Run ${run}/${NB_RUNS}...`);
+    const runDémarré = new Date();
     let resultat = { run, statut: 'erreur', wefiitMentionne: false, preview: null, cheminReponse: null, concurrents: {} };
 
-    try {
-      const page = await context.newPage();
-
-      let reponse = '';
-      if (model === 'gemini') {
-        reponse = await runGemini(page, libelle);
-      } else {
-        reponse = await runChatGPT(page, libelle);
+    const MAX_TENTATIVES = 2;
+    for (let tentative = 1; tentative <= MAX_TENTATIVES; tentative++) {
+      if (tentative > 1) {
+        console.log(`  ↩️  Retry run ${run} (tentative ${tentative})...`);
+        await new Promise(r => setTimeout(r, pauseInterRuns));
       }
+      try {
+        const page = await context.newPage();
 
-      if (!reponse || reponse.length < 20) {
-        resultat.statut = 'timeout';
-      } else {
-        resultat.statut = 'ok';
-        const reponseNettoyee = nettoyerTexte(reponse);
-        const detection = detecterWefiit(reponse);
-        resultat.wefiitMentionne = detection.trouve;
-        resultat.preview = detection.preview;
-        resultat.verbatim = reponseNettoyee.slice(0, 500).trim();
-        resultat.concurrents = extraireConcurrents(reponse);
+        let reponse = '';
+        if (model === 'gemini') {
+          reponse = await runGemini(page, libelle);
+        } else {
+          reponse = await runChatGPT(page, libelle);
+        }
 
-        // Sauvegarder la réponse complète dans un fichier texte
-        if (!existsSync(RESPONSES_BASE)) mkdirSync(RESPONSES_BASE, { recursive: true });
-        const cheminReponse = `${RESPONSES_BASE}/${id}-${dateJour}-${model}-run${run}.txt`;
-        writeFileSync(cheminReponse, reponseNettoyee, 'utf-8');
-        resultat.cheminReponse = `responses/${id}-${dateJour}-${model}-run${run}.txt`;
+        if (!reponse || reponse.length < 20) {
+          resultat.statut = 'timeout';
+          await page.screenshot({ path: `${screenshotDir}/${dateJour}-run${run}.png`, fullPage: true }).catch(() => null);
+          await page.close();
+        } else {
+          resultat.statut = 'ok';
+          const reponseNettoyee = nettoyerTexte(reponse);
+          const detection = detecterWefiit(reponse);
+          resultat.wefiitMentionne = detection.trouve;
+          resultat.preview = detection.preview;
+          resultat.verbatim = reponseNettoyee.slice(0, 500).trim();
+          resultat.concurrents = extraireConcurrents(reponse);
 
-        console.log(`  ${detection.trouve ? '✅ WeFiiT présent' : '❌ WeFiiT absent'}`);
-      }
+          // Sauvegarder la réponse complète dans un fichier texte
+          if (!existsSync(RESPONSES_BASE)) mkdirSync(RESPONSES_BASE, { recursive: true });
+          const cheminReponse = `${RESPONSES_BASE}/${id}-${dateJour}-${model}-run${run}.txt`;
+          writeFileSync(cheminReponse, reponseNettoyee, 'utf-8');
+          resultat.cheminReponse = `responses/${id}-${dateJour}-${model}-run${run}.txt`;
 
-      await page.screenshot({ path: `${screenshotDir}/${dateJour}-run${run}.png`, fullPage: true });
-      await page.close();
-    } catch (err) {
-      if (err.message === 'login-wall') {
-        console.log(`  ⚠️  Login wall Gemini détecté — run ignoré`);
-        resultat.statut = 'login-wall';
-      } else {
-        console.log(`  ❌ Erreur run ${run} : ${err.message}`);
-        resultat.statut = 'erreur';
+          console.log(`  ${detection.trouve ? '✅ WeFiiT présent' : '❌ WeFiiT absent'}`);
+          await page.screenshot({ path: `${screenshotDir}/${dateJour}-run${run}.png`, fullPage: true });
+          await page.close();
+          break; // run réussi — pas besoin de retry
+        }
+      } catch (err) {
+        if (err.message === 'login-wall') {
+          console.log(`  ⚠️  Login wall Gemini détecté — run ignoré`);
+          resultat.statut = 'login-wall';
+          resultat._erreurDétail = 'login-wall';
+          break; // pas de retry sur login-wall
+        } else {
+          console.log(`  ❌ Erreur run ${run} (tentative ${tentative}) : ${err.message}`);
+          resultat.statut = 'erreur';
+          resultat._erreurDétail = err.message;
+        }
       }
     }
 
     runs.push(resultat);
+    const runTerminé = new Date();
+    safeAppendToLog(AUDIT_PATH, {
+      jobId,
+      requêteId: id,
+      modèle: model,
+      run,
+      démarré: runDémarré.toISOString(),
+      terminé: runTerminé.toISOString(),
+      durée: Math.round((runTerminé - runDémarré) / 1000),
+      statut: resultat.statut,
+      wefiit: resultat.wefiitMentionne ?? null,
+      erreurDétail: resultat._erreurDétail ?? null,
+      cheminReponse: resultat.cheminReponse ?? null,
+      ignoré: false,
+      raisonIgnoré: null,
+    });
     if (run < NB_RUNS) await new Promise(r => setTimeout(r, pauseInterRuns));
   }
 
@@ -402,6 +466,13 @@ async function lancerRequete(requete, historique, browserOrContext, model = 'cha
   });
 
   console.log(`  ✅ Archivé`);
+  return {
+    ok: runs.filter(r => r.statut === 'ok').length,
+    timeout: runs.filter(r => r.statut === 'timeout').length,
+    erreur: runs.filter(r => r.statut === 'erreur').length,
+    loginWall: runs.filter(r => r.statut === 'login-wall').length,
+    ignoré: 0,
+  };
 }
 
 // ─────────────────────────────────────────────
@@ -454,6 +525,11 @@ async function main() {
     historique = JSON.parse(readFileSync(HISTORIQUE_PATH, 'utf-8'));
   }
 
+  const jobId = generateJobId();
+  const jobDémarré = new Date();
+  const modeLabel = process.argv.slice(2).join(' ');
+  const résumé = { ok: 0, timeout: 0, erreur: 0, ignoré: 0 };
+
   const optsBrowser = {
     headless: false,
     args: ['--disable-blink-features=AutomationControlled'],
@@ -497,9 +573,16 @@ async function main() {
   for (const requete of requetesALancer) {
     const taches = modeles.map(model => {
       const browserOrCtx = model === 'gemini' ? contextes['gemini'] : browsers[model];
-      return lancerRequete(requete, historique, browserOrCtx, model).catch(err =>
-        console.log(`⚠️  Erreur [${requete.id}/${model}] :`, err.message)
-      );
+      return lancerRequete(requete, historique, browserOrCtx, model, jobId)
+        .then(r => {
+          if (r) {
+            résumé.ok      += r.ok;
+            résumé.timeout += r.timeout;
+            résumé.erreur  += (r.erreur ?? 0) + (r.loginWall ?? 0);
+            résumé.ignoré  += r.ignoré;
+          }
+        })
+        .catch(err => console.log(`⚠️  Erreur [${requete.id}/${model}] :`, err.message));
     });
     await Promise.all(taches);
   }
@@ -514,6 +597,20 @@ async function main() {
   writeFileSync(HISTORIQUE_PATH, JSON.stringify(historique, null, 2), 'utf-8');
   console.log(`\n✅ historique.json mis à jour.`);
 
+  // Journal de job
+  const jobTerminé = new Date();
+  safeAppendToLog(JOBS_PATH, {
+    jobId,
+    démarré: jobDémarré.toISOString(),
+    terminé: jobTerminé.toISOString(),
+    durée: Math.round((jobTerminé - jobDémarré) / 1000),
+    mode: modeLabel,
+    requêtes: requetesALancer.length,
+    modèles,
+    statut: résumé.erreur > 0 ? 'partiel' : 'succès',
+    résumé,
+  });
+
   // Auto-push vers GitHub Pages
   try {
     const { execSync } = await import('child_process');
@@ -521,7 +618,7 @@ async function main() {
     const gitDir = fileURLToPath(new URL('.', import.meta.url));
     const date = new Date().toISOString().slice(0, 10);
     const opts = { stdio: 'inherit', shell: true, cwd: gitDir };
-    execSync('git add historique.json responses/', opts);
+    execSync('git add historique.json responses/ jobs.json audit.json', opts);
     // Commit uniquement s'il y a des changements staged
     try {
       execSync(`git commit -m "GEO update ${date}"`, opts);

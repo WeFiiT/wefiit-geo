@@ -13,6 +13,8 @@ Outil de monitoring GEO (Generative Engine Optimization) : mesure la visibilité
 | `geo-track.mjs` | Script principal — lance les runs, archive les résultats, push GitHub |
 | `requetes.json` | Liste des requêtes à monitorer |
 | `historique.json` | Archive de tous les runs (source de vérité du dashboard) |
+| `jobs.json` | Journal d'exécution — 1 entrée par lancement de `geo-track.mjs` (jobId, durée, statut, résumé) |
+| `audit.json` | Journal de runs — 1 entrée par run individuel (timestamps, statut, wefiit, erreurDétail) |
 | `dashboard.html` | Dashboard GitHub Pages — visualisation des résultats |
 | `geo-check-multi.mjs` | Script secondaire — tests ad hoc multi-runs sur une seule requête |
 | `screenshots/` | Captures d'écran par requête / modèle / date |
