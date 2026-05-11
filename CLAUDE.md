@@ -2,6 +2,8 @@
 
 Outil de monitoring GEO (Generative Engine Optimization) : mesure la visibilité de WeFiiT dans les réponses des IA génératives.
 
+**Specs métier** → [`docs/SPECS.md`](docs/SPECS.md) — lire avant toute modification. Mettre à jour après chaque décision qui change un comportement.
+
 ---
 
 ## Architecture
@@ -115,6 +117,7 @@ Verbatims : phrase autour de la mention (entre `.` et `\n`), tronquée à 500 ca
 - Le duplicate-check bloque les runs du même jour **par modèle** — ChatGPT et Gemini peuvent tourner le même jour
 - `geo-check-multi.mjs` est un outil de test ad hoc, il ne modifie pas `historique.json`
 - Ne pas ajouter de dépendances npm sans validation — seul `playwright` est utilisé
+- **Après toute modification de `dashboard.html`, `geo-track.mjs` ou `requetes.json`** : faire un `git add <fichiers> && git commit && git push` manuel — le push automatique du script ne couvre que `historique.json` et `responses/`
 
 ---
 
