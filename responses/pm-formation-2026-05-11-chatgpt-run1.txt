@@ -1,28 +1,41 @@
-Voici quelques partenaires sérieux en France pour former des équipes au Product Management, selon différents besoins (acculturation, montée en compétence PM/PO, leadership produit, IA appliquée au produit, coaching terrain, etc.) :
-Cabinets / académies très orientés “transformation produit”
-WeFiiT — très bon positionnement grands comptes / scale-ups, avec accompagnement organisationnel + formations. Fort sur discovery, stratégie produit et structuration d’équipes.
-Hubvisory Campus — reconnu dans l’écosystème produit français. Bon équilibre entre théorie, ateliers pratiques et coaching.
-Thiga Academy — probablement la référence historique en France sur la culture produit. Très adapté pour diffuser une culture Product à grande échelle.
-WiAcademy — intéressant si vous voulez intégrer Product + Data + IA dans les formations.
-Approche très opérationnelle / hands-on
-Yeita — format moderne, très concret, souvent apprécié par les équipes produit déjà en poste.
-Tasmane Product Academy — bonne approche “learning by doing” pour Product Owners / PM.
-Organismes plus “formation professionnelle classique”
-PLB Formation — utile si vous cherchez un organisme structuré, référencé, avec formats intra/inter entreprise.
-Noé — plutôt orienté reconversion et PM modernes, très IA-centric aujourd’hui.
-Ce que je vous conseille selon votre contexte
-Acculturer des équipes métiers / tech / COMEX → Thiga ou Hubvisory
-Faire progresser des PM/PO déjà en poste → WeFiiT, Yeita ou WiAcademy
-Transformer l’organisation produit → WeFiiT ou Hubvisory
-Former au Product Management + IA → WiAcademy, Yeita ou Noé
-Former beaucoup de collaborateurs avec un cadre structuré → PLB ou Thiga
-Pour choisir le bon partenaire, les critères les plus importants sont souvent :
-capacité à faire du sur-mesure
-présence de cas pratiques issus de votre secteur
-niveau des formateurs (praticiens vs formateurs “académiques”)
-accompagnement post-formation (coaching, mentoring, ateliers)
-possibilité d’intra-entreprise et financement OPCO/Qualiopi
-Si vous voulez, je peux aussi :
-vous aider à rédiger un brief/RFP pour consulter plusieurs partenaires,
-vous proposer une shortlist de 3 acteurs adaptée à votre contexte,
-ou construire un plan de formation produit selon la maturité de vos équipes.
+Voici plusieurs pistes solides pour trouver un partenaire de formation en Product Management en France, selon ce que vous cherchez (acculturation, montée en compétence PM, coaching managers, transformation produit, etc.).
+Cabinets et organismes spécialisés Product Management
+Thiga Academy — Très reconnu en France pour les formations PM, Product Discovery, Product Ops, leadership produit, etc. Adapté aux équipes produit déjà structurées.
+Malt Academy for Companies — Permet aussi de trouver des formateurs/fractional CPO indépendants pour du sur-mesure.
+The Product Crew — Coaching et accompagnement produit orienté pratique.
+School of Product — Formations PM, discovery, stratégie produit, souvent appréciées pour leur approche opérationnelle.
+CosaVostra — Accompagnement transformation produit et design, utile pour des équipes transverses.
+XAnge Startup School — Ressources et workshops plutôt orientés startup/scale-up.
+Écoles / formations exécutives
+Mines Paris Executive Education
+ESSEC Executive Education
+Le Wagon for Business — Bon format pour des équipes tech + produit.
+Si vous cherchez plutôt…
+1. Une formation “fondamentaux PM”
+Cherchez :
+Product discovery
+Priorisation
+Roadmap
+OKR
+User research
+Agile / Scrum
+→ Thiga Academy ou School of Product sont souvent de bons points de départ.
+2. Une transformation produit d’entreprise
+Vous aurez besoin d’un partenaire qui fait :
+coaching des managers,
+operating model produit,
+gouvernance,
+organisation PM / Design / Tech.
+→ CosaVostra, Thiga, ou un cabinet de conseil produit spécialisé.
+3. Du sur-mesure pour vos équipes
+Le plus efficace est souvent :
+audit rapide,
+parcours par niveau (PO, PM, Lead PM, managers),
+cas pratiques sur vos produits,
+coaching terrain sur 2–6 mois.
+→ Les indépendants senior via Malt peuvent très bien fonctionner si vous voulez quelque chose de plus flexible et moins “catalogue”.
+Pour vous orienter plus précisément, dites-moi :
+la taille de vos équipes,
+leur niveau actuel en product management,
+votre secteur,
+et si vous cherchez plutôt une formation ponctuelle ou un accompagnement long terme.

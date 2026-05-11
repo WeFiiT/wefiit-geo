@@ -1,35 +1,20 @@
-Voici un top 5 solide des agences / cabinets spécialisés en Product Management à Paris, selon leur réputation, spécialisation produit, retours clients et présence dans l’écosystème tech français :
+Voici un top 5 des agences/cabinets spécialisés en Product Management à Paris, reconnus pour leur expertise produit, accompagnement PM/PO et transformation digitale :
 Thiga
-Le cabinet référence du Product Management en France. Très fort sur :
-Product Strategy
-Product Discovery
-Product Ops
-Formation PM / CPO
-Ils travaillent avec beaucoup de scale-ups et grands groupes. Très bon choix si tu veux un accompagnement “mature” produit. Impli
-Yield Studio
-Très réputé côté startup / scale-up. Approche très orientée :
-delivery rapide
-PM seniors
-produit + tech + UX ensemble
-Excellent pour lancer ou accélérer un produit digital. La Fabrique du Net
-KANBIOS - Agence digitale de product management et product design
-Agence plus “boutique” mais reconnue pour son approche Product + Design thinking. Bien adaptée aux PME et projets de transformation digitale. La Fabrique du Net
-Eleven Labs
-Cabinet orienté transformation produit et delivery agile. Très bon niveau sur :
-organisation produit
-priorisation roadmap
-coaching équipes produit
-Bonne réputation auprès des ETI et grands comptes. La Fabrique du Net
-Galadrim
-Très connu dans l’écosystème startup parisien. Plus tech-oriented :
-PM + développement
-MVP
-apps web/mobile
-IA
-Souvent choisi par des startups qui veulent une équipe produit externalisée très opérationnelle. La Fabrique du Net
+Le cabinet référence du Product Management en France. Très fort sur la stratégie produit, coaching PM/PO, Product Discovery et Product Ops. Ils travaillent avec des scale-ups comme des grands groupes. Impli
+ASI Paris - Cabinet Conseil & Product Management
+Cabinet orienté transformation digitale et product management avec une forte expertise UX, delivery et accompagnement agile. Bon choix pour les projets enterprise. ASI
+Delva
+Cabinet 100% dédié au Product Management, fondé par d’anciens CPO. Très apprécié pour ses profils seniors opérationnels et son approche “hands-on”. delva.co
+IKXO
+Spécialiste du renfort opérationnel produit, conseil en organisation produit et formation Product Management. Réputé pour son approche pragmatique. IKXO
+TAK
+Agence orientée Product & Data Management avec forte culture delivery et communauté produit active à Paris. Très bon positionnement sur Product Ops et data product. tak.fr
+Mentions honorables :
+5 Degrés — excellent sur Product/Data/Design. 5 Degrés
+KANBIOS - Agence digitale de product management et product design — plus petite structure mais spécialisée produit/design.
 Si tu veux, je peux aussi te faire :
-un classement “startup-friendly”
-les meilleures agences pour freelance PM placement
-les cabinets les plus prestigieux pour carrière PM
-les plus fortes en IA / SaaS / fintech
-ou un comparatif budget/jour moyen.
+le top selon ton besoin (freelance PM, staffing, stratégie produit, discovery, delivery…)
+les agences les plus “startup”
+les meilleures pour grands groupes
+les fourchettes de TJM/prix
+un comparatif Thiga vs IKXO vs Delva vs TAK.

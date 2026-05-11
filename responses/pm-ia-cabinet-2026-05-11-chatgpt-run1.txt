@@ -1,32 +1,18 @@
-Voici une sélection de cabinets français spécialisés en Product Management + IA selon différents besoins (conseil stratégique, renfort PM/PO, produits IA, transformation data/IA, startup studio, etc.) :
-Cabinets très orientés Product Management + IA
-WeFiiT
-Très reconnu sur les métiers Product. Forte expertise “Product Data & IA”, accompagnement PM/PO/CPO, discovery, IA générative.
-Wivoo
-Cabinet Produit, Design, Data & IA. Bon positionnement pour structurer des équipes produit IA et scaler des organisations product.
-IKXO
-Cabinet spécialisé Product Management avec missions PM/PO/Product Ops et sujets IA/data.
-Delva
-Positionnement très “expert Product Management”. Plus orienté delivery/organisation produit, mais pertinent pour staffer des équipes IA produit.
-Cabinets davantage orientés stratégie IA + création de produits IA
-Keleia
-Intéressant si tu cherches un mix : stratégie IA + startup studio + conception de produits IA/MVP.
-Koïno AI
-Très orienté delivery IA concret (LLM, agents IA, automatisation, industrialisation).
-Bomzai
-Approche “Data & IA comme produit”, focus mise en production et ROI rapide.
-SOTELI
-Positionnement IA générative opérationnelle pour métiers business.
-Si ton besoin est plus précis
-Je peux aussi te recommander :
-les meilleurs cabinets pour startup early-stage IA
-des cabinets spécialisés GenAI / LLM products
-des experts fractional CPO IA
-des cabinets orientés enterprise AI transformation
-des cabinets qui recrutent des Product Managers IA
-des acteurs à Paris vs remote
-des alternatives freelances haut niveau (collectifs de PM IA)
-Dis-moi surtout :
-tu cherches à recruter, te faire accompagner, ou postuler ?
-plutôt startup, scale-up ou grand groupe ?
-focus IA générative, data/ML, ou produit SaaS classique avec IA ?
+Voici quelques cabinets français très reconnus ou spécialisés autour du Product Management + IA / Data / GenAI, selon le besoin recherché :
+Pure players Product Management
+IKXO — cabinet très orienté Product Management, Product Ops et transformation produit, avec des sujets IA/data intégrés. IKXO
+Delva — cabinet 100% Product Management fondé par des ex-CPO, fort sur PM/PO senior et delivery produit. delva.co
+Wivoo — très bon positionnement Produit + Data + IA, souvent cité dans les scale-ups et grands groupes. wivoo.fr
+Product + IA / Data
+Bomzai — approche “AI products” très opérationnelle, orientée mise en production et ROI. Bomzai
+Koïno AI — conseil + staffing d’experts IA, avec accompagnement produit IA et GenAI. Koïno
+TRIMANE — plus corporate/enterprise, spécialisé Data Intelligence & IA. Trimane
+Cabinets IA orientés stratégie / transformation
+Keleia — intéressant si vous cherchez du AI Studio, MVP IA et accompagnement produit IA-first. keleia.fr
+SOTELI — spécialisé IA générative appliquée aux métiers. SOTELI
+AltaStrategIA — très orienté stratégie IA et transformation business. altastrategia.fr
+Si tu veux, je peux aussi te faire :
+un top 5 selon ton objectif (recrutement PM IA, mission freelance, transformation IA, startup studio, coaching CPO…)
+une sélection cabinet premium vs boutique
+une liste des cabinets les plus proches de Paris / remote
+ou les cabinets qui recrutent actuellement des profils AI Product Manager.
