@@ -2194,6 +2194,41 @@
           "Delva": 3,
           "IKXO": 3
         }
+      },
+      {
+        "date": "2026-05-11",
+        "model": "gemini",
+        "runsOk": 3,
+        "wefiit": {
+          "citations": 2,
+          "previews": [
+            "En 2026, le marché des cabinets spécialisés à l'intersection du Product Management (PM) et de l'Intelligence Artificielle s'est considérablement structuré. On distingue désormais trois types d'acteurs…",
+            "Le marché du conseil en Product Management (PM) spécialisé en Intelligence Artificielle s'est considérablement structuré en 2026. On distingue aujourd'hui deux types d'acteurs : les cabinets \"pure pla…"
+          ],
+          "reponsesChemins": [
+            "responses/pm-ia-cabinet-2026-05-11-gemini-run1.txt",
+            "responses/pm-ia-cabinet-2026-05-11-gemini-run2.txt",
+            "responses/pm-ia-cabinet-2026-05-11-gemini-run3.txt"
+          ]
+        },
+        "verbatims": [
+          "En 2026, le marché des cabinets spécialisés à l'intersection du Product Management (PM) et de l'Intelligence Artificielle s'est considérablement structuré. On distingue désormais trois types d'acteurs pour accompagner la création de produits \"AI-First\".Voici les principaux cabinets et agences de référence en France et en Europe :1. Les Pure Players & Boutiques PM (Spécialistes Produit)Ces cabinets se concentrent sur la méthodologie produit appliquée aux contraintes de l'IA (gestion de l'incertit",
+          "Le marché du conseil en Product Management (PM) spécialisé en Intelligence Artificielle s'est structuré autour de trois types d'acteurs en 2026 : les agences de Product pur qui ont intégré une forte brique IA, les cabinets de conseil en Data/IA qui adoptent une approche produit, et les studios de développement spécialisés.Voici les principaux cabinets et agences de référence en France :1. Les Experts en Product Management & IACes cabinets sont nés du Product Management et ont développé des pôles",
+          "Le marché du conseil en Product Management (PM) spécialisé en Intelligence Artificielle s'est considérablement structuré en 2026. On distingue aujourd'hui deux types d'acteurs : les cabinets \"pure players\" du Produit qui ont intégré une forte expertise Data/IA, et les agences d'innovation technologique qui proposent du Product Management pour piloter leurs développements.Voici les cabinets et agences de référence pour vous accompagner sur ces enjeux :1. Les Spécialistes du Product Management & I"
+        ],
+        "concurrents": {
+          "Artefact": 3,
+          "Yield Studio": 3,
+          "Thiga": 1,
+          "Sia Partners": 1,
+          "Accenture": 1,
+          "Capgemini": 1,
+          "Ekimetrics": 1,
+          "Theodo": 1,
+          "Wivoo": 1,
+          "McKinsey": 1,
+          "BCG": 1
+        }
       }
     ]
   }

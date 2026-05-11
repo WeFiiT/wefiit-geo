@@ -88,5 +88,50 @@
     "cheminReponse": "responses/pm-paris-2026-05-11-gemini-run3.txt",
     "ignoré": false,
     "raisonIgnoré": null
+  },
+  {
+    "jobId": "job-20260511-190029-0f335e",
+    "requêteId": "pm-ia-cabinet",
+    "modèle": "gemini",
+    "run": 1,
+    "démarré": "2026-05-11T19:00:35.847Z",
+    "terminé": "2026-05-11T19:00:56.016Z",
+    "durée": 20,
+    "statut": "ok",
+    "wefiit": true,
+    "erreurDétail": null,
+    "cheminReponse": "responses/pm-ia-cabinet-2026-05-11-gemini-run1.txt",
+    "ignoré": false,
+    "raisonIgnoré": null
+  },
+  {
+    "jobId": "job-20260511-190029-0f335e",
+    "requêteId": "pm-ia-cabinet",
+    "modèle": "gemini",
+    "run": 2,
+    "démarré": "2026-05-11T19:01:08.029Z",
+    "terminé": "2026-05-11T19:01:30.562Z",
+    "durée": 23,
+    "statut": "ok",
+    "wefiit": false,
+    "erreurDétail": null,
+    "cheminReponse": "responses/pm-ia-cabinet-2026-05-11-gemini-run2.txt",
+    "ignoré": false,
+    "raisonIgnoré": null
+  },
+  {
+    "jobId": "job-20260511-190029-0f335e",
+    "requêteId": "pm-ia-cabinet",
+    "modèle": "gemini",
+    "run": 3,
+    "démarré": "2026-05-11T19:01:42.578Z",
+    "terminé": "2026-05-11T19:02:02.118Z",
+    "durée": 20,
+    "statut": "ok",
+    "wefiit": true,
+    "erreurDétail": null,
+    "cheminReponse": "responses/pm-ia-cabinet-2026-05-11-gemini-run3.txt",
+    "ignoré": false,
+    "raisonIgnoré": null
   }
 ]

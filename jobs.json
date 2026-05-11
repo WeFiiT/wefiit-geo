@@ -16,5 +16,23 @@
       "erreur": 0,
       "ignoré": 0
     }
+  },
+  {
+    "jobId": "job-20260511-190029-0f335e",
+    "démarré": "2026-05-11T19:00:29.063Z",
+    "terminé": "2026-05-11T19:02:02.673Z",
+    "durée": 94,
+    "mode": "pm-ia-cabinet --model gemini",
+    "requêtes": 1,
+    "modèles": [
+      "gemini"
+    ],
+    "statut": "succès",
+    "résumé": {
+      "ok": 3,
+      "timeout": 0,
+      "erreur": 0,
+      "ignoré": 0
+    }
   }
 ]
