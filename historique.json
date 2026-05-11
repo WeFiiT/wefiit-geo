@@ -1758,6 +1758,26 @@
         },
         "verbatims": [],
         "concurrents": {}
+      },
+      {
+        "date": "2026-05-11",
+        "model": "gemini",
+        "runsOk": 3,
+        "wefiit": {
+          "citations": 0,
+          "previews": [],
+          "reponsesChemins": [
+            "responses/pmm-general-2026-05-11-gemini-run1.txt",
+            "responses/pmm-general-2026-05-11-gemini-run2.txt",
+            "responses/pmm-general-2026-05-11-gemini-run3.txt"
+          ]
+        },
+        "verbatims": [
+          "Le Product Marketing Management (PMM) est devenu le nerf de la guerre pour les entreprises qui souhaitent transformer une simple fonctionnalité en un succès commercial. Un cabinet de conseil spécialisé intervient généralement pour combler le fossé entre le produit, la vente et le marché.Voici une vue d'ensemble de ce que ces cabinets proposent et comment choisir le bon partenaire.🚀 Les domaines d'intervention clésUn cabinet conseil en Product Marketing ne se contente pas de rédiger des fiches p",
+          "Une entreprise de Product Marketing Management (PMM) intervient à l'intersection du produit, de l'équipe commerciale (Sales) et du marketing. Contrairement à une agence marketing classique qui se concentre sur l'acquisition, un cabinet PMM se focalise sur la compréhension du marché et l'alignement du produit avec ses clients.Voici comment ces cabinets structurent généralement leur accompagnement :1. Recherche Stratégique (Market & Customer Insights)Avant de vendre, il faut comprendre. Le cabinet",
+          "Le Product Marketing Management (PMM) est devenu le nerf de la guerre pour les entreprises qui veulent s'assurer que leurs produits ne sont pas seulement \"bons\", mais qu'ils rencontrent réellement leur marché.Faire appel à un cabinet de conseil en PMM permet généralement de résoudre le fossé entre la vision technique (Produit) et la réalité commerciale (Ventes/Marketing).Les piliers d'intervention d'un cabinet PMMUn cabinet spécialisé intervient généralement sur quatre axes stratégiques :1. Stra"
+        ],
+        "concurrents": {}
       }
     ]
   },
