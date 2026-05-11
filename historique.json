@@ -360,6 +360,42 @@
           "Yield Studio": 1,
           "Yield Advisory": 1
         }
+      },
+      {
+        "date": "2026-05-11",
+        "model": "gemini",
+        "runsOk": 3,
+        "wefiit": {
+          "citations": 2,
+          "previews": [
+            "Le choix du \"meilleur\" cabinet dépend avant tout de votre besoin spécifique : s'agit-il de structurer une organisation produit, de lancer une innovati…",
+            "Le choix du \"meilleur\" cabinet de conseil en Product Management (PM) dépend de vos besoins spécifiques : cherchez-vous une transformation organisation…"
+          ],
+          "reponsesChemins": [
+            "responses/pm-general-2026-05-11-gemini-run1.txt",
+            "responses/pm-general-2026-05-11-gemini-run2.txt",
+            "responses/pm-general-2026-05-11-gemini-run3.txt"
+          ]
+        },
+        "verbatims": [
+          "Le choix du \"meilleur\" cabinet dépend avant tout de votre besoin spécifique : s'agit-il de structurer une organisation produit, de lancer une innovation de rupture ou de recruter des experts en mode \"commando\" ?Voici les acteurs incontournables en 2026, classés par type d'expertise :1. Les Pure Players (Experts du métier PM)Ces cabinets ne font que du Produit. Ils sont parfaits pour former vos équipes, auditer vos process ou intervenir de manière opérationnelle.Thiga : Le leader historique en Fr",
+          "Le choix du \"meilleur\" cabinet dépend de vos besoins spécifiques : cherchez-vous à recruter des experts opérationnels (Product Managers en régie), à transformer l'organisation produit d'un grand groupe, ou à définir une stratégie d'innovation de rupture ?Voici les acteurs incontournables en France en 2026, classés par spécialité :1. Les Agences \"Pure Players\" (Expertise Produit & Culture)Ce sont les références historiques pour le conseil en Product Management pur. Elles interviennent sur la stra",
+          "Le choix du \"meilleur\" cabinet de conseil en Product Management (PM) dépend de vos besoins spécifiques : cherchez-vous une transformation organisationnelle à grande échelle, du renfort opérationnel (Product Management as a Service), ou une expertise en design et IA ?En 2026, le marché français et international se segmente en trois grandes catégories de leaders :1. Les Pure Players (Les Spécialistes Product-First)Ces cabinets ne font que du Produit. Ils sont idéaux pour structurer une organisatio"
+        ],
+        "concurrents": {
+          "Thiga": 3,
+          "McKinsey": 3,
+          "BCG": 3,
+          "Mozza": 2,
+          "Wivoo": 2,
+          "Yield Studio": 2,
+          "Capgemini": 1,
+          "Wavestone": 1,
+          "Yield Advisory": 1,
+          "Octo": 1,
+          "Hubvisory": 1,
+          "Bain": 1
+        }
       }
     ]
   },
@@ -615,6 +651,18 @@
       },
       {
         "date": "2026-05-05",
+        "model": "gemini",
+        "runsOk": 0,
+        "wefiit": {
+          "citations": 0,
+          "previews": [],
+          "reponsesChemins": []
+        },
+        "verbatims": [],
+        "concurrents": {}
+      },
+      {
+        "date": "2026-05-11",
         "model": "gemini",
         "runsOk": 0,
         "wefiit": {
@@ -939,6 +987,18 @@
           "BAM": 1,
           "Bain": 1
         }
+      },
+      {
+        "date": "2026-05-11",
+        "model": "gemini",
+        "runsOk": 0,
+        "wefiit": {
+          "citations": 0,
+          "previews": [],
+          "reponsesChemins": []
+        },
+        "verbatims": [],
+        "concurrents": {}
       }
     ]
   },
@@ -1242,6 +1302,35 @@
         },
         "verbatims": [],
         "concurrents": {}
+      },
+      {
+        "date": "2026-05-11",
+        "model": "gemini",
+        "runsOk": 3,
+        "wefiit": {
+          "citations": 1,
+          "previews": [
+            "Le domaine du Data Product Management se situe à la croisée du conseil en Data (valorisation, ingénierie) et du conseil en Produit (agilité, discovery…"
+          ],
+          "reponsesChemins": [
+            "responses/pm-data-2026-05-11-gemini-run1.txt",
+            "responses/pm-data-2026-05-11-gemini-run2.txt",
+            "responses/pm-data-2026-05-11-gemini-run3.txt"
+          ]
+        },
+        "verbatims": [
+          "Le domaine du Data Product Management se situe à la croisée du conseil en Data (valorisation, ingénierie) et du conseil en Produit (agilité, discovery, UX). En 2026, plusieurs cabinets se distinguent par leur capacité à transformer la donnée en produits actionnables plutôt qu'en simples rapports.Voici les principaux acteurs classés par typologie :1. Les Pure Players \"Product & Data\"Ces cabinets sont nés du Product Management et ont développé une expertise pointue pour intégrer la donnée et l'IA",
+          "Le marché du Data Product Management (DPM) est à la croisée du conseil en Produit et de l'expertise Data. En 2026, plusieurs cabinets se distinguent par leur capacité à transformer des actifs de données brutes en produits actionnables et rentables.Voici les principaux acteurs classés par typologie d'expertise :1. Les Pure Players \"Produit & Data\"Ces cabinets sont les plus spécialisés dans la méthodologie Product appliquée à la donnée (Discovery, Roadmap, Delivery de produits IA).Wivoo : L'un des",
+          "Le Data Product Management est une discipline hybride à la croisée du Product Management classique, de la Data Science et de l'ingénierie. En 2026, le marché français s"
+        ],
+        "concurrents": {
+          "Capgemini": 2,
+          "Wivoo": 2,
+          "McKinsey": 1,
+          "Accenture": 1,
+          "Thiga": 1,
+          "Artefact": 1
+        }
       }
     ]
   },
@@ -1491,6 +1580,29 @@
         },
         "verbatims": [],
         "concurrents": {}
+      },
+      {
+        "date": "2026-05-11",
+        "model": "gemini",
+        "runsOk": 3,
+        "wefiit": {
+          "citations": 0,
+          "previews": [],
+          "reponsesChemins": [
+            "responses/pmm-general-2026-05-11-gemini-run1.txt",
+            "responses/pmm-general-2026-05-11-gemini-run2.txt",
+            "responses/pmm-general-2026-05-11-gemini-run3.txt"
+          ]
+        },
+        "verbatims": [
+          "Que vous cherchiez à lancer un nouveau produit (NPI) ou à optimiser le positionnement d'une offre existante, faire appel à un cabinet de conseil en Product Marketing Management (PMM) est un levier stratégique majeur.Le rôle de ces cabinets est de faire le pont entre le produit, les ventes et le marché pour assurer un \"Product-Market Fit\" durable.Pourquoi solliciter un cabinet en Product Marketing ?Un cabinet spécialisé intervient généralement sur quatre piliers critiques :Intelligence Marché : A",
+          "Un cabinet de conseil en Product Marketing Management (PMM) intervient pour faire le pont entre le produit, les ventes et le marché. Son objectif est de s'assurer qu'un produit n'est pas seulement \"bien construit\", mais qu'il est surtout acheté et compris par son public cible.Voici comment ces cabinets structurent généralement leur accompagnement :1. Les Domaines d'Intervention StratégiquesLe PMM est au cœur de la stratégie de croissance. Un cabinet spécialisé travaille généralement sur quatre p",
+          "Product Marketing Management (PMM) consulting firms are specialized partners that help businesses bridge the gap between product development and sales. Whether you are a startup trying to find Product-Market Fit (PMF) or an enterprise looking to optimize your Go-to-Market (GTM) strategy, these consultancies provide the framework and execution.What a PMM Consultancy DoesA PMM consultancy typically focuses on three core pillars:1. Strategy & PositioningMarket Intelligence: Deep dives into competit"
+        ],
+        "concurrents": {
+          "Accenture": 1,
+          "Wavestone": 1
+        }
       }
     ]
   },
@@ -1716,6 +1828,26 @@
         },
         "verbatims": [],
         "concurrents": {}
+      },
+      {
+        "date": "2026-05-11",
+        "model": "gemini",
+        "runsOk": 3,
+        "wefiit": {
+          "citations": 0,
+          "previews": [],
+          "reponsesChemins": [
+            "responses/pm-formation-2026-05-11-gemini-run1.txt",
+            "responses/pm-formation-2026-05-11-gemini-run2.txt",
+            "responses/pm-formation-2026-05-11-gemini-run3.txt"
+          ]
+        },
+        "verbatims": [
+          "C'est une excellente initiative. Le Product Management est souvent le moteur qui transforme",
+          "C'est une excellente initiative. Le Product Management est souvent le moteur qui transforme une bonne idée en un succès commercial durable. Former vos équipes, c'est investir directement dans la pertinence de vos futurs",
+          "C'est un excellent investissement. Le Product Management est souvent le \"liant\" qui transforme une bonne idée technique en succès commercial tangible. Former vos équipes permet d'aligner la vision stratégique, l'exécution technique et les besoins réels du marché.Pour choisir le bon partenaire, il est crucial d'identifier d'abord le niveau de maturité de votre équipe et vos objectifs spécifiques.1. Les types de prestatairesSelon vos besoins, différentes structures peuvent vous accompagner :Type d"
+        ],
+        "concurrents": {}
       }
     ]
   },
@@ -1827,6 +1959,37 @@
         },
         "verbatims": [],
         "concurrents": {}
+      },
+      {
+        "date": "2026-05-11",
+        "model": "gemini",
+        "runsOk": 3,
+        "wefiit": {
+          "citations": 3,
+          "previews": [
+            "En 2026, le paysage du conseil en Product Management (PM) spécialisé en Intelligence Artificielle s'est structuré autour de deux approches : les cabin…",
+            "Le paysage du conseil en Product Management (PM) spécialisé en Intelligence Artificielle s'est structuré autour de deux besoins majeurs : l'industrial…",
+            "Le marché du conseil en Product Management (PM) spécialisé en IA s'est considérablement structuré en 2026. On distingue aujourd'hui deux types d'acteu…"
+          ],
+          "reponsesChemins": [
+            "responses/pm-ia-cabinet-2026-05-11-gemini-run1.txt",
+            "responses/pm-ia-cabinet-2026-05-11-gemini-run2.txt",
+            "responses/pm-ia-cabinet-2026-05-11-gemini-run3.txt"
+          ]
+        },
+        "verbatims": [
+          "En 2026, le paysage du conseil en Product Management (PM) spécialisé en Intelligence Artificielle s'est structuré autour de deux approches : les cabinets \"Pure Players\" du Produit qui ont intégré l'IA, et les cabinets Data/IA qui ont adopté une culture Produit (le fameux \"Data Product Management\").Voici les principaux acteurs de référence en France :1. Les Experts en Product Management & IACes cabinets viennent du monde du Produit et ont développé des méthodologies spécifiques pour gérer l'incer",
+          "Le paysage du conseil en Product Management (PM) spécialisé en Intelligence Artificielle s'est structuré autour de deux besoins majeurs : l'industrialisation des modèles (MLOps) et la définition de la valeur d'usage (AI Product Strategy).Voici les principaux cabinets et agences de référence en France et en Europe en 2026, classés par type d'expertise :1. Les pure players du \"Product Data & IA\"Ces cabinets se concentrent spécifiquement sur le lien entre la méthodologie Produit et les capacités te",
+          "Le marché du conseil en Product Management (PM) spécialisé en IA s'est considérablement structuré en 2026. On distingue aujourd'hui deux types d'acteurs : ceux qui viennent du Produit et intègrent l'IA, et ceux qui viennent de la Data/IA et adoptent des méthodologies Produit.Voici les cabinets et agences de référence en France pour vous accompagner sur la stratégie, le Discovery ou le Delivery de produits IA :1. Les Experts \"Product-First\" (Culture Produit & UX)Ces cabinets sont idéaux si votre"
+        ],
+        "concurrents": {
+          "Thiga": 2,
+          "Theodo": 2,
+          "Yield Advisory": 2,
+          "Artefact": 1,
+          "Ekimetrics": 1,
+          "Yield Studio": 1
+        }
       }
     ]
   }
