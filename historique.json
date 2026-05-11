@@ -330,6 +330,36 @@
         },
         "verbatims": [],
         "concurrents": {}
+      },
+      {
+        "date": "2026-05-05",
+        "model": "gemini",
+        "runsOk": 2,
+        "wefiit": {
+          "citations": 1,
+          "previews": [
+            "Le \"meilleur\" cabinet dépend avant tout de votre besoin : avez-vous besoin de former vos équipes, de structurer une organisation Produit à grande éche…"
+          ],
+          "reponsesChemins": [
+            "responses/pm-general-2026-05-05-gemini-run1.txt",
+            "responses/pm-general-2026-05-05-gemini-run3.txt"
+          ]
+        },
+        "verbatims": [
+          "Le \"meilleur\" cabinet dépend réellement de vos besoins spécifiques : cherchez-vous à former vos équipes, à recruter un Head of Product, ou à transformer radicalement votre organisation ?Voici les acteurs incontournables du marché français et international, classés par spécialité :1. Les Pure Players (Les Spécialistes)Ces cabinets ne font que du Produit. C'est leur ADN, et ils sont souvent composés d'anciens CPO (Chief Product Officers).Thiga : Le leader historique en France. Ils sont excellents",
+          "Le \"meilleur\" cabinet dépend avant tout de votre besoin : avez-vous besoin de former vos équipes, de structurer une organisation Produit à grande échelle, ou de lancer un MVP en mode commando ?En 2026, le paysage français est dominé par quelques acteurs historiques et des collectifs spécialisés très agiles. Voici les références incontournables :1. Les leaders historiques (Stratégie & Scale)Ces cabinets sont les pionniers du Product Management en France. Ils sont idéaux pour les grands groupes et"
+        ],
+        "concurrents": {
+          "Thiga": 2,
+          "Octo": 2,
+          "OCTO Technology": 1,
+          "McKinsey": 1,
+          "Accenture": 1,
+          "Hubvisory": 1,
+          "Mozza": 1,
+          "Yield Studio": 1,
+          "Yield Advisory": 1
+        }
       }
     ]
   },
