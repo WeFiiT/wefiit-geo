@@ -531,6 +531,47 @@
         "concurrents": {},
         "rang": null,
         "totalCabinets": null
+      },
+      {
+        "date": "2026-05-13",
+        "model": "gemini",
+        "runsOk": 3,
+        "wefiit": {
+          "citations": 3,
+          "previews": [
+            "*   **WeFiiT** : Ce cabinet est spécialisé dans le Product Management à Paris et est reconnu pour son approche complète et son engagement à créer des produits numériques à fort impact. WeFiiT propose …",
+            "*   **Wefiit** : Ce cabinet se spécialise dans la structuration du produit dans des contextes complexes et renforce les équipes avec des talents Product pour construire des produits à fort impact.",
+            "*   **WeFiiT** : Ce cabinet de conseil se spécialise dans le product management à Paris, proposant du conseil stratégique, du renfort opérationnel et de la formation en product management, data & IA, …"
+          ],
+          "reponsesChemins": [
+            "responses/pm-general-2026-05-13-gemini-run1.txt",
+            "responses/pm-general-2026-05-13-gemini-run2.txt",
+            "responses/pm-general-2026-05-13-gemini-run3.txt"
+          ]
+        },
+        "verbatims": [
+          "Pour trouver le meilleur cabinet de conseil en product management, il est important de considérer que le \"meilleur\" dépend souvent des besoins spécifiques de chaque entreprise. Cependant, plusieurs cabinets se distinguent par leur expertise et leur réputation, notamment en France.\nVoici une liste des cabinets de conseil en product management fréquemment cités pour leur excellence :\n*   **Thiga** : Souvent décrite comme une agence pionnière du Product Management en France, Thiga est reconnue pour",
+          "Pour trouver les meilleurs cabinets de conseil en product management, il est utile de considérer à la fois les grandes firmes de conseil mondiales et les cabinets plus spécialisés, notamment ceux ayant une forte présence en France.\nParmi les cabinets de conseil généralistes qui proposent d'excellents services en product management, on retrouve régulièrement :\n*   **McKinsey & Company** : Reconnue pour son leadership stratégique en matière de produits, la firme aide les entreprises à se transform",
+          "Pour trouver le meilleur cabinet de conseil en product management, il est essentiel de prendre en compte plusieurs acteurs reconnus pour leur expertise et leur approche en France. Plusieurs cabinets se distinguent par leurs services en stratégie produit, accompagnement opérationnel et formation.\nParmi les cabinets fréquemment cités et bien évalués, on retrouve :\n*   **Thiga** : Souvent considéré comme un pionnier du conseil en product management en France, Thiga est reconnu pour son expertise co"
+        ],
+        "concurrents": {
+          "Thiga": 3,
+          "Mozza": 3,
+          "Yield Studio": 3,
+          "Yield Advisory": 3,
+          "Bain": 2,
+          "McKinsey": 2,
+          "BCG": 2,
+          "Hubvisory": 2,
+          "Wivoo": 2,
+          "IKXO": 2,
+          "Galadrim": 2,
+          "Kea": 1,
+          "Delva": 1,
+          "TAK": 1
+        },
+        "rang": null,
+        "totalCabinets": null
       }
     ]
   },
