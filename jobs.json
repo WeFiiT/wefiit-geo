@@ -72,5 +72,24 @@
       "ignoré": 0
     },
     "regressions": null
+  },
+  {
+    "jobId": "job-20260513-064746-2c3b9e",
+    "démarré": "2026-05-13T06:47:46.867Z",
+    "terminé": "2026-05-13T06:48:07.639Z",
+    "durée": 21,
+    "mode": "pm-general --model gemini --force",
+    "requêtes": 1,
+    "modèles": [
+      "gemini"
+    ],
+    "statut": "partiel",
+    "résumé": {
+      "ok": 0,
+      "timeout": 0,
+      "erreur": 3,
+      "ignoré": 0
+    },
+    "regressions": null
   }
 ]
