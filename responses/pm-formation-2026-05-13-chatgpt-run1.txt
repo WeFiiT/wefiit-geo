@@ -1,11 +1,5 @@
-Parfait ! Pour bien t’aider, j’ai besoin de quelques précisions afin de cibler le bon type de partenaire :
-Type d’entreprise/équipe : Est-ce que ce sont des équipes techniques, marketing, design, ou un mélange ?
-Niveau de formation souhaité : Débutant, intermédiaire, avancé ? Ou formation sur-mesure ?
-Format préféré : Atelier en présentiel, formation en ligne, coaching individuel ou collectif ?
-Durée et fréquence : Quelques sessions courtes, un programme sur plusieurs semaines, ou une formation intensive ?
-Objectifs spécifiques : Méthodologies Agile, roadmap produit, priorisation, design thinking, metrics, etc.
-Avec ces infos, je peux te proposer :
-Des partenaires reconnus (consultants, cabinets de formation, écoles spécialisées).
-Des formats adaptés à ton équipe.
-Et éventuellement des programmes sur-mesure que certains partenaires peuvent créer.
-Veux‑tu que je te fasse directement une liste de partenaires francophones spécialisés en product management ?
+Parfait ! Pour que je puisse vous orienter au mieux, pouvez-vous préciser :
+La taille et le type de vos équipes (ex. : juniors, seniors, cross-fonctionnelles).
+Vos objectifs principaux pour la formation (ex. : adoption des bonnes pratiques, lancement de produits, stratégie, agile, roadmap, priorisation).
+Préférence pour un format : atelier pratique, coaching individuel, formation en ligne ou présentiel, mixte.
+Avec ces infos, je pourrai vous suggérer des partenaires ou des approches adaptées au product management.

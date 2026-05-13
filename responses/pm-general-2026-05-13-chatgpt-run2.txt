@@ -1,27 +1,6 @@
-Si tu recherches le meilleur cabinet de conseil en Product Management, il faut d’abord préciser le type d’accompagnement que tu souhaites : stratégie produit, design UX, scaling, ou transformation agile des équipes produit. Voici une vue structurée des options réputées :
-1️⃣ Cabinets internationaux généralistes (consulting stratégique)
-Ces cabinets ont une expertise en transformation digitale et Product Management, souvent pour de grands groupes :
-McKinsey & Company – via leur pratique Digital & Analytics, ils accompagnent la stratégie produit, innovation et scaling.
-BCG (Boston Consulting Group) – notamment avec BCG Digital Ventures pour le développement de nouveaux produits.
-Bain & Company – offre Product & Innovation Consulting, aide à structurer les équipes PM et prioriser le backlog stratégique.
-✅ Idéal pour : grandes entreprises cherchant une transformation produit à l’échelle stratégique.
-⚠️ Coût : très élevé.
-2️⃣ Cabinets spécialisés en Product Management / Product Design
-Ces cabinets sont plus “product-centric”, souvent plus flexibles et orientés pratique :
-Pragmatic Institute – référence en Product Management, formations et conseil sur la roadmap produit.
-Mind the Product (consulting arm) – accompagne les équipes PM dans l’alignement stratégique et le scaling.
-ProdPad / Silicon Valley Product Group (SVPG) – mentors et conseil pour structurer le Product Management et la culture produit.
-✅ Idéal pour : PME, startups et équipes produit cherchant à améliorer le process et la culture produit.
-⚠️ Moins adaptés aux très grandes transformations corporates.
-3️⃣ Cabinets français / européens renommés
-Fabernovel – innovation produit, stratégie digitale et expérience utilisateur.
-Octo Technology – expertise en transformation digitale, agilité et Product Management.
-Wemanity – agile et Product Management, accompagne l’industrialisation de la fonction PM.
-✅ Idéal pour : entreprises européennes souhaitant un accompagnement proche du terrain.
-💡 Conseil pratique pour choisir :
-Définir l’objectif : formation PM, transformation de l’équipe, stratégie produit ou scaling.
-Vérifier leur expérience sur ton secteur : tech, retail, banque, SaaS…
-Demander des références ou études de cas concrètes.
-Combiner parfois un cabinet stratégique (McKinsey/BCG) pour la vision et un spécialisé (SVPG, Fabernovel) pour la pratique.
-Si tu veux, je peux te faire un top 5 personnalisé en France / Europe selon taille d’entreprise et budget, avec leurs forces et domaines d’expertise précis.
-Veux‑tu que je fasse ça ?
+Pour te répondre de manière précise, peux-tu me préciser si tu cherches :
+Des cabinets internationaux prestigieux spécialisés en stratégie produit et innovation (ex. McKinsey, BCG, Bain, etc.) ?
+Des cabinets spécialisés en Product Management et Product Design, plus orientés tech et produit numérique (ex. Pragmatic Institute, Brainmates, ThoughtWorks, Productboard, etc.) ?
+Des consultants indépendants ou agences plus petites avec un focus PM et transformation produit ?
+Chaque catégorie a ses forces et son positionnement.
+Si tu veux, je peux te dresser un top 10 des cabinets/conseils reconnus pour le Product Management avec leurs spécificités et points forts. Veux‑tu que je fasse ça ?
