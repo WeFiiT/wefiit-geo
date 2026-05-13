@@ -1,0 +1,25 @@
+Tu cherches donc à identifier les meilleurs cabinets de conseil en Product Management. Pour être précis, il existe différents types de cabinets : certains sont des grands cabinets de conseil généralistes avec une pratique produit (ex : McKinsey, BCG, Bain), et d’autres sont spécialisés en Product Management et design de produit digital (ex : Product Gym, Mind the Product, Strategyzer pour méthodologie, ou des cabinets boutique comme ThoughtWorks et Pivotal Labs).
+Voici une classification utile :
+1. Cabinets généralistes avec forte expertise produit
+Ces cabinets travaillent sur la stratégie produit, le lancement, la transformation digitale :
+McKinsey & Company – possède une pratique “Digital & Analytics” et des experts en Product Strategy.
+Boston Consulting Group (BCG) – BCG Digital Ventures aide à créer et scaler des produits.
+Bain & Company – Bain Innovation et Bain Digital consultent sur la conception et la stratégie produit.
+Roland Berger – moins connu pour le digital, mais fort en transformation produit et stratégie tech.
+2. Cabinets spécialisés Product & Digital
+Ces cabinets sont souvent plus opérationnels et directement impliqués dans la conception et le développement produit :
+ThoughtWorks – conseil en tech et Product Management, très orienté livraison agile et design thinking.
+Pivotal Labs (VMware) – accompagnement produit end-to-end pour les startups et grandes entreprises.
+Brainmates – basé en Australie, spécialisé en product management training et consulting.
+Productboard consulting partners – accompagne dans l’implémentation de la vision produit et roadmap.
+3. Cabinets “boutique” / méthodologies
+Ceux-ci ne font pas toujours de conseil direct mais proposent des frameworks et formations pour PMs :
+Mind the Product – communauté et consulting sur Product Management.
+Strategyzer – consulting sur Business Model Canvas et Value Proposition Design, utile pour PMs.
+ProdPad – conseil sur roadmap et priorisation produit.
+💡 Conseil pratique pour choisir :
+Si ton objectif est stratégie haut niveau, privilégie McKinsey, BCG ou Bain.
+Si tu veux implémentation concrète et coaching PM, ThoughtWorks, Pivotal Labs ou des cabinets boutique sont plus adaptés.
+Si tu es une startup ou scale-up tech, des cabinets spécialisés en Product Management agile et design thinking te donneront un vrai retour terrain.
+Si tu veux, je peux te faire un top 5 personnalisé pour la France et l’Europe avec leur réputation, secteur d’expertise et tarifs approximatifs. Ça te donnerait une vision très pratique pour décider.
+Veux‑tu que je fasse ça ?
