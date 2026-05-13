@@ -91,5 +91,50 @@
       "ignoré": 0
     },
     "regressions": null
+  },
+  {
+    "jobId": "job-20260513-063849-61f637",
+    "démarré": "2026-05-13T06:38:49.192Z",
+    "terminé": "2026-05-13T06:48:33.710Z",
+    "durée": 585,
+    "mode": "--all --model all",
+    "requêtes": 6,
+    "modèles": [
+      "chatgpt",
+      "gemini"
+    ],
+    "statut": "succès",
+    "résumé": {
+      "ok": 33,
+      "timeout": 3,
+      "erreur": 0,
+      "ignoré": 0
+    },
+    "regressions": [
+      {
+        "id": "pm-general",
+        "model": "chatgpt",
+        "avant": "3/3",
+        "apres": "0/3",
+        "dateAvant": "2026-05-12",
+        "dateApres": "2026-05-13"
+      },
+      {
+        "id": "pm-formation",
+        "model": "chatgpt",
+        "avant": "1/3",
+        "apres": "0/3",
+        "dateAvant": "2026-05-12",
+        "dateApres": "2026-05-13"
+      },
+      {
+        "id": "pm-ia-cabinet",
+        "model": "gemini",
+        "avant": "3/3",
+        "apres": "0/2",
+        "dateAvant": "2026-05-12",
+        "dateApres": "2026-05-13"
+      }
+    ]
   }
 ]
