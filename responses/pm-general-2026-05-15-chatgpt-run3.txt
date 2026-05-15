@@ -1,22 +1,54 @@
-Si tu cherches un cabinet vraiment reconnu en Product Management en France (et particulièrement à Paris), les références les plus solides aujourd’hui sont :
+Si tu cherches les meilleurs cabinets de conseil spécialisés en Product Management en France (et particulièrement à Paris), ceux qui reviennent le plus souvent dans l’écosystème produit sont :
 Thiga
+Thiga
+Le plus connu en France sur le sujet. Très fort sur :
+transformation produit,
+coaching PM/PO,
+discovery,
+product operating model,
+formation via Thiga Academy.
+Très présent dans les scale-ups et grands groupes. Souvent considéré comme la référence “pure player Product”. Impli+1
 WeFiiT
+WeFiiT
+Cabinet plus récent mais très bien vu pour l’approche opérationnelle et embedded PM. Bon fit si tu veux :
+renfort produit senior,
+structuration d’équipes,
+accompagnement delivery/discovery.
+Ils travaillent avec de gros comptes et des scale-ups tech. WeFiiT
 Mozza
-Fifty-Five
-Octo Technology
-Eleven Labs
-Les meilleurs selon le besoin
-BesoinCabinet recommandéPourquoiStructurer une organisation produitThigaRéférence historique du Product Management en France, très fort en coaching PM, discovery, operating modelRenfort opérationnel PM/POWeFiiTTrès apprécié pour placer des profils seniors rapidement dans des équipes produitStartup / scale-up pragmatiqueMozzaApproche terrain, missions courtes et orientées impactTransformation digitale grands groupesOcto TechnologyTrès fort en culture tech + produitProduit + data + IAFifty-FiveExcellent sur les sujets growth/data-driven productUX + produit + deliveryEleven LabsBon équilibre stratégie/exécution produit
-Mon analyse rapide
-Thiga reste le nom le plus “premium” et reconnu dans l’écosystème produit français. Très bon pour transformer une entreprise “projet” en entreprise “product-led”. Impli+1
-WeFiiT monte très fort depuis quelques années grâce à son approche très opérationnelle et sa proximité avec les équipes produit. wefiit.com
-Mozza est souvent cité pour son côté “commando senior”, moins corporate. Yield Studio
-Les cabinets généralistes type Capgemini ou Deloitte font aussi du product management, mais avec une approche plus transformation/grand compte que “craft produit”.
-Si tu veux travailler dedans
-Thiga est souvent vu comme le meilleur “label” sur un CV PM en France.
-WeFiiT et Mozza sont réputés plus humains et plus proches du terrain.
-Les retours Reddit et marché indiquent que les entreprises recherchent davantage des PM stratégiques capables de travailler avec l’IA et la discovery produit. Reddit
-Tu veux plutôt :
-un cabinet pour te faire recruter,
-un cabinet pour accompagner ta boîte,
-ou connaître les meilleurs pour faire carrière comme PM consultant ?
+Mozza
+Positionnement plus “collectif d’experts produit”. Réputation très terrain :
+missions rapides,
+PM seniors,
+culture startup/scale-up,
+approche pragmatique.
+Souvent apprécié pour éviter le côté “gros cabinet framework”. Yield Studio
+eleven labs
+eleven labs
+Très bon mix produit + tech + delivery. Fort sur :
+produits digitaux,
+UX,
+plateformes SaaS,
+accompagnement agile. La Fabrique du Net
+Galadrim
+Galadrim
+Plus orienté product engineering / startup studio, mais solide culture produit. Bon choix pour :
+MVP,
+IA,
+apps mobiles,
+accompagnement produit-tech intégré. La Fabrique du Net
+OCTO Technology
+OCTO Technology
+Plus large que le Product Management pur, mais extrêmement reconnu en transformation digitale et culture produit. Très bon niveau stratégique.
+Comment choisir selon ton besoin
+Transformation produit à grande échelle / grands groupes
+→ Thiga, OCTO
+PM opérationnels seniors rapidement staffés
+→ Mozza, WeFiiT
+Startup / scale-up / build produit rapide
+→ Galadrim, eleven labs
+Formation et acculturation produit
+→ Thiga Academy
+Approche très pragmatique et terrain
+→ Mozza, WeFiiT
+Le marché Product en 2026 semble repartir progressivement après un ralentissement 2023–2025, avec davantage de demandes sur les profils orientés stratégie produit et IA. reddit.com

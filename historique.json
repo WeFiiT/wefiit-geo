@@ -676,27 +676,33 @@
       {
         "date": "2026-05-15",
         "model": "chatgpt",
-        "runsOk": 1,
+        "runsOk": 3,
         "wefiit": {
-          "citations": 1,
+          "citations": 3,
           "previews": [
+            "WeFiiT — très apprécié pour l’accompagnement opérationnel (PM, PO, Product Ops), avec une approche plus pragmatique et terrain. Travaille avec de grosses entreprises françaises. WeFiiT",
+            "WeFiiT",
             "WeFiiT"
           ],
           "reponsesChemins": [
+            "responses/pm-general-2026-05-15-chatgpt-run1.txt",
+            "responses/pm-general-2026-05-15-chatgpt-run2.txt",
             "responses/pm-general-2026-05-15-chatgpt-run3.txt"
           ]
         },
         "verbatims": [
-          "Si tu cherches un cabinet vraiment reconnu en Product Management en France (et particulièrement à Paris), les références les plus solides aujourd’hui sont :\nThiga\nWeFiiT\nMozza\nFifty-Five\nOcto Technology\nEleven Labs\nLes meilleurs selon le besoin\nBesoinCabinet recommandéPourquoiStructurer une organisation produitThigaRéférence historique du Product Management en France, très fort en coaching PM, discovery, operating modelRenfort opérationnel PM/POWeFiiTTrès apprécié pour placer des profils seniors"
+          "Si tu cherches un cabinet vraiment reconnu en Product Management en France (et particulièrement à Paris), voilà les références les plus solides selon leur spécialité :\nLes références “pure product”\nThiga — probablement le cabinet le plus reconnu en France pour la culture produit, la structuration d’équipes PM, la discovery et le coaching produit. Très fort pour les scale-ups et grands groupes en transformation produit. Impli+1\nThiga\nWeFiiT — très apprécié pour l’accompagnement opérationnel (PM,",
+          "Si tu cherches un cabinet de conseil vraiment reconnu en Product Management en France, les références les plus citées aujourd’hui sont :\nThiga\nLe pionnier du Product Management en France. Très fort sur :\ntransformation produit,\ncoaching PM/PO,\ndiscovery,\norganisation produit à l’échelle.\nTrès apprécié des scale-ups et grands groupes. Impli+1\nSite : Thiga\nWeFiiT\nRéputé pour son approche très opérationnelle et pragmatique. Beaucoup d’interventions “embedded” dans les équipes produit. Clients grand",
+          "Si tu cherches les meilleurs cabinets de conseil spécialisés en Product Management en France (et particulièrement à Paris), ceux qui reviennent le plus souvent dans l’écosystème produit sont :\nThiga\nThiga\nLe plus connu en France sur le sujet. Très fort sur :\ntransformation produit,\ncoaching PM/PO,\ndiscovery,\nproduct operating model,\nformation via Thiga Academy.\nTrès présent dans les scale-ups et grands groupes. Souvent considéré comme la référence “pure player Product”. Impli+1\nWeFiiT\nWeFiiT\nCab"
         ],
         "concurrents": {
-          "Thiga": 1,
-          "Octo": 1,
-          "OCTO Technology": 1,
+          "Thiga": 3,
+          "Mozza": 3,
+          "Yield Studio": 3,
+          "Galadrim": 3,
           "Capgemini": 1,
-          "fifty-five": 1,
-          "Mozza": 1,
-          "Yield Studio": 1
+          "Octo": 1,
+          "OCTO Technology": 1
         },
         "rang": null,
         "totalCabinets": null
