@@ -32,18 +32,18 @@
   "kv_namespaces": [
     {
       "binding": "KV",
-      "id": "4abd52f3f2c549ac83cc2cb4ceec8620",
+      "id": "4539ba20c6634b3aaec0499125b7e995",
     },
     {
       "binding": "OAUTH_KV",
-      "id": "bd1759494309474a9b423b029967b0db",
+      "id": "2ae43daf1b18463c97a85094e8a7154c",
     },
   ],
   "d1_databases": [
     {
       "binding": "DB",
       "database_name": "open-seo",
-      "database_id": "37bee90a-e1aa-404f-b01e-b0d1d479bda1",
+      "database_id": "ad0d5887-8d44-4ce5-a941-730cf03b33bf",
       "migrations_dir": "drizzle",
     },
   ],

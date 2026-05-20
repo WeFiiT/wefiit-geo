@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maquette Rank Tracking — WeFiiT × open-seo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --wf-navy:        #002882;
+      --wf-midnight:    #001d84;
+      --wf-accent:      #2a4cff;
+      --wf-accent-light:#858fd6;
+      --wf-cta-start:   #f98f03;
+      --wf-cta-end:     #e95400;
+      --wf-surface:     #ffffff;
+      --wf-surface-alt: #f2f4ff;
+      --wf-border:      #eff0f6;
+      --wf-text-muted:  #636b75;
+      --font: 'Work Sans', -apple-system, sans-serif;
+    }
+
+    body { font-family: var(--font); background: #f8f9fa; display: flex; min-height: 100vh; color: var(--wf-navy); }
+
+    /* ── Sidebar ── */
+    .sidebar { width: 220px; min-height: 100vh; background: var(--wf-navy); padding: 20px 0; flex-shrink: 0; }
+    .sidebar-logo { padding: 0 16px 24px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 12px; }
+    .sidebar-logo span { font-size: 16px; font-weight: 700; color: #fff; letter-spacing: -0.3px; }
+    .sidebar-logo small { display: block; font-size: 10px; color: var(--wf-accent-light); margin-top: 2px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .sidebar-group { margin-bottom: 4px; }
+    .sidebar-group-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; color: var(--wf-accent-light); padding: 8px 16px 4px; }
+    .sidebar-item { display: flex; align-items: center; gap: 8px; padding: 8px 16px; font-size: 13px; color: rgba(255,255,255,0.55); cursor: pointer; border-left: 3px solid transparent; transition: all 0.15s; }
+    .sidebar-item:hover { background: rgba(255,255,255,0.07); color: #fff; border-left-color: var(--wf-accent-light); }
+    .sidebar-item.active { background: rgba(42,76,255,0.2); color: #fff; border-left-color: var(--wf-accent); }
+    .sidebar-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.25); flex-shrink: 0; }
+    .sidebar-item.active .sidebar-dot { background: var(--wf-accent); }
+
+    /* ── Main ── */
+    .main { flex: 1; display: flex; flex-direction: column; background: var(--wf-surface-alt); }
+
+    /* ── Page header ── */
+    .page-header { background: var(--wf-navy); padding: 28px 32px 24px; border-bottom: 3px solid var(--wf-accent); }
+    .page-header-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 20px; }
+    .page-title { font-size: 24px; font-weight: 400; background: linear-gradient(270deg, var(--wf-accent), #fff 60%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: -0.02em; }
+    .page-subtitle { font-size: 13px; color: var(--wf-accent-light); margin-top: 4px; }
+    .header-actions { display: flex; gap: 8px; align-items: center; }
+    .btn { font-family: var(--font); font-size: 12px; font-weight: 600; padding: 8px 16px; border-radius: 500px; border: none; cursor: pointer; transition: all 0.15s; }
+    .btn-primary { background: linear-gradient(270deg, var(--wf-cta-end), var(--wf-cta-start)); color: #fff; }
+    .btn-ghost { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.12); }
+    .filters { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .filters label { font-size: 12px; color: #8899aa; }
+    .filter-select { appearance: none; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: #fff; font-family: var(--font); font-size: 13px; font-weight: 600; padding: 6px 28px 6px 12px; border-radius: 8px; cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23aabbcc' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 10px center; }
+    .filter-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.1); }
+    .domain-chip { display: flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 500px; padding: 5px 12px; }
+    .domain-chip .dot { width: 7px; height: 7px; border-radius: 50%; background: #10A37F; }
+    .domain-chip span { font-size: 12px; color: #fff; font-weight: 600; }
+
+    /* ── Body ── */
+    .page-body { padding: 24px 32px; flex: 1; }
+
+    /* ── KPI cards ── */
+    .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+    .kpi-card { background: var(--wf-surface); box-shadow: 0 0 30px rgba(0,0,0,0.07); padding: 20px; border-top: 3px solid transparent; transition: box-shadow 0.2s; }
+    .kpi-card:hover { box-shadow: -6px 6px 0 0 var(--wf-midnight); }
+    .kpi-card.c1 { border-top-color: var(--wf-accent); }
+    .kpi-card.c2 { border-top-color: #10A37F; }
+    .kpi-card.c3 { border-top-color: var(--wf-cta-start); }
+    .kpi-card.c4 { border-top-color: #e95400; }
+    .kpi-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--wf-text-muted); margin-bottom: 10px; }
+    .kpi-value { font-size: 32px; font-weight: 400; color: var(--wf-navy); line-height: 1; letter-spacing: -0.03em; }
+    .kpi-value small { font-size: 15px; font-weight: 600; color: var(--wf-text-muted); }
+    .kpi-delta { margin-top: 8px; font-size: 12px; font-weight: 600; }
+    .kpi-delta.up { color: #10A37F; }
+    .kpi-delta.down { color: #e95400; }
+    .kpi-delta.neutral { color: var(--wf-text-muted); }
+
+    /* ── Toolbar tableau ── */
+    .toolbar { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+    .search-input { font-family: var(--font); font-size: 13px; padding: 8px 14px; border: 1px solid var(--wf-border); border-radius: 8px; background: var(--wf-surface); color: var(--wf-navy); width: 220px; }
+    .search-input:focus { outline: 2px solid var(--wf-accent); outline-offset: -2px; border-color: transparent; }
+    .period-tabs { display: flex; background: var(--wf-surface); border: 1px solid var(--wf-border); border-radius: 8px; overflow: hidden; }
+    .period-tab { padding: 7px 14px; font-size: 12px; font-weight: 600; color: var(--wf-text-muted); cursor: pointer; border: none; background: none; font-family: var(--font); transition: all 0.15s; }
+    .period-tab.active { background: var(--wf-navy); color: #fff; }
+    .toolbar-actions { margin-left: auto; display: flex; gap: 8px; }
+    .btn-sm { font-family: var(--font); font-size: 11px; font-weight: 600; padding: 7px 14px; border-radius: 500px; border: 1px solid var(--wf-border); background: var(--wf-surface); color: var(--wf-navy); cursor: pointer; transition: all 0.15s; }
+    .btn-sm:hover { border-color: var(--wf-accent); color: var(--wf-accent); }
+
+    /* ── Tableau ── */
+    .card { background: var(--wf-surface); box-shadow: 0 0 30px rgba(0,0,0,0.07); }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; }
+    thead th { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--wf-text-muted); padding: 12px 14px; text-align: left; border-bottom: 2px solid var(--wf-border); white-space: nowrap; background: var(--wf-surface); }
+    thead th.sort { cursor: pointer; user-select: none; }
+    thead th.sort:hover { color: var(--wf-navy); }
+    tbody td { padding: 12px 14px; font-size: 13px; color: var(--wf-navy); border-bottom: 1px solid var(--wf-border); vertical-align: middle; white-space: nowrap; }
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:hover td { background: var(--wf-surface-alt); }
+
+    /* Position cells */
+    .pos-cell { display: flex; align-items: center; gap: 6px; }
+    .pos-num { font-weight: 700; font-size: 14px; min-width: 28px; }
+    .pos-top3 { color: var(--wf-accent); }
+    .pos-top10 { color: #10A37F; }
+    .pos-other { color: var(--wf-navy); }
+    .pos-lost { color: var(--wf-text-muted); font-weight: 400; font-style: italic; }
+    .delta { font-size: 11px; font-weight: 700; padding: 2px 6px; border-radius: 4px; }
+    .delta.up   { background: #e8f5e9; color: #2e7d32; }
+    .delta.down { background: #fce4ec; color: #c62828; }
+    .delta.same { background: var(--wf-border); color: var(--wf-text-muted); }
+
+    /* KD badge */
+    .kd-badge { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 20px; border-radius: 4px; font-size: 11px; font-weight: 700; }
+    .kd-easy   { background: #e8f5e9; color: #2e7d32; }
+    .kd-medium { background: #fff3e0; color: #e65100; }
+    .kd-hard   { background: #fce4ec; color: #c62828; }
+
+    /* SERP feature badges */
+    .serp-badges { display: flex; gap: 3px; flex-wrap: wrap; }
+    .serp-badge { font-size: 9px; font-weight: 700; padding: 2px 5px; border-radius: 3px; background: var(--wf-surface-alt); color: var(--wf-text-muted); border: 1px solid var(--wf-border); }
+    .serp-badge.ai { background: #e8f0fe; color: #3949ab; border-color: #c5cae9; }
+
+    .url-cell { font-size: 11px; color: var(--wf-accent); max-width: 180px; overflow: hidden; text-overflow: ellipsis; }
+    .vol-cell { font-weight: 600; }
+    .check-box { width: 15px; height: 15px; border: 1px solid var(--wf-border); border-radius: 3px; cursor: pointer; }
+
+    /* Pagination */
+    .pagination { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; border-top: 1px solid var(--wf-border); }
+    .page-info { font-size: 12px; color: var(--wf-text-muted); }
+    .page-btns { display: flex; gap: 4px; }
+    .page-btn { font-family: var(--font); font-size: 12px; font-weight: 600; padding: 5px 10px; border: 1px solid var(--wf-border); border-radius: 6px; background: var(--wf-surface); color: var(--wf-navy); cursor: pointer; }
+    .page-btn.active { background: var(--wf-navy); color: #fff; border-color: var(--wf-navy); }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar WeFiiT -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <span>open-seo</span>
+      <small>WeFiiT workspace</small>
+    </div>
+    <div class="sidebar-group">
+      <div class="sidebar-group-label">Keywords</div>
+      <div class="sidebar-item"><span class="sidebar-dot"></span> Keyword Research</div>
+      <div class="sidebar-item"><span class="sidebar-dot"></span> Saved Keywords</div>
+      <div class="sidebar-item active"><span class="sidebar-dot"></span> Rank Tracking</div>
+    </div>
+    <div class="sidebar-group">
+      <div class="sidebar-group-label">Domain</div>
+      <div class="sidebar-item"><span class="sidebar-dot"></span> Domain Overview</div>
+      <div class="sidebar-item"><span class="sidebar-dot"></span> Backlinks</div>
+      <div class="sidebar-item"><span class="sidebar-dot"></span> Site Audit</div>
+    </div>
+    <div class="sidebar-group">
+      <div class="sidebar-group-label">AI Visibility</div>
+      <div class="sidebar-item"><span class="sidebar-dot"></span> Brand Lookup</div>
+      <div class="sidebar-item"><span class="sidebar-dot"></span> Prompt Explorer</div>
+      <div class="sidebar-item"><span class="sidebar-dot"></span> GEO Dashboard</div>
+    </div>
+    <div class="sidebar-group" style="margin-top:8px; border-top:1px solid rgba(255,255,255,0.07); padding-top:8px;">
+      <div class="sidebar-item"><span class="sidebar-dot"></span> AI &amp; MCP</div>
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <!-- Header -->
+    <header class="page-header">
+      <div class="page-header-top">
+        <div>
+          <h1 class="page-title">Rank Tracking</h1>
+          <p class="page-subtitle">Suivi des positions Google — desktop &amp; mobile</p>
+        </div>
+        <div class="header-actions">
+          <button class="btn btn-ghost">⬇ Export CSV</button>
+          <button class="btn btn-primary">+ Ajouter des mots-clés</button>
+        </div>
+      </div>
+      <div class="filters">
+        <div class="domain-chip"><span class="dot"></span><span>wefiit.com</span></div>
+        <div class="filter-sep"></div>
+        <label>Appareil</label>
+        <select class="filter-select">
+          <option>Desktop</option>
+          <option>Mobile</option>
+          <option>Les deux</option>
+        </select>
+        <div class="filter-sep"></div>
+        <label>Localisation</label>
+        <select class="filter-select">
+          <option>France — fr</option>
+          <option>USA — en</option>
+        </select>
+        <div class="filter-sep"></div>
+        <label style="color:#8899aa; font-size:11px;">Dernier check : 18 mai 2026 · 07h45 &nbsp;·&nbsp; ~$0.04/check</label>
+        <button class="btn btn-ghost" style="margin-left:auto; font-size:11px; padding:6px 14px;">▶ Lancer un check</button>
+      </div>
+    </header>
+
+    <div class="page-body">
+
+      <!-- KPIs -->
+      <div class="kpi-grid">
+        <div class="kpi-card c1">
+          <div class="kpi-label">Mots-clés trackés</div>
+          <div class="kpi-value">42</div>
+          <div class="kpi-delta neutral">wefiit.com · France</div>
+        </div>
+        <div class="kpi-card c2">
+          <div class="kpi-label">Top 10</div>
+          <div class="kpi-value">18 <small>/ 42</small></div>
+          <div class="kpi-delta up">▲ +3 cette semaine</div>
+        </div>
+        <div class="kpi-card c3">
+          <div class="kpi-label">Top 3</div>
+          <div class="kpi-value">7 <small>/ 42</small></div>
+          <div class="kpi-delta up">▲ +1 cette semaine</div>
+        </div>
+        <div class="kpi-card c4">
+          <div class="kpi-label">Non classés</div>
+          <div class="kpi-value">9 <small>/ 42</small></div>
+          <div class="kpi-delta down">▼ −2 cette semaine</div>
+        </div>
+      </div>
+
+      <!-- Toolbar -->
+      <div class="toolbar">
+        <input class="search-input" type="text" placeholder="Filtrer les mots-clés...">
+        <div class="period-tabs">
+          <button class="period-tab">1j</button>
+          <button class="period-tab active">7j</button>
+          <button class="period-tab">30j</button>
+          <button class="period-tab">90j</button>
+        </div>
+        <div class="toolbar-actions">
+          <button class="btn-sm">☰ Filtres</button>
+          <button class="btn-sm">⬇ CSV</button>
+          <button class="btn-sm">↗ Sheets</button>
+        </div>
+      </div>
+
+      <!-- Tableau -->
+      <div class="card">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th><input type="checkbox" class="check-box"></th>
+                <th class="sort">Mot-clé ↕</th>
+                <th class="sort">Position desktop ↕</th>
+                <th>URL desktop</th>
+                <th class="sort">Position mobile ↕</th>
+                <th class="sort">Volume ↕</th>
+                <th class="sort">KD ↕</th>
+                <th class="sort">CPC ↕</th>
+                <th>SERP Features</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="checkbox" class="check-box"></td>
+                <td style="font-weight:600;">cabinet conseil product management</td>
+                <td><div class="pos-cell"><span class="pos-num pos-top3">2</span><span class="delta up">▲3</span></div></td>
+                <td><div class="url-cell">wefiit.com/product-management</div></td>
+                <td><div class="pos-cell"><span class="pos-num pos-top3">3</span><span class="delta up">▲2</span></div></td>
+                <td class="vol-cell">1 600</td>
+                <td><span class="kd-badge kd-hard">74</span></td>
+                <td>€8.40</td>
+                <td><div class="serp-badges"><span class="serp-badge ai">AI</span><span class="serp-badge">PAA</span></div></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="check-box"></td>
+                <td style="font-weight:600;">product manager paris</td>
+                <td><div class="pos-cell"><span class="pos-num pos-top3">1</span><span class="delta same">—</span></div></td>
+                <td><div class="url-cell">wefiit.com/metiers/product-manager</div></td>
+                <td><div class="pos-cell"><span class="pos-num pos-top3">2</span><span class="delta up">▲1</span></div></td>
+                <td class="vol-cell">880</td>
+                <td><span class="kd-badge kd-medium">52</span></td>
+                <td>€6.20</td>
+                <td><div class="serp-badges"><span class="serp-badge">FS</span><span class="serp-badge ai">AI</span></div></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="check-box"></td>
+                <td style="font-weight:600;">formation product management</td>
+                <td><div class="pos-cell"><span class="pos-num pos-top10">6</span><span class="delta up">▲4</span></div></td>
+                <td><div class="url-cell">wefiit.com/formation</div></td>
+                <td><div class="pos-cell"><span class="pos-num pos-top10">8</span><span class="delta up">▲2</span></div></td>
+                <td class="vol-cell">2 400</td>
+                <td><span class="kd-badge kd-hard">68</span></td>
+                <td>€4.90</td>
+                <td><div class="serp-badges"><span class="serp-badge">PAA</span><span class="serp-badge">Shop</span></div></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="check-box"></td>
+                <td style="font-weight:600;">wefiit</td>
+                <td><div class="pos-cell"><span class="pos-num pos-top3">1</span><span class="delta same">—</span></div></td>
+                <td><div class="url-cell">wefiit.com</div></td>
+                <td><div class="pos-cell"><span class="pos-num pos-top3">1</span><span class="delta same">—</span></div></td>
+                <td class="vol-cell">590</td>
+                <td><span class="kd-badge kd-easy">12</span></td>
+                <td>€1.10</td>
+                <td><div class="serp-badges"><span class="serp-badge">KP</span></div></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="check-box"></td>
+                <td style="font-weight:600;">consultant product management</td>
+                <td><div class="pos-cell"><span class="pos-num pos-other">14</span><span class="delta down">▼2</span></div></td>
+                <td><div class="url-cell">wefiit.com/expertises</div></td>
+                <td><div class="pos-cell"><span class="pos-num pos-other">17</span><span class="delta down">▼3</span></div></td>
+                <td class="vol-cell">3 600</td>
+                <td><span class="kd-badge kd-hard">81</span></td>
+                <td>€11.20</td>
+                <td><div class="serp-badges"><span class="serp-badge ai">AI</span><span class="serp-badge">PAA</span><span class="serp-badge">FS</span></div></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="check-box"></td>
+                <td style="font-weight:600;">cabinet product marketing</td>
+                <td><div class="pos-cell"><span class="pos-num pos-top10">9</span><span class="delta up">▲5</span></div></td>
+                <td><div class="url-cell">wefiit.com/product-marketing</div></td>
+                <td><div class="pos-cell"><span class="pos-num pos-top10">10</span><span class="delta same">—</span></div></td>
+                <td class="vol-cell">720</td>
+                <td><span class="kd-badge kd-medium">44</span></td>
+                <td>€5.80</td>
+                <td><div class="serp-badges"><span class="serp-badge">PAA</span></div></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="check-box"></td>
+                <td style="font-weight:600;">agence product management ia</td>
+                <td><div class="pos-cell"><span class="pos-num pos-lost">—</span><span class="delta down" style="font-size:10px;">perdu</span></div></td>
+                <td><div class="url-cell" style="color:var(--wf-text-muted);">—</div></td>
+                <td><div class="pos-cell"><span class="pos-num pos-lost">—</span></div></td>
+                <td class="vol-cell">480</td>
+                <td><span class="kd-badge kd-medium">57</span></td>
+                <td>€9.30</td>
+                <td><div class="serp-badges"><span class="serp-badge ai">AI</span></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagination">
+          <div class="page-info">Affichage 1–7 sur 42 mots-clés</div>
+          <div class="page-btns">
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn">…</button>
+            <button class="page-btn">6</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</body>
+</html>

@@ -1,6 +1,7 @@
 import {
   Bookmark,
   Bot,
+  Brain,
   ClipboardCheck,
   Globe,
   Link2,
@@ -60,6 +61,12 @@ const projectNavItems = [
     icon: MessageSquare,
     matchSegment: "/prompt-explorer",
   },
+  {
+    to: "/p/$projectId/geo" as const,
+    label: "GEO Visibility",
+    icon: Brain,
+    matchSegment: "/geo",
+  },
 ] as const;
 
 const aiNavItem = linkOptions({
@@ -110,8 +117,8 @@ export function getProjectNavGroups(projectId: string) {
       type: "group" as const,
       label: "AI Visibility",
       icon: Sparkles,
-      matchSegments: ["/brand-lookup", "/prompt-explorer"],
-      items: [bySegment("/brand-lookup"), bySegment("/prompt-explorer")],
+      matchSegments: ["/brand-lookup", "/prompt-explorer", "/geo"],
+      items: [bySegment("/brand-lookup"), bySegment("/prompt-explorer"), bySegment("/geo")],
     },
     {
       type: "standalone" as const,
