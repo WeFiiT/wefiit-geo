@@ -1,0 +1,22 @@
+Pour former vos équipes au product management, plusieurs organismes et cabinets de conseil proposent des formations et du coaching adaptés aux entreprises :
+**Organismes de formation et cabinets de conseil spécialisés :**
+*   **Thiga Academy** propose un catalogue complet de formations pour différents niveaux de séniorité (PO, PM, Head of Product, CPO) et expertises (data, product marketing, product designer, no-code). Leurs formations, d'une durée de 2 jours, sont dispensées par des consultants de Thiga, en groupe ou en entreprise, et peuvent être personnalisées selon les besoins spécifiques de vos équipes. Ils offrent également des formations en Product Manager IA.
+*   **Onepoint** a lancé un programme produit depuis 2020. Cette formation, qui dure 20 jours (répartis sur 4 mois), inclut le passage de 3 certifications reconnues : Scrum PSPO 1, SAFe 5.0 Agile Product Manager et Management 3.0. Elle s'adresse aux professionnels ayant au minimum 3 ans d'expérience.
+*   **Wivoo** via sa **WiAcadémy**, propose une formation en product management structurée en trois demi-journées de 4h, espacées sur trois semaines, pour permettre la mise en pratique des apprentissages en entreprise.
+*   **OCTO Academy** dispose d'un panel de formations pour accompagner les équipes à monter en maturité sur les sujets liés au produit. Leurs offres couvrent des fondamentaux comme "Devenir Product Manager" (14h/2j) et des sujets plus avancés comme le Product Growth. Ils proposent également des formations sur-mesure pour les entreprises.
+*   **Hubvisory** propose via **Le Campus** des ressources produit et deux types de formations : une offre 100% en ligne (une dizaine d'heures de contenus vidéos) et une journée de pratique en petit groupe de travail.
+*   **Maestro (Maria Schools)** offre des formations intensives et certifiantes en Product Management, co-conçues avec des experts de startups et scale-ups françaises. Leurs programmes sont axés sur la pratique avec des études de cas réelles et couvrent tout le cycle des produits numériques, incluant les outils no-code et l'IA.
+*   **Simplon** propose une formation complète de Product Owner / Product Manager pour acquérir les compétences essentielles du métier, incluant la gestion de projet Agile et la certification Scrum PSPO I.
+*   **WeFiiT** se positionne comme un partenaire produit 360°, accompagnant les entreprises dans la co-construction de leurs organisations produit et la montée en compétences de leurs équipes en Product Management. Leurs programmes sont adaptés aux cas d'usage des entreprises, avec du coaching sur les hard et soft skills des leaders produit.
+*   **Monsieur Guiz** est une société de conseil en product management qui propose des formations de courte durée pour se perfectionner, abordant des sujets tels que le design thinking, le lean management et le growth.
+**Coaching en Product Management :**
+Certains prestataires se spécialisent dans le coaching pour accompagner les Product Managers et leurs équipes à développer leurs compétences et à améliorer leurs performances. Le coaching produit vise à fournir un soutien personnalisé pour aider à définir les fonctionnalités du produit, créer des roadmaps détaillées et prendre des décisions basées sur les données.
+*   **Prodify** propose du coaching pour les leaders produit et leurs équipes, afin d'accélérer les résultats commerciaux et la croissance de carrière. Leurs sessions peuvent être hebdomadaires ou bi-hebdomadaires et couvrent des sujets variés comme la vision produit, la planification stratégique, la priorisation et la gestion des parties prenantes.
+*   **Product People** offre un coaching personnalisé pour aider les Product Managers à exceller dans l'industrie et à atteindre leurs objectifs de carrière, avec des coachs expérimentés dans diverses industries.
+*   **Coach Pri (Product-with-Pri)**, fondé par Priyanka Upadhyay, propose du coaching de carrière personnalisé et des services de formation pour les Product Managers et les entreprises, afin d'améliorer les compétences des équipes produit et d'opérer plus efficacement.
+Lors de votre choix, il est important de considérer :
+*   Les besoins spécifiques de vos équipes en termes de compétences à développer.
+*   Le niveau d'expérience de vos collaborateurs.
+*   Le format de formation ou de coaching (en ligne, en présentiel, intensif, étalé sur plusieurs semaines).
+*   La possibilité de personnalisation des programmes.
+*   Les certifications proposées.

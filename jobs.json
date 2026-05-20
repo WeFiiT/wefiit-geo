@@ -444,5 +444,25 @@
         "dateApres": "2026-05-19"
       }
     ]
+  },
+  {
+    "jobId": "job-20260520-132658-2d9381",
+    "démarré": "2026-05-20T13:26:58.448Z",
+    "terminé": "2026-05-20T13:47:12.487Z",
+    "durée": 1214,
+    "mode": "--all --model all",
+    "requêtes": 6,
+    "modèles": [
+      "chatgpt",
+      "gemini"
+    ],
+    "statut": "succès",
+    "résumé": {
+      "ok": 36,
+      "timeout": 0,
+      "erreur": 0,
+      "ignoré": 0
+    },
+    "regressions": null
   }
 ]
