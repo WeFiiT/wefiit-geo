@@ -7,7 +7,7 @@ import { KEYWORDS_PER_BATCH } from "@/shared/rank-tracking";
 
 const SINGLE_ATTEMPT_STEP_CONFIG = {
   retries: { limit: 0, delay: "1 second" as const },
-  timeout: "2 minutes" as const,
+  timeout: "5 minutes" as const,
 };
 
 type KeywordEntry = { id: string; keyword: string };
