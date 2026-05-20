@@ -90,39 +90,31 @@ export function getProjectNavGroups(projectId: string) {
   const all = getProjectNavItems(projectId);
   const bySegment = (seg: string) => all.find((i) => i.matchSegment === seg)!;
 
+  const geoItem = linkOptions({
+    to: "/p/$projectId/geo" as const,
+    label: "GEO Visibility",
+    icon: Brain,
+    matchSegment: "/geo",
+    params: { projectId },
+    search: {},
+  });
+
   return [
     {
       type: "group" as const,
-      label: "Keywords",
+      label: "SEO",
       icon: Search,
-      matchSegments: ["/keywords", "/saved", "/rank-tracking"],
+      matchSegments: ["/rank-tracking", "/keywords", "/audit", "/domain"],
       items: [
-        bySegment("/keywords"),
-        bySegment("/saved"),
         bySegment("/rank-tracking"),
-      ],
-    },
-    {
-      type: "group" as const,
-      label: "Domain",
-      icon: Globe,
-      matchSegments: ["/domain", "/backlinks", "/audit"],
-      items: [
-        bySegment("/domain"),
-        bySegment("/backlinks"),
+        bySegment("/keywords"),
         bySegment("/audit"),
+        bySegment("/domain"),
       ],
-    },
-    {
-      type: "group" as const,
-      label: "AI Visibility",
-      icon: Sparkles,
-      matchSegments: ["/brand-lookup", "/prompt-explorer", "/geo"],
-      items: [bySegment("/brand-lookup"), bySegment("/prompt-explorer"), bySegment("/geo")],
     },
     {
       type: "standalone" as const,
-      item: aiNavItem,
+      item: geoItem,
     },
   ];
 }
