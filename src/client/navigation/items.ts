@@ -63,7 +63,7 @@ const projectNavItems = [
   },
   {
     to: "/p/$projectId/geo" as const,
-    label: "GEO Visibility",
+    label: "GEO",
     icon: Brain,
     matchSegment: "/geo",
   },
@@ -92,7 +92,7 @@ export function getProjectNavGroups(projectId: string) {
 
   const geoItem = linkOptions({
     to: "/p/$projectId/geo" as const,
-    label: "GEO Visibility",
+    label: "GEO",
     icon: Brain,
     matchSegment: "/geo",
     params: { projectId },
