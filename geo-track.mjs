@@ -539,6 +539,30 @@ async function main() {
       writeFileSync(RETRY_PENDING_PATH, JSON.stringify({ créé: new Date().toISOString(), jobIdOrigine: jobId, manquants: encoreManquants }, null, 2), 'utf-8');
       await notifierTelegram(`⚠️ <b>GEO Retry manuel partiel</b> — ${dateJour}\nEncore manquant(s) : ${encoreManquants.map(m => `${m.id}/${m.model}`).join(', ')}`);
     }
+
+    // Push geo-monitoring
+    try {
+      const { execSync, spawnSync } = await import('child_process');
+      const opts = { stdio: 'inherit', shell: true, cwd: BASE_DIR };
+      execSync(`git add historique.json responses/ jobs.json audit.json`, opts);
+      try { execSync(`git commit -m "GEO update ${dateJour} (--retry-failed)"`, opts); } catch (e) { if (!e.message?.includes('nothing to commit')) throw e; }
+      spawnSync('git', ['push'], { stdio: 'inherit', shell: true, cwd: BASE_DIR, timeout: 30000 });
+    } catch (e) { console.log('⚠️  Push geo-monitoring échoué :', e.message?.split('\n')[0]); }
+
+    // Push open-seo
+    try {
+      const { execSync, spawnSync } = await import('child_process');
+      const openSeoDir = `${BASE_DIR}/../open-seo`;
+      copyFileSync(HISTORIQUE_PATH, join(openSeoDir, 'public/historique.json'));
+      copyFileSync(JOBS_PATH, join(openSeoDir, 'public/jobs.json'));
+      copyFileSync(AUDIT_PATH, join(openSeoDir, 'public/audit.json'));
+      const opts = { stdio: 'inherit', shell: true, cwd: openSeoDir };
+      execSync(`git add public/historique.json public/jobs.json public/audit.json`, opts);
+      try { execSync(`git commit -m "data(geo): retry du ${dateJour}"`, opts); } catch (e) { if (!e.message?.includes('nothing to commit')) throw e; }
+      spawnSync('git', ['push'], { stdio: 'inherit', shell: true, cwd: openSeoDir, timeout: 30000 });
+      console.log('✅ Dashboard open-seo mis à jour');
+    } catch (e) { console.log('⚠️  Push open-seo échoué :', e.message?.split('\n')[0]); }
+
     process.exit(0);
   }
   // ──────────────────────────────────────────────────────────────────────────
@@ -822,7 +846,10 @@ async function main() {
     const dest = `${openSeoDir}/public/historique.json`;
     copyFileSync(HISTORIQUE_PATH, dest);
     const optsOpenSeo = { stdio: 'inherit', shell: true, cwd: openSeoDir };
-    execSync('git add public/historique.json', optsOpenSeo);
+    // Sync jobs.json et audit.json pour le dashboard Santé système
+    copyFileSync(JOBS_PATH, join(openSeoDir, 'public/jobs.json'));
+    copyFileSync(AUDIT_PATH, join(openSeoDir, 'public/audit.json'));
+    execSync('git add public/historique.json public/jobs.json public/audit.json', optsOpenSeo);
     try {
       execSync(`git commit -m "data(geo): run du ${date}"`, optsOpenSeo);
     } catch (commitErr) {
