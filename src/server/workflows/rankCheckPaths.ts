@@ -61,6 +61,11 @@ export async function runLiveCheck(
     const batch = ctx.keywords.slice(i, i + KEYWORDS_PER_BATCH);
     const batchIndex = Math.floor(i / KEYWORDS_PER_BATCH);
 
+    // Pause between batches to avoid DataForSEO SERP Live rate limits (~2 req/s)
+    if (batchIndex > 0) {
+      await step.sleep(`rate-limit-pause-${batchIndex}`, "10 seconds");
+    }
+
     const batchResults = await step.do(
       `live-batch-${batchIndex}`,
       SINGLE_ATTEMPT_STEP_CONFIG,
