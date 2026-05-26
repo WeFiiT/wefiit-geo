@@ -100,6 +100,10 @@ export function getProjectNavGroups(projectId: string) {
 
   return [
     {
+      type: "standalone" as const,
+      item: geoItem,
+    },
+    {
       type: "group" as const,
       label: "SEO",
       icon: Search,
@@ -110,10 +114,6 @@ export function getProjectNavGroups(projectId: string) {
         bySegment("/audit"),
         bySegment("/domain"),
       ],
-    },
-    {
-      type: "standalone" as const,
-      item: geoItem,
     },
   ];
 }
