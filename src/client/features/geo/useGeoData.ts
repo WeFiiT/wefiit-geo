@@ -30,7 +30,7 @@ export type GeoData = {
   matriceScores: Record<string, Record<string, number>>;
   requetes: Array<{ id: string; libelle: string }>;
   toutesRequetes: Array<{ id: string; libelle: string }>;
-  evolutionParRun: Array<{ label: string; date: string; chatgpt: number | null; gemini: number | null }>;
+  evolutionParRun: Array<{ label: string; date: string; chatgpt: number | null; gemini: number | null }>; // taux en %
   topConcurrents: Array<{ nom: string; total: number; freq: number }>;
   maxConcurrent: number;
   verbatims: Array<{ texte: string; modele: string; requete: string; date: string; wefiitCite: boolean; cheminReponse?: string }>;
@@ -64,13 +64,24 @@ function filtre(data: Historique, filtres: GeoFiltres): Historique {
 function transforme(data: Historique): Omit<GeoData, "toutesRequetes"> {
   const requetes = Object.entries(data).map(([id, val]) => ({ id, libelle: val.libelle }));
 
-  // Matrice scores
-  const matriceScores: Record<string, Record<string, number>> = {};
+  // Matrice scores — taux de visibilité en % par requête × modèle
+  type AccuMatrice = { citations: number; runsOk: number };
+  const accuMatrice: Record<string, Record<string, AccuMatrice>> = {};
   for (const [id, { runs }] of Object.entries(data)) {
-    matriceScores[id] = {};
+    accuMatrice[id] = {};
     for (const run of runs) {
-      const existant = matriceScores[id][run.model] ?? 0;
-      matriceScores[id][run.model] = Math.max(existant, scoreNormalise(run.wefiit.citations, run.runsOk));
+      const existant = accuMatrice[id][run.model] ?? { citations: 0, runsOk: 0 };
+      accuMatrice[id][run.model] = {
+        citations: existant.citations + run.wefiit.citations,
+        runsOk: existant.runsOk + run.runsOk,
+      };
+    }
+  }
+  const matriceScores: Record<string, Record<string, number>> = {};
+  for (const [id, modeles] of Object.entries(accuMatrice)) {
+    matriceScores[id] = {};
+    for (const [modele, { citations, runsOk }] of Object.entries(modeles)) {
+      matriceScores[id][modele] = runsOk > 0 ? Math.round((citations / runsOk) * 100) : 0;
     }
   }
 
@@ -116,13 +127,18 @@ function transforme(data: Historique): Omit<GeoData, "toutesRequetes"> {
     deltaVsRunPrecedent = derniere - avantDerniere;
   }
 
-  // Évolution par run (un point = une date × modèle)
-  const parDateModele: Record<string, { chatgpt: number | null; gemini: number | null }> = {};
+  // Évolution par run (un point = une date × modèle) — taux de visibilité en %
+  type AccuEvolution = { citations: number; runsOk: number };
+  const parDateModele: Record<string, { chatgpt: AccuEvolution | null; gemini: AccuEvolution | null }> = {};
   for (const { runs } of Object.values(data)) {
     for (const run of runs) {
       if (!parDateModele[run.date]) parDateModele[run.date] = { chatgpt: null, gemini: null };
       const key = run.model === "chatgpt" ? "chatgpt" : "gemini";
-      parDateModele[run.date][key] = (parDateModele[run.date][key] ?? 0) + run.wefiit.citations;
+      const existing = parDateModele[run.date][key];
+      parDateModele[run.date][key] = {
+        citations: (existing?.citations ?? 0) + run.wefiit.citations,
+        runsOk: (existing?.runsOk ?? 0) + run.runsOk,
+      };
     }
   }
   const evolutionParRun = Object.entries(parDateModele)
@@ -130,8 +146,12 @@ function transforme(data: Historique): Omit<GeoData, "toutesRequetes"> {
     .map(([date, vals]) => ({
       label: date.slice(5), // MM-DD
       date,
-      chatgpt: vals.chatgpt,
-      gemini: vals.gemini,
+      chatgpt: vals.chatgpt && vals.chatgpt.runsOk > 0
+        ? Math.round((vals.chatgpt.citations / vals.chatgpt.runsOk) * 100)
+        : null,
+      gemini: vals.gemini && vals.gemini.runsOk > 0
+        ? Math.round((vals.gemini.citations / vals.gemini.runsOk) * 100)
+        : null,
     }));
 
   // Concurrents avec fréquence

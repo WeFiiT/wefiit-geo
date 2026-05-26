@@ -6,10 +6,10 @@ type Props = {
   modele: string;
 };
 
-function classeScore(score: number) {
-  if (score === 0) return "bg-base-200 text-base-content/40";
-  if (score === 1) return "bg-error/20 text-error";
-  if (score === 2) return "bg-warning/20 text-warning";
+function classeScore(taux: number) {
+  if (taux === 0)   return "bg-base-200 text-base-content/40";
+  if (taux < 34)    return "bg-error/20 text-error";
+  if (taux < 67)    return "bg-warning/20 text-warning";
   return "bg-success/20 text-success";
 }
 
@@ -33,11 +33,11 @@ export function GeoMatriceScores({ requetes, matriceScores, modele }: Props) {
               <tr key={id}>
                 <td className="text-xs max-w-[200px] truncate" title={libelle}>{libelle}</td>
                 {MODELES.map((modele) => {
-                  const score = matriceScores[id]?.[modele] ?? 0;
+                  const taux = matriceScores[id]?.[modele] ?? 0;
                   return (
                     <td key={modele} className="text-center">
-                      <span className={`inline-block rounded px-2 py-0.5 text-xs font-semibold ${classeScore(score)}`}>
-                        {score}/3
+                      <span className={`inline-block rounded px-2 py-0.5 text-xs font-semibold ${classeScore(taux)}`}>
+                        {taux}%
                       </span>
                     </td>
                   );

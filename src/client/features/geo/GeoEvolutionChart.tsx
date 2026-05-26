@@ -23,17 +23,25 @@ export function GeoEvolutionChart({ evolutionParRun, modele }: Props) {
 
   return (
     <div className="card bg-base-100 border border-base-200 p-4 space-y-3">
-      <p className="text-sm font-semibold">Évolution des citations</p>
+      <p className="text-sm font-semibold">Évolution du taux de visibilité</p>
       <div className="h-56">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={evolutionParRun} margin={{ top: 8, right: 12, bottom: 4, left: 0 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="currentColor" opacity={0.12} />
             <XAxis dataKey="label" tick={{ fontSize: 10, fill: "#888" }} tickLine={false} axisLine={false} />
-            <YAxis tick={{ fontSize: 11, fill: "#888" }} tickLine={false} axisLine={false} allowDecimals={false} />
+            <YAxis
+              tick={{ fontSize: 11, fill: "#888" }}
+              tickLine={false}
+              axisLine={false}
+              allowDecimals={false}
+              domain={[0, 100]}
+              tickFormatter={(v: number) => `${v}%`}
+            />
             <Tooltip
               contentStyle={{ fontSize: 12 }}
               cursor={{ stroke: "currentColor", strokeOpacity: 0.2 }}
               labelFormatter={(label, payload) => payload?.[0]?.payload?.date ?? label}
+              formatter={(value: number) => [`${value}%`]}
             />
             <Legend wrapperStyle={{ fontSize: 12 }} />
             {(!modele || modele === "chatgpt") && (
