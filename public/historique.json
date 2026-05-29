@@ -3,290 +3,6 @@
     "libelle": "meilleur cabinet conseil product management",
     "runs": [
       {
-        "date": "2026-04-14",
-        "model": "chatgpt",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 2,
-          "verbatims": [
-            "WeFiiT 👉 Conseil produit complet (strategy, discovery, delivery, product ops). wefiit.com",
-            "5. Wefiit 👉 Expert des environnements complexes (banque, public, grands groupes)"
-          ]
-        },
-        "concurrents": {
-          "Thiga": 2,
-          "McKinsey": 1,
-          "Accenture": 1,
-          "Theodo": 1,
-          "Wivoo": 1,
-          "Delva": 1,
-          "IKXO": 1,
-          "Hubvisory": 1,
-          "Mozza": 1,
-          "Yield Studio": 1,
-          "Yield Advisory": 1,
-          "Stellar": 1
-        }
-      },
-      {
-        "date": "2026-04-14",
-        "model": "gemini",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 0,
-          "verbatims": []
-        },
-        "concurrents": {
-          "Thiga": 3,
-          "Bain": 3,
-          "McKinsey": 3,
-          "BCG": 3,
-          "Hubvisory": 3,
-          "Wivoo": 2,
-          "Publicis Sapient": 1,
-          "Capgemini": 1,
-          "Sia Partners": 1,
-          "Wavestone": 1,
-          "Product People": 1,
-          "Mozza": 1,
-          "Yield Studio": 1
-        }
-      },
-      {
-        "date": "2026-04-15",
-        "model": "chatgpt",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 0,
-          "verbatims": []
-        },
-        "concurrents": {
-          "Bain": 3,
-          "McKinsey": 3,
-          "BCG": 3,
-          "Thoughtworks": 3,
-          "Octo": 1,
-          "OCTO Technology": 1,
-          "Valtech": 1,
-          "Pivotal": 1,
-          "Kea": 1,
-          "Ideo": 1
-        }
-      },
-      {
-        "date": "2026-04-15",
-        "model": "gemini",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 1,
-          "verbatims": [
-            "C'est un collectif de Product Managers très expérimentés qui interviennent sur des missions courtes et intenses (Product Thinking, Interim PM).Yield Studio : Spécialisé dans l'accompagnement des ETI et Grands Comptes pour lancer des produits qui \"tiennent la route\" techniquement et commercialement.Wefiit : Particulièrement efficace pour infuser une culture produit dans des environnements traditionnellement portés sur la \"culture projet\" (DSI, Secteur Public).3."
-          ]
-        },
-        "concurrents": {
-          "Thiga": 3,
-          "McKinsey": 3,
-          "BCG": 3,
-          "Accenture": 2,
-          "Hubvisory": 2,
-          "Mozza": 2,
-          "Capgemini": 2,
-          "Kea": 1,
-          "Bain": 1,
-          "Wivoo": 1,
-          "Yield Advisory": 1,
-          "Product People": 1,
-          "Yield Studio": 1,
-          "Octo": 1,
-          "OCTO Technology": 1,
-          "Wemanity": 1
-        }
-      },
-      {
-        "date": "2026-04-16",
-        "model": "chatgpt",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 3,
-          "verbatims": [
-            "WeFiiT — accompagnement complet",
-            "WeFiiT",
-            "WeFiiT"
-          ]
-        },
-        "concurrents": {
-          "Thiga": 3,
-          "Wivoo": 3,
-          "Delva": 3,
-          "IKXO": 3,
-          "Swood": 2,
-          "TAK": 2,
-          "Hubvisory": 1,
-          "Mozza": 1,
-          "Stellar": 1,
-          "Bain": 1,
-          "McKinsey": 1,
-          "BCG": 1
-        }
-      },
-      {
-        "date": "2026-04-17",
-        "model": "chatgpt",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 3,
-          "verbatims": [
-            "⭐ WeFiiT",
-            "4.8Thiga5.0Delva Lorraine3.8Wivoo, a Wavestone companyIKXO - Product Management5.0WeFiiT4.5ASI Paris - Cabinet Conseil & Product Management5.0TAK5.0WENVISIONUse two fingers to move the mapMaintenez Ctrl pour zoomer© Mapbox Conditions d’utilisation© OpenStreetMap\nVoici une sélection solide et réaliste des meilleurs cabinets de conseil en Product Management (surtout à Paris) — avec différents positionnements selon ton besoin (expertise pure produit vs cabinet plus généraliste).",
-            "WeFiiT\n👉 Cabinet orienté “impact produit”"
-          ]
-        },
-        "concurrents": {
-          "Thiga": 3,
-          "Wivoo": 3,
-          "Delva": 3,
-          "IKXO": 3,
-          "TAK": 3,
-          "Converteo": 1,
-          "Wavestone": 1
-        }
-      },
-      {
-        "date": "2026-04-29",
-        "model": "chatgpt",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 3,
-          "verbatims": [
-            "👉 Modèle hybride conseil + delivery (UX, discovery, MVP). Yield Studio\n✔️ Idéal pour : scale-ups / entreprises qui veulent structurer et exécuter\nWefiit\n👉 Très bon sur les environnements complexes (banque, luxe, médias). Yield Studio+1\n✔️ Idéal pour : grandes organisations, transformation produit dans des systèmes lourds",
-            "Clients grands comptes (Decathlon, Air France, etc.)\n👉 Bon mix entre opérationnel + structuration\n🏢 WeFiiT\nCabinet parisien orienté :\nstructuration d’équipes produit",
-            "Product Ops IKXO\n👉 Bon équilibre entre conseil + exécution\n👉 WeFiiT\nAccompagne grands groupes (Accor, FDJ, etc.) wefiit.com\nPositionnement :"
-          ]
-        },
-        "concurrents": {
-          "Thiga": 3,
-          "Stellar": 3,
-          "Converteo": 2,
-          "Wivoo": 2,
-          "Delva": 2,
-          "IKXO": 2,
-          "Hubvisory": 1,
-          "Mozza": 1,
-          "Yield Studio": 1,
-          "Yield Advisory": 1,
-          "Galadrim": 1
-        }
-      },
-      {
-        "date": "2026-04-29",
-        "model": "gemini",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 0,
-          "verbatims": []
-        },
-        "concurrents": {
-          "Thiga": 3,
-          "McKinsey": 3,
-          "BCG": 3,
-          "Hubvisory": 3,
-          "Wivoo": 3,
-          "Octo": 1,
-          "OCTO Technology": 1,
-          "Bain": 1,
-          "Accenture": 1,
-          "Wavestone": 1
-        }
-      },
-      {
-        "date": "2026-04-30",
-        "model": "chatgpt",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 3,
-          "verbatims": [
-            "Très orienté impact business wivoo.fr | WeFiiT | Spécialiste du PM avec forte présence grands comptes",
-            "delivery pur (faire avancer le produit) | 👉 WeFiiT | Positionnement end-to-end produit : stratégie → ops → data → marketing wefiit.com",
-            "Impli | 🥈 WeFiiT (très solide et en croissance) | Pure player Product (stratégie, discovery, delivery, data, ops)"
-          ]
-        },
-        "concurrents": {
-          "Thiga": 3,
-          "Delva": 3,
-          "Wivoo": 2,
-          "Swood": 2,
-          "Yield Advisory": 2,
-          "IKXO": 2,
-          "Stellar": 2,
-          "TAK": 2,
-          "Yeita": 1,
-          "Accenture": 1,
-          "Capgemini": 1,
-          "McKinsey": 1
-        }
-      },
-      {
-        "date": "2026-04-30",
-        "model": "gemini",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 0,
-          "verbatims": []
-        },
-        "concurrents": {
-          "Thiga": 3,
-          "Wivoo": 3,
-          "Accenture": 2,
-          "Theodo": 2,
-          "Hubvisory": 2,
-          "Octo": 1,
-          "OCTO Technology": 1,
-          "McKinsey": 1,
-          "BCG": 1,
-          "Yield Studio": 1
-        }
-      },
-      {
-        "date": "2026-05-04",
-        "model": "chatgpt",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 2,
-          "previews": [
-            "👉 Idéal si tu veux un mix product + data-driven + execution. | 3. WeFiiT (très orienté impact) | Spécialiste du Product Management depuis 2019 wefiit…",
-            "🚀 Cabinets hybrides (Product + Tech / Data) | WeFiiT | Couverture complète : Product, Data, Marketing, Ops | Clients grands comptes (Accor, LV, etc.)"
-          ],
-          "reponsesChemins": [
-            "responses/pm-general-2026-05-04-chatgpt-run1.txt",
-            "responses/pm-general-2026-05-04-chatgpt-run2.txt",
-            "responses/pm-general-2026-05-04-chatgpt-run3.txt"
-          ]
-        },
-        "concurrents": {
-          "Thiga": 2,
-          "Wivoo": 2,
-          "Delva": 2,
-          "Swood": 2,
-          "IKXO": 2,
-          "TAK": 2,
-          "Converteo": 1,
-          "McKinsey": 1,
-          "Yield Advisory": 1,
-          "Yeita": 1
-        }
-      },
-      {
-        "date": "2026-05-04",
-        "model": "gemini",
-        "runsOk": 0,
-        "wefiit": {
-          "citations": 0,
-          "previews": [],
-          "reponsesChemins": []
-        },
-        "concurrents": {}
-      },
-      {
         "date": "2026-05-05",
         "model": "chatgpt",
         "runsOk": 3,
@@ -1370,230 +1086,83 @@
         },
         "rang": null,
         "totalCabinets": null
+      },
+      {
+        "date": "2026-05-29",
+        "model": "gemini",
+        "runsOk": 3,
+        "wefiit": {
+          "citations": 3,
+          "previews": [
+            "*   **WeFiiT** : Cette agence de conseil est appréciée pour son approche collaborative et son engagement à créer des produits numériques à fort impact. WeFiiT couvre l'ensemble du cycle de vie produit…",
+            "*   **WeFiiT** : Ce cabinet est un expert du Product Management, du Product Data & IA, du Product Marketing, du Product Quality et du Product Ops. Ils mettent l'accent sur le renforcement des équipes …",
+            "*   **WeFiiT** : Ce cabinet se spécialise dans la structuration du produit dans des contextes complexes et accompagne tout le cycle de vie produit, de la stratégie à la livraison, avec un suivi sur me…"
+          ],
+          "reponsesChemins": [
+            "responses/pm-general-2026-05-29-gemini-run1.txt",
+            "responses/pm-general-2026-05-29-gemini-run2.txt",
+            "responses/pm-general-2026-05-29-gemini-run3.txt"
+          ]
+        },
+        "verbatims": [
+          "Pour trouver le meilleur cabinet de conseil en product management, il est essentiel de considérer leurs spécialisations et leurs approches. Plusieurs cabinets se distinguent en France par leur expertise et leur réputation dans ce domaine.\nParmi les cabinets les plus reconnus en product management, on retrouve régulièrement :\n*   **Thiga** : Souvent citée comme pionnière du Product Management en France, Thiga est reconnue pour son expertise complète en stratégie, organisation, opérationnel et formation produit. L'agence collabore avec des marques de renommée mondiale et propose également la Thiga Academy pour la montée en compétences.\n*   **Mozza** : Ce cabinet se distingue par sa capacité à transformer des visions en produits numériques performants, avec une forte expertise en IA et UX. Mozza accompagne les entreprises dans le développement, l'amélioration et le lancement de produits innovants.\n*   **WeFiiT** : Cette agence de conseil est appréciée pour son approche collaborative et son engagement à créer des produits numériques à fort impact. WeFiiT couvre l'ensemble du cycle de vie produit, de la stratégie à la livraison, avec un suivi sur mesure.\n*   **Yield Studio (ou Yield Advisory)** : Mettant l'accent sur la réconciliation entre la technologie, le business et l'utilisateur, Yield Studio est reconnu pour sa capacité à structurer une démarche produit robuste et à livrer des produits concrets et performants. Le cabinet excelle dans la transformation digitale, la gestion de backlog et de roadmap, ainsi que les tests et la recherche utilisateurs.\n*   **Wivoo** : Spécialisée en Product, Design et Data, Wivoo est reconnue pour son excellence, sa sélection rigoureuse et son approche \"full cycle\" du produit.\n*   **Monsieur Guiz** : Ce cabinet se concentre sur le Product Management centré sur la valeur et l'amélioration continue, adoptant une approche \"user-centric\" et agile.\n*   **Hubvisory** : Ce collectif d'experts aide les grandes entreprises à concevoir, structurer et faire évoluer leurs organisations produit.\nD'autres agences comme Hexium, Winqo et Eleven Labs sont également mentionnées pour leur expertise en product management.\nCes cabinets offrent une gamme de prestations couvrant la stratégie produit, la \"discovery\", la \"delivery\", le design, la formation et parfois l'intégration de la data et de l'IA. Faire appel à une agence de Product Management permet de bénéficier d'une expertise pointue pour concevoir et faire évoluer des produits numériques, aligner la stratégie, les équipes et les objectifs commerciaux.",
+          "Pour trouver le \"meilleur\" cabinet de conseil en product management, il est important de considérer que le choix idéal dépendra de vos besoins spécifiques, de votre industrie, de votre budget et de la culture de votre entreprise. Cependant, plusieurs cabinets sont régulièrement cités pour leur expertise et leur approche innovante.\nVoici une liste de cabinets de conseil en product management reconnus, en distinguant les cabinets globaux et les cabinets français spécialisés :\n**Cabinets de conseil globaux avec une forte expertise en Product Management :**\n*   **McKinsey Product Development** : Ce cabinet aide les entreprises à se transformer en organisations axées sur le produit, en conseillant sur la stratégie de portefeuille, l'innovation et les modèles opérationnels de produit. En 2026, leur \"McKinsey Product AI\" est cité pour analyser les retours clients et les données d'utilisation afin de prioriser les fonctionnalités à fort ROI.\n*   **BCG Product & Innovation (Boston Consulting Group)** : Le BCG se concentre sur la croissance axée sur le produit (Product-Led Growth - PLG), l'expérimentation rapide et la validation de l'adéquation produit-marché. Leur \"BCG Discovery AI\" de 2026 automatise les enquêtes utilisateurs et génère des rapports de synthèse.\n*   **Bain & Company** : Leurs consultants en product management sont spécialisés dans la stratégie de prix, l'offre groupée de produits et la monétisation des fonctionnalités. Leur \"Bain Value Modeler\" est utilisé pour quantifier la volonté des clients à payer pour chaque fonctionnalité.\n*   **Deloitte** : Ce cabinet se concentre sur les opérations produit (Product Ops), alignant les équipes d'ingénierie, de design et de produit. Ils mettent en œuvre des outils d'analyse produit et des pipelines de feedback.\n*   **Productboard (Product Excellence Consulting)** : Bien qu'étant une plateforme de product management, Productboard propose également des services de conseil pour aider les équipes à adopter les meilleures pratiques axées sur le produit.\n*   **Kearney** : Ce cabinet de conseil en management offre des services complets de conseil en produits qui améliorent la valeur des produits tout au long de leur cycle de vie.\n*   **Integrated Project Management Company, Inc. (IPM)** : IPM se spécialise dans le développement de produits et la gestion du cycle de vie, en appliquant une gestion de projet professionnelle pour gérer les complexités de la mise sur le marché de nouveaux produits.\n**Cabinets de conseil en Product Management spécialisés en France :**\nPlusieurs sources mettent en avant des acteurs français pour leur expertise concrète et leur capacité à livrer des résultats tangibles :\n*   **Thiga** : Souvent cité comme un cabinet pionnier en Product Management en France, Thiga est reconnu pour son expertise en stratégie, organisation, opérationnel et formation produit. Ils accompagnent des entreprises technologiques et de grandes marques.\n*   **Mozza** : Ce cabinet est reconnu pour transformer les visions en produits numériques performants, avec une approche axée sur l'innovation et une forte expertise en IA et UX.\n*   **Yield Advisory (Yield Studio)** : Positionné comme un copilote produit pour les ETI et Grands Comptes, Yield Advisory est mentionné pour sa capacité à structurer une démarche produit robuste et à livrer des produits concrets.\n*   **WeFiiT** : Ce cabinet est un expert du Product Management, du Product Data & IA, du Product Marketing, du Product Quality et du Product Ops. Ils mettent l'accent sur le renforcement des équipes avec des talents Product et une approche axée sur la pratique.\n*   **Wivoo** : Cette agence est spécialisée en Product, Design et Data, reconnue pour son excellence, sa sélection rigoureuse et son approche \"full cycle\".\n*   **Monsieur Guiz** : Ce cabinet est un expert du Product Management centré sur la valeur et l'amélioration continue, avec une approche axée sur l'utilisateur et agile.\n*   **Hubvisory** : Ce collectif d'experts Product aide les grandes entreprises à concevoir, structurer et faire évoluer leurs organisations produit.\n*   **Lity** : Ce cabinet de conseil et de recrutement product à Paris se concentre sur l'aide aux entreprises pour construire et développer les compétences de leurs équipes Product.\n**Critères pour choisir un cabinet de conseil en Product Management :**\nPour sélectionner le bon partenaire, il est crucial de prendre en compte plusieurs aspects:\n*   **Expertise technique et sectorielle** : Assurez-vous que le cabinet possède une connaissance approfondie de votre secteur d'activité et une maîtrise des frameworks produit.\n*   **Capacité à s'intégrer à la culture de votre entreprise** : Le succès de la mission dépendra de la capacité du consultant à travailler en synergie avec vos équipes.\n*   **Approche concrète et orientée résultats** : Privilégiez les cabinets qui se concentrent sur la livraison de produits fonctionnels et l'obtention d'un impact mesurable, plutôt que de simples rapports théoriques.\n*   **Agilité et adaptabilité** : Un bon cabinet doit savoir analyser les retours utilisateurs, interpréter les données et ajuster la roadmap produit en conséquence.\n*   **Alignement des équipes** : Le cabinet doit favoriser l'alignement entre les équipes de développement, de design et de marketing pour optimiser le time-to-market.\nEn résumé, le \"meilleur\" cabinet sera celui qui correspondra le mieux à vos enjeux spécifiques et qui pourra vous accompagner efficacement de la stratégie à la livraison de produits performants.",
+          "Pour trouver les meilleurs cabinets de conseil en product management, plusieurs acteurs se distinguent, notamment sur le marché français, par leur expertise et les services qu'ils proposent. Voici une sélection des cabinets fréquemment cités pour leur excellence :\n**Cabinets de Conseil Spécialisés en Product Management :**\n*   **Thiga** : Souvent citée comme pionnière en France, Thiga est reconnue pour structurer le produit à grande échelle et pour son approche ultra-cadrée, incluant des frameworks internes comme le Thiga Canvas et le Discovery Sprint. Ils excellent dans le coaching d'équipes, la définition de rôles et la construction de visions produit pour les grandes organisations.\n*   **Yield Studio (Yield Advisory)** : Ce cabinet est décrit comme un copilote produit pour les ETI et Grands Comptes. Il est également mentionné dans plusieurs classements des meilleures agences de Product Management en France.\n*   **Mozza** : Axé sur le \"product thinking en mode commando\", Mozza est un partenaire pour les entreprises tech souhaitant transformer leur vision en produits innovants, avec une forte expertise en IA et UX.\n*   **WeFiiT** : Ce cabinet se spécialise dans la structuration du produit dans des contextes complexes et accompagne tout le cycle de vie produit, de la stratégie à la livraison, avec un suivi sur mesure. WeFiiT met l'accent sur le renforcement des équipes avec les meilleurs talents Product pour construire des produits à fort impact.\n*   **Wivoo** : Cette agence est spécialisée en Product, Design et Data, et est reconnue pour son excellence, sa sélection rigoureuse et son approche \"full cycle\".\n*   **Hubvisory** : Un collectif d'experts produit qui aide les grandes entreprises à concevoir, structurer et faire évoluer leurs organisations produit.\n*   **Monsieur Guiz** : Cet expert du Product Management est centré sur la valeur et l'amélioration continue, avec une approche axée sur l'utilisateur et agile.\n**Autres cabinets et plateformes à considérer :**\n*   **Hexium** et **Winqo** sont également mentionnés parmi les meilleures agences de Product Management en France.\n*   **Eleven Labs** est une autre agence de Product Management bien établie à Paris et Nantes.\n*   Des plateformes comme **Sortlist** et **Clutch.co** répertorient également de nombreux cabinets de conseil en product management en France, permettant de consulter les avis clients et les spécialisations.\n*   Des cabinets de conseil généralistes comme **Bain & Company** offrent également des services de conseil en Product & Portfolio Management, aidant à créer des capacités de gestion de produit de classe mondiale.\n**Critères de choix d'un cabinet de conseil en Product Management :**\nUn bon cabinet de conseil en Product Management ne se contente pas de \"poser une méthode\" ; il s'immerge dans le contexte de l'entreprise, comprend ses contraintes et éclaire les bons arbitrages. Il doit avoir la capacité à descendre sur le terrain, à arbitrer un sprint et à challenger un parcours produit. Les meilleurs profils produits sont souvent passés par la \"delivery\" et savent construire, pas seulement recommander.\nLes services d'un cabinet de conseil en Product Management peuvent couvrir la stratégie produit, la découverte (discovery), la livraison (delivery), le design, la formation et parfois même la data et l'IA. Ils visent à améliorer la satisfaction utilisateur, augmenter la performance produit et accélérer le \"time-to-market\"."
+        ],
+        "concurrents": {
+          "Thiga": 3,
+          "Hubvisory": 3,
+          "Wivoo": 3,
+          "Mozza": 3,
+          "Yield Studio": 3,
+          "Yield Advisory": 3,
+          "Bain": 2,
+          "Kea": 1,
+          "McKinsey": 1,
+          "BCG": 1
+        },
+        "rang": null,
+        "totalCabinets": null
+      },
+      {
+        "date": "2026-05-29",
+        "model": "chatgpt",
+        "runsOk": 3,
+        "wefiit": {
+          "citations": 3,
+          "previews": [
+            "3. WeFiiT",
+            "3. WeFiiT",
+            "WeFiiT"
+          ],
+          "reponsesChemins": [
+            "responses/pm-general-2026-05-29-chatgpt-run1.txt",
+            "responses/pm-general-2026-05-29-chatgpt-run2.txt",
+            "responses/pm-general-2026-05-29-chatgpt-run3.txt"
+          ]
+        },
+        "verbatims": [
+          "Si tu cherches les meilleurs cabinets de conseil spécialisés en Product Management en France (surtout Paris), voici ceux qui reviennent le plus souvent dans l’écosystème produit — avec des positionnements assez différents selon ce que tu recherches : stratégie produit, renfort PM/PO, transformation produit, discovery, ou staffing senior.\nLes références les plus reconnues\n1. Thiga\nThiga\nLe pionnier du Product Management en France. Très fort sur :\ntransformation produit à grande échelle,\ncoaching d’organisations,\ndiscovery,\nacculturation produit,\nformation via Thiga Academy.\nTrès présent dans les grands groupes et scale-ups.\nSouvent considéré comme le “McKinsey du Product” côté France. Impli+1\nIdéal si :\ntu veux structurer une org produit,\nfaire monter des équipes en maturité,\ntravailler avec des consultants très seniors.\n2. Wivoo\nWivoo\nTrès bonne réputation terrain. Positionnement :\nProduct,\nDesign,\nData / IA.\nRéputé pour des consultants pragmatiques et opérationnels. Beaucoup de missions dans des grands comptes tech / digitaux. wivoo.fr\nPoints forts :\nforte culture produit moderne,\nbon niveau des consultants,\nambiance plus “collectif produit” que cabinet traditionnel.\n3. WeFiiT\nWeFiiT\nTrès en croissance depuis quelques années. Focus :\nProduct Management,\nProduct Ops,\nProduct Marketing,\nIA/Data.\nIls bossent avec Accor, FDJ, Louis Vuitton, France TV, etc. wefiit.com+1\nRéputation :\nconsultants solides,\nculture produit mature,\nbon équilibre entre stratégie et delivery.\n4. IKXO\nIKXO\nCabinet très spécialisé Product Management.\nPositionnement orienté :\nrenfort opérationnel,\nProduct Ops,\ncoaching produit,\ndelivery/discovery.\nClients connus : Decathlon, Air France, Sephora, France TV… IKXO\nBon choix si :\ntu veux des PM/PO très opérationnels,\nou un accompagnement produit concret.\n5. Delva\nDelva\nCabinet plus récent mais très apprécié dans l’écosystème produit parisien.\nFondé par des ex-CPO / Head of Product. delva.co\nTrès orienté :\nconsultants seniors,\nmissions PM/PO,\nculture “doers”.\nLeur force :\nmoins de bullshit “consulting classique”, plus d’opérationnel.\n6. TAK\nTAK\nCabinet apprécié dans la communauté produit française.\nPositionnement :\nProduct Management,\nProduct Ops,\ndelivery.\nTrès connecté à l’écosystème French Product. tak.fr\nMon classement selon le besoin\nBesoinCabinet recommandéTransformation produit grande entrepriseThigaPM/PO opérationnels très rapidementDelva / IKXOProduct + Data + IAWivoo / WeFiiTCulture produit moderne & communautéTAKCoaching / montée en maturité produitThiga / Wivoo\nSi tu cherches un job plutôt qu’un prestataire\nEn termes de réputation employeur dans l’écosystème Product français :\nThiga,\nWivoo,\nWeFiiT,\nDelva\nsont souvent vus comme les plus “valorisants” sur un CV Product actuellement.\nMais attention :\ncertains cabinets font surtout du staffing déguisé,\nla qualité dépend énormément de la mission et du manager client,\nmieux vaut privilégier les cabinets où les consultants viennent eux-mêmes du produit.\nLes retours Reddit vont souvent dans ce sens. Reddit+2Reddit+2\nSi tu veux, je peux aussi te faire :\nun classement “top salaire”,\n“meilleur pour carrière PM”,\n“meilleur pour freelance”,\nou “meilleur cabinet product à Paris selon ton niveau (junior/senior/CPO)”.",
+          "Si tu cherches les meilleurs cabinets spécialisés en Product Management en France (et surtout à Paris), voici les références les plus reconnues aujourd’hui selon leur réputation, expertise terrain et présence dans l’écosystème produit.\nLes références du marché\n1. Thiga\nThiga\nLe pionnier du Product Management en France. Très fort sur :\ntransformation produit à grande échelle,\ncoaching PM/PO,\nProduct Discovery,\nformation via la Thiga Academy.\nExcellent pour les grands groupes et scale-ups qui veulent structurer une vraie culture produit. Souvent considéré comme la référence française. Impli+1\n2. Wivoo\nWivoo\nTrès réputé pour le mix :\nProduct,\nDesign,\nData & IA.\nCabinet moderne, très orienté impact business et montée en compétence des équipes. Bon équilibre entre stratégie et opérationnel. wivoo.fr\n3. WeFiiT\nWeFiiT\nTrès présent dans l’écosystème scale-up / grands comptes.\nPoints forts :\nProduct Ops,\nProduct Marketing,\nData/IA,\naccompagnement opérationnel PM/PO.\nRéputation solide sur l’exécution et la qualité des consultants. wefiit.com+1\n4. IKXO\nIKXO\nCabinet très spécialisé Product Management avec approche pragmatique.\nConnu pour :\nrenfort PM/PO,\ncoaching produit,\nProduct Ops,\ndelivery/discovery.\nTrès apprécié pour son côté opérationnel et senior. IKXO\n5. Delva\nDelva\nCabinet plus récent mais qui monte vite.\nPositionnement :\nultra-spécialiste PM,\nconsultants très seniors,\nfondé par ex-CPO.\nTrès bon si tu veux des profils “doers” plutôt que des consultants très théoriques. delva.co\n6. TAK\nTAK\nPlus orienté :\nProduct Delivery,\nProduct Ops,\nData Product.\nCabinet apprécié pour sa communauté produit et son côté très concret terrain. tak.fr\nSelon ton besoin\nPour transformer une organisation produit\n→ Thiga / Wivoo\nPour du PM opérationnel rapidement staffé\n→ Delva / IKXO / WeFiiT\nPour Product + IA + Data\n→ Wivoo / WeFiiT / TAK\nPour rejoindre un cabinet en tant que PM consultant\n→ Wivoo et WeFiiT ont actuellement une très bonne réputation employeur.\nDelva est plus “startup elite”.\nThiga est plus structuré/corporate.\nMon classement global (marché FR)\nCabinetRéputation ProduitOpérationnelTransformation orgaCulture produitThiga⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐Wivoo⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐WeFiiT⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐IKXO⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐Delva⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐TAK⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐\nSi tu veux, je peux aussi te faire :\nle classement des cabinets les mieux payés,\nceux avec la meilleure ambiance,\nceux les plus prestigieux sur CV,\nou les meilleurs pour devenir CPO ensuite.",
+          "Si tu cherches un cabinet vraiment spécialisé Product Management (et pas juste un cabinet de conseil généraliste qui “fait aussi du produit”), voici les références les plus reconnues actuellement en France, surtout à Paris :\nLes plus spécialisés Product Management\nIKXO - Product Management\nTrès réputé dans l’écosystème Product français. Fort focus PM/PO, discovery, organisation produit et accompagnement CPO. Culture très “craft produit”. IKXO\nDelva\nCabinet 100% Product Management fondé par des ex-CPO. Très bon niveau sur PM opérationnel, structuration d’équipes produit et coaching. Delva\nWivoo\nRéférence historique en Product + Design + Data. Souvent cité pour ses consultants seniors et son approche pragmatique. Wivoo\nWeFiiT\nTrès orienté Product Ops, Product Marketing, Data & IA. Bon choix pour scale-ups et grands groupes. WeFiiT\nKANBIOS - Agence digitale de product management et product design\nPlus boutique/agence produit, intéressant si tu veux un accompagnement très opérationnel sur produit + design.\nPlus “transformation produit / organisation”\nThe Spark\nTrès bon sur transformation produit, coaching leadership, Product Operating Model. The Spark\nASI Paris - Cabinet Conseil & Product Management\nPlus gros cabinet, plus corporate, mais solide pour transformation digitale + produit à grande échelle. ASI\nSwood Partners\nBon mix Product + Tech, apprécié dans les environnements engineering-driven. Swood Partners\nSelon ton besoin\nTrouver un PM/PO rapidement → Delva, Wivoo, IKXO\nStructurer une organisation produit → The Spark, IKXO, ASI\nScale-up / startup tech → Delva, WeFiiT, Swood\nGrand groupe / transformation complexe → ASI, Wivoo\nProduct + IA / Data → WeFiiT, Wivoo\nPour beaucoup de profils Product en France, les cabinets les plus “premium” aujourd’hui sont souvent considérés comme :\nIKXO\nWivoo\nDelva\nWeFiiT\nÇa dépend ensuite de ce que tu cherches :\nrecruter des PM ?\nfaire du freelancing ?\nrejoindre un cabinet ?\nfaire accompagner ton équipe produit ?"
+        ],
+        "concurrents": {
+          "Wivoo": 3,
+          "Delva": 3,
+          "IKXO": 3,
+          "Thiga": 2,
+          "TAK": 2,
+          "McKinsey": 1,
+          "Swood": 1
+        },
+        "rang": 3,
+        "totalCabinets": 6
       }
     ]
   },
   "pm-paris": {
     "libelle": "top 5 agences product management Paris",
     "runs": [
-      {
-        "date": "2026-04-14",
-        "model": "chatgpt",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 2,
-          "verbatims": [
-            "3. WeFiiT 👉 Approche full-cycle très solide",
-            "WeFiiT → 100% orientée product"
-          ]
-        },
-        "concurrents": {
-          "Thiga": 3,
-          "Octo": 3,
-          "Mozza": 3,
-          "Yield Studio": 3,
-          "Galadrim": 3,
-          "Hubvisory": 1,
-          "Wivoo": 1
-        }
-      },
-      {
-        "date": "2026-04-14",
-        "model": "gemini",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 0,
-          "verbatims": []
-        },
-        "concurrents": {
-          "Thiga": 3,
-          "Octo": 3,
-          "Hubvisory": 3,
-          "Wivoo": 3,
-          "Delva": 1,
-          "Yield Studio": 1,
-          "Mozza": 1
-        }
-      },
-      {
-        "date": "2026-04-15",
-        "model": "chatgpt",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 0,
-          "verbatims": []
-        },
-        "concurrents": {
-          "Fabernovel": 3,
-          "Xebia": 2,
-          "Wemanity": 2,
-          "Octo": 1,
-          "OCTO Technology": 1,
-          "McKinsey": 1,
-          "BCG": 1,
-          "Capgemini": 1,
-          "Wavestone": 1,
-          "Theodo": 1
-        }
-      },
-      {
-        "date": "2026-04-15",
-        "model": "gemini",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 1,
-          "verbatims": [
-            "WeFiiTUne agence qui mise énormément sur la qualité des profils et l'impact business."
-          ]
-        },
-        "concurrents": {
-          "Thiga": 3,
-          "Hubvisory": 3,
-          "Wivoo": 3,
-          "Octo": 1,
-          "Mozza": 1
-        }
-      },
-      {
-        "date": "2026-04-16",
-        "model": "chatgpt",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 2,
-          "verbatims": [
-            "WeFiiT",
-            "Mozza / WeFiiT → très bons sur coaching & delivery produit Impli"
-          ]
-        },
-        "concurrents": {
-          "Thiga": 3,
-          "Mozza": 3,
-          "Wivoo": 2,
-          "Octo": 2,
-          "Yield Advisory": 2,
-          "Hubvisory": 1,
-          "Wavestone": 1
-        }
-      },
-      {
-        "date": "2026-04-17",
-        "model": "chatgpt",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 3,
-          "verbatims": [
-            "WeFiiT → spécialisé Product Management pour grands comptes wefiit.com",
-            "Thiga, Mozza, WeFiiT, Wivoo, Hubvisory dominent clairement le marché FR Impli",
-            "3. WeFiiT\n👉 Approche full-cycle produit"
-          ]
-        },
-        "concurrents": {
-          "Thiga": 3,
-          "Octo": 2,
-          "Hubvisory": 2,
-          "Wivoo": 2,
-          "Mozza": 2,
-          "IKXO": 1,
-          "TAK": 1,
-          "Yield Advisory": 1
-        }
-      },
-      {
-        "date": "2026-04-29",
-        "model": "chatgpt",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 0,
-          "verbatims": []
-        },
-        "concurrents": {
-          "Theodo": 2,
-          "Xebia": 1,
-          "Pentalog": 1,
-          "Devoteam": 1
-        }
-      },
-      {
-        "date": "2026-04-29",
-        "model": "gemini",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 0,
-          "verbatims": []
-        },
-        "concurrents": {
-          "Thiga": 3,
-          "Hubvisory": 3,
-          "Mozza": 3,
-          "Octo": 2,
-          "Wivoo": 2,
-          "Yield Studio": 1
-        }
-      },
-      {
-        "date": "2026-04-30",
-        "model": "chatgpt",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 3,
-          "verbatims": [
-            "5 Degrés → produit + data + organisation 5 Degrés | WeFiiT → product consulting orienté impact Sortlist | Upgrade → UX/UI + product management upgrade.fr",
-            "Delva → cabinet 100% Product Management fondé par ex-CPO delva.co | WeFiiT → forte présence grands comptes (Accor, LV…) wefiit.com | Monsieur Guiz → mix product + design + data matchfolio.fr",
-            "🧠 Autres très bons acteurs à connaître (hors top 5) | WeFiiT → ultra-spécialiste product (ex-Accor, FDJ…) wefiit.com | Delva → cabinet 100% product avec ex-CPO delva.co"
-          ]
-        },
-        "concurrents": {
-          "Thiga": 3,
-          "TAK": 3,
-          "IKXO": 2,
-          "Delva": 2
-        }
-      },
-      {
-        "date": "2026-04-30",
-        "model": "gemini",
-        "runsOk": 0,
-        "wefiit": {
-          "citations": 0,
-          "verbatims": []
-        },
-        "concurrents": {}
-      },
-      {
-        "date": "2026-05-04",
-        "model": "chatgpt",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 2,
-          "previews": [
-            "🧠 Autres agences reconnues (à considérer) | WeFiiT → cabinet spécialisé produit avec forte croissance Sortlist | IKXO → expertise en product + data +…",
-            "🔎 Autres agences très crédibles (à considérer) | WeFiiT → cabinet spécialisé Product impact business Sortlist | IKXO → conseil + formation Product Ma…"
-          ],
-          "reponsesChemins": [
-            "responses/pm-paris-2026-05-04-chatgpt-run1.txt",
-            "responses/pm-paris-2026-05-04-chatgpt-run2.txt",
-            "responses/pm-paris-2026-05-04-chatgpt-run3.txt"
-          ]
-        },
-        "concurrents": {
-          "Thiga": 3,
-          "IKXO": 3,
-          "TAK": 3,
-          "Delva": 1,
-          "Yeita": 1
-        }
-      },
-      {
-        "date": "2026-05-04",
-        "model": "gemini",
-        "runsOk": 0,
-        "wefiit": {
-          "citations": 0,
-          "previews": [],
-          "reponsesChemins": []
-        },
-        "concurrents": {}
-      },
       {
         "date": "2026-05-05",
         "model": "chatgpt",
@@ -2396,264 +1965,68 @@
         },
         "rang": null,
         "totalCabinets": null
-      }
-    ]
-  },
-  "pm-data": {
-    "libelle": "cabinet spécialisé data product management",
-    "runs": [
-      {
-        "date": "2026-04-14",
-        "model": "chatgpt",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 0,
-          "verbatims": []
-        },
-        "concurrents": {
-          "Thiga": 3,
-          "Octo": 3,
-          "OCTO Technology": 3,
-          "McKinsey": 3,
-          "Accenture": 3,
-          "Artefact": 3,
-          "BCG": 2,
-          "fifty-five": 2,
-          "Capgemini": 2,
-          "Ekimetrics": 2,
-          "Devoteam": 1,
-          "Keyrus": 1,
-          "Theodo": 1,
-          "Xebia": 1,
-          "Eleven Strategy": 1,
-          "Quantmetry": 1,
-          "BAM": 1
-        }
       },
       {
-        "date": "2026-04-14",
-        "model": "gemini",
-        "runsOk": 2,
-        "wefiit": {
-          "citations": 0,
-          "verbatims": []
-        },
-        "concurrents": {
-          "Thiga": 2,
-          "Artefact": 2,
-          "Ekimetrics": 2,
-          "Hubvisory": 2,
-          "Wivoo": 2,
-          "Sia Partners": 1,
-          "McKinsey": 1,
-          "Capgemini": 1,
-          "Converteo": 1,
-          "Quantmetry": 1,
-          "Yield Studio": 1,
-          "Yield Advisory": 1
-        }
-      },
-      {
-        "date": "2026-04-15",
-        "model": "chatgpt",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 0,
-          "verbatims": []
-        },
-        "concurrents": {}
-      },
-      {
-        "date": "2026-04-15",
-        "model": "gemini",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 0,
-          "verbatims": []
-        },
-        "concurrents": {
-          "Wivoo": 3,
-          "Thiga": 2,
-          "Hubvisory": 2,
-          "Accenture": 2,
-          "Converteo": 2,
-          "IKXO": 1,
-          "TAK": 1,
-          "McKinsey": 1,
-          "Capgemini": 1,
-          "Quantmetry": 1
-        }
-      },
-      {
-        "date": "2026-04-16",
-        "model": "chatgpt",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 0,
-          "verbatims": []
-        },
-        "concurrents": {
-          "Octo": 3,
-          "OCTO Technology": 3,
-          "Capgemini": 3,
-          "Artefact": 3,
-          "Ekimetrics": 3,
-          "BAM": 3,
-          "Thiga": 2,
-          "Accenture": 2,
-          "fifty-five": 2,
-          "Keyrus": 1,
-          "Quantmetry": 1,
-          "Theodo": 1,
-          "Xebia": 1,
-          "Sia Partners": 1
-        }
-      },
-      {
-        "date": "2026-04-17",
-        "model": "chatgpt",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 0,
-          "verbatims": []
-        },
-        "concurrents": {
-          "Thiga": 2,
-          "Octo": 2,
-          "OCTO Technology": 2,
-          "McKinsey": 2,
-          "BCG": 2,
-          "Artefact": 2,
-          "Ekimetrics": 2,
-          "fifty-five": 2,
-          "BAM": 2,
-          "Accenture": 1,
-          "Capgemini": 1,
-          "Eleven Strategy": 1,
-          "Bain": 1,
-          "Zenika": 1
-        }
-      },
-      {
-        "date": "2026-04-29",
-        "model": "chatgpt",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 0,
-          "verbatims": []
-        },
-        "concurrents": {
-          "McKinsey": 1,
-          "Accenture": 1,
-          "Capgemini": 1
-        }
-      },
-      {
-        "date": "2026-04-29",
+        "date": "2026-05-29",
         "model": "gemini",
         "runsOk": 3,
         "wefiit": {
           "citations": 1,
-          "verbatims": [
-            "Le Data Product Management est une discipline à la croisée du Product Management classique, de la Data Science et de la stratégie business. En 2026, le marché s'est structuré autour de cabinets qui ne se contentent plus de faire de la \"Data\" ou du \"Produit\" de manière isolée, mais qui fusionnent les…"
+          "previews": [
+            "2.  **WeFiiT**"
+          ],
+          "reponsesChemins": [
+            "responses/pm-paris-2026-05-29-gemini-run1.txt",
+            "responses/pm-paris-2026-05-29-gemini-run2.txt",
+            "responses/pm-paris-2026-05-29-gemini-run3.txt"
           ]
         },
+        "verbatims": [
+          "Here are 5 top product management agencies in Paris:\n*   **TheCodingMachine** This agency is frequently cited for its product management consulting services, alongside custom web and mobile development. They have a 4.8-star rating based on 21 reviews.\n*   **Adeliom** Described as a digital co-pilot for B2B mid-market companies, Adeliom offers services from strategy to execution in digital product development. They have received 21 reviews.\n*   **Yield Studio** Recognized in the B2B services and software sector, Yield Studio has 100% positive feedback from clients, who highlight the quality of collaboration and frequent interactions. Approximately 15% of their activity is dedicated to Product Management.\n*   **ZOL** With over 50 experts, ZOL focuses on personalization and creating unique digital solutions to help companies stand out. They have 23 reviews.\n*   **Shortcut** This agency is also listed among the top product management consultants in Paris.",
+          "Here are 5 top product management agencies in Paris, based on their strong presence in search results, client reviews, and stated expertise:\n*   **TheCodingMachine** is frequently cited as a leading agency with a focus on custom web and mobile development, offering 20 years of expertise and consulting in digital transformation. They hold a rating of 4.8 based on 21 reviews.\n*   **ZOL** is highlighted as a digital agency with over 50 experts, known for their dedication to the success of digital projects. They have a rating of 4.7 with 23 reviews.\n*   **Adeliom** positions itself as a digital co-pilot agency for B2B mid-market companies, assisting from strategy to execution. They have received 21 reviews.\n*   **Yield Studio** is recognized as a product management agency specializing in B2B services and software, with clients consistently praising the quality of their collaboration and daily interactions. Approximately 15% of their activity is dedicated to product management, and they boast 100% positive feedback from clients.\n*   **Shortcut** is also mentioned among the top agencies for product management consulting in Paris, with 3 reviews.\nOther notable agencies that appear in the results include Ikovaline, ALLOHOUSTON, and 40/60 agence UX Design, IA et Développement, which also offer product management expertise.",
+          "Here are five top product management agencies in Paris, distinguished by their dedicated expertise and comprehensive services in product strategy, development, and optimization:\n1.  **5 Degrés**\n5 Degrés positions itself as a consulting agency expertly focused on digital products. The agency offers robust product management services encompassing strategy, product vision, discovery, and delivery. They aim to embed a strong product culture within client organizations, fostering continuous improvement and aligning business objectives with technical capabilities and user needs. Their expertise also extends to product design, development, quality, and data.\n2.  **WeFiiT**\nWeFiiT is a consulting firm in Paris specializing in Product Management. They provide strategic consulting, operational reinforcement, and training across Product Management, Data & AI, Marketing, and Quality. WeFiiT emphasizes building impactful digital products through a committed and passionate team, focusing on clients who recognize the crucial role of product in their organization and seek to create or enhance high-impact digital products.\n3.  **Yield Studio**\nRecognized as a leading product management agency in France, Yield Studio excels in bridging the gap between technology, business, and user needs. They adopt a \"User First\" philosophy, ensuring products genuinely meet customer requirements. Their methodology involves a four-step process: in-depth analysis of user and business challenges, identification of innovative solutions, prototyping, and continuous iteration post-launch. Yield Studio has collaborated with notable brands such as Bpifrance, Carrefour, EDF, and Suzuki.\n4.  **40/60 Studio**\n40/60 Studio is highlighted as an innovative agency that partners with companies to launch and accelerate digital products. Their specialized services cover product strategy, design, and development. They leverage a network of over 25 talents in design and technology, bringing extensive experience to product management initiatives.\n5.  **ASI Paris**\nASI Paris identifies itself as a consulting firm specializing in Product Management, offering a blend of strategic, organizational, UX, project management, and change management expertise. Their multidisciplinary team of over 50 consultants provides significant added value and in-depth knowledge across sectors like banking, insurance, services, and luxury. They assist clients with digital strategy, long-term strategic framing, market analysis, and the launch of new products."
+        ],
         "concurrents": {
-          "Thiga": 3,
-          "Hubvisory": 3,
-          "Wivoo": 3,
-          "Artefact": 2,
-          "Yield Studio": 2,
-          "Accenture": 1,
-          "IKXO": 1,
-          "TAK": 1
-        }
-      },
-      {
-        "date": "2026-04-30",
-        "model": "chatgpt",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 0,
-          "verbatims": []
+          "Yield Studio": 3
         },
-        "concurrents": {
-          "Artefact": 2,
-          "Ekimetrics": 2,
-          "Octo": 1,
-          "OCTO Technology": 1,
-          "McKinsey": 1,
-          "BCG": 1,
-          "Accenture": 1,
-          "fifty-five": 1,
-          "Thiga": 1,
-          "Xebia": 1,
-          "Quantmetry": 1,
-          "Theodo": 1
-        }
+        "rang": 2,
+        "totalCabinets": 5
       },
       {
-        "date": "2026-04-30",
-        "model": "gemini",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 0,
-          "verbatims": []
-        },
-        "concurrents": {
-          "Thiga": 3,
-          "Hubvisory": 3,
-          "Wivoo": 3,
-          "Artefact": 2,
-          "IKXO": 1,
-          "McKinsey": 1
-        }
-      },
-      {
-        "date": "2026-05-04",
+        "date": "2026-05-29",
         "model": "chatgpt",
         "runsOk": 3,
         "wefiit": {
           "citations": 0,
           "previews": [],
           "reponsesChemins": [
-            "responses/pm-data-2026-05-04-chatgpt-run1.txt",
-            "responses/pm-data-2026-05-04-chatgpt-run2.txt",
-            "responses/pm-data-2026-05-04-chatgpt-run3.txt"
+            "responses/pm-paris-2026-05-29-chatgpt-run1.txt",
+            "responses/pm-paris-2026-05-29-chatgpt-run2.txt",
+            "responses/pm-paris-2026-05-29-chatgpt-run3.txt"
           ]
         },
+        "verbatims": [
+          "Voici un top 5 des agences/cabinets les plus reconnus à Paris pour le Product Management, selon leur spécialisation produit, réputation dans l’écosystème tech français et retours clients récents.\nThiga\nLe cabinet de référence en Product Management en France. Très fort sur la stratégie produit, le coaching PM/PO, la transformation produit et la formation via Thiga Academy. Ils travaillent avec des scale-ups comme des grands groupes. Impli\nYield Studio\nTrès apprécié des startups et PME pour leur approche “product + tech + design”. Excellents pour lancer rapidement un MVP, structurer une roadmap et accompagner des équipes produit en croissance. La Fabrique du Net\nTPC - The Product Crew\nCabinet spécialisé dans les métiers du produit (Product Managers, Product Owners, Head of Product). Bonne réputation dans le recrutement et l’accompagnement produit des entreprises tech parisiennes. Impli\nTAK - Conseil en Product et Data Management\nTrès orienté delivery, Product Ops et Data Product Management. Fort réseau produit et communauté active autour des problématiques PM modernes. Idéal pour renforcer une équipe produit existante. tak.fr\nGaladrim\nAgence produit/tech très solide pour les projets web, mobile et IA. Leur force est la combinaison Product Management + développement agile + design. Très bon fit pour startups et projets digitaux complexes. La Fabrique du Net\nSi tu veux, je peux aussi te faire :\nun classement “startup-friendly” vs “grands groupes”,\nles meilleures agences pour du freelance PM,\nles cabinets les plus prestigieux pour carrière Product,\nou un comparatif TJM / budget / spécialités (B2B SaaS, IA, fintech, etc.).",
+          "Voici un top 5 solide des agences / cabinets spécialisés en Product Management à Paris, basé sur leur réputation, expertise produit, références clients et spécialisation PM/UX/Product Strategy :\nThiga\nLe cabinet référence en Product Management en France. Très fort sur :\nProduct Strategy\nProduct Discovery\nCoaching PM/PO\nProduct Ops\nFormation via Thiga Academy\nIls travaillent avec beaucoup de scale-ups et grands groupes. Très bon choix si tu veux une approche “product-first” mature. Impli\nYield Studio\nTrès réputé dans l’écosystème startup/scale-up parisien. Ils combinent :\nProduct Management\nUX/UI\nDéveloppement\nMVP & discovery rapide\nExcellents pour lancer ou accélérer un produit digital. La Fabrique du Net\nGaladrim\nAgence tech + produit très appréciée pour les produits web/mobile/IA. Bon équilibre entre :\nexpertise technique\ndelivery produit\naccompagnement agile\nTrès bon fit pour startups et PME tech. La Fabrique du Net\nASI Paris - Cabinet Conseil & Product Management\nCabinet plus orienté transformation digitale & grands comptes. Fort sur :\norganisation produit\nroadmap\naccompagnement PO/PM\ntransformation agile\nAdapté aux ETI/grands groupes. La Fabrique du Net\nKANBIOS - Agence digitale de product management et product design\nStructure plus boutique/spécialisée, intéressante pour :\nProduct Design\nProduct Discovery\naccompagnement startup\nUX centric\nBon choix si tu cherches une équipe plus agile et proche opérationnellement.\nSi tu veux selon ton besoin :\nStartup / MVP / rapidité → Yield Studio, Galadrim\nGrand groupe / structuration PM → Thiga, ASI\nUX/Product Design très fort → KANBIOS\nFormation PM / coaching équipe → Thiga\nTu veux aussi :\nles meilleures agences “premium”\nles plus adaptées aux startups early-stage\nles moins chères\nles meilleures pour freelances PM\nou un classement orienté IA / SaaS / fintech ?",
+          "Voici une sélection solide des meilleures agences / cabinets spécialisés en Product Management à Paris, selon leur réputation dans l’écosystème produit français, expertise PM/PO, accompagnement scale-up/enterprise et présence dans la communauté produit.\nThiga\nLe pionnier du Product Management en France. Très forte expertise en Product Strategy, Product Discovery, Product Ops, coaching et transformation produit. Ils travaillent avec de grands groupes et des scale-ups. Excellente réputation dans l’écosystème tech français. Impli\nDelva\nCabinet 100% dédié au Product Management fondé par des ex-CPO. Très orienté “doers” et renfort opérationnel PM/PO senior. Bon fit pour startups et scale-ups qui veulent accélérer leur delivery rapidement. delva.co\nWivoo\nTrès reconnu pour son approche Produit + Data + IA. Bonne culture produit moderne, forte sélection des consultants et missions variées Discovery → Delivery. Convient bien aux entreprises en transformation produit/data. wivoo.fr\nASI Paris - Cabinet Conseil & Product Management\nCabinet plus “enterprise” avec expertise transformation digitale, UX, product management et accompagnement organisationnel. Fort historique avec banque, assurance, services et luxe. ASI\nTAK\nTrès apprécié dans la communauté produit française. Forte orientation Product Delivery, Product Ops et Data Product Management. Approche pragmatique et bonne expertise opérationnelle terrain. tak.fr\nSelon ton besoin, je te conseillerais plutôt :\nStartup / scale-up → Delva, TAK\nTransformation produit corporate → Thiga, ASI\nProduit + Data / IA → Wivoo\nCoaching et structuration Product Ops → Thiga\nRenfort PM/PO opérationnel rapide → Delva\nTu veux aussi :\nles meilleures agences “premium” vs “bon rapport qualité/prix”,\ncelles spécialisées SaaS / fintech / IA,\nou un classement pour freelances PM plutôt que cabinets ?"
+        ],
         "concurrents": {
-          "Octo": 3,
-          "OCTO Technology": 3,
-          "Artefact": 3,
-          "Ekimetrics": 3,
-          "fifty-five": 3,
-          "Thiga": 2,
-          "McKinsey": 2,
-          "Accenture": 2,
-          "Capgemini": 2,
-          "Zenika": 2,
-          "Xebia": 2,
-          "Bain": 2,
-          "Theodo": 1,
-          "BCG": 1,
-          "Quantmetry": 1,
-          "Thoughtworks": 1,
-          "Sia Partners": 1,
-          "Fabernovel": 1
-        }
-      },
-      {
-        "date": "2026-05-04",
-        "model": "gemini",
-        "runsOk": 0,
-        "wefiit": {
-          "citations": 0,
-          "previews": [],
-          "reponsesChemins": []
+          "Thiga": 3,
+          "Yield Studio": 2,
+          "TAK": 2,
+          "Galadrim": 2,
+          "Wavestone": 1,
+          "Wivoo": 1,
+          "Delva": 1
         },
-        "concurrents": {}
-      },
+        "rang": null,
+        "totalCabinets": null
+      }
+    ]
+  },
+  "pm-data": {
+    "libelle": "cabinet spécialisé data product management",
+    "runs": [
       {
         "date": "2026-05-05",
         "model": "chatgpt",
@@ -3595,213 +2968,84 @@
         },
         "rang": null,
         "totalCabinets": null
-      }
-    ]
-  },
-  "pmm-general": {
-    "libelle": "cabinet conseil product marketing management",
-    "runs": [
-      {
-        "date": "2026-04-14",
-        "model": "chatgpt",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 0,
-          "verbatims": []
-        },
-        "concurrents": {
-          "Bain": 3,
-          "McKinsey": 3,
-          "Sia Partners": 2,
-          "Wavestone": 2,
-          "Artefact": 2,
-          "Fabernovel": 1,
-          "BCG": 1,
-          "fifty-five": 1
-        }
       },
       {
-        "date": "2026-04-14",
+        "date": "2026-05-29",
         "model": "gemini",
         "runsOk": 3,
         "wefiit": {
-          "citations": 0,
-          "verbatims": []
+          "citations": 3,
+          "previews": [
+            "*   **WeFiiT** se positionne comme un cabinet de conseil en Product Data Management & IA. Il accompagne les entreprises dans la construction de produits Data & IA générant un impact utilisateur concre…",
+            "*   **WeFiiT:** WeFiiT provides consulting in Product Data Management & AI, aiming to build data and AI products that deliver significant user and business impact. They connect data, product, and busi…",
+            "*   **WeFiiT** : Ce cabinet se positionne sur le conseil en Product Data Management & IA, aidant à construire des produits Data & IA générant un impact utilisateur concret et un ROI mesurable. Leurs D…"
+          ],
+          "reponsesChemins": [
+            "responses/pm-data-2026-05-29-gemini-run1.txt",
+            "responses/pm-data-2026-05-29-gemini-run2.txt",
+            "responses/pm-data-2026-05-29-gemini-run3.txt"
+          ]
         },
+        "verbatims": [
+          "Voici plusieurs cabinets et agences spécialisés dans le Data Product Management, ainsi qu'une description de leurs services :\n*   **WeFiiT** se positionne comme un cabinet de conseil en Product Data Management & IA. Il accompagne les entreprises dans la construction de produits Data & IA générant un impact utilisateur concret et un retour sur investissement mesurable. L'entreprise propose un accompagnement à 360° et offre des formations sur mesure. Ses Data Product Managers allient l'approche Produit à l'expertise Data & IA pour transformer les données en produits à forte valeur ajoutée.\n*   **TAK** est une agence de conseil en Management IT spécialisée en Product et Data. Elle met l'accent sur une livraison fiable et rapide. Le cabinet aide à récolter, stocker et structurer les données pour mettre en place une stratégie \"Data Driven\" et transformer les données en décisions éclairées. TAK propose également des formations pour développer les compétences en Product Management.\n*   **Agence 5 Degrés** propose du conseil en \"Product Data and AI consulting\". L'agence aide les organisations à transformer leurs données produit en un outil de gestion stratégique, en combinant design, données et stratégie. Elle vise à donner du sens aux données pour en faire un levier de valeur produit.\n*   **Unnest** se distingue par ses consultants spécialisés en Product Management dotés d'une solide expertise et d'une double compétence en Produit et Data. Ils proposent des modes d'intervention flexibles (à la carte, au forfait ou en régie) et participent activement à la communauté du Data Product Management.\n*   **Elevate**, une agence Data & Technologies Marketing, accompagne la gestion des produits data en s'assurant que chaque projet génère de la valeur et répond aux attentes business. Leurs services incluent la stratégie data, la conduite du changement et l'acculturation/formation.\nDes cabinets de conseil plus généralistes comme **Bain & Company** et **Boston Consulting Group (BCG)** offrent également des services liés à l'analyse de données et aux stratégies numériques qui peuvent inclure le Data Product Management dans le cadre de leurs prestations plus larges.\nLe Data Product Management est une discipline qui fusionne les principes du Product Management avec la science des données et l'analyse pour transformer les données brutes en informations exploitables qui stimulent la croissance de l'entreprise. Les Data Product Managers définissent la vision et la stratégie du produit basé sur les données, collaborent avec les équipes techniques (scientifiques des données, ingénieurs) et non techniques, et supervisent le cycle de vie du produit, de la conception au lancement.",
+          "Several consulting firms specialize in data product management, assisting organizations in leveraging data to create valuable products and drive business outcomes. These firms often offer expertise in various aspects, including strategy, development, and team enablement.\nHere are some examples of specialized cabinets in data product management:\n*   **TAK - Conseil en Product et Data Management:** This agency focuses on IT management consulting, with a specialization in Product and Data. They emphasize reliable and fast delivery, helping clients collect, store, and structure data to implement a data-driven strategy. TAK also offers training programs in Product Management.\n*   **Wivoo:** This consultancy specializes in Product Management, Product Design, and Data. Their data and AI expertise helps clients manage the development, measurement, and optimization of data and AI products to achieve business goals.\n*   **WeFiiT:** WeFiiT provides consulting in Product Data Management & AI, aiming to build data and AI products that deliver significant user and business impact. They connect data, product, and business objectives, explore data potential, and embed solutions into daily usage.\n*   **Unnest:** Unnest offers specialized consultants in Product Management with strong data expertise, providing a dual competence in product and data. They focus on optimizing data processes, improving delivery, and establishing clear data governance.\nThese firms typically assist with various challenges, such as aligning data products with business goals, developing user-centric data solutions, and implementing agile methodologies for data projects. The role of a Data Product Manager (often interchangeable with Data Product Owner) is crucial in these initiatives, bridging the gap between business needs and data capabilities to ensure data products are valuable, usable, and well-governed. They are responsible for defining product data goals, building roadmaps, translating business needs into technical requirements, and ensuring data quality and accessibility.",
+          "Il existe plusieurs cabinets de conseil spécialisés dans le \"data product management\", offrant une expertise pour aider les entreprises à développer et optimiser leurs produits basés sur la donnée. Ces cabinets accompagnent les organisations dans la création de valeur à partir de leurs données, en alliant stratégie produit, compétences en data science et méthodologies agiles.\nParmi les acteurs notables dans ce domaine, on retrouve :\n*   **TAK - Conseil en Product et Data Management** : Cette agence est spécialisée en management IT, Product et Data, mettant l'accent sur une livraison fiable et rapide. Elle propose des missions de renfort d'équipes, du conseil pour booster la livraison, et des services de Product Ops.\n*   **WeFiiT** : Ce cabinet se positionne sur le conseil en Product Data Management & IA, aidant à construire des produits Data & IA générant un impact utilisateur concret et un ROI mesurable. Leurs Data Product Managers combinent approche Produit et expertise Data & IA.\n*   **Converteo** : Ce cabinet propose une offre d'expertises convergentes data, produit et design. Fort de 15 ans de leadership en France dans l'analytics et la data, Converteo accompagne en conseil stratégique et opérationnel, en plaçant la maîtrise de la donnée au cœur des démarches de conception de produits digitaux.\n*   **Yield Advisory** : Cette agence met en avant des experts Data, IA et Product Management engagés pour libérer le potentiel des données. Ils s'intègrent aux équipes clientes pour faire de la donnée un moteur de croissance et de décisions, couvrant l'audit stratégique à l'industrialisation.\n*   **Onepoint** : Ce cabinet de conseil considère le Product Management comme une phase majeure de la transformation digitale. Il propose une approche hybridée du Product Management, soit par le prisme \"data as a product\", soit par l'intégration des enjeux de la data dans un produit généraliste.\n*   **Unnest** : Ce cabinet de conseil Data Tech propose des services de Data Product Management & Gouvernance, incluant des études stratégiques, des schémas directeurs data marketing et de l'aide au déploiement.\nLe rôle du Data Product Manager est une fonction hybride, à l'intersection de la gestion de produit traditionnelle et de la science des données. Ces professionnels travaillent dans des environnements variés, incluant les grandes entreprises technologiques, les startups orientées data ou IA, les entreprises en transformation digitale, et bien sûr, les cabinets de conseil spécialisés. Les services offerts par ces cabinets incluent souvent le renfort opérationnel de Product Managers, l'audit de maturité data des équipes Produit, le Data-driven Design Thinking, et le conseil stratégique en vision et organisation produit."
+        ],
         "concurrents": {
-          "Thiga": 1
-        }
-      },
-      {
-        "date": "2026-04-15",
-        "model": "chatgpt",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 0,
-          "verbatims": []
-        },
-        "concurrents": {
-          "Bain": 3,
-          "McKinsey": 3,
-          "Thiga": 2,
-          "BCG": 2,
-          "fifty-five": 1,
-          "Theodo": 1,
-          "Product People": 1,
-          "Fabernovel": 1,
-          "Artefact": 1,
-          "Onepoint": 1
-        }
-      },
-      {
-        "date": "2026-04-15",
-        "model": "gemini",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 0,
-          "verbatims": []
-        },
-        "concurrents": {
+          "TAK": 3,
           "Bain": 1,
-          "McKinsey": 1,
           "BCG": 1,
-          "TAK": 1
-        }
-      },
-      {
-        "date": "2026-04-16",
-        "model": "chatgpt",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 0,
-          "verbatims": []
+          "Wivoo": 1,
+          "Converteo": 1,
+          "Onepoint": 1,
+          "Yield Advisory": 1
         },
-        "concurrents": {
-          "Thiga": 3,
-          "Bain": 3,
-          "McKinsey": 3,
-          "Octo": 1,
-          "OCTO Technology": 1,
-          "fifty-five": 1,
-          "BCG": 1,
-          "Accenture": 1
-        }
+        "rang": null,
+        "totalCabinets": null
       },
       {
-        "date": "2026-04-17",
-        "model": "chatgpt",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 0,
-          "verbatims": []
-        },
-        "concurrents": {
-          "Bain": 3,
-          "McKinsey": 3,
-          "BCG": 3,
-          "Eleven Strategy": 1,
-          "Fabernovel": 1,
-          "fifty-five": 1,
-          "Thiga": 1,
-          "Theodo": 1,
-          "Publicis Sapient": 1,
-          "Accenture": 1,
-          "Capgemini": 1
-        }
-      },
-      {
-        "date": "2026-04-29",
-        "model": "chatgpt",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 0,
-          "verbatims": []
-        },
-        "concurrents": {
-          "TAK": 1
-        }
-      },
-      {
-        "date": "2026-04-29",
-        "model": "gemini",
-        "runsOk": 0,
-        "wefiit": {
-          "citations": 0,
-          "verbatims": []
-        },
-        "concurrents": {}
-      },
-      {
-        "date": "2026-04-30",
-        "model": "chatgpt",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 0,
-          "verbatims": []
-        },
-        "concurrents": {
-          "Bain": 3,
-          "McKinsey": 3,
-          "Thiga": 2,
-          "BCG": 2,
-          "Octo": 1,
-          "OCTO Technology": 1,
-          "Artefact": 1,
-          "Fabernovel": 1,
-          "Product People": 1
-        }
-      },
-      {
-        "date": "2026-04-30",
-        "model": "gemini",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 0,
-          "verbatims": []
-        },
-        "concurrents": {
-          "Thiga": 1,
-          "McKinsey": 1,
-          "BCG": 1
-        }
-      },
-      {
-        "date": "2026-05-04",
+        "date": "2026-05-29",
         "model": "chatgpt",
         "runsOk": 3,
         "wefiit": {
           "citations": 0,
           "previews": [],
           "reponsesChemins": [
-            "responses/pmm-general-2026-05-04-chatgpt-run1.txt",
-            "responses/pmm-general-2026-05-04-chatgpt-run2.txt",
-            "responses/pmm-general-2026-05-04-chatgpt-run3.txt"
+            "responses/pm-data-2026-05-29-chatgpt-run1.txt",
+            "responses/pm-data-2026-05-29-chatgpt-run2.txt",
+            "responses/pm-data-2026-05-29-chatgpt-run3.txt"
           ]
         },
+        "verbatims": [
+          "Voici quelques formulations possibles selon ce que vous cherchez à exprimer autour d’un cabinet spécialisé en Data Product Management :\nFormulation simple\nCabinet spécialisé en Data Product Management\nCabinet de conseil en Data Product Management\nCabinet expert en produits data et IA\nPositionnement plus premium\nCabinet de conseil spécialisé dans la stratégie et le pilotage de produits data\nCabinet expert en gouvernance, valorisation et product management de la donnée\nCabinet de conseil dédié aux produits data, analytics et IA\nOrientation business / transformation\nCabinet accompagnant les entreprises dans la création et le scaling de produits data\nCabinet de transformation data orienté produit\nCabinet spécialisé dans l’industrialisation des produits data et IA\nVersion startup / moderne\nBoutique de conseil en Data Product Management\nStudio de produits data\nAdvisory spécialisé en Data & AI Products\nEn anglais (souvent utilisé dans le secteur)\nData Product Management Consultancy\nData & AI Product Advisory\nBoutique Consulting Firm specialized in Data Products\nEnd-to-end Data Product Management Consulting\nSi vous voulez, je peux aussi vous aider à :\ntrouver un nom de cabinet,\nrédiger une baseline,\nécrire une description LinkedIn/site web,\ndéfinir une proposition de valeur,\nou positionner le cabinet face à des acteurs comme McKinsey & Company, Accenture ou Artefact.",
+          "Si vous cherchez un cabinet spécialisé en Data Product Management (pilotage de produits data, AI products, gouvernance, analytics products, plateformes data, etc.), voici quelques références reconnues en France et en Europe selon différents positionnements :\nCabinets de conseil spécialisés data / AI / product\nArtefact — Très fort en data, IA générative, data platforms et use cases business orientés produit.\nElevate — Conseil en product management et transformation produit, avec pratique data/AI.\nOCTO Technology — Expertise reconnue en data mesh, plateformes data et organisation produit.\nZenika — Engineering + data + product, souvent orienté modern data stack.\nSia Partners — Forte practice data & AI, accompagnement stratégique et opérationnel.\nCapgemini Invent — Transformation data à grande échelle avec approche produit.\nConverteo — Très orienté data business, analytics products et marketing/data strategy.\n55 — Data consulting centré activation business et measurement.\nTheodo Data & AI — Approche product-centric pour produits IA et data applications.\nCabinets plus “Product Management” avec expertise data\nThiga — Référence produit en France ; intervient sur AI Product Management et data products.\nM33 — Product strategy et organisation produit.\nbam.tech — Product studio avec sujets data/AI.\nOnepoint — Transformation numérique avec fortes équipes data et produit.\nSi votre besoin est très spécifique\nCréer une équipe Data Product\nRecruter un Head of Data Product\nMettre en place un operating model data mesh\nConstruire un produit IA générative\nIndustrialiser des dashboards / analytics products\nFormer des PMs data / AI\nAudit de gouvernance data\nFractional Chief Product Officer Data\n…je peux aussi vous recommander les cabinets les plus adaptés selon :\nvotre taille d’entreprise,\nvotre secteur,\nvotre stack data,\nbudget,\nbesoin stratégique vs delivery opérationnel,\nFrance vs international.",
+          "Si vous cherchez un cabinet spécialisé en Data Product Management en France — notamment autour de Paris — voici quelques acteurs reconnus selon le type d’accompagnement recherché (stratégie data produit, organisation, delivery, IA/data platform, recrutement spécialisé, etc.) :\nConseil & transformation Data Product\nOCTO Technology — fort positionnement produit/data, organisations data mesh, gouvernance et product operating model.\nArtefact — cabinet très orienté data & IA avec expertise data products, use cases métier et industrialisation.\neleven strategy — stratégie data/IA et transformation produit.\nWavestone — transformation digitale et data operating model à grande échelle.\nOnepoint — organisation produit, plateformes data et innovation.\nCapgemini Invent — accompagnement enterprise data & AI products.\nCabinets plus “product-centric”\nThiga — très reconnu en Product Management ; certaines missions couvrent data products et IA products.\nM33 — product strategy & product ops avec approche orientée impact business.\nUX-Republic — UX + Product + data-driven product discovery.\nData / IA engineering avec forte culture produit\nDataiku — davantage plateforme/éditeur, mais avec réseau conseil et expertise data product.\nZenika — culture tech/data/produit moderne.\nSicara (Theodo Data & AI) — IA appliquée et produits data orientés usage métier.\nRecrutement spécialisé Data Product\nBlue Search Conseil — recrutement product/data/tech.\nLicorne Society — profils Product Manager, Data PM, AI PM.\nUrban Linker — recrutement startup/scaleup produit & data.\nSi vous voulez, je peux aussi :\nvous faire un top 5 adapté à votre contexte (startup, grand groupe, freelance, transformation interne, etc.) ;\nidentifier les cabinets les plus forts en AI Product Management ;\nproposer des cabinets plus premium / boutique ;\nou comparer les approches Data PM vs Data Mesh vs AI Product Ops."
+        ],
         "concurrents": {
-          "Bain": 3,
-          "McKinsey": 3,
           "Artefact": 3,
-          "BCG": 2,
-          "Accenture": 2,
-          "Wavestone": 2,
-          "Sia Partners": 2,
-          "Onepoint": 1,
-          "Product People": 1,
-          "fifty-five": 1
-        }
-      },
-      {
-        "date": "2026-05-04",
-        "model": "gemini",
-        "runsOk": 0,
-        "wefiit": {
-          "citations": 0,
-          "previews": [],
-          "reponsesChemins": []
+          "Thiga": 2,
+          "Octo": 2,
+          "OCTO Technology": 2,
+          "Capgemini": 2,
+          "Theodo": 2,
+          "Zenika": 2,
+          "Onepoint": 2,
+          "McKinsey": 1,
+          "Accenture": 1,
+          "Sia Partners": 1,
+          "Converteo": 1,
+          "BAM": 1,
+          "Eleven Strategy": 1,
+          "Wavestone": 1
         },
-        "concurrents": {}
-      },
+        "rang": null,
+        "totalCabinets": null
+      }
+    ]
+  },
+  "pmm-general": {
+    "libelle": "cabinet conseil product marketing management",
+    "runs": [
       {
         "date": "2026-05-05",
         "model": "chatgpt",
@@ -4635,193 +3879,71 @@
         },
         "rang": null,
         "totalCabinets": null
-      }
-    ]
-  },
-  "pm-formation": {
-    "libelle": "je cherche un partenaire pour former mes équipes au product management",
-    "runs": [
-      {
-        "date": "2026-04-14",
-        "model": "chatgpt",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 0,
-          "verbatims": []
-        },
-        "concurrents": {
-          "Thiga": 3,
-          "Theodo": 2,
-          "Xebia": 1
-        }
       },
       {
-        "date": "2026-04-14",
+        "date": "2026-05-29",
         "model": "gemini",
         "runsOk": 3,
         "wefiit": {
           "citations": 0,
-          "verbatims": []
-        },
-        "concurrents": {
-          "Thiga": 2,
-          "Octo": 1,
-          "OCTO Technology": 1,
-          "Wivoo": 1
-        }
-      },
-      {
-        "date": "2026-04-15",
-        "model": "chatgpt",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 0,
-          "verbatims": []
-        },
-        "concurrents": {}
-      },
-      {
-        "date": "2026-04-15",
-        "model": "gemini",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 0,
-          "verbatims": []
-        },
-        "concurrents": {
-          "Thiga": 3,
-          "Stellar": 1,
-          "Octo": 1,
-          "OCTO Technology": 1,
-          "Hubvisory": 1
-        }
-      },
-      {
-        "date": "2026-04-16",
-        "model": "chatgpt",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 3,
-          "verbatims": [
-            "WeFiiT",
-            "WeFiiT",
-            "WeFiiT"
+          "previews": [],
+          "reponsesChemins": [
+            "responses/pmm-general-2026-05-29-gemini-run1.txt",
+            "responses/pmm-general-2026-05-29-gemini-run2.txt",
+            "responses/pmm-general-2026-05-29-gemini-run3.txt"
           ]
         },
+        "verbatims": [
+          "A \"cabinet conseil\" specializing in product marketing and product management offers expert guidance and hands-on support to companies aiming to optimize their product strategy, go-to-market efforts, and overall product lifecycle. These consulting firms help businesses transform their products into growth engines by aligning product development with market needs and business objectives.\n**Product Marketing Management Consulting Services:**\nProduct marketing consultants focus on the intersection of product, marketing, and sales to ensure a product resonates with its target customer and achieves commercial success. Key services often include:\n*   **Positioning and Messaging:** Defining a product's unique value proposition and crafting compelling narratives that clearly communicate its benefits to the target audience. This includes developing positioning statements, compelling one-liners, and customer-facing copy.\n*   **Go-to-Market (GTM) Strategy:** Developing comprehensive plans for product launches, market entry, and expansion. This involves audience definition, messaging, channel strategy, and ensuring cross-functional team alignment.\n*   **Market Research and Customer Understanding:** Conducting qualitative interviews and quantitative surveys to inform positioning, market expansion, and product roadmap decisions. This also includes persona development to better understand target customers.\n*   **Sales Enablement:** Creating collateral and resources that equip sales teams with the necessary tools and messaging to effectively sell the product.\n*   **Pricing and Packaging Strategy:** Grounding and refining pricing models through buyer-validated research to capture the product's true worth.\n*   **Product Launch Support:** Guiding companies through the entire product launch process, from pre-launch positioning to post-launch momentum, to maximize impact.\n*   **Hiring and Interviewing Support:** Assisting in finding, attracting, and placing product marketing talent within a company.\n**Product Management Consulting Services:**\nProduct management consultants provide specialized expertise in managing and developing products, ensuring they deliver meaningful outcomes for both customers and the company. Their services often encompass:\n*   **Product Vision and Strategy:** Defining the long-term direction for products and aligning product strategy with overall business goals.\n*   **Roadmap Development and Execution:** Creating and refining product roadmaps, prioritizing features, and overseeing the execution of product releases with design and engineering teams.\n*   **Fractional Product Leadership:** Providing experienced product leaders (e.g., Fractional CPO/VP/Head of Product, Director/Group PM, Senior Product Managers) to fill immediate needs, address knowledge gaps, or lead specific initiatives.\n*   **Product Operations Optimization:** Streamlining product development processes, improving prioritization and intake workflows, and establishing product operations.\n*   **User Research and Customer Discovery:** Conducting research to ensure the product team is connected to customers and their needs.\n*   **Product Coaching and Mentoring:** Developing the skills of in-house product teams and individual product managers through coaching, accountability groups, and mentoring programs.\n*   **Agile Product Development:** Accelerating product development through structured sprint planning, MVP validation, and user research sprints.\n*   **Organizational Alignment:** Helping to align cross-functional teams and stakeholders on key product goals and strategies.\nThese consulting firms, such as Fluvio, Prodify, Olivine, and Aventi Group, often work with high-growth B2B SaaS companies, consumer tech brands, and fintech companies. They bring an external perspective, proven frameworks, and extensive experience across various industries to help clients navigate complex product challenges, accelerate growth, and improve efficiency.",
+          "It seems you're asking about \"cabinet conseil product marketing management,\" which translates to \"product marketing management consulting firm\" or \"product marketing management consultancy.\" These types of firms specialize in helping businesses develop and execute effective product marketing strategies.\nThey typically offer a range of services, including:\n*   **Market research and analysis:** Understanding target audiences, market trends, and competitive landscapes.\n*   **Product positioning and messaging:** Defining how a product is perceived in the market and crafting compelling narratives.\n*   **Go-to-market strategy:** Planning the launch and introduction of new products or features.\n*   **Pricing strategy:** Determining optimal pricing models for products and services.\n*   **Sales enablement:** Providing sales teams with the tools, content, and training they need to effectively sell products.\n*   **Marketing campaign development and execution:** Creating and managing marketing initiatives across various channels.\n*   **Product lifecycle management:** Guiding products through their entire lifecycle, from introduction to decline.\n*   **Team training and development:** Empowering internal teams with product marketing best practices.\nClients for such consulting firms can range from startups launching their first product to large enterprises looking to optimize their existing product portfolios or enter new markets. They often seek external expertise to gain an objective perspective, access specialized skills, accelerate growth, or overcome specific product marketing challenges.",
+          "A \"cabinet conseil product marketing management,\" or product marketing consulting firm, is a professional service that offers expert guidance and support to businesses aiming to create, launch, or grow a product. These firms provide specialized insights, analysis, and recommendations to optimize a product's journey from conception to market sustainability.\nThe core role of product marketing management is vital for taking a product or service to market and ensuring its continued success. Product marketing consultants act as the voice of the customer, develop effective messaging, empower sales teams, and accelerate product adoption. They help companies enhance their performance, resolve potential issues, and align their product strategy with both customer needs and overarching business objectives.\n**Key services typically offered by product marketing consulting firms include:**\n*   **Market Research and Analysis** Conducting in-depth analyses to understand customer needs, market trends, and competitive landscapes.\n*   **Product Positioning and Messaging** Defining and refining a product's unique value proposition and crafting compelling narratives that resonate with target audiences.\n*   **Go-to-Market (GTM) Strategy** Developing comprehensive plans for launching new products or features, including audience definition, messaging, and channel orchestration.\n*   **Pricing Strategy** Assisting in establishing and refining pricing and packaging strategies based on buyer-validated research.\n*   **Sales Enablement** Creating collateral, training sales staff on product features and benefits, and managing customer relationships to support sales efforts.\n*   **Content Strategy and Campaign Development** Building content that supports the entire product lifecycle and developing cohesive, cross-channel campaigns.\n*   **Persona Development** Creating detailed profiles of target customers to inform marketing and product development.\n*   **Product Development Support** Assisting with the product development process, from ideation and validation of market need to launch.\n**Benefits of engaging a product marketing consulting firm:**\nBusinesses of all sizes can benefit from partnering with product marketing consultants. They bring an unbiased, external perspective, which can help navigate internal company politics and offer fresh frameworks and innovative approaches. Consultants provide access to senior-level experience and a broad range of expertise gained from working with diverse companies, often at a lower cost and faster pace than hiring a full-time employee. They can also help bridge gaps between different internal teams, fostering alignment and accelerating execution of product marketing initiatives.\nIt's important to note the distinction between product marketing and product management. While both roles are collaborative and crucial for product success, product marketing focuses on bringing products to market, building awareness, positioning, and driving sales growth. Product management, conversely, is concerned with guiding product development, strategy, and the overall product lifecycle to meet customer needs."
+        ],
         "concurrents": {
-          "Thiga": 3,
-          "Wivoo": 2,
-          "Delva": 2,
-          "Swood": 2,
-          "IKXO": 2,
-          "Hubvisory": 1,
-          "Mozza": 1,
-          "Yield Studio": 1
-        }
-      },
-      {
-        "date": "2026-04-17",
-        "model": "chatgpt",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 0,
-          "verbatims": []
+          "TAK": 2
         },
-        "concurrents": {
-          "Thiga": 3,
-          "Xebia": 2,
-          "Theodo": 1,
-          "Octo": 1,
-          "OCTO Technology": 1
-        }
+        "rang": null,
+        "totalCabinets": null
       },
       {
-        "date": "2026-04-29",
-        "model": "chatgpt",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 0,
-          "verbatims": []
-        },
-        "concurrents": {}
-      },
-      {
-        "date": "2026-04-29",
-        "model": "gemini",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 0,
-          "verbatims": []
-        },
-        "concurrents": {
-          "Product People": 1,
-          "Thiga": 1
-        }
-      },
-      {
-        "date": "2026-04-30",
-        "model": "chatgpt",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 0,
-          "verbatims": []
-        },
-        "concurrents": {
-          "Thiga": 3,
-          "fifty-five": 2,
-          "Xebia": 1,
-          "Octo": 1,
-          "OCTO Technology": 1
-        }
-      },
-      {
-        "date": "2026-04-30",
-        "model": "gemini",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 0,
-          "verbatims": []
-        },
-        "concurrents": {
-          "Thiga": 2,
-          "Hubvisory": 1
-        }
-      },
-      {
-        "date": "2026-05-04",
+        "date": "2026-05-29",
         "model": "chatgpt",
         "runsOk": 3,
         "wefiit": {
           "citations": 0,
           "previews": [],
           "reponsesChemins": [
-            "responses/pm-formation-2026-05-04-chatgpt-run1.txt",
-            "responses/pm-formation-2026-05-04-chatgpt-run2.txt",
-            "responses/pm-formation-2026-05-04-chatgpt-run3.txt"
+            "responses/pmm-general-2026-05-29-chatgpt-run1.txt",
+            "responses/pmm-general-2026-05-29-chatgpt-run2.txt",
+            "responses/pmm-general-2026-05-29-chatgpt-run3.txt"
           ]
         },
+        "verbatims": [
+          "Voici une sélection de cabinets et agences spécialisés en Product Marketing Management et stratégie produit, surtout orientés B2B / SaaS / innovation, autour de Paris :\nCabinets spécialisés Product Marketing / Product Management\nKANBIOS - Agence digitale de product management et product design — accompagnement produit, product design et stratégie digitale.\nAudacy : Agence Conseil digital / Design thinking / Lean startup — innovation produit, lean startup, go-to-market.\nfrog France — cabinet international reconnu en innovation, expérience produit et transformation digitale.\nConverteo — stratégie data, marketing et croissance produit.\nVO2 GROUP - Tech & Digital consulting company — conseil produit, transformation digitale et expérience client.\nProduct Marketing B2B / SaaS\nPMM for Good — spécialisé en positioning, messaging et product marketing pour startups et scale-ups tech. pmmforgood.com\nGraines de Produit — conseil en Product Marketing B2B et alignment marketing/produit. Graines de Produit\nDistyl — stratégie produit, marketing de l’offre et management de transition. Distyl\nCabinets plus généralistes en stratégie / management\nCabinet de Conseil Management Paris & IA - PALMER Consulting\nMarris Consulting\nA2 Consulting\nSi vous voulez, je peux aussi vous proposer :\nles meilleurs cabinets selon votre secteur (SaaS, luxe, retail, IA, fintech, industrie…),\ndes cabinets adaptés à une startup vs grand groupe,\ndes options freelance Fractional PMM / CPO,\nou les cabinets les plus réputés pour :\ngo-to-market,\npricing,\nproduct launch,\npositioning/messaging,\ngrowth & acquisition.",
+          "Si vous cherchez un cabinet de conseil spécialisé en Product Marketing Management (PMM), voici quelques catégories d’acteurs selon votre besoin :\nCabinets internationaux spécialisés stratégie + go-to-market\nMcKinsey & Company\nBoston Consulting Group (BCG)\nBain & Company\nSimon-Kucher — très fort sur pricing, product strategy et growth\nPwC Strategy&\nCabinets orientés Product Marketing / Growth / SaaS\nKalungi — PMM externalisé pour startups B2B SaaS\nClueso — messaging, positioning et GTM\nGrowth Studio\nForget The Funnel — activation et rétention SaaS\nCabinets / agences en France\nfifty-five — data marketing & product growth\nFabernovel\nWavestone\nOnepoint\nNiji\nSi votre besoin est plus précis\nJe peux aussi vous recommander des cabinets selon :\nPMM B2B SaaS\nlancement produit\npositioning & messaging\npricing\nproduct-led growth\nIA / tech / fintech / healthtech\naccompagnement startup vs grand groupe\nfreelance PMM fractionné\nrecrutement PMM\nOu vous aider à :\nchoisir entre cabinet et freelance,\nestimer les budgets,\nrédiger un brief PMM,\ntrouver des cabinets à Paris spécifiquement.",
+          "Un cabinet de conseil en Product Marketing Management (PMM) aide les entreprises à structurer le lien entre produit, marketing, ventes et croissance.\nLes missions typiques :\nPositionnement produit & messaging\nGo-to-market (GTM)\nPricing & packaging\nProduct launch\nÉtudes utilisateurs & marché\nSales enablement\nProduct-led growth\nOrganisation PMM & recrutement\nQuelques cabinets reconnus selon le besoin :\nCabinets spécialisés Product / PMM\nThiga — product management, product marketing, discovery, organisation produit\nM33 — stratégie produit & growth\nHubvisory — product management & digital product strategy\nfifty-five — data marketing, growth, analytics\nGrowth Tribe — growth marketing & experimentation\nGrands cabinets avec practice PMM / Growth\nMcKinsey Digital\nBCG X\nBain & Company\nAccenture Song\nDeloitte Digital\nSi vous cherchez un cabinet pour :\nSaaS B2B → Thiga, Hubvisory, Bain\nScale-up / startup → M33, Growth Tribe\nTransformation produit + marketing → BCG X, Accenture Song\nData-driven PMM → fifty-five\nSi vous voulez, je peux aussi :\nrecommander des cabinets en France / Paris spécialisés PMM,\nproposer des freelances PMM senior,\nexpliquer les différences entre Product Manager, Product Marketing Manager et Growth Manager,\nou aider à rédiger un brief de mission PMM."
+        ],
         "concurrents": {
-          "Thiga": 3,
-          "Octo": 2,
-          "OCTO Technology": 2,
-          "Xebia": 2,
+          "Bain": 2,
+          "McKinsey": 2,
+          "BCG": 2,
+          "fifty-five": 2,
+          "Converteo": 1,
+          "Fabernovel": 1,
+          "Wavestone": 1,
+          "Onepoint": 1,
+          "Niji": 1,
+          "Thiga": 1,
           "Accenture": 1,
-          "Theodo": 1,
-          "Bain": 1,
-          "McKinsey": 1
-        }
-      },
-      {
-        "date": "2026-05-04",
-        "model": "gemini",
-        "runsOk": 0,
-        "wefiit": {
-          "citations": 0,
-          "previews": [],
-          "reponsesChemins": []
+          "Hubvisory": 1
         },
-        "concurrents": {}
-      },
+        "rang": null,
+        "totalCabinets": null
+      }
+    ]
+  },
+  "pm-formation": {
+    "libelle": "je cherche un partenaire pour former mes équipes au product management",
+    "runs": [
       {
         "date": "2026-05-05",
         "model": "chatgpt",
@@ -5627,72 +4749,73 @@
         },
         "rang": null,
         "totalCabinets": null
+      },
+      {
+        "date": "2026-05-29",
+        "model": "gemini",
+        "runsOk": 3,
+        "wefiit": {
+          "citations": 3,
+          "previews": [
+            "*   **WeFiiT**, cabinet de conseil en Product Management, propose un catalogue de formations structuré autour de six axes de compétences produit (Stratégie, Discovery, Delivery, Data & IA, Influence, …",
+            "*   **WeFiiT** est un cabinet de conseil en Product Management qui propose un catalogue de formations axé sur la stratégie, la découverte, le delivery, la data & IA, l'influence et le bien-être. Leurs…",
+            "*   **WeFiiT** se positionne comme un partenaire produit 360°, offrant du conseil, du renfort opérationnel et de la formation en Product Management. Ils accompagnent de grandes entreprises et des scal…"
+          ],
+          "reponsesChemins": [
+            "responses/pm-formation-2026-05-29-gemini-run1.txt",
+            "responses/pm-formation-2026-05-29-gemini-run2.txt",
+            "responses/pm-formation-2026-05-29-gemini-run3.txt"
+          ]
+        },
+        "verbatims": [
+          "Pour former vos équipes au Product Management, plusieurs partenaires offrent des formations, du coaching et du conseil spécialisés. Le choix dépendra des besoins spécifiques de vos équipes (niveau d'expérience, domaines de compétences à développer, certifications souhaitées, format de formation privilégié).\nVoici quelques partenaires potentiels :\n*   **One Point** propose un programme de formation produit lancé en 2020, incluant trois certifications reconnues : Scrum PSPO 1, SAFe 5.0 Agile Product Manager et Management 3.0. Cette formation requiert un minimum de trois ans d'expérience.\n*   **WiAcadémy par Wivoo** a conçu un format de formation original réparti sur trois demi-journées espacées de trois semaines, permettant aux participants de mettre en pratique leurs apprentissages en entreprise.\n*   **Hubvisory (Le Campus par Hubvisory)**, cabinet de conseil en Product Management, propose des formations certifiées Qualiopi en Product Management, découverte produit, IA et leadership produit, avec des formats sur mesure pour les équipes. Leur offre inclut des ressources en ligne et une journée de pratique en petit groupe.\n*   **Monsieur Guiz**, société de conseil en Product Management, offre des formations courtes pour se perfectionner, couvrant le design thinking, le lean management et des notions de growth.\n*   **Thiga Academy** propose un catalogue complet de formations adaptées à différents niveaux de séniorité (PO, PM, Head of Product, CPO) et expertises (data, product marketing, product designer, no-code). Ils proposent des sessions inter-entreprises ou intra-entreprises, en groupe ou dédiées à votre entreprise, en présentiel ou à distance.\n*   **Product School**, fondée dans la Silicon Valley, offre des formations certifiantes (Product Manager, Product Leader et Product Executive) dispensées par des leaders produit de grandes entreprises technologiques.\n*   **Maestro (Bootcamp PM par Maestro / Maria Schools)** dispense des formations intensives axées sur la pratique, co-conçues avec des experts de startups et scale-ups françaises. Leurs programmes couvrent l'ensemble du cycle des produits numériques, incluant les outils no-code et l'IA.\n*   **IKXO**, cabinet de conseil en Product Management, propose des missions de renfort opérationnel, de formation et de conseil en organisation produit.\n*   **On Train** offre une formation \"Product Management & UX/Design\" visant à rendre les entreprises autonomes face aux nouveaux métiers du digital et de la tech.\n*   **Simplon** propose un programme complet de formation Product Owner / Product Manager pour acquérir les compétences essentielles du métier, incluant la gestion de projet Agile, l'IA appliquée et la data au service du produit.\n*   **ib Cegos** propose diverses formations Product Manager, notamment des certifications SAFe Product Owner/Product Manager (POPM) et SAFe Agile Product Manager (APM).\n*   **OCTO Academy** offre un panel de formations pour accompagner les équipes à monter en maturité sur les sujets liés au produit, couvrant la stratégie produit, la croissance produit et la conception de produits et services responsables.\n*   **Adeliom** est une agence de Product Management reconnue pour son approche axée sur l'accompagnement et la formation.\n*   **WeFiiT**, cabinet de conseil en Product Management, propose un catalogue de formations structuré autour de six axes de compétences produit (Stratégie, Discovery, Delivery, Data & IA, Influence, Bien-être) et intègre les enjeux du Product Marketing, Product Ops et Data & IA. Ils proposent du coaching individuel, du mentorat et des \"Guildes\".\n*   **Yeita** propose des formations et du mentorat produit, avec des ateliers en présentiel sur des étapes clés comme la discovery, la proposition de valeur et la roadmap. Ils offrent également une formation \"Product + IA : Devenir PM Augmenté\".\nDe plus, des services de coaching en Product Management, tels que ceux proposés par **PM Coaching / MentorCruise**, **Tim Herbig** ou **Prodify**, peuvent aider vos équipes à développer des compétences techniques et transversales, à définir une stratégie produit claire et à améliorer la performance globale.",
+          "Pour former vos équipes au Product Management, plusieurs partenaires proposent des formations, du coaching et du conseil adaptés aux besoins des entreprises. Voici une sélection d'organismes et de cabinets spécialisés :\n**Organismes de formation et cabinets de conseil proposant des formations pour les équipes :**\n*   **Thiga Academy** propose un catalogue complet de formations en Product Management, avec des sessions \"intra\" spécifiquement dédiées à votre entreprise, pouvant se dérouler dans leurs locaux, les vôtres, ou à distance. Leurs formations incluent des cas pratiques basés sur l'expérience terrain de leurs consultants.\n*   **Le Campus par Hubvisory** est l'organisme de formation du cabinet de conseil Hubvisory. Ils offrent des ressources en ligne ainsi que des formations comprenant une journée de pratique en petit groupe. Ils proposent des formations certifiées Qualiopi en Product Management, découverte, IA et leadership produit, avec des formats sur mesure pour les équipes.\n*   **WeFiiT** est un cabinet de conseil en Product Management qui propose un catalogue de formations axé sur la stratégie, la découverte, le delivery, la data & IA, l'influence et le bien-être. Leurs programmes sont adaptés aux cas d'usage de votre entreprise et incluent du coaching.\n*   **IKXO** est un cabinet de conseil en Product Management qui propose des missions de renfort opérationnel, de formation et de conseil en organisation produit.\n*   **One Point** propose un programme de formation produit incluant des certifications reconnues comme Scrum PSPO 1, SAFe 5.0 Agile Product Manager et Management 3.0.\n*   **WiAcadémy par Wivoo** offre une formation en Product Management structurée en trois demi-journées espacées sur trois semaines, permettant aux participants de mettre en pratique leurs apprentissages en entreprise.\n*   **Monsieur Guiz**, société de conseil en Product Management, dispose également d'une offre de formation de courte durée pour se perfectionner, abordant le design thinking, le lean management et des notions de growth.\n*   **Product School**, originaire de la Silicon Valley, propose des formations certifiantes en Product Manager, Product Leader et Product Executive, dispensées par des leaders produit de grandes entreprises technologiques.\n*   **Maestro (Maria Schools)** propose des formations intensives et sélectives en Product Management, conçues avec des experts de startups françaises de renom, avec une pédagogie axée sur la pratique et des études de cas réels. Ces formations peuvent être financées par les entreprises.\n*   **Simplon** offre une formation complète pour acquérir les compétences essentielles des métiers de Product Owner et Product Manager.\n*   **ib Cegos** propose diverses formations Product Manager, y compris celles menant aux certifications SAFe Product Owner/Product Manager (POPM) et SAFe Agile Product Manager (APM).\n*   **OCTO Academy** propose un panel de formations pour accompagner vos équipes à monter en maturité sur les sujets liés au Produit, incluant des formations sur mesure.\n*   **Adeliom** est une agence de Product Management reconnue pour son approche d'accompagnement et de formation, avec des équipes dédiées pour s'adapter aux besoins spécifiques de ses clients.\n*   **Yeita** propose des formations et du mentoring en Product Management, y compris des ateliers en présentiel pour des petits groupes et des formations sur le Product + IA, abordant les étapes clés du pilotage produit.\n**Partenaires de coaching en Product Management :**\n*   **Prodify** propose du coaching pour les leaders produit et leurs équipes afin d'accélérer les résultats commerciaux et clients, en évaluant les équipes et en créant des programmes de formation ou de coaching personnalisés.\n*   **Tim Herbig** offre du conseil et du coaching en Product Management, se concentrant sur la stratégie produit, les OKR produit et la découverte produit, à travers des ateliers et des formats éducatifs.\n*   **Product Culture** fournit du coaching pour aider les professionnels du produit à devenir des leaders efficaces, en se concentrant sur la vision, la stratégie et la feuille de route produit.\n*   **MentorCruise** met en relation avec des coachs produit professionnels, comme Kent Lim, pour développer les compétences techniques et comportementales des individus et des équipes.\nPour choisir le partenaire le plus adapté, il est recommandé de définir précisément les besoins de vos équipes (niveau d'expérience, compétences spécifiques à développer, format souhaité – intensif, long, en ligne, en présentiel, intra-entreprise, certifications visées) et de contacter plusieurs de ces organismes pour évaluer leurs offres.",
+          "Pour former vos équipes au Product Management, plusieurs organismes et cabinets de conseil proposent des programmes de formation, du coaching et de l'accompagnement sur mesure en France. Ces partenaires peuvent aider vos équipes à maîtriser l'ensemble du cycle de vie d'un produit numérique, de la stratégie à la livraison, en passant par la découverte et l'analyse des besoins utilisateurs.\nVoici quelques options et types de partenaires que vous pourriez considérer :\n**Organismes de formation spécialisés et Bootcamps :**\n*   **Maestro** propose des bootcamps intensifs et des formations en Product Management, y compris des sessions en cours du soir ou en format intensif. Ils mettent l'accent sur l'apprentissage auprès d'experts terrain des entreprises de la tech et sur des cas produit réels. Maestro est certifié Qualiopi, ce qui permet des financements par les entreprises via les OPCO.\n*   **Thiga Academy** est reconnue comme une référence en France pour la formation produit. Ils offrent un catalogue complet avec des formations de 2 jours selon le niveau de séniorité (PO, PM, Head of Product, CPO) ou l'expertise (data, product marketing, product designer, no-code). Thiga Academy est certifié Qualiopi et propose des formations intra-entreprise pour les équipes.\n*   **Hubvisory (Le Campus)**, une agence de conseil spécialisée dans le Product Management, propose également des formations certifiées Qualiopi. Leurs programmes sont conçus pour être pragmatiques et immédiatement applicables, avec des intervenants qui sont des consultants terrain. Ils offrent des formats sur-mesure incluant des sessions de formation, des workshops, du mentoring et du coaching pour s'adapter aux besoins des équipes.\n*   **Simplon** propose une formation complète de Product Owner / Product Manager pour acquérir les compétences essentielles du métier et évoluer dans des environnements digitaux. Simplon est également certifié Qualiopi.\n*   **OCTO Academy** propose des formations en Product Management pour apprendre le rôle de Product Manager (PM) et maîtriser l'approche par impact (OKR).\n*   **OpenClassrooms** offre un parcours diplômant de Product Manager (équivalent Bac +5) entièrement en ligne et avec un suivi par un mentor produit.\n*   **Montpellier Business School** propose une formation certifiante \"Devenir Product Manager\" qui s'adresse aux chefs de produit, chefs de projets, product owners ou toute personne impliquée dans la gestion de projets.\n**Cabinets de conseil et de coaching :**\n*   **WeFiiT** se positionne comme un partenaire produit 360°, offrant du conseil, du renfort opérationnel et de la formation en Product Management. Ils accompagnent de grandes entreprises et des scale-ups pour structurer, renforcer et faire grandir leurs équipes produit.\n*   **Prodify** propose du coaching pour les leaders produit et leurs équipes afin d'accélérer les résultats commerciaux et clients, ainsi que leur évolution de carrière. Leurs sessions de coaching peuvent être hebdomadaires ou bi-hebdomadaires et sont personnalisées en fonction des besoins individuels et des équipes.\n*   **Product People** offre des services de coaching personnalisés pour aider les Product Managers et leurs équipes à exceller dans l'industrie. Leurs coaches sont des experts en produit avec des expériences variées.\n*   **Tim Herbig** propose des services de conseil, de coaching et de formation en Product Management, se concentrant sur la stratégie produit, les OKR produit et la découverte produit.\n*   **Product Labs** propose des services de conseil, de coaching et de mentorat en Product Management, incluant des programmes de coaching 1:1, des groupes de responsabilisation et des formations en ligne.\n**Aspects clés couverts par ces partenaires :**\nCes formations et accompagnements abordent généralement :\n*   La définition de la vision et de la stratégie produit.\n*   La recherche utilisateur et l'analyse des besoins.\n*   Les méthodes de Discovery pour construire des produits à forte valeur.\n*   La gestion du développement produit et les méthodologies Agile (Scrum).\n*   Le Go-to-Market et l'impact.\n*   Les outils no-code et l'intégration de l'IA dans le produit.\n*   Le leadership, la communication et la gestion des parties prenantes.\n*   Les OKR (Objectives and Key Results) pour une approche par impact.\nLorsque vous choisissez un partenaire, il est recommandé de considérer :\n*   **Le format** (intensif, cours du soir, en ligne, présentiel, intra-entreprise).\n*   **L'expérience des formateurs/coachs** (beaucoup mettent en avant des experts issus de la tech).\n*   **La certification** (Qualiopi est un gage de qualité et facilite les financements).\n*   **La personnalisation** de l'offre en fonction des besoins spécifiques de vos équipes.\n*   **Les témoignages** et retours d'expériences d'anciennes entreprises clientes."
+        ],
+        "concurrents": {
+          "Thiga": 3,
+          "Octo": 3,
+          "Hubvisory": 3,
+          "Wivoo": 2,
+          "Yeita": 2,
+          "IKXO": 2,
+          "Product People": 1
+        },
+        "rang": null,
+        "totalCabinets": null
+      },
+      {
+        "date": "2026-05-29",
+        "model": "chatgpt",
+        "runsOk": 3,
+        "wefiit": {
+          "citations": 0,
+          "previews": [],
+          "reponsesChemins": [
+            "responses/pm-formation-2026-05-29-chatgpt-run1.txt",
+            "responses/pm-formation-2026-05-29-chatgpt-run2.txt",
+            "responses/pm-formation-2026-05-29-chatgpt-run3.txt"
+          ]
+        },
+        "verbatims": [
+          "Voici plusieurs pistes solides pour trouver un partenaire de formation en product management pour vos équipes en France, selon votre contexte (acculturation, montée en compétence PM, transformation produit, coaching managers, etc.).\nCabinets et organismes reconnus en France\nThiga Academy\nSpécialiste du product management et du product design.\nTrès adapté si vous voulez :\nstructurer une culture produit,\nformer des PM juniors à seniors,\naccompagner une transformation produit à l’échelle.\nIls proposent des formations intra-entreprise et des parcours sur mesure.\nMalt Academy / Formation Produit\nPermet aussi d’identifier des formateurs indépendants seniors en product management.\nIntéressant pour :\ndes besoins ponctuels,\ndes ateliers ciblés,\ndu coaching PM/PO,\ndes budgets plus flexibles.\nXPM Institute\nApproche très orientée pratique et opérationnelle.\nBon fit pour :\néquipes produit en croissance,\nproduct ops,\ndiscovery,\ndelivery agile.\nCegos\nActeur corporate classique avec catalogue large.\nPlus pertinent si vous cherchez :\nun partenaire référencé grands comptes,\ndes dispositifs RH/LMS,\ndes formations certifiantes.\nESSEC Executive Education\nFormat plus “executive” et stratégique.\nAdapté pour :\nmanagers produit,\ndirection produit,\nleadership et stratégie produit.\nCabinets de conseil produit qui font aussi de la formation\nThiga\nLe plus connu en France sur le sujet “product culture”.\nKeleo\nTrès fort sur agile + produit + organisation.\nFifty-Five\nPlus data-driven / product analytics.\nFabernovel\nPositionnement innovation / transformation numérique.\nSi vous voulez un partenaire plus “sur mesure”\nLe meilleur modèle est souvent :\naudit des compétences produit,\ndéfinition d’une matrice de compétences,\nparcours différenciés :\nPO,\nPM,\nEngineering Managers,\nleaders,\ncoaching terrain,\nateliers sur vos vrais produits.\nDans ce cas, un cabinet boutique ou un collectif d’experts fonctionne souvent mieux qu’un organisme standard.\nComment choisir le bon partenaire\nJe vous conseille de comparer sur 5 critères :\nCritèreCe qu’il faut vérifierNiveau des formateursanciens PM réels ou seulement formateursPersonnalisationadaptation à vos produits et contexteÉquilibre théorie/pratiqueateliers concrets vs slidesCapacité de coachingaccompagnement après formationRéférencesscale-up, corporate, SaaS, industrie, etc.\nCe qui change beaucoup la recommandation\nLe bon partenaire dépend surtout de :\nla taille de vos équipes,\nle niveau actuel des PM/PO,\nvotre maturité produit,\nvotre secteur,\nsi vous voulez de la formation ou une vraie transformation produit.\nPar exemple :\nune startup de 30 personnes → collectif expert / coaching embarqué,\nun grand groupe → cabinet structuré + académie,\nune équipe tech très delivery → focus discovery et stratégie produit,\ndes PO Scrum → transition vers PM moderne.\nSi vous me donnez :\nla taille des équipes,\nvotre secteur,\nle niveau actuel des PM/PO,\net votre objectif (acculturation, autonomie PM, discovery, leadership, transformation produit…),\nje peux vous recommander 3 partenaires vraiment adaptés à votre cas et même vous aider à préparer un brief de consultation.",
+          "Pour trouver un bon partenaire de formation en product management pour vos équipes, le plus efficace est de partir de votre contexte : niveau des équipes, taille, langue, culture produit actuelle, et objectifs (discovery, delivery, leadership produit, IA, agile, B2B SaaS, etc.).\nVoici les types d’acteurs les plus solides selon les besoins habituels des entreprises :\nCabinets et organismes spécialisés Product Management\nThiga — très reconnu en France pour les formations PM, discovery, product ops, leadership produit.\nMalt Academy / formations Product — utile si vous cherchez des formateurs indépendants seniors adaptés à un contexte spécifique.",
+          "Voici plusieurs types de partenaires à considérer pour former vos équipes au Product Management, selon votre objectif (montée en compétence, transformation produit, coaching managers, certifications, culture produit, etc.).\nCabinets et organismes reconnus en France\nThiga — cabinet français très reconnu en Product Management, avec formations intra-entreprise, coaching et accompagnement transformation produit.\nTheodo — approche très orientée delivery produit/tech/agilité, utile pour équipes mixtes produit-tech.\nSchool of Product — formations spécialisées PM, PO et leadership produit.\nMalt Academy — permet aussi de trouver des formateurs indépendants seniors en Product Management.\nLe Laptop — formations produit et innovation, format bootcamp possible.\nESSEC Executive Education — programmes exécutifs pour managers et directions produit.\nCegos — intéressant pour des parcours structurés en entreprise à grande échelle.\nPartenaires internationaux (si vous cherchez un niveau “best practices” global)\nProduct School — très connu pour certifications PM et formation d’équipes produit.\nMind the Product — communauté et formations de haut niveau.\nSVPG (Silicon Valley Product Group) — approche stratégique produit inspirée Silicon Valley.\nSi vous voulez un accompagnement plus “sur mesure”\nVous pouvez aussi chercher :\nun fractional CPO,\nun coach produit senior,\nou un collectif de PM indépendants.\nDans ce cas, Malt et Comet sont souvent efficaces pour trouver des profils très expérimentés.\nComment choisir le bon partenaire\nQuelques critères utiles :\nniveau des équipes (débutants, PM confirmés, managers) ;\nbesoin principal :\ndiscovery,\npriorisation,\nroadmap,\nproduct strategy,\ndata product,\nIA produit,\ndelivery/agilité ;\nformat souhaité :\nbootcamp intensif,\ncoaching dans la durée,\nformation certifiante,\nshadowing terrain ;\nlangue (FR/EN) ;\nculture visée :\nstartup/product-led,\nscale-up,\ngrand groupe.\nJe peux aussi vous aider à :\nprésélectionner 5 partenaires adaptés à votre contexte ;\nrédiger un brief/RFP de consultation ;\nconstruire un plan de formation PM sur 3 à 12 mois ;\nestimer les budgets typiques selon la taille des équipes."
+        ],
+        "concurrents": {
+          "Thiga": 3,
+          "Fabernovel": 1,
+          "fifty-five": 1,
+          "Theodo": 1
+        },
+        "rang": null,
+        "totalCabinets": null
       }
     ]
   },
   "pm-ia-cabinet": {
     "libelle": "cabinet spécialisé product management ia",
     "runs": [
-      {
-        "date": "2026-04-30",
-        "model": "chatgpt",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 0,
-          "previews": [],
-          "reponsesChemins": [
-            "responses/pm-ia-cabinet-2026-04-30-chatgpt-run1.txt",
-            "responses/pm-ia-cabinet-2026-04-30-chatgpt-run2.txt",
-            "responses/pm-ia-cabinet-2026-04-30-chatgpt-run3.txt"
-          ]
-        },
-        "concurrents": {
-          "Thiga": 1,
-          "Octo": 1,
-          "OCTO Technology": 1,
-          "Artefact": 1,
-          "fifty-five": 1
-        }
-      },
-      {
-        "date": "2026-05-04",
-        "model": "chatgpt",
-        "runsOk": 3,
-        "wefiit": {
-          "citations": 0,
-          "previews": [],
-          "reponsesChemins": [
-            "responses/pm-ia-cabinet-2026-05-04-chatgpt-run1.txt",
-            "responses/pm-ia-cabinet-2026-05-04-chatgpt-run2.txt",
-            "responses/pm-ia-cabinet-2026-05-04-chatgpt-run3.txt"
-          ]
-        },
-        "concurrents": {
-          "Octo": 3,
-          "OCTO Technology": 3,
-          "Artefact": 3,
-          "fifty-five": 3,
-          "Theodo": 3,
-          "Thiga": 2,
-          "Ekimetrics": 2,
-          "McKinsey": 1,
-          "BCG": 1,
-          "Capgemini": 1,
-          "BAM": 1,
-          "Zenika": 1
-        }
-      },
-      {
-        "date": "2026-05-04",
-        "model": "gemini",
-        "runsOk": 0,
-        "wefiit": {
-          "citations": 0,
-          "previews": [],
-          "reponsesChemins": []
-        },
-        "concurrents": {}
-      },
       {
         "date": "2026-05-05",
         "model": "chatgpt",
@@ -6591,6 +5714,75 @@
           "Wivoo": 3,
           "Delva": 3,
           "IKXO": 3
+        },
+        "rang": null,
+        "totalCabinets": null
+      },
+      {
+        "date": "2026-05-29",
+        "model": "gemini",
+        "runsOk": 3,
+        "wefiit": {
+          "citations": 3,
+          "previews": [
+            "*   **WeFiiT** se positionne sur le \"Conseil en Product Data Management & IA\". Leurs consultants allient l'approche Produit et l'expertise Data & IA pour construire des produits Data & IA qui ont un r…",
+            "*   **WeFiiT** se positionne comme un spécialiste du conseil en Product Management, incluant spécifiquement le \"Product Data & IA\" et le \"Conseil en Product Data Management & IA\". Ce cabinet accompagn…",
+            "Parmi eux, **WeFiiT** se positionne comme un cabinet de conseil en Product Management proposant des services de \"Conseil en Product Data Management & IA\". Ils visent à transformer les données en produ…"
+          ],
+          "reponsesChemins": [
+            "responses/pm-ia-cabinet-2026-05-29-gemini-run1.txt",
+            "responses/pm-ia-cabinet-2026-05-29-gemini-run2.txt",
+            "responses/pm-ia-cabinet-2026-05-29-gemini-run3.txt"
+          ]
+        },
+        "verbatims": [
+          "Pour trouver un cabinet spécialisé en \"Product Management IA\", c'est-à-dire une entreprise de conseil ou une agence qui aide à la gestion de produits intégrant l'intelligence artificielle, plusieurs acteurs se distinguent par leur expertise en France et à l'international. Ces cabinets combinent généralement une compréhension approfondie du product management avec une expertise technique en IA pour aider les entreprises à développer et à commercialiser des produits basés sur l'IA.\nVoici quelques cabinets et agences spécialisés dans le Product Management IA :\n*   **WeFiiT** se positionne sur le \"Conseil en Product Data Management & IA\". Leurs consultants allient l'approche Produit et l'expertise Data & IA pour construire des produits Data & IA qui ont un réel impact utilisateur et business. Ils interviennent à chaque étape du cycle de vie des produits, de la stratégie à la livraison.\n*   **Converteo** se présente comme un leader de l'IA Product en France. Leur objectif est de fournir l'expertise nécessaire pour développer des cas d'usage d'IA générative (IAgen) qui génèrent un impact et une réelle valeur métier. L'IA est un enjeu central pour eux dans le développement des produits digitaux, et tous leurs Product Managers sont formés aux sujets liés à l'IA.\n*   **Thiga** met l'IA et la Data au service du Product Management. Ils aident les entreprises à intégrer les capacités d'IA et de Data dans leurs produits et organisations avec une approche éthique, stratégique et un impact mesurable. Parmi leurs offres figure la \"Conception de produits IA\".\n*   **Atecna** accompagne les entreprises dans la structuration, l'évolution et l'accélération de leurs produits digitaux. Leurs experts en Produit sont formés aux dernières méthodes et outils intégrant l'intelligence artificielle, de la stratégie produit à la livraison, en passant par une \"Discovery augmentée par la data & l'IA\".\n*   **Palmer Consulting**, basé à Paris, est un cabinet de conseil en IA et stratégie. Il se distingue par son approche hybride, alliant vision stratégique et expertise technique, pour accompagner les projets IA de la définition de la feuille de route à l'industrialisation des solutions, en mettant l'accent sur l'adoption et la scalabilité.\n*   **EY-Parthenon** propose des services de \"AI Strategy and Transactions Consulting\" pour aider les organisations à concevoir et développer des produits d'IA ainsi que des modèles commerciaux intégrant l'IA.\n*   **Alice Labs**, bien que basé à Stockholm, offre des services de \"AI Strategy Consulting\" et \"AI Roadmap Consulting\" à l'échelle européenne, aidant les entreprises à identifier la valeur business de l'IA, à prioriser les investissements et à construire une feuille de route d'exécution.\n*   **Eleven Labs** est une agence de conseil et d'ingénierie web & IA qui développe des agents IA sur mesure, des chatbots IA et des architectures telles que RAG, pensées pour la production. Ils insistent sur l'implication des équipes métiers, data et produit dès le cadrage du projet.\n*   **Koïno**, agence de conseil stratégique et technologique à Paris, est spécialisée dans l'intégration de l'intelligence artificielle. Elle combine vision produit, expertise data et accompagnement stratégique pour un retour sur investissement concret des projets IA.\n*   **InData Labs** propose des services de \"In-Depth AI Strategy Consulting\" et peut guider les équipes dans la cartographie d'une \"AI product strategy\".\n*   **Avisia** est spécialisée dans le Conseil, l'Intégration et la réalisation de projets combinant Data, Intelligence Artificielle et IA Générative.\nCes cabinets peuvent vous accompagner sur différents aspects, allant de la définition de la stratégie produit IA, à l'identification des cas d'usage, la conception et le développement de solutions IA, jusqu'à leur mise en production et l'accompagnement des équipes. Ils jouent un rôle crucial pour transformer les prouesses techniques en valeur business mesurable.",
+          "Voici une liste de cabinets spécialisés en Product Management avec une expertise en Intelligence Artificielle, offrant des services de conseil, d'intégration et d'accompagnement pour le développement de produits augmentés par l'IA :\n*   **WeFiiT** se positionne comme un spécialiste du conseil en Product Management, incluant spécifiquement le \"Product Data & IA\" et le \"Conseil en Product Data Management & IA\". Ce cabinet accompagne ses clients dans la construction de produits Data & IA, de la définition de la vision et de la stratégie à la construction de produits concrets comme des chatbots RAG ou des plateformes de recommandations industrielles basées sur l'IA. WeFiiT propose également des formations pour monter en compétences en Data Product Management et IA.\n*   **Converteo** est un cabinet de conseil se positionnant comme un leader de l'IA Product en France. Leurs services combinent des expertises techniques, analytiques, fonctionnelles, stratégiques et produit pour développer des cas d'usage d'IA générative (IAgen) à fort impact business. Les consultants de Converteo sont compétents dans les sujets liés à l'IA et proposent de former les équipes aux meilleures pratiques de l'IA appliquée aux opérations produit.\n*   **Monsieur Guiz** est un cabinet de conseil spécialisé en Product Management, Design, Ops et IA. Ils offrent un accompagnement pour l'IA, allant de l'identification des cas d'usage à forte valeur à la conception et au déploiement d'agents et de copilotes, en adoptant une approche pragmatique \"du POC à la production\".\n*   **Thiga** intègre l'IA et la Data au service du Product Management. Leur approche se veut éthique et stratégique pour transformer l'IA et la Data en valeur réelle et opérationnelle au sein des produits digitaux et des organisations. Leurs offres couvrent la stratégie et l'accélération IA, ainsi que la conception de produits IA.\n*   **Atecna**, une agence de Product Management, met à disposition une équipe d'experts en produit formés aux dernières méthodes, outils et usages de l'intelligence artificielle. Ils aident à structurer, faire évoluer et accélérer les produits, notamment grâce à une \"Discovery augmentée par la data & l'IA\" qui utilise les données comportementales et l'IA générative pour identifier les besoins et tester les hypothèses.\n*   **AVISIA** est spécialisée dans le conseil, l'intégration et la réalisation de projets combinant Data, Intelligence Artificielle et IA Générative. Ils mettent en avant le Product Management comme la capacité à gérer l'ensemble du cycle de vie d'un produit.\n*   **IKXO**, cabinet de conseil en Product Management, inclut l'exploration des \"opportunités liées à l'IA\" dans ses accompagnements clients, s'adaptant à leurs enjeux business et technologiques.\n*   **Yield Studio** (également mentionné comme Yield Advisory pour la Data & IA) est une agence de conseil en Product Management qui a réalisé des projets incluant des socles applicatifs et logiciels métiers IA pour ses clients. Yield Advisory se positionne avec des experts en Data Science et Product Management pour faire de la donnée un levier de croissance et d'innovation.\nD'autres cabinets, bien que principalement axés sur le conseil en IA, ont des offres qui touchent au Product Management grâce à leur focus sur la stratégie et le développement de produits basés sur l'IA :\n*   **AI Partners** est un cabinet de conseil entièrement dédié à l'intégration de l'intelligence artificielle pour les grandes entreprises. Ils aident les équipes exécutives, commerciales et informatiques à structurer des stratégies IA robustes, alignées sur les objectifs opérationnels et évolutives, de la définition de la feuille de route à l'habilitation des équipes.\n*   **Palmer Consulting** propose une approche hybride en conseil en IA et stratégie, combinant vision stratégique (définition de la feuille de route IA, priorisation des cas d'usage) et expertise opérationnelle (intégration concrète de l'IA dans les produits).",
+          "Plusieurs cabinets de conseil en France se spécialisent dans le product management appliqué à l'intelligence artificielle (IA), offrant une expertise pour accompagner les entreprises dans la création et l'optimisation de leurs produits basés sur l'IA.\nParmi eux, **WeFiiT** se positionne comme un cabinet de conseil en Product Management proposant des services de \"Conseil en Product Data Management & IA\". Ils visent à transformer les données en produits à forte valeur ajoutée grâce à l'IA, avec des consultants \"IA Product Manager\" spécialisés dans la définition de vision et stratégie produit Data & IA, ainsi que la construction de produits IA tels que des chatbots RAG ou des plateformes de recommandations.\n**Monsieur Guiz** est un cabinet de conseil expert en Product Management, Design, Ops et IA. Leurs services incluent l'identification des cas d'usage à forte valeur pour l'IA, la conception d'agents et de copilotes, et leur déploiement en production.\n**Converteo** se présente comme un leader de l'IA Product en France, ayant pour ambition de développer des cas d'usage d'IA générative qui génèrent un impact et une valeur commerciale réels. Leurs Product Managers sont tous compétents sur les sujets liés à l'IA, reconnaissant l'importance de cette compétence pour le développement des produits digitaux.\n**Thiga** offre une expertise en \"IA appliquée au Product Management\", aidant les organisations à intégrer les capacités d'IA et de données dans leurs produits et processus, en mettant l'accent sur la clarté, la responsabilité et un impact mesurable.\n**Atecna**, une agence de product management, combine stratégie, données et technologie pour concevoir des expériences numériques performantes. Leurs experts produit sont formés aux dernières méthodes et outils intégrant l'intelligence artificielle pour structurer, faire évoluer et accélérer les produits.\n**Yield Advisory** met à disposition des experts \"Product Data & IA\" qui s'intègrent aux équipes pour faire de la donnée un levier de croissance. Ils proposent du Data Product Management, orchestrant la stratégie data, la priorisation des chantiers et la coordination entre les équipes.\nEnfin, **Palmer Consulting** est un cabinet de conseil en IA et stratégie qui adopte une approche hybride, couvrant à la fois la définition de la feuille de route IA, la priorisation des cas d'usage, l'accompagnement au changement et l'intégration concrète de l'IA dans les opérations."
+        ],
+        "concurrents": {
+          "Thiga": 3,
+          "Converteo": 3,
+          "Yield Advisory": 2,
+          "Yield Studio": 1,
+          "IKXO": 1
+        },
+        "rang": null,
+        "totalCabinets": null
+      },
+      {
+        "date": "2026-05-29",
+        "model": "chatgpt",
+        "runsOk": 3,
+        "wefiit": {
+          "citations": 2,
+          "previews": [
+            "WeFiiT — Conseil spécialisé Product Management avec practice “Product Data & IA”, missions PM/PO, discovery, AI products, formation IA. Très bon positionnement scale-up / grands groupes. wefiit.com",
+            "WeFiiT"
+          ],
+          "reponsesChemins": [
+            "responses/pm-ia-cabinet-2026-05-29-chatgpt-run1.txt",
+            "responses/pm-ia-cabinet-2026-05-29-chatgpt-run2.txt",
+            "responses/pm-ia-cabinet-2026-05-29-chatgpt-run3.txt"
+          ]
+        },
+        "verbatims": [
+          "Voici quelques cabinets reconnus en France spécialisés en Product Management + IA selon ce que vous cherchez (stratégie, staffing PM, AI products, transformation IA, startup studio, etc.) :\nCabinets très orientés Product Management + IA\nWeFiiT — Conseil spécialisé Product Management avec practice “Product Data & IA”, missions PM/PO, discovery, AI products, formation IA. Très bon positionnement scale-up / grands groupes. wefiit.com\nWivoo — Cabinet produit reconnu avec expertise Produit, Data & IA. Fort sur product discovery, data products et accompagnement organisationnel. wivoo.fr\nIKXO — Pure player Product Management avec accompagnement PM/PO/Product Ops et intégration des enjeux IA/data. IKXO\nDelva — Cabinet ultra-spécialisé Product Management, fondé par des ex-CPO. Très orienté renfort opérationnel PM/PO. delva.co\nCabinets davantage orientés stratégie IA + produits IA\nSaegus — Cabinet transformation IA assez mature, avec expertise Product & Project Management, AI governance, AI for Business. Saegus\nArkange — Très orienté déploiement concret d’agents IA et industrialisation produit IA. Positionnement moderne “AI adoption”. Arkange\nKeleia — Conseil IA + startup studio IA, intéressant si vous cherchez du build produit IA/MVP + stratégie. Keleia\nAltaStrategIA — Conseil en stratégie IA avec focus ROI, gouvernance et transformation. AltaStrategIA\nSi vous cherchez selon un besoin précis\nRenfort PM/PO IA opérationnel → WeFiiT, IKXO, Delva\nConstruire un produit IA / AI SaaS → Wivoo, Arkange, Keleia\nTransformation IA entreprise / gouvernance → Saegus, AltaStrategIA\nStartup studio IA / MVP IA → Keleia\nFormation Product + IA → WeFiiT, IKXO\nSi vous voulez, je peux aussi vous proposer :\nles meilleurs cabinets à Paris uniquement\ndes cabinets plus premium / grands comptes\ndes structures startup-friendly\ndes freelance collectives Product + IA\nou un comparatif selon votre objectif (recruter, lancer un produit IA, trouver une mission, etc.).",
+          "Voici une sélection de cabinets français spécialisés en Product Management + IA selon différents besoins (stratégie produit IA, renfort PM, transformation IA, PM IA générative, etc.) :\nCabinets très orientés Product Management + IA\nWeFiiT\nCabinet reconnu en Product Management avec une practice “Product Data & IA”. Fort focus discovery, delivery, PM IA générative et transformation produit. Très bon positionnement grands comptes / scale-ups. wefiit.com\nWivoo\nPositionnement fort sur Produit, Data et IA. Très bon si vous cherchez des PM capables de piloter des produits IA/data de bout en bout. wivoo.fr\nIKXO\nCabinet très spécialisé Product Management avec accompagnement sur produits IA, organisation produit et Product Ops. Plus “expertise produit pure”. IKXO\nDelva\nCabinet ultra-spécialisé PM fondé par des ex-CPO. Très pertinent pour staff augmentation PM/PO senior et structuration d’équipes produit. delva.co\nCabinets davantage orientés stratégie IA + delivery produit\nSaegus\nPositionnement “AI Strategy + Product & Project Management”. Plus corporate / transformation à grande échelle. Saegus\nArkange\nTrès bon sur agents IA, adoption terrain, cadrage cas d’usage et industrialisation IA. Approche pragmatique orientée mise en production. Arkange\nAltaStrategIA\nCabinet stratégie IA pour PME/ETI avec approche ROI et gouvernance. Plus conseil stratégique que PM opérationnel. AltaStrategIA\nCabinets IA “build / studio” utiles pour lancer un produit IA\nKeleia\nMix cabinet IA + startup studio + accompagnement MVP IA. Intéressant pour co-construire un produit IA rapidement. Keleia\nSOTELI\nTrès orienté IA générative appliquée aux métiers avec ROI rapide. Plus intégration IA opérationnelle que Product Management classique. SOTELI\nSi vous voulez, je peux aussi vous faire :\nun top 5 selon votre besoin précis (freelance PM IA, cabinet premium, startup studio, grands comptes, etc.)\nune comparaison TJM / taille / réputation / spécialité\nles cabinets les plus adaptés pour :\ncréer un produit IA\nrecruter des PM IA\nlancer des agents IA\nstructurer une équipe Product AI\naccompagner une startup SaaS IA\nfaire du Fractional CPO IA.",
+          "Voici quelques cabinets et structures spécialisés en Product Management orienté IA / AI Product Management, particulièrement pertinents en Paris et en Europe :\nCabinets de conseil spécialisés IA + Product\nArtefact\nCabinet franco-européen très reconnu en data & IA, avec forte expertise en AI product strategy, GenAI products, copilots, et transformation produit.\nOcto Technology\nConseil tech/product avec équipes spécialisées AI products, platform products et product discovery.\nEleven Labs Consulting\nCabinet français focalisé data/IA, souvent impliqué dans des problématiques AI product ownership et industrialisation ML.\nSia Partners\nTrès actif sur GenAI, AI operating models et AI product management pour grands groupes.\nWavestone\nConseil transformation digitale avec practice AI & Product.\nMalt Strategy / indépendants IA\nBon canal pour trouver des fractional AI Product Managers, CPO IA, ou consultants spécialisés LLM / AI features.\nBoutiques spécialisées Product Management\nThiga\nRéférence française du Product Management. Ils ont développé une expertise AI Product Management et AI-native product discovery.\nuxpm\nPositionnement product + UX + innovation, pertinent pour produits IA centrés usage.\n3500 Product Development\nAccompagnement product strategy, discovery et scaling produit.\nSpécialistes AI Product / GenAI plus “startup-native”\nM33\nStudio/consulting orienté innovation produit et AI ventures.\nTheodo AI\nTrès bon fit si vous cherchez une équipe capable de faire à la fois PM IA + delivery technique.\nBam.tech\nProduit digital + AI integration avec forte culture startup/product.\nSi vous voulez, je peux aussi vous faire une sélection plus ciblée selon votre besoin :\nrecrutement d’un AI Product Manager,\ncabinet de conseil stratégique,\naccompagnement MVP GenAI,\nPM freelance IA,\nformation AI Product Management,\ncabinet orienté startups vs CAC40,\nou cabinets spécialisés LLM / agents IA / copilots."
+        ],
+        "concurrents": {
+          "Wivoo": 2,
+          "Delva": 2,
+          "IKXO": 2,
+          "Thiga": 1,
+          "Octo": 1,
+          "OCTO Technology": 1,
+          "Sia Partners": 1,
+          "Wavestone": 1,
+          "Artefact": 1,
+          "Theodo": 1,
+          "BAM": 1
         },
         "rang": null,
         "totalCabinets": null
