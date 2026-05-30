@@ -14,25 +14,25 @@ import { linkOptions } from "@tanstack/react-router";
 const projectNavItems = [
   {
     to: "/p/$projectId/keywords" as const,
-    label: "Keyword Research",
+    label: "Recherche de mots-clés",
     icon: Search,
     matchSegment: "/keywords",
   },
   {
     to: "/p/$projectId/saved" as const,
-    label: "Saved Keywords",
+    label: "Mots-clés sauvegardés",
     icon: Bookmark,
     matchSegment: "/saved",
   },
   {
     to: "/p/$projectId/rank-tracking" as const,
-    label: "Rank Tracking",
+    label: "Suivi de positions",
     icon: TrendingUp,
     matchSegment: "/rank-tracking",
   },
   {
     to: "/p/$projectId/domain" as const,
-    label: "Domain Overview",
+    label: "Vue d'ensemble domaine",
     icon: Globe,
     matchSegment: "/domain",
   },
@@ -44,19 +44,19 @@ const projectNavItems = [
   },
   {
     to: "/p/$projectId/audit" as const,
-    label: "Site Audit",
+    label: "Audit de site",
     icon: ClipboardCheck,
     matchSegment: "/audit",
   },
   {
     to: "/p/$projectId/brand-lookup" as const,
-    label: "Brand Lookup",
+    label: "Recherche de marque",
     icon: Sparkles,
     matchSegment: "/brand-lookup",
   },
   {
     to: "/p/$projectId/prompt-explorer" as const,
-    label: "Prompt Explorer",
+    label: "Explorateur de prompts",
     icon: MessageSquare,
     matchSegment: "/prompt-explorer",
   },
@@ -70,7 +70,7 @@ const projectNavItems = [
 
 const aiNavItem = linkOptions({
   to: "/ai" as const,
-  label: "AI & MCP",
+  label: "IA & MCP",
   icon: Bot,
   matchSegment: "/ai",
 });
