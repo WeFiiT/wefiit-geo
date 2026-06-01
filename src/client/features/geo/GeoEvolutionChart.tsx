@@ -37,9 +37,13 @@ export function GeoEvolutionChart({ evolutionParRun, modele }: Props) {
             />
             <XAxis
               dataKey="label"
-              tick={{ fontSize: 10, fill: "#888" }}
+              tick={{ fontSize: 9, fill: "#888" }}
               tickLine={false}
               axisLine={false}
+              interval={0}
+              angle={-45}
+              textAnchor="end"
+              height={40}
             />
             <YAxis
               tick={{ fontSize: 11, fill: "#888" }}
