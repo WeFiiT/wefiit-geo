@@ -5,7 +5,8 @@ type Props = { verbatims: GeoData["verbatims"] };
 type Verbatim = GeoData["verbatims"][0];
 
 function BadgeModele({ modele }: { modele: string }) {
-  if (modele === "chatgpt") return <span className="badge badge-success badge-sm">ChatGPT</span>;
+  if (modele === "chatgpt")
+    return <span className="badge badge-success badge-sm">ChatGPT</span>;
   return <span className="badge badge-info badge-sm">Gemini</span>;
 }
 
@@ -42,7 +43,9 @@ function VerbatimModal({ v, onClose }: { v: Verbatim; onClose: () => void }) {
           <BadgeModele modele={v.modele} />
           <span className="text-xs text-base-content/40">{v.date}</span>
           {texteComplet && (
-            <span className="text-xs text-success ml-auto">Réponse complète</span>
+            <span className="text-xs text-success ml-auto">
+              Réponse complète
+            </span>
           )}
         </div>
         {chargement ? (
@@ -63,11 +66,17 @@ function VerbatimCard({ v, onOpen }: { v: Verbatim; onOpen: () => void }) {
   const long = v.texte.length > 200;
   const bgClass = v.wefiitCite ? "" : "bg-[#f8f9fa] opacity-80";
   const bgStyle = v.wefiitCite
-    ? { background: "rgba(249,143,3,0.07)", border: "1px solid rgba(249,143,3,0.2)" }
+    ? {
+        background: "rgba(249,143,3,0.07)",
+        border: "1px solid rgba(249,143,3,0.2)",
+      }
     : {};
 
   return (
-    <div className={`rounded-lg border border-base-200 p-3 space-y-2 ${bgClass}`} style={bgStyle}>
+    <div
+      className={`rounded-lg border border-base-200 p-3 space-y-2 ${bgClass}`}
+      style={bgStyle}
+    >
       <p className="text-sm leading-relaxed text-base-content/90 line-clamp-3">
         "{v.texte}"
       </p>
@@ -88,13 +97,15 @@ function VerbatimCard({ v, onOpen }: { v: Verbatim; onOpen: () => void }) {
               alt="WeFiiT"
               className="h-4 w-4 rounded object-cover"
               onError={(e) => {
-                (e.target as HTMLImageElement).style.display = "none";
+                e.currentTarget.style.display = "none";
               }}
             />
             cité
           </span>
         ) : (
-          <span className="badge badge-sm badge-ghost text-base-content/40">Non cité</span>
+          <span className="badge badge-sm badge-ghost text-base-content/40">
+            Non cité
+          </span>
         )}
         <span className="text-xs text-base-content/50">{v.requete}</span>
         <span className="ml-auto text-xs text-base-content/40">{v.date}</span>
@@ -112,7 +123,9 @@ export function GeoVerbatims({ verbatims }: Props) {
   if (verbatims.length === 0) {
     return (
       <div className="card bg-base-100 border border-base-200 p-4">
-        <p className="text-sm text-base-content/60">Aucun verbatim enregistré pour le moment.</p>
+        <p className="text-sm text-base-content/60">
+          Aucun verbatim enregistré pour le moment.
+        </p>
       </div>
     );
   }
@@ -126,7 +139,9 @@ export function GeoVerbatims({ verbatims }: Props) {
       <div className="card bg-base-100 border border-base-200 p-4 space-y-3">
         <div className="flex items-center justify-between">
           <p className="text-sm font-semibold">Verbatims WeFiiT récents</p>
-          <span className="text-xs text-base-content/40">{verbatims.length} verbatim{verbatims.length > 1 ? "s" : ""}</span>
+          <span className="text-xs text-base-content/40">
+            {verbatims.length} verbatim{verbatims.length > 1 ? "s" : ""}
+          </span>
         </div>
         <div className="flex flex-col gap-3">
           {pageVerbatims.map((v, i) => (
@@ -155,7 +170,9 @@ export function GeoVerbatims({ verbatims }: Props) {
           </div>
         )}
       </div>
-      {selected && <VerbatimModal v={selected} onClose={() => setSelected(null)} />}
+      {selected && (
+        <VerbatimModal v={selected} onClose={() => setSelected(null)} />
+      )}
     </>
   );
 }

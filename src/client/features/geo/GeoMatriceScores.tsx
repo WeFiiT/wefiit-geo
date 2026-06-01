@@ -7,9 +7,9 @@ type Props = {
 };
 
 function classeScore(taux: number) {
-  if (taux === 0)   return "bg-base-200 text-base-content/40";
-  if (taux < 34)    return "bg-error/20 text-error";
-  if (taux < 67)    return "bg-warning/20 text-warning";
+  if (taux === 0) return "bg-base-200 text-base-content/40";
+  if (taux < 34) return "bg-error/20 text-error";
+  if (taux < 67) return "bg-warning/20 text-warning";
   return "bg-success/20 text-success";
 }
 
@@ -22,21 +22,32 @@ export function GeoMatriceScores({ requetes, matriceScores, modele }: Props) {
         <table className="table table-sm w-full">
           <thead>
             <tr>
-              <th className="text-xs font-normal text-base-content/60">Requête</th>
+              <th className="text-xs font-normal text-base-content/60">
+                Requête
+              </th>
               {MODELES.map((m) => (
-                <th key={m} className="text-xs font-normal text-base-content/60 text-center capitalize">{m}</th>
+                <th
+                  key={m}
+                  className="text-xs font-normal text-base-content/60 text-center capitalize"
+                >
+                  {m}
+                </th>
               ))}
             </tr>
           </thead>
           <tbody>
             {requetes.map(({ id, libelle }) => (
               <tr key={id}>
-                <td className="text-xs max-w-[200px] truncate" title={libelle}>{libelle}</td>
-                {MODELES.map((modele) => {
-                  const taux = matriceScores[id]?.[modele] ?? 0;
+                <td className="text-xs max-w-[200px] truncate" title={libelle}>
+                  {libelle}
+                </td>
+                {MODELES.map((m) => {
+                  const taux = matriceScores[id]?.[m] ?? 0;
                   return (
-                    <td key={modele} className="text-center">
-                      <span className={`inline-block rounded px-2 py-0.5 text-xs font-semibold ${classeScore(taux)}`}>
+                    <td key={m} className="text-center">
+                      <span
+                        className={`inline-block rounded px-2 py-0.5 text-xs font-semibold ${classeScore(taux)}`}
+                      >
                         {taux}%
                       </span>
                     </td>

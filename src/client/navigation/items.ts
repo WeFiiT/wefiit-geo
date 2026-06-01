@@ -68,7 +68,7 @@ const projectNavItems = [
   },
 ] as const;
 
-const aiNavItem = linkOptions({
+const _aiNavItem = linkOptions({
   to: "/ai" as const,
   label: "IA & MCP",
   icon: Bot,

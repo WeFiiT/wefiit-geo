@@ -32,36 +32,48 @@ export function GeoSystemHealth() {
   if (isError || !data) {
     return (
       <div className="flex h-64 items-center justify-center">
-        <p className="text-sm text-error">Impossible de charger les données de santé système.</p>
+        <p className="text-sm text-error">
+          Impossible de charger les données de santé système.
+        </p>
       </div>
     );
   }
 
-  const totalErreurs = Object.values(data.repartitionErreurs).reduce((a, b) => a + b, 0);
+  const totalErreurs = Object.values(data.repartitionErreurs).reduce(
+    (a, b) => a + b,
+    0,
+  );
 
   return (
     <div className="space-y-4">
-
       {/* KPIs */}
       <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
         <div className="bg-base-200 rounded-xl p-4">
           <p className="text-xs text-base-content/50 mb-1">Taux succès 7j</p>
-          <p className={`text-2xl font-bold ${data.tauxSucces7j >= 80 ? "text-success" : data.tauxSucces7j >= 50 ? "text-warning" : "text-error"}`}>
+          <p
+            className={`text-2xl font-bold ${data.tauxSucces7j >= 80 ? "text-success" : data.tauxSucces7j >= 50 ? "text-warning" : "text-error"}`}
+          >
             {data.tauxSucces7j}%
           </p>
         </div>
         <div className="bg-base-200 rounded-xl p-4">
           <p className="text-xs text-base-content/50 mb-1">Taux succès 30j</p>
-          <p className={`text-2xl font-bold ${data.tauxSucces30j >= 80 ? "text-success" : data.tauxSucces30j >= 50 ? "text-warning" : "text-error"}`}>
+          <p
+            className={`text-2xl font-bold ${data.tauxSucces30j >= 80 ? "text-success" : data.tauxSucces30j >= 50 ? "text-warning" : "text-error"}`}
+          >
             {data.tauxSucces30j}%
           </p>
         </div>
         <div className="bg-base-200 rounded-xl p-4">
           <p className="text-xs text-base-content/50 mb-1">Runs partiels</p>
-          <p className={`text-2xl font-bold ${data.jobsPartiels === 0 ? "text-success" : "text-warning"}`}>
+          <p
+            className={`text-2xl font-bold ${data.jobsPartiels === 0 ? "text-success" : "text-warning"}`}
+          >
             {data.jobsPartiels}
           </p>
-          <p className="text-xs text-base-content/40">sur {data.totalJobs} jobs</p>
+          <p className="text-xs text-base-content/40">
+            sur {data.totalJobs} jobs
+          </p>
         </div>
         <div className="bg-base-200 rounded-xl p-4">
           <p className="text-xs text-base-content/50 mb-1">Retries réussis</p>
@@ -70,7 +82,6 @@ export function GeoSystemHealth() {
       </div>
 
       <div className="grid gap-4 md:grid-cols-2">
-
         {/* Répartition erreurs */}
         <div className="bg-base-200 rounded-xl p-4">
           <h3 className="text-sm font-medium mb-3">Répartition des erreurs</h3>
@@ -79,19 +90,25 @@ export function GeoSystemHealth() {
           ) : (
             <div className="space-y-2">
               {Object.entries(data.repartitionErreurs)
-                .sort((a, b) => b[1] - a[1])
+                .toSorted((a, b) => b[1] - a[1])
                 .map(([statut, count]) => (
                   <div key={statut} className="flex items-center gap-2">
-                    <span className={`badge badge-sm ${STATUT_COLORS[statut] ?? "badge-neutral"}`}>
+                    <span
+                      className={`badge badge-sm ${STATUT_COLORS[statut] ?? "badge-neutral"}`}
+                    >
                       {STATUT_LABELS[statut] ?? statut}
                     </span>
                     <div className="flex-1 bg-base-300 rounded-full h-2">
                       <div
                         className="bg-primary h-2 rounded-full"
-                        style={{ width: `${Math.round((count / totalErreurs) * 100)}%` }}
+                        style={{
+                          width: `${Math.round((count / totalErreurs) * 100)}%`,
+                        }}
                       />
                     </div>
-                    <span className="text-xs text-base-content/60 w-8 text-right">{count}</span>
+                    <span className="text-xs text-base-content/60 w-8 text-right">
+                      {count}
+                    </span>
                   </div>
                 ))}
             </div>
@@ -107,15 +124,28 @@ export function GeoSystemHealth() {
               const heure = job.démarré.slice(11, 16);
               const manquants = job.evals?.completude?.manquants ?? [];
               return (
-                <div key={job.jobId} className="flex items-center gap-2 text-xs">
-                  <span className={`badge badge-xs ${job.statut === "succès" ? "badge-success" : "badge-warning"}`}>
+                <div
+                  key={job.jobId}
+                  className="flex items-center gap-2 text-xs"
+                >
+                  <span
+                    className={`badge badge-xs ${job.statut === "succès" ? "badge-success" : "badge-warning"}`}
+                  >
                     {job.statut}
                   </span>
-                  <span className="text-base-content/60">{date} {heure}</span>
-                  <span className="text-base-content/40">{job.modèles.join("+")}</span>
+                  <span className="text-base-content/60">
+                    {date} {heure}
+                  </span>
+                  <span className="text-base-content/40">
+                    {job.modèles.join("+")}
+                  </span>
                   {manquants.length > 0 && (
-                    <span className="text-error/70 truncate" title={manquants.join(", ")}>
-                      ⚠️ {manquants.length} manquant{manquants.length > 1 ? "s" : ""}
+                    <span
+                      className="text-error/70 truncate"
+                      title={manquants.join(", ")}
+                    >
+                      ⚠️ {manquants.length} manquant
+                      {manquants.length > 1 ? "s" : ""}
                     </span>
                   )}
                 </div>
@@ -127,7 +157,9 @@ export function GeoSystemHealth() {
 
       {/* Timeline succès/partiel */}
       <div className="bg-base-200 rounded-xl p-4">
-        <h3 className="text-sm font-medium mb-3">Timeline des 30 derniers jobs</h3>
+        <h3 className="text-sm font-medium mb-3">
+          Timeline des 30 derniers jobs
+        </h3>
         <div className="flex flex-wrap gap-1.5">
           {data.evolutionSucces.map((j, i) => (
             <div
@@ -138,11 +170,16 @@ export function GeoSystemHealth() {
           ))}
         </div>
         <div className="flex gap-4 mt-2 text-xs text-base-content/50">
-          <span className="flex items-center gap-1"><span className="w-3 h-3 rounded-sm bg-success/70 inline-block" /> Succès</span>
-          <span className="flex items-center gap-1"><span className="w-3 h-3 rounded-sm bg-warning/70 inline-block" /> Partiel</span>
+          <span className="flex items-center gap-1">
+            <span className="w-3 h-3 rounded-sm bg-success/70 inline-block" />{" "}
+            Succès
+          </span>
+          <span className="flex items-center gap-1">
+            <span className="w-3 h-3 rounded-sm bg-warning/70 inline-block" />{" "}
+            Partiel
+          </span>
         </div>
       </div>
-
     </div>
   );
 }

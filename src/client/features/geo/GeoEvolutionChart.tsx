@@ -26,9 +26,21 @@ export function GeoEvolutionChart({ evolutionParRun, modele }: Props) {
       <p className="text-sm font-semibold">Évolution du taux de visibilité</p>
       <div className="h-56">
         <ResponsiveContainer width="100%" height="100%">
-          <LineChart data={evolutionParRun} margin={{ top: 8, right: 12, bottom: 4, left: 0 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="currentColor" opacity={0.12} />
-            <XAxis dataKey="label" tick={{ fontSize: 10, fill: "#888" }} tickLine={false} axisLine={false} />
+          <LineChart
+            data={evolutionParRun}
+            margin={{ top: 8, right: 12, bottom: 4, left: 0 }}
+          >
+            <CartesianGrid
+              strokeDasharray="3 3"
+              stroke="currentColor"
+              opacity={0.12}
+            />
+            <XAxis
+              dataKey="label"
+              tick={{ fontSize: 10, fill: "#888" }}
+              tickLine={false}
+              axisLine={false}
+            />
             <YAxis
               tick={{ fontSize: 11, fill: "#888" }}
               tickLine={false}
@@ -40,15 +52,35 @@ export function GeoEvolutionChart({ evolutionParRun, modele }: Props) {
             <Tooltip
               contentStyle={{ fontSize: 12 }}
               cursor={{ stroke: "currentColor", strokeOpacity: 0.2 }}
-              labelFormatter={(label, payload) => payload?.[0]?.payload?.date ?? label}
-              formatter={(value: number | string | undefined) => [`${value ?? ""}%`]}
+              labelFormatter={(label: string, payload: Array<{ payload?: { date?: string } }>) =>
+                payload?.[0]?.payload?.date ?? label
+              }
+              formatter={(value: number | string | undefined) => [
+                `${value ?? ""}%`,
+              ]}
             />
             <Legend wrapperStyle={{ fontSize: 12 }} />
             {(!modele || modele === "chatgpt") && (
-              <Line type="monotone" dataKey="chatgpt" name="ChatGPT" stroke="#10a37f" strokeWidth={2} dot={{ r: 3 }} connectNulls={false} />
+              <Line
+                type="monotone"
+                dataKey="chatgpt"
+                name="ChatGPT"
+                stroke="#10a37f"
+                strokeWidth={2}
+                dot={{ r: 3 }}
+                connectNulls={false}
+              />
             )}
             {(!modele || modele === "gemini") && (
-              <Line type="monotone" dataKey="gemini" name="Gemini" stroke="#1a73e8" strokeWidth={2} dot={{ r: 3 }} connectNulls={false} />
+              <Line
+                type="monotone"
+                dataKey="gemini"
+                name="Gemini"
+                stroke="#1a73e8"
+                strokeWidth={2}
+                dot={{ r: 3 }}
+                connectNulls={false}
+              />
             )}
           </LineChart>
         </ResponsiveContainer>

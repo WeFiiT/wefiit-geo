@@ -21,7 +21,15 @@ export type AuditEntry = {
   requêteId: string;
   modèle: string;
   run: number;
-  statut: "ok" | "timeout" | "reponse_vide" | "erreur_reseau" | "erreur_ui" | "erreur" | "login-wall" | "ignoré";
+  statut:
+    | "ok"
+    | "timeout"
+    | "reponse_vide"
+    | "erreur_reseau"
+    | "erreur_ui"
+    | "erreur"
+    | "login-wall"
+    | "ignoré";
   démarré: string | null;
   terminé: string | null;
   durée: number | null;
@@ -46,9 +54,12 @@ function dateMinusJours(jours: number): string {
 }
 
 function calculerTaux(jobs: JobEntry[], depuis: string): number {
-  const filtres = jobs.filter(j => j.démarré.slice(0, 10) >= depuis);
+  const filtres = jobs.filter((j) => j.démarré.slice(0, 10) >= depuis);
   if (filtres.length === 0) return 0;
-  return Math.round((filtres.filter(j => j.statut === "succès").length / filtres.length) * 100);
+  return Math.round(
+    (filtres.filter((j) => j.statut === "succès").length / filtres.length) *
+      100,
+  );
 }
 
 function transforme(jobs: JobEntry[], audit: AuditEntry[]): SystemHealthData {
@@ -63,22 +74,27 @@ function transforme(jobs: JobEntry[], audit: AuditEntry[]): SystemHealthData {
   }
 
   // Retries = jobs qui ont un evals.completude avec des manquants résolus
-  const totalRetries = jobs.filter(j => (j.evals?.completude?.manquants?.length ?? 0) === 0 && j.statut === "succès" && j.résumé.erreur > 0).length;
+  const totalRetries = jobs.filter(
+    (j) =>
+      (j.evals?.completude?.manquants?.length ?? 0) === 0 &&
+      j.statut === "succès" &&
+      j.résumé.erreur > 0,
+  ).length;
 
   const evolutionSucces = jobs
     .slice(-30)
-    .map(j => ({ date: j.démarré.slice(0, 10), statut: j.statut }));
+    .map((j) => ({ date: j.démarré.slice(0, 10), statut: j.statut }));
 
   return {
     jobs,
     tauxSucces30j: calculerTaux(jobs, depuis30j),
     tauxSucces7j: calculerTaux(jobs, depuis7j),
     totalJobs: jobs.length,
-    jobsPartiels: jobs.filter(j => j.statut === "partiel").length,
+    jobsPartiels: jobs.filter((j) => j.statut === "partiel").length,
     totalRetries,
     repartitionErreurs,
     evolutionSucces,
-    derniersJobs: [...jobs].reverse().slice(0, 10),
+    derniersJobs: [...jobs].toReversed().slice(0, 10),
   };
 }
 
@@ -88,7 +104,7 @@ export function useSystemHealthData() {
     queryFn: async () => {
       const res = await fetch("/jobs.json");
       if (!res.ok) throw new Error(`Erreur fetch jobs.json : ${res.status}`);
-      return res.json() as Promise<JobEntry[]>;
+      return res.json();
     },
     staleTime: 5 * 60_000,
   });
@@ -98,7 +114,7 @@ export function useSystemHealthData() {
     queryFn: async () => {
       const res = await fetch("/audit.json");
       if (!res.ok) throw new Error(`Erreur fetch audit.json : ${res.status}`);
-      return res.json() as Promise<AuditEntry[]>;
+      return res.json();
     },
     staleTime: 5 * 60_000,
   });

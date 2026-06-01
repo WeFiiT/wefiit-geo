@@ -1,10 +1,7 @@
 import * as React from "react";
 import { Link, useLocation } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import {
-  ChevronDown,
-  Menu,
-} from "lucide-react";
+import { ChevronDown, Menu } from "lucide-react";
 import {
   AppContent,
   MissingSeoSetupModal,
@@ -24,7 +21,7 @@ function WeFiiTFavicon() {
       alt="WeFiiT"
       className="h-7 w-7 shrink-0 rounded-lg object-cover"
       onError={(e) => {
-        (e.target as HTMLImageElement).style.display = "none";
+        e.currentTarget.style.display = "none";
       }}
     />
   );
@@ -175,14 +172,18 @@ function TopNav({
         ) : null}
         <Link to="/" className="ml-1 flex items-center gap-2">
           <WeFiiTFavicon />
-          <span className="font-semibold text-base-content">Dashboard GEO & SEO</span>
+          <span className="font-semibold text-base-content">
+            Dashboard GEO & SEO
+          </span>
         </Link>
       </div>
 
       <div className="hidden items-center gap-1 md:flex">
         <Link to="/" className="flex items-center gap-2 px-2">
           <WeFiiTFavicon />
-          <span className="text-base font-semibold text-base-content">Dashboard GEO & SEO</span>
+          <span className="text-base font-semibold text-base-content">
+            Dashboard GEO & SEO
+          </span>
         </Link>
         {projectId
           ? navGroups.map((entry) => {
