@@ -52,9 +52,10 @@ export function GeoEvolutionChart({ evolutionParRun, modele }: Props) {
             <Tooltip
               contentStyle={{ fontSize: 12 }}
               cursor={{ stroke: "currentColor", strokeOpacity: 0.2 }}
-              labelFormatter={(label: string, payload: Array<{ payload?: { date?: string } }>) =>
-                payload?.[0]?.payload?.date ?? label
-              }
+              labelFormatter={(label, payload) => {
+                const p = payload as Array<{ payload?: { date?: string } }>;
+                return p?.[0]?.payload?.date ?? String(label);
+              }}
               formatter={(value: number | string | undefined) => [
                 `${value ?? ""}%`,
               ]}

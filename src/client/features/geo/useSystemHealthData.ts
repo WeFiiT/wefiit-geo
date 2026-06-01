@@ -101,20 +101,20 @@ function transforme(jobs: JobEntry[], audit: AuditEntry[]): SystemHealthData {
 export function useSystemHealthData() {
   const jobs = useQuery({
     queryKey: ["geo-jobs"],
-    queryFn: async () => {
+    queryFn: async (): Promise<JobEntry[]> => {
       const res = await fetch("/jobs.json");
       if (!res.ok) throw new Error(`Erreur fetch jobs.json : ${res.status}`);
-      return res.json();
+      return res.json() as Promise<JobEntry[]>;
     },
     staleTime: 5 * 60_000,
   });
 
   const auditQ = useQuery({
     queryKey: ["geo-audit"],
-    queryFn: async () => {
+    queryFn: async (): Promise<AuditEntry[]> => {
       const res = await fetch("/audit.json");
       if (!res.ok) throw new Error(`Erreur fetch audit.json : ${res.status}`);
-      return res.json();
+      return res.json() as Promise<AuditEntry[]>;
     },
     staleTime: 5 * 60_000,
   });
