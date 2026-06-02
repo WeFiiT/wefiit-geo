@@ -98,6 +98,15 @@ export function getProjectNavGroups(projectId: string) {
     search: {},
   });
 
+  const domainItem = linkOptions({
+    to: "/p/$projectId/domain" as const,
+    label: "Vue d'ensemble domaine",
+    icon: Globe,
+    matchSegment: "/domain",
+    params: { projectId },
+    search: { domain: "wefiit.com" },
+  });
+
   return [
     {
       type: "standalone" as const,
@@ -112,7 +121,7 @@ export function getProjectNavGroups(projectId: string) {
         bySegment("/rank-tracking"),
         bySegment("/keywords"),
         bySegment("/audit"),
-        bySegment("/domain"),
+        domainItem,
       ],
     },
   ];
