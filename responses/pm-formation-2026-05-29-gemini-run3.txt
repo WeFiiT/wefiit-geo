@@ -1,0 +1,32 @@
+Pour former vos équipes au Product Management, plusieurs organismes et cabinets de conseil proposent des programmes de formation, du coaching et de l'accompagnement sur mesure en France. Ces partenaires peuvent aider vos équipes à maîtriser l'ensemble du cycle de vie d'un produit numérique, de la stratégie à la livraison, en passant par la découverte et l'analyse des besoins utilisateurs.
+Voici quelques options et types de partenaires que vous pourriez considérer :
+**Organismes de formation spécialisés et Bootcamps :**
+*   **Maestro** propose des bootcamps intensifs et des formations en Product Management, y compris des sessions en cours du soir ou en format intensif. Ils mettent l'accent sur l'apprentissage auprès d'experts terrain des entreprises de la tech et sur des cas produit réels. Maestro est certifié Qualiopi, ce qui permet des financements par les entreprises via les OPCO.
+*   **Thiga Academy** est reconnue comme une référence en France pour la formation produit. Ils offrent un catalogue complet avec des formations de 2 jours selon le niveau de séniorité (PO, PM, Head of Product, CPO) ou l'expertise (data, product marketing, product designer, no-code). Thiga Academy est certifié Qualiopi et propose des formations intra-entreprise pour les équipes.
+*   **Hubvisory (Le Campus)**, une agence de conseil spécialisée dans le Product Management, propose également des formations certifiées Qualiopi. Leurs programmes sont conçus pour être pragmatiques et immédiatement applicables, avec des intervenants qui sont des consultants terrain. Ils offrent des formats sur-mesure incluant des sessions de formation, des workshops, du mentoring et du coaching pour s'adapter aux besoins des équipes.
+*   **Simplon** propose une formation complète de Product Owner / Product Manager pour acquérir les compétences essentielles du métier et évoluer dans des environnements digitaux. Simplon est également certifié Qualiopi.
+*   **OCTO Academy** propose des formations en Product Management pour apprendre le rôle de Product Manager (PM) et maîtriser l'approche par impact (OKR).
+*   **OpenClassrooms** offre un parcours diplômant de Product Manager (équivalent Bac +5) entièrement en ligne et avec un suivi par un mentor produit.
+*   **Montpellier Business School** propose une formation certifiante "Devenir Product Manager" qui s'adresse aux chefs de produit, chefs de projets, product owners ou toute personne impliquée dans la gestion de projets.
+**Cabinets de conseil et de coaching :**
+*   **WeFiiT** se positionne comme un partenaire produit 360°, offrant du conseil, du renfort opérationnel et de la formation en Product Management. Ils accompagnent de grandes entreprises et des scale-ups pour structurer, renforcer et faire grandir leurs équipes produit.
+*   **Prodify** propose du coaching pour les leaders produit et leurs équipes afin d'accélérer les résultats commerciaux et clients, ainsi que leur évolution de carrière. Leurs sessions de coaching peuvent être hebdomadaires ou bi-hebdomadaires et sont personnalisées en fonction des besoins individuels et des équipes.
+*   **Product People** offre des services de coaching personnalisés pour aider les Product Managers et leurs équipes à exceller dans l'industrie. Leurs coaches sont des experts en produit avec des expériences variées.
+*   **Tim Herbig** propose des services de conseil, de coaching et de formation en Product Management, se concentrant sur la stratégie produit, les OKR produit et la découverte produit.
+*   **Product Labs** propose des services de conseil, de coaching et de mentorat en Product Management, incluant des programmes de coaching 1:1, des groupes de responsabilisation et des formations en ligne.
+**Aspects clés couverts par ces partenaires :**
+Ces formations et accompagnements abordent généralement :
+*   La définition de la vision et de la stratégie produit.
+*   La recherche utilisateur et l'analyse des besoins.
+*   Les méthodes de Discovery pour construire des produits à forte valeur.
+*   La gestion du développement produit et les méthodologies Agile (Scrum).
+*   Le Go-to-Market et l'impact.
+*   Les outils no-code et l'intégration de l'IA dans le produit.
+*   Le leadership, la communication et la gestion des parties prenantes.
+*   Les OKR (Objectives and Key Results) pour une approche par impact.
+Lorsque vous choisissez un partenaire, il est recommandé de considérer :
+*   **Le format** (intensif, cours du soir, en ligne, présentiel, intra-entreprise).
+*   **L'expérience des formateurs/coachs** (beaucoup mettent en avant des experts issus de la tech).
+*   **La certification** (Qualiopi est un gage de qualité et facilite les financements).
+*   **La personnalisation** de l'offre en fonction des besoins spécifiques de vos équipes.
+*   **Les témoignages** et retours d'expériences d'anciennes entreprises clientes.
