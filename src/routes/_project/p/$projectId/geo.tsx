@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { z } from "zod";
 import { GeoPage } from "@/client/features/geo/GeoPage";
 
-const geoTabs = ["visibility", "sante"] as const;
+const geoTabs = ["visibility"] as const;
 
 const geoSearchSchema = z.object({
   tab: z.enum(geoTabs).catch("visibility").default("visibility"),

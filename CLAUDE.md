@@ -13,20 +13,20 @@ Elle agrège plusieurs outils : rank tracking, audit de site, recherche de mots-
 
 ## Stack technique
 
-| Couche | Techno |
-|--------|--------|
-| Framework client | React 19 + TanStack Start |
-| Routing | TanStack Router v1 (file-based) |
-| State / Data | TanStack Query (React Query) |
-| UI | DaisyUI 5 + Tailwind CSS 4 |
-| Graphiques | Recharts |
-| Backend | Cloudflare Workers |
-| Base de données | Drizzle ORM + D1 (SQLite) |
-| Auth | Better Auth 1.5 (hosted) / Cloudflare Access / local_noauth |
-| Build | Vite 7 + TypeScript 5.9 |
-| Tests | Vitest 3 |
-| Lint | Oxlint + Prettier |
-| Package manager | pnpm 10 |
+| Couche           | Techno                                                      |
+| ---------------- | ----------------------------------------------------------- |
+| Framework client | React 19 + TanStack Start                                   |
+| Routing          | TanStack Router v1 (file-based)                             |
+| State / Data     | TanStack Query (React Query)                                |
+| UI               | DaisyUI 5 + Tailwind CSS 4                                  |
+| Graphiques       | Recharts                                                    |
+| Backend          | Cloudflare Workers                                          |
+| Base de données  | Drizzle ORM + D1 (SQLite)                                   |
+| Auth             | Better Auth 1.5 (hosted) / Cloudflare Access / local_noauth |
+| Build            | Vite 7 + TypeScript 5.9                                     |
+| Tests            | Vitest 3                                                    |
+| Lint             | Oxlint + Prettier                                           |
+| Package manager  | pnpm 10                                                     |
 
 ---
 
@@ -80,6 +80,7 @@ open-seo/
 Le module GEO est **en lecture seule** côté open-seo : il consomme un fichier JSON statique produit par `geo-monitoring/geo-track.mjs`.
 
 **Flux de données :**
+
 ```
 geo-monitoring/geo-track.mjs
   → geo-monitoring/historique.json
@@ -90,14 +91,15 @@ geo-monitoring/geo-track.mjs
 
 **Structure historique.json** — deux formats coexistent (rétrocompat) :
 
-| Champ | Entrées ≤ mai 2026-05-10 | Entrées ≥ 2026-05-11 |
-|-------|--------------------------|----------------------|
+| Champ     | Entrées ≤ mai 2026-05-10 | Entrées ≥ 2026-05-11       |
+| --------- | ------------------------ | -------------------------- |
 | verbatims | `run.wefiit.verbatims[]` | `run.verbatims[]` (racine) |
-| previews | absent | `run.wefiit.previews[]` |
+| previews  | absent                   | `run.wefiit.previews[]`    |
 
 Le hook `useGeoData.ts` gère les deux : `run.verbatims ?? run.wefiit.verbatims ?? []`.
 
 **Ne jamais :**
+
 - Modifier `historique.json` à la main (sauf supprimer des entrées vides `runsOk: 0`)
 - Stocker des données GEO en base D1 — le JSON statique suffit
 - Ajouter un backend API pour le GEO — ça reste statique
@@ -107,6 +109,7 @@ Le hook `useGeoData.ts` gère les deux : `run.verbatims ?? run.wefiit.verbatims 
 ## Authentification
 
 Trois modes configurables via `AUTH_MODE` :
+
 - `local_noauth` — dev local, injecte `admin@localhost` (défaut `pnpm dev`)
 - `cloudflare_access` — valide les JWTs CF Access (prod self-hosted)
 - `hosted` — Better Auth email/password (prod SaaS)
@@ -117,23 +120,23 @@ Trois modes configurables via `AUTH_MODE` :
 
 ### Infrastructure WeFiiT (mise en place le 2026-05-20)
 
-| Ressource | Valeur |
-|---|---|
-| **URL prod** | https://open-seo.wefiit-dash.workers.dev |
-| **Compte Cloudflare** | antoine.simonian@wefiit.com |
-| **Account ID** | 2c7270eaa80f93d3de09fd91284909b0 |
-| **Repo GitHub** | github.com/antoinesimonian-svg/dash-acquisition-wefiit |
-| **Auth mode** | `local_noauth` (temporaire — passer à `cloudflare_access` avant partage équipe) |
+| Ressource             | Valeur                                                                          |
+| --------------------- | ------------------------------------------------------------------------------- |
+| **URL prod**          | https://open-seo.wefiit-dash.workers.dev                                        |
+| **Compte Cloudflare** | antoine.simonian@wefiit.com                                                     |
+| **Account ID**        | 2c7270eaa80f93d3de09fd91284909b0                                                |
+| **Repo GitHub**       | github.com/WeFiiT/wefiit-geo                                                    |
+| **Auth mode**         | `local_noauth` (temporaire — passer à `cloudflare_access` avant partage équipe) |
 
 ### Ressources Cloudflare
 
-| Service | Nom | ID |
-|---|---|---|
-| **D1** (base de données) | open-seo | ad0d5887-8d44-4ce5-a941-730cf03b33bf |
-| **KV** (cache sessions) | KV | 4539ba20c6634b3aaec0499125b7e995 |
-| **KV** (OAuth) | OAUTH_KV | 2ae43daf1b18463c97a85094e8a7154c |
-| **R2** (stockage) | open-seo | — |
-| **Cron** | rank checks | `*/15 * * * *` |
+| Service                  | Nom         | ID                                   |
+| ------------------------ | ----------- | ------------------------------------ |
+| **D1** (base de données) | open-seo    | ad0d5887-8d44-4ce5-a941-730cf03b33bf |
+| **KV** (cache sessions)  | KV          | 4539ba20c6634b3aaec0499125b7e995     |
+| **KV** (OAuth)           | OAUTH_KV    | 2ae43daf1b18463c97a85094e8a7154c     |
+| **R2** (stockage)        | open-seo    | —                                    |
+| **Cron**                 | rank checks | `*/15 * * * *`                       |
 
 ### Secrets configurés sur le Worker
 
@@ -143,11 +146,13 @@ Trois modes configurables via `AUTH_MODE` :
 ### CI/CD — GitHub Actions
 
 **Déploiement automatique** : chaque `git push` sur `main` déclenche `.github/workflows/deploy.yml` qui exécute :
+
 1. `pnpm db:migrate:prod` — migrations D1
 2. `pnpm build` — build Vite + typecheck
 3. `wrangler deploy` — déploiement sur Cloudflare
 
 **Secrets GitHub requis** :
+
 - `CLOUDFLARE_API_TOKEN` — token custom avec D1:Edit, Workers Scripts:Edit, Workers KV:Edit, Workers R2:Edit
 - `CLOUDFLARE_ACCOUNT_ID` — `2c7270eaa80f93d3de09fd91284909b0`
 
@@ -156,6 +161,7 @@ Trois modes configurables via `AUTH_MODE` :
 ### Prochaine étape sécurité
 
 Avant de partager l'URL à l'équipe, configurer **Cloudflare Access** :
+
 1. Dashboard Cloudflare → Zero Trust → Access → Applications
 2. Créer une app "Self-hosted" sur `open-seo.wefiit-dash.workers.dev`
 3. Policy : autoriser les emails de l'équipe WeFiiT
@@ -169,10 +175,13 @@ Avant de partager l'URL à l'équipe, configurer **Cloudflare Access** :
 **Toujours en 2 temps — ne jamais sauter l'étape 1.**
 
 ### Étape 1 — Plan (obligatoire)
+
 Avant tout code, générer un plan :
+
 > "Planifie [feature X] et écris-le dans docs/PLAN-[feature].md"
 
 Le plan doit contenir :
+
 - Objectif en 1 phrase
 - Fichiers à créer / modifier (dont migrations DB si applicable)
 - Étapes dans l'ordre (3-5 max)
@@ -181,6 +190,7 @@ Le plan doit contenir :
 **Attendre validation avant de passer à l'étape 2.**
 
 ### Étape 2 — Exécution
+
 > "Exécute le plan docs/PLAN-[feature].md, étape par étape"
 
 Demander confirmation après chaque étape.

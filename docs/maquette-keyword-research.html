@@ -1,454 +1,980 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Maquette Keyword Research — WeFiiT × open-seo</title>
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maquette Keyword Research — WeFiiT × open-seo</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-    :root {
-      --wf-navy:        #002882;
-      --wf-midnight:    #001d84;
-      --wf-accent:      #2a4cff;
-      --wf-accent-light:#858fd6;
-      --wf-cta-start:   #f98f03;
-      --wf-cta-end:     #e95400;
-      --wf-surface:     #ffffff;
-      --wf-surface-alt: #f2f4ff;
-      --wf-border:      #eff0f6;
-      --wf-text-muted:  #636b75;
-      --font: 'Work Sans', -apple-system, sans-serif;
-    }
+      :root {
+        --wf-navy: #002882;
+        --wf-midnight: #001d84;
+        --wf-accent: #2a4cff;
+        --wf-accent-light: #858fd6;
+        --wf-cta-start: #f98f03;
+        --wf-cta-end: #e95400;
+        --wf-surface: #ffffff;
+        --wf-surface-alt: #f2f4ff;
+        --wf-border: #eff0f6;
+        --wf-text-muted: #636b75;
+        --font: "Work Sans", -apple-system, sans-serif;
+      }
 
-    body { font-family: var(--font); background: #f8f9fa; display: flex; min-height: 100vh; color: var(--wf-navy); }
+      body {
+        font-family: var(--font);
+        background: #f8f9fa;
+        display: flex;
+        min-height: 100vh;
+        color: var(--wf-navy);
+      }
 
-    /* ── Sidebar ── */
-    .sidebar { width: 220px; min-height: 100vh; background: var(--wf-navy); padding: 20px 0; flex-shrink: 0; }
-    .sidebar-logo { padding: 0 16px 24px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 12px; }
-    .sidebar-logo span { font-size: 16px; font-weight: 700; color: #fff; letter-spacing: -0.3px; }
-    .sidebar-logo small { display: block; font-size: 10px; color: var(--wf-accent-light); margin-top: 2px; text-transform: uppercase; letter-spacing: 0.5px; }
-    .sidebar-group { margin-bottom: 4px; }
-    .sidebar-group-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; color: var(--wf-accent-light); padding: 8px 16px 4px; }
-    .sidebar-item { display: flex; align-items: center; gap: 8px; padding: 8px 16px; font-size: 13px; color: rgba(255,255,255,0.55); cursor: pointer; border-left: 3px solid transparent; transition: all 0.15s; }
-    .sidebar-item:hover { background: rgba(255,255,255,0.07); color: #fff; border-left-color: var(--wf-accent-light); }
-    .sidebar-item.active { background: rgba(42,76,255,0.2); color: #fff; border-left-color: var(--wf-accent); }
-    .sidebar-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.25); flex-shrink: 0; }
-    .sidebar-item.active .sidebar-dot { background: var(--wf-accent); }
+      /* ── Sidebar ── */
+      .sidebar {
+        width: 220px;
+        min-height: 100vh;
+        background: var(--wf-navy);
+        padding: 20px 0;
+        flex-shrink: 0;
+      }
+      .sidebar-logo {
+        padding: 0 16px 24px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        margin-bottom: 12px;
+      }
+      .sidebar-logo span {
+        font-size: 16px;
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: -0.3px;
+      }
+      .sidebar-logo small {
+        display: block;
+        font-size: 10px;
+        color: var(--wf-accent-light);
+        margin-top: 2px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .sidebar-group {
+        margin-bottom: 4px;
+      }
+      .sidebar-group-label {
+        font-size: 10px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+        color: var(--wf-accent-light);
+        padding: 8px 16px 4px;
+      }
+      .sidebar-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 16px;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.55);
+        cursor: pointer;
+        border-left: 3px solid transparent;
+        transition: all 0.15s;
+      }
+      .sidebar-item:hover {
+        background: rgba(255, 255, 255, 0.07);
+        color: #fff;
+        border-left-color: var(--wf-accent-light);
+      }
+      .sidebar-item.active {
+        background: rgba(42, 76, 255, 0.2);
+        color: #fff;
+        border-left-color: var(--wf-accent);
+      }
+      .sidebar-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.25);
+        flex-shrink: 0;
+      }
+      .sidebar-item.active .sidebar-dot {
+        background: var(--wf-accent);
+      }
 
-    /* ── Main ── */
-    .main { flex: 1; display: flex; flex-direction: column; background: var(--wf-surface-alt); }
+      /* ── Main ── */
+      .main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        background: var(--wf-surface-alt);
+      }
 
-    /* ── Page header ── */
-    .page-header { background: var(--wf-navy); padding: 28px 32px 24px; border-bottom: 3px solid var(--wf-accent); }
-    .page-header-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 20px; }
-    .page-title { font-size: 24px; font-weight: 400; background: linear-gradient(270deg, var(--wf-accent), #fff 60%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: -0.02em; }
-    .page-subtitle { font-size: 13px; color: var(--wf-accent-light); margin-top: 4px; }
+      /* ── Page header ── */
+      .page-header {
+        background: var(--wf-navy);
+        padding: 28px 32px 24px;
+        border-bottom: 3px solid var(--wf-accent);
+      }
+      .page-header-top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+      .page-title {
+        font-size: 24px;
+        font-weight: 400;
+        background: linear-gradient(270deg, var(--wf-accent), #fff 60%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: -0.02em;
+      }
+      .page-subtitle {
+        font-size: 13px;
+        color: var(--wf-accent-light);
+        margin-top: 4px;
+      }
 
-    /* Barre de recherche principale */
-    .search-bar { display: flex; gap: 0; }
-    .search-main { flex: 1; font-family: var(--font); font-size: 15px; font-weight: 400; padding: 12px 20px; border: none; border-radius: 500px 0 0 500px; background: #fff; color: var(--wf-navy); outline: none; }
-    .search-main::placeholder { color: var(--wf-text-muted); }
-    .search-btn { font-family: var(--font); font-size: 13px; font-weight: 600; padding: 12px 28px; border: none; border-radius: 0 500px 500px 0; background: linear-gradient(270deg, var(--wf-cta-end), var(--wf-cta-start)); color: #fff; cursor: pointer; text-transform: uppercase; letter-spacing: 0.3px; }
-    .search-options { display: flex; gap: 10px; margin-top: 12px; align-items: center; flex-wrap: wrap; }
-    .search-options label { font-size: 12px; color: #8899aa; }
-    .filter-select { appearance: none; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: #fff; font-family: var(--font); font-size: 13px; font-weight: 600; padding: 6px 28px 6px 12px; border-radius: 8px; cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23aabbcc' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 10px center; }
-    .filter-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.1); }
+      /* Barre de recherche principale */
+      .search-bar {
+        display: flex;
+        gap: 0;
+      }
+      .search-main {
+        flex: 1;
+        font-family: var(--font);
+        font-size: 15px;
+        font-weight: 400;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 500px 0 0 500px;
+        background: #fff;
+        color: var(--wf-navy);
+        outline: none;
+      }
+      .search-main::placeholder {
+        color: var(--wf-text-muted);
+      }
+      .search-btn {
+        font-family: var(--font);
+        font-size: 13px;
+        font-weight: 600;
+        padding: 12px 28px;
+        border: none;
+        border-radius: 0 500px 500px 0;
+        background: linear-gradient(
+          270deg,
+          var(--wf-cta-end),
+          var(--wf-cta-start)
+        );
+        color: #fff;
+        cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: 0.3px;
+      }
+      .search-options {
+        display: flex;
+        gap: 10px;
+        margin-top: 12px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .search-options label {
+        font-size: 12px;
+        color: #8899aa;
+      }
+      .filter-select {
+        appearance: none;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        color: #fff;
+        font-family: var(--font);
+        font-size: 13px;
+        font-weight: 600;
+        padding: 6px 28px 6px 12px;
+        border-radius: 8px;
+        cursor: pointer;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23aabbcc' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+      }
+      .filter-sep {
+        width: 1px;
+        height: 20px;
+        background: rgba(255, 255, 255, 0.1);
+      }
 
-    /* ── Body layout 2 colonnes ── */
-    .page-body { padding: 24px 32px; flex: 1; display: flex; gap: 20px; }
-    .col-main { flex: 1; min-width: 0; }
-    .col-side { width: 320px; flex-shrink: 0; }
+      /* ── Body layout 2 colonnes ── */
+      .page-body {
+        padding: 24px 32px;
+        flex: 1;
+        display: flex;
+        gap: 20px;
+      }
+      .col-main {
+        flex: 1;
+        min-width: 0;
+      }
+      .col-side {
+        width: 320px;
+        flex-shrink: 0;
+      }
 
-    /* ── Overview KW sélectionné ── */
-    .kw-overview { background: var(--wf-navy); padding: 20px; margin-bottom: 16px; }
-    .kw-overview-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--wf-accent-light); margin-bottom: 8px; }
-    .kw-selected { font-size: 18px; font-weight: 600; color: #fff; margin-bottom: 14px; letter-spacing: -0.01em; }
-    .kw-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-    .kw-stat { }
-    .kw-stat-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.4px; color: var(--wf-accent-light); margin-bottom: 4px; }
-    .kw-stat-value { font-size: 20px; font-weight: 600; color: #fff; letter-spacing: -0.02em; }
-    .kw-stat-value.kd-easy { color: #81c784; }
-    .kw-stat-value.kd-medium { color: var(--wf-cta-start); }
-    .kw-stat-value.kd-hard { color: #ef9a9a; }
+      /* ── Overview KW sélectionné ── */
+      .kw-overview {
+        background: var(--wf-navy);
+        padding: 20px;
+        margin-bottom: 16px;
+      }
+      .kw-overview-title {
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--wf-accent-light);
+        margin-bottom: 8px;
+      }
+      .kw-selected {
+        font-size: 18px;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 14px;
+        letter-spacing: -0.01em;
+      }
+      .kw-stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+      }
+      .kw-stat {
+      }
+      .kw-stat-label {
+        font-size: 10px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+        color: var(--wf-accent-light);
+        margin-bottom: 4px;
+      }
+      .kw-stat-value {
+        font-size: 20px;
+        font-weight: 600;
+        color: #fff;
+        letter-spacing: -0.02em;
+      }
+      .kw-stat-value.kd-easy {
+        color: #81c784;
+      }
+      .kw-stat-value.kd-medium {
+        color: var(--wf-cta-start);
+      }
+      .kw-stat-value.kd-hard {
+        color: #ef9a9a;
+      }
 
-    /* ── Toolbar ── */
-    .toolbar { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
-    .btn-sm { font-family: var(--font); font-size: 11px; font-weight: 600; padding: 7px 14px; border-radius: 500px; border: 1px solid var(--wf-border); background: var(--wf-surface); color: var(--wf-navy); cursor: pointer; transition: all 0.15s; }
-    .btn-sm:hover { border-color: var(--wf-accent); color: var(--wf-accent); }
-    .toolbar-actions { margin-left: auto; display: flex; gap: 8px; }
-    .results-count { font-size: 12px; color: var(--wf-text-muted); }
-    .btn-save { font-family: var(--font); font-size: 11px; font-weight: 600; padding: 7px 16px; border-radius: 500px; border: none; background: linear-gradient(270deg, var(--wf-cta-end), var(--wf-cta-start)); color: #fff; cursor: pointer; }
+      /* ── Toolbar ── */
+      .toolbar {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 16px;
+        flex-wrap: wrap;
+      }
+      .btn-sm {
+        font-family: var(--font);
+        font-size: 11px;
+        font-weight: 600;
+        padding: 7px 14px;
+        border-radius: 500px;
+        border: 1px solid var(--wf-border);
+        background: var(--wf-surface);
+        color: var(--wf-navy);
+        cursor: pointer;
+        transition: all 0.15s;
+      }
+      .btn-sm:hover {
+        border-color: var(--wf-accent);
+        color: var(--wf-accent);
+      }
+      .toolbar-actions {
+        margin-left: auto;
+        display: flex;
+        gap: 8px;
+      }
+      .results-count {
+        font-size: 12px;
+        color: var(--wf-text-muted);
+      }
+      .btn-save {
+        font-family: var(--font);
+        font-size: 11px;
+        font-weight: 600;
+        padding: 7px 16px;
+        border-radius: 500px;
+        border: none;
+        background: linear-gradient(
+          270deg,
+          var(--wf-cta-end),
+          var(--wf-cta-start)
+        );
+        color: #fff;
+        cursor: pointer;
+      }
 
-    /* ── Tableau ── */
-    .card { background: var(--wf-surface); box-shadow: 0 0 30px rgba(0,0,0,0.07); }
-    .table-wrap { overflow-x: auto; }
-    table { width: 100%; border-collapse: collapse; }
-    thead th { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--wf-text-muted); padding: 12px 14px; text-align: left; border-bottom: 2px solid var(--wf-border); white-space: nowrap; }
-    thead th.sort { cursor: pointer; }
-    thead th.sort:hover { color: var(--wf-navy); }
-    tbody td { padding: 11px 14px; font-size: 13px; color: var(--wf-navy); border-bottom: 1px solid var(--wf-border); vertical-align: middle; white-space: nowrap; }
-    tbody tr:last-child td { border-bottom: none; }
-    tbody tr:hover td { background: var(--wf-surface-alt); }
-    tbody tr.selected td { background: #f0f3ff; }
+      /* ── Tableau ── */
+      .card {
+        background: var(--wf-surface);
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.07);
+      }
+      .table-wrap {
+        overflow-x: auto;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      thead th {
+        font-size: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--wf-text-muted);
+        padding: 12px 14px;
+        text-align: left;
+        border-bottom: 2px solid var(--wf-border);
+        white-space: nowrap;
+      }
+      thead th.sort {
+        cursor: pointer;
+      }
+      thead th.sort:hover {
+        color: var(--wf-navy);
+      }
+      tbody td {
+        padding: 11px 14px;
+        font-size: 13px;
+        color: var(--wf-navy);
+        border-bottom: 1px solid var(--wf-border);
+        vertical-align: middle;
+        white-space: nowrap;
+      }
+      tbody tr:last-child td {
+        border-bottom: none;
+      }
+      tbody tr:hover td {
+        background: var(--wf-surface-alt);
+      }
+      tbody tr.selected td {
+        background: #f0f3ff;
+      }
 
-    .check-box { width: 15px; height: 15px; border: 1px solid var(--wf-border); border-radius: 3px; cursor: pointer; }
+      .check-box {
+        width: 15px;
+        height: 15px;
+        border: 1px solid var(--wf-border);
+        border-radius: 3px;
+        cursor: pointer;
+      }
 
-    /* Intent badges */
-    .intent-badge { display: inline-flex; padding: 3px 8px; border-radius: 500px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3px; }
-    .intent-info        { background: #e8f0fe; color: #3949ab; }
-    .intent-commercial  { background: #fff3e0; color: #e65100; }
-    .intent-transac     { background: #e8f5e9; color: #2e7d32; }
-    .intent-nav         { background: var(--wf-surface-alt); color: var(--wf-text-muted); }
+      /* Intent badges */
+      .intent-badge {
+        display: inline-flex;
+        padding: 3px 8px;
+        border-radius: 500px;
+        font-size: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.3px;
+      }
+      .intent-info {
+        background: #e8f0fe;
+        color: #3949ab;
+      }
+      .intent-commercial {
+        background: #fff3e0;
+        color: #e65100;
+      }
+      .intent-transac {
+        background: #e8f5e9;
+        color: #2e7d32;
+      }
+      .intent-nav {
+        background: var(--wf-surface-alt);
+        color: var(--wf-text-muted);
+      }
 
-    .kd-badge { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 20px; border-radius: 4px; font-size: 11px; font-weight: 700; }
-    .kd-easy   { background: #e8f5e9; color: #2e7d32; }
-    .kd-medium { background: #fff3e0; color: #e65100; }
-    .kd-hard   { background: #fce4ec; color: #c62828; }
+      .kd-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 34px;
+        height: 20px;
+        border-radius: 4px;
+        font-size: 11px;
+        font-weight: 700;
+      }
+      .kd-easy {
+        background: #e8f5e9;
+        color: #2e7d32;
+      }
+      .kd-medium {
+        background: #fff3e0;
+        color: #e65100;
+      }
+      .kd-hard {
+        background: #fce4ec;
+        color: #c62828;
+      }
 
-    .vol-cell { font-weight: 600; }
+      .vol-cell {
+        font-weight: 600;
+      }
 
-    /* Mini trend chart (SVG inline) */
-    .trend-cell { width: 80px; }
+      /* Mini trend chart (SVG inline) */
+      .trend-cell {
+        width: 80px;
+      }
 
-    /* Pagination */
-    .pagination { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; border-top: 1px solid var(--wf-border); }
-    .page-info { font-size: 12px; color: var(--wf-text-muted); }
-    .page-btns { display: flex; gap: 4px; }
-    .page-btn { font-family: var(--font); font-size: 12px; font-weight: 600; padding: 5px 10px; border: 1px solid var(--wf-border); border-radius: 6px; background: var(--wf-surface); color: var(--wf-navy); cursor: pointer; }
-    .page-btn.active { background: var(--wf-navy); color: #fff; border-color: var(--wf-navy); }
+      /* Pagination */
+      .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 16px;
+        border-top: 1px solid var(--wf-border);
+      }
+      .page-info {
+        font-size: 12px;
+        color: var(--wf-text-muted);
+      }
+      .page-btns {
+        display: flex;
+        gap: 4px;
+      }
+      .page-btn {
+        font-family: var(--font);
+        font-size: 12px;
+        font-weight: 600;
+        padding: 5px 10px;
+        border: 1px solid var(--wf-border);
+        border-radius: 6px;
+        background: var(--wf-surface);
+        color: var(--wf-navy);
+        cursor: pointer;
+      }
+      .page-btn.active {
+        background: var(--wf-navy);
+        color: #fff;
+        border-color: var(--wf-navy);
+      }
 
-    /* ── Colonne droite : SERP Analysis ── */
-    .serp-card { background: var(--wf-surface); box-shadow: 0 0 30px rgba(0,0,0,0.07); margin-bottom: 16px; }
-    .serp-card-header { background: var(--wf-navy); padding: 14px 18px; }
-    .serp-card-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--wf-accent-light); margin-bottom: 2px; }
-    .serp-card-kw { font-size: 14px; font-weight: 600; color: #fff; }
-    .serp-result { padding: 14px 18px; border-bottom: 1px solid var(--wf-border); }
-    .serp-result:last-child { border-bottom: none; }
-    .serp-rank { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; font-size: 10px; font-weight: 700; background: var(--wf-surface-alt); color: var(--wf-navy); margin-bottom: 6px; }
-    .serp-rank.top3 { background: var(--wf-navy); color: #fff; }
-    .serp-title { font-size: 13px; font-weight: 600; color: var(--wf-accent); margin-bottom: 3px; line-height: 1.3; }
-    .serp-url { font-size: 11px; color: var(--wf-text-muted); margin-bottom: 6px; }
-    .serp-metrics { display: flex; gap: 12px; }
-    .serp-metric { font-size: 10px; color: var(--wf-text-muted); }
-    .serp-metric strong { color: var(--wf-navy); font-weight: 600; }
-  </style>
-</head>
-<body>
-
-  <!-- Sidebar WeFiiT -->
-  <aside class="sidebar">
-    <div class="sidebar-logo">
-      <span>open-seo</span>
-      <small>WeFiiT workspace</small>
-    </div>
-    <div class="sidebar-group">
-      <div class="sidebar-group-label">Keywords</div>
-      <div class="sidebar-item active"><span class="sidebar-dot"></span> Keyword Research</div>
-      <div class="sidebar-item"><span class="sidebar-dot"></span> Saved Keywords</div>
-      <div class="sidebar-item"><span class="sidebar-dot"></span> Rank Tracking</div>
-    </div>
-    <div class="sidebar-group">
-      <div class="sidebar-group-label">Domain</div>
-      <div class="sidebar-item"><span class="sidebar-dot"></span> Domain Overview</div>
-      <div class="sidebar-item"><span class="sidebar-dot"></span> Backlinks</div>
-      <div class="sidebar-item"><span class="sidebar-dot"></span> Site Audit</div>
-    </div>
-    <div class="sidebar-group">
-      <div class="sidebar-group-label">AI Visibility</div>
-      <div class="sidebar-item"><span class="sidebar-dot"></span> Brand Lookup</div>
-      <div class="sidebar-item"><span class="sidebar-dot"></span> Prompt Explorer</div>
-      <div class="sidebar-item"><span class="sidebar-dot"></span> GEO Dashboard</div>
-    </div>
-    <div class="sidebar-group" style="margin-top:8px; border-top:1px solid rgba(255,255,255,0.07); padding-top:8px;">
-      <div class="sidebar-item"><span class="sidebar-dot"></span> AI &amp; MCP</div>
-    </div>
-  </aside>
-
-  <main class="main">
-
-    <!-- Header avec barre de recherche -->
-    <header class="page-header">
-      <div class="page-header-top">
-        <div>
-          <h1 class="page-title">Keyword Research</h1>
-          <p class="page-subtitle">Découvrez et analysez les mots-clés à fort potentiel</p>
+      /* ── Colonne droite : SERP Analysis ── */
+      .serp-card {
+        background: var(--wf-surface);
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.07);
+        margin-bottom: 16px;
+      }
+      .serp-card-header {
+        background: var(--wf-navy);
+        padding: 14px 18px;
+      }
+      .serp-card-title {
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--wf-accent-light);
+        margin-bottom: 2px;
+      }
+      .serp-card-kw {
+        font-size: 14px;
+        font-weight: 600;
+        color: #fff;
+      }
+      .serp-result {
+        padding: 14px 18px;
+        border-bottom: 1px solid var(--wf-border);
+      }
+      .serp-result:last-child {
+        border-bottom: none;
+      }
+      .serp-rank {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        font-size: 10px;
+        font-weight: 700;
+        background: var(--wf-surface-alt);
+        color: var(--wf-navy);
+        margin-bottom: 6px;
+      }
+      .serp-rank.top3 {
+        background: var(--wf-navy);
+        color: #fff;
+      }
+      .serp-title {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--wf-accent);
+        margin-bottom: 3px;
+        line-height: 1.3;
+      }
+      .serp-url {
+        font-size: 11px;
+        color: var(--wf-text-muted);
+        margin-bottom: 6px;
+      }
+      .serp-metrics {
+        display: flex;
+        gap: 12px;
+      }
+      .serp-metric {
+        font-size: 10px;
+        color: var(--wf-text-muted);
+      }
+      .serp-metric strong {
+        color: var(--wf-navy);
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sidebar WeFiiT -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <span>open-seo</span>
+        <small>WeFiiT workspace</small>
+      </div>
+      <div class="sidebar-group">
+        <div class="sidebar-group-label">Keywords</div>
+        <div class="sidebar-item active">
+          <span class="sidebar-dot"></span> Keyword Research
+        </div>
+        <div class="sidebar-item">
+          <span class="sidebar-dot"></span> Saved Keywords
+        </div>
+        <div class="sidebar-item">
+          <span class="sidebar-dot"></span> Rank Tracking
         </div>
       </div>
-      <div class="search-bar">
-        <input class="search-main" type="text" value="cabinet conseil product management" placeholder="Entrez un mot-clé...">
-        <button class="search-btn">Rechercher</button>
-      </div>
-      <div class="search-options">
-        <label>Mode</label>
-        <select class="filter-select">
-          <option>Mots-clés associés</option>
-          <option>Suggestions</option>
-          <option>Idées</option>
-          <option>Auto</option>
-        </select>
-        <div class="filter-sep"></div>
-        <label>Localisation</label>
-        <select class="filter-select">
-          <option>France — fr</option>
-          <option>USA — en</option>
-        </select>
-        <div class="filter-sep"></div>
-        <label>Résultats</label>
-        <select class="filter-select">
-          <option>150</option>
-          <option>300</option>
-          <option>500</option>
-        </select>
-      </div>
-    </header>
-
-    <div class="page-body">
-
-      <!-- Colonne principale -->
-      <div class="col-main">
-
-        <!-- KW overview sélectionné -->
-        <div class="kw-overview">
-          <div class="kw-overview-title">Mot-clé sélectionné</div>
-          <div class="kw-selected">cabinet conseil product management</div>
-          <div class="kw-stats">
-            <div class="kw-stat">
-              <div class="kw-stat-label">KD</div>
-              <div class="kw-stat-value kd-hard">74</div>
-            </div>
-            <div class="kw-stat">
-              <div class="kw-stat-label">Volume</div>
-              <div class="kw-stat-value">1 600</div>
-            </div>
-            <div class="kw-stat">
-              <div class="kw-stat-label">CPC</div>
-              <div class="kw-stat-value">€8.40</div>
-            </div>
-            <div class="kw-stat">
-              <div class="kw-stat-label">Intent</div>
-              <div class="kw-stat-value" style="font-size:13px; margin-top:3px;"><span class="intent-badge intent-commercial">Commercial</span></div>
-            </div>
-          </div>
+      <div class="sidebar-group">
+        <div class="sidebar-group-label">Domain</div>
+        <div class="sidebar-item">
+          <span class="sidebar-dot"></span> Domain Overview
         </div>
-
-        <!-- Toolbar -->
-        <div class="toolbar">
-          <span class="results-count">143 mots-clés trouvés</span>
-          <div class="toolbar-actions">
-            <button class="btn-sm">☰ Filtres</button>
-            <button class="btn-sm">⬇ CSV</button>
-            <button class="btn-sm">↗ Sheets</button>
-            <button class="btn-save">💾 Sauvegarder sélection</button>
-          </div>
+        <div class="sidebar-item">
+          <span class="sidebar-dot"></span> Backlinks
         </div>
-
-        <!-- Tableau résultats -->
-        <div class="card">
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th><input type="checkbox" class="check-box"></th>
-                  <th class="sort">Mot-clé ↕</th>
-                  <th class="sort">Volume ↕</th>
-                  <th class="sort">KD ↕</th>
-                  <th class="sort">CPC ↕</th>
-                  <th class="sort">Comp. ↕</th>
-                  <th>Intent</th>
-                  <th>Tendance 12m</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="selected">
-                  <td><input type="checkbox" class="check-box" checked></td>
-                  <td style="font-weight:600;">cabinet conseil product management</td>
-                  <td class="vol-cell">1 600</td>
-                  <td><span class="kd-badge kd-hard">74</span></td>
-                  <td>€8.40</td>
-                  <td>0.72</td>
-                  <td><span class="intent-badge intent-commercial">Commercial</span></td>
-                  <td class="trend-cell">
-                    <svg width="80" height="28" viewBox="0 0 80 28">
-                      <polyline fill="none" stroke="#2a4cff" stroke-width="1.5"
-                        points="0,22 7,20 14,18 21,16 28,19 35,14 42,12 49,10 56,8 63,11 70,7 80,5"/>
-                    </svg>
-                  </td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox" class="check-box"></td>
-                  <td style="font-weight:600;">consultant product management paris</td>
-                  <td class="vol-cell">880</td>
-                  <td><span class="kd-badge kd-hard">68</span></td>
-                  <td>€9.10</td>
-                  <td>0.68</td>
-                  <td><span class="intent-badge intent-commercial">Commercial</span></td>
-                  <td class="trend-cell">
-                    <svg width="80" height="28" viewBox="0 0 80 28">
-                      <polyline fill="none" stroke="#2a4cff" stroke-width="1.5"
-                        points="0,18 7,20 14,16 21,14 28,17 35,13 42,15 49,12 56,10 63,13 70,9 80,8"/>
-                    </svg>
-                  </td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox" class="check-box"></td>
-                  <td style="font-weight:600;">formation product management</td>
-                  <td class="vol-cell">2 400</td>
-                  <td><span class="kd-badge kd-medium">52</span></td>
-                  <td>€4.90</td>
-                  <td>0.55</td>
-                  <td><span class="intent-badge intent-info">Informationnel</span></td>
-                  <td class="trend-cell">
-                    <svg width="80" height="28" viewBox="0 0 80 28">
-                      <polyline fill="none" stroke="#2a4cff" stroke-width="1.5"
-                        points="0,15 7,12 14,14 21,10 28,8 35,12 42,9 49,7 56,10 63,6 70,8 80,5"/>
-                    </svg>
-                  </td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox" class="check-box"></td>
-                  <td style="font-weight:600;">meilleur cabinet product management</td>
-                  <td class="vol-cell">480</td>
-                  <td><span class="kd-badge kd-hard">71</span></td>
-                  <td>€10.20</td>
-                  <td>0.74</td>
-                  <td><span class="intent-badge intent-commercial">Commercial</span></td>
-                  <td class="trend-cell">
-                    <svg width="80" height="28" viewBox="0 0 80 28">
-                      <polyline fill="none" stroke="#2a4cff" stroke-width="1.5"
-                        points="0,24 7,22 14,20 21,22 28,18 35,20 42,16 49,14 56,16 63,12 70,10 80,8"/>
-                    </svg>
-                  </td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox" class="check-box"></td>
-                  <td style="font-weight:600;">product manager freelance</td>
-                  <td class="vol-cell">3 600</td>
-                  <td><span class="kd-badge kd-medium">41</span></td>
-                  <td>€3.20</td>
-                  <td>0.39</td>
-                  <td><span class="intent-badge intent-transac">Transactionnel</span></td>
-                  <td class="trend-cell">
-                    <svg width="80" height="28" viewBox="0 0 80 28">
-                      <polyline fill="none" stroke="#2a4cff" stroke-width="1.5"
-                        points="0,12 7,14 14,10 21,12 28,8 35,10 42,7 49,9 56,6 63,8 70,5 80,4"/>
-                    </svg>
-                  </td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox" class="check-box"></td>
-                  <td style="font-weight:600;">coaching product management</td>
-                  <td class="vol-cell">720</td>
-                  <td><span class="kd-badge kd-easy">28</span></td>
-                  <td>€5.60</td>
-                  <td>0.31</td>
-                  <td><span class="intent-badge intent-info">Informationnel</span></td>
-                  <td class="trend-cell">
-                    <svg width="80" height="28" viewBox="0 0 80 28">
-                      <polyline fill="none" stroke="#2a4cff" stroke-width="1.5"
-                        points="0,20 7,18 14,22 21,16 28,18 35,14 42,16 49,12 56,14 63,10 70,12 80,9"/>
-                    </svg>
-                  </td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox" class="check-box"></td>
-                  <td style="font-weight:600;">agence product marketing paris</td>
-                  <td class="vol-cell">590</td>
-                  <td><span class="kd-badge kd-medium">47</span></td>
-                  <td>€6.80</td>
-                  <td>0.52</td>
-                  <td><span class="intent-badge intent-commercial">Commercial</span></td>
-                  <td class="trend-cell">
-                    <svg width="80" height="28" viewBox="0 0 80 28">
-                      <polyline fill="none" stroke="#2a4cff" stroke-width="1.5"
-                        points="0,16 7,18 14,14 21,16 28,12 35,14 42,10 49,12 56,9 63,11 70,8 80,6"/>
-                    </svg>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="pagination">
-            <div class="page-info">143 résultats · 1 sélectionné</div>
-            <div class="page-btns">
-              <button class="page-btn active">1</button>
-              <button class="page-btn">2</button>
-              <button class="page-btn">3</button>
-              <button class="page-btn">…</button>
-              <button class="page-btn">10</button>
-            </div>
-          </div>
-        </div>
-
-      </div><!-- /col-main -->
-
-      <!-- Colonne droite : SERP Analysis -->
-      <div class="col-side">
-        <div class="serp-card">
-          <div class="serp-card-header">
-            <div class="serp-card-title">Analyse SERP</div>
-            <div class="serp-card-kw">cabinet conseil product management</div>
-          </div>
-
-          <div class="serp-result">
-            <div class="serp-rank top3">1</div>
-            <div class="serp-title">Thiga — Cabinet de conseil en Product Management</div>
-            <div class="serp-url">thiga.co › cabinet-conseil-pm</div>
-            <div class="serp-metrics">
-              <div class="serp-metric">ETV <strong>420</strong></div>
-              <div class="serp-metric">RD <strong>1 240</strong></div>
-              <div class="serp-metric">BL <strong>4 800</strong></div>
-            </div>
-          </div>
-
-          <div class="serp-result">
-            <div class="serp-rank top3">2</div>
-            <div class="serp-title">WeFiiT — Spécialiste Product Management Paris</div>
-            <div class="serp-url">wefiit.com › product-management</div>
-            <div class="serp-metrics">
-              <div class="serp-metric">ETV <strong>310</strong></div>
-              <div class="serp-metric">RD <strong>380</strong></div>
-              <div class="serp-metric">BL <strong>1 100</strong></div>
-            </div>
-          </div>
-
-          <div class="serp-result">
-            <div class="serp-rank top3">3</div>
-            <div class="serp-title">Hubvisory — Conseil & Formation Produit</div>
-            <div class="serp-url">hubvisory.com › conseil</div>
-            <div class="serp-metrics">
-              <div class="serp-metric">ETV <strong>280</strong></div>
-              <div class="serp-metric">RD <strong>290</strong></div>
-              <div class="serp-metric">BL <strong>890</strong></div>
-            </div>
-          </div>
-
-          <div class="serp-result">
-            <div class="serp-rank">4</div>
-            <div class="serp-title">Wivoo — Experts Product Management &amp; Agile</div>
-            <div class="serp-url">wivoo.fr › services</div>
-            <div class="serp-metrics">
-              <div class="serp-metric">ETV <strong>190</strong></div>
-              <div class="serp-metric">RD <strong>210</strong></div>
-              <div class="serp-metric">BL <strong>640</strong></div>
-            </div>
-          </div>
-
-          <div class="serp-result">
-            <div class="serp-rank">5</div>
-            <div class="serp-title">Mozza — Talent Product & Design</div>
-            <div class="serp-url">mozza.io › product</div>
-            <div class="serp-metrics">
-              <div class="serp-metric">ETV <strong>140</strong></div>
-              <div class="serp-metric">RD <strong>180</strong></div>
-              <div class="serp-metric">BL <strong>520</strong></div>
-            </div>
-          </div>
+        <div class="sidebar-item">
+          <span class="sidebar-dot"></span> Site Audit
         </div>
       </div>
+      <div class="sidebar-group">
+        <div class="sidebar-group-label">AI Visibility</div>
+        <div class="sidebar-item">
+          <span class="sidebar-dot"></span> Brand Lookup
+        </div>
+        <div class="sidebar-item">
+          <span class="sidebar-dot"></span> Prompt Explorer
+        </div>
+        <div class="sidebar-item">
+          <span class="sidebar-dot"></span> GEO Dashboard
+        </div>
+      </div>
+      <div
+        class="sidebar-group"
+        style="
+          margin-top: 8px;
+          border-top: 1px solid rgba(255, 255, 255, 0.07);
+          padding-top: 8px;
+        "
+      >
+        <div class="sidebar-item">
+          <span class="sidebar-dot"></span> AI &amp; MCP
+        </div>
+      </div>
+    </aside>
 
-    </div><!-- /page-body -->
-  </main>
-</body>
+    <main class="main">
+      <!-- Header avec barre de recherche -->
+      <header class="page-header">
+        <div class="page-header-top">
+          <div>
+            <h1 class="page-title">Keyword Research</h1>
+            <p class="page-subtitle">
+              Découvrez et analysez les mots-clés à fort potentiel
+            </p>
+          </div>
+        </div>
+        <div class="search-bar">
+          <input
+            class="search-main"
+            type="text"
+            value="cabinet conseil product management"
+            placeholder="Entrez un mot-clé..."
+          />
+          <button class="search-btn">Rechercher</button>
+        </div>
+        <div class="search-options">
+          <label>Mode</label>
+          <select class="filter-select">
+            <option>Mots-clés associés</option>
+            <option>Suggestions</option>
+            <option>Idées</option>
+            <option>Auto</option>
+          </select>
+          <div class="filter-sep"></div>
+          <label>Localisation</label>
+          <select class="filter-select">
+            <option>France — fr</option>
+            <option>USA — en</option>
+          </select>
+          <div class="filter-sep"></div>
+          <label>Résultats</label>
+          <select class="filter-select">
+            <option>150</option>
+            <option>300</option>
+            <option>500</option>
+          </select>
+        </div>
+      </header>
+
+      <div class="page-body">
+        <!-- Colonne principale -->
+        <div class="col-main">
+          <!-- KW overview sélectionné -->
+          <div class="kw-overview">
+            <div class="kw-overview-title">Mot-clé sélectionné</div>
+            <div class="kw-selected">cabinet conseil product management</div>
+            <div class="kw-stats">
+              <div class="kw-stat">
+                <div class="kw-stat-label">KD</div>
+                <div class="kw-stat-value kd-hard">74</div>
+              </div>
+              <div class="kw-stat">
+                <div class="kw-stat-label">Volume</div>
+                <div class="kw-stat-value">1 600</div>
+              </div>
+              <div class="kw-stat">
+                <div class="kw-stat-label">CPC</div>
+                <div class="kw-stat-value">€8.40</div>
+              </div>
+              <div class="kw-stat">
+                <div class="kw-stat-label">Intent</div>
+                <div
+                  class="kw-stat-value"
+                  style="font-size: 13px; margin-top: 3px"
+                >
+                  <span class="intent-badge intent-commercial">Commercial</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Toolbar -->
+          <div class="toolbar">
+            <span class="results-count">143 mots-clés trouvés</span>
+            <div class="toolbar-actions">
+              <button class="btn-sm">☰ Filtres</button>
+              <button class="btn-sm">⬇ CSV</button>
+              <button class="btn-sm">↗ Sheets</button>
+              <button class="btn-save">💾 Sauvegarder sélection</button>
+            </div>
+          </div>
+
+          <!-- Tableau résultats -->
+          <div class="card">
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th><input type="checkbox" class="check-box" /></th>
+                    <th class="sort">Mot-clé ↕</th>
+                    <th class="sort">Volume ↕</th>
+                    <th class="sort">KD ↕</th>
+                    <th class="sort">CPC ↕</th>
+                    <th class="sort">Comp. ↕</th>
+                    <th>Intent</th>
+                    <th>Tendance 12m</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="selected">
+                    <td><input type="checkbox" class="check-box" checked /></td>
+                    <td style="font-weight: 600">
+                      cabinet conseil product management
+                    </td>
+                    <td class="vol-cell">1 600</td>
+                    <td><span class="kd-badge kd-hard">74</span></td>
+                    <td>€8.40</td>
+                    <td>0.72</td>
+                    <td>
+                      <span class="intent-badge intent-commercial"
+                        >Commercial</span
+                      >
+                    </td>
+                    <td class="trend-cell">
+                      <svg width="80" height="28" viewBox="0 0 80 28">
+                        <polyline
+                          fill="none"
+                          stroke="#2a4cff"
+                          stroke-width="1.5"
+                          points="0,22 7,20 14,18 21,16 28,19 35,14 42,12 49,10 56,8 63,11 70,7 80,5"
+                        />
+                      </svg>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" class="check-box" /></td>
+                    <td style="font-weight: 600">
+                      consultant product management paris
+                    </td>
+                    <td class="vol-cell">880</td>
+                    <td><span class="kd-badge kd-hard">68</span></td>
+                    <td>€9.10</td>
+                    <td>0.68</td>
+                    <td>
+                      <span class="intent-badge intent-commercial"
+                        >Commercial</span
+                      >
+                    </td>
+                    <td class="trend-cell">
+                      <svg width="80" height="28" viewBox="0 0 80 28">
+                        <polyline
+                          fill="none"
+                          stroke="#2a4cff"
+                          stroke-width="1.5"
+                          points="0,18 7,20 14,16 21,14 28,17 35,13 42,15 49,12 56,10 63,13 70,9 80,8"
+                        />
+                      </svg>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" class="check-box" /></td>
+                    <td style="font-weight: 600">
+                      formation product management
+                    </td>
+                    <td class="vol-cell">2 400</td>
+                    <td><span class="kd-badge kd-medium">52</span></td>
+                    <td>€4.90</td>
+                    <td>0.55</td>
+                    <td>
+                      <span class="intent-badge intent-info"
+                        >Informationnel</span
+                      >
+                    </td>
+                    <td class="trend-cell">
+                      <svg width="80" height="28" viewBox="0 0 80 28">
+                        <polyline
+                          fill="none"
+                          stroke="#2a4cff"
+                          stroke-width="1.5"
+                          points="0,15 7,12 14,14 21,10 28,8 35,12 42,9 49,7 56,10 63,6 70,8 80,5"
+                        />
+                      </svg>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" class="check-box" /></td>
+                    <td style="font-weight: 600">
+                      meilleur cabinet product management
+                    </td>
+                    <td class="vol-cell">480</td>
+                    <td><span class="kd-badge kd-hard">71</span></td>
+                    <td>€10.20</td>
+                    <td>0.74</td>
+                    <td>
+                      <span class="intent-badge intent-commercial"
+                        >Commercial</span
+                      >
+                    </td>
+                    <td class="trend-cell">
+                      <svg width="80" height="28" viewBox="0 0 80 28">
+                        <polyline
+                          fill="none"
+                          stroke="#2a4cff"
+                          stroke-width="1.5"
+                          points="0,24 7,22 14,20 21,22 28,18 35,20 42,16 49,14 56,16 63,12 70,10 80,8"
+                        />
+                      </svg>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" class="check-box" /></td>
+                    <td style="font-weight: 600">product manager freelance</td>
+                    <td class="vol-cell">3 600</td>
+                    <td><span class="kd-badge kd-medium">41</span></td>
+                    <td>€3.20</td>
+                    <td>0.39</td>
+                    <td>
+                      <span class="intent-badge intent-transac"
+                        >Transactionnel</span
+                      >
+                    </td>
+                    <td class="trend-cell">
+                      <svg width="80" height="28" viewBox="0 0 80 28">
+                        <polyline
+                          fill="none"
+                          stroke="#2a4cff"
+                          stroke-width="1.5"
+                          points="0,12 7,14 14,10 21,12 28,8 35,10 42,7 49,9 56,6 63,8 70,5 80,4"
+                        />
+                      </svg>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" class="check-box" /></td>
+                    <td style="font-weight: 600">
+                      coaching product management
+                    </td>
+                    <td class="vol-cell">720</td>
+                    <td><span class="kd-badge kd-easy">28</span></td>
+                    <td>€5.60</td>
+                    <td>0.31</td>
+                    <td>
+                      <span class="intent-badge intent-info"
+                        >Informationnel</span
+                      >
+                    </td>
+                    <td class="trend-cell">
+                      <svg width="80" height="28" viewBox="0 0 80 28">
+                        <polyline
+                          fill="none"
+                          stroke="#2a4cff"
+                          stroke-width="1.5"
+                          points="0,20 7,18 14,22 21,16 28,18 35,14 42,16 49,12 56,14 63,10 70,12 80,9"
+                        />
+                      </svg>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" class="check-box" /></td>
+                    <td style="font-weight: 600">
+                      agence product marketing paris
+                    </td>
+                    <td class="vol-cell">590</td>
+                    <td><span class="kd-badge kd-medium">47</span></td>
+                    <td>€6.80</td>
+                    <td>0.52</td>
+                    <td>
+                      <span class="intent-badge intent-commercial"
+                        >Commercial</span
+                      >
+                    </td>
+                    <td class="trend-cell">
+                      <svg width="80" height="28" viewBox="0 0 80 28">
+                        <polyline
+                          fill="none"
+                          stroke="#2a4cff"
+                          stroke-width="1.5"
+                          points="0,16 7,18 14,14 21,16 28,12 35,14 42,10 49,12 56,9 63,11 70,8 80,6"
+                        />
+                      </svg>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="pagination">
+              <div class="page-info">143 résultats · 1 sélectionné</div>
+              <div class="page-btns">
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <button class="page-btn">…</button>
+                <button class="page-btn">10</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /col-main -->
+
+        <!-- Colonne droite : SERP Analysis -->
+        <div class="col-side">
+          <div class="serp-card">
+            <div class="serp-card-header">
+              <div class="serp-card-title">Analyse SERP</div>
+              <div class="serp-card-kw">cabinet conseil product management</div>
+            </div>
+
+            <div class="serp-result">
+              <div class="serp-rank top3">1</div>
+              <div class="serp-title">
+                Thiga — Cabinet de conseil en Product Management
+              </div>
+              <div class="serp-url">thiga.co › cabinet-conseil-pm</div>
+              <div class="serp-metrics">
+                <div class="serp-metric">ETV <strong>420</strong></div>
+                <div class="serp-metric">RD <strong>1 240</strong></div>
+                <div class="serp-metric">BL <strong>4 800</strong></div>
+              </div>
+            </div>
+
+            <div class="serp-result">
+              <div class="serp-rank top3">2</div>
+              <div class="serp-title">
+                WeFiiT — Spécialiste Product Management Paris
+              </div>
+              <div class="serp-url">wefiit.com › product-management</div>
+              <div class="serp-metrics">
+                <div class="serp-metric">ETV <strong>310</strong></div>
+                <div class="serp-metric">RD <strong>380</strong></div>
+                <div class="serp-metric">BL <strong>1 100</strong></div>
+              </div>
+            </div>
+
+            <div class="serp-result">
+              <div class="serp-rank top3">3</div>
+              <div class="serp-title">
+                Hubvisory — Conseil & Formation Produit
+              </div>
+              <div class="serp-url">hubvisory.com › conseil</div>
+              <div class="serp-metrics">
+                <div class="serp-metric">ETV <strong>280</strong></div>
+                <div class="serp-metric">RD <strong>290</strong></div>
+                <div class="serp-metric">BL <strong>890</strong></div>
+              </div>
+            </div>
+
+            <div class="serp-result">
+              <div class="serp-rank">4</div>
+              <div class="serp-title">
+                Wivoo — Experts Product Management &amp; Agile
+              </div>
+              <div class="serp-url">wivoo.fr › services</div>
+              <div class="serp-metrics">
+                <div class="serp-metric">ETV <strong>190</strong></div>
+                <div class="serp-metric">RD <strong>210</strong></div>
+                <div class="serp-metric">BL <strong>640</strong></div>
+              </div>
+            </div>
+
+            <div class="serp-result">
+              <div class="serp-rank">5</div>
+              <div class="serp-title">Mozza — Talent Product & Design</div>
+              <div class="serp-url">mozza.io › product</div>
+              <div class="serp-metrics">
+                <div class="serp-metric">ETV <strong>140</strong></div>
+                <div class="serp-metric">RD <strong>180</strong></div>
+                <div class="serp-metric">BL <strong>520</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /page-body -->
+    </main>
+  </body>
 </html>

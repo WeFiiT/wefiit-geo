@@ -47,7 +47,9 @@ Objet JSON avec une clé par requête monitorée.
         "wefiit": {
           "citations": 2,
           "previews": ["ligne exacte avec WeFiiT (≤200 chars)"],
-          "reponsesChemins": ["responses/pm-general-2026-05-19-chatgpt-run1.txt"]
+          "reponsesChemins": [
+            "responses/pm-general-2026-05-19-chatgpt-run1.txt"
+          ]
         },
         "verbatims": ["500 chars run 1", "500 chars run 2", "500 chars run 3"],
         "concurrents": { "Thiga": 3, "Wivoo": 2 },
@@ -64,24 +66,24 @@ Objet JSON avec une clé par requête monitorée.
 Les anciennes entrées ont les verbatims dans `wefiit.verbatims` (et non à la racine).
 Le hook gère les deux via : `run.verbatims ?? run.wefiit.verbatims ?? []`.
 
-| Champ | Format ancien (≤ 2026-05-10) | Format actuel (≥ 2026-05-11) |
-|-------|------------------------------|-------------------------------|
-| verbatims | `run.wefiit.verbatims[]` | `run.verbatims[]` |
-| previews | absent | `run.wefiit.previews[]` |
-| model | absent (→ implicitement `"chatgpt"`) | `"chatgpt"` ou `"gemini"` |
+| Champ     | Format ancien (≤ 2026-05-10)         | Format actuel (≥ 2026-05-11) |
+| --------- | ------------------------------------ | ---------------------------- |
+| verbatims | `run.wefiit.verbatims[]`             | `run.verbatims[]`            |
+| previews  | absent                               | `run.wefiit.previews[]`      |
+| model     | absent (→ implicitement `"chatgpt"`) | `"chatgpt"` ou `"gemini"`    |
 
 ---
 
 ## Requêtes monitorées
 
-| ID | Libellé | Persona |
-|----|---------|---------|
-| `pm-general` | meilleur cabinet conseil product management | PM |
-| `pm-paris` | top 5 agences product management Paris | PM |
-| `pm-ia-cabinet` | cabinet spécialisé product management ia | PM / Data-IA |
-| `pm-data` | cabinet spécialisé data product management | Data-IA |
-| `pmm-general` | cabinet conseil product marketing management | PMM |
-| `pm-formation` | je cherche un partenaire pour former mes équipes au product management | Formation |
+| ID              | Libellé                                                                | Persona      |
+| --------------- | ---------------------------------------------------------------------- | ------------ |
+| `pm-general`    | meilleur cabinet conseil product management                            | PM           |
+| `pm-paris`      | top 5 agences product management Paris                                 | PM           |
+| `pm-ia-cabinet` | cabinet spécialisé product management ia                               | PM / Data-IA |
+| `pm-data`       | cabinet spécialisé data product management                             | Data-IA      |
+| `pmm-general`   | cabinet conseil product marketing management                           | PMM          |
+| `pm-formation`  | je cherche un partenaire pour former mes équipes au product management | Formation    |
 
 ---
 
@@ -129,10 +131,10 @@ Moyenne des scores sur toutes les requêtes × modèles filtrés.
 
 ## Filtres disponibles
 
-| Filtre | Options | Valeur par défaut |
-|--------|---------|-------------------|
-| Requête | Toutes / une requête spécifique | Toutes |
-| Modèle | Tous / ChatGPT / Gemini | Tous |
+| Filtre  | Options                            | Valeur par défaut |
+| ------- | ---------------------------------- | ----------------- |
+| Requête | Toutes / une requête spécifique    | Toutes            |
+| Modèle  | Tous / ChatGPT / Gemini            | Tous              |
 | Période | 7j / 30j / 90j / Tout l'historique | 30 derniers jours |
 
 La période filtre par `run.date >= dateMin` (comparaison ISO string).
@@ -149,6 +151,7 @@ Appelle `useGeoDonneesFiltrees(filtres)` et passe les données aux enfants.
 ### `GeoKpiCards.tsx`
 
 4 cartes KPI :
+
 - **Citations totales** — avec delta vs run précédent (▲ vert / ▼ rouge / → neutre)
 - **Taux de présence** — % de runs citant WeFiiT
 - **Sessions analysées** — nombre total de runs
@@ -164,6 +167,7 @@ Si filtre modèle actif, n'affiche que la série correspondante.
 
 Table requêtes × modèles.
 Chaque cellule affiche le score (0–3) avec couleur :
+
 - 0 → gris, 1 → rouge (`error`), 2 → orange (`warning`), 3 → vert (`success`)
 
 ### `GeoConcurrents.tsx`
@@ -180,12 +184,12 @@ Verbatims triés du plus récent au plus ancien.
 Lit `run.verbatims ?? run.wefiit.verbatims` (rétrocompat).
 
 **Règles d'affichage (specs geo-monitoring) :**
+
 - Limite : **9 items affichés**
 - Fond vert pâle (`#f0faf4`) si WeFiiT est cité dans le verbatim
 - Fond gris (`#f8f9fa`, opacité réduite) si WeFiiT absent
 - Runs avec `runsOk: 0` → non affichés
 - Bouton "Voir la réponse complète" si le fichier `.txt` correspondant existe
-
 
 ---
 
@@ -200,25 +204,27 @@ useGeoDonneesFiltrees(filtres) → GeoData | null
 ```
 
 **Pipeline de transformation :**
+
 1. `filtre(data, filtres)` — filtre par requête, modèle, dateMin
 2. `transforme(data)` — calcule KPIs, matrice, évolution, concurrents, verbatims
 3. Retourne `GeoData` complet
 
 **Types clés :**
+
 ```typescript
 type RunEntry = {
   date: string;
   model: "chatgpt" | "gemini";
   runsOk: number;
   wefiit: { citations: number; verbatims?: string[]; previews?: string[] };
-  verbatims?: string[];        // format actuel (≥ 2026-05-11)
+  verbatims?: string[]; // format actuel (≥ 2026-05-11)
   concurrents: Record<string, number>;
 };
 
 type GeoFiltres = {
-  requeteId: string;   // "" = toutes
-  modele: string;      // "" = tous
-  jours: number;       // 0 = tout l'historique
+  requeteId: string; // "" = toutes
+  modele: string; // "" = tous
+  jours: number; // 0 = tout l'historique
 };
 ```
 
@@ -244,16 +250,16 @@ type GeoFiltres = {
 
 ## État d'avancement (2026-05-19)
 
-| Étape | Statut |
-|-------|--------|
-| Route + navigation | ✅ Fait |
-| Hook useGeoData | ✅ Fait |
-| Filtres (requête, modèle, période) | ✅ Fait |
-| 5 composants (KPI, Chart, Matrice, Concurrents, Verbatims) | ✅ Fait |
-| Sync auto geo-monitoring → open-seo | ✅ Fait (dans geo-track.mjs) |
-| Fix rétrocompat verbatims (racine vs wefiit) | ✅ Fait (2026-05-19) |
-| Bug encodage UTF-8 verbatims mai | ⚠️ Connu, non traité |
-| Déploiement Cloudflare | 🔲 À faire |
+| Étape                                                      | Statut                       |
+| ---------------------------------------------------------- | ---------------------------- |
+| Route + navigation                                         | ✅ Fait                      |
+| Hook useGeoData                                            | ✅ Fait                      |
+| Filtres (requête, modèle, période)                         | ✅ Fait                      |
+| 5 composants (KPI, Chart, Matrice, Concurrents, Verbatims) | ✅ Fait                      |
+| Sync auto geo-monitoring → open-seo                        | ✅ Fait (dans geo-track.mjs) |
+| Fix rétrocompat verbatims (racine vs wefiit)               | ✅ Fait (2026-05-19)         |
+| Bug encodage UTF-8 verbatims mai                           | ⚠️ Connu, non traité         |
+| Déploiement Cloudflare                                     | 🔲 À faire                   |
 
 ---
 

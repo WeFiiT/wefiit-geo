@@ -15,7 +15,16 @@ export function Sidebar({ projectId, onNavigate, onClose }: SidebarProps) {
     <div className="sidebar w-64 border-r border-base-300 h-full bg-base-100 flex flex-col">
       {/* Header */}
       <div className="px-4 py-4 border-b border-base-300 flex items-center justify-between">
-        <span className="font-semibold text-base-content">OpenSEO</span>
+        <div className="flex items-center gap-2">
+          <span
+            className="inline-grid h-7 w-7 shrink-0 place-items-center rounded-lg text-sm font-bold text-white"
+            style={{ background: "linear-gradient(135deg, #f98f03, #e95400)" }}
+            aria-hidden="true"
+          >
+            W
+          </span>
+          <span className="font-semibold text-base-content">open-seo</span>
+        </div>
         {onClose && (
           <button
             onClick={onClose}
