@@ -67,7 +67,9 @@ function filtre(data: Historique, filtres: GeoFiltres): Historique {
       : null;
 
   const resultat: Historique = {};
-  for (const [id, { libelle, runs }] of Object.entries(data)) {
+  for (const [id, val] of Object.entries(data)) {
+    if (!val || typeof val !== "object" || !("runs" in val)) continue;
+    const { libelle, runs } = val;
     if (filtres.requeteId && id !== filtres.requeteId) continue;
     const runsFiltres = runs.filter((run) => {
       if (filtres.modele && run.model !== filtres.modele) return false;
