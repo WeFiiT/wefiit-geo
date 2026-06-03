@@ -1,0 +1,8 @@
+/historique.json
+  Cache-Control: no-store
+
+/jobs.json
+  Cache-Control: no-store
+
+/audit.json
+  Cache-Control: no-store
