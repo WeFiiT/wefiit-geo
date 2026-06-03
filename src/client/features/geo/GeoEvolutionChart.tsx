@@ -57,7 +57,9 @@ export function GeoEvolutionChart({ evolutionParRun, modele }: Props) {
               contentStyle={{ fontSize: 12 }}
               cursor={{ stroke: "currentColor", strokeOpacity: 0.2 }}
               labelFormatter={(label, payload) => {
-                const date = (payload as Array<{ payload?: { date?: string } }>)?.[0]?.payload?.date;
+                const date = (
+                  payload as Array<{ payload?: { date?: string } }>
+                )?.[0]?.payload?.date;
                 return date ?? String(label);
               }}
               formatter={(value: number | string | undefined) => [
