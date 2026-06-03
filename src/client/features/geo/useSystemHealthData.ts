@@ -104,7 +104,7 @@ export function useSystemHealthData() {
     queryFn: async (): Promise<JobEntry[]> => {
       const res = await fetch("/jobs.json");
       if (!res.ok) throw new Error(`Erreur fetch jobs.json : ${res.status}`);
-      return res.json() as Promise<JobEntry[]>;
+      return res.json();
     },
     staleTime: 5 * 60_000,
   });
@@ -114,7 +114,7 @@ export function useSystemHealthData() {
     queryFn: async (): Promise<AuditEntry[]> => {
       const res = await fetch("/audit.json");
       if (!res.ok) throw new Error(`Erreur fetch audit.json : ${res.status}`);
-      return res.json() as Promise<AuditEntry[]>;
+      return res.json();
     },
     staleTime: 5 * 60_000,
   });
