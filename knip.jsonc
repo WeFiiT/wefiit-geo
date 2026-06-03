@@ -25,7 +25,12 @@
     "scripts/seed-rank-tracking.ts",
   ],
   "project": ["**/*.{js,mjs,ts,tsx}", "!src/routeTree.gen.ts", "!web/**"],
-  "ignore": ["drizzle-prod.config.ts"],
+  "ignore": [
+    "drizzle-prod.config.ts",
+    // Composant GEO santé système — conservé pour usage futur, non intégré au front
+    "src/client/features/geo/GeoSystemHealth.tsx",
+    "src/client/features/geo/useSystemHealthData.ts",
+  ],
   // Disable Drizzle plugin - it tries to load drizzle.config.ts which imports cloudflare:workers
   "drizzle": false,
   "ignoreDependencies": [

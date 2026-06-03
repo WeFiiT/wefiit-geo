@@ -14,7 +14,7 @@ type RunEntry = {
   concurrents: Record<string, number>;
 };
 
-export type Historique = Record<string, { libelle: string; runs: RunEntry[] }>;
+type Historique = Record<string, { libelle: string; runs: RunEntry[] }>;
 
 export type GeoFiltres = {
   requeteId: string; // "" = toutes
@@ -254,7 +254,7 @@ function transforme(data: Historique): Omit<GeoData, "toutesRequetes"> {
   };
 }
 
-export function useGeoData() {
+function useGeoData() {
   return useQuery({
     queryKey: ["geo-historique"],
     queryFn: async () => {
