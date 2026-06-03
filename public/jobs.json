@@ -1011,5 +1011,44 @@
         "dateApres": "2026-06-02"
       }
     ]
+  },
+  {
+    "jobId": "job-20260603-072055-08fcd2",
+    "démarré": "2026-06-03T07:20:55.206Z",
+    "terminé": "2026-06-03T07:32:40.395Z",
+    "durée": 705,
+    "mode": "--all --model all",
+    "requêtes": 6,
+    "modèles": [
+      "chatgpt",
+      "gemini"
+    ],
+    "statut": "succès",
+    "résumé": {
+      "ok": 36,
+      "timeout": 0,
+      "erreur": 0,
+      "ignoré": 0
+    },
+    "evals": {
+      "completude": {
+        "attendu": 12,
+        "ok": 12,
+        "manquants": []
+      },
+      "anomalies": [
+        "pm-formation/chatgpt: 1/3→0/3"
+      ]
+    },
+    "regressions": [
+      {
+        "id": "pm-formation",
+        "model": "chatgpt",
+        "avant": "1/3",
+        "apres": "0/3",
+        "dateAvant": "2026-06-02",
+        "dateApres": "2026-06-03"
+      }
+    ]
   }
 ]
