@@ -9,7 +9,7 @@ export function GeoConcurrents({ topConcurrents, maxConcurrent }: Props) {
   return (
     <div className="card bg-base-100 border border-base-200 p-4 space-y-3">
       <p className="text-sm font-semibold">
-        Concurrents — fréquence de citation
+        Fréquence de citation
       </p>
       <div className="overflow-y-auto max-h-72 space-y-1.5 pr-1">
         {topConcurrents.map(({ nom, total, freq }) => {

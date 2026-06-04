@@ -208,21 +208,20 @@ function transforme(data: Historique): Omit<GeoData, "toutesRequetes"> {
       }
     }
   }
-  const concurrentsTriés = Object.entries(totauxConcurrents)
-    .map(([nom, total]) => ({
-      nom,
-      total,
-      freq: totalRunsOk > 0 ? Math.round((total / totalRunsOk) * 100) : 0,
-    }))
-    .toSorted((a, b) => b.total - a.total);
-
   const wefiitEntry = {
     nom: "WeFiiT",
     total: totalCitations,
     freq: totalRunsOk > 0 ? Math.round((totalCitations / totalRunsOk) * 100) : 0,
   };
-  const topConcurrents = [wefiitEntry, ...concurrentsTriés];
-  const maxConcurrent = Math.max(wefiitEntry.total, concurrentsTriés[0]?.total ?? 1);
+  const topConcurrents = [
+    ...Object.entries(totauxConcurrents).map(([nom, total]) => ({
+      nom,
+      total,
+      freq: totalRunsOk > 0 ? Math.round((total / totalRunsOk) * 100) : 0,
+    })),
+    wefiitEntry,
+  ].toSorted((a, b) => b.total - a.total);
+  const maxConcurrent = topConcurrents[0]?.total ?? 1;
 
   // Verbatims
   const verbatims: GeoData["verbatims"] = [];
