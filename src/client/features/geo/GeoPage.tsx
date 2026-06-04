@@ -50,12 +50,11 @@ export function GeoPage({ projectId: _projectId, tab: _tab }: Props) {
             <div className="space-y-2">
               {/* Chips Requête */}
               <div className="flex flex-wrap items-center gap-2">
-                <span className="text-xs text-base-content/50 shrink-0">Requête</span>
                 <button
-                  className={`badge badge-sm cursor-pointer border transition-colors ${
+                  className={`px-3 py-1 rounded-full text-xs font-medium border transition-colors cursor-pointer ${
                     filtres.requeteId === ""
-                      ? "badge-neutral text-neutral-content"
-                      : "badge-ghost border-base-300 text-base-content/60 hover:badge-neutral hover:text-neutral-content"
+                      ? "bg-[#f98f03] border-[#f98f03] text-white"
+                      : "bg-white border-base-300 text-base-content/70 hover:border-[#f98f03]/50 hover:text-[#f98f03]"
                   }`}
                   onClick={() => setFiltres((f) => ({ ...f, requeteId: "" }))}
                 >
@@ -64,10 +63,10 @@ export function GeoPage({ projectId: _projectId, tab: _tab }: Props) {
                 {data?.toutesRequetes.map((r) => (
                   <button
                     key={r.id}
-                    className={`badge badge-sm cursor-pointer border transition-colors ${
+                    className={`px-3 py-1 rounded-full text-xs font-medium border transition-colors cursor-pointer ${
                       filtres.requeteId === r.id
-                        ? "border-warning/60 bg-warning/15 text-warning font-medium"
-                        : "badge-ghost border-base-300 text-base-content/60 hover:border-warning/40 hover:bg-warning/10 hover:text-warning"
+                        ? "bg-[#f98f03] border-[#f98f03] text-white"
+                        : "bg-white border-base-300 text-base-content/70 hover:border-[#f98f03]/50 hover:text-[#f98f03]"
                     }`}
                     onClick={() => setFiltres((f) => ({ ...f, requeteId: r.id }))}
                   >
