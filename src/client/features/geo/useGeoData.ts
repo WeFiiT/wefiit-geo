@@ -211,7 +211,8 @@ function transforme(data: Historique): Omit<GeoData, "toutesRequetes"> {
   const wefiitEntry = {
     nom: "WeFiiT",
     total: totalCitations,
-    freq: totalRunsOk > 0 ? Math.round((totalCitations / totalRunsOk) * 100) : 0,
+    freq:
+      totalRunsOk > 0 ? Math.round((totalCitations / totalRunsOk) * 100) : 0,
   };
   const topConcurrents = [
     ...Object.entries(totauxConcurrents).map(([nom, total]) => ({
@@ -228,7 +229,8 @@ function transforme(data: Historique): Omit<GeoData, "toutesRequetes"> {
   for (const [, { libelle, runs }] of Object.entries(data)) {
     for (const run of runs) {
       const textes = run.verbatims ?? run.wefiit.verbatims ?? [];
-      const previews: (string | null | undefined)[] = run.wefiit?.previews ?? [];
+      const previews: (string | null | undefined)[] =
+        run.wefiit?.previews ?? [];
       const chemins: string[] = run.wefiit?.reponsesChemins ?? [];
       const hasPreviews = previews.length > 0;
       textes.forEach((texte: string, i: number) => {
@@ -237,7 +239,9 @@ function transforme(data: Historique): Omit<GeoData, "toutesRequetes"> {
           modele: run.model,
           requete: libelle,
           date: run.date,
-          wefiitCite: hasPreviews ? previews[i] != null : run.wefiit.citations > 0,
+          wefiitCite: hasPreviews
+            ? previews[i] != null
+            : run.wefiit.citations > 0,
           cheminReponse: chemins[i],
         });
       });
