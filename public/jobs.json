@@ -1212,5 +1212,53 @@
         "dateApres": "2026-06-06"
       }
     ]
+  },
+  {
+    "jobId": "job-20260607-064255-ac6f91",
+    "démarré": "2026-06-07T06:42:55.707Z",
+    "terminé": "2026-06-07T06:54:56.531Z",
+    "durée": 721,
+    "mode": "--all --model all",
+    "requêtes": 7,
+    "modèles": [
+      "chatgpt",
+      "gemini"
+    ],
+    "statut": "succès",
+    "résumé": {
+      "ok": 42,
+      "timeout": 0,
+      "erreur": 0,
+      "ignoré": 0
+    },
+    "evals": {
+      "completude": {
+        "attendu": 14,
+        "ok": 14,
+        "manquants": []
+      },
+      "anomalies": [
+        "pm-general/chatgpt: 2/3→0/3",
+        "pm-paris/gemini: 2/3→1/3"
+      ]
+    },
+    "regressions": [
+      {
+        "id": "pm-general",
+        "model": "chatgpt",
+        "avant": "2/3",
+        "apres": "0/3",
+        "dateAvant": "2026-06-06",
+        "dateApres": "2026-06-07"
+      },
+      {
+        "id": "pm-paris",
+        "model": "gemini",
+        "avant": "2/3",
+        "apres": "1/3",
+        "dateAvant": "2026-06-06",
+        "dateApres": "2026-06-07"
+      }
+    ]
   }
 ]
