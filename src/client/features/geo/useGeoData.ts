@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 
 type RunEntry = {
   date: string;
-  model: "chatgpt" | "gemini";
+  model: "chatgpt" | "gemini" | "claude";
   runsOk: number;
   wefiit: {
     citations: number;
@@ -40,6 +40,7 @@ export type GeoData = {
     date: string;
     chatgpt: number | null;
     gemini: number | null;
+    claude: number | null;
   }>; // taux en %
   topConcurrents: Array<{ nom: string; total: number; freq: number }>;
   maxConcurrent: number;
@@ -170,13 +171,13 @@ function transforme(data: Historique): Omit<GeoData, "toutesRequetes"> {
   type AccuEvolution = { citations: number; runsOk: number };
   const parDateModele: Record<
     string,
-    { chatgpt: AccuEvolution | null; gemini: AccuEvolution | null }
+    { chatgpt: AccuEvolution | null; gemini: AccuEvolution | null; claude: AccuEvolution | null }
   > = {};
   for (const { runs } of Object.values(data)) {
     for (const run of runs) {
       if (!parDateModele[run.date])
-        parDateModele[run.date] = { chatgpt: null, gemini: null };
-      const key = run.model === "chatgpt" ? "chatgpt" : "gemini";
+        parDateModele[run.date] = { chatgpt: null, gemini: null, claude: null };
+      const key = run.model;
       const existing = parDateModele[run.date][key];
       parDateModele[run.date][key] = {
         citations: (existing?.citations ?? 0) + run.wefiit.citations,
@@ -196,6 +197,10 @@ function transforme(data: Historique): Omit<GeoData, "toutesRequetes"> {
       gemini:
         vals.gemini && vals.gemini.runsOk > 0
           ? Math.round((vals.gemini.citations / vals.gemini.runsOk) * 100)
+          : null,
+      claude:
+        vals.claude && vals.claude.runsOk > 0
+          ? Math.round((vals.claude.citations / vals.claude.runsOk) * 100)
           : null,
     }));
 

@@ -99,6 +99,7 @@ export function GeoPage({ projectId: _projectId, tab: _tab }: Props) {
                     <option value="">Tous les modèles</option>
                     <option value="chatgpt">ChatGPT</option>
                     <option value="gemini">Gemini</option>
+                    <option value="claude">Claude</option>
                   </select>
                 </div>
 

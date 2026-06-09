@@ -14,7 +14,7 @@ function classeScore(taux: number) {
 }
 
 export function GeoMatriceScores({ requetes, matriceScores, modele }: Props) {
-  const MODELES = modele ? [modele] : ["chatgpt", "gemini"];
+  const MODELES = modele ? [modele] : ["chatgpt", "gemini", "claude"];
   return (
     <div className="card bg-base-100 border border-base-200 p-4 space-y-3">
       <p className="text-sm font-semibold">Matrice de visibilité</p>

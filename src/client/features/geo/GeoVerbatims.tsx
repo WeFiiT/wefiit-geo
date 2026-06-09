@@ -7,6 +7,8 @@ type Verbatim = GeoData["verbatims"][0];
 function BadgeModele({ modele }: { modele: string }) {
   if (modele === "chatgpt")
     return <span className="badge badge-success badge-sm">ChatGPT</span>;
+  if (modele === "claude")
+    return <span className="badge badge-warning badge-sm">Claude</span>;
   return <span className="badge badge-info badge-sm">Gemini</span>;
 }
 

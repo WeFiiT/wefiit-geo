@@ -88,6 +88,17 @@ export function GeoEvolutionChart({ evolutionParRun, modele }: Props) {
                 connectNulls={false}
               />
             )}
+            {(!modele || modele === "claude") && (
+              <Line
+                type="monotone"
+                dataKey="claude"
+                name="Claude"
+                stroke="#d97706"
+                strokeWidth={2}
+                dot={{ r: 3 }}
+                connectNulls={false}
+              />
+            )}
           </LineChart>
         </ResponsiveContainer>
       </div>
