@@ -93,7 +93,7 @@ export function GeoEvolutionChart({ evolutionParRun, modele }: Props) {
                 type="monotone"
                 dataKey="claude"
                 name="Claude"
-                stroke="#d97706"
+                stroke="#475569"
                 strokeWidth={2}
                 dot={{ r: 3 }}
                 connectNulls={false}
