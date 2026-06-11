@@ -36,12 +36,12 @@ export function useLeadsData(filtres: LeadsFiltres) {
   const query = useQuery({
     queryKey: ["leads-json"],
     queryFn: async () => {
-      const res = await fetch("/leads.json");
+      const res = await fetch(`/leads.json?v=${Date.now()}`);
       if (!res.ok) throw new Error(`Erreur fetch leads.json : ${res.status}`);
       const data: LeadsJson = await res.json();
       return data;
     },
-    staleTime: 5 * 60_000,
+    staleTime: 0,
   });
 
   const { data: brut, isLoading, isError } = query;
