@@ -237,7 +237,7 @@ export class RankCheckWorkflow extends WorkflowEntrypoint<
 
     // Guard: skip if config was archived after the workflow was triggered
     const configCheck = await step.do(
-      "check-active",
+      `check-active-${runId}`,
       { retries: { limit: 0, delay: "1 second" } },
       async () => {
         const cfg = await RankTrackingRepository.getConfigById({
@@ -258,7 +258,7 @@ export class RankCheckWorkflow extends WorkflowEntrypoint<
       );
 
       const prepareResult = await step.do(
-        "prepare",
+        `prepare-${runId}`,
         { retries: { limit: 0, delay: "1 second" } },
         async () =>
           prepareRankCheckKeywords({
@@ -295,7 +295,7 @@ export class RankCheckWorkflow extends WorkflowEntrypoint<
         console.warn(`[rank-check] ${runId} partial failure: ${batchError}`);
       }
 
-      await step.do("finalize", SINGLE_ATTEMPT_STEP_CONFIG, async () =>
+      await step.do(`finalize-${runId}`, SINGLE_ATTEMPT_STEP_CONFIG, async () =>
         finalizeRankCheckRun({
           runId,
           configId,
@@ -307,7 +307,7 @@ export class RankCheckWorkflow extends WorkflowEntrypoint<
       );
     } catch (error) {
       console.error(`Rank check ${runId} failed:`, error);
-      await step.do("mark-failed", SINGLE_ATTEMPT_STEP_CONFIG, async () =>
+      await step.do(`mark-failed-${runId}`, SINGLE_ATTEMPT_STEP_CONFIG, async () =>
         markRankCheckRunFailed({
           runId,
           configId,
