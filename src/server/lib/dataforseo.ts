@@ -593,6 +593,8 @@ export async function fetchRankCheckBatchRaw(input: {
   }
 
   const tasks = response.tasks ?? [];
+  console.log(`[rank-check-batch] ${input.device}: ${tasks.length} tasks returned for ${input.keywords.length} keywords sent`);
+  if (tasks[1]) console.log(`[rank-check-batch] task[1] status: ${tasks[1].status_code} ${tasks[1].status_message}`);
   const target = input.targetDomain.toLowerCase();
   const results: RankCheckResult[] = [];
   let totalCostUsd = 0;
