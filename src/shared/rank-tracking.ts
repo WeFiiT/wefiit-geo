@@ -16,7 +16,7 @@ const BASE_PAGE_COST_USD = 0.002;
 const EXTRA_PAGE_COST_USD = 0.0015;
 
 /** How many keywords are checked per batch */
-export const KEYWORDS_PER_BATCH = 5;
+export const KEYWORDS_PER_BATCH = 20;
 
 /** Approximate seconds per batch */
 export const SECONDS_PER_BATCH = 6;

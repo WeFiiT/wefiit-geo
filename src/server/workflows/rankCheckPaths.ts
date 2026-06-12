@@ -63,7 +63,7 @@ export async function runLiveCheck(
 
     // Pause between batches to avoid DataForSEO SERP Live rate limits (~2 req/s)
     if (batchIndex > 0) {
-      await step.sleep(`rate-limit-pause-${batchIndex}`, "10 seconds");
+      await step.sleep(`rate-limit-pause-${batchIndex}`, "3 seconds");
     }
 
     const batchResults = await step.do(
