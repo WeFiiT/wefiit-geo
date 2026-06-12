@@ -59,10 +59,9 @@ export async function runLiveCheck(
   for (let i = 0; i < ctx.keywords.length; i++) {
     const kw = ctx.keywords[i];
 
-    // 1 second between keywords to respect DataForSEO rate limit (~2 req/s)
-    if (i > 0) {
-      await step.sleep(`pause-${ctx.runId}-${i}`, "1 second");
-    }
+    // Sleep before every keyword (including the first) forces a fresh Worker invocation,
+    // resetting Cloudflare's 50 subrequests/invocation hard limit.
+    await step.sleep(`pause-${ctx.runId}-${i}`, "5 seconds");
 
     const result = await step.do(
       `kw-${ctx.runId}-${i}`,
