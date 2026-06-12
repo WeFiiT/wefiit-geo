@@ -44,6 +44,8 @@ export function LeadsTable({ leads }: Props) {
             <th>Entreprise</th>
             <th>Email</th>
             <th>Message</th>
+            <th title="Besoins remontés dans Boond">Boond</th>
+            <th>Source</th>
           </tr>
         </thead>
         <tbody>
@@ -84,6 +86,22 @@ export function LeadsTable({ leads }: Props) {
                     title={lead.message}
                   >
                     {lead.message}
+                  </span>
+                ) : (
+                  <span className="text-base-content/30 text-xs">—</span>
+                )}
+              </td>
+              <td className="text-center text-xs">
+                {lead.besoinsBoond !== null ? (
+                  <span className="font-semibold text-primary">{lead.besoinsBoond}</span>
+                ) : (
+                  <span className="text-base-content/30">—</span>
+                )}
+              </td>
+              <td className="max-w-[160px]">
+                {lead.source ? (
+                  <span className="block truncate text-xs text-base-content/60" title={lead.source}>
+                    {lead.source}
                   </span>
                 ) : (
                   <span className="text-base-content/30 text-xs">—</span>

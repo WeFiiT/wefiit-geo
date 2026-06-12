@@ -1,0 +1,18 @@
+{
+  "notice": "Fichier d'enrichissement manuel des leads. Ne pas écraser au scraping. Éditer directement ici.",
+  "enrichissements": {
+    "7f8dc5d9b585": { "besoinsBoond": 0, "source": "" },
+    "3865d47ceaa9": { "besoinsBoond": 0, "source": "" },
+    "2ed4eab1b0f9": { "besoinsBoond": 0, "source": "" },
+    "ca94e68f8d47": { "besoinsBoond": 0, "source": "" },
+    "d991bea11921": { "besoinsBoond": 0, "source": "" },
+    "ef7f8d08ca5c": { "besoinsBoond": 0, "source": "" },
+    "cc49716bd997": { "besoinsBoond": 0, "source": "" },
+    "77755c5ffb37": { "besoinsBoond": 0, "source": "" },
+    "a71c5ed64dcf": { "besoinsBoond": 0, "source": "" },
+    "4b93a0b4bda0": { "besoinsBoond": 0, "source": "" },
+    "a732acebebff": { "besoinsBoond": 0, "source": "" },
+    "3c1e44f65599": { "besoinsBoond": 0, "source": "" },
+    "7f062457ad92": { "besoinsBoond": 0, "source": "" }
+  }
+}
