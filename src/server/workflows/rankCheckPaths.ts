@@ -3,11 +3,10 @@ import { RankTrackingRepository } from "@/server/features/rank-tracking/reposito
 import type { createDataforseoClient } from "@/server/lib/dataforseoClient";
 import type { RankCheckResult } from "@/server/lib/dataforseo";
 import type { RankTrackingConfig } from "@/types/schemas/rank-tracking";
-import { KEYWORDS_PER_BATCH } from "@/shared/rank-tracking";
 
 const SINGLE_ATTEMPT_STEP_CONFIG = {
   retries: { limit: 0, delay: "1 second" as const },
-  timeout: "5 minutes" as const,
+  timeout: "2 minutes" as const,
 };
 
 type KeywordEntry = { id: string; keyword: string };
@@ -43,10 +42,10 @@ interface CheckContext {
 }
 
 /**
- * Check keywords via Live API, parallel devices per keyword, real-time progress.
- * Snapshots are written incrementally after each batch so partial results
- * survive batch failures. ~6s per keyword batch.
- * Billing is handled per-call by the metered client.
+ * Check keywords via Live API, one keyword per step with devices in parallel.
+ * Each keyword gets its own step so a timeout on one doesn't block the others.
+ * DataForSEO rate limit (~2 req/s) is respected: max 2 simultaneous calls
+ * per keyword (desktop + mobile), with a short sleep between keywords.
  */
 export async function runLiveCheck(
   step: WorkflowStep,
@@ -57,20 +56,19 @@ export async function runLiveCheck(
   let checked = 0;
   let totalFailed = 0;
 
-  for (let i = 0; i < ctx.keywords.length; i += KEYWORDS_PER_BATCH) {
-    const batch = ctx.keywords.slice(i, i + KEYWORDS_PER_BATCH);
-    const batchIndex = Math.floor(i / KEYWORDS_PER_BATCH);
+  for (let i = 0; i < ctx.keywords.length; i++) {
+    const kw = ctx.keywords[i];
 
-    // Pause between batches to avoid DataForSEO SERP Live rate limits (~2 req/s)
-    if (batchIndex > 0) {
-      await step.sleep(`rate-limit-pause-${ctx.runId}-${batchIndex}`, "3 seconds");
+    // 1 second between keywords to respect DataForSEO rate limit (~2 req/s)
+    if (i > 0) {
+      await step.sleep(`pause-${ctx.runId}-${i}`, "1 second");
     }
 
-    const batchResults = await step.do(
-      `live-batch-${ctx.runId}-${batchIndex}`,
+    const result = await step.do(
+      `kw-${ctx.runId}-${i}`,
       SINGLE_ATTEMPT_STEP_CONFIG,
       async () => {
-        const promises = batch.flatMap((kw) =>
+        const settled = await Promise.allSettled(
           deviceList.map((device) =>
             ctx.client.serp
               .rankCheck({
@@ -85,32 +83,34 @@ export async function runLiveCheck(
               .then((r) => ({ ...r, device })),
           ),
         );
-        const settled = await Promise.allSettled(promises);
+
         const results: RankCheckResultWithDevice[] = [];
-        let batchFailed = 0;
+        let failed = 0;
         for (const outcome of settled) {
           if (outcome.status === "fulfilled") {
             results.push(outcome.value);
           } else {
-            batchFailed++;
-            console.error("Rank check call failed:", outcome.reason);
+            failed++;
+            console.error(`Rank check failed [${kw.keyword}]:`, outcome.reason);
           }
         }
-        checked += batch.length;
-        await RankTrackingRepository.updateRun(ctx.runId, {
-          keywordsChecked: checked,
-        });
 
         if (results.length > 0) {
           await RankTrackingRepository.insertSnapshots(
             mapResultsToSnapshotRows(ctx.runId, results),
           );
         }
-        return { batchFailed };
+
+        return { failed };
       },
     );
 
-    totalFailed += batchResults.batchFailed;
+    checked++;
+    totalFailed += result.failed;
+
+    await RankTrackingRepository.updateRun(ctx.runId, {
+      keywordsChecked: checked,
+    });
   }
 
   if (totalFailed > 0) {
