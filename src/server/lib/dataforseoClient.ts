@@ -18,6 +18,7 @@ import {
   fetchRelevantPagesRaw,
   fetchLiveSerpItemsRaw,
   fetchRankCheckSerpRaw,
+  fetchRankCheckBatchRaw,
   type LabsKeywordDataItem,
   type SerpLiveItem,
 } from "@/server/lib/dataforseo";
@@ -258,6 +259,20 @@ export function createDataforseoClient(customer: BillingCustomerContext) {
         return meterDataforseoCall(
           customer,
           () => fetchRankCheckSerpRaw(input),
+          "rank_tracking",
+        );
+      },
+      rankCheckBatch(input: {
+        keywords: Array<{ id: string; keyword: string }>;
+        locationCode: number;
+        languageCode: string;
+        device: "desktop" | "mobile";
+        targetDomain: string;
+        depth: number;
+      }) {
+        return meterDataforseoCall(
+          customer,
+          () => fetchRankCheckBatchRaw(input),
           "rank_tracking",
         );
       },

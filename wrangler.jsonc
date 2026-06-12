@@ -24,7 +24,6 @@
       "name": "rank-check-workflow",
       "binding": "RANK_CHECK_WORKFLOW",
       "class_name": "RankCheckWorkflow",
-      "execution_model": "standard",
     },
   ],
   "triggers": {

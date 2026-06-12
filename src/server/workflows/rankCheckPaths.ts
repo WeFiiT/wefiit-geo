@@ -1,32 +1,34 @@
 import type { WorkflowStep } from "cloudflare:workers";
 import { RankTrackingRepository } from "@/server/features/rank-tracking/repositories/RankTrackingRepository";
 import type { createDataforseoClient } from "@/server/lib/dataforseoClient";
-import type { RankCheckResult } from "@/server/lib/dataforseo";
 import type { RankTrackingConfig } from "@/types/schemas/rank-tracking";
 
 const SINGLE_ATTEMPT_STEP_CONFIG = {
   retries: { limit: 0, delay: "1 second" as const },
-  timeout: "2 minutes" as const,
+  timeout: "5 minutes" as const,
 };
 
 type KeywordEntry = { id: string; keyword: string };
-type RankCheckResultWithDevice = RankCheckResult & {
-  device: "desktop" | "mobile";
-};
 
 function mapResultsToSnapshotRows(
   runId: string,
-  results: RankCheckResultWithDevice[],
+  results: Array<{
+    keywordId: string;
+    keyword: string;
+    position: number | null;
+    url: string | null;
+    serpFeatures: string[];
+  }>,
+  device: "desktop" | "mobile",
 ) {
   return results.map((r) => ({
     runId,
     trackingKeywordId: r.keywordId,
     keyword: r.keyword,
-    device: r.device,
+    device,
     position: r.position,
     url: r.url,
-    serpFeatures:
-      r.serpFeatures.length > 0 ? JSON.stringify(r.serpFeatures) : null,
+    serpFeatures: r.serpFeatures.length > 0 ? JSON.stringify(r.serpFeatures) : null,
   }));
 }
 
@@ -42,10 +44,8 @@ interface CheckContext {
 }
 
 /**
- * Check keywords via Live API, one keyword per step with devices in parallel.
- * Each keyword gets its own step so a timeout on one doesn't block the others.
- * DataForSEO rate limit (~2 req/s) is respected: max 2 simultaneous calls
- * per keyword (desktop + mobile), with a short sleep between keywords.
+ * Check keywords via Live API batch — all keywords in 1 request per device.
+ * Max 2 subrequests total (desktop + mobile), well under Cloudflare's 50/instance limit.
  */
 export async function runLiveCheck(
   step: WorkflowStep,
@@ -53,67 +53,42 @@ export async function runLiveCheck(
 ): Promise<{ totalFailed: number }> {
   const deviceList: Array<"desktop" | "mobile"> =
     ctx.devices === "both" ? ["desktop", "mobile"] : [ctx.devices];
-  let checked = 0;
+
   let totalFailed = 0;
 
-  for (let i = 0; i < ctx.keywords.length; i++) {
-    const kw = ctx.keywords[i];
-
-    // Sleep before every keyword (including the first) forces a fresh Worker invocation,
-    // resetting Cloudflare's 50 subrequests/invocation hard limit.
-    await step.sleep(`pause-${ctx.runId}-${i}`, "5 seconds");
-
-    const result = await step.do(
-      `kw-${ctx.runId}-${i}`,
+  for (const device of deviceList) {
+    const results = await step.do(
+      `batch-${device}-${ctx.runId}`,
       SINGLE_ATTEMPT_STEP_CONFIG,
       async () => {
-        const settled = await Promise.allSettled(
-          deviceList.map((device) =>
-            ctx.client.serp
-              .rankCheck({
-                keyword: kw.keyword,
-                keywordId: kw.id,
-                locationCode: ctx.locationCode,
-                languageCode: ctx.languageCode,
-                device,
-                targetDomain: ctx.domain,
-                depth: ctx.serpDepth,
-              })
-              .then((r) => ({ ...r, device })),
-          ),
-        );
+        const data = await ctx.client.serp.rankCheckBatch({
+          keywords: ctx.keywords,
+          locationCode: ctx.locationCode,
+          languageCode: ctx.languageCode,
+          device,
+          targetDomain: ctx.domain,
+          depth: ctx.serpDepth,
+        });
 
-        const results: RankCheckResultWithDevice[] = [];
-        let failed = 0;
-        for (const outcome of settled) {
-          if (outcome.status === "fulfilled") {
-            results.push(outcome.value);
-          } else {
-            failed++;
-            console.error(`Rank check failed [${kw.keyword}]:`, outcome.reason);
-          }
+        const rows = mapResultsToSnapshotRows(ctx.runId, data, device);
+        if (rows.length > 0) {
+          await RankTrackingRepository.insertSnapshots(rows);
         }
 
-        if (results.length > 0) {
-          await RankTrackingRepository.insertSnapshots(
-            mapResultsToSnapshotRows(ctx.runId, results),
-          );
-        }
+        const failed = ctx.keywords.length - data.length;
+        await RankTrackingRepository.updateRun(ctx.runId, {
+          keywordsChecked: data.length,
+        });
 
         return { failed };
       },
     );
 
-    checked++;
-    totalFailed += result.failed;
-
-    await RankTrackingRepository.updateRun(ctx.runId, {
-      keywordsChecked: checked,
-    });
+    totalFailed += results.failed;
   }
 
   if (totalFailed > 0) {
-    console.warn(`Rank check completed with ${totalFailed} failed API call(s)`);
+    console.warn(`Rank check completed with ${totalFailed} failed keyword(s)`);
   }
 
   return { totalFailed };
