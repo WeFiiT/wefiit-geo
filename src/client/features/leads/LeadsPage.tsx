@@ -29,7 +29,7 @@ export function LeadsPage({ projectId: _projectId }: Props) {
           {generatedAt && (
             <p className="text-xs text-base-content/40 self-end">
               Dernière sync :{" "}
-              {new Date(generatedAt).toLocaleDateString("fr-FR", {
+              {new Date(generatedAt).toLocaleString("fr-FR", {
                 day: "2-digit",
                 month: "2-digit",
                 year: "numeric",

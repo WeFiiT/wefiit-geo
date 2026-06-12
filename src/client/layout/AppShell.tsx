@@ -13,16 +13,12 @@ import { getOrCreateDefaultProject } from "@/serverFunctions/projects";
 
 const DATAFORSEO_HELP_PATH = "/help/dataforseo-api-key";
 
-/** Favicon WeFiiT — logo image de la marque */
 function WeFiiTFavicon() {
   return (
     <img
-      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3GgsS4gnbVgzHjynixRKNWUx3hjzUcYJwsQ&s"
+      src="/transparent-logo.png"
       alt="WeFiiT"
-      className="h-7 w-7 shrink-0 rounded-lg object-cover"
-      onError={(e) => {
-        e.currentTarget.style.display = "none";
-      }}
+      className="h-7 w-7 shrink-0 object-contain"
     />
   );
 }
