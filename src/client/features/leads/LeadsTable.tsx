@@ -9,9 +9,9 @@ const BADGE_TYPE: Record<Lead["type"], string> = {
   Candidat: "badge-secondary",
 };
 
-const BADGE_TYPE_LEAD: Record<Lead["typeLead"], string> = {
-  "demande de contact": "badge-accent",
-  "réservation booking": "badge-info",
+const COLOR_TYPE_LEAD: Record<Lead["typeLead"], string> = {
+  "demande de contact": "text-accent",
+  "réservation booking": "text-info",
 };
 
 function formatDate(iso: string | null): React.ReactNode {
@@ -42,7 +42,7 @@ function LeadModal({ lead, onClose }: { lead: Lead; onClose: () => void }) {
         </button>
         <div className="mb-4 flex items-center gap-2">
           <span className={`badge ${BADGE_TYPE[lead.type]}`}>{lead.type}</span>
-          <span className={`badge badge-outline ${BADGE_TYPE_LEAD[lead.typeLead]}`}>
+          <span className={`text-xs ${COLOR_TYPE_LEAD[lead.typeLead]}`}>
             {lead.typeLead}
           </span>
         </div>
@@ -109,7 +109,7 @@ export function LeadsTable({ leads }: Props) {
                   </span>
                 </td>
                 <td>
-                  <span className={`badge badge-sm badge-outline ${BADGE_TYPE_LEAD[lead.typeLead]}`}>
+                  <span className={`text-xs ${COLOR_TYPE_LEAD[lead.typeLead]}`}>
                     {lead.typeLead}
                   </span>
                 </td>
