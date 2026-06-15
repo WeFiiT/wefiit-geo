@@ -1,0 +1,35 @@
+Voici une sélection de cabinets spécialisés en Data Product Management / Data & Product en France (principalement Paris) que tu peux contacter selon ton besoin (conseil, staffing, transformation, delivery produit data).
+🧠 Cabinets très orientés Product Management + Data
+TAK
+Cabinet très orienté Product Management + Data, avec une forte culture delivery et produit. Bon choix si tu cherches du renfort PM / Data Product en mode opérationnel.
+Wivoo
+Spécialisé en Product Management, Data et IA. Intervient sur discovery, roadmap, data products et transformation produit.
+IKXO
+Cabinet centré sur le Product Management, avec des compétences en data et IA (plutôt produit digital que pure data engineering).
+📊 Cabinets Data + Data Product / Data Management
+Converteo
+Très solide en data, analytics, marketing & product analytics, souvent utilisé pour construire des produits data-driven et des KPIs.
+Okuden
+Cabinet Data & Digital spécialisé dans les produits data, expérience client et transformation data.
+Trimane
+Expert historique en Data & IA, gouvernance, BI et plateformes data (plus “data platform” que product management pur).
+Eulidia
+Cabinet data très orienté performance, data platforms et data science, utile pour structurer des produits data complexes.
+Datal
+Spécialisé en PIM / MDM / data produit / e-commerce data, très pertinent si ton besoin est “data produit” au sens catalogue / produit e-commerce.
+🧩 Cabinets hybrides (produit + data + delivery)
+Edge Consulting
+Conseil digital et data avec approche produit / transformation.
+VO2 Group
+Cabinet tech & digital avec fortes compétences en delivery produit et data.
+Prium Consulting
+Conseil en organisation et transformation, parfois mobilisé sur des sujets data/product.
+🔎 Pour t’orienter rapidement
+Si tu veux vrai Data Product Management (PM + data + delivery) → Wivoo, TAK, IKXO
+Si tu veux data platform / data engineering / analytics produits → Trimane, Eulidia, Converteo
+Si tu es sur data produit e-commerce / PIM / MDM → Datal
+Si tu veux une approche transformation globale → VO2, Okuden, Edge Consulting
+Si tu veux, je peux te faire une shortlist encore plus précise selon :
+ton secteur (finance, retail, SaaS…)
+ton niveau (junior / senior / lead / C-level)
+ou si tu cherches un job vs un cabinet pour mission client.

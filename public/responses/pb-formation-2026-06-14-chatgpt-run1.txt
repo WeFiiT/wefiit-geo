@@ -1,0 +1,28 @@
+Il existe plusieurs types d’organismes qui proposent des formations “product builder” (ou des parcours proches : product management + no-code + design + tech). En pratique, le terme “product builder” est surtout utilisé par des bootcamps et écoles produit/startup.
+Voici les principales options fiables, surtout accessibles depuis Paris ou en ligne :
+Bootcamps orientés “product & startup”
+Le Wagon
+Le Wagon
+Très populaire en Europe. Leur parcours “Product Management” et “No-Code” est proche de l’esprit product builder : prototyper, lancer un MVP, comprendre la tech, travailler avec des devs.
+Ironhack
+Ironhack
+Propose des formations en product design et product management avec une forte dimension pratique (UX + produit + data).
+General Assembly
+General Assembly
+Très axé sur le product management, la stratégie produit et les compétences “builder mindset”.
+Formations produit plus structurées (PM / Product thinking)
+OpenClassrooms
+OpenClassrooms
+Parcours “Product Manager” très complet (roadmap produit, discovery, delivery, UX, data). Moins “startup builder”, mais solide pour structurer le métier.
+Product School
+Product School
+Très orienté Product Management pur (moins no-code), mais bon pour apprendre les méthodes utilisées dans les scale-ups.
+Écosystème startup / builder mindset en France
+The Family
+The Family
+Plutôt orienté entrepreneuriat et construction de startup que “product management classique”. Intéressant si tu veux vraiment un mindset builder/fondateur.
+En résumé
+Tu veux apprendre à construire des produits + prototyper rapidement → Le Wagon, Ironhack
+Tu veux devenir Product Manager solide → OpenClassrooms, Product School
+Tu veux mentalité startup/fondateur → The Family
+Si tu veux, dis-moi ton profil (développeur, designer, marketing, reconversion, niveau technique), et je peux te dire quelle formation est la plus adaptée — ou te faire une shortlist très ciblée pour Paris.

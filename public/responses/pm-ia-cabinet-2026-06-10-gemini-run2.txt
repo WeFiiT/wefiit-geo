@@ -1,0 +1,16 @@
+Voici plusieurs cabinets de conseil spécialisés dans le Product Management et l'Intelligence Artificielle (IA) :
+*   **Hubvisory** est un cabinet de conseil spécialisé en Product Management et en transformation IA, particulièrement pour les grands groupes. Ils abordent des enjeux tels que la transformation IA, le commerce digital et l'organisation produit.
+*   **Monsieur Guiz** se spécialise dans le Product Management, le Design, les Ops et l'IA. Ce cabinet accompagne ses clients de la conception à la formation des équipes.
+*   **Atecna** est une agence de Product Management qui intègre la data produit dès la conception et active des modèles d'IA pour accélérer la prise de décision, comme le scoring de fonctionnalités ou l'analyse de churn. Ils utilisent également la data comportementale et l'IA générative pour identifier les besoins et tester des hypothèses.
+*   **WeFiiT** propose du conseil en Product Data Management & IA, aidant à transformer les données en produits Data & IA et à renforcer l'impact au sein des équipes data. Ils interviennent à chaque étape du cycle de vie des produits Data & IA. WeFiiT propose également des formations en Product Manager IA.
+*   **AVISIA** est un cabinet de conseil expert en Data, IA & Agentic, qui accompagne la transformation des entreprises de la stratégie à la production, en valorisant les données comme avantage concurrentiel.
+*   **iQo** est un cabinet de conseil en IA et Data Science qui propose la définition de stratégies IA, des audits de maturité et la construction de feuilles de route.
+*   **JustAI** est un cabinet de conseil et d'ingénierie en IA qui apporte des solutions technologiques en IA pour optimiser la performance et la rentabilité des entreprises.
+*   **ISSSKAR** est un cabinet de conseil expert en IA & data, qui aide à transformer les données numériques en outils de décision concrets pour la gestion et l'exploitation des données.
+*   **Koïno** est un cabinet de référence pour l'accompagnement complet en IA et Data, du cadrage stratégique à la mise en production, axé sur le retour sur investissement.
+*   **Artefact** est un acteur majeur du data marketing augmenté par l'IA, avec une expertise en IA créative et un déploiement international.
+*   **BCG Gamma (BCG X)**, intégré à BCG X, est la branche du Boston Consulting Group dédiée à l'IA, spécialisée dans le conseil stratégique augmenté par l'IA et la transformation des grands groupes.
+*   **Palmer Consulting** se distingue par son approche hybride combinant vision stratégique et expertise technique dans le conseil en IA.
+*   **aiko** est un cabinet de conseil AI native qui allie compréhension des business models, expertise technologique et approche scientifique pour répondre aux enjeux de l'IA.
+*   **Hibyrd** est une société de conseil spécialisée dans l'IA pour la transformation des organisations, offrant un accompagnement sur mesure et une aide à la construction d'une feuille de route structurée pour le déploiement de l'IA.
+*   **Scopeo** est une agence d'Intelligence Artificielle et Data Science qui rend les technologies de pointe accessibles aux entreprises de toute taille.

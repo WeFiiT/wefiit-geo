@@ -1,0 +1,49 @@
+Voici un panorama complet des **cabinets et agences spécialisés en Data Product Management** en France :
+---
+## 🏆 Cabinets spécialisés en Data Product Management en France
+---
+### 1. 🔵 **Thiga**
+Thiga, basé en France à Paris et en Espagne à Madrid, est le cabinet de conseil **pionnier en Product Management** en France, reconnu pour son expertise dans les domaines clés du produit : stratégie, organisation, opérationnel et formation.
+Thiga est un cabinet de conseil et de formation spécialisé en Produit, couvrant le **Product Management, Product Design et Product Marketing**.
+Ils aident leurs clients sur 4 grands défis : stratégie, organisation, renfort opérationnel et formation, allant du junior au Chief Product Officer.
+Plus de 1 500 personnes sont formées par Thiga chaque année. Thiga anime aussi un média dédié aux Product Leaders et organise **La Product Conf**, le rendez-vous annuel de la communauté Produit.
+---
+### 2. 🟢 **WeFiiT**
+WeFiiT accompagne ses clients pour construire des **produits Data & IA générant un impact utilisateur concret** au ROI mesurable, en transformant les données en produits qui répondent aux véritables besoins métiers.
+Stratégie, Discovery, Delivery : WeFiiT intervient à chaque étape du **cycle de vie des Produits Data & IA** pour structurer, renforcer et faire grandir les équipes.
+WeFiiT propose également des formations sur-mesure en **Data Product Management et IA**, adaptées à l'environnement et aux use cases Produit de ses clients.
+---
+### 3. 🟠 **Wivoo**
+Wivoo est une agence de conseil en **Product Management, Product Design et Data** à Paris, avec une communauté d'experts produit au service des entreprises.
+Elle place la data au cœur des processus décisionnels et de la formulation de la stratégie pour favoriser une prise de décision proactive et efficace.
+Wivoo accompagne ses clients, des Scale-Up aux grandes entreprises, dans la construction de leur produit numérique grâce à l'intervention de passionnés.
+---
+### 4. 🔴 **Converteo**
+Pleinement intégrés dans les équipes Produit, les consultants de Converteo développent une approche sur-mesure en **Product Management augmenté par la data** : analyse de l'environnement produit, identification des opportunités, mise en place de mesures et optimisation de la stratégie.
+---
+### 5. 🟣 **mc2i**
+Les équipes pluridisciplinaires de mc2i assument des missions de **Data Product Owner, Chef de projet, Data Analyst, Data Scientist, Data Manager et Data Steward**, ainsi que des conseils aux CDO.
+mc2i a notamment accompagné **Decathlon** dans l'optimisation de la traçabilité produits grâce au Data Product Management, renforçant l'agilité et l'adoption des solutions data.
+---
+### 6. 🔵 **Hubvisory**
+Hubvisory est un collectif d'experts Produit qui aide les **grandes entreprises** à concevoir, structurer et scaler leurs organisations produit.
+---
+### 7. 🟡 **Synapsys**
+Synapsys accompagne les organisations et les départements data dans leurs **stratégie et projets data**, ainsi que dans la conception et le développement de produits ou de plateformes data.
+---
+### 8. 🟢 **Artefact**
+Artefact est un cabinet français spécialisé dans le **data marketing et l'IA appliquée à la personnalisation client**, reconnu pour son expertise en marketing data et activation IA.
+---
+## 📌 Comment choisir ?
+Analyser, structurer et valoriser les données n'est plus un luxe, c'est une nécessité. La réussite d'une démarche data ne repose pas uniquement sur la technologie : elle dépend avant tout de **l'expertise et de l'accompagnement sur-mesure**.
+| Cabinet | Point fort |
+|---|---|
+| **Thiga** | Pioneer PM, formation, stratégie |
+| **WeFiiT** | Data Product Management & IA, ROI mesurable |
+| **Wivoo** | Product + Design + Data, full cycle |
+| **Converteo** | PM augmenté par la data |
+| **mc2i** | Data Product Owner, grands comptes |
+| **Hubvisory** | Scaling organisations produit |
+| **Artefact** | Data marketing & IA |
+---
+Souhaitez-vous des informations plus approfondies sur l'un de ces cabinets, ou cherchez-vous un type d'accompagnement spécifique (recrutement, conseil, formation, transformation) ?

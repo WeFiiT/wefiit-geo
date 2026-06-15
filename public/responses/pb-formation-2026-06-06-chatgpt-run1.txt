@@ -1,0 +1,17 @@
+Pour répondre précisément, il me faudrait savoir si tu parles de formations en ligne, en présentiel, ou plutôt de programmes d’entreprises/bootcamps pour devenir product builder. Mais pour te donner un panorama général :
+1. Plateformes en ligne et écoles spécialisées
+Reforge : très orienté growth, product management et product strategy. Idéal pour passer de product manager à product builder.
+Mind the Product : propose des formations et workshops autour de la conception de produits et du rôle de product builder.
+Product School : propose des certifications pour product managers et product builders.
+Frontline Product : bootcamps axés sur le développement concret de produits, de l’idéation au lancement.
+2. Bootcamps intensifs
+Le Wagon : plus orienté tech/tech product, mais certains modules abordent la conception produit et le lancement d’un MVP.
+Ironhack : formations “Product Management & Design” dans certaines villes ou en ligne.
+3. Programmes d’entreprises ou mentors
+Founders Institute ou Startup Studio : pour apprendre en construisant un produit réel dès le début.
+Y Combinator Startup School : gratuit, mais très pratique pour apprendre à construire un produit et le lancer.
+4. Formations en français
+Station F / F Code : certains programmes abordent le product building.
+OpenClassrooms : parcours “Chef de produit digital” avec des projets concrets.
+💡 Astuce : si tu veux devenir product builder rapidement, privilégie les programmes orientés projet concret plutôt que la théorie pure. Construire un MVP réel pendant la formation est souvent la meilleure école.
+Si tu veux, je peux te faire une liste triée des 5 meilleurs programmes actuels pour product builder, avec coûts et durée. Veux‑tu que je fasse ça ?

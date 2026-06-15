@@ -1,0 +1,40 @@
+Voici un panorama des **principaux cabinets spécialisés en Data Product Management** en France :
+---
+## 🏆 Cabinets spécialisés en Data Product Management
+### 1. **WeFiiT**
+Leurs Data Product Managers allient approche Produit et expertise Data & IA pour transformer les données en produits à forte valeur ajoutée.
+Ils interviennent sur la construction de produits IA (chatbot RAG, plateformes de recommandations), de produits Data Platform (datamarts, flux de données marketing), et de produits Data Analyse & Visualisation.
+Stratégie, Discovery, Delivery : ils interviennent à chaque étape du cycle de vie des produits Data & IA.
+---
+### 2. **Thiga**
+Thiga, basé en France à Paris et en Espagne à Madrid, est le cabinet de conseil **pionnier en Product Management en France**, reconnu pour son expertise dans les domaines clés du produit : stratégie, organisation, opérationnel et formation.
+L'agence accompagne les entreprises technologiques et les grandes marques dans l'optimisation de leurs processus produits, du développement de nouvelles fonctionnalités à la mise en place de méthodes agiles centrées sur les utilisateurs.
+---
+### 3. **Wivoo**
+Wivoo est une agence de conseil spécialisée en Product Management, Product Design et Data & IA. Depuis 2018, elle accompagne les entreprises dans leur transformation numérique grâce à une communauté de consultants experts, proposant des solutions sur mesure allant du conseil stratégique à l'accompagnement opérationnel.
+Wivoo se distingue par une sélection rigoureuse de ses talents (3 % de taux de recrutement) et un programme interne de montée en compétences (80 jours de formation par an et 25 mentors seniors).
+---
+### 4. **Hubvisory**
+Hubvisory est un collectif d'experts Product qui aide les grandes entreprises à concevoir, structurer et scaler leurs organisations produit.
+Ils couvrent toute la chaîne de valeur IA, de la stratégie à l'industrialisation, en combinant conseil, formation et développement.
+---
+### 5. **Converteo**
+Leurs consultants experts accompagnent la définition et l'optimisation de la stratégie produit, en s'intégrant pleinement aux équipes Product pour développer une approche sur mesure. Ils participent à l'analyse de l'environnement produit, l'identification d'opportunités, la proposition de plans d'action et l'analyse d'impact.
+Ils assistent également leurs clients dans l'optimisation des offres, produits et services, grâce à leur expertise en Data Analysis, Data Science et Data Engineering.
+---
+### 6. **Onepoint**
+Grâce à leurs experts avec une double expertise Data et Product, ils offrent une approche hybride du Product Management — vue soit sous l'angle « data as a product », soit comme un produit généraliste qui intègre pleinement les enjeux data.
+Ils mettent en place des approches Product Management autour de portefeuilles de data products, en s'appuyant sur les méthodologies Lean UX, Design Thinking et Data Thinking.
+---
+### 7. **mc2i**
+Leurs équipes pluridisciplinaires assurent des missions de conseil aux CDO et des activités de **Data Product Owner**, Chef de projet, Data Analyst, Data Scientist, Data Manager et Data Steward.
+Au sein d'un pôle dédié de 200 consultants, ils mobilisent un large savoir-faire couplant des compétences méthodologiques, technologiques DATA/IA et une compréhension des enjeux métiers et organisationnels.
+---
+## 🔑 Comment choisir le bon cabinet ?
+La donnée est au cœur de la transformation des entreprises françaises. Analyser, structurer et valoriser les données n'est plus un luxe. Pourtant, la réussite d'une démarche data ne repose pas uniquement sur la technologie : elle dépend avant tout de l'expertise et de l'accompagnement sur-mesure.
+Voici quelques critères de sélection :
+- **Taille & maturité** de votre organisation
+- **Périmètre d'intervention** souhaité (stratégie, delivery, formation, gouvernance)
+- **Secteur d'activité** (certains cabinets sont plus spécialisés sur certaines industries)
+- **Proximité géographique** (Paris vs régions)
+Souhaitez-vous des informations plus détaillées sur l'un de ces cabinets ou sur un cas d'usage particulier (data mesh, data governance, IA générative, etc.) ?

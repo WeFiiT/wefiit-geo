@@ -1,0 +1,1601 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard GEO & SEO — WeFiiT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f2f4ff;
+      --card: #ffffff;
+      --border: #e4e7ff;
+      --text: #1a1c30;
+      --text-muted: rgba(26,28,48,0.6);
+      --text-faint: rgba(26,28,48,0.4);
+      --primary: #002882;
+      --primary-10: rgba(0,40,130,0.1);
+      --orange: #f98f03;
+      --orange-dark: #e95400;
+      --success: #0eab67;
+      --info: #1a73e8;
+      --error: #e53935;
+      --warning: #f59e0b;
+      --nav-h: 56px;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    /* ===================== TOPNAV ===================== */
+    .topnav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      gap: 8px;
+      z-index: 100;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 8px;
+      text-decoration: none;
+    }
+    .nav-logo {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .nav-logo img {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    .nav-brand-text {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .nav-sep { width: 1px; height: 20px; background: var(--border); margin: 0 4px; }
+
+    /* Boutons nav */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      border-radius: 8px;
+      padding: 5px 9px;
+      transition: background 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+    .btn:hover { color: var(--text); background: rgba(26,28,48,0.05); }
+    .btn.active {
+      background: var(--primary-10);
+      color: var(--primary);
+      font-weight: 500;
+    }
+    .btn svg { flex-shrink: 0; }
+    .btn-ghost { background: transparent !important; }
+    .btn-ghost:hover { background: rgba(26,28,48,0.05) !important; color: var(--text); }
+    .btn-circle { border-radius: 50%; padding: 5px; }
+
+    .nav-right {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-pill {
+      display: flex;
+      align-items: center;
+      border: 1px solid var(--border);
+      border-radius: 9999px;
+      padding: 4px 4px;
+      gap: 0;
+    }
+    .nav-pill .btn-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      transition: background 0.15s;
+    }
+    .nav-pill .btn-avatar:hover { background: rgba(26,28,48,0.05); }
+
+    /* Dropdown SEO */
+    .dropdown-wrapper { position: relative; }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      z-index: 200;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 6px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      min-width: 210px;
+    }
+    .dropdown-content.open { display: block; }
+    .dropdown-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 8px;
+      font-size: 13px;
+      color: var(--text);
+      cursor: pointer;
+      transition: background 0.12s;
+      white-space: nowrap;
+    }
+    .dropdown-item:hover { background: var(--bg); }
+    .dropdown-item svg { color: var(--text-muted); }
+
+    /* ===================== MAIN CONTENT ===================== */
+    .main {
+      margin-top: var(--nav-h);
+      min-height: calc(100vh - var(--nav-h));
+      background: var(--bg);
+      overflow-y: auto;
+    }
+
+    .page { display: none; }
+    .page.active { display: block; }
+
+    /* ===================== CARD ===================== */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    /* ===================== PAGE GEO ===================== */
+    .page-geo {
+      padding: 24px 32px 32px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .page-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .page-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.2;
+    }
+    .page-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    .page-meta {
+      font-size: 12px;
+      color: var(--text-faint);
+      text-align: right;
+    }
+
+    /* Tabs pill */
+    .tabs-pill {
+      display: inline-flex;
+      background: var(--border);
+      border-radius: 9999px;
+      padding: 3px;
+      gap: 2px;
+      margin-bottom: 14px;
+    }
+    .tab-pill {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+      padding: 5px 14px;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+    .tab-pill.active {
+      background: white;
+      color: var(--text);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    .tab-pill:not(.active):hover { color: var(--text); }
+
+    /* Filtres */
+    .filters {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+    .filter-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .filter-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .filter-select {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 5px 10px;
+      font-size: 12px;
+      font-family: 'Inter', sans-serif;
+      background: white;
+      color: var(--text);
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%231a1c3099' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 8px center;
+      padding-right: 26px;
+      transition: border-color 0.15s;
+    }
+    .filter-select:focus { outline: none; border-color: var(--primary); }
+
+    /* KPI Cards */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .kpi-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+    .kpi-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+    .kpi-value {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+    }
+    .kpi-value sup {
+      font-size: 14px;
+      font-weight: 400;
+      opacity: 0.5;
+      vertical-align: super;
+    }
+    .kpi-hint {
+      font-size: 11px;
+      color: var(--text-faint);
+      margin-top: 6px;
+    }
+
+    /* Charts grid */
+    .charts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .card-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+    .card-body { padding: 18px 20px; }
+
+    /* Competitor bars */
+    .competitor-list { display: flex; flex-direction: column; gap: 8px; }
+    .competitor-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .comp-name {
+      width: 110px;
+      font-size: 12px;
+      color: var(--text);
+      flex-shrink: 0;
+    }
+    .comp-bar-track {
+      flex: 1;
+      height: 8px;
+      background: var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .comp-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #f98f03, #e95400);
+      border-radius: 4px;
+      transition: width 0.6s cubic-bezier(0.16,1,0.3,1);
+    }
+    .comp-pct {
+      width: 35px;
+      font-size: 12px;
+      color: var(--text-muted);
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    /* Matrice / table */
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .matrix-table th {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-faint);
+      font-weight: 500;
+      padding: 8px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .matrix-table td {
+      padding: 10px 16px;
+      font-size: 12px;
+      color: var(--text);
+      border-bottom: 1px solid var(--bg);
+    }
+    .matrix-table tr:last-child td { border-bottom: none; }
+    .matrix-table tr:hover td { background: var(--bg); }
+
+    /* Badges visibilité */
+    .badge-success {
+      display: inline-block;
+      background: rgba(14,171,103,0.15);
+      color: #0eab67;
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .badge-warning {
+      display: inline-block;
+      background: rgba(245,158,11,0.15);
+      color: #d97706;
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .badge-error {
+      display: inline-block;
+      background: rgba(229,57,53,0.15);
+      color: #e53935;
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .badge-gemini {
+      display: inline-block;
+      background: rgba(26,115,232,0.15);
+      color: #1a73e8;
+      border-radius: 4px;
+      padding: 2px 7px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .badge-chatgpt {
+      display: inline-block;
+      background: rgba(14,171,103,0.15);
+      color: #0eab67;
+      border-radius: 4px;
+      padding: 2px 7px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    /* badge-cited remplacé par badge-wefiit-favicon */
+    .badge-uncited {
+      display: inline-block;
+      background: rgba(26,28,48,0.1);
+      color: rgba(26,28,48,0.4);
+      border-radius: 4px;
+      padding: 2px 7px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    /* Verbatims */
+    .verbatim-list { display: flex; flex-direction: column; gap: 10px; }
+    .verbatim-card {
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .verbatim-card.cited {
+      background: rgba(249,143,3,0.07);
+      border: 1px solid rgba(249,143,3,0.2);
+    }
+    .verbatim-card.uncited {
+      background: rgba(26,28,48,0.04);
+      border: 1px solid var(--border);
+    }
+    /* Badge favicon WeFiiT cité */
+    .badge-wefiit-favicon {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(249,143,3,0.12);
+      border: 1px solid rgba(249,143,3,0.35);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #e95400;
+    }
+    .badge-wefiit-favicon img {
+      width: 12px;
+      height: 12px;
+      object-fit: contain;
+      border-radius: 2px;
+    }
+    .verbatim-text {
+      font-size: 12px;
+      color: var(--text);
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+    .verbatim-link {
+      font-size: 12px;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+    .verbatim-link:hover { text-decoration: underline; }
+    .verbatim-meta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .verbatim-query {
+      font-size: 11px;
+      color: var(--text-faint);
+    }
+    .verbatim-date {
+      font-size: 11px;
+      color: var(--text-faint);
+      margin-left: auto;
+    }
+
+    /* Full-width section */
+    .section-full { margin-bottom: 12px; }
+
+    /* ===================== PAGE RANK TRACKING ===================== */
+    .page-rank { padding: 0; }
+
+    .rank-header {
+      padding: 24px 32px 0;
+    }
+    .rank-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      color: var(--text-muted);
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: 'Inter', sans-serif;
+      padding: 4px 6px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      transition: background 0.12s, color 0.12s;
+    }
+    .rank-back:hover { background: rgba(26,28,48,0.05); color: var(--text); }
+
+    .rank-domain-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .rank-domain {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .rank-actions { display: flex; gap: 8px; }
+
+    .btn-outline-navy {
+      background: transparent;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      border-radius: 8px;
+      padding: 6px 13px;
+      font-size: 12px;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: background 0.14s;
+    }
+    .btn-outline-navy:hover { background: var(--primary-10); }
+
+    .btn-primary-orange {
+      background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+      border: none;
+      color: #fff;
+      border-radius: 8px;
+      padding: 6px 13px;
+      font-size: 12px;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: opacity 0.14s;
+    }
+    .btn-primary-orange:hover { opacity: 0.9; }
+
+    .rank-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .meta-pill {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 2px 9px;
+      font-size: 11px;
+      color: var(--text-muted);
+      background: white;
+    }
+
+    /* Toolbar */
+    .rank-toolbar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 32px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: white;
+    }
+    .toolbar-filter-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      padding: 5px 11px;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      transition: background 0.12s;
+    }
+    .toolbar-filter-btn:hover { background: var(--bg); }
+    .toolbar-count {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      flex: 1;
+    }
+    .toolbar-period {
+      font-size: 12px;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      padding: 5px 24px 5px 10px;
+      font-family: 'Inter', sans-serif;
+      background: white url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%231a1c3099' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 8px center;
+      appearance: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+    }
+    .toolbar-icon-btns { display: flex; gap: 2px; }
+    .toolbar-icon-btn {
+      width: 30px;
+      height: 30px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: background 0.12s;
+    }
+    .toolbar-icon-btn:hover { background: var(--bg); }
+    .toolbar-more {
+      width: 30px;
+      height: 30px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--text-muted);
+      font-size: 16px;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+
+    /* Rank table */
+    .rank-table-wrap {
+      padding: 0 32px 32px;
+      margin-top: 0;
+    }
+    .rank-table-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 16px;
+    }
+    .rank-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .rank-table thead th {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-faint);
+      font-weight: 500;
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      background: white;
+      white-space: nowrap;
+    }
+    .rank-table thead th.sortable { cursor: pointer; }
+    .rank-table thead th.sortable:hover { color: var(--text-muted); }
+    .rank-table tbody tr {
+      border-bottom: 1px solid var(--bg);
+      transition: background 0.1s;
+    }
+    .rank-table tbody tr:hover { background: var(--bg); }
+    .rank-table tbody tr:last-child { border-bottom: none; }
+    .rank-table tbody td {
+      padding: 9px 14px;
+      font-size: 12px;
+      color: var(--text);
+      white-space: nowrap;
+    }
+    .rank-table td.col-keyword { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 260px; }
+    .rank-table td.col-url {
+      font-size: 11px;
+      color: var(--text-muted);
+      max-width: 180px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .pos-up { color: var(--success); font-weight: 600; }
+    .pos-neutral { color: var(--text-faint); }
+
+    .serp-badges { display: flex; gap: 3px; flex-wrap: wrap; }
+    .serp-badge {
+      border-radius: 4px;
+      padding: 1px 5px;
+      font-size: 10px;
+      font-weight: 500;
+    }
+    .serp-paa { background: #dbeafe; color: #1d4ed8; }
+    .serp-video { background: #f1f5f9; color: #475569; }
+    .serp-tc { background: #f3e8ff; color: #7c3aed; }
+
+    .check-col { width: 32px; }
+    .rank-table-footer {
+      padding: 10px 16px;
+      font-size: 11px;
+      color: var(--text-faint);
+      border-top: 1px solid var(--border);
+    }
+
+    /* Legend SVG */
+    .chart-legend {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 10px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .legend-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    /* ===================== MICRO-INTERACTIONS ===================== */
+
+    /* --- Nav buttons --- */
+    .btn {
+      position: relative;
+      overflow: hidden;
+    }
+    /* Ripple au clic */
+    .btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(0,40,130,0.12) 0%, transparent 70%);
+      opacity: 0;
+      transform: scale(0.4);
+      transition: opacity 0.35s ease, transform 0.35s ease;
+      pointer-events: none;
+      border-radius: inherit;
+    }
+    .btn:active::after {
+      opacity: 1;
+      transform: scale(1.6);
+      transition: opacity 0.08s, transform 0.08s;
+    }
+    /* Hover : léger translate up */
+    .btn:hover { transform: translateY(-1px); }
+    .btn:active { transform: translateY(0px) scale(0.97); }
+
+    /* --- KPI cards — fade + lift au load --- */
+    .kpi-card {
+      animation: cardIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    .kpi-card:nth-child(1) { animation-delay: 0.05s; }
+    .kpi-card:nth-child(2) { animation-delay: 0.12s; }
+
+    /* --- Chart cards + verbatim section --- */
+    .charts-grid > .card {
+      animation: cardIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    .charts-grid > .card:nth-child(1) { animation-delay: 0.18s; }
+    .charts-grid > .card:nth-child(2) { animation-delay: 0.26s; }
+
+    .section-full {
+      animation: cardIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    .section-full:nth-of-type(1) { animation-delay: 0.32s; }
+    .section-full:nth-of-type(2) { animation-delay: 0.40s; }
+
+    @keyframes cardIn {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* --- Hover lift sur les cards --- */
+    .kpi-card,
+    .charts-grid > .card,
+    .section-full.card {
+      transition: box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform  0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: default;
+    }
+    .kpi-card:hover,
+    .charts-grid > .card:hover,
+    .section-full.card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,40,130,0.08), 0 2px 6px rgba(0,0,0,0.04);
+    }
+
+    /* --- Verbatim cards hover --- */
+    .verbatim-card {
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                  box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .verbatim-card:hover {
+      transform: translateX(4px);
+      box-shadow: -3px 0 0 0 var(--orange), 0 4px 16px rgba(0,0,0,0.06);
+    }
+    .verbatim-card.uncited:hover {
+      box-shadow: -3px 0 0 0 var(--primary), 0 4px 16px rgba(0,0,0,0.06);
+    }
+
+    /* --- Barres concurrents — entrée en largeur --- */
+    .comp-bar-fill {
+      animation: barGrow 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+      transform-origin: left center;
+    }
+    /* stagger via JS (inline style animation-delay) */
+
+    /* --- Graphique — tracé animé --- */
+    .chart-line-animated {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: drawLine 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .chart-line-animated.delay { animation-delay: 0.15s; }
+
+    @keyframes barGrow {
+      from { clip-path: inset(0 100% 0 0); }
+      to   { clip-path: inset(0 0% 0 0); }
+    }
+    @keyframes drawLine {
+      to { stroke-dashoffset: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===================== TOPNAV ===================== -->
+<nav class="topnav">
+  <!-- Brand -->
+  <a class="nav-brand" href="#" onclick="return false;">
+    <div class="nav-logo">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3GgsS4gnbVgzHjynixRKNWUx3hjzUcYJwsQ&s" alt="WeFiiT" onerror="this.parentElement.style.background='linear-gradient(135deg,#f98f03,#e95400)';this.style.display='none';">
+    </div>
+    <span class="nav-brand-text">Dashboard GEO & SEO</span>
+  </a>
+
+  <div class="nav-sep"></div>
+
+  <!-- Bouton GEO -->
+  <button class="btn active" id="btn-geo" onclick="switchPage('geo')">
+    <!-- Sparkles icon -->
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5z"/><path d="M19 13l.75 2.25L22 16l-2.25.75L19 19l-.75-2.25L16 16l2.25-.75z"/><path d="M5 17l.5 1.5L7 19l-1.5.5L5 21l-.5-1.5L3 19l1.5-.5z"/></svg>
+    GEO
+  </button>
+
+  <!-- Dropdown SEO -->
+  <div class="dropdown-wrapper" id="seo-dropdown-wrapper">
+    <button class="btn" id="btn-seo" onclick="toggleDropdown(event)">
+      <!-- Search icon -->
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      SEO
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.5"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div class="dropdown-content" id="seo-dropdown">
+      <div class="dropdown-item" onclick="switchPage('rank'); closeDropdown();">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+        Rank Tracking
+      </div>
+      <div class="dropdown-item" onclick="closeDropdown();">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        Keyword Research
+      </div>
+      <div class="dropdown-item" onclick="closeDropdown();">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        Site Audit
+      </div>
+      <div class="dropdown-item" onclick="closeDropdown();">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        Domain Overview
+      </div>
+    </div>
+  </div>
+
+  <!-- Right side — vide -->
+</nav>
+
+<!-- ===================== MAIN CONTENT ===================== -->
+<main class="main">
+
+  <!-- =========== PAGE GEO =========== -->
+  <div id="page-geo" class="page active page-geo">
+
+    <!-- Header -->
+    <div class="page-header">
+      <div>
+        <div class="page-title">GEO Visibility</div>
+        <div class="page-subtitle">Présence de WeFiiT dans les réponses des IA génératives</div>
+      </div>
+      <div class="page-meta">Dernier run : 2026-05-25</div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs-pill">
+      <div class="tab-pill active">GEO Visibility</div>
+      <div class="tab-pill">Santé système</div>
+    </div>
+
+    <!-- Filtres -->
+    <div class="filters">
+      <div class="filter-group">
+        <div class="filter-label">Requête</div>
+        <select class="filter-select">
+          <option>Toutes les requêtes</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <div class="filter-label">Modèle</div>
+        <select class="filter-select">
+          <option>Tous les modèles</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <div class="filter-label">Période</div>
+        <select class="filter-select">
+          <option>30 derniers jours</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- KPIs -->
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-label">Taux de présence</div>
+        <div class="kpi-value">37<sup>%</sup></div>
+        <div class="kpi-hint">% des runs sur la période</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Nb de runs</div>
+        <div class="kpi-value">187</div>
+        <div class="kpi-hint">sessions analysées</div>
+      </div>
+    </div>
+
+    <!-- Charts 2 col -->
+    <div class="charts-grid">
+      <!-- Évolution des citations -->
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">Évolution des citations</div>
+          <!--
+            Données réelles (issues de l'app) — 20 points
+            Dates : 04-29 04-30 05-04 05-05 05-11 05-12 05-13 05-14 05-15 05-16 05-18 05-19 05-20 05-23 05-24 05-25 05-26
+            ChatGPT : 3 0 6 4 5 4 0 0 9 2 2 0 0 4 0 5 2
+            Gemini  : 1 0 0 0 0 2 4 11 15 13 13 14 16 12 13 15 13
+            Échelle Y : 0→16, hauteur utile 130px (y=140 → y=10), y = 140 - (v/16)*130
+          -->
+          <svg id="chart-svg" viewBox="0 0 500 165" width="100%" style="display:block; overflow:visible;">
+            <!-- Grid lignes pointillées -->
+            <line x1="36" y1="10"  x2="494" y2="10"  stroke="#e4e7ff" stroke-width="1" stroke-dasharray="3,3"/>
+            <line x1="36" y1="43"  x2="494" y2="43"  stroke="#e4e7ff" stroke-width="1" stroke-dasharray="3,3"/>
+            <line x1="36" y1="75"  x2="494" y2="75"  stroke="#e4e7ff" stroke-width="1" stroke-dasharray="3,3"/>
+            <line x1="36" y1="108" x2="494" y2="108" stroke="#e4e7ff" stroke-width="1" stroke-dasharray="3,3"/>
+            <line x1="36" y1="140" x2="494" y2="140" stroke="#e4e7ff" stroke-width="1" stroke-dasharray="3,3"/>
+            <!-- Y labels -->
+            <text x="30" y="143" font-size="9" fill="#aaa" text-anchor="end">0</text>
+            <text x="30" y="111" font-size="9" fill="#aaa" text-anchor="end">4</text>
+            <text x="30" y="78"  font-size="9" fill="#aaa" text-anchor="end">8</text>
+            <text x="30" y="46"  font-size="9" fill="#aaa" text-anchor="end">12</text>
+            <text x="30" y="13"  font-size="9" fill="#aaa" text-anchor="end">16</text>
+            <!-- X labels — dates clés uniquement pour lisibilité -->
+            <text x="44"  y="158" font-size="9" fill="#aaa" text-anchor="middle">04-29</text>
+            <text x="92"  y="158" font-size="9" fill="#aaa" text-anchor="middle">04-30</text>
+            <text x="140" y="158" font-size="9" fill="#aaa" text-anchor="middle">05-04</text>
+            <text x="188" y="158" font-size="9" fill="#aaa" text-anchor="middle">05-11</text>
+            <text x="236" y="158" font-size="9" fill="#aaa" text-anchor="middle">05-13</text>
+            <text x="284" y="158" font-size="9" fill="#aaa" text-anchor="middle">05-15</text>
+            <text x="332" y="158" font-size="9" fill="#aaa" text-anchor="middle">05-18</text>
+            <text x="380" y="158" font-size="9" fill="#aaa" text-anchor="middle">05-20</text>
+            <text x="428" y="158" font-size="9" fill="#aaa" text-anchor="middle">05-24</text>
+            <text x="476" y="158" font-size="9" fill="#aaa" text-anchor="middle">05-26</text>
+
+            <!--
+              Points exacts — les dots ET le path partagent les mêmes (x,y)
+              x: 44 71 98 125 152 179 206 233 260 287 314 341 368 395 422 449 476  (pas=27)
+              y = 140 - (v/16)*130
+              ChatGPT v: 3  0  6  4  5  4  0  0  9  2  2  0  0  4  0  5  2
+              y:        116 140 91 107 99 107 140 140 67 124 124 140 140 107 140 99 124
+              Courbe lissée : handle = 1/3 du pas horizontal = 9px de chaque côté
+            -->
+            <path class="chart-line-animated" id="line-chatgpt" fill="none" stroke="#10a37f" stroke-width="2" stroke-linecap="round"
+              d="M44,116
+                 C53,128 62,140 71,140
+                 C80,140 89,91  98,91
+                 C107,91  116,107 125,107
+                 C134,107 143,99  152,99
+                 C161,99  170,107 179,107
+                 C188,107 197,140 206,140
+                 C215,140 224,140 233,140
+                 C242,140 251,67  260,67
+                 C269,67  278,124 287,124
+                 C296,124 305,124 314,124
+                 C323,124 332,140 341,140
+                 C350,140 359,140 368,140
+                 C377,140 386,107 395,107
+                 C404,107 413,140 422,140
+                 C431,140 440,99  449,99
+                 C458,99  467,124 476,124"/>
+            <circle cx="44"  cy="116" r="3" fill="#10a37f"/>
+            <circle cx="71"  cy="140" r="3" fill="#10a37f"/>
+            <circle cx="98"  cy="91"  r="3" fill="#10a37f"/>
+            <circle cx="125" cy="107" r="3" fill="#10a37f"/>
+            <circle cx="152" cy="99"  r="3" fill="#10a37f"/>
+            <circle cx="179" cy="107" r="3" fill="#10a37f"/>
+            <circle cx="206" cy="140" r="3" fill="#10a37f"/>
+            <circle cx="233" cy="140" r="3" fill="#10a37f"/>
+            <circle cx="260" cy="67"  r="3" fill="#10a37f"/>
+            <circle cx="287" cy="124" r="3" fill="#10a37f"/>
+            <circle cx="314" cy="124" r="3" fill="#10a37f"/>
+            <circle cx="341" cy="140" r="3" fill="#10a37f"/>
+            <circle cx="368" cy="140" r="3" fill="#10a37f"/>
+            <circle cx="395" cy="107" r="3" fill="#10a37f"/>
+            <circle cx="422" cy="140" r="3" fill="#10a37f"/>
+            <circle cx="449" cy="99"  r="3" fill="#10a37f"/>
+            <circle cx="476" cy="124" r="3" fill="#10a37f"/>
+
+            <!--
+              Gemini v: 1  0  0  0  0  2  4  11 15 13 13 14 16 12 13 15 13
+              y:       132 140 140 140 140 124 107 51 18 35 35 26 10 37 35 18 35
+            -->
+            <path class="chart-line-animated delay" id="line-gemini" fill="none" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"
+              d="M44,132
+                 C53,136 62,140 71,140
+                 C80,140 89,140 98,140
+                 C107,140 116,140 125,140
+                 C134,140 143,140 152,140
+                 C161,140 170,124 179,124
+                 C188,124 197,107 206,107
+                 C215,107 224,51  233,51
+                 C242,51  251,18  260,18
+                 C269,18  278,35  287,35
+                 C296,35  305,35  314,35
+                 C323,35  332,26  341,26
+                 C350,26  359,10  368,10
+                 C377,10  386,37  395,37
+                 C404,37  413,35  422,35
+                 C431,35  440,18  449,18
+                 C458,18  467,35  476,35"/>
+            <circle cx="44"  cy="132" r="3" fill="#1a73e8"/>
+            <circle cx="71"  cy="140" r="3" fill="#1a73e8"/>
+            <circle cx="98"  cy="140" r="3" fill="#1a73e8"/>
+            <circle cx="125" cy="140" r="3" fill="#1a73e8"/>
+            <circle cx="152" cy="140" r="3" fill="#1a73e8"/>
+            <circle cx="179" cy="124" r="3" fill="#1a73e8"/>
+            <circle cx="206" cy="107" r="3" fill="#1a73e8"/>
+            <circle cx="233" cy="51"  r="3" fill="#1a73e8"/>
+            <circle cx="260" cy="18"  r="3" fill="#1a73e8"/>
+            <circle cx="287" cy="35"  r="3" fill="#1a73e8"/>
+            <circle cx="314" cy="35"  r="3" fill="#1a73e8"/>
+            <circle cx="341" cy="26"  r="3" fill="#1a73e8"/>
+            <circle cx="368" cy="10"  r="3" fill="#1a73e8"/>
+            <circle cx="395" cy="37"  r="3" fill="#1a73e8"/>
+            <circle cx="422" cy="35"  r="3" fill="#1a73e8"/>
+            <circle cx="449" cy="18"  r="3" fill="#1a73e8"/>
+            <circle cx="476" cy="35"  r="3" fill="#1a73e8"/>
+
+          </svg>
+          <div class="chart-legend">
+            <div class="legend-item"><div class="legend-dot" style="background:#10a37f;"></div> ChatGPT</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#1a73e8;"></div> Gemini</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Concurrents -->
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">Concurrents — fréquence de citation</div>
+          <div class="competitor-list">
+            <div class="competitor-row">
+              <div class="comp-name">Thiga</div>
+              <div class="comp-bar-track"><div class="comp-bar-fill" style="width:49%"></div></div>
+              <div class="comp-pct">49%</div>
+            </div>
+            <div class="competitor-row">
+              <div class="comp-name">Wivoo</div>
+              <div class="comp-bar-track"><div class="comp-bar-fill" style="width:26%"></div></div>
+              <div class="comp-pct">26%</div>
+            </div>
+            <div class="competitor-row">
+              <div class="comp-name">McKinsey</div>
+              <div class="comp-bar-track"><div class="comp-bar-fill" style="width:23%"></div></div>
+              <div class="comp-pct">23%</div>
+            </div>
+            <div class="competitor-row">
+              <div class="comp-name">KXCO</div>
+              <div class="comp-bar-track"><div class="comp-bar-fill" style="width:22%"></div></div>
+              <div class="comp-pct">22%</div>
+            </div>
+            <div class="competitor-row">
+              <div class="comp-name">BCG</div>
+              <div class="comp-bar-track"><div class="comp-bar-fill" style="width:21%"></div></div>
+              <div class="comp-pct">21%</div>
+            </div>
+            <div class="competitor-row">
+              <div class="comp-name">Octo</div>
+              <div class="comp-bar-track"><div class="comp-bar-fill" style="width:21%"></div></div>
+              <div class="comp-pct">21%</div>
+            </div>
+            <div class="competitor-row">
+              <div class="comp-name">TAK</div>
+              <div class="comp-bar-track"><div class="comp-bar-fill" style="width:18%"></div></div>
+              <div class="comp-pct">18%</div>
+            </div>
+            <div class="competitor-row">
+              <div class="comp-name">Hubvisory</div>
+              <div class="comp-bar-track"><div class="comp-bar-fill" style="width:16%"></div></div>
+              <div class="comp-pct">16%</div>
+            </div>
+            <div class="competitor-row">
+              <div class="comp-name">Yield Studio</div>
+              <div class="comp-bar-track"><div class="comp-bar-fill" style="width:16%"></div></div>
+              <div class="comp-pct">16%</div>
+            </div>
+            <div class="competitor-row">
+              <div class="comp-name">Bain</div>
+              <div class="comp-bar-track"><div class="comp-bar-fill" style="width:16%"></div></div>
+              <div class="comp-pct">16%</div>
+            </div>
+            <div class="competitor-row">
+              <div class="comp-name">Delva</div>
+              <div class="comp-bar-track"><div class="comp-bar-fill" style="width:16%"></div></div>
+              <div class="comp-pct">16%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Matrice de visibilité -->
+    <div class="section-full card">
+      <div class="card-body" style="padding-bottom:0;">
+        <div class="card-title">Matrice de visibilité</div>
+      </div>
+      <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>Requête</th>
+            <th>ChatGPT</th>
+            <th>Gemini</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>meilleur cabinet conseil product management</td>
+            <td><span class="badge-success">3/3</span></td>
+            <td><span class="badge-success">1/1</span></td>
+          </tr>
+          <tr>
+            <td>top 5 agences product management Paris</td>
+            <td><span class="badge-success">3/3</span></td>
+            <td><span class="badge-warning">2/1</span></td>
+          </tr>
+          <tr>
+            <td>cabinet spécialisé data product management</td>
+            <td><span class="badge-error">0/3</span></td>
+            <td><span class="badge-success">1/1</span></td>
+          </tr>
+          <tr>
+            <td>cabinet conseil product marketing</td>
+            <td><span class="badge-warning">1/3</span></td>
+            <td><span class="badge-success">1/1</span></td>
+          </tr>
+          <tr>
+            <td>partenaire pour former mes équipes</td>
+            <td><span class="badge-warning">1/3</span></td>
+            <td><span class="badge-success">1/1</span></td>
+          </tr>
+          <tr>
+            <td>cabinet spécialisé product management ia</td>
+            <td><span class="badge-success">3/3</span></td>
+            <td><span class="badge-warning">2/3</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Verbatims -->
+    <div class="section-full card" style="margin-top:16px;">
+      <div class="card-body" style="padding-bottom:12px;">
+        <div class="card-title">Verbatims WeFiiT récents</div>
+        <div class="verbatim-list">
+
+          <div class="verbatim-card cited">
+            <div class="verbatim-text">« WeFiiT est un cabinet spécialisé dans le product management qui accompagne les entreprises dans leur transformation produit, avec une forte expertise data & IA. Parmi les références du marché en France, WeFiiT figure aux côtés de Thiga et Hubvisory... »</div>
+            <a class="verbatim-link" href="#">Voir la réponse complète →</a>
+            <div class="verbatim-meta">
+              <span class="badge-chatgpt">ChatGPT</span>
+              <span class="badge-wefiit-favicon"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3GgsS4gnbVgzHjynixRKNWUx3hjzUcYJwsQ&s" alt="W"></span>
+              <span class="verbatim-query">meilleur cabinet conseil product management</span>
+              <span class="verbatim-date">25/05/2026</span>
+            </div>
+          </div>
+
+          <div class="verbatim-card uncited">
+            <div class="verbatim-text">« Pour structurer vos équipes produit, plusieurs cabinets spécialisés interviennent en France : Thiga, KXCO, Wivoo, McKinsey Digital et BCG Digital Ventures sont fréquemment cités dans ce domaine... »</div>
+            <a class="verbatim-link" href="#">Voir la réponse complète →</a>
+            <div class="verbatim-meta">
+              <span class="badge-gemini">Gemini</span>
+              <span class="badge-uncited">Non cité</span>
+              <span class="verbatim-query">cabinet spécialisé data product management</span>
+              <span class="verbatim-date">24/05/2026</span>
+            </div>
+          </div>
+
+          <div class="verbatim-card cited">
+            <div class="verbatim-text">« WeFiiT propose des missions d'immersion et de conseil pour les équipes product marketing. Leur approche terrain et leur expertise sectorielle en font un partenaire de choix pour les directions PMM qui souhaitent monter en compétences rapidement... »</div>
+            <a class="verbatim-link" href="#">Voir la réponse complète →</a>
+            <div class="verbatim-meta">
+              <span class="badge-gemini">Gemini</span>
+              <span class="badge-wefiit-favicon"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3GgsS4gnbVgzHjynixRKNWUx3hjzUcYJwsQ&s" alt="W"></span>
+              <span class="verbatim-query">cabinet conseil product marketing</span>
+              <span class="verbatim-date">23/05/2026</span>
+            </div>
+          </div>
+
+          <div class="verbatim-card cited">
+            <div class="verbatim-text">« Pour former vos équipes au product management à l'ère de l'IA, WeFiiT, OCTO Technology et Iteratif proposent des programmes de formation adaptés aux organisations en transformation numérique... »</div>
+            <a class="verbatim-link" href="#">Voir la réponse complète →</a>
+            <div class="verbatim-meta">
+              <span class="badge-chatgpt">ChatGPT</span>
+              <span class="badge-wefiit-favicon"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3GgsS4gnbVgzHjynixRKNWUx3hjzUcYJwsQ&s" alt="W"></span>
+              <span class="verbatim-query">partenaire pour former mes équipes</span>
+              <span class="verbatim-date">22/05/2026</span>
+            </div>
+          </div>
+
+          <div class="verbatim-card uncited">
+            <div class="verbatim-text">« Le top 5 des agences product management à Paris regroupe Thiga, KXCO, Wivoo, Yield Studio et TAK Advisory. Ces cabinets se distinguent par leur maîtrise des méthodologies agiles et leur capacité à staffier rapidement... »</div>
+            <a class="verbatim-link" href="#">Voir la réponse complète →</a>
+            <div class="verbatim-meta">
+              <span class="badge-gemini">Gemini</span>
+              <span class="badge-uncited">Non cité</span>
+              <span class="verbatim-query">top 5 agences product management Paris</span>
+              <span class="verbatim-date">20/05/2026</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /page-geo -->
+
+
+  <!-- =========== PAGE RANK TRACKING =========== -->
+  <div id="page-rank" class="page page-rank">
+
+    <div class="rank-header">
+      <button class="rank-back" onclick="switchPage('geo')">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to domains
+      </button>
+
+      <div class="rank-domain-row">
+        <div class="rank-domain">wefiit.com</div>
+        <div class="rank-actions">
+          <button class="btn-outline-navy">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 1.41 1.41M4.93 4.93A10 10 0 0 0 3.52 6.34M12 2v2M12 20v2M2 12h2M20 12h2M19.07 19.07a10 10 0 0 1-1.41 1.41M4.93 19.07A10 10 0 0 0 3.52 17.66"/></svg>
+            Configure
+          </button>
+          <button class="btn-primary-orange">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add Keywords
+          </button>
+        </div>
+      </div>
+
+      <div class="rank-meta-row">
+        <span class="meta-pill">Desktop</span>
+        <span class="meta-pill">Mobile</span>
+        <span class="meta-pill">Weekly</span>
+        <span class="meta-pill">Last: 20/05/2026</span>
+        <span class="meta-pill">~$0.43/check</span>
+      </div>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="rank-toolbar">
+      <button class="toolbar-filter-btn">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+        Filters
+      </button>
+      <div class="toolbar-count">96 keywords</div>
+      <select class="toolbar-period">
+        <option>Since last week</option>
+        <option>Since last month</option>
+      </select>
+      <div class="toolbar-icon-btns">
+        <button class="toolbar-icon-btn" title="Vue liste">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        </button>
+        <button class="toolbar-icon-btn" title="Vue grille">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+        </button>
+      </div>
+      <button class="toolbar-more">···</button>
+    </div>
+
+    <!-- Table -->
+    <div class="rank-table-wrap">
+      <div class="rank-table-card">
+        <table class="rank-table">
+          <thead>
+            <tr>
+              <th class="check-col"><input type="checkbox" style="accent-color:var(--primary); cursor:pointer;"></th>
+              <th>Keyword</th>
+              <th class="sortable">Position ▲</th>
+              <th>URL</th>
+              <th>Volume</th>
+              <th>KD</th>
+              <th>CPC</th>
+              <th>SERP Features</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox" style="accent-color:var(--primary); cursor:pointer;"></td>
+              <td class="col-keyword">agence conseil product management</td>
+              <td><span class="pos-up">↑ 1</span></td>
+              <td class="col-url">/</td>
+              <td>—</td>
+              <td>4</td>
+              <td>—</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" style="accent-color:var(--primary); cursor:pointer;"></td>
+              <td class="col-keyword">cabinet conseil product management</td>
+              <td><span class="pos-up">↑ 1</span></td>
+              <td class="col-url">/</td>
+              <td>70</td>
+              <td>4</td>
+              <td>—</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" style="accent-color:var(--primary); cursor:pointer;"></td>
+              <td class="col-keyword">cabinet de conseil product management</td>
+              <td><span class="pos-up">↑ 1</span></td>
+              <td class="col-url">/</td>
+              <td>—</td>
+              <td>4</td>
+              <td>—</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" style="accent-color:var(--primary); cursor:pointer;"></td>
+              <td class="col-keyword">cabinet de conseil product marketing</td>
+              <td><span class="pos-up">↑ 1</span></td>
+              <td class="col-url">/product-marketing</td>
+              <td>—</td>
+              <td>—</td>
+              <td>—</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" style="accent-color:var(--primary); cursor:pointer;"></td>
+              <td class="col-keyword">conseil product management</td>
+              <td><span class="pos-up">↑ 1</span></td>
+              <td class="col-url">/product-marketing</td>
+              <td>—</td>
+              <td>—</td>
+              <td>—</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" style="accent-color:var(--primary); cursor:pointer;"></td>
+              <td class="col-keyword">consultant data pm</td>
+              <td><span class="pos-up">↑ 1</span></td>
+              <td class="col-url">/product-ia-data-mgt</td>
+              <td>—</td>
+              <td>—</td>
+              <td>—</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" style="accent-color:var(--primary); cursor:pointer;"></td>
+              <td class="col-keyword">consultant product marketing</td>
+              <td><span class="pos-up">↑ 1</span></td>
+              <td class="col-url">/product-marketing</td>
+              <td>—</td>
+              <td>—</td>
+              <td>—</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" style="accent-color:var(--primary); cursor:pointer;"></td>
+              <td class="col-keyword">consultant product marketing manager</td>
+              <td><span class="pos-up">↑ 1</span></td>
+              <td class="col-url">/product-marketing</td>
+              <td>—</td>
+              <td>—</td>
+              <td>—</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" style="accent-color:var(--primary); cursor:pointer;"></td>
+              <td class="col-keyword">daily meeting</td>
+              <td><span class="pos-up">↑ 1</span></td>
+              <td class="col-url">/blog/daily-scrum-...</td>
+              <td>260</td>
+              <td>4</td>
+              <td>—</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" style="accent-color:var(--primary); cursor:pointer;"></td>
+              <td class="col-keyword">conseil product management</td>
+              <td><span class="pos-up">↑ 2</span></td>
+              <td class="col-url">/</td>
+              <td>140</td>
+              <td>10</td>
+              <td>—</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" style="accent-color:var(--primary); cursor:pointer;"></td>
+              <td class="col-keyword">consultant product data manager</td>
+              <td><span class="pos-up">↑ 2</span></td>
+              <td class="col-url">/product-ia-data-mgt</td>
+              <td>—</td>
+              <td>—</td>
+              <td>—</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" style="accent-color:var(--primary); cursor:pointer;"></td>
+              <td class="col-keyword">consultant ia product manager</td>
+              <td><span class="pos-up">↑ 2</span></td>
+              <td class="col-url">/blog/le-role-de-la...</td>
+              <td>—</td>
+              <td>—</td>
+              <td>—</td>
+              <td>
+                <div class="serp-badges">
+                  <span class="serp-badge serp-tc">TC</span>
+                  <span class="serp-badge serp-video">Video</span>
+                  <span class="serp-badge serp-paa">PAA</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" style="accent-color:var(--primary); cursor:pointer;"></td>
+              <td class="col-keyword">agence lean</td>
+              <td><span class="pos-up">↑ 4</span></td>
+              <td class="col-url">/</td>
+              <td>1.9k</td>
+              <td>—</td>
+              <td>$5.78</td>
+              <td>
+                <div class="serp-badges">
+                  <span class="serp-badge serp-paa">PAA</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" style="accent-color:var(--primary); cursor:pointer;"></td>
+              <td class="col-keyword">agence product management</td>
+              <td><span class="pos-up">↑ 6</span></td>
+              <td class="col-url">/</td>
+              <td>170</td>
+              <td>4</td>
+              <td>—</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" style="accent-color:var(--primary); cursor:pointer;"></td>
+              <td class="col-keyword">bdd</td>
+              <td><span class="pos-neutral">— 6</span></td>
+              <td class="col-url">/blog/integration-...</td>
+              <td>6.4k</td>
+              <td>—</td>
+              <td>$2.23</td>
+              <td>
+                <div class="serp-badges">
+                  <span class="serp-badge serp-paa">PAA</span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="rank-table-footer">96 of 96 keywords</div>
+      </div>
+    </div>
+
+  </div><!-- /page-rank -->
+
+</main>
+
+<script>
+  function switchPage(page) {
+    // Cache toutes les pages
+    document.querySelectorAll('.page').forEach(function(p) {
+      p.style.display = 'none';
+    });
+    // Affiche la bonne
+    var target = document.getElementById('page-' + page);
+    if (target) target.style.display = 'block';
+
+    // Met à jour les états actifs dans le topnav
+    var btnGeo = document.getElementById('btn-geo');
+    var btnSeo = document.getElementById('btn-seo');
+
+    if (page === 'geo') {
+      btnGeo.classList.add('active');
+      btnSeo.classList.remove('active');
+    } else if (page === 'rank') {
+      btnSeo.classList.add('active');
+      btnGeo.classList.remove('active');
+    }
+  }
+
+  function toggleDropdown(e) {
+    e.stopPropagation();
+    var dd = document.getElementById('seo-dropdown');
+    dd.classList.toggle('open');
+  }
+
+  function closeDropdown() {
+    var dd = document.getElementById('seo-dropdown');
+    dd.classList.remove('open');
+  }
+
+  // Fermer dropdown si click ailleurs
+  document.addEventListener('click', function(e) {
+    var wrapper = document.getElementById('seo-dropdown-wrapper');
+    if (!wrapper.contains(e.target)) {
+      closeDropdown();
+    }
+  });
+
+  // Init : afficher la page GEO
+  switchPage('geo');
+
+  // --- Stagger barres concurrents ---
+  document.querySelectorAll('.comp-bar-fill').forEach(function(bar, i) {
+    bar.style.animationDelay = (0.08 + i * 0.055) + 's';
+  });
+
+  // --- Longueur réelle des polylines pour le tracé animé ---
+  document.querySelectorAll('.chart-line-animated').forEach(function(line) {
+    var len = line.getTotalLength ? line.getTotalLength() : 800;
+    line.style.strokeDasharray = len;
+    line.style.strokeDashoffset = len;
+  });
+</script>
+
+</body>
+</html>

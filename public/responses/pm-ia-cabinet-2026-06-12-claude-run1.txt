@@ -1,0 +1,50 @@
+Voici un panorama des **principaux cabinets spécialisés en Product Management & IA en France** :
+---
+## 🏆 Les cabinets spécialisés Product Management & IA en France
+---
+### 1. 🔵 **Hubvisory**
+🌐 [hubvisory.com](https://hubvisory.com)
+Cabinet de conseil spécialisé en **Product Management et transformation IA** pour les grands groupes, avec **150 consultants** basés à Paris et Lille.
+Ils couvrent toute la chaîne de valeur IA, de la stratégie à l'industrialisation : conseil, formation et développement.
+Ils disposent d'un **framework agentique propriétaire**, revendiquant une vitesse 5 à 10x supérieure aux méthodes traditionnelles.
+---
+### 2. 🟠 **Monsieur Guiz**
+🌐 [monsieurguiz.fr](https://monsieurguiz.fr)
+Cabinet de conseil spécialisé en **Product Management, Design, Ops et IA**, avec 60+ consultants et 200+ projets livrés pour des clients comme Air France, LVMH, AXA ou BNP Paribas.
+Il accompagne des grands comptes (France Télévisions, Pierre & Vacances, Axa, Chanel…) et des start-ups sur les différentes phases de leur stratégie de transformation digitale, de la Discovery au Delivery.
+---
+### 3. 🟢 **Thiga**
+🌐 [thiga.co](https://thiga.co)
+Thiga, basé en France à Paris et en Espagne à Madrid, est **le cabinet de conseil pionnier en Product Management en France**, reconnu pour son expertise dans les domaines clés du produit : stratégie, organisation, opération.
+Thiga forme et structure les équipes produits via sa **Thiga Academy**.
+---
+### 4. 🔴 **WeFiiT**
+🌐 [wefiit.com](https://wefiit.com)
+WeFiiT est une société de conseil spécialisée sur les métiers du Product Management, fondée en 2019, avec pour raison d'être d'accompagner durablement ses clients pour construire des produits à fort impact.
+Ils couvrent la stratégie, la Discovery et le Delivery pour des grandes entreprises comme Accor, Louis Vuitton, FDJ ou France TV, sur des enjeux **Product Management, Product Marketing, Product Data & IA, Product Ops et Product Quality**, forts de plus de 200 missions réalisées.
+---
+### 5. 🟣 **Wivoo**
+🌐 [wivoo.io](https://wivoo.io)
+Wivoo est une agence de conseil spécialisée en **Product Management, Product Design et Data & IA**. Depuis 2018, elle accompagne les entreprises dans leur transformation numérique grâce à une communauté de consultants experts, proposant des solutions allant du conseil stratégique à l'accompagnement opérationnel.
+Elle se distingue par une sélection rigoureuse de ses talents (3 % de taux de recrutement) et un programme interne de montée en compétences (80 jours de formation par an et 25 mentors seniors).
+---
+### 6. 🟡 **Converteo**
+🌐 [converteo.com](https://converteo.com)
+Par la convergence d'expertises techniques, analytics, fonctionnelles, stratégiques et produit, **Converteo se positionne comme leader de l'IA Product en France**, avec l'ambition de délivrer une expertise permettant de développer des use cases d'IA générative à impact business réel.
+Leur approche met en avant que l'AI Product Manager doit posséder une solide compréhension du machine learning, des LLMs et des réseaux neuronaux, pour dialoguer avec les équipes d'ingénieurs et de data scientists.
+---
+### 7. 🔷 **Mozza**
+Mozza est positionné comme le **partenaire des entreprises tech** souhaitant transformer leur vision en produits innovants, avec une forte expertise IA et UX — notamment recommandé pour les startups souhaitant accélérer avec l'IA.
+---
+## 📊 Tableau comparatif rapide
+| Cabinet | Taille | Spécialité IA | Cible |
+|---|---|---|---|
+| **Hubvisory** | ~150 consultants | IA générative & agentique | Grands groupes |
+| **Thiga** | Grand cabinet | Stratégie, formation Produit | Tous profils |
+| **Monsieur Guiz** | 60+ consultants | Product & IA générative | Grands comptes & startups |
+| **WeFiiT** | Cabinet à taille humaine | Product Data & IA | Grands comptes |
+| **Wivoo** | Cabinet expert | Data & IA | Entreprises tech |
+| **Converteo** | Cabinet conseil | IA Product Management | Organisations en transformation |
+| **Mozza** | Agence | IA & UX | Startups / Scale-ups |
+---
+Souhaitez-vous des informations plus précises sur **l'un de ces cabinets** (offres, tarifs, contacts) ou des conseils pour **choisir le bon partenaire** selon vos besoins ?

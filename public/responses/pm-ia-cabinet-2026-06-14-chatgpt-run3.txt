@@ -1,0 +1,76 @@
+Voici une sélection de cabinets spécialisés en Product Management et IA (à Paris et en France), adaptés si tu cherches à cadrer, structurer ou construire des produits IA (PM IA, AI Product, GenAI, Data products).
+🧠 Cabinets très orientés Product Management + IA
+Thiga
+4.8•Council•FerméSite web•Directions•01 83 75 05 25
+Un des cabinets les plus connus en France sur le Product Management.
+Ils accompagnent de nombreuses grandes entreprises sur :
+organisation produit (tribus, squads)
+stratégie produit
+montée en compétence des Product Managers
+Ils interviennent aussi sur des sujets data & IA côté produit (AI Product Operating Model, GenAI features).
+AI PARTNERS
+5.0•Consultant•FerméSite web•Directions•06 33 42 59 15
+Cabinet parisien très orienté conseil digital + IA appliquée.
+Ils travaillent sur :
+conception de produits IA
+stratégie d’adoption IA en entreprise
+transformation produit / data
+AVISIA - Cabinet de Conseil Data & IA
+4.9•Council•FerméSite web•Directions•01 44 17 14 00
+Spécialiste reconnu Data + IA + industrialisation produit :
+data products
+modèles ML/IA en production
+cas d’usage IA business
+Très adapté si tu veux aller au-delà du “PM classique” vers du AI Product Management technique et data-driven.
+Scopeo
+5.0•Research and product developmentSite web•Directions
+Cabinet plus niche mais intéressant pour :
+conception produit
+recherche utilisateur / product discovery
+prototypage de produits data/IA
+🚀 Cabinets “Product + Data + IA” (très proches PM IA)
+Wivoo
+Cabinet très reconnu sur :
+Product Management
+Product Design
+Data & IA produits
+Ils font beaucoup de missions autour de :
+produits IA en production
+discovery + delivery de features IA
+structuration d’équipes produit
+WeFiiT
+Cabinet spécialisé en :
+Product Management
+Product Ops
+Product Data & IA
+Positionnement très “PM moderne” :
+GenAI
+structuration de roadmap produit IA
+delivery de features IA en entreprise
+🧪 Cabinets IA-first (très orientés produit IA pur)
+BCome.ai
+Très orienté produits IA en production :
+agents IA
+RAG
+assistants internes
+produits GenAI déployés
+Leaid
+Cabinet stratégique IA :
+stratégie produit IA
+IA générative
+environnements réglementés (legal, finance, etc.)
+🧭 Grands cabinets (option “scale entreprise”)
+Si tu cherches du très gros accompagnement (transformation + produit IA) :
+McKinsey & Company (QuantumBlack pour IA)
+Boston Consulting Group (BCG X)
+Accenture (Accenture Song / AI Labs)
+👉 Comment choisir rapidement
+Produit pur (organisation, PM, scaling) → Thiga, WeFiiT
+Produit + IA concrète → Wivoo, AVISIA
+IA très technique / agents / GenAI → BCome.ai
+Stratégie IA corporate → Leaid, grands cabinets
+Si tu veux, dis-moi :
+ton secteur (startup, grand groupe, SaaS…)
+ton niveau de maturité IA
+ton objectif (build produit, recruter PM IA, transformer orga…)
+et je peux te proposer une shortlist ultra ciblée (3–5 cabinets max) adaptée à ton cas.

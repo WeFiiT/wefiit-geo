@@ -1,0 +1,32 @@
+Voici une sélection de cabinets spécialisés en Data Product Management (ou très proches : Data / Product / IA / Data Products) à Paris et en Île-de-France.
+🧠 Cabinets très orientés Product + Data
+Jedha — surtout formation data, mais très connecté à l’écosystème Data/Product (Data Analysts, Data Product mindset).
+Wivoo — cabinet spécialisé Product Management + Data + IA, très proche du “Data Product Management” pur (roadmap, discovery, delivery).
+Data Impact by NielsenIQ — data products & analytics à grande échelle (retail / consumer data products).
+Converteo — très fort sur la data activable business (analytics, product data, tracking, CRO).
+📊 Cabinets Data / IA avec forte composante “data products”
+AVISIA — conseil Data & IA, incluant création de data products et BI avancée.
+Limpida — cabinet Data & IA orienté transformation et produits data.
+Eulidia — stratégie data + construction de data platforms et produits data.
+TRIMANE — data intelligence & IA (gouvernance + data products + BI).
+🚀 Cabinets très “product / consulting hybride”
+TAK — très orienté Product Management et Product Ops (inclut data product management).
+DataFusion-Partners — conseil data + architecture + delivery produit data.
+MP DATA — structuration et delivery de projets data.
+Layer Data — data management + data & AI management (approche produit et gouvernance).
+🏢 Cabinets plus “gros acteurs” (si tu vises scale / grands comptes)
+Capgemini Invent — très fort sur Data + Digital Product Management.
+Sia Partners — consulting data / product / IA avec équipes spécialisées.
+Accenture — Data Product, AI Product, Platform Product Management.
+McKinsey & Company (Digital / Analytics) — data products côté stratégie & transformation.
+Artefact — très spécialisé data marketing & data products.
+💡 Lecture rapide du marché (utile pour choisir)
+Pure Data Product Management (rare) → Wivoo, TAK, Converteo (les plus proches)
+Data + IA + plateformes → AVISIA, Eulidia, TRIMANE, Limpida
+Gros cabinets (transfo + scale) → Capgemini Invent, Sia Partners, Accenture, McKinsey
+Data marketing / produit orienté business → Artefact, Converteo
+Si tu veux, je peux te faire une shortlist ultra ciblée selon ton besoin exact :
+freelance vs CDI vs mission
+niveau (junior / senior / lead)
+industrie (finance, e-commerce, retail, SaaS…)
+ou même salaire / TJM attendu dans ces cabinets.

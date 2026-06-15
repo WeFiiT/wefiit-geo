@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GEO Visibility — open-seo · WeFiiT</title>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy:     #002882;
+  --orange:   #f98f03;
+  --orange-d: #e95400;
+  --blue:     #2a4cff;
+  --bg:       #f2f4ff;
+  --surface:  #ffffff;
+  --border:   #eff0f6;
+  --border-md:#dde0f5;
+  --text:     #1a1c30;
+  --text-2:   #636b75;
+  --text-3:   #9da3b4;
+  --success:  #1a7f4b;
+  --success-bg:#e8f5ee;
+  --warn:     #b45309;
+  --warn-bg:  #fef3c7;
+  --error:    #c13d2b;
+  --error-bg: #fce8e3;
+  --font: 'Work Sans', -apple-system, sans-serif;
+  --r: 8px;
+  --shadow: 0 1px 3px rgba(0,24,130,.05), 0 0 0 1px var(--border);
+}
+html, body { font-family: var(--font); font-size: 14px; color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; }
+
+/* NAV */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  height: 52px; background: rgba(255,255,255,.93);
+  backdrop-filter: blur(12px); border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; padding: 0 24px; gap: 0;
+}
+.nav-brand { display: flex; align-items: center; gap: 8px; text-decoration: none; flex-shrink: 0; margin-right: 24px; }
+.nav-favicon {
+  width: 26px; height: 26px; border-radius: 6px;
+  background: linear-gradient(135deg, var(--orange), var(--orange-d));
+  display: grid; place-items: center;
+  font-weight: 800; font-size: 12px; color: #fff;
+}
+.nav-appname { font-size: 14px; font-weight: 600; color: var(--text); }
+.nav-links { display: flex; align-items: center; gap: 1px; }
+.nav-link {
+  padding: 5px 11px; border-radius: 6px; font-size: 13px; font-weight: 500;
+  color: var(--text-2); text-decoration: none; transition: all 80ms; position: relative;
+}
+.nav-link:hover { background: var(--bg); color: var(--text); }
+.nav-link.active { color: var(--navy); font-weight: 600; }
+.nav-link.active::after {
+  content: ''; position: absolute; bottom: -14px; left: 11px; right: 11px;
+  height: 2px; background: var(--orange); border-radius: 2px 2px 0 0;
+}
+.nav-right { margin-left: auto; }
+.nav-avatar {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--orange), var(--orange-d));
+  display: grid; place-items: center; font-size: 11px; font-weight: 700; color: #fff; cursor: pointer;
+}
+
+/* PAGE */
+.page { max-width: 900px; margin: 0 auto; padding: 24px 24px 80px; }
+
+/* Page header */
+.page-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px; }
+.page-title { font-size: 20px; font-weight: 700; color: var(--navy); letter-spacing: -.02em; margin-bottom: 3px; }
+.page-sub { font-size: 13px; color: var(--text-2); }
+.run-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px; border-radius: 999px;
+  background: var(--surface); border: 1px solid var(--border);
+  font-size: 11.5px; color: var(--text-2); flex-shrink: 0;
+}
+.run-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--success); }
+
+/* Tabs */
+.tabs { display: flex; gap: 2px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 3px; width: fit-content; margin-bottom: 16px; }
+.tab { padding: 5px 14px; border-radius: 6px; font-size: 12.5px; font-weight: 500; color: var(--text-2); cursor: pointer; border: none; background: transparent; transition: all 80ms; font-family: var(--font); }
+.tab.active { background: var(--navy); color: #fff; }
+.tab:not(.active):hover { background: var(--bg); color: var(--text); }
+
+/* Filtres */
+.filtres { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+.filtre-label { font-size: 11.5px; color: var(--text-3); }
+.filtre-select {
+  appearance: none; padding: 5px 26px 5px 9px;
+  border: 1px solid var(--border-md); border-radius: var(--r);
+  background: var(--surface) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%239da3b4'/%3E%3C/svg%3E") no-repeat right 8px center;
+  font-family: var(--font); font-size: 12.5px; color: var(--text); cursor: pointer; box-shadow: var(--shadow);
+}
+.filtre-select:focus { outline: none; border-color: var(--blue); }
+
+/* KPI 2-col grid */
+.kpi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.kpi { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 14px 16px; }
+.kpi-label { font-size: 11px; color: var(--text-3); margin-bottom: 4px; }
+.kpi-value { font-size: 26px; font-weight: 700; line-height: 1; letter-spacing: -.02em; }
+.kpi-value span { font-size: 14px; font-weight: 400; color: var(--text-3); }
+.kpi-sub { font-size: 11px; color: var(--text-3); margin-top: 4px; }
+
+/* Card générique */
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); margin-bottom: 12px; overflow: hidden; }
+.card-title { font-size: 13px; font-weight: 600; color: var(--text); padding: 12px 14px 10px; border-bottom: 1px solid var(--border); }
+
+/* Chart SVG */
+.chart-container { padding: 12px 14px 8px; }
+.chart-legend { display: flex; gap: 14px; padding: 0 14px 12px; }
+.legend-item { display: flex; align-items: center; gap: 5px; font-size: 11.5px; color: var(--text-2); }
+.legend-line { width: 18px; height: 2.5px; border-radius: 2px; }
+
+/* Concurrents */
+.concurrent-list { padding: 10px 14px 12px; display: flex; flex-direction: column; gap: 6px; }
+.concurrent-row { display: flex; align-items: center; gap: 8px; }
+.concurrent-name { font-size: 12px; color: var(--text-2); width: 160px; flex-shrink: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.concurrent-bar-wrap { flex: 1; height: 6px; background: var(--bg); border-radius: 3px; overflow: hidden; }
+.concurrent-bar { height: 100%; border-radius: 3px; background: rgba(0,40,130,.5); }
+.concurrent-pct { font-size: 11.5px; color: var(--text-3); width: 30px; text-align: right; flex-shrink: 0; }
+
+/* Matrice table */
+.matrice-wrap { padding: 0; overflow-x: auto; }
+.matrice { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.matrice th { text-align: left; font-size: 11px; font-weight: 500; color: var(--text-3); padding: 8px 14px; border-bottom: 1px solid var(--border); }
+.matrice th:not(:first-child) { text-align: center; }
+.matrice td { padding: 9px 14px; border-bottom: 1px solid var(--border); color: var(--text); font-size: 12.5px; }
+.matrice tr:last-child td { border-bottom: none; }
+.matrice td:not(:first-child) { text-align: center; }
+.score-badge { display: inline-block; border-radius: 4px; padding: 1px 7px; font-size: 11.5px; font-weight: 600; }
+.score-0 { background: var(--bg); color: var(--text-3); }
+.score-1 { background: var(--error-bg); color: var(--error); }
+.score-2 { background: var(--warn-bg); color: var(--warn); }
+.score-3 { background: var(--success-bg); color: var(--success); }
+
+/* Verbatims */
+.verbatims-list { padding: 10px 14px 14px; display: flex; flex-direction: column; gap: 10px; }
+.verbatim-card { border: 1px solid var(--border); border-radius: 7px; padding: 10px 12px; }
+.verbatim-card.cite { background: #f0faf4; }
+.verbatim-card:not(.cite) { background: var(--bg); opacity: .85; }
+.verbatim-text { font-size: 13px; line-height: 1.6; color: var(--text); margin-bottom: 8px; }
+.verbatim-meta { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.badge { display: inline-flex; align-items: center; padding: 1px 7px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+.badge-gpt { background: var(--success-bg); color: var(--success); }
+.badge-gem { background: rgba(42,76,255,.1); color: var(--blue); }
+.badge-cite { background: var(--success-bg); color: var(--success); }
+.badge-ghost { background: var(--bg); color: var(--text-3); }
+.verbatim-requete { font-size: 11.5px; color: var(--text-2); }
+.verbatim-date { font-size: 11.5px; color: var(--text-3); margin-left: auto; }
+.voir-plus { font-size: 11.5px; color: var(--navy); cursor: pointer; background: none; border: none; font-family: var(--font); padding: 0; margin-bottom: 6px; }
+.voir-plus:hover { text-decoration: underline; }
+
+/* Modal */
+.modal-bg { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.45); z-index: 200; align-items: center; justify-content: center; }
+.modal-bg.open { display: flex; }
+.modal-box { background: var(--surface); border-radius: 10px; padding: 20px; max-width: 640px; width: 90%; max-height: 80vh; overflow-y: auto; position: relative; }
+.modal-close { position: absolute; top: 12px; right: 12px; background: none; border: none; font-size: 16px; cursor: pointer; color: var(--text-2); width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; }
+.modal-close:hover { background: var(--bg); }
+.modal-title { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+.modal-text { font-size: 13px; line-height: 1.7; color: var(--text); white-space: pre-wrap; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#" class="nav-brand">
+    <div class="nav-favicon">W</div>
+    <span class="nav-appname">open-seo</span>
+  </a>
+  <div class="nav-links">
+    <a href="#" class="nav-link">Keywords</a>
+    <a href="#" class="nav-link">Rank Tracking</a>
+    <a href="#" class="nav-link active">GEO Visibility</a>
+    <a href="#" class="nav-link">Backlinks</a>
+    <a href="#" class="nav-link">Audit</a>
+  </div>
+  <div class="nav-right">
+    <div class="nav-avatar">AS</div>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="page-header">
+    <div>
+      <h1 class="page-title">GEO Visibility</h1>
+      <p class="page-sub">Présence de WeFiiT dans les réponses des IA génératives</p>
+    </div>
+    <div class="run-badge"><span class="run-dot"></span>Dernier run : 25 mai 2026</div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab(this)">GEO Visibility</button>
+    <button class="tab" onclick="switchTab(this)">Santé système</button>
+  </div>
+
+  <!-- Filtres -->
+  <div class="filtres">
+    <span class="filtre-label">Requête</span>
+    <select class="filtre-select">
+      <option>Toutes les requêtes</option>
+      <option>Formation PM Paris</option>
+      <option>Conseil produit France</option>
+      <option>PM spécialisé IA</option>
+    </select>
+    <span class="filtre-label">Modèle</span>
+    <select class="filtre-select">
+      <option>Tous les modèles</option>
+      <option>ChatGPT</option>
+      <option>Gemini</option>
+    </select>
+    <span class="filtre-label">Période</span>
+    <select class="filtre-select">
+      <option>30 derniers jours</option>
+      <option>7 derniers jours</option>
+      <option>90 derniers jours</option>
+      <option>Tout l'historique</option>
+    </select>
+  </div>
+
+  <!-- KPI 2 cards -->
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="kpi-label">Taux de présence</div>
+      <div class="kpi-value">68<span>%</span></div>
+      <div class="kpi-sub">% des runs sur la période</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Nb de runs</div>
+      <div class="kpi-value">28</div>
+      <div class="kpi-sub">sessions analysées</div>
+    </div>
+  </div>
+
+  <!-- Chart évolution -->
+  <div class="card">
+    <div class="card-title">Évolution des citations</div>
+    <div class="chart-container">
+      <svg viewBox="0 0 800 180" width="100%" style="display:block;overflow:visible">
+        <!-- Grid -->
+        <line x1="40" y1="10" x2="780" y2="10" stroke="#eff0f6" stroke-width="1"/>
+        <line x1="40" y1="50" x2="780" y2="50" stroke="#eff0f6" stroke-width="1"/>
+        <line x1="40" y1="90" x2="780" y2="90" stroke="#eff0f6" stroke-width="1"/>
+        <line x1="40" y1="130" x2="780" y2="130" stroke="#eff0f6" stroke-width="1"/>
+        <!-- Y labels -->
+        <text x="32" y="14" text-anchor="end" font-size="11" fill="#9da3b4" font-family="Work Sans,sans-serif">3</text>
+        <text x="32" y="54" text-anchor="end" font-size="11" fill="#9da3b4" font-family="Work Sans,sans-serif">2</text>
+        <text x="32" y="94" text-anchor="end" font-size="11" fill="#9da3b4" font-family="Work Sans,sans-serif">1</text>
+        <text x="32" y="134" text-anchor="end" font-size="11" fill="#9da3b4" font-family="Work Sans,sans-serif">0</text>
+        <!-- x positions: 40+0=40... spread to 780 over 6 pts -->
+        <!-- x: 100, 212, 324, 436, 548, 660 -->
+        <!-- y: 0→130, 1→90, 2→50, 3→10 -->
+        <!-- ChatGPT: 2,3,2,3,3,3 → y: 50,10,50,10,10,10 -->
+        <defs>
+          <linearGradient id="gfill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#f98f03" stop-opacity=".12"/>
+            <stop offset="100%" stop-color="#f98f03" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="bfill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1a73e8" stop-opacity=".10"/>
+            <stop offset="100%" stop-color="#1a73e8" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <path d="M100,50 L212,10 L324,50 L436,10 L548,10 L660,10 L660,130 L100,130Z" fill="url(#gfill)"/>
+        <polyline points="100,50 212,10 324,50 436,10 548,10 660,10"
+          fill="none" stroke="#10a37f" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+        <circle cx="100" cy="50" r="3.5" fill="#10a37f" stroke="#fff" stroke-width="2"/>
+        <circle cx="212" cy="10" r="3.5" fill="#10a37f" stroke="#fff" stroke-width="2"/>
+        <circle cx="324" cy="50" r="3.5" fill="#10a37f" stroke="#fff" stroke-width="2"/>
+        <circle cx="436" cy="10" r="3.5" fill="#10a37f" stroke="#fff" stroke-width="2"/>
+        <circle cx="548" cy="10" r="3.5" fill="#10a37f" stroke="#fff" stroke-width="2"/>
+        <circle cx="660" cy="10" r="3.5" fill="#10a37f" stroke="#fff" stroke-width="2"/>
+        <!-- Gemini: 1,2,1,2,2,1 → y: 90,50,90,50,50,90 -->
+        <path d="M100,90 L212,50 L324,90 L436,50 L548,50 L660,90 L660,130 L100,130Z" fill="url(#bfill)"/>
+        <polyline points="100,90 212,50 324,90 436,50 548,50 660,90"
+          fill="none" stroke="#1a73e8" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+        <circle cx="100" cy="90" r="3.5" fill="#1a73e8" stroke="#fff" stroke-width="2"/>
+        <circle cx="212" cy="50" r="3.5" fill="#1a73e8" stroke="#fff" stroke-width="2"/>
+        <circle cx="324" cy="90" r="3.5" fill="#1a73e8" stroke="#fff" stroke-width="2"/>
+        <circle cx="436" cy="50" r="3.5" fill="#1a73e8" stroke="#fff" stroke-width="2"/>
+        <circle cx="548" cy="50" r="3.5" fill="#1a73e8" stroke="#fff" stroke-width="2"/>
+        <circle cx="660" cy="90" r="3.5" fill="#1a73e8" stroke="#fff" stroke-width="2"/>
+        <!-- X labels -->
+        <text x="100" y="158" text-anchor="middle" font-size="11" fill="#9da3b4" font-family="Work Sans,sans-serif">28 avr</text>
+        <text x="212" y="158" text-anchor="middle" font-size="11" fill="#9da3b4" font-family="Work Sans,sans-serif">2 mai</text>
+        <text x="324" y="158" text-anchor="middle" font-size="11" fill="#9da3b4" font-family="Work Sans,sans-serif">8 mai</text>
+        <text x="436" y="158" text-anchor="middle" font-size="11" fill="#9da3b4" font-family="Work Sans,sans-serif">15 mai</text>
+        <text x="548" y="158" text-anchor="middle" font-size="11" fill="#9da3b4" font-family="Work Sans,sans-serif">20 mai</text>
+        <text x="660" y="158" text-anchor="middle" font-size="11" fill="#9da3b4" font-family="Work Sans,sans-serif">25 mai</text>
+      </svg>
+    </div>
+    <div class="chart-legend">
+      <div class="legend-item"><div class="legend-line" style="background:#10a37f"></div>ChatGPT</div>
+      <div class="legend-item"><div class="legend-line" style="background:#1a73e8"></div>Gemini</div>
+    </div>
+  </div>
+
+  <!-- Concurrents -->
+  <div class="card">
+    <div class="card-title">Concurrents — fréquence de citation</div>
+    <div class="concurrent-list">
+      <div class="concurrent-row">
+        <span class="concurrent-name">Thiga</span>
+        <div class="concurrent-bar-wrap"><div class="concurrent-bar" style="width:100%"></div></div>
+        <span class="concurrent-pct">100%</span>
+      </div>
+      <div class="concurrent-row">
+        <span class="concurrent-name">PM School</span>
+        <div class="concurrent-bar-wrap"><div class="concurrent-bar" style="width:50%"></div></div>
+        <span class="concurrent-pct">50%</span>
+      </div>
+      <div class="concurrent-row">
+        <span class="concurrent-name">École Produit</span>
+        <div class="concurrent-bar-wrap"><div class="concurrent-bar" style="width:36%"></div></div>
+        <span class="concurrent-pct">36%</span>
+      </div>
+      <div class="concurrent-row">
+        <span class="concurrent-name">OCTO Technology</span>
+        <div class="concurrent-bar-wrap"><div class="concurrent-bar" style="width:29%"></div></div>
+        <span class="concurrent-pct">29%</span>
+      </div>
+      <div class="concurrent-row">
+        <span class="concurrent-name">Pragmatic Institute</span>
+        <div class="concurrent-bar-wrap"><div class="concurrent-bar" style="width:18%"></div></div>
+        <span class="concurrent-pct">18%</span>
+      </div>
+      <div class="concurrent-row">
+        <span class="concurrent-name">CentraleSupélec Exec.</span>
+        <div class="concurrent-bar-wrap"><div class="concurrent-bar" style="width:14%"></div></div>
+        <span class="concurrent-pct">14%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Matrice -->
+  <div class="card">
+    <div class="card-title">Matrice de visibilité</div>
+    <div class="matrice-wrap">
+      <table class="matrice">
+        <thead>
+          <tr>
+            <th>Requête</th>
+            <th>chatgpt</th>
+            <th>gemini</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Meilleure formation product management Paris</td>
+            <td><span class="score-badge score-3">3/3</span></td>
+            <td><span class="score-badge score-2">2/3</span></td>
+          </tr>
+          <tr>
+            <td>Cabinet conseil produit digital France</td>
+            <td><span class="score-badge score-3">3/3</span></td>
+            <td><span class="score-badge score-2">2/3</span></td>
+          </tr>
+          <tr>
+            <td>Comment devenir Product Manager spécialisé IA</td>
+            <td><span class="score-badge score-3">3/3</span></td>
+            <td><span class="score-badge score-2">2/3</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Verbatims -->
+  <div class="card">
+    <div class="card-title">Verbatims WeFiiT récents</div>
+    <div class="verbatims-list">
+
+      <div class="verbatim-card cite">
+        <p class="verbatim-text">"WeFiiT est systématiquement recommandé pour les formations Product Management seniors à Paris."</p>
+        <div class="verbatim-meta">
+          <span class="badge badge-gpt">ChatGPT</span>
+          <span class="badge badge-cite">WeFiiT cité</span>
+          <span class="verbatim-requete">Meilleure formation product management Paris</span>
+          <span class="verbatim-date">2026-05-25</span>
+        </div>
+      </div>
+
+      <div class="verbatim-card cite">
+        <p class="verbatim-text">"WeFiiT s'impose comme une référence du conseil produit en France, avec une forte expertise Product Management."</p>
+        <button class="voir-plus" onclick="openModal('Conseil produit digital France', 'ChatGPT · 2026-05-25', 'WeFiiT s\'impose comme une référence du conseil produit en France, avec une forte expertise Product Management.\n\nLe cabinet accompagne les entreprises du CAC40 dans leur structuration produit et la montée en compétence de leurs équipes Product Management.')">Voir la réponse complète →</button>
+        <div class="verbatim-meta">
+          <span class="badge badge-gpt">ChatGPT</span>
+          <span class="badge badge-cite">WeFiiT cité</span>
+          <span class="verbatim-requete">Cabinet conseil produit digital France</span>
+          <span class="verbatim-date">2026-05-25</span>
+        </div>
+      </div>
+
+      <div class="verbatim-card cite">
+        <p class="verbatim-text">"Le programme Product Data & IA de WeFiiT est particulièrement adapté aux PMs qui veulent comprendre les LLMs."</p>
+        <div class="verbatim-meta">
+          <span class="badge badge-gpt">ChatGPT</span>
+          <span class="badge badge-cite">WeFiiT cité</span>
+          <span class="verbatim-requete">Comment devenir Product Manager spécialisé IA</span>
+          <span class="verbatim-date">2026-05-25</span>
+        </div>
+      </div>
+
+      <div class="verbatim-card cite">
+        <p class="verbatim-text">"WeFiiT se positionne sur la formation PM IA avec un programme dédié Product Data & IA."</p>
+        <div class="verbatim-meta">
+          <span class="badge badge-gem">Gemini</span>
+          <span class="badge badge-cite">WeFiiT cité</span>
+          <span class="verbatim-requete">Comment devenir Product Manager spécialisé IA</span>
+          <span class="verbatim-date">2026-05-25</span>
+        </div>
+      </div>
+
+      <div class="verbatim-card">
+        <p class="verbatim-text">"Pour une formation product management à Paris, WeFiiT propose des programmes adaptés aux praticiens."</p>
+        <div class="verbatim-meta">
+          <span class="badge badge-gem">Gemini</span>
+          <span class="badge badge-ghost">Non cité</span>
+          <span class="verbatim-requete">Meilleure formation product management Paris</span>
+          <span class="verbatim-date">2026-05-20</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- Modal -->
+<div class="modal-bg" id="modal" onclick="closeModal()">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <h3 class="modal-title" id="modal-title"></h3>
+    <div class="verbatim-meta" style="margin-bottom:14px;gap:6px" id="modal-meta"></div>
+    <p class="modal-text" id="modal-text"></p>
+  </div>
+</div>
+
+<script>
+function switchTab(btn) {
+  btn.parentNode.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+}
+function openModal(title, meta, text) {
+  document.getElementById('modal-title').textContent = title;
+  document.getElementById('modal-meta').textContent = meta;
+  document.getElementById('modal-text').textContent = '"' + text + '"';
+  document.getElementById('modal').classList.add('open');
+}
+function closeModal() {
+  document.getElementById('modal').classList.remove('open');
+}
+</script>
+</body>
+</html>

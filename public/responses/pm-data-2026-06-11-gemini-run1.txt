@@ -1,0 +1,16 @@
+Voici plusieurs cabinets de conseil spécialisés dans le data product management :
+*   **WeFiiT** propose du conseil en Product Data Management & IA, aidant à construire des produits Data & IA générant un impact utilisateur concret et mesurable. Ils interviennent sur la stratégie, la découverte et la livraison des produits Data & IA, et offrent également des formations en Data Product Management et IA.
+*   **Converteo** offre une expertise convergente en data, produit et design. Ils se positionnent sur le conseil en Product Management augmenté par la data, avec une approche axée sur les enjeux business et la maîtrise des données.
+*   **JAKALA** est un cabinet de conseil européen spécialisé dans la stratégie data et IA pour le marketing. Ils interviennent sur le conseil, la transformation métier, la mise en place d'infrastructures technologiques et la gestion de plateformes.
+*   **Yield Advisory** propose des experts en Data, IA et Product Management pour accompagner les entreprises, de l'audit stratégique à l'industrialisation, afin de maximiser l'impact des projets data. Ils se concentrent sur la stratégie data, l'orchestration, la priorisation et la structuration des roadmaps.
+*   **Onepoint** met en avant le Product Management Data, avec des experts à double compétence Data & Produit. Ils proposent une approche hybridée du Product Management, que ce soit pour le "data as a product" ou pour des produits généralistes intégrant les enjeux de la data.
+*   **AVISIA** est un cabinet expert en Data & IA, qui accompagne la transformation des entreprises de la stratégie à la production, avec une offre incluant le "Data Product".
+*   **IDAIA Group** offre du conseil en stratégie data, incluant l'audit des données, le diagnostic de la gestion de la qualité des données et l'optimisation de l'agilité grâce à la maîtrise des données.
+*   **Limpida** est un cabinet de conseil Data & IA spécialisé dans la réalisation de projets Data, couvrant la gouvernance des données, l'acculturation data et l'automatisation.
+*   **SQORUS** propose une expertise de Data Product Owner, le définissant comme le chef d'orchestre de la stratégie Data, maîtrisant les enjeux data et la chefferie de projet.
+*   **Cartelis** est un cabinet de conseil spécialisé en CRM & Data, et fournit des informations détaillées sur le rôle du Data Product Owner, qui est en charge du pilotage des projets data.
+*   **Gradiant** se positionne comme un cabinet de conseil expert en Data, Intelligence Artificielle (IA), Data Management, Data Gouvernance, Analytics et les transformations liées à la Data.
+*   **Eleven** est un cabinet de conseil en stratégie spécialisé sur l'intelligence artificielle et la data.
+*   **Valtech** propose des services de conseil en stratégie data pour articuler la tech, le business et le produit au sein d'une stratégie cohérente.
+*   **Cenisis** est une agence ultra-spécialisée en stratégie data, offrant des expertises en organisation, pilotage (Product Owner, agilité Data), méthode, acculturation, outils et stratégie data.
+*   **Adone Conseil** inclut le Conseil Data & Analytics parmi ses expertises, aidant à bâtir une architecture et une stratégie data et à déployer des solutions data.

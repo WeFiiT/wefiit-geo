@@ -1,0 +1,43 @@
+Il n’existe pas une seule “formation product builder” universelle, mais plusieurs écoles et programmes qui couvrent très bien ce rôle (souvent sous les noms Product Manager, Product Builder, Product Designer + no-code, ou Product Engineer).
+Voici les options les plus reconnues aujourd’hui :
+Bootcamps spécialisés produit
+Product School
+Programme très orienté Product Management (roadmap, discovery, delivery, métriques produit).
+Plutôt international, souvent en ligne.
+https://www.productschool.com
+General Assembly
+Bootcamps intensifs en product management, UX et data.
+Bon mix théorie + cas pratiques.
+https://generalassemb.ly
+Reforge
+Très haut niveau (plutôt “scale-up / senior”).
+Axé stratégie produit, growth, product leadership.
+https://www.reforge.com
+Formations plus accessibles / Europe / France
+Le Wagon
+Très connu pour le no-code, le développement web et des modules “product / startup”.
+Utile si tu veux être un product builder très hands-on (prototype, MVP).
+https://www.lewagon.com
+OpenClassrooms
+Parcours diplômants en Product Manager / Chef de projet digital.
+Bon pour une montée en compétences structurée et finançable (CPF en France).
+https://openclassrooms.com
+Ironhack
+Bootcamp UX/UI + product thinking + data.
+Très orienté reconversion.
+https://www.ironhack.com
+Schoolab (Paris)
+Fort ancrage startup / innovation / product design.
+Très intéressant si tu veux bosser dans l’écosystème startup français.
+https://www.schoolab.co
+Formations “startup builder” (plus proche du vrai product builder)
+The Family
+Plutôt entrepreneuriat et création de startup que formation classique produit.
+Mais bon pour apprendre à construire et lancer vite des produits.
+https://www.thefamily.co
+En résumé (simplement)
+Tu veux devenir Product Manager classique → Product School, OpenClassrooms, General Assembly
+Tu veux construire des produits (MVP, no-code, builder) → Le Wagon, Ironhack, Schoolab
+Tu veux niveau avancé / scale-up → Reforge
+Tu veux mindset startup / builder pur → The Family
+Si tu veux, dis-moi ton profil (débutant, dev, business, design, reconversion, etc.), et je peux te proposer un parcours beaucoup plus précis adapté à ton cas.

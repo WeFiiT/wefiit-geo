@@ -1,0 +1,48 @@
+Voici un panorama des **principaux cabinets spécialisés en Product Management & IA en France** :
+---
+## 🏆 Top Cabinets Product Management & IA en France
+---
+### 1. 🔵 [Hubvisory](https://hubvisory.com/)
+Cabinet de conseil spécialisé en **Product Management et transformation IA** pour les grands groupes, avec **150 consultants** à Paris et Lille.
+-
+Conseil, formation, développement : ils couvrent **toute la chaîne de valeur IA**, de la stratégie à l'industrialisation.
+-
+Ils disposent d'un **framework agentique propriétaire**, présenté comme 5 à 10x plus rapide que les méthodes traditionnelles.
+---
+### 2. 🟠 [Monsieur Guiz](https://monsieurguiz.fr/)
+Cabinet de conseil spécialisé en **Product Management, Design, Ops et IA**, avec 60+ consultants et 200+ projets livrés pour des clients comme Air France, LVMH, AXA ou BNP Paribas.
+-
+Ils accompagnent des grands comptes (France Télévisions, Pierre & Vacances, AXA, Chanel…) et des start-ups sur les différentes phases de leur **stratégie de transformation digitale**, de la Discovery au Delivery.
+-
+Ils proposent notamment du **cadrage stratégique et des Design Sprints** pour identifier, prioriser et prototyper les cas d'usage IA générative à plus forte valeur métier.
+---
+### 3. 🟢 [Thiga](https://www.thiga.co/)
+Basé à Paris et Madrid, Thiga est le **cabinet pionnier en Product Management en France**, reconnu pour son expertise dans les domaines clés du produit : stratégie, organisation, opération.
+-
+Thiga forme et structure les équipes produits via sa **Thiga Academy**.
+---
+### 4. 🟡 [WeFiiT](https://www.wefiit.com/)
+Cabinet de conseil spécialisé en Product Management, fondé en 2019, avec pour mission d'accompagner durablement ses clients pour **construire des produits à fort impact**.
+-
+Ils accompagnent des grandes entreprises comme Accor, Louis Vuitton, FDJ, France TV et des scale-ups, couvrant : **Product Management, Product Marketing, Product Data & IA, Product Ops, Product Quality**, avec plus de 200 missions réalisées.
+---
+### 5. 🔴 [Converteo](https://converteo.com/product-management/ia-product-management/)
+Par la convergence d'expertises techniques, analytics, fonctionnelles, stratégiques et produit, Converteo se positionne comme **leader de l'IA Product en France**, avec l'ambition de développer des use cases IA génératifs à fort impact business.
+-
+Grâce à l'IA, le product manager est **augmenté au quotidien** : récupération d'insights marchés, analyse des feedbacks, détection de patterns, rédaction des user stories, mise à jour de la documentation.
+---
+### 6. 🟣 [Wivoo](https://wivoo.fr/)
+Agence de conseil spécialisée en **Product Management, Product Design et Data & IA**, elle accompagne depuis 2018 les entreprises dans leur transformation numérique, avec des solutions allant du conseil stratégique à l'accompagnement opérationnel.
+-
+Elle se distingue par une **sélection rigoureuse de ses talents** (3 % de taux de recrutement) et un programme de 80 jours de formation par an.
+---
+## 📌 Comment choisir ?
+| Cabinet | Point fort | Cible |
+|---|---|---|
+| **Hubvisory** | Transformation IA, agents IA | Grands groupes |
+| **Monsieur Guiz** | IA générative, Design Sprints | Grands comptes & startups |
+| **Thiga** | Structuration équipes produit | Tous types |
+| **WeFiiT** | Product Data & IA, full cycle | Grandes entreprises & scale-ups |
+| **Converteo** | IA Product, analytics | Entreprises data-driven |
+| **Wivoo** | Excellence & sélectivité | Projets complexes |
+Souhaitez-vous des informations plus détaillées sur l'un de ces cabinets (tarifs, secteurs, cas clients) ou avez-vous un besoin spécifique (recrutement, conseil, formation) ?

@@ -1,0 +1,10 @@
+Plusieurs cabinets de conseil sont spécialisés dans le domaine du data product management, offrant une expertise pour aider les entreprises à concevoir, développer et gérer leurs produits basés sur les données.
+Parmi eux, on trouve :
+*   **Unnest** se spécialise dans le Data Product Management et la Gouvernance, proposant des consultants ayant une double compétence en produit et en données. Ils mettent en avant une vision innovante du rôle de Data Product Owner et participent activement à la communauté du Data Product Management.
+*   **WeFiiT** est un cabinet de conseil basé à Paris, expert en Product Management avec un focus sur le Product Data & IA. Leur objectif est d'aider à construire des produits Data & IA générant un impact utilisateur concret et un retour sur investissement mesurable.
+*   **Converteo** propose du conseil en Product Management "augmenté par la data", avec des consultants formés à l'utilisation des analytics et des données.
+*   **AVISIA** se présente comme le premier cabinet indépendant Data & IA en France, avec plus de 300 consultants experts. Ils couvrent l'ensemble de la chaîne de valeur de la Data et de l'IA.
+*   **Micropole** est un cabinet de conseil en transformation Data & IA qui accompagne les entreprises avec une approche globale, incluant la stratégie "data driven".
+*   **KPMG** propose des services de conseil en data analytics et IA, s'appuyant sur une équipe pluridisciplinaire comprenant des Data Product Owners et des experts en transformation et gouvernance des données.
+*   **IBM Consulting** connecte la stratégie d'entreprise aux technologies émergentes comme l'intelligence artificielle, en visant à transformer les données en un actif stratégique.
+Ces cabinets accompagnent les entreprises sur des aspects tels que la définition de la stratégie produit data, l'amélioration du delivery, la gouvernance des données, la qualité des données, ou encore l'exploration du potentiel des données pour l'IA.

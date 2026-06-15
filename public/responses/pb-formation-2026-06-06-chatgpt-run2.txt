@@ -1,0 +1,33 @@
+Si tu cherches des formations orientées Product Builder (No-Code + IA + Product Management léger), les acteurs les plus visibles en France aujourd'hui sont :
+1. École Cube
+Formation "Product Builder No-Code & IA"
+Titre RNCP niveau 6 (équivalent Bac+3/4)
+À distance, temps partiel
+Axée sur Bubble, Make, Airtable, Figma, IA, automatisation et méthodologie produit. ecole.cube.fr+1
+2. Uncode School
+Formation "Product Builder No-Code & IA"
+Éligible CPF
+Orientation reconversion professionnelle
+Portfolio et projets concrets au programme. Uncode School
+3. Jedha
+Formation "Product Builder IA & No Code"
+Met davantage l'accent sur l'IA générative, le "vibe coding", Cursor, Lovable, n8n et les workflows modernes.
+Positionnement plus technique que certaines formations no-code classiques. Jedha+1
+4. Thiga Academy
+Formation davantage destinée aux développeurs et ingénieurs.
+Approche "Product Builder / Product Engineer" : validation de besoins, priorisation, expérimentation avant développement. academy.thiga.co
+5. Intelligence Academy
+Format plus court et intensif.
+Focus sur le no-code et l'utilisation de l'IA pour lancer rapidement des produits digitaux. the-intelligence-academy.com
+6. Formations diplômantes
+Institut Innovation Logistique propose un Bachelor Product Builder No Code avec certification RNCP niveau 6. I2L
+Comment choisir ?
+Reconversion complète vers un métier Product Builder → École Cube, Uncode School ou Jedha.
+Profil déjà technique (développeur, CTO, engineer) → Thiga Academy.
+Entrepreneur ou freelance qui veut lancer rapidement des MVP → Jedha ou École Cube.
+Recherche d'un diplôme/alternance → Bachelor Product Builder No Code.
+Si tu me dis :
+ton profil actuel (PM, dev, marketing, entrepreneur, étudiant, reconversion),
+ton budget,
+et si tu veux surtout trouver un emploi, devenir freelance ou lancer un projet,
+je peux te dire quelle formation semble la plus adaptée.

@@ -1,0 +1,39 @@
+Voici un panorama complet des **cabinets spécialisés en Product Management & IA** en France, selon deux angles : les cabinets de **conseil/transformation IA** et les cabinets de **recrutement** spécialisés dans ces métiers.
+---
+## 🏛️ Cabinets de Conseil spécialisés en Product Management & IA
+### 1. 🟠 Mozza
+Mozza est un cabinet de conseil parisien fondé en 2019, spécialisé dans l'intégration de l'IA et le design de produits digitaux sur mesure. Il a été fondé par d'anciens leaders de la French Tech (Doctolib, Qonto, Alan, Payfit, BlaBlaCar) et cible les startups tech-first et les entreprises digitales.
+Il combine guidance stratégique produit, implémentation IA concrète et formation des équipes.
+### 2. 🟡 Monsieur Guiz
+Monsieur Guiz est un cabinet de conseil spécialisé en Product Management & Product Design depuis 10 ans, porté par une équipe de passionnés du produit et d'agilistes.
+Il accompagne des clients grands comptes (France Télévisions, AXA, Chanel…) et des startups sur les différentes phases de leur stratégie de transformation digitale, de la Discovery au Delivery.
+### 3. 🔵 Avisia (Data/AI Product Management)
+Le consultant en Data/AI Product Management d'Avisia est un expert en définition, priorisation et gestion de produits de données et d'intelligence artificielle répondant aux besoins des utilisateurs et aux objectifs de l'entreprise.
+Le marché du consulting en Data/AI Product Management est en forte croissance, avec une demande croissante des entreprises pour valoriser leurs données et intégrer l'IA de manière stratégique dans leurs produits et services.
+### 4. 🟢 Unnest
+Unnest est un cabinet de conseil Data & Tech, spécialisé dans la transformation des entreprises via la donnée et l'IA. Sa mission : aider ses clients à concevoir, construire et exploiter des plateformes data et IA modernes, alignées avec leurs enjeux marketing et business.
+Ses clients incluent PMU, KPMG, L'Oréal, Hermès, Decathlon, Engie…
+### 5. 🔴 Artefact
+Artefact est un cabinet de conseil international avec plus de 1 700 experts, spécialisé dans la stratégie data, l'intelligence artificielle et le marketing data-driven. Il couvre tout, de la gouvernance des données et du développement IA à la formation via sa School of Data et GenAI Academy.
+### 6. 🟣 BCG X (ex-BCG Gamma)
+BCG Gamma, désormais intégré dans BCG X, représente le bras armé du Boston Consulting Group en intelligence artificielle. Établi à Paris en 2015, ce pionnier du conseil en IA a fait de l'IA un axe stratégique majeur : en 2024, l'IA représente 20 % des revenus globaux du BCG.
+BCG X rassemble plus de 3 000 experts tech et bénéficie de partenariats exclusifs avec OpenAI et Anthropic.
+### 7. 🟤 Converteo
+Converteo regroupe plus de 50 consultants spécialisés en IA générative, combinant des compétences business (Analytics, CRM, Media) et techniques (Data Science, Data Engineering, Dev) indispensables à l'exploitation des enjeux de l'IA générative.
+---
+## 🎯 Cabinets de Recrutement spécialisés PM & IA
+### 1. **Noé Recrutement**
+Noé Recrutement est un cabinet de recrutement spécialisé dans le Product Management digital. Il accompagne ses clients — de la startup au grand groupe — dans leurs recherches pour recruter des Product Managers, Product Owners, Head of Product et CPO.
+### 2. **GetPro**
+GetPro recense parmi ses domaines d'expertise les métiers du Product (Product Manager, Product Owner, VP Product, Chief Product Officer…), un enjeu stratégique pour les entreprises tech en forte croissance.
+### 3. **Licorne Society**
+Licorne Society est un cabinet de recrutement Tech spécialisé sur les métiers du Digital. Avec un portefeuille de clients en startup et scale-up, il est devenu une référence dans le recrutement pour des métiers dans l'intelligence artificielle et travaille également avec des PME et grands groupes.
+### 4. **Silkhom**
+Les consultants en recrutement spécialisé IA/ML de Silkhom accompagnent startups et grands comptes sur des rôles Data Scientist, ML Engineer, MLOps, Product AI et GenAI. Leur approche combine scorecards claires, mapping marché ciblé et évaluation technique pour des recrutements rapides et durables.
+### 5. **Upward Data & IA**
+Le cabinet Upward a créé "Upward Data & IA", une structure entièrement dédiée au recrutement dans la data et l'intelligence artificielle. Ses consultants maîtrisent les enjeux du big data, du data science et des technologies IA, offrant aux entreprises un accompagnement sur-mesure.
+---
+## 📌 Ce que fait concrètement un **consultant IA Product Manager**
+Le rôle de consultant IA Product Manager s'impose comme une fonction stratégique dans l'écosystème numérique actuel. Les entreprises cherchent des experts capables de piloter le développement de produits intégrant l'IA tout en garantissant une expérience utilisateur optimale. Ce métier hybride combine la vision produit traditionnelle avec une maîtrise approfondie des technologies d'IA.
+---
+Avez-vous besoin d'un focus particulier : recrutement d'un profil PM IA, accompagnement d'une transformation produit, ou conseil pour intégrer l'IA dans votre roadmap produit ?

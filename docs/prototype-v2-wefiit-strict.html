@@ -1,0 +1,1705 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>open-seo — WeFiiT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:          #f2f4ff;
+    --white:       #ffffff;
+    --border:      #e4e7ff;
+    --text:        #1a1c30;
+    --text-muted:  rgba(26,28,48,0.6);
+    --text-faint:  rgba(26,28,48,0.4);
+    --primary:     #002882;
+    --secondary:   #2a4cff;
+    --accent:      #f98f03;
+    --success:     #0eab67;
+    --info:        #1a73e8;
+    --error:       #e53935;
+    --warning:     #f59e0b;
+    --radius-card: 12px;
+    --sidebar-w:   264px;
+    --topbar-h:    60px;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--text);
+    background: var(--bg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ─── LAYOUT ─── */
+  .app-shell {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* ─── SIDEBAR ─── */
+  .sidebar {
+    width: var(--sidebar-w);
+    min-width: var(--sidebar-w);
+    background: var(--white);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    z-index: 10;
+  }
+
+  .sidebar-header {
+    height: var(--topbar-h);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 18px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .logo-box {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #f98f03, #e95400);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+    letter-spacing: -0.5px;
+  }
+
+  .logo-text {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--primary);
+    letter-spacing: -0.3px;
+  }
+
+  .sidebar-body {
+    flex: 1;
+    padding: 12px 0;
+    overflow-y: auto;
+  }
+
+  .nav-group {
+    margin-bottom: 20px;
+  }
+
+  .nav-group-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    padding: 4px 18px 6px;
+  }
+
+  .nav-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 8px 18px;
+    cursor: pointer;
+    transition: background 0.15s;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-muted);
+    user-select: none;
+  }
+
+  .nav-item:hover {
+    background: var(--bg);
+  }
+
+  .nav-item.active {
+    color: var(--primary);
+    font-weight: 500;
+  }
+
+  .nav-item.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 4px;
+    bottom: 4px;
+    width: 3px;
+    background: var(--accent);
+    border-radius: 0 3px 3px 0;
+  }
+
+  .nav-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    opacity: 0.7;
+  }
+
+  .nav-item.active .nav-icon {
+    opacity: 1;
+  }
+
+  .nav-badge {
+    margin-left: auto;
+    font-size: 10px;
+    font-weight: 600;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 1px 6px;
+    border-radius: 10px;
+  }
+
+  .sidebar-footer {
+    padding: 12px 18px;
+    border-top: 1px solid var(--border);
+    font-size: 11px;
+    color: var(--text-faint);
+    flex-shrink: 0;
+  }
+
+  /* ─── MAIN ─── */
+  .main-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* ─── TOPBAR ─── */
+  .topbar {
+    height: var(--topbar-h);
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
+  .topbar-breadcrumb {
+    font-size: 13px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .topbar-breadcrumb span {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .topbar-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s;
+    border: 1px solid transparent;
+    font-family: inherit;
+  }
+
+  .btn-outline {
+    background: transparent;
+    border-color: var(--border);
+    color: var(--text-muted);
+  }
+
+  .btn-outline:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: rgba(0,40,130,0.04);
+  }
+
+  .btn-primary {
+    background: var(--primary);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: #001f6b;
+  }
+
+  /* ─── CONTENT ─── */
+  .page-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px;
+  }
+
+  .page {
+    display: none;
+  }
+
+  .page.active {
+    display: block;
+  }
+
+  /* ─── PAGE HEADER ─── */
+  .page-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .page-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.4px;
+    line-height: 1.2;
+  }
+
+  .page-subtitle {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  .page-meta {
+    font-size: 12px;
+    color: var(--text-faint);
+    margin-top: 4px;
+  }
+
+  /* ─── TABS ─── */
+  .tabs {
+    display: flex;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 3px;
+    gap: 2px;
+    margin-bottom: 20px;
+    width: fit-content;
+  }
+
+  .tab-item {
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .tab-item.active {
+    background: var(--white);
+    color: var(--text);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+
+  /* ─── FILTERS ─── */
+  .filters-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .filter-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .filter-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  .filter-select {
+    font-family: inherit;
+    font-size: 12px;
+    color: var(--text);
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    padding: 5px 28px 5px 10px;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%231a1c30' stroke-opacity='.4' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    cursor: pointer;
+    transition: border-color 0.15s;
+  }
+
+  .filter-select:hover, .filter-select:focus {
+    border-color: var(--primary);
+    outline: none;
+  }
+
+  /* ─── KPI CARDS ─── */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .kpi-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+    padding: 20px 22px;
+  }
+
+  .kpi-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+
+  .kpi-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -1px;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .kpi-sub {
+    font-size: 11px;
+    color: var(--text-faint);
+  }
+
+  /* ─── CARDS ─── */
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+  }
+
+  .card-header {
+    padding: 16px 20px 14px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .card-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .card-body {
+    padding: 20px;
+  }
+
+  /* ─── GRID 2 cols ─── */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  /* ─── CHART ─── */
+  .chart-container {
+    position: relative;
+  }
+
+  .chart-legend {
+    display: flex;
+    gap: 16px;
+    margin-top: 12px;
+    justify-content: center;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+
+  .legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+
+  /* ─── COMPETITOR BARS ─── */
+  .competitor-list {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .competitor-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .competitor-name {
+    font-size: 12px;
+    color: var(--text);
+    width: 90px;
+    flex-shrink: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .competitor-bar-wrap {
+    flex: 1;
+    height: 8px;
+    background: var(--bg);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .competitor-bar {
+    height: 100%;
+    border-radius: 4px;
+    background: rgba(0,40,130,0.55);
+    transition: width 0.4s ease;
+  }
+
+  .competitor-bar.wefiit {
+    background: var(--accent);
+  }
+
+  .competitor-pct {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    width: 30px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  /* ─── MATRICE ─── */
+  .matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+
+  .matrix-table th {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .matrix-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(228,231,255,0.5);
+    vertical-align: middle;
+  }
+
+  .matrix-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .matrix-table tr:hover td {
+    background: rgba(242,244,255,0.5);
+  }
+
+  .score-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .badge-success {
+    background: rgba(14,171,103,0.12);
+    color: #0a8a52;
+  }
+
+  .badge-warning {
+    background: rgba(245,158,11,0.12);
+    color: #c07a00;
+  }
+
+  .badge-error {
+    background: rgba(229,57,53,0.12);
+    color: #c62828;
+  }
+
+  /* ─── VERBATIMS ─── */
+  .verbatims-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .verbatim-card {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    background: #f8f9fa;
+  }
+
+  .verbatim-card.cited {
+    background: #f0faf4;
+    border-color: rgba(14,171,103,0.2);
+  }
+
+  .verbatim-text {
+    font-size: 12.5px;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+
+  .verbatim-text strong {
+    color: var(--primary);
+    font-weight: 600;
+  }
+
+  .verbatim-link {
+    font-size: 12px;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 10px;
+  }
+
+  .verbatim-link:hover {
+    text-decoration: underline;
+  }
+
+  .verbatim-footer {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 7px;
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .badge-info {
+    background: rgba(26,115,232,0.1);
+    color: #1a73e8;
+  }
+
+  .badge-success-soft {
+    background: rgba(14,171,103,0.1);
+    color: #0a8a52;
+  }
+
+  .badge-ghost {
+    background: rgba(26,28,48,0.06);
+    color: var(--text-muted);
+  }
+
+  .verbatim-query {
+    font-size: 11px;
+    color: var(--text-faint);
+    margin-left: auto;
+  }
+
+  .verbatim-date {
+    font-size: 11px;
+    color: var(--text-faint);
+  }
+
+  /* ══════════════════════════════════════
+     PAGE 2 — RANK TRACKING
+  ══════════════════════════════════════ */
+
+  .rank-header-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 4px 0;
+    transition: color 0.15s;
+  }
+
+  .back-link:hover {
+    color: var(--primary);
+  }
+
+  .domain-badge {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.3px;
+  }
+
+  .rank-meta-pills {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+  }
+
+  .meta-pill {
+    font-size: 11px;
+    color: var(--text-muted);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 2px 8px;
+  }
+
+  .meta-pill.cost {
+    color: var(--success);
+    background: rgba(14,171,103,0.07);
+    border-color: rgba(14,171,103,0.2);
+  }
+
+  .rank-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+
+  .keyword-count {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    margin-left: auto;
+  }
+
+  .period-select {
+    font-family: inherit;
+    font-size: 12px;
+    color: var(--text);
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    padding: 5px 28px 5px 10px;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%231a1c30' stroke-opacity='.4' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    cursor: pointer;
+  }
+
+  .icon-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--white);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-muted);
+    font-size: 13px;
+    transition: all 0.15s;
+  }
+
+  .icon-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+
+  /* ─── KEYWORD TABLE ─── */
+  .kw-table-wrap {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+  }
+
+  .kw-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+
+  .kw-table thead th {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--text-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    background: var(--white);
+    white-space: nowrap;
+    user-select: none;
+  }
+
+  .kw-table thead th.sortable {
+    cursor: pointer;
+  }
+
+  .kw-table thead th.sortable:hover {
+    color: var(--primary);
+  }
+
+  .kw-table thead th .sort-arrow {
+    margin-left: 3px;
+    opacity: 0.5;
+  }
+
+  .kw-table tbody tr {
+    border-bottom: 1px solid rgba(228,231,255,0.4);
+    transition: background 0.1s;
+  }
+
+  .kw-table tbody tr:last-child {
+    border-bottom: none;
+  }
+
+  .kw-table tbody tr:hover {
+    background: rgba(242,244,255,0.5);
+  }
+
+  .kw-table td {
+    padding: 8px 12px;
+    color: var(--text);
+    vertical-align: middle;
+  }
+
+  .kw-table td.keyword-cell {
+    font-weight: 400;
+    max-width: 240px;
+  }
+
+  .kw-table td.url-cell {
+    color: var(--primary);
+    font-size: 11px;
+    max-width: 160px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .kw-table td.num-cell {
+    color: var(--text-muted);
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .pos-cell {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 600;
+  }
+
+  .pos-arrow {
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  .pos-arrow.up   { color: var(--success); }
+  .pos-arrow.down { color: var(--error); }
+  .pos-arrow.flat { color: var(--text-faint); }
+
+  .serp-badges {
+    display: flex;
+    gap: 3px;
+    flex-wrap: wrap;
+  }
+
+  .serp-badge {
+    font-size: 9px;
+    font-weight: 600;
+    padding: 1px 5px;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+
+  .serp-badge.video  { background: #f1f3f4; color: #5f6368; }
+  .serp-badge.paa    { background: rgba(26,115,232,0.1); color: #1a73e8; }
+  .serp-badge.tc     { background: rgba(103,58,183,0.1); color: #673ab7; }
+  .serp-badge.local  { background: rgba(14,171,103,0.1); color: #0a8a52; }
+
+  .kw-table-footer {
+    padding: 10px 14px;
+    border-top: 1px solid var(--border);
+    font-size: 11px;
+    color: var(--text-faint);
+  }
+
+  /* ─── CHECKBOX ─── */
+  .kw-check {
+    width: 14px;
+    height: 14px;
+    accent-color: var(--primary);
+    cursor: pointer;
+  }
+
+  /* ─── SANTÉ SYSTÈME (tab inside GEO) ─── */
+  .system-health {
+    display: none;
+  }
+
+  .health-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .health-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .health-status {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .health-status.ok    { background: var(--success); }
+  .health-status.warn  { background: var(--warning); }
+  .health-status.error { background: var(--error); }
+
+  /* ─── SCROLLBAR ─── */
+  ::-webkit-scrollbar { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(26,28,48,0.15); border-radius: 10px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(26,28,48,0.3); }
+</style>
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- ══ SIDEBAR ══ -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo-box">W</div>
+      <span class="logo-text">open-seo</span>
+    </div>
+    <!-- Project picker -->
+    <div style="padding: 10px 12px; border-bottom: 1px solid var(--border);">
+      <button style="display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;cursor:default;padding:4px 8px;border-radius:6px;font-size:13px;font-weight:500;color:var(--text);font-family:inherit;" title="Multiple projects coming soon">
+        <span>Default</span>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity:0.4;flex-shrink:0;">
+          <path d="M8 9l4-4 4 4M8 15l4 4 4-4"/>
+        </svg>
+      </button>
+    </div>
+    <nav class="sidebar-body">
+
+      <!-- Groupe SEO (structure exacte de l'app) -->
+      <div class="nav-group">
+        <div class="nav-group-label">SEO</div>
+        <div class="nav-item" data-page="rank" onclick="switchPage('rank', this)">
+          <!-- TrendingUp -->
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+            <polyline points="16 7 22 7 22 13"/>
+          </svg>
+          Rank Tracking
+        </div>
+        <div class="nav-item" onclick="return false">
+          <!-- Search -->
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="M21 21l-4.35-4.35"/>
+          </svg>
+          Keyword Research
+        </div>
+        <div class="nav-item" onclick="return false">
+          <!-- ClipboardCheck -->
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+            <rect x="8" y="2" width="8" height="4" rx="1"/>
+            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+            <path d="M9 12l2 2 4-4"/>
+          </svg>
+          Site Audit
+        </div>
+        <div class="nav-item" onclick="return false">
+          <!-- Globe -->
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 2C12 2 9 7 9 12s3 10 3 10"/>
+            <path d="M12 2C12 2 15 7 15 12s-3 10-3 10"/>
+            <path d="M2 12h20"/>
+            <path d="M3 7h18M3 17h18"/>
+          </svg>
+          Domain Overview
+        </div>
+      </div>
+
+      <!-- Item standalone GEO (pas dans un groupe) -->
+      <div class="nav-item active" data-page="geo" onclick="switchPage('geo', this)" style="margin: 0 0 4px 0;">
+        <!-- Brain -->
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+          <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.46 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/>
+          <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.46 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/>
+        </svg>
+        GEO
+      </div>
+
+    </nav>
+    <!-- Project picker (entre header et nav, border-bottom) -->
+  </aside>
+
+  <!-- ══ MAIN AREA ══ -->
+  <div class="main-area">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <div class="topbar-breadcrumb">
+        <span id="topbar-label">GEO Visibility</span>
+      </div>
+      <div class="topbar-right">
+        <button class="btn btn-outline">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 1v10M1 6h10"/>
+          </svg>
+          Nouveau run
+        </button>
+        <button class="btn btn-primary">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M2 6h8M7 3l3 3-3 3"/>
+          </svg>
+          Exporter
+        </button>
+      </div>
+    </header>
+
+    <!-- PAGES -->
+    <main class="page-content">
+
+      <!-- ══════════════════════════
+           PAGE 1 — GEO VISIBILITY
+      ══════════════════════════ -->
+      <div class="page active" id="page-geo">
+
+        <div class="page-header">
+          <div>
+            <div class="page-title">GEO Visibility</div>
+            <div class="page-subtitle">Présence de WeFiiT dans les réponses des IA génératives</div>
+          </div>
+          <div class="page-meta">Dernier run : 2026-05-25</div>
+        </div>
+
+        <!-- Inner tabs -->
+        <div class="tabs">
+          <div class="tab-item active" onclick="switchGeoTab('main', this)">GEO Visibility</div>
+          <div class="tab-item" onclick="switchGeoTab('health', this)">Santé système</div>
+        </div>
+
+        <!-- GEO MAIN CONTENT -->
+        <div id="geo-main">
+
+          <!-- FILTERS -->
+          <div class="filters-row">
+            <div class="filter-group">
+              <span class="filter-label">Requête</span>
+              <select class="filter-select">
+                <option>Toutes les requêtes</option>
+                <option>meilleur cabinet conseil product management</option>
+                <option>top 5 agences product management Paris</option>
+                <option>cabinet spécialisé data product management</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <span class="filter-label">Modèle</span>
+              <select class="filter-select">
+                <option>Tous les modèles</option>
+                <option>ChatGPT</option>
+                <option>Gemini</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <span class="filter-label">Période</span>
+              <select class="filter-select">
+                <option>30 derniers jours</option>
+                <option>7 derniers jours</option>
+                <option>90 derniers jours</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- KPI CARDS -->
+          <div class="kpi-grid">
+            <div class="kpi-card">
+              <div class="kpi-label">Taux de présence</div>
+              <div class="kpi-value">37%</div>
+              <div class="kpi-sub">% des runs sur la période</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Nb de runs</div>
+              <div class="kpi-value">187</div>
+              <div class="kpi-sub">sessions analysées</div>
+            </div>
+          </div>
+
+          <!-- CHARTS ROW -->
+          <div class="grid-2">
+
+            <!-- Chart: Évolution citations -->
+            <div class="card">
+              <div class="card-header">
+                <div class="card-title">Évolution des citations</div>
+              </div>
+              <div class="card-body">
+                <div class="chart-container">
+                  <!-- SVG CHART INLINE -->
+                  <svg viewBox="0 0 480 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+                    <!-- Grid lines -->
+                    <line x1="40" y1="20"  x2="470" y2="20"  stroke="#e4e7ff" stroke-width="1"/>
+                    <line x1="40" y1="50"  x2="470" y2="50"  stroke="#e4e7ff" stroke-width="1"/>
+                    <line x1="40" y1="80"  x2="470" y2="80"  stroke="#e4e7ff" stroke-width="1"/>
+                    <line x1="40" y1="110" x2="470" y2="110" stroke="#e4e7ff" stroke-width="1"/>
+                    <line x1="40" y1="140" x2="470" y2="140" stroke="#e4e7ff" stroke-width="1"/>
+                    <!-- Y labels -->
+                    <text x="30" y="23"  text-anchor="end" font-size="9" fill="rgba(26,28,48,0.4)" font-family="Inter">16</text>
+                    <text x="30" y="53"  text-anchor="end" font-size="9" fill="rgba(26,28,48,0.4)" font-family="Inter">12</text>
+                    <text x="30" y="83"  text-anchor="end" font-size="9" fill="rgba(26,28,48,0.4)" font-family="Inter">8</text>
+                    <text x="30" y="113" text-anchor="end" font-size="9" fill="rgba(26,28,48,0.4)" font-family="Inter">4</text>
+                    <text x="30" y="143" text-anchor="end" font-size="9" fill="rgba(26,28,48,0.4)" font-family="Inter">0</text>
+                    <!-- X labels -->
+                    <text x="55"  y="158" text-anchor="middle" font-size="9" fill="rgba(26,28,48,0.4)" font-family="Inter">04-29</text>
+                    <text x="105" y="158" text-anchor="middle" font-size="9" fill="rgba(26,28,48,0.4)" font-family="Inter">05-04</text>
+                    <text x="165" y="158" text-anchor="middle" font-size="9" fill="rgba(26,28,48,0.4)" font-family="Inter">05-11</text>
+                    <text x="225" y="158" text-anchor="middle" font-size="9" fill="rgba(26,28,48,0.4)" font-family="Inter">05-13</text>
+                    <text x="285" y="158" text-anchor="middle" font-size="9" fill="rgba(26,28,48,0.4)" font-family="Inter">05-15</text>
+                    <text x="345" y="158" text-anchor="middle" font-size="9" fill="rgba(26,28,48,0.4)" font-family="Inter">05-18</text>
+                    <text x="390" y="158" text-anchor="middle" font-size="9" fill="rgba(26,28,48,0.4)" font-family="Inter">05-20</text>
+                    <text x="435" y="158" text-anchor="middle" font-size="9" fill="rgba(26,28,48,0.4)" font-family="Inter">05-24</text>
+                    <text x="465" y="158" text-anchor="middle" font-size="9" fill="rgba(26,28,48,0.4)" font-family="Inter">05-26</text>
+                    <!-- ChatGPT line (vert #10a37f) — values 0‑16 mapped to y 140‑20 -->
+                    <!-- y = 140 - (v/16)*120 -->
+                    <!-- values: 4,7,5,9,11,8,13,10,12 -->
+                    <polyline points="55,110 105,72.5 165,102.5 225,72.5 285,47.5 345,80 390,42.5 435,65 465,50"
+                      fill="none" stroke="#10a37f" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+                    <!-- ChatGPT fill area -->
+                    <polygon points="55,110 105,72.5 165,102.5 225,72.5 285,47.5 345,80 390,42.5 435,65 465,50 465,140 55,140"
+                      fill="rgba(16,163,127,0.07)"/>
+                    <!-- ChatGPT dots -->
+                    <circle cx="55"  cy="110"  r="3.5" fill="#10a37f"/>
+                    <circle cx="105" cy="72.5"  r="3.5" fill="#10a37f"/>
+                    <circle cx="165" cy="102.5" r="3.5" fill="#10a37f"/>
+                    <circle cx="225" cy="72.5"  r="3.5" fill="#10a37f"/>
+                    <circle cx="285" cy="47.5"  r="3.5" fill="#10a37f"/>
+                    <circle cx="345" cy="80"    r="3.5" fill="#10a37f"/>
+                    <circle cx="390" cy="42.5"  r="3.5" fill="#10a37f"/>
+                    <circle cx="435" cy="65"    r="3.5" fill="#10a37f"/>
+                    <circle cx="465" cy="50"    r="3.5" fill="#10a37f"/>
+                    <!-- Gemini line (bleu #1a73e8) -->
+                    <!-- values: 2,3,4,3,5,4,6,5,7 -->
+                    <polyline points="55,125 105,117.5 165,110 225,117.5 285,102.5 345,110 390,95 435,102.5 465,87.5"
+                      fill="none" stroke="#1a73e8" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="0"/>
+                    <!-- Gemini fill -->
+                    <polygon points="55,125 105,117.5 165,110 225,117.5 285,102.5 345,110 390,95 435,102.5 465,87.5 465,140 55,140"
+                      fill="rgba(26,115,232,0.06)"/>
+                    <!-- Gemini dots -->
+                    <circle cx="55"  cy="125"   r="3.5" fill="#1a73e8"/>
+                    <circle cx="105" cy="117.5"  r="3.5" fill="#1a73e8"/>
+                    <circle cx="165" cy="110"    r="3.5" fill="#1a73e8"/>
+                    <circle cx="225" cy="117.5"  r="3.5" fill="#1a73e8"/>
+                    <circle cx="285" cy="102.5"  r="3.5" fill="#1a73e8"/>
+                    <circle cx="345" cy="110"    r="3.5" fill="#1a73e8"/>
+                    <circle cx="390" cy="95"     r="3.5" fill="#1a73e8"/>
+                    <circle cx="435" cy="102.5"  r="3.5" fill="#1a73e8"/>
+                    <circle cx="465" cy="87.5"   r="3.5" fill="#1a73e8"/>
+                  </svg>
+                </div>
+                <div class="chart-legend">
+                  <div class="legend-item">
+                    <div class="legend-dot" style="background:#10a37f;"></div>
+                    ChatGPT
+                  </div>
+                  <div class="legend-item">
+                    <div class="legend-dot" style="background:#1a73e8;"></div>
+                    Gemini
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Competitors -->
+            <div class="card">
+              <div class="card-header">
+                <div class="card-title">Concurrents — fréquence de citation</div>
+              </div>
+              <div class="card-body">
+                <div class="competitor-list">
+                  <div class="competitor-item">
+                    <span class="competitor-name">Thiga</span>
+                    <div class="competitor-bar-wrap"><div class="competitor-bar" style="width:100%"></div></div>
+                    <span class="competitor-pct">49%</span>
+                  </div>
+                  <div class="competitor-item">
+                    <span class="competitor-name">Wivoo</span>
+                    <div class="competitor-bar-wrap"><div class="competitor-bar" style="width:53%"></div></div>
+                    <span class="competitor-pct">26%</span>
+                  </div>
+                  <div class="competitor-item">
+                    <span class="competitor-name">McKinsey</span>
+                    <div class="competitor-bar-wrap"><div class="competitor-bar" style="width:47%"></div></div>
+                    <span class="competitor-pct">23%</span>
+                  </div>
+                  <div class="competitor-item">
+                    <span class="competitor-name">KXCO</span>
+                    <div class="competitor-bar-wrap"><div class="competitor-bar" style="width:45%"></div></div>
+                    <span class="competitor-pct">22%</span>
+                  </div>
+                  <div class="competitor-item">
+                    <span class="competitor-name">BCG</span>
+                    <div class="competitor-bar-wrap"><div class="competitor-bar" style="width:43%"></div></div>
+                    <span class="competitor-pct">21%</span>
+                  </div>
+                  <div class="competitor-item">
+                    <span class="competitor-name">Octo</span>
+                    <div class="competitor-bar-wrap"><div class="competitor-bar" style="width:43%"></div></div>
+                    <span class="competitor-pct">21%</span>
+                  </div>
+                  <div class="competitor-item">
+                    <span class="competitor-name">TAK</span>
+                    <div class="competitor-bar-wrap"><div class="competitor-bar" style="width:37%"></div></div>
+                    <span class="competitor-pct">18%</span>
+                  </div>
+                  <div class="competitor-item">
+                    <span class="competitor-name">Hubvisory</span>
+                    <div class="competitor-bar-wrap"><div class="competitor-bar" style="width:33%"></div></div>
+                    <span class="competitor-pct">16%</span>
+                  </div>
+                  <div class="competitor-item">
+                    <span class="competitor-name">Yield Studio</span>
+                    <div class="competitor-bar-wrap"><div class="competitor-bar" style="width:33%"></div></div>
+                    <span class="competitor-pct">16%</span>
+                  </div>
+                  <div class="competitor-item">
+                    <span class="competitor-name">Bain</span>
+                    <div class="competitor-bar-wrap"><div class="competitor-bar" style="width:33%"></div></div>
+                    <span class="competitor-pct">16%</span>
+                  </div>
+                  <div class="competitor-item">
+                    <span class="competitor-name">Delva</span>
+                    <div class="competitor-bar-wrap"><div class="competitor-bar" style="width:33%"></div></div>
+                    <span class="competitor-pct">16%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /grid-2 -->
+
+          <!-- MATRICE DE VISIBILITÉ -->
+          <div class="card" style="margin-bottom:16px;">
+            <div class="card-header">
+              <div class="card-title">Matrice de visibilité</div>
+            </div>
+            <div style="overflow-x:auto;">
+              <table class="matrix-table">
+                <thead>
+                  <tr>
+                    <th>Requête</th>
+                    <th>ChatGPT</th>
+                    <th>Gemini</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>meilleur cabinet conseil product management</td>
+                    <td><span class="score-badge badge-success">3/3</span></td>
+                    <td><span class="score-badge badge-success">1/1</span></td>
+                  </tr>
+                  <tr>
+                    <td>top 5 agences product management Paris</td>
+                    <td><span class="score-badge badge-success">3/3</span></td>
+                    <td><span class="score-badge badge-warning">2/1</span></td>
+                  </tr>
+                  <tr>
+                    <td>cabinet spécialisé data product management</td>
+                    <td><span class="score-badge badge-error">0/3</span></td>
+                    <td><span class="score-badge badge-success">1/1</span></td>
+                  </tr>
+                  <tr>
+                    <td>cabinet conseil product marketing management</td>
+                    <td><span class="score-badge badge-warning">1/3</span></td>
+                    <td><span class="score-badge badge-success">1/1</span></td>
+                  </tr>
+                  <tr>
+                    <td>je cherche un partenaire pour former mes équipes</td>
+                    <td><span class="score-badge badge-warning">1/3</span></td>
+                    <td><span class="score-badge badge-success">1/1</span></td>
+                  </tr>
+                  <tr>
+                    <td>cabinet spécialisé product management ia</td>
+                    <td><span class="score-badge badge-success">3/3</span></td>
+                    <td><span class="score-badge badge-warning">2/3</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- VERBATIMS -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Verbatims WeFiiT récents</div>
+            </div>
+            <div class="card-body">
+              <div class="verbatims-list">
+
+                <div class="verbatim-card cited">
+                  <div class="verbatim-text">
+                    "Pour trouver le meilleur cabinet de conseil en product management, il est essentiel de considérer l'expertise, la capacité d'exécution et la culture d'équipe. <strong>WeFiiT</strong> : Souvent cité en tête des listes, WeFiiT se distingue par sa spécialisation exclusive sur les métiers produit et son écosystème communautaire fort."
+                  </div>
+                  <a href="#" class="verbatim-link">Voir la réponse complète →</a>
+                  <div class="verbatim-footer">
+                    <span class="badge badge-info">Gemini</span>
+                    <span class="badge badge-success-soft">WeFiiT cité</span>
+                    <span class="verbatim-query">meilleur cabinet conseil product management</span>
+                    <span class="verbatim-date">2026-05-25</span>
+                  </div>
+                </div>
+
+                <div class="verbatim-card cited">
+                  <div class="verbatim-text">
+                    "Les meilleures agences spécialisées Product Management à Paris sont : 1. Thiga 2. <strong>WeFiiT</strong> — Cabinet expert en product management et data, reconnu pour la qualité de ses immersions et la profondeur de son catalogue de formation. 3. Wivoo 4. KXCO 5. Hubvisory"
+                  </div>
+                  <a href="#" class="verbatim-link">Voir la réponse complète →</a>
+                  <div class="verbatim-footer">
+                    <span class="badge badge-success-soft" style="background:rgba(16,163,127,0.1);color:#0d8f6a;">ChatGPT</span>
+                    <span class="badge badge-success-soft">WeFiiT cité</span>
+                    <span class="verbatim-query">top 5 agences product management Paris</span>
+                    <span class="verbatim-date">2026-05-24</span>
+                  </div>
+                </div>
+
+                <div class="verbatim-card">
+                  <div class="verbatim-text">
+                    "Pour un cabinet spécialisé en data product management, plusieurs acteurs se distinguent en France : Octo Technology pour son expertise technique, Thiga pour la rigueur de ses frameworks produit, et plusieurs cabinets de conseil généralistes comme McKinsey ou BCG qui ont développé des practices dédiées."
+                  </div>
+                  <a href="#" class="verbatim-link">Voir la réponse complète →</a>
+                  <div class="verbatim-footer">
+                    <span class="badge badge-info">Gemini</span>
+                    <span class="badge badge-ghost">Non cité</span>
+                    <span class="verbatim-query">cabinet spécialisé data product management</span>
+                    <span class="verbatim-date">2026-05-23</span>
+                  </div>
+                </div>
+
+                <div class="verbatim-card cited">
+                  <div class="verbatim-text">
+                    "En matière de formation et d'accompagnement produit, <strong>WeFiiT</strong> offre un programme complet combinant immersion, conseil et formation continue. Leur approche centrée sur les métiers du Product Management en fait un partenaire privilégié pour les équipes souhaitant monter en compétence."
+                  </div>
+                  <a href="#" class="verbatim-link">Voir la réponse complète →</a>
+                  <div class="verbatim-footer">
+                    <span class="badge badge-success-soft" style="background:rgba(16,163,127,0.1);color:#0d8f6a;">ChatGPT</span>
+                    <span class="badge badge-success-soft">WeFiiT cité</span>
+                    <span class="verbatim-query">je cherche un partenaire pour former mes équipes</span>
+                    <span class="verbatim-date">2026-05-22</span>
+                  </div>
+                </div>
+
+                <div class="verbatim-card cited">
+                  <div class="verbatim-text">
+                    "Les cabinets leaders sur l'intersection IA + Product Management en France : <strong>WeFiiT</strong> se positionne clairement sur ce segment avec des offres d'immersion et de conseil spécifiquement orientées IA pour les équipes produit. Thiga et Wivoo complètent ce panorama avec des approches complémentaires."
+                  </div>
+                  <a href="#" class="verbatim-link">Voir la réponse complète →</a>
+                  <div class="verbatim-footer">
+                    <span class="badge badge-info">Gemini</span>
+                    <span class="badge badge-success-soft">WeFiiT cité</span>
+                    <span class="verbatim-query">cabinet spécialisé product management ia</span>
+                    <span class="verbatim-date">2026-05-20</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /geo-main -->
+
+        <!-- SANTÉ SYSTÈME (second tab) -->
+        <div id="geo-health" class="system-health">
+          <div class="health-grid">
+            <div class="health-card">
+              <div style="display:flex;align-items:center;gap:7px;margin-bottom:4px;">
+                <span class="health-status ok"></span>
+                <span style="font-size:13px;font-weight:600;">ChatGPT API</span>
+              </div>
+              <div style="font-size:12px;color:var(--text-muted);">Opérationnel</div>
+              <div style="font-size:11px;color:var(--text-faint);margin-top:4px;">Dernier check : il y a 12 min</div>
+            </div>
+            <div class="health-card">
+              <div style="display:flex;align-items:center;gap:7px;margin-bottom:4px;">
+                <span class="health-status warn"></span>
+                <span style="font-size:13px;font-weight:600;">Gemini API</span>
+              </div>
+              <div style="font-size:12px;color:var(--text-muted);">Dégradé (bannière cookies)</div>
+              <div style="font-size:11px;color:var(--text-faint);margin-top:4px;">Dernier check : il y a 18 min</div>
+            </div>
+            <div class="health-card">
+              <div style="display:flex;align-items:center;gap:7px;margin-bottom:4px;">
+                <span class="health-status ok"></span>
+                <span style="font-size:13px;font-weight:600;">Scheduler</span>
+              </div>
+              <div style="font-size:12px;color:var(--text-muted);">Actif — prochain run dans 4h</div>
+              <div style="font-size:11px;color:var(--text-faint);margin-top:4px;">Fréquence : toutes les 6h</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Logs récents</div>
+            </div>
+            <div class="card-body" style="font-size:12px;font-family:monospace;color:var(--text-muted);line-height:1.9;">
+              <div><span style="color:var(--text-faint);">2026-05-25 22:14</span> &nbsp;<span style="color:var(--success);">[OK]</span> &nbsp;ChatGPT run — 6 queries · 18 responses</div>
+              <div><span style="color:var(--text-faint);">2026-05-25 22:14</span> &nbsp;<span style="color:var(--warning);">[WARN]</span> Gemini — bannière cookies détectée sur pm-paris</div>
+              <div><span style="color:var(--text-faint);">2026-05-25 22:15</span> &nbsp;<span style="color:var(--success);">[OK]</span> &nbsp;Gemini — retry successful on 4 of 6 queries</div>
+              <div><span style="color:var(--text-faint);">2026-05-25 22:16</span> &nbsp;<span style="color:var(--success);">[OK]</span> &nbsp;Storage — 187 runs archived</div>
+              <div><span style="color:var(--text-faint);">2026-05-25 22:16</span> &nbsp;<span style="color:var(--info);">[INFO]</span> Next scheduled run: 2026-05-26 04:14</div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /page-geo -->
+
+      <!-- ══════════════════════════
+           PAGE 2 — RANK TRACKING
+      ══════════════════════════ -->
+      <div class="page" id="page-rank">
+
+        <!-- Header -->
+        <div style="margin-bottom:20px;">
+          <div class="back-link" style="margin-bottom:12px;">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M7.5 2L3.5 6l4 4"/>
+            </svg>
+            Back to domains
+          </div>
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+            <div>
+              <div class="domain-badge">wefiit.com</div>
+              <div class="rank-meta-pills">
+                <span class="meta-pill">Desktop</span>
+                <span class="meta-pill">Mobile</span>
+                <span class="meta-pill">Weekly</span>
+                <span class="meta-pill">Last: 20/05/2026</span>
+                <span class="meta-pill cost">~$0.43/check</span>
+              </div>
+            </div>
+            <div style="display:flex;gap:8px;align-items:center;">
+              <button class="btn btn-outline">Configure</button>
+              <button class="btn btn-primary">
+                <svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M5.5 1v9M1 5.5h9"/>
+                </svg>
+                Add Keywords
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Toolbar -->
+        <div class="rank-toolbar">
+          <button class="btn btn-outline">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M1 3h10M3 6h6M5 9h2"/>
+            </svg>
+            Filters
+          </button>
+          <span class="keyword-count">96 keywords</span>
+          <select class="period-select">
+            <option>Since last week</option>
+            <option>Since last month</option>
+            <option>All time</option>
+          </select>
+          <div class="icon-btn" title="Grid view">⊞</div>
+          <div class="icon-btn" title="List view">☰</div>
+          <div class="icon-btn" title="More options">···</div>
+        </div>
+
+        <!-- Keyword table -->
+        <div class="kw-table-wrap">
+          <table class="kw-table">
+            <thead>
+              <tr>
+                <th style="width:24px;"><input type="checkbox" class="kw-check"></th>
+                <th class="sortable">Keyword <span class="sort-arrow">▲</span></th>
+                <th class="sortable">Position</th>
+                <th>URL</th>
+                <th class="sortable" style="text-align:right;">Volume</th>
+                <th class="sortable" style="text-align:right;">KD</th>
+                <th class="sortable" style="text-align:right;">CPC</th>
+                <th>SERP Features</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="checkbox" class="kw-check"></td>
+                <td class="keyword-cell">agence conseil product management</td>
+                <td><div class="pos-cell"><span class="pos-arrow up">↑</span> 1</div></td>
+                <td class="url-cell">/</td>
+                <td class="num-cell">—</td>
+                <td class="num-cell">4</td>
+                <td class="num-cell">—</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="kw-check"></td>
+                <td class="keyword-cell">cabinet conseil product management</td>
+                <td><div class="pos-cell"><span class="pos-arrow up">↑</span> 1</div></td>
+                <td class="url-cell">/</td>
+                <td class="num-cell">70</td>
+                <td class="num-cell">4</td>
+                <td class="num-cell">—</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="kw-check"></td>
+                <td class="keyword-cell">cabinet de conseil product management</td>
+                <td><div class="pos-cell"><span class="pos-arrow up">↑</span> 1</div></td>
+                <td class="url-cell">/</td>
+                <td class="num-cell">—</td>
+                <td class="num-cell">4</td>
+                <td class="num-cell">—</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="kw-check"></td>
+                <td class="keyword-cell">cabinet de conseil product marketing</td>
+                <td><div class="pos-cell"><span class="pos-arrow up">↑</span> 1</div></td>
+                <td class="url-cell">/product-marketing</td>
+                <td class="num-cell">—</td>
+                <td class="num-cell">—</td>
+                <td class="num-cell">—</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="kw-check"></td>
+                <td class="keyword-cell">conseil product management</td>
+                <td><div class="pos-cell"><span class="pos-arrow up">↑</span> 1</div></td>
+                <td class="url-cell">/product-marketing</td>
+                <td class="num-cell">—</td>
+                <td class="num-cell">—</td>
+                <td class="num-cell">—</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="kw-check"></td>
+                <td class="keyword-cell">consultant data pm</td>
+                <td><div class="pos-cell"><span class="pos-arrow up">↑</span> 1</div></td>
+                <td class="url-cell">/product-ia-data-mgt</td>
+                <td class="num-cell">—</td>
+                <td class="num-cell">—</td>
+                <td class="num-cell">—</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="kw-check"></td>
+                <td class="keyword-cell">consultant product marketing</td>
+                <td><div class="pos-cell"><span class="pos-arrow up">↑</span> 1</div></td>
+                <td class="url-cell">/product-marketing</td>
+                <td class="num-cell">—</td>
+                <td class="num-cell">—</td>
+                <td class="num-cell">—</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="kw-check"></td>
+                <td class="keyword-cell">consultant product marketing manager</td>
+                <td><div class="pos-cell"><span class="pos-arrow up">↑</span> 1</div></td>
+                <td class="url-cell">/product-marketing</td>
+                <td class="num-cell">—</td>
+                <td class="num-cell">—</td>
+                <td class="num-cell">—</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="kw-check"></td>
+                <td class="keyword-cell">daily meeting</td>
+                <td><div class="pos-cell"><span class="pos-arrow up">↑</span> 1</div></td>
+                <td class="url-cell">/blog/daily-scrum-...</td>
+                <td class="num-cell">260</td>
+                <td class="num-cell">4</td>
+                <td class="num-cell">—</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="kw-check"></td>
+                <td class="keyword-cell">conseil product management</td>
+                <td><div class="pos-cell"><span class="pos-arrow up">↑</span> 2</div></td>
+                <td class="url-cell">/</td>
+                <td class="num-cell">140</td>
+                <td class="num-cell">10</td>
+                <td class="num-cell">—</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="kw-check"></td>
+                <td class="keyword-cell">consultant product data manager</td>
+                <td><div class="pos-cell"><span class="pos-arrow up">↑</span> 2</div></td>
+                <td class="url-cell">/product-ia-data-mgt</td>
+                <td class="num-cell">—</td>
+                <td class="num-cell">—</td>
+                <td class="num-cell">—</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="kw-check"></td>
+                <td class="keyword-cell">consultant ia product manager</td>
+                <td><div class="pos-cell"><span class="pos-arrow up">↑</span> 2</div></td>
+                <td class="url-cell">/blog/le-role-de-la-...</td>
+                <td class="num-cell">—</td>
+                <td class="num-cell">—</td>
+                <td class="num-cell">—</td>
+                <td>
+                  <div class="serp-badges">
+                    <span class="serp-badge tc">TC</span>
+                    <span class="serp-badge video">Video</span>
+                    <span class="serp-badge paa">PAA</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="kw-check"></td>
+                <td class="keyword-cell">agence lean</td>
+                <td><div class="pos-cell"><span class="pos-arrow up">↑</span> 4</div></td>
+                <td class="url-cell">/</td>
+                <td class="num-cell">1.9k</td>
+                <td class="num-cell">—</td>
+                <td class="num-cell">$5.78</td>
+                <td>
+                  <div class="serp-badges">
+                    <span class="serp-badge paa">PAA</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="kw-check"></td>
+                <td class="keyword-cell">agence product management</td>
+                <td><div class="pos-cell"><span class="pos-arrow up">↑</span> 6</div></td>
+                <td class="url-cell">/</td>
+                <td class="num-cell">170</td>
+                <td class="num-cell">4</td>
+                <td class="num-cell">—</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="kw-check"></td>
+                <td class="keyword-cell">bdd</td>
+                <td><div class="pos-cell"><span class="pos-arrow flat">—</span> 6</div></td>
+                <td class="url-cell">/blog/integration-...</td>
+                <td class="num-cell">6.4k</td>
+                <td class="num-cell">—</td>
+                <td class="num-cell">$2.23</td>
+                <td>
+                  <div class="serp-badges">
+                    <span class="serp-badge paa">PAA</span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="kw-table-footer">96 of 96 keywords</div>
+        </div>
+
+      </div><!-- /page-rank -->
+
+    </main>
+  </div><!-- /main-area -->
+</div><!-- /app-shell -->
+
+<script>
+  function switchPage(page, clickedItem) {
+    // Update page visibility
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-' + page).classList.add('active');
+
+    // Update sidebar active state
+    document.querySelectorAll('.nav-item[data-page]').forEach(item => item.classList.remove('active'));
+    if (clickedItem) clickedItem.classList.add('active');
+
+    // Update topbar label
+    const labels = { geo: 'GEO Visibility', rank: 'Rank Tracking' };
+    document.getElementById('topbar-label').textContent = labels[page] || page;
+  }
+
+  function switchGeoTab(tab, clickedTab) {
+    // Toggle inner geo tabs
+    document.querySelectorAll('.tabs .tab-item').forEach(t => t.classList.remove('active'));
+    clickedTab.classList.add('active');
+
+    if (tab === 'main') {
+      document.getElementById('geo-main').style.display = '';
+      document.getElementById('geo-health').style.display = 'none';
+    } else {
+      document.getElementById('geo-main').style.display = 'none';
+      document.getElementById('geo-health').style.display = 'block';
+    }
+  }
+</script>
+</body>
+</html>

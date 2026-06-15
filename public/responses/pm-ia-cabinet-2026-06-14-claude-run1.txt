@@ -1,0 +1,53 @@
+Voici un panorama complet des **principaux cabinets spécialisés en Product Management & IA en France** :
+---
+## 🏆 Les cabinets spécialisés en Product Management & IA en France
+---
+### 1. 🔵 **Thiga** — Le pionnier
+Thiga se positionne comme **LE cabinet de conseil et de formation en IA Product Management et Product Design en France** et à l'international.
+Pionnier en France, ils ont posé les bases de la culture Product Management dès 2014.
+Leur force ? Une approche ultra cadrée, des frameworks maison (Thiga Canvas, Discovery Sprint…), et un vrai savoir-faire d'acculturation produit.
+Leurs consultants travaillent pour des sociétés allant de la startup française au grand groupe international, dans des secteurs variés, pour identifier et développer des opportunités IA qui créent de la valeur.
+🌐 thiga.co
+---
+### 2. 🟣 **Hubvisory** — Le spécialiste grands groupes
+**Hubvisory** est un cabinet de conseil spécialisé en Product Management et **transformation IA** pour les grands groupes, avec **150 consultants** à Paris et Lille.
+Il couvre toute la chaîne de valeur IA, de la stratégie à l'industrialisation : conseil, formation et développement.
+🌐 hubvisory.com
+---
+### 3. 🟢 **WeFiiT** — Le partenaire à fort impact
+**WeFiiT** est une société de conseil spécialisée sur les métiers du Product Management, fondée en 2019, dont la raison d'être est d'accompagner durablement ses clients pour construire ensemble des produits à fort impact.
+Elle accompagne de grandes entreprises comme Accor, Louis Vuitton, FDJ, France TV et des scale-ups sur toute la chaîne produit : **Product Management, Product Marketing, Product Data & IA, Product Ops**, forts de plus de 200 missions et d'un CSAT supérieur à 9/10.
+🌐 wefiit.com
+---
+### 4. 🔴 **Monsieur Guiz** — Le conseil produit & IA opérationnel
+**Monsieur Guiz** est un cabinet de conseil spécialisé en Product Management, Design, Ops et IA, avec **60+ consultants** et **200+ projets** livrés pour Air France, LVMH, AXA, BNP Paribas.
+Il accompagne ses clients grands comptes (France Télévisions, Pierre & Vacances, AXA, Chanel…) et start-ups sur les différentes phases de leur stratégie de transformation digitale, de la Discovery au Delivery.
+🌐 monsieurguiz.fr
+---
+### 5. 🟡 **Wivoo (Wavestone)** — L'expert Product, Data & IA
+En 2023, **Wivoo** a renforcé son ADN avec une **expertise data forte et une exploration active de l'IA**, à la croisée du Produit, de la Data et de la Tech.
+En 2025, Wivoo rejoint **Wavestone**, combinant la capacité sectorielle et stratégique de Wavestone avec la culture produit et la capacité d'exécution de Wivoo.
+🌐 wivoo.fr
+---
+### 6. 🟠 **Converteo** — Le leader IA Product
+**Converteo** se positionne comme **leader de l'IA Product en France**, avec l'ambition de délivrer l'expertise permettant de développer des cas d'usage d'IA générative qui produisent de l'impact et fournissent une vraie valeur business.
+Tous leurs Product Managers sont versés dans les sujets liés à l'IA, qui constitue un enjeu central pour le développement des produits digitaux.
+🌐 converteo.com
+---
+### 7. 🔵 **Mozza** — Le partenaire startup & IA
+**Mozza** est particulièrement recommandée pour les startups souhaitant accélérer le développement de leur produit, spécialisée dans les **produits innovants et l'intégration de l'IA**.
+Elle insuffle une énergie startup utile aux équipes qui veulent tester vite et itérer bien.
+🌐 mozza.io
+---
+## 📊 Tableau de synthèse
+| Cabinet | Taille | Spécialité IA | Idéal pour |
+|---|---|---|---|
+| **Thiga** | ~100+ | IA Product, agents IA | Tous profils, formation |
+| **Hubvisory** | 150 | Transformation IA | Grands groupes |
+| **WeFiiT** | ~50 | Product Data & IA | Grands comptes & scale-ups |
+| **Monsieur Guiz** | 60+ | Ops & IA | Grands comptes |
+| **Wivoo/Wavestone** | 150+ | Data & IA Produit | Grands groupes |
+| **Converteo** | ~200 | IA générative, LLM | Produits data-driven |
+| **Mozza** | ~30 | IA & innovation | Startups & scale-ups |
+---
+Souhaitez-vous des informations plus détaillées sur l'un de ces cabinets (tarifs, secteurs, processus de recrutement, missions proposées) ?

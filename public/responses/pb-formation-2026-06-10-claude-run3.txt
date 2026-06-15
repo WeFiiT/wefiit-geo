@@ -1,0 +1,40 @@
+Voici un panorama des principales organisations qui proposent des **formations Product Builder** en France :
+---
+## 🎓 Les formations Product Builder en France
+### 1. 🏫 **Jedha**
+[jedha.co](https://www.jedha.co/formations/formation-product-builder)
+En **450 heures**, Jedha vous apprend le métier de Product Builder et vous rend capable de bâtir des produits en toute autonomie, de l'idée à la mise en production.
+Vous y maîtrisez une stack moderne combinant la programmation assistée par IA avec **Cursor ou Lovable**, et des outils no-code comme **Figma** ou **n8n**.
+Un coaching carrière complet est inclus pour comprendre les attentes du marché, préparer les entretiens techniques et apprendre à se vendre en tant que Product Builder.
+---
+### 2. 🏫 **DataSuits**
+[datasuits.fr](https://www.datasuits.fr/formation-product-builder-no-code-ia)
+La formation Product Builder No Code & IA de DataSuits prépare au passage de la **certification officielle RNCP41480BC03** « Développer un produit numérique avec des outils no-code ».
+Vous bénéficiez d'une **triple certification** : une certification RNCP reconnue par l'État, un certificat délivré par une université partenaire, et un certificat DataSuits.
+Vous bénéficiez d'un accompagnement individuel illimité, et développez un produit digital complet de A à Z sur un projet de **100 heures** se clôturant par une soutenance devant un jury.
+La formation est **éligible CPF, France Travail, OPCO** et autres financements.
+---
+### 3. 🏫 **La Capsule**
+[lacapsule.academy](https://www.lacapsule.academy/formation-ia-automation-nocode/full-time)
+La Capsule propose une formation **IA & Automation - Product Builder NoCode**, disponible en présentiel ou en remote, à temps plein ou à temps partiel.
+Le format bootcamp dure **10 semaines intensives** de 9h à 18h du lundi au vendredi.
+Vous y apprenez à concevoir des agents IA capables de répondre aux utilisateurs, analyser des tickets, lire des documents et proposer des actions, puis à les brancher sur de vrais process métiers (RH, ops, support…).
+---
+### 4. 🏫 **Alegria Academy**
+[alegria.group](https://www.alegria.group/academy/product-builder-nocode-lowcode-ai)
+Pionnière dans le domaine du no-code, **Alegria Academy** a eu et continue d'avoir un rôle clé dans la professionnalisation et la reconnaissance officielle des métiers du no-code.
+Alegria Academy prépare au **diplôme de Concepteur Développeur d'Applications (RNCP 6 - BAC+3)**, une reconnaissance par l'État qui confirme le sérieux de la formation.
+Une fois admissible, vous bénéficiez d'un accompagnement personnalisé (onboarding, coaching, simulations d'entretiens) pour trouver votre entreprise d'accueil en **alternance de 12 mois**.
+---
+### 5. 🏫 **Liora.io**
+[liora.io](https://liora.io/formation/data-ia/product-builder-no-code)
+Liora propose **+300 heures** de formation pour devenir Product Builder No-code, éligible CPF, avec des outils comme **Webflow, Airtable, Make et Zapier**, sur une durée de **5 mois**.
+Cette formation est reconnue par l'État et enregistrée au RNCP sous le code **RNCP40593**, au **niveau 6**, garantissant que le programme répond aux standards nationaux.
+---
+### 6. 🏫 **Uncode School**
+Uncode School est l'une des premières écoles dédiées au no-code en France. Elle propose des formations **à plein ou mi-temps** pour devenir Product Builder, Bubble spécialiste ou Ops spécialiste.
+Le cursus dure entre **9 semaines et 3 mois et demi** selon la formation choisie.
+---
+### 📌 À noter :
+La majorité des cursus pour se former aux métiers du no-code **ne nécessitent aucune connaissance préalable en code** et proposent pour la plupart des solutions de financement.
+Vous souhaitez des informations sur une formation en particulier (prix, durée, financement) ?

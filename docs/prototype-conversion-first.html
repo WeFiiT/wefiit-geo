@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>open-seo — Rank Tracking</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─── TOKENS ──────────────────────────────────────────────── */
+    :root {
+      --bg:           #0d1117;
+      --surface:      #161b22;
+      --surface-2:    #1c2333;
+      --surface-3:    #21283a;
+      --border:       #2a3344;
+      --border-light: #303d52;
+
+      --text-primary:   #e6edf3;
+      --text-secondary: #8b949e;
+      --text-muted:     #4a5568;
+      --text-inverse:   #0d1117;
+
+      --accent:       #f98f03;
+      --accent-dim:   rgba(249,143,3,0.12);
+      --accent-hover: #ffab2e;
+
+      --green:        #3fb950;
+      --green-dim:    rgba(63,185,80,0.12);
+      --green-text:   #4ade80;
+
+      --red:          #f85149;
+      --red-dim:      rgba(248,81,73,0.12);
+
+      --blue:         #58a6ff;
+      --blue-dim:     rgba(88,166,255,0.1);
+
+      --yellow:       #e3b341;
+      --yellow-dim:   rgba(227,179,65,0.12);
+
+      --sidebar-w:    252px;
+
+      --radius-sm:    6px;
+      --radius:       10px;
+      --radius-lg:    16px;
+
+      --shadow-card:  0 1px 3px rgba(0,0,0,0.4), 0 4px 16px rgba(0,0,0,0.2);
+      --shadow-btn:   0 2px 8px rgba(249,143,3,0.35);
+
+      --transition:   150ms ease;
+      --transition-m: 200ms ease;
+    }
+
+    /* ─── RESET ───────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; overflow: hidden; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      background: var(--bg);
+      color: var(--text-primary);
+      display: flex;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── SIDEBAR ─────────────────────────────────────────────── */
+    .sidebar {
+      width: var(--sidebar-w);
+      min-width: var(--sidebar-w);
+      height: 100vh;
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* subtle grid texture */
+    .sidebar::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 24px 24px;
+      opacity: 0.18;
+      pointer-events: none;
+    }
+
+    .sidebar-header {
+      padding: 20px 20px 16px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo-mark {
+      width: 32px;
+      height: 32px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 16px;
+      color: var(--text-inverse);
+      letter-spacing: -0.5px;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .logo-name {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      color: var(--text-primary);
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+    }
+
+    .logo-badge {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      font-weight: 400;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    /* Project selector */
+    .project-selector {
+      margin: 12px 14px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 8px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: border-color var(--transition), background var(--transition);
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-selector:hover {
+      border-color: var(--border-light);
+      background: var(--surface-3);
+    }
+
+    .project-selector-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .project-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 6px rgba(63,185,80,0.5);
+      flex-shrink: 0;
+    }
+
+    .project-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-label {
+      font-size: 9px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+
+    .project-name {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-primary);
+      line-height: 1.2;
+    }
+
+    .project-chevron {
+      color: var(--text-muted);
+      flex-shrink: 0;
+    }
+
+    /* Nav */
+    .sidebar-nav {
+      flex: 1;
+      padding: 8px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      overflow-y: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .nav-section-label {
+      font-size: 9px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 12px 10px 4px;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: background var(--transition), color var(--transition);
+      color: var(--text-secondary);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      position: relative;
+      user-select: none;
+    }
+
+    .nav-item:hover {
+      background: var(--surface-2);
+      color: var(--text-primary);
+    }
+
+    .nav-item.active {
+      background: var(--accent-dim);
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .nav-item.active::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 20%;
+      bottom: 20%;
+      width: 3px;
+      background: var(--accent);
+      border-radius: 0 2px 2px 0;
+      margin-left: -10px;
+    }
+
+    .nav-icon {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-badge {
+      margin-left: auto;
+      background: var(--surface-3);
+      color: var(--text-muted);
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      padding: 1px 6px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+    }
+
+    .nav-item.active .nav-badge {
+      background: var(--accent-dim);
+      color: var(--accent);
+      border-color: rgba(249,143,3,0.3);
+    }
+
+    /* Sidebar footer */
+    .sidebar-footer {
+      padding: 12px 14px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #002882, #1e40af);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 600;
+      color: white;
+      flex-shrink: 0;
+      border: 1px solid var(--border-light);
+    }
+
+    .user-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .user-name {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-primary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .user-role {
+      font-size: 10px;
+      color: var(--text-muted);
+    }
+
+    .settings-btn {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: background var(--transition), color var(--transition);
+    }
+
+    .settings-btn:hover {
+      background: var(--surface-2);
+      color: var(--text-secondary);
+    }
+
+    /* ─── MAIN ────────────────────────────────────────────────── */
+    .main {
+      flex: 1;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background: var(--bg);
+    }
+
+    /* Topbar */
+    .topbar {
+      height: 56px;
+      min-height: 56px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      padding: 0 28px;
+      gap: 16px;
+      background: var(--surface);
+    }
+
+    .page-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+      flex: 1;
+    }
+
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background var(--transition-m), box-shadow var(--transition-m), transform var(--transition);
+      border: 1px solid transparent;
+      white-space: nowrap;
+      font-family: 'DM Sans', sans-serif;
+      letter-spacing: 0.01em;
+    }
+
+    .btn:active { transform: scale(0.97); }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--text-inverse);
+      font-weight: 600;
+      border-color: var(--accent);
+      box-shadow: var(--shadow-btn);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      box-shadow: 0 4px 16px rgba(249,143,3,0.45);
+    }
+
+    .btn-secondary {
+      background: var(--surface-2);
+      color: var(--text-secondary);
+      border-color: var(--border);
+    }
+
+    .btn-secondary:hover {
+      background: var(--surface-3);
+      color: var(--text-primary);
+      border-color: var(--border-light);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-secondary);
+      border-color: transparent;
+      padding: 7px 10px;
+    }
+
+    .btn-ghost:hover {
+      background: var(--surface-2);
+      color: var(--text-primary);
+    }
+
+    /* ─── CONTENT ─────────────────────────────────────────────── */
+    .content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 24px 28px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Scrollbar styling */
+    .content::-webkit-scrollbar { width: 6px; }
+    .content::-webkit-scrollbar-track { background: transparent; }
+    .content::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+    .content::-webkit-scrollbar-thumb:hover { background: var(--border-light); }
+
+    /* ─── STATUS BAR ──────────────────────────────────────────── */
+    .status-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      width: fit-content;
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 5px rgba(63,185,80,0.6);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; box-shadow: 0 0 5px rgba(63,185,80,0.6); }
+      50% { opacity: 0.7; box-shadow: 0 0 10px rgba(63,185,80,0.8); }
+    }
+
+    .status-text {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--text-secondary);
+      letter-spacing: 0.02em;
+    }
+
+    .status-sep {
+      color: var(--border-light);
+      font-size: 10px;
+    }
+
+    /* ─── KPI GRID ────────────────────────────────────────────── */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .kpi-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color var(--transition-m), box-shadow var(--transition-m);
+      box-shadow: var(--shadow-card);
+    }
+
+    .kpi-card:hover {
+      border-color: var(--border-light);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4), 0 8px 32px rgba(0,0,0,0.3);
+    }
+
+    .kpi-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--kpi-accent, var(--border-light)), transparent);
+    }
+
+    .kpi-card.kpi-primary { --kpi-accent: var(--accent); }
+    .kpi-card.kpi-green   { --kpi-accent: var(--green); }
+    .kpi-card.kpi-blue    { --kpi-accent: var(--blue); }
+
+    .kpi-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .kpi-label {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .kpi-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .kpi-icon.accent { background: var(--accent-dim); color: var(--accent); }
+    .kpi-icon.green  { background: var(--green-dim);  color: var(--green-text); }
+    .kpi-icon.blue   { background: var(--blue-dim);   color: var(--blue); }
+
+    .kpi-value {
+      font-family: 'DM Mono', monospace;
+      font-size: 36px;
+      font-weight: 500;
+      color: var(--text-primary);
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin: 4px 0;
+    }
+
+    .kpi-value span {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--text-secondary);
+    }
+
+    .kpi-meta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .kpi-delta {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 2px 7px;
+      border-radius: 20px;
+    }
+
+    .kpi-delta.positive {
+      background: var(--green-dim);
+      color: var(--green-text);
+    }
+
+    .kpi-delta.neutral {
+      background: var(--surface-3);
+      color: var(--text-muted);
+    }
+
+    .kpi-delta-label {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* Sparkline bars */
+    .sparkline {
+      display: flex;
+      align-items: flex-end;
+      gap: 2px;
+      height: 24px;
+      margin-top: 8px;
+    }
+
+    .spark-bar {
+      flex: 1;
+      background: var(--surface-3);
+      border-radius: 2px;
+      transition: background var(--transition);
+    }
+
+    .spark-bar.active { background: var(--accent); opacity: 0.7; }
+    .spark-bar.active:last-child { background: var(--accent); opacity: 1; }
+    .kpi-card.kpi-green  .spark-bar.active { background: var(--green); opacity: 0.7; }
+    .kpi-card.kpi-green  .spark-bar.active:last-child { background: var(--green); opacity: 1; }
+    .kpi-card.kpi-blue   .spark-bar.active { background: var(--blue); opacity: 0.7; }
+    .kpi-card.kpi-blue   .spark-bar.active:last-child { background: var(--blue); opacity: 1; }
+
+    /* ─── TABLE SECTION ───────────────────────────────────────── */
+    .table-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+    }
+
+    .table-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--surface-2);
+    }
+
+    .table-title-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .table-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .table-count {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+      background: var(--surface-3);
+      border: 1px solid var(--border);
+      padding: 2px 8px;
+      border-radius: 20px;
+    }
+
+    .table-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .search-input {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 11px;
+      background: var(--surface-3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text-secondary);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      transition: border-color var(--transition), background var(--transition);
+      cursor: text;
+    }
+
+    .search-input:hover {
+      border-color: var(--border-light);
+      background: var(--surface);
+    }
+
+    .search-placeholder {
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+
+    /* Table */
+    .table-wrap { overflow-x: auto; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead {
+      background: var(--surface-2);
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      padding: 10px 20px;
+      text-align: left;
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      white-space: nowrap;
+      cursor: default;
+      user-select: none;
+    }
+
+    th.sortable {
+      cursor: pointer;
+      transition: color var(--transition);
+    }
+
+    th.sortable:hover { color: var(--text-secondary); }
+
+    th .sort-icon {
+      display: inline-flex;
+      margin-left: 4px;
+      opacity: 0.5;
+      vertical-align: middle;
+    }
+
+    th.sorted { color: var(--accent); }
+    th.sorted .sort-icon { opacity: 1; color: var(--accent); }
+
+    tbody tr {
+      border-bottom: 1px solid var(--border);
+      transition: background var(--transition);
+    }
+
+    tbody tr:last-child { border-bottom: none; }
+
+    tbody tr:hover {
+      background: rgba(255,255,255,0.025);
+    }
+
+    td {
+      padding: 13px 20px;
+      vertical-align: middle;
+    }
+
+    /* Domain cell */
+    .domain-cell {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .domain-favicon {
+      width: 24px;
+      height: 24px;
+      border-radius: 5px;
+      background: var(--surface-3);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--text-secondary);
+      font-family: 'Syne', sans-serif;
+    }
+
+    .domain-favicon.wefiit {
+      background: linear-gradient(135deg, #002882 0%, #1e40af 100%);
+      color: white;
+    }
+
+    .domain-favicon.ce {
+      background: linear-gradient(135deg, #c8102e 0%, #e63950 100%);
+      color: white;
+    }
+
+    .domain-favicon.ex {
+      background: var(--surface-3);
+      color: var(--text-muted);
+    }
+
+    .domain-name {
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    /* KW count cell */
+    .kw-count {
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .kw-bar-wrap {
+      width: 60px;
+      height: 3px;
+      background: var(--surface-3);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .kw-bar {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 2px;
+      opacity: 0.7;
+    }
+
+    /* Date cell */
+    .date-cell {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: var(--text-secondary);
+      letter-spacing: 0.02em;
+    }
+
+    .date-cell.empty {
+      color: var(--text-muted);
+      font-style: italic;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    /* Status badge */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 9px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+    }
+
+    .badge-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .badge-active {
+      background: var(--green-dim);
+      color: var(--green-text);
+      border: 1px solid rgba(63,185,80,0.2);
+    }
+
+    .badge-active .badge-dot {
+      background: var(--green-text);
+      box-shadow: 0 0 4px rgba(63,185,80,0.6);
+      animation: pulse 2s infinite;
+    }
+
+    .badge-pending {
+      background: var(--yellow-dim);
+      color: var(--yellow);
+      border: 1px solid rgba(227,179,65,0.2);
+    }
+
+    .badge-pending .badge-dot {
+      background: var(--yellow);
+    }
+
+    /* Actions cell */
+    .actions-cell {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 11px;
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background var(--transition), color var(--transition), border-color var(--transition);
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-secondary);
+      font-family: 'DM Sans', sans-serif;
+      white-space: nowrap;
+    }
+
+    .action-btn:hover {
+      background: var(--surface-3);
+      color: var(--text-primary);
+      border-color: var(--border-light);
+    }
+
+    .action-btn.primary-action {
+      background: var(--accent-dim);
+      color: var(--accent);
+      border-color: rgba(249,143,3,0.25);
+    }
+
+    .action-btn.primary-action:hover {
+      background: rgba(249,143,3,0.2);
+      border-color: rgba(249,143,3,0.4);
+    }
+
+    .icon-btn {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5px;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: background var(--transition), color var(--transition), border-color var(--transition);
+    }
+
+    .icon-btn:hover {
+      background: var(--surface-3);
+      color: var(--text-secondary);
+      border-color: var(--border-light);
+    }
+
+    /* ─── EMPTY STATE (row) ───────────────────────────────────── */
+    .empty-next-check {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      color: var(--text-muted);
+      font-family: 'DM Mono', monospace;
+    }
+
+    /* ─── PAGINATION ──────────────────────────────────────────── */
+    .table-footer {
+      padding: 12px 20px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--surface-2);
+    }
+
+    .table-footer-info {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .pagination {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .page-btn {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5px;
+      border: 1px solid var(--border);
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: background var(--transition), border-color var(--transition), color var(--transition);
+    }
+
+    .page-btn:hover {
+      background: var(--surface-3);
+      border-color: var(--border-light);
+      color: var(--text-primary);
+    }
+
+    .page-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--text-inverse);
+      font-weight: 600;
+    }
+
+    /* ─── QUICK ACTIONS CALLOUT ───────────────────────────────── */
+    .callout {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: var(--radius-sm);
+    }
+
+    .callout-icon {
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .callout-text {
+      font-size: 12.5px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .callout-text strong {
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    .callout-action {
+      margin-left: auto;
+      flex-shrink: 0;
+    }
+
+    /* ─── ANIMATIONS ──────────────────────────────────────────── */
+    @keyframes fadeSlideIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .kpi-card {
+      animation: fadeSlideIn 0.3s ease backwards;
+    }
+
+    .kpi-card:nth-child(1) { animation-delay: 0.05s; }
+    .kpi-card:nth-child(2) { animation-delay: 0.10s; }
+    .kpi-card:nth-child(3) { animation-delay: 0.15s; }
+
+    .table-section {
+      animation: fadeSlideIn 0.3s ease 0.2s backwards;
+    }
+
+    .status-bar {
+      animation: fadeSlideIn 0.3s ease 0.02s backwards;
+    }
+
+    .callout {
+      animation: fadeSlideIn 0.3s ease 0.25s backwards;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════ SIDEBAR ═══════════════════════ -->
+  <aside class="sidebar">
+
+    <div class="sidebar-header">
+      <div class="logo-mark">W</div>
+      <div class="logo-text">
+        <div class="logo-name">open-seo</div>
+        <div class="logo-badge">WeFiiT Internal</div>
+      </div>
+    </div>
+
+    <div class="project-selector">
+      <div class="project-selector-left">
+        <div class="project-dot"></div>
+        <div class="project-info">
+          <div class="project-label">Projet</div>
+          <div class="project-name">Default</div>
+        </div>
+      </div>
+      <svg class="project-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none">
+        <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-section-label">Suivi</div>
+
+      <div class="nav-item active">
+        <span class="nav-icon">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M2 11L6 7L9 10L14 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="14" cy="5" r="1.5" fill="currentColor"/>
+          </svg>
+        </span>
+        Rank Tracking
+        <span class="nav-badge">147</span>
+      </div>
+
+      <div class="nav-item">
+        <span class="nav-icon">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <circle cx="7" cy="7" r="4.5" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M10.5 10.5L13.5 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M5.5 7H8.5M7 5.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        Keywords
+        <span class="nav-badge">89</span>
+      </div>
+
+      <div class="nav-section-label">Analyse</div>
+
+      <div class="nav-item">
+        <span class="nav-icon">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <rect x="2" y="2" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 8H11M5 5.5H11M5 10.5H8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        Audit de site
+      </div>
+
+      <div class="nav-item">
+        <span class="nav-icon">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8C3 8 5 4 8 4C11 4 13 8 13 8C13 8 11 12 8 12C5 12 3 8 3 8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <circle cx="8" cy="8" r="2" stroke="currentColor" stroke-width="1.3"/>
+          </svg>
+        </span>
+        Backlinks
+      </div>
+
+      <div class="nav-section-label">IA générative</div>
+
+      <div class="nav-item">
+        <span class="nav-icon">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M8 2L9.5 6.5H14L10.5 9L11.5 13.5L8 11L4.5 13.5L5.5 9L2 6.5H6.5L8 2Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        AI Search
+        <span class="nav-badge" style="background: var(--accent-dim); color: var(--accent); border-color: rgba(249,143,3,0.3);">new</span>
+      </div>
+
+      <div class="nav-item">
+        <span class="nav-icon">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M8 5V8L10 10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        GEO Visibility
+      </div>
+
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="avatar">AS</div>
+      <div class="user-info">
+        <div class="user-name">Antoine S.</div>
+        <div class="user-role">Lead Ops · WeFiiT</div>
+      </div>
+      <div class="settings-btn">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <circle cx="7" cy="7" r="2" stroke="currentColor" stroke-width="1.3"/>
+          <path d="M7 1.5V3M7 11V12.5M12.5 7H11M3 7H1.5M10.95 3.05L9.9 4.1M4.1 9.9L3.05 10.95M10.95 10.95L9.9 9.9M4.1 4.1L3.05 3.05" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- ═══════════════════════ MAIN ════════════════════════════ -->
+  <main class="main">
+
+    <!-- Topbar -->
+    <header class="topbar">
+      <h1 class="page-title">Rank Tracking</h1>
+      <div class="topbar-actions">
+        <button class="btn btn-ghost">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M7 1L8.5 5.5H13L9.5 8L10.5 12.5L7 10L3.5 12.5L4.5 8L1 5.5H5.5L7 1Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+          </svg>
+          Rapports
+        </button>
+        <button class="btn btn-secondary">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M11.5 7C11.5 9.48528 9.48528 11.5 7 11.5C4.51472 11.5 2.5 9.48528 2.5 7C2.5 4.51472 4.51472 2.5 7 2.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            <path d="M10 2.5L11.5 4L13 2.5M11.5 2.5V5.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Vérifier maintenant
+        </button>
+        <button class="btn btn-primary">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M7 2.5V11.5M2.5 7H11.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          Ajouter un domaine
+        </button>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <div class="content">
+
+      <!-- Status bar -->
+      <div class="status-bar">
+        <span class="status-dot"></span>
+        <span class="status-text">3 domaines suivis</span>
+        <span class="status-sep">·</span>
+        <span class="status-text">dernière vérif. il y a 2 jours</span>
+        <span class="status-sep">·</span>
+        <span class="status-text" style="color: var(--green-text);">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" style="display:inline-block; vertical-align: middle; margin-right: 2px;">
+            <circle cx="5" cy="5" r="4" stroke="currentColor" stroke-width="1.2"/>
+            <path d="M3 5L4.5 6.5L7 3.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          0 alertes actives
+        </span>
+      </div>
+
+      <!-- KPI Grid -->
+      <div class="kpi-grid">
+
+        <!-- Card 1 : Mots-clés suivis -->
+        <div class="kpi-card kpi-primary">
+          <div class="kpi-header">
+            <div class="kpi-label">Mots-clés suivis</div>
+            <div class="kpi-icon accent">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1.4"/>
+                <path d="M9.5 9.5L12.5 12.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+          <div class="kpi-value">147</div>
+          <div class="kpi-meta">
+            <span class="kpi-delta positive">
+              <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
+                <path d="M4 6.5V1.5M1.5 4L4 1.5L6.5 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              +12
+            </span>
+            <span class="kpi-delta-label">ce mois</span>
+          </div>
+          <div class="sparkline">
+            <div class="spark-bar" style="height: 35%;"></div>
+            <div class="spark-bar" style="height: 45%;"></div>
+            <div class="spark-bar active" style="height: 40%;"></div>
+            <div class="spark-bar active" style="height: 55%;"></div>
+            <div class="spark-bar active" style="height: 50%;"></div>
+            <div class="spark-bar active" style="height: 65%;"></div>
+            <div class="spark-bar active" style="height: 60%;"></div>
+            <div class="spark-bar active" style="height: 70%;"></div>
+            <div class="spark-bar active" style="height: 75%;"></div>
+            <div class="spark-bar active" style="height: 80%;"></div>
+            <div class="spark-bar active" style="height: 85%;"></div>
+            <div class="spark-bar active" style="height: 100%;"></div>
+          </div>
+        </div>
+
+        <!-- Card 2 : Position moyenne -->
+        <div class="kpi-card kpi-green">
+          <div class="kpi-header">
+            <div class="kpi-label">Position moyenne</div>
+            <div class="kpi-icon green">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M1.5 10L5 6.5L8 9L12.5 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <div class="kpi-value">23<span>.4</span></div>
+          <div class="kpi-meta">
+            <span class="kpi-delta positive">
+              <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
+                <path d="M4 6.5V1.5M1.5 4L4 1.5L6.5 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              +4 pos.
+            </span>
+            <span class="kpi-delta-label">amélioration ce mois</span>
+          </div>
+          <div class="sparkline">
+            <div class="spark-bar active" style="height: 100%;"></div>
+            <div class="spark-bar active" style="height: 90%;"></div>
+            <div class="spark-bar active" style="height: 95%;"></div>
+            <div class="spark-bar active" style="height: 80%;"></div>
+            <div class="spark-bar active" style="height: 85%;"></div>
+            <div class="spark-bar active" style="height: 70%;"></div>
+            <div class="spark-bar active" style="height: 72%;"></div>
+            <div class="spark-bar active" style="height: 65%;"></div>
+            <div class="spark-bar active" style="height: 60%;"></div>
+            <div class="spark-bar active" style="height: 55%;"></div>
+            <div class="spark-bar active" style="height: 50%;"></div>
+            <div class="spark-bar active" style="height: 45%;"></div>
+          </div>
+        </div>
+
+        <!-- Card 3 : Vérifications -->
+        <div class="kpi-card kpi-blue">
+          <div class="kpi-header">
+            <div class="kpi-label">Vérifications ce mois</div>
+            <div class="kpi-icon blue">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.4"/>
+                <path d="M7 4V7.5L9 9.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <div class="kpi-value">12</div>
+          <div class="kpi-meta">
+            <span class="kpi-delta neutral">≈ 3/sem</span>
+            <span class="kpi-delta-label">fréquence moyenne</span>
+          </div>
+          <div class="sparkline">
+            <div class="spark-bar" style="height: 30%;"></div>
+            <div class="spark-bar active" style="height: 60%;"></div>
+            <div class="spark-bar" style="height: 25%;"></div>
+            <div class="spark-bar active" style="height: 50%;"></div>
+            <div class="spark-bar active" style="height: 75%;"></div>
+            <div class="spark-bar" style="height: 30%;"></div>
+            <div class="spark-bar active" style="height: 55%;"></div>
+            <div class="spark-bar active" style="height: 65%;"></div>
+            <div class="spark-bar" style="height: 35%;"></div>
+            <div class="spark-bar active" style="height: 60%;"></div>
+            <div class="spark-bar active" style="height: 70%;"></div>
+            <div class="spark-bar active" style="height: 100%;"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Domain table -->
+      <div class="table-section">
+
+        <div class="table-header">
+          <div class="table-title-group">
+            <span class="table-title">Domaines suivis</span>
+            <span class="table-count">3</span>
+          </div>
+          <div class="table-actions">
+            <div class="search-input">
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                <circle cx="5.5" cy="5.5" r="4.5" stroke="currentColor" stroke-width="1.3"/>
+                <path d="M9 9L12 12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+              </svg>
+              <span class="search-placeholder">Rechercher un domaine…</span>
+            </div>
+            <button class="btn btn-ghost" style="padding: 6px 10px; font-size: 12px;">
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                <path d="M2 4H11M4 6.5H9M5.5 9H7.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+              </svg>
+              Filtres
+            </button>
+            <button class="btn btn-ghost" style="padding: 6px 10px; font-size: 12px;">
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                <path d="M6.5 2V11M2 6.5L6.5 11L11 6.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Export
+            </button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th class="sortable sorted">
+                  Domaine
+                  <svg class="sort-icon" width="8" height="8" viewBox="0 0 8 8" fill="none">
+                    <path d="M4 7V1M1 4L4 1L7 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </th>
+                <th class="sortable">
+                  Mots-clés
+                  <svg class="sort-icon" width="8" height="8" viewBox="0 0 8 8" fill="none">
+                    <path d="M4 1V7M1 4L4 7L7 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </th>
+                <th class="sortable">
+                  Dernière vérif.
+                  <svg class="sort-icon" width="8" height="8" viewBox="0 0 8 8" fill="none">
+                    <path d="M4 1V7M1 4L4 7L7 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </th>
+                <th>Statut</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <!-- Row 1 : wefiit.com -->
+              <tr>
+                <td>
+                  <div class="domain-cell">
+                    <div class="domain-favicon wefiit">W</div>
+                    <div>
+                      <div class="domain-name">wefiit.com</div>
+                      <div style="font-size: 10px; color: var(--text-muted); margin-top: 1px; font-family: 'DM Mono', monospace;">HTTPS · 89 pages indexées</div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="kw-count">
+                    89
+                    <div class="kw-bar-wrap">
+                      <div class="kw-bar" style="width: 100%;"></div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="date-cell">15/05/2026</div>
+                  <div style="font-size: 10px; color: var(--text-muted); margin-top: 2px; font-family: 'DM Mono', monospace;">il y a 11 jours</div>
+                </td>
+                <td>
+                  <span class="badge badge-active">
+                    <span class="badge-dot"></span>
+                    Actif
+                  </span>
+                </td>
+                <td>
+                  <div class="actions-cell">
+                    <button class="action-btn primary-action">
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1.3"/>
+                        <path d="M4 6H8M6 4V8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                      </svg>
+                      Voir
+                    </button>
+                    <div class="icon-btn" title="Lancer vérification">
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <path d="M10 6C10 8.20914 8.20914 10 6 10C3.79086 10 2 8.20914 2 6C2 3.79086 3.79086 2 6 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                        <path d="M8 2L9.5 3.5L11 2M9.5 2V4.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                    <div class="icon-btn" title="Paramètres">
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <circle cx="6" cy="6" r="1.5" stroke="currentColor" stroke-width="1.2"/>
+                        <path d="M6 1.5V3M6 9V10.5M10.5 6H9M3 6H1.5M9.18 2.82L8.12 3.88M3.88 8.12L2.82 9.18M9.18 9.18L8.12 8.12M3.88 3.88L2.82 2.82" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 2 : caisse-epargne.fr -->
+              <tr>
+                <td>
+                  <div class="domain-cell">
+                    <div class="domain-favicon ce">CE</div>
+                    <div>
+                      <div class="domain-name">caisse-epargne.fr</div>
+                      <div style="font-size: 10px; color: var(--text-muted); margin-top: 1px; font-family: 'DM Mono', monospace;">HTTPS · 42 pages indexées</div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="kw-count">
+                    34
+                    <div class="kw-bar-wrap">
+                      <div class="kw-bar" style="width: 38%;"></div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="date-cell">12/05/2026</div>
+                  <div style="font-size: 10px; color: var(--text-muted); margin-top: 2px; font-family: 'DM Mono', monospace;">il y a 14 jours</div>
+                </td>
+                <td>
+                  <span class="badge badge-active">
+                    <span class="badge-dot"></span>
+                    Actif
+                  </span>
+                </td>
+                <td>
+                  <div class="actions-cell">
+                    <button class="action-btn primary-action">
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1.3"/>
+                        <path d="M4 6H8M6 4V8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                      </svg>
+                      Voir
+                    </button>
+                    <div class="icon-btn" title="Lancer vérification">
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <path d="M10 6C10 8.20914 8.20914 10 6 10C3.79086 10 2 8.20914 2 6C2 3.79086 3.79086 2 6 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                        <path d="M8 2L9.5 3.5L11 2M9.5 2V4.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                    <div class="icon-btn" title="Paramètres">
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <circle cx="6" cy="6" r="1.5" stroke="currentColor" stroke-width="1.2"/>
+                        <path d="M6 1.5V3M6 9V10.5M10.5 6H9M3 6H1.5M9.18 2.82L8.12 3.88M3.88 8.12L2.82 9.18M9.18 9.18L8.12 8.12M3.88 3.88L2.82 2.82" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 3 : exemple-client.com (En attente) -->
+              <tr>
+                <td>
+                  <div class="domain-cell">
+                    <div class="domain-favicon ex" style="opacity: 0.6;">?</div>
+                    <div>
+                      <div class="domain-name" style="color: var(--text-secondary);">exemple-client.com</div>
+                      <div style="font-size: 10px; color: var(--text-muted); margin-top: 1px; font-family: 'DM Mono', monospace;">Indexation en attente…</div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="kw-count">
+                    24
+                    <div class="kw-bar-wrap">
+                      <div class="kw-bar" style="width: 27%; opacity: 0.4;"></div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="empty-next-check">
+                    <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+                      <circle cx="5.5" cy="5.5" r="4.5" stroke="currentColor" stroke-width="1.2"/>
+                      <path d="M5.5 3.5V5.5L7 7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Jamais vérifiée
+                  </div>
+                </td>
+                <td>
+                  <span class="badge badge-pending">
+                    <span class="badge-dot"></span>
+                    En attente
+                  </span>
+                </td>
+                <td>
+                  <div class="actions-cell">
+                    <button class="action-btn" style="border-color: rgba(249,143,3,0.35); color: var(--accent); background: var(--accent-dim);">
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <path d="M10 6C10 8.20914 8.20914 10 6 10C3.79086 10 2 8.20914 2 6C2 3.79086 3.79086 2 6 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                        <path d="M8 2L9.5 3.5L11 2M9.5 2V4.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                      Lancer
+                    </button>
+                    <div class="icon-btn" title="Paramètres">
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <circle cx="6" cy="6" r="1.5" stroke="currentColor" stroke-width="1.2"/>
+                        <path d="M6 1.5V3M6 9V10.5M10.5 6H9M3 6H1.5M9.18 2.82L8.12 3.88M3.88 8.12L2.82 9.18M9.18 9.18L8.12 8.12M3.88 3.88L2.82 2.82" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-footer">
+          <div class="table-footer-info">Affichage 1–3 sur 3 domaines</div>
+          <div class="pagination">
+            <div class="page-btn">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                <path d="M6.5 2L3.5 5L6.5 8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="page-btn active">1</div>
+            <div class="page-btn">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                <path d="M3.5 2L6.5 5L3.5 8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Callout -->
+      <div class="callout">
+        <div class="callout-icon">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M8 2L9.5 6.5H14L10.5 9L11.5 13.5L8 11L4.5 13.5L5.5 9L2 6.5H6.5L8 2Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" fill="rgba(249,143,3,0.15)"/>
+          </svg>
+        </div>
+        <div class="callout-text">
+          <strong>AI Search & GEO Visibility</strong> — Suivez votre visibilité dans ChatGPT, Perplexity et Gemini. Activez le module GEO pour wefiit.com.
+        </div>
+        <div class="callout-action">
+          <button class="btn btn-secondary" style="font-size: 12px; padding: 6px 12px;">
+            Activer GEO
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+              <path d="M2.5 5.5H8.5M6 3L8.5 5.5L6 8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>

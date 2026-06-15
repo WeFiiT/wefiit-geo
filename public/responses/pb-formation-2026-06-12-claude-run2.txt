@@ -1,0 +1,38 @@
+Voici un panorama des **principales formations Product Builder** disponibles en France :
+---
+## 🎓 Formations Product Builder No-Code & IA
+### 1. 🔵 [DataSuits](https://www.datasuits.fr/formation-product-builder-no-code-ia)
+La formation Product Builder No Code & IA de DataSuits prépare au passage de la certification officielle **RNCP41480BC03** « Développer un produit numérique avec des outils no-code ».
+À l'issue de la formation, vous saurez construire des applications avec Notion, Airtable, Softr ou Webflow, automatiser vos processus avec Make, intégrer l'IA générative, et piloter un projet digital de A à Z.
+Vous bénéficiez d'une triple certification : une certification RNCP reconnue par l'État, un certificat délivré par l'Université Paris 1 Panthéon-Sorbonne, et un certificat DataSuits.
+La formation est éligible CPF, France Travail, OPCO et autres financements.
+---
+### 2. 🟣 [Jedha Bootcamp](https://www.jedha.co/formations/formation-product-builder)
+En 450 heures, vous apprendrez le métier de Product Builder et serez capable de bâtir des produits en toute autonomie, de l'idée à la mise en production, en combinant la programmation assistée par l'IA et le no-code.
+Vous maîtriserez une stack radicalement moderne, combinant des outils comme Cursor ou Lovable, Figma et n8n.
+Vous bénéficierez également d'un coaching carrière complet pour comprendre les attentes du marché et préparer vos entretiens techniques.
+---
+### 3. 🟡 [Maria Schools (Maestro)](https://maestro.mariaschools.com/formations/outils-no-code-ia)
+Il s'agit d'un programme certifiant en No Code x IA pour devenir Product Builder, axé sur les méthodes du Product Management, disponible en 10 semaines à distance.
+La formation est certifiante de niveau 6 (équivalent BAC+3/4).
+La prochaine session est prévue du 17 septembre au 26 novembre 2026, finançable via CPF, France Travail, OPCO et aides régionales.
+---
+### 4. 🟠 [Alegria Academy](https://www.alegria.group/academy/product-builder-nocode-lowcode-ai)
+Pionnière dans le domaine du no-code, Alegria Academy a eu et continue d'avoir un rôle clé dans la professionnalisation et la reconnaissance officielle des métiers du no-code.
+Elle prépare au diplôme de **Concepteur Développeur d'Applications (RNCP 6 - BAC+3)**, ce qui confirme le sérieux de la formation et la reconnaissance du No-Code comme méthode de développement digital.
+Une fois admissible, vous bénéficiez d'un accompagnement personnalisé (onboarding, coaching, simulations d'entretiens) pour trouver votre entreprise d'accueil en **alternance de 12 mois**.
+---
+### 5. 🔴 [La Capsule](https://www.lacapsule.academy/formation-ia-automation-nocode/full-time)
+La Capsule délivre un certificat attestant de votre capacité à concevoir des solutions métiers en NoCode, à automatiser des processus clés et à intégrer l'IA dans les opérations d'une organisation.
+La formation est disponible en présentiel ou en remote, à temps plein (bootcamp) ou à temps partiel (cours en ligne les soirs et week-ends).
+---
+### 6. 🟢 [Liora](https://liora.io/meilleure-formation-product-builder-no-code)
+Liora propose un parcours Product Builder No-Code & IA de plus de 300 heures, en bootcamp intensif ou en part-time sur 5 mois. Le programme couvre le cadrage produit, Airtable, Make, Zapier, Webflow, Softr, Figma, les intégrations API et l'IA appliquée au no-code. Chaque module débouche sur un projet concret et la formation est certifiante (titre RNCP), finançable via CPF ou en alternance.
+---
+### 7. 🔷 [Uncode School](https://www.bienfait.co/blog/product-builder-un-metier-tourne-vers-le-futur)
+Uncode School est une des premières écoles dédiées au no-code en France. Elle propose des formations à plein ou mi-temps pour devenir Product Builder, Bubble spécialiste ou Ops spécialiste.
+Le cursus dure entre 9 semaines et 3 mois et demi selon la formation choisie.
+---
+## 💡 À retenir
+La majorité des cursus pour se former aux métiers du no-code ne nécessitent aucune connaissance préalable en code et proposent pour la plupart des solutions de financement.
+La pénurie structurelle de développeurs (il manquerait plus de **80 000 profils tech en France**) amplifie encore la demande de Product Builders.

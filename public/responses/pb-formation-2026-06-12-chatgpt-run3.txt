@@ -1,0 +1,18 @@
+Oui, il existe désormais plusieurs organismes en France qui proposent des formations spécifiquement orientées Product Builder (No-Code + IA + Product Management léger).
+Les plus connus :
+École Cube — Bootcamp « Product Builder No-Code & IA », certification RNCP, financement CPF possible. Très orienté création de produits, automatisation et outils métiers. École Cube+1
+Jedha — Formation « Product Builder Fullstack » avec IA, Cursor, Lovable, n8n, Figma, etc. Plus technique et proche du développement assisté par IA. Jedha+1
+Uncode School — Formation « Product Builder No-Code & IA » orientée reconversion professionnelle et portfolio. uncodeschool.com+1
+Airmakers — Plus spécialisé Airtable, automatisation et IA. Idéal si tu veux construire des outils métiers et workflows. Airmakers
+Maria Schools (Maestro) — Bootcamp intensif Product Builder en présentiel, très axé cas pratiques et projets d'entreprise. maestro.mariaschools.com
+École Ri7 — Parcours diplômant orienté no-code et IA. École ri7
+Comment choisir ?
+Pour une reconversion professionnelle complète : École Cube, Jedha ou Uncode School.
+Pour lancer une startup ou construire rapidement des MVP : Jedha ou École Cube.
+Pour devenir expert automatisation / opérations internes : Airmakers.
+Pour du présentiel intensif avec beaucoup de pratique : Maria Schools.
+Si tu me précises :
+ton profil actuel (PM, développeur, designer, entrepreneur, reconversion, etc.),
+ton budget,
+présentiel ou distanciel,
+je peux te dire laquelle est probablement la plus adaptée à ton cas.

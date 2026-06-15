@@ -1,0 +1,1200 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WeFiiT open-seo — Design v2 (proposition)</title>
+  <!--
+    Allroundgothic → pas dispo sur Google Fonts (police custom WeFiiT).
+    On simule via 'Nunito' qui a des formes arrondies similaires.
+    En production, importer la vraie police WeFiiT.
+  -->
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+/* =====================================================================
+   WeFiiT open-seo — Design v2 (proposition)
+   Basé sur DESIGN.md v1 alpha
+   ─────────────────────────────────────────────────────────────────────
+   CHANGEMENTS vs v1 (Dashboard.html) :
+   ① Favicon WeFiiT (W orange gradient) remplace le texte "open SEO"
+   ② Fond bleu clair rgb(242, 244, 255) = --surface-alt du design system
+   ③ Orange rgb(249, 143, 3) sur accents, KPI hero, strip, badges
+   ④ Allroundgothic simulée (Nunito) sur les headings
+   ⑤ Boutons CTA en pill (border-radius: 500px) — signature WeFiiT
+   ⑥ Gradient texte bleu sur page-title (signature h1/h2)
+   ===================================================================== */
+
+/* ──────────────── DESIGN TOKENS — source : DESIGN.md ──────────────── */
+:root {
+  /* Colors (copie exacte DESIGN.md) */
+  --primary:        #002882;
+  --primary-dark:   #001d84;
+  --accent:         #2a4cff;
+  --accent-light:   #858fd6;
+  --cta-start:      #f98f03;   /* rgb(249, 143, 3) */
+  --cta-end:        #e95400;
+  --surface:        #ffffff;
+  --surface-alt:    #f2f4ff;   /* rgb(242, 244, 255) */
+  --neutral-border: #eff0f6;
+  --neutral-text:   #636b75;
+
+  /* Alias utilitaires */
+  --navy:           var(--primary);
+  --navy-d:         var(--primary-dark);
+  --orange:         var(--cta-start);
+  --orange-deep:    var(--cta-end);
+  --orange-soft:    rgba(249, 143, 3, 0.10);
+  --orange-mid:     rgba(249, 143, 3, 0.18);
+  --bg:             var(--surface-alt);      /* ← fond global bleu clair */
+  --bg-2:           #e8ebff;
+  --bg-3:           #dde1ff;
+  --border:         var(--neutral-border);
+  --border-strong:  #d0d4f0;
+  --text:           #1a1c30;
+  --text-2:         #4a4e70;
+  --text-3:         #7a7ea8;
+  --text-soft:      #a4a8c8;
+  --brand:          var(--primary);
+  --good:           #198754;
+  --good-bg:        #e8f3ec;
+  --bad:            #c13d2b;
+  --bad-bg:         #fce8e3;
+  --warn:           #b97a05;
+  --warn-bg:        #fbeed1;
+
+  /* Spacing (source DESIGN.md) */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+
+  /* Rounded (source DESIGN.md) */
+  --r-none: 0px;
+  --r-sm:   8px;
+  --r-md:   16px;
+  --r-lg:   24px;
+  --r-full: 500px;   /* ← pill CTA signature WeFiiT */
+
+  /* Shadows (source DESIGN.md) */
+  --shadow-card: 0 0 30px rgba(0, 0, 0, 0.10);
+  --shadow-sm:   0 2px 8px rgba(0, 24, 130, 0.06);
+  --shadow-pop:  0 12px 32px rgba(0, 24, 80, 0.12), 0 0 0 1px var(--border);
+
+  /* Layout */
+  --sidebar-w:  260px;
+  --topbar-h:   60px;
+  --max-w:      1140px;
+
+  /* Typo (source DESIGN.md) */
+  --font-display: 'Nunito', 'Allroundgothic', -apple-system, sans-serif;  /* ← headings h1-h3 */
+  --font-body:    'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Gradient texte signature h1/h2 */
+  --grad-text: linear-gradient(270deg, var(--primary) 0%, var(--accent) 100%);
+  /* Gradient CTA */
+  --grad-cta:  linear-gradient(270deg, var(--cta-end), var(--cta-start));
+  --grad-cta-hover: linear-gradient(270deg, var(--cta-start), var(--cta-end));
+}
+
+/* ──────────────── RESET ──────────────── */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+button { font-family: inherit; cursor: pointer; }
+a { text-decoration: none; color: inherit; }
+
+/* ──────────────── TYPO ──────────────── */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 400;   /* Allroundgothic : JAMAIS bold */
+  margin: 0;
+  line-height: 1.15;
+}
+
+/* Gradient texte h1/h2 — signature WeFiiT */
+.grad-heading {
+  background: var(--grad-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+
+/* =====================================================================
+   APP SHELL
+   ===================================================================== */
+.app {
+  display: grid;
+  grid-template-columns: var(--sidebar-w) 1fr;
+  min-height: 100vh;
+}
+
+/* =====================================================================
+   SIDEBAR — Deep Navy, toujours sombre
+   ===================================================================== */
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  background: var(--navy);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.sidebar > .sb-footer { margin-top: auto; }
+
+/* ── ① FAVICON WeFiiT — "W" gradient orange ── */
+.sb-head {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 18px 16px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sb-favicon {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--r-sm);
+  /* Gradient orange → deep orange = signature CTA WeFiiT */
+  background: var(--grad-cta);
+  color: white;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -0.03em;
+  flex-shrink: 0;
+  /* Halo orange subtil sous le favicon */
+  box-shadow: 0 2px 10px rgba(249, 143, 3, 0.40);
+}
+
+.sb-app-name {
+  flex: 1;
+  min-width: 0;
+  line-height: 1.2;
+}
+.sb-app-label {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+.sb-app-sub {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.40);
+  font-weight: 500;
+  margin-top: 1px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+/* Navigation sections */
+.sb-section {
+  margin-top: 16px;
+  padding: 0 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.sb-section-head {
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.28);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 10px 4px;
+  user-select: none;
+}
+
+.sb-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.52);
+  font-size: 13.5px;
+  font-weight: 400;
+  transition: background 100ms, color 100ms;
+  border: none;
+  background: transparent;
+  text-align: left;
+  width: 100%;
+  position: relative;
+}
+.sb-item:hover {
+  background: rgba(255, 255, 255, 0.07);
+  color: rgba(255, 255, 255, 0.82);
+}
+.sb-item.active {
+  background: rgba(255, 255, 255, 0.10);
+  color: #fff;
+  font-weight: 500;
+}
+/* ③ Trait orange sur l'item actif */
+.sb-item.active::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 8px; bottom: 8px;
+  width: 3px;
+  background: var(--orange);
+  border-radius: 0 2px 2px 0;
+}
+.sb-item-ico {
+  width: 16px; height: 16px;
+  display: grid;
+  place-items: center;
+  opacity: 0.6;
+  flex-shrink: 0;
+  font-size: 13px;
+}
+.sb-item.active .sb-item-ico { opacity: 1; }
+
+/* ③ Badge orange sur les items avec nouveautés */
+.sb-badge {
+  margin-left: auto;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--orange);
+  background: var(--orange-soft);
+  padding: 1px 6px;
+  border-radius: var(--r-full);
+  flex-shrink: 0;
+}
+
+/* Footer sidebar */
+.sb-footer {
+  padding: 14px 16px 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.sb-avatar {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  /* Avatar = gradient orange aussi */
+  background: var(--grad-cta);
+  color: white;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+.sb-footer-name { font-size: 12.5px; font-weight: 500; color: rgba(255,255,255,0.75); }
+.sb-footer-role { font-size: 10.5px; color: rgba(255,255,255,0.32); }
+
+/* =====================================================================
+   MAIN + TOPBAR — ② fond bleu clair
+   ===================================================================== */
+.main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: var(--surface-alt);   /* ← rgb(242, 244, 255) */
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 12;
+  height: var(--topbar-h);
+  /* ② Topbar translucide sur fond bleu clair */
+  background: rgba(242, 244, 255, 0.90);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.tb-left { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.tb-right { display: flex; align-items: center; gap: 8px; }
+
+.crumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--text-3);
+}
+.crumbs .sep { color: var(--text-soft); }
+.crumbs .cur { color: var(--text); font-weight: 500; }
+
+.icon-btn {
+  width: 32px; height: 32px;
+  border-radius: 6px;
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  color: var(--text-2);
+  font-size: 15px;
+  transition: background 100ms, border-color 100ms;
+}
+.icon-btn:hover {
+  background: var(--bg-2);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.run-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px 5px 10px;
+  border-radius: var(--r-full);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--text-2);
+}
+.run-chip .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--good); }
+
+/* =====================================================================
+   PAGE SHELL
+   ===================================================================== */
+.page {
+  padding: 36px 40px 80px;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.page-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+/* ⑥ Titre h1 avec gradient texte bleu — signature DESIGN.md */
+.page-title {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 400;           /* Allroundgothic : jamais bold */
+  letter-spacing: -0.04em;
+  line-height: 36px;
+  margin: 0 0 6px;
+  /* Gradient texte bleu */
+  background: var(--grad-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.page-sub {
+  font-size: 14px;
+  color: var(--neutral-text);
+  margin: 0;
+  line-height: 20px;
+}
+.page-actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+
+/* =====================================================================
+   STRIP — ③ accent orange sur le bord gauche
+   ===================================================================== */
+.alert-strip {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--orange);  /* ← signature orange */
+  border-radius: var(--r-sm);
+  padding: var(--space-md) 20px;
+  margin-bottom: var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  box-shadow: var(--shadow-sm);
+}
+.alert-strip-icon {
+  width: 36px; height: 36px;
+  border-radius: var(--r-sm);
+  background: var(--orange-soft);
+  display: grid;
+  place-items: center;
+  font-size: 17px;
+  flex-shrink: 0;
+}
+.alert-strip-body {
+  flex: 1;
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.5;
+}
+.alert-strip-body strong { color: var(--primary); }
+.alert-strip-cta {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--orange);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 14px;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--orange-soft);
+  transition: background 120ms;
+}
+.alert-strip-cta:hover { background: var(--orange-soft); }
+
+/* =====================================================================
+   BOUTONS — ⑤ CTA en pill (border-radius: 500px) — signature WeFiiT
+   ===================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 16px;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 100ms, border-color 100ms, transform 60ms;
+  white-space: nowrap;
+}
+.btn:hover { background: var(--bg-2); border-color: var(--text-soft); }
+.btn:active { transform: translateY(1px); }
+
+/* ⑤ CTA primary = pill orange — EXACTEMENT comme DESIGN.md */
+.btn-primary {
+  background: var(--grad-cta);
+  color: white;
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 10px 28px;
+  border-radius: var(--r-full);   /* pill signature */
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  box-shadow: 0 2px 12px rgba(249, 143, 3, 0.28);
+}
+.btn-primary:hover {
+  background: var(--grad-cta-hover);
+  box-shadow: 0 4px 18px rgba(249, 143, 3, 0.40);
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: transparent;
+  color: var(--text-2);
+}
+.btn-ghost:hover { background: var(--bg-2); color: var(--text); border-color: transparent; }
+.btn-sm { padding: 6px 12px; font-size: 12.5px; }
+
+/* =====================================================================
+   KPI CARDS — fond blanc sur bleu clair = contraste propre
+   ===================================================================== */
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: var(--space-lg);
+}
+@media (max-width: 1100px) { .kpi-row { grid-template-columns: repeat(2, 1fr); } }
+
+.kpi {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  padding: 22px 24px;
+  position: relative;
+  transition: border-color 150ms, box-shadow 150ms;
+  box-shadow: var(--shadow-sm);
+}
+.kpi:hover { border-color: var(--border-strong); box-shadow: var(--shadow-card); }
+
+/* ③ Barre top : orange pour le KPI hero */
+.kpi.kpi-orange::after {
+  content: '';
+  position: absolute;
+  top: -1px; left: -1px; right: -1px;
+  height: 3px;
+  background: var(--grad-cta);
+  border-radius: var(--r-sm) var(--r-sm) 0 0;
+}
+.kpi.kpi-navy::after {
+  content: '';
+  position: absolute;
+  top: -1px; left: -1px; right: -1px;
+  height: 3px;
+  background: var(--navy);
+  border-radius: var(--r-sm) var(--r-sm) 0 0;
+}
+.kpi.kpi-accent::after {
+  content: '';
+  position: absolute;
+  top: -1px; left: -1px; right: -1px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: var(--r-sm) var(--r-sm) 0 0;
+}
+
+.kpi-lab {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--text-3);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.kpi-ico {
+  width: 22px; height: 22px;
+  display: grid;
+  place-items: center;
+  border-radius: 5px;
+  background: var(--bg-2);
+  font-size: 12px;
+}
+
+.kpi-val {
+  font-family: var(--font-display);  /* ← Allroundgothic pour les chiffres KPI */
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin-bottom: 12px;
+  font-variant-numeric: tabular-nums;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+.kpi-val .unit { font-size: 18px; color: var(--text-3); font-weight: 400; }
+/* ③ KPI hero = valeur en orange */
+.kpi-val.orange { color: var(--orange); }
+
+.kpi-foot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--text-2);
+}
+.delta {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-size: 11.5px;
+}
+.delta.up   { background: var(--good-bg); color: var(--good); }
+.delta.down { background: var(--bad-bg);  color: var(--bad);  }
+.delta.flat { background: var(--bg-3);    color: var(--text-2); }
+
+/* =====================================================================
+   CARDS — fond blanc, coins arrondis sm (DESIGN.md = 8px pour UI interne)
+   ===================================================================== */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  overflow: hidden;
+  transition: border-color 150ms, box-shadow 150ms;
+  box-shadow: var(--shadow-sm);
+}
+.card:hover { border-color: var(--border-strong); box-shadow: var(--shadow-card); }
+
+.card-head {
+  padding: 18px 22px 14px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid var(--border);
+}
+.card-head h3 {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 400;   /* Allroundgothic jamais bold */
+  letter-spacing: -0.01em;
+  color: var(--primary);
+  margin: 0 0 3px;
+}
+.card-head p { font-size: 13px; color: var(--neutral-text); margin: 0; }
+.card-body { padding: 18px 22px 22px; }
+.card-body.flush { padding: 0; }
+
+/* =====================================================================
+   TABLE — ② fond bleu clair dans thead
+   ===================================================================== */
+.tbl {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+.tbl thead th {
+  text-align: left;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--text-3);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+  /* ② thead sur fond bleu clair */
+  background: var(--surface-alt);
+  white-space: nowrap;
+}
+.tbl tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background 80ms;
+}
+.tbl tbody tr:last-child { border-bottom: none; }
+.tbl tbody tr:hover { background: rgba(242, 244, 255, 0.7); }
+.tbl td { padding: 12px 16px; color: var(--text); vertical-align: middle; }
+
+/* =====================================================================
+   CHIP / BADGE
+   ===================================================================== */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border-radius: var(--r-full);   /* pill = signature WeFiiT */
+  font-size: 11px;
+  font-weight: 600;
+  background: var(--bg-3);
+  color: var(--text-2);
+}
+.chip.good   { background: var(--good-bg); color: var(--good); }
+.chip.bad    { background: var(--bad-bg);  color: var(--bad);  }
+.chip.warn   { background: var(--warn-bg); color: var(--warn); }
+/* ③ Chip orange */
+.chip.orange { background: var(--orange-soft); color: var(--orange); font-weight: 700; }
+
+/* =====================================================================
+   RANK PILL
+   ===================================================================== */
+.rank-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  background: var(--bg-2);
+  color: var(--text-2);
+}
+.rank-pill.top3  { background: rgba(25, 135, 84, 0.10); color: var(--good); }
+/* ③ Top 10 en orange (entre top3 vert et hors-10 rouge) */
+.rank-pill.top10 { background: var(--orange-soft); color: var(--orange); }
+.rank-pill.miss  { background: var(--bad-bg); color: var(--bad); }
+
+/* =====================================================================
+   SPARKLINE
+   ===================================================================== */
+.spark {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 28px;
+}
+.spark-bar {
+  width: 4px;
+  border-radius: 2px 2px 0 0;
+  background: var(--bg-3);
+}
+.spark-bar.hi  { background: var(--orange); }
+.spark-bar.mid { background: var(--accent-light); }
+.spark-bar.lo  { background: var(--bg-3); }
+
+/* =====================================================================
+   GRILLES
+   ===================================================================== */
+.grid-3-1 { display: grid; grid-template-columns: 2fr 1fr; gap: 18px; }
+@media (max-width: 1000px) { .grid-3-1 { grid-template-columns: 1fr; } }
+
+/* Séparateur section */
+.section-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin: 32px 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* Barre de progression */
+.progress-bar {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--bg-3);
+  overflow: hidden;
+  margin-top: 6px;
+}
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  background: var(--grad-cta); /* ← orange par défaut */
+}
+.progress-bar-fill.accent { background: var(--accent); }
+.progress-bar-fill.navy { background: var(--navy); }
+
+/* =====================================================================
+   NOTE DEMO (coin bas-droit)
+   ===================================================================== */
+.demo-note {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--navy);
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 12px;
+  padding: 12px 16px;
+  border-radius: var(--r-sm);
+  border-left: 3px solid var(--orange);
+  max-width: 290px;
+  line-height: 1.55;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
+  z-index: 999;
+}
+.demo-note strong { color: var(--orange); }
+.demo-note ul { margin: 6px 0 0 16px; padding: 0; }
+.demo-note li { margin-bottom: 3px; }
+  </style>
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ============================================================
+       SIDEBAR
+       ============================================================ -->
+  <aside class="sidebar">
+
+    <!-- ① Favicon WeFiiT — "W" gradient orange remplace "open SEO" -->
+    <div class="sb-head">
+      <div class="sb-favicon">W</div>
+      <div class="sb-app-name">
+        <div class="sb-app-label">open-seo</div>
+        <div class="sb-app-sub">WeFiiT · Tableau de bord</div>
+      </div>
+    </div>
+
+    <div class="sb-section">
+      <div class="sb-section-head">Principal</div>
+      <button class="sb-item active">
+        <span class="sb-item-ico">📊</span>
+        Vue d'ensemble
+      </button>
+      <button class="sb-item">
+        <span class="sb-item-ico">📈</span>
+        Rank Tracking
+        <span class="sb-badge">24</span>
+      </button>
+      <button class="sb-item">
+        <span class="sb-item-ico">🔍</span>
+        Mots-clés
+      </button>
+      <button class="sb-item">
+        <span class="sb-item-ico">🔗</span>
+        Backlinks
+      </button>
+      <button class="sb-item">
+        <span class="sb-item-ico">🛡️</span>
+        Audit technique
+      </button>
+    </div>
+
+    <div class="sb-section">
+      <div class="sb-section-head">IA Génératives</div>
+      <button class="sb-item">
+        <span class="sb-item-ico">🤖</span>
+        GEO Visibility
+        <span class="sb-badge">↑</span>
+      </button>
+      <button class="sb-item">
+        <span class="sb-item-ico">💬</span>
+        Verbatims IA
+      </button>
+    </div>
+
+    <div class="sb-section">
+      <div class="sb-section-head">Paramètres</div>
+      <button class="sb-item">
+        <span class="sb-item-ico">⚙️</span>
+        Configuration
+      </button>
+      <button class="sb-item">
+        <span class="sb-item-ico">📄</span>
+        Rapports
+      </button>
+    </div>
+
+    <div class="sb-footer">
+      <div class="sb-avatar">AS</div>
+      <div>
+        <div class="sb-footer-name">Antoine S.</div>
+        <div class="sb-footer-role">Lead Ops · WeFiiT</div>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- ============================================================
+       MAIN
+       ============================================================ -->
+  <main class="main">
+
+    <!-- Topbar -->
+    <header class="topbar">
+      <div class="tb-left">
+        <nav class="crumbs">
+          <span>wefiit.com</span>
+          <span class="sep">›</span>
+          <span class="cur">Vue d'ensemble</span>
+        </nav>
+      </div>
+      <div class="tb-right">
+        <div class="run-chip">
+          <span class="dot"></span>
+          Sync · il y a 4 min
+        </div>
+        <button class="icon-btn" title="Notifications">🔔</button>
+        <button class="icon-btn" title="Paramètres">⚙️</button>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <div class="page">
+
+      <!-- En-tête -->
+      <div class="page-head">
+        <div>
+          <!-- ⑥ h1 avec gradient texte bleu -->
+          <h1 class="page-title">Vue d'ensemble SEO</h1>
+          <p class="page-sub">wefiit.com · Dernière synchronisation il y a 4 minutes</p>
+        </div>
+        <div class="page-actions">
+          <button class="btn btn-ghost btn-sm">⬇ Exporter</button>
+          <button class="btn btn-ghost btn-sm">📅 Mai 2026</button>
+          <!-- ⑤ CTA primaire pill orange -->
+          <button class="btn btn-primary">+ Ajouter un mot-clé</button>
+        </div>
+      </div>
+
+      <!-- ③ Strip avec bord orange -->
+      <div class="alert-strip">
+        <div class="alert-strip-icon">🏆</div>
+        <div class="alert-strip-body">
+          <strong>3 mots-clés passent en top 3</strong> cette semaine ·
+          « product management paris » gagne <strong>+4 positions</strong>.
+          GEO : WeFiiT mentionné dans <strong>68% des réponses ChatGPT</strong>.
+        </div>
+        <div class="alert-strip-cta">
+          Voir le rapport →
+        </div>
+      </div>
+
+      <!-- ② KPI row : fond bleu clair crée le contraste avec cards blanches -->
+      <div class="kpi-row">
+
+        <!-- KPI 1 — ③ Héro : barre + valeur en orange -->
+        <div class="kpi kpi-orange">
+          <div class="kpi-lab">
+            <span class="kpi-ico">📍</span>
+            Position moyenne
+          </div>
+          <div class="kpi-val orange">
+            8,3
+            <span class="unit">/ 100</span>
+          </div>
+          <div class="kpi-foot">
+            <span class="delta up">↑ −1,2</span>
+            vs mois dernier
+          </div>
+        </div>
+
+        <!-- KPI 2 -->
+        <div class="kpi kpi-navy">
+          <div class="kpi-lab">
+            <span class="kpi-ico">🔍</span>
+            Mots-clés suivis
+          </div>
+          <div class="kpi-val">
+            247
+            <span class="unit">kw</span>
+          </div>
+          <div class="kpi-foot">
+            <span class="delta up">↑ +12</span>
+            ce mois
+          </div>
+        </div>
+
+        <!-- KPI 3 -->
+        <div class="kpi kpi-accent">
+          <div class="kpi-lab">
+            <span class="kpi-ico">👁️</span>
+            Impressions / mois
+          </div>
+          <div class="kpi-val">
+            42,1
+            <span class="unit">k</span>
+          </div>
+          <div class="kpi-foot">
+            <span class="delta up">↑ +8%</span>
+            vs mois dernier
+          </div>
+        </div>
+
+        <!-- KPI 4 -->
+        <div class="kpi">
+          <div class="kpi-lab">
+            <span class="kpi-ico">🤖</span>
+            Score GEO
+          </div>
+          <div class="kpi-val">
+            68
+            <span class="unit">%</span>
+          </div>
+          <div class="kpi-foot">
+            <span class="delta down">↓ −3pts</span>
+            Gemini en baisse
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Section table + panneau latéral -->
+      <div class="section-label">Rank Tracking — Top mots-clés</div>
+
+      <div class="grid-3-1">
+
+        <!-- Table principale -->
+        <div class="card">
+          <div class="card-head">
+            <div>
+              <h3>Positions Google · wefiit.com</h3>
+              <p>247 mots-clés · 24 en mouvement cette semaine</p>
+            </div>
+            <button class="btn btn-ghost btn-sm">Voir tout →</button>
+          </div>
+          <div class="card-body flush">
+            <table class="tbl">
+              <thead>
+                <tr>
+                  <th>Mot-clé</th>
+                  <th>Position</th>
+                  <th>Évolution</th>
+                  <th>Volume</th>
+                  <th>Tendance</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>product management paris</strong></td>
+                  <td><span class="rank-pill top3">3</span></td>
+                  <td><span class="delta up">↑ +4</span></td>
+                  <td>1 200</td>
+                  <td><div class="spark">
+                    <div class="spark-bar lo" style="height:40%"></div>
+                    <div class="spark-bar lo" style="height:35%"></div>
+                    <div class="spark-bar mid" style="height:55%"></div>
+                    <div class="spark-bar mid" style="height:70%"></div>
+                    <div class="spark-bar hi" style="height:95%"></div>
+                  </div></td>
+                </tr>
+                <tr>
+                  <td><strong>cabinet product management</strong></td>
+                  <td><span class="rank-pill top10">7</span></td>
+                  <td><span class="delta up">↑ +2</span></td>
+                  <td>880</td>
+                  <td><div class="spark">
+                    <div class="spark-bar mid" style="height:50%"></div>
+                    <div class="spark-bar mid" style="height:60%"></div>
+                    <div class="spark-bar hi" style="height:70%"></div>
+                    <div class="spark-bar hi" style="height:78%"></div>
+                    <div class="spark-bar hi" style="height:82%"></div>
+                  </div></td>
+                </tr>
+                <tr>
+                  <td><strong>formation product manager</strong></td>
+                  <td><span class="rank-pill top3">2</span></td>
+                  <td><span class="delta flat">= 0</span></td>
+                  <td>2 400</td>
+                  <td><div class="spark">
+                    <div class="spark-bar hi" style="height:88%"></div>
+                    <div class="spark-bar hi" style="height:90%"></div>
+                    <div class="spark-bar hi" style="height:87%"></div>
+                    <div class="spark-bar hi" style="height:92%"></div>
+                    <div class="spark-bar hi" style="height:90%"></div>
+                  </div></td>
+                </tr>
+                <tr>
+                  <td><strong>consultant product owner</strong></td>
+                  <td><span class="rank-pill top10">14</span></td>
+                  <td><span class="delta down">↓ −3</span></td>
+                  <td>590</td>
+                  <td><div class="spark">
+                    <div class="spark-bar hi" style="height:78%"></div>
+                    <div class="spark-bar mid" style="height:65%"></div>
+                    <div class="spark-bar mid" style="height:55%"></div>
+                    <div class="spark-bar lo" style="height:42%"></div>
+                    <div class="spark-bar lo" style="height:35%"></div>
+                  </div></td>
+                </tr>
+                <tr>
+                  <td><strong>wefiit</strong></td>
+                  <td><span class="rank-pill top3">1</span></td>
+                  <td><span class="delta flat">= 0</span></td>
+                  <td>320</td>
+                  <td><div class="spark">
+                    <div class="spark-bar hi" style="height:95%"></div>
+                    <div class="spark-bar hi" style="height:100%"></div>
+                    <div class="spark-bar hi" style="height:98%"></div>
+                    <div class="spark-bar hi" style="height:100%"></div>
+                    <div class="spark-bar hi" style="height:100%"></div>
+                  </div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Panneau latéral -->
+        <div style="display:flex;flex-direction:column;gap:14px;">
+
+          <!-- GEO Score -->
+          <div class="card">
+            <div class="card-head">
+              <div>
+                <h3>GEO Visibility</h3>
+                <p>ChatGPT · Gemini · Perplexity</p>
+              </div>
+              <!-- ③ badge orange -->
+              <span class="chip orange">↑ +2pts</span>
+            </div>
+            <div class="card-body">
+              <div style="display:flex;flex-direction:column;gap:16px;">
+                <div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
+                    <span style="font-size:13px;font-weight:500;color:var(--text-2);">🤖 ChatGPT</span>
+                    <span style="font-weight:700;color:var(--text);font-size:14px;">78%</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-bar-fill" style="width:78%;"></div>
+                  </div>
+                </div>
+                <div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
+                    <span style="font-size:13px;font-weight:500;color:var(--text-2);">✨ Gemini</span>
+                    <span style="font-weight:700;color:var(--text);font-size:14px;">54%</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-bar-fill accent" style="width:54%;"></div>
+                  </div>
+                </div>
+                <div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
+                    <span style="font-size:13px;font-weight:500;color:var(--text-2);">🔮 Perplexity</span>
+                    <span style="font-weight:700;color:var(--text);font-size:14px;">71%</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-bar-fill navy" style="width:71%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Alertes -->
+          <div class="card">
+            <div class="card-head">
+              <div><h3>Alertes</h3></div>
+              <span class="chip orange">3 nouvelles</span>
+            </div>
+            <div class="card-body" style="display:flex;flex-direction:column;gap:12px;">
+              <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;">
+                <span style="font-size:16px;margin-top:1px;">📉</span>
+                <div>
+                  <strong style="color:var(--text);">consultant product owner</strong>
+                  <div style="color:var(--neutral-text);font-size:12px;margin-top:2px;">Perd 3 positions · page 2</div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;">
+                <span style="font-size:16px;margin-top:1px;">🤖</span>
+                <div>
+                  <strong style="color:var(--text);">Gemini en baisse</strong>
+                  <div style="color:var(--neutral-text);font-size:12px;margin-top:2px;">Score GEO −3 pts cette semaine</div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;">
+                <span style="font-size:16px;margin-top:1px;">🏆</span>
+                <div>
+                  <strong style="color:var(--text);">Top 3 atteint !</strong>
+                  <div style="color:var(--neutral-text);font-size:12px;margin-top:2px;">« product management paris » · position 3</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- /grid -->
+
+    </div>
+    <!-- /page -->
+
+  </main>
+
+</div>
+<!-- /app -->
+
+<!-- Annotation démo -->
+<div class="demo-note">
+  <strong>Proposition design v2</strong> — basée sur DESIGN.md
+  <ul>
+    <li>① Favicon W (orange gradient)</li>
+    <li>② Fond rgb(242, 244, 255)</li>
+    <li>③ Orange rgb(249, 143, 3) accents</li>
+    <li>④ Allroundgothic → Nunito (simulation)</li>
+    <li>⑤ Boutons CTA en pill</li>
+    <li>⑥ Gradient texte bleu sur h1</li>
+  </ul>
+</div>
+
+</body>
+</html>

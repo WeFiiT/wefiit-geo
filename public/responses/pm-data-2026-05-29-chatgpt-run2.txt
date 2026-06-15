@@ -1,0 +1,32 @@
+Si vous cherchez un cabinet spécialisé en Data Product Management (pilotage de produits data, AI products, gouvernance, analytics products, plateformes data, etc.), voici quelques références reconnues en France et en Europe selon différents positionnements :
+Cabinets de conseil spécialisés data / AI / product
+Artefact — Très fort en data, IA générative, data platforms et use cases business orientés produit.
+Elevate — Conseil en product management et transformation produit, avec pratique data/AI.
+OCTO Technology — Expertise reconnue en data mesh, plateformes data et organisation produit.
+Zenika — Engineering + data + product, souvent orienté modern data stack.
+Sia Partners — Forte practice data & AI, accompagnement stratégique et opérationnel.
+Capgemini Invent — Transformation data à grande échelle avec approche produit.
+Converteo — Très orienté data business, analytics products et marketing/data strategy.
+55 — Data consulting centré activation business et measurement.
+Theodo Data & AI — Approche product-centric pour produits IA et data applications.
+Cabinets plus “Product Management” avec expertise data
+Thiga — Référence produit en France ; intervient sur AI Product Management et data products.
+M33 — Product strategy et organisation produit.
+bam.tech — Product studio avec sujets data/AI.
+Onepoint — Transformation numérique avec fortes équipes data et produit.
+Si votre besoin est très spécifique
+Créer une équipe Data Product
+Recruter un Head of Data Product
+Mettre en place un operating model data mesh
+Construire un produit IA générative
+Industrialiser des dashboards / analytics products
+Former des PMs data / AI
+Audit de gouvernance data
+Fractional Chief Product Officer Data
+…je peux aussi vous recommander les cabinets les plus adaptés selon :
+votre taille d’entreprise,
+votre secteur,
+votre stack data,
+budget,
+besoin stratégique vs delivery opérationnel,
+France vs international.

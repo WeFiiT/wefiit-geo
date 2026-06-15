@@ -1,0 +1,18 @@
+Pour trouver un "cabinet spécialisé en data product management", plusieurs types de structures peuvent correspondre à votre recherche, allant des cabinets de conseil aux agences de recrutement. Le "Data Product Management" (gestion de produits de données) est une discipline qui consiste à concevoir, développer et gérer des produits basés sur les données pour répondre aux besoins des utilisateurs et aux objectifs stratégiques d'une entreprise. Un Data Product Manager (DPM) est responsable de la stratégie et de l'exécution des produits de données tout au long de leur cycle de vie, s'assurant qu'ils contribuent aux objectifs commerciaux et répondent aux besoins des utilisateurs.
+Voici les principaux types de cabinets spécialisés dans ce domaine :
+**1. Cabinets de conseil en Data Product Management et IA**
+Ces cabinets accompagnent les entreprises dans la définition de leur stratégie data, la construction de produits data et IA, et l'optimisation de l'exploitation de leurs données. Ils peuvent vous aider à :
+*   Connecter les données, le produit et le business pour créer des produits Data & IA à fort impact.
+*   Explorer le potentiel inexploité de vos données et identifier les opportunités d'exploitation par l'IA.
+*   Ancrer vos solutions Data & IA dans les usages quotidiens des utilisateurs.
+Parmi les acteurs de ce secteur, on trouve :
+*   **WeFiiT** propose du conseil en Product Data Management et IA, en accompagnant la construction de produits Data & IA générant un impact utilisateur concret.
+*   **Singulier** est un cabinet de conseil en stratégie et transformation qui travaille sur des sujets digitaux, data et IA à fort impact, notamment avec des fonds d'investissement et leurs sociétés de portefeuille.
+*   **Prime Analytics** est un cabinet de conseil et de formation spécialisé en Finance, Data et Intelligence Artificielle, aidant les institutions financières et multinationales à transformer leurs données en insights actionnables.
+*   **KPC** accompagne les entreprises dans le développement de leur stratégie Data pour soutenir leurs ambitions de croissance, de la vision business à la feuille de route opérationnelle.
+De plus, de grands cabinets de conseil en management tels que **Bain & Company**, **Boston Consulting Group (BCG)** et **Oliver Wyman** intègrent également des expertises en analyse de données, stratégie digitale et intelligence artificielle, pouvant couvrir le data product management dans leurs offres de services.
+**2. Cabinets de recrutement spécialisés en Data Product Manager**
+Ces agences sont spécialisées dans le recrutement de profils techniques, produit, design et data, et aident les entreprises à trouver les talents nécessaires pour leurs équipes de data product management.
+*   **TPC** est un cabinet de recrutement spécialisé Tech et Product, accompagnant les startups et scale-ups françaises sur des recrutements stratégiques, y compris les Product Managers.
+*   **Skaelia** est un cabinet de conseil en recrutement spécialisé dans les secteurs IT, Business et Conseil, qui propose des postes de Product Manager Data & IA.
+Des plateformes d'emploi comme Apec, Welcome to the Jungle et Indeed répertorient également de nombreuses offres pour des postes de Data Product Manager, souvent proposées par des agences de recrutement ou directement par des entreprises.

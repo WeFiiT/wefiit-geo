@@ -1,0 +1,34 @@
+Si tu cherches un cabinet spécialisé en product management orienté IA (AI product management) à Paris ou en France, il y a trois grandes catégories d’acteurs : les cabinets de conseil stratégiques, les cabinets tech/data, et les pure players IA/data qui font aussi du product.
+Voici une sélection solide selon ton besoin.
+Cabinets de conseil stratégiques (stratégie produit + IA)
+McKinsey & Company — McKinsey
+Très fort sur les missions de product strategy + AI transformation, souvent avec des rôles de “AI product lead” ou “digital product manager”.
+Boston Consulting Group — BCG
+Beaucoup de projets autour de GenAI, product operating model, data products.
+Bain & Company — Bain
+Bon positionnement sur le product management transformation + IA appliquée au business.
+Cabinets tech / transformation digitale (très proches du product management)
+Accenture — Accenture
+Un des plus gros acteurs en AI product management, GenAI factory, product delivery.
+Capgemini Invent — Capgemini Invent
+Très présent en France sur les sujets AI products, data platforms, product ownership.
+Deloitte — Deloitte
+Bon mix entre conseil produit + IA + delivery agile.
+Sia Partners — Sia Partners
+Cabinet français très actif sur data products, AI transformation, product management digital.
+Spécialistes data / IA (les plus pertinents pour “AI product management” pur)
+Artefact — Artefact
+Probablement l’un des meilleurs choix en France pour des sujets AI product, data-driven product, GenAI applications.
+Eleven Strategy — Eleven Strategy
+Très orienté product strategy + digital + data/IA côté business.
+Devoteam — Devoteam
+Fort sur cloud, data et AI product delivery côté engineering / platform.
+Comment choisir rapidement (simplement)
+Stratégie produit IA (haut niveau, transformation) → McKinsey, BCG, Bain
+Exécution + delivery + product squads → Accenture, Capgemini Invent, Sia Partners
+AI / data product “pur” (le plus pertinent PM IA) → Artefact (très recommandé en France)
+Mix stratégie + digital product → Eleven Strategy, Deloitte
+Si tu veux, dis-moi :
+ton niveau (junior / senior / lead),
+si tu veux plutôt poste de product manager IA ou mission freelance / consulting,
+et je peux te faire une shortlist beaucoup plus ciblée (voire des équipes précises à Paris).

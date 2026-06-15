@@ -1,0 +1,24 @@
+Voici un panorama des principaux organismes qui proposent des formations **Product Builder** en France :
+---
+### 1. 🎓 [Jedha](https://www.jedha.co/formations/formation-product-builder)
+En **450 heures**, vous apprendrez le métier de Product Builder et serez capable de bâtir des produits en toute autonomie, de l'idée à la mise en production. Vous maîtriserez une stack moderne combinant la programmation assistée par l'IA (Cursor, Lovable) et des outils no-code robustes comme Figma ou n8n.
+---
+### 2. 🎓 [Alegria Academy](https://www.alegria.group/academy/product-builder-nocode-lowcode-ai)
+Alegria Academy prépare au **diplôme de concepteur développeur d'applications (RNCP 6 - BAC+3)**. Cette reconnaissance par l'État confirme le sérieux de la formation et le No-Code comme méthode de développement digital.
+Une fois admissible, vous bénéficiez d'un accompagnement personnalisé (onboarding, coaching, simulations d'entretiens) pour trouver votre entreprise d'accueil en **alternance (12 mois)**.
+---
+### 3. 🎓 [DataSuits](https://www.datasuits.fr/formation-product-builder-no-code-ia)
+La formation Product Builder No Code & IA vous prépare au passage de la **certification officielle RNCP41480BC03** « Développer un produit numérique avec des outils no-code ».
+À l'issue de la formation, vous saurez construire des applications avec Notion, Airtable, Softr ou Webflow, automatiser avec Make, intégrer l'IA générative, connecter des APIs REST, et piloter un projet digital de A à Z.
+---
+### 4. 🎓 [La Capsule](https://www.lacapsule.academy/formation-ia-automation-nocode/full-time)
+La Capsule propose une formation **IA & Automation - Product Builder NoCode**, disponible en présentiel ou en remote.
+Le format s'adapte à votre situation : bootcamp à temps plein ou à temps partiel avec des cours en ligne les soirs et le week-end. Le format bootcamp représente **10 semaines intensives** de 9h à 18h du lundi au vendredi.
+---
+### 5. 🎓 [Liora](https://liora.io/meilleure-formation-product-builder-no-code)
+Liora propose un parcours **Product Builder No-Code & IA de plus de 300 heures**, en bootcamp intensif ou en part-time sur 5 mois. Le programme couvre le cadrage produit, Airtable, Make, Zapier, Webflow, Softr, Figma, les intégrations API et l'IA.
+---
+### 💡 Pourquoi se former au Product Builder ?
+Les entreprises, des start-ups aux grands groupes, cherchent des profils capables de livrer des produits digitaux rapidement, sans dépendre d'une équipe de développeurs. La pénurie structurelle de développeurs (il manquerait plus de **80 000 profils tech en France**) amplifie encore la demande de Product Builders.
+---
+Souhaitez-vous plus de détails sur l'une de ces formations (durée, prix, financement CPF, etc.) ?

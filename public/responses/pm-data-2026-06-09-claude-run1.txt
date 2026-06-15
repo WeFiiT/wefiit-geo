@@ -1,0 +1,45 @@
+Voici un panorama des **principaux cabinets spécialisés en Data Product Management** en France :
+---
+## 🏆 Cabinets spécialisés en Data Product Management
+### 1. 🔵 **AVISIA**
+Regroupés autour d'une conviction commune dès 2007, les fondateurs d'AVISIA ont la certitude que la data sera le moteur de la prise de décision dans tous les secteurs — ce qui en fait aujourd'hui **le plus gros cabinet indépendant spécialisé dans la Data**.
+Véritables chefs d'orchestre, leurs **Product Owners** pilotent les produits data & IA, de l'idéation à l'industrialisation, en favorisant l'agilité, la priorisation et l'impact métier.
+Leurs consultants en data gouvernance accompagnent également les organisations dans la maîtrise de leurs données : qualité, conformité, catalogage et pilotage des actifs data.
+---
+### 2. 🟢 **Wivoo**
+Wivoo est une agence de conseil spécialisée en **Product Management, Product Design et Data & IA**, qui accompagne les entreprises dans leur transformation numérique depuis 2018 grâce à une communauté de consultants experts.
+L'agence garantit un niveau d'expertise élevé grâce à une sélection rigoureuse (3 % de taux de recrutement) et un programme interne de montée en compétences (80 jours de formation par an et 25 mentors seniors).
+Wivoo accompagne notamment la construction de nouvelles Data Platforms cloud-native, incluant de vastes migrations de données pour répondre aux enjeux de transition énergétique.
+---
+### 3. 🟡 **WeFiiT**
+WeFiiT est une société de conseil **fondée en 2019**, dont la raison d'être est d'accompagner durablement tous ses clients pour construire ensemble des produits à fort impact.
+En couvrant Stratégie, Discovery et Delivery, WeFiiT accompagne de grandes entreprises comme Accor, Louis Vuitton, FDJ ou France TV, sur des enjeux de **Product Management, Product Data & IA, Product Ops et Product Quality**, avec plus de 200 missions réalisées et un CSAT supérieur à 9/10.
+---
+### 4. 🔴 **TAK**
+TAK est une **agence de conseil en Management IT spécialisée en Product et Data**, engagée pour une delivery fiable et rapide.
+Leur académie forme les équipes à différents niveaux de maturité en Product Management, avec des modules 100% sur mesure.
+TAK est également partenaire 3 étoiles French Produit, la plus grande communauté produit française.
+---
+### 5. 🟠 **Thiga**
+Thiga, basé à Paris et à Madrid, est le **cabinet de conseil pionnier en Product Management en France**, reconnu pour son expertise en stratégie, organisation, opérationnel et formation. Il accompagne les entreprises technologiques et les grandes marques dans l'optimisation de leurs processus produits, du développement de fonctionnalités à la mise en place de méthodes agiles centrées sur les utilisateurs.
+---
+### 6. 🔷 **mc2i**
+Les équipes pluridisciplinaires de mc2i assument des missions de **Conseil aux CDO** et des activités de **Data Product Owner, Data Analyst, Data Scientist, Data Manager et Data Steward**.
+mc2i accompagne notamment des acteurs comme Decathlon pour optimiser la traçabilité produits grâce au **data product management** : vision claire, agilité renforcée et adoption mesurable des solutions data.
+---
+### 7. 🟣 **Artefact**
+Artefact sait poser une vraie architecture, construire des modèles robustes et aligner la direction métier avec la DSI, avec des expertises pointues en **MLOps, data science et gouvernance**, et une vraie capacité à industrialiser.
+Recommandé si vous avez déjà de la donnée bien posée, un enjeu de passage à l'échelle et des attentes fortes côté gouvernance.
+---
+## 📌 Comment choisir ?
+Analyser, structurer et valoriser les données est devenu une nécessité pour piloter la performance, innover et prendre des décisions éclairées. Pourtant, la réussite d'une démarche data ne repose pas uniquement sur la technologie : elle dépend avant tout de l'expertise et de l'accompagnement sur-mesure.
+| Cabinet | Force principale |
+|---|---|
+| **AVISIA** | Cabinet data indépendant, Data Product Owner & gouvernance |
+| **Wivoo** | Product Management + Data & IA, full cycle |
+| **WeFiiT** | Product Management & Product Data, grandes entreprises |
+| **TAK** | Product & Data, delivery & formation |
+| **Thiga** | Pioneer PM France, stratégie & formation |
+| **mc2i** | Data Product Owner, conseil CDO |
+| **Artefact** | Data science, MLOps, industrialisation |
+Souhaitez-vous un focus sur un type de besoin particulier (conseil stratégique, mise en place d'une data platform, formation, recrutement...) ?

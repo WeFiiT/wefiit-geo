@@ -1,0 +1,67 @@
+Voici un tour d'horizon des **principaux organismes qui proposent des formations Product Builder** en France en 2026 :
+---
+## 🎓 Formations Product Builder en France
+### 1. 🟦 **DataSuits**
+- [datasuits.fr](https://www.datasuits.fr/formation-product-builder-no-code-ia)
+-
+La formation **Product Builder No Code & IA** vous prépare au passage de la certification officielle **RNCP41480BC03** « Développer un produit numérique avec des outils no-code ».
+-
+À l'issue de la formation, vous saurez construire des applications avec Notion, Airtable, Softr ou Webflow, automatiser vos processus avec Make, intégrer l'IA générative, connecter vos outils via des API REST et concevoir des interfaces avec Figma et Lovable.
+-
+Éligible CPF, France Travail, OPCO et autres financements.
+---
+### 2. 🟩 **Jedha**
+- [jedha.co](https://www.jedha.co/formations/formation-product-builder)
+-
+Jedha propose une **Formation Product Builder de 450 heures**, où vous acquerrez toutes les compétences pour concevoir et mettre en production vos produits digitaux en totale autonomie.
+-
+La formation peut être suivie entièrement en ligne ou en présentiel sur l'un de leurs 17 campus en France et à l'étranger.
+-
+Le fort accent mis sur l'IA dans la formation offre une avance décisive sur les autres candidats.
+---
+### 3. 🟨 **Liora.io / DataScientest**
+- [liora.io](https://liora.io/formation/data-ia/product-builder-no-code)
+-
+Cette formation vise la validation de la certification **RNCP de niveau 6 « Product Builder No‑Code »**, délivrée par DataScientest et enregistrée au RNCP sous le numéro **RNCP40593**.
+-
+Éligible CPF, avec **+300h de formation** pour créer des apps avec Webflow, Airtable, Make et Zapier, sur **5 mois**.
+-
+Un certificat de formation délivré par **Paris Panthéon Sorbonne – Formation Continue** est remis à l'issue du parcours.
+---
+### 4. 🟧 **Maria Schools / Maestro**
+- [mariaschools.com](https://maestro.mariaschools.com/formations/outils-no-code-ia)
+-
+Programme certifiant **No Code x IA** pour devenir Product Builder, permettant en **10 semaines à distance** de gagner en autonomie et d'obtenir une certification attestant de nouvelles compétences.
+-
+Finançable via CPF, France Travail, Entreprise, OPCO, FAF, et aides régionales. Prochaine session : du 17 septembre au 26 novembre 2026.
+---
+### 5. 🟥 **IQ Project**
+- [iq-project.ai](https://iq-project.ai/blog/devenir-product-builder-guide-complet-metier/)
+-
+Le **bootcamp IQ Project** forme des Product Builders opérationnels en **8 soirées**. C'est une formation **certifiée Qualiopi**, finançable OPCO, qui a déjà formé plus de 500 builders.
+-
+Au programme : la maîtrise de Lovable, Bolt et Cursor, le prompting avancé, le déploiement et la mise en production.
+---
+### 6. 🟪 **Uncode School**
+- [uncodeschool.com](https://www.uncodeschool.com)
+-
+Uncode School est une des premières écoles dédiées au no-code en France. Elle propose des formations à plein ou mi-temps afin de devenir **Product Builder, Bubble spécialiste ou Ops spécialiste**.
+-
+Le cursus dure entre **9 semaines et 3 mois et demi** selon la formation choisie.
+---
+### 7. 🔵 **Contournement**
+-
+Contournement propose une variété de formations payantes et gratuites. La plateforme donne accès à des cursus aux thématiques variées : maîtrise d'Airtable, automatisation avec Zapier, maîtrise de Notion ou initiation au no-code.
+---
+## 💡 En résumé
+| Organisme | Format | Durée | Financement |
+|---|---|---|---|
+| DataSuits | En ligne | Variable | CPF, OPCO, France Travail |
+| Jedha | Présentiel / En ligne | 450h | CPF |
+| Liora / DataScientest | En ligne | 300h / 5 mois | CPF |
+| Maria Schools | En ligne | 10 semaines | CPF, OPCO |
+| IQ Project | Bootcamp (soirées) | 8 soirées | OPCO |
+| Uncode School | Variable | 9 sem. à 3,5 mois | Variable |
+| Contournement | En ligne | Variable | Variable |
+Le titre **RNCP39108 "Product Builder No-Code"** (niveau Bac+4) est éligible aux financements CPF et OPCO
+, ce qui en fait une formation accessible à de nombreux profils !

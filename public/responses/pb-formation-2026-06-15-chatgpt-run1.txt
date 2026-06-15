@@ -1,0 +1,43 @@
+Il existe plusieurs types d’organismes qui proposent des formations autour du “product builder” (souvent proche de product management + no-code + delivery produit). Je te fais une vue claire par catégories.
+🧠 Écoles internationales (product management / product building)
+Product School
+👉 Formations 100% orientées Product Management (certificats, bootcamps, cours en ligne).
+👉 Très reconnu pour devenir Product Manager ou Product Builder en startup.
+Product School
+General Assembly
+👉 Bootcamps intensifs en Product Management, UX, data, etc.
+👉 Bon pour une reconversion rapide vers des rôles produit.
+General Assembly
+Ironhack
+👉 Bootcamps en UX/UI, data et product (selon campus et promos).
+👉 Présent à Paris, orienté pratique.
+Ironhack
+Le Wagon
+👉 Très fort sur le no-code / build / MVP / tech produit.
+👉 Bon choix si tu veux “builder” concrètement des produits.
+Le Wagon
+🇫🇷 Formations en France / francophones
+OpenClassrooms
+👉 Parcours Product Manager, UX Designer, Chef de projet digital.
+👉 Formation diplômante possible + mentorat.
+OpenClassrooms
+Écoles / exec education (plus “stratégie produit”)
+HEC Paris (executive / digital product)
+ESCP Business School (digital transformation, product management)
+emlyon (innovation / product / entrepreneurship)
+🧩 Alternative “product builder” moderne (très demandé en startups)
+Si tu entends par “product builder” quelqu’un capable de créer un produit de A à Z (sans être dev), regarde aussi :
+no-code (Bubble, Webflow, Glide)
+UX/UI design
+product discovery (user research, validation)
+growth / analytics
+👉 Dans ce cas, Le Wagon + Ironhack + OpenClassrooms sont souvent les plus alignés.
+🎯 Pour t’orienter correctement
+Le terme “product builder” peut vouloir dire 3 choses différentes :
+🎯 Product Manager (pilotage produit)
+🛠️ No-code builder (tu construis vraiment les apps)
+🚀 Startup builder (profil très polyvalent)
+Si tu me dis :
+ton niveau (débutant / dev / business)
+ton objectif (job / startup / reconversion rapide)
+je peux te proposer un parcours beaucoup plus précis à Paris ou en ligne.

@@ -1,0 +1,28 @@
+Voici les principaux acteurs qui proposent des formations autour du rôle de product builder (souvent proches des formations Product Manager + no-code + product thinking).
+En France (et accessibles depuis Paris)
+OpenClassrooms
+Propose des parcours Product Manager / Product Owner très structurés, avec mentorat et projets. C’est une des options les plus accessibles pour construire un profil “product builder”.
+Le Wagon Paris
+Connu pour le dev, mais propose aussi des formations Product Management & Product Design, très orientées projet et logique produit.
+Schoolab
+Formations + incubateur. Très orienté “build in real conditions” avec startups et innovation produit.
+The Product Crew
+Communauté + formations orientées product management moderne (discovery, delivery, culture produit).
+International (très reconnus en “product builder mindset”)
+Product School
+Très populaire pour devenir Product Manager / Product Builder. Formation assez structurée, orientée carrière.
+General Assembly
+Bootcamps intensifs (Product Management, UX, data). Bon pour une reconversion rapide.
+Reforge
+Niveau avancé : stratégie produit, growth, product-led growth. Plutôt pour PM déjà en poste.
+Approche “builder” (no-code + produit)
+Si tu veux vraiment l’aspect build rapidement des produits (MVP, no-code, test marché) :
+Bubble (écosystème + formations)
+Webflow (design + produit)
+Communautés type Indie Hackers / Product-led builders (souvent complémentaires aux formations)
+Comment choisir rapidement
+Reconversion structurée → OpenClassrooms / General Assembly
+Approche startup + pratique → Le Wagon / Schoolab
+Niveau avancé produit → Reforge
+Culture product manager internationale → Product School
+Si tu veux, dis-moi ton niveau (débutant, dev, marketing, design, etc.) et je peux te proposer un parcours précis “de 0 à product builder” adapté à ton profil.

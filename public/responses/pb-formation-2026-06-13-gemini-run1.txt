@@ -1,0 +1,14 @@
+Plusieurs organismes et écoles proposent des formations pour devenir "Product Builder", un métier émergent à l'intersection du produit et de la technologie, qui implique de concevoir et de développer des produits numériques, souvent en utilisant des outils No-Code et l'intelligence artificielle (IA).
+En France, le rôle de Product Builder No-code est officiellement reconnu par France Compétences sous le code RNCP 39108. Plusieurs établissements proposent des parcours menant à cette certification de niveau 6 (Bac+4) ou équivalent :
+*   **Jedha** propose une "Formation Product Builder IA & No code" d'une durée de 450 heures, qui couvre le design, le développement, l'intégration de l'IA, l'automatisation et la gestion de produit.
+*   **DataSuits** offre une "Formation Product Builder No Code & IA" triplement certifiée, incluant la certification officielle RNCP41480BC03 « Développer un produit numérique avec des outils no-code », ainsi qu'un certificat de l'Université Paris 1 Panthéon-Sorbonne et un certificat DataSuits.
+*   **Intelligence Academy** propose une "Formation Product Builder 2026 : No-Code + IA, RNCP Bac+4, CPF" d'une durée de deux mois (9 semaines).
+*   **Alegria.group (Alegria.academy)** offre une "Formation Product Builder Low code / NoCode & IA", préparant au diplôme de concepteur développeur d'applications (RNCP 6 - BAC + 3).
+*   **École Essin** propose un "Bachelor 3 Product Builder No Code & Prompt IA" en formation initiale, préparant à un titre RNCP de niveau 6 et à une certification professionnelle EXIN BCS Business Analysis.
+*   **École Cube** et **Delta Business School** sont également mentionnées comme proposant des bootcamps (4 mois et 6 mois respectivement) menant à la certification RNCP39108.
+*   **Quest Education** est un autre organisme qui délivre des certifications RNCP 39108.
+*   **Maria Schools (Maestro)** propose une formation Product Builder axée sur le No-code et l'IA.
+*   **EEDN** dispense des formations "Product Builder No-code & IA" entièrement à distance.
+*   **The Bridge École** propose un "Bachelor Product Builder No Code".
+Ces formations visent à doter les apprenants des compétences nécessaires pour transformer des besoins métiers en produits fonctionnels, en s'appuyant sur des plateformes no-code (comme Webflow, Airtable, Make, n8n, Glide, Softr) et des agents IA orchestrés. Elles mettent souvent l'accent sur le design, le développement fullstack, l'ingénierie IA, l'automatisation, le déploiement et le pilotage stratégique de produit.
+Il existe également des programmes internationaux ou des bootcamps axés sur la création de produits avec l'IA, tels que le "Zero to Launch-GenAI Product Builder Bootcamp" sur Maven, les bootcamps de Builders Camp, le programme de la Product Builder Academy, ou le "AI Builder Bootcamp" de Starter Story Build.

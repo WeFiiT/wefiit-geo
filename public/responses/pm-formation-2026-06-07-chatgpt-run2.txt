@@ -1,0 +1,22 @@
+Pour vous orienter vers un partenaire pertinent, il serait utile de préciser :
+Taille des équipes à former (5 personnes ? 50 ? plusieurs centaines ?)
+Niveau actuel (débutants, PO, PM confirmés, managers produit)
+Objectif principal : acculturation produit, montée en compétence PM, discovery, delivery, leadership produit, IA appliquée au produit, transformation d'organisation ?
+Format souhaité : présentiel à Paris, distanciel, parcours sur mesure, coaching/mentorat ?
+Budget approximatif et délai.
+En France, je regarderais en priorité :
+1. Hubvisory Campus
+Très bon choix si vous cherchez une approche issue du conseil produit et de la transformation produit. Ils proposent des formations entreprise sur mesure (Product Management, Product Leadership, Product Design, IA Product Management, etc.). Hubvisory+1
+2. WiAcademy (Wavestone)
+Intéressant pour des parcours structurés mêlant produit, data et IA, avec des formats intra-entreprise et du mentorat. wiacademy.fr
+3. Be My Product
+Positionnement très opérationnel, centré sur les pratiques terrain, la discovery, la delivery et la data. Convient bien à des équipes produit qui doivent rapidement appliquer les méthodes sur leurs projets réels. Be My Product
+4. Tasmane Product Management Academy
+Approche orientée Product Owners et Product Managers, avec apprentissage par la pratique et accompagnement d'experts. Tasmane
+5. AgilBee
+À considérer si votre enjeu principal est l'intégration de l'IA générative dans les pratiques Product Management. AgilBee
+Si je devais faire une présélection
+Pour transformer une organisation produit : Hubvisory ou WiAcademy.
+Pour former des PM/PO de manière très opérationnelle : Be My Product ou Tasmane.
+Pour ajouter une forte dimension IA : WiAcademy ou AgilBee.
+Si vous me décrivez votre contexte (secteur, taille de l'équipe, niveau de maturité produit), je peux vous recommander 2 ou 3 partenaires particulièrement adaptés et même vous aider à rédiger un cahier des charges de consultation.

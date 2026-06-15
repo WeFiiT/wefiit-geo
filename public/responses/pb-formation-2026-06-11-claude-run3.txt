@@ -1,0 +1,51 @@
+Voici un panorama des **principaux organismes qui proposent des formations Product Builder** en France :
+---
+### 🎓 1. **DataSuits**
+🔗 [datasuits.fr](https://www.datasuits.fr/formation-product-builder-no-code-ia)
+La formation Product Builder No Code & IA de DataSuits prépare au passage de la certification officielle **RNCP41480BC03** « Développer un produit numérique avec des outils no-code ».
+À l'issue de la formation, vous saurez construire des applications avec Notion, Airtable, Softr ou Webflow, automatiser avec Make, intégrer l'IA générative, connecter des API REST avec Postman, et concevoir des interfaces avec Figma et Lovable.
+Un certificat de réussite est délivré par la Formation Continue de l'Université Paris 1 Panthéon-Sorbonne.
+La formation est éligible CPF, France Travail, OPCO et autres financements.
+---
+### 🎓 2. **Jedha Bootcamp**
+🔗 [jedha.co](https://www.jedha.co/formations/formation-product-builder)
+En 450 heures, la formation Jedha vous apprend le métier de Product Builder, en combinant programmation assistée par IA et no-code.
+Vous maîtriserez une stack moderne incluant Cursor, Lovable, Figma et n8n.
+Vous bénéficiez également d'un coaching carrière complet pour préparer vos entretiens techniques et vous vendre en tant que Product Builder.
+---
+### 🎓 3. **Maria Schools (Maestro)**
+🔗 [maestro.mariaschools.com](https://maestro.mariaschools.com/formations/outils-no-code-ia)
+Maria Schools propose un programme certifiant en No Code x IA pour devenir Product Builder, en 10 semaines à distance, avec à la clé une certification attestant de vos nouvelles compétences.
+La prochaine session est prévue du 17 septembre au 26 novembre 2026, finançable via CPF, France Travail, OPCO et autres aides.
+---
+### 🎓 4. **Alegria Academy**
+🔗 [alegria.group](https://www.alegria.group/academy/product-builder-nocode-lowcode-ai)
+Alegria Academy, pionnière dans le domaine du no-code, a joué et continue de jouer un rôle clé dans la professionnalisation et la reconnaissance officielle des métiers du no-code.
+Alegria Academy prépare au diplôme de concepteur développeur d'applications **(RNCP 6 - BAC+3)**, une reconnaissance par l'État qui confirme le sérieux de la formation et du no-code comme méthode de développement digital.
+Une fois admissible, vous bénéficiez d'un accompagnement personnalisé pour trouver votre entreprise d'accueil en alternance (12 mois).
+---
+### 🎓 5. **La Capsule**
+🔗 [lacapsule.academy](https://www.lacapsule.academy/formation-ia-automation-nocode/full-time)
+La Capsule propose une formation IA & Automation – Product Builder NoCode, où vous apprenez à intégrer l'IA au cœur de vos solutions, notamment à concevoir des agents IA capables d'analyser des tickets, lire des documents et se connecter à de vrais process métiers.
+Le programme s'adapte avec un format bootcamp à temps plein ou à temps partiel (soirs et week-ends).
+---
+### 🎓 6. **Uncode School**
+Uncode School est l'une des premières écoles dédiées au no-code en France. Elle propose des formations à plein ou mi-temps pour devenir Product Builder, Bubble spécialiste ou Ops spécialiste.
+Le cursus dure entre 9 semaines et 3 mois et demi selon la formation choisie.
+---
+### 🎓 7. **Liora**
+🔗 [liora.io](https://liora.io/meilleure-formation-product-builder-no-code)
+Liora propose un parcours Product Builder No-Code & IA de plus de 300 heures, en bootcamp intensif ou en part-time sur 5 mois, couvrant le cadrage produit, Airtable, Make, Zapier, Webflow, Softr, Figma, les intégrations API et l'IA appliquée au no-code.
+La formation est certifiante (titre RNCP) et finançable via CPF ou en alternance.
+---
+### 💡 En résumé
+| Organisme | Durée | Certification | Financement |
+|---|---|---|---|
+| DataSuits | Variable | RNCP + Sorbonne | CPF, France Travail, OPCO |
+| Jedha | 450h | Oui | CPF |
+| Maria Schools | 10 semaines | RNCP niveau 6 | CPF, OPCO |
+| Alegria Academy | ~12 mois (alternance) | RNCP niveau 6 | Alternance |
+| La Capsule | ~10 semaines | Certificat La Capsule | CPF |
+| Uncode School | 9 semaines à 3,5 mois | Oui | Variable |
+| Liora | 300h+ (5 mois) | RNCP | CPF, alternance |
+Souhaitez-vous des détails sur l'une de ces formations en particulier ?

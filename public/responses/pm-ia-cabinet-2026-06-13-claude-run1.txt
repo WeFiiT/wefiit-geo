@@ -1,0 +1,53 @@
+Voici un panorama complet des **principaux cabinets spécialisés en Product Management & IA en France** :
+---
+## 🏆 Les cabinets spécialisés Product Management & IA en France
+---
+### 1. 🥇 **Thiga**
+Thiga se positionne comme **le** cabinet de conseil et de formation en **IA Product Management** et Product Design en France et à l'international.
+Pionnier en France dès 2014, ils ont posé les bases de la culture Product Management avec une approche ultra-cadrée et des frameworks maison (Thiga Canvas, Discovery Sprint…).
+Leurs consultants travaillent pour des sociétés allant de la startup française au grand groupe international, dans des secteurs variés, pour identifier et développer des opportunités IA créatrices de valeur.
+- **Clients** : Decathlon, Doctolib, AXA, Leboncoin, Disney, Deezer…
+- 🌐 thiga.co
+---
+### 2. **Hubvisory**
+**Hubvisory** est un cabinet de conseil spécialisé en Product Management et **transformation IA pour les grands groupes**, avec 150 consultants basés à Paris et Lille.
+Ils couvrent toute la chaîne de valeur IA : conseil, formation et développement, de la stratégie à l'industrialisation.
+- 🌐 hubvisory.com
+---
+### 3. **Monsieur Guiz**
+**Monsieur Guiz** est un cabinet de conseil spécialisé en **Product Management, Design, Ops et IA**, avec 60+ consultants et plus de 200 projets livrés pour Air France, LVMH, AXA, BNP Paribas.
+Ils accompagnent grands comptes et start-ups sur les différentes phases de leur stratégie de transformation digitale, de la Discovery au Delivery.
+- 🌐 monsieurguiz.fr
+---
+### 4. **WeFiiT**
+**WeFiiT** est un cabinet de conseil spécialisé en Product Management à Paris, offrant conseil stratégique, renfort opérationnel et formation en **PM, Data & IA**, Marketing et Quality.
+Ils accompagnent de grandes entreprises comme Accor, Louis Vuitton, FDJ, France TV et des scale-ups, sur l'ensemble des enjeux Produit, forts de plus de 200 missions réalisées.
+- 🌐 wefiit.com
+---
+### 5. **Wivoo** *(désormais Wavestone)*
+En 2023, Wivoo a renforcé son ADN avec une **expertise Data forte et une exploration active de l'IA**, combinant Produit, Data et Tech pour un impact maximal.
+En 2025, Wivoo a rejoint **Wavestone**, donnant naissance à une combinaison unique alliant capacité sectorielle et stratégique de Wavestone d'un côté, et culture produit et exécution de Wivoo de l'autre.
+- 🌐 wivoo.fr
+---
+### 6. **Converteo**
+**Converteo** se positionne comme **leader de l'IA Product en France**, avec l'ambition de délivrer l'expertise permettant de développer des cas d'usage en IA générative, produisant un impact et une vraie valeur business.
+Tous leurs Product Managers sont versés dans les sujets liés à l'IA, qui est un enjeu central pour le développement des produits digitaux.
+- 🌐 converteo.com
+---
+### 7. **Mozza**
+**Mozza** est spécialisée dans les produits innovants et **l'intégration de l'IA**, idéale pour une startup souhaitant accélérer le développement de son produit.
+Elle insuffle une énergie startup utile aux équipes qui veulent tester vite et itérer efficacement.
+- 🌐 mozza.io
+---
+## 📊 Tableau comparatif rapide
+| Cabinet | Spécialité IA | Cible | Points forts |
+|---|---|---|---|
+| **Thiga** | IA PM, AI Agents | Scale-ups & grands groupes | Pionnier, formation, frameworks |
+| **Hubvisory** | Transformation IA | Grands groupes | 150 consultants, Paris/Lille |
+| **Monsieur Guiz** | Product & IA | Grands comptes & startups | Design + PM + Ops + IA |
+| **WeFiiT** | Data & IA | Grands groupes | Full cycle, 200+ missions |
+| **Wivoo/Wavestone** | Data & IA | Grands groupes | Fusionné avec Wavestone 2025 |
+| **Converteo** | IA générative | Tous secteurs | Leader IA Product |
+| **Mozza** | IA produit | Startups/scale-ups | Agilité, innovation |
+---
+Souhaitez-vous des informations plus détaillées sur l'un de ces cabinets, leurs offres de formation, ou leurs tarifs ?

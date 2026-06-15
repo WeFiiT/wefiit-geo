@@ -1,0 +1,21 @@
+Si vous cherchez un cabinet spécialisé en Data Product Management (pilotage de produits data, plateformes data, IA, gouvernance, stratégie produit data), voici quelques acteurs reconnus en France :
+Cabinets orientés Product Management + Data
+Wivoo : cabinet spécialisé en Product Management, Product Design, Data et IA. Intervient sur la discovery, roadmap, delivery et mesure de produits data. Wivoo
+TAK : expertise Product Management et Data Management, avec accompagnement opérationnel et conseil. Tak
+WeFiiT : cabinet centré sur le Product Management, incluant Product Data & IA et Product Ops. WeFiiT
+Converteo : approche « data-driven product management » combinant data, produit et design. Converteo
+IKXO : conseil, renfort opérationnel et formation en Product Management avec une forte composante data et IA. IKXO
+Cabinets orientés Data Strategy / Data Products / IA
+ISSKAR : spécialisé dans les produits data et IA, avec des profils de Data Product Manager et des approches orientées business. Isskar
+Limpida : conseil Data & IA couvrant stratégie, gouvernance, architecture et produits data. Limpida
+TRIMANE : cabinet expert Data Intelligence & IA, avec des missions de gouvernance et valorisation de la donnée. Trimane
+Pour choisir le bon cabinet
+Besoin d'un Data Product Manager en renfort opérationnel → Wivoo, TAK, WeFiiT.
+Structuration d'une Data Platform ou d'un Data Office → ISSKAR, Limpida, TRIMANE.
+Transformation produit orientée business et analytics → Converteo.
+Formation et montée en maturité Product/Data → IKXO, TAK, Wivoo.
+Si vous me précisez :
+votre secteur (banque, retail, industrie, SaaS, etc.),
+la taille de l'entreprise,
+et si vous cherchez du conseil, du recrutement, ou du staff augmentation,
+je peux vous recommander les cabinets les plus adaptés.

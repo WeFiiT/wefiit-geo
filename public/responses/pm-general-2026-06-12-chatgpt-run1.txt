@@ -1,0 +1,29 @@
+Tu cherches donc à identifier les meilleurs cabinets de conseil spécialisés en Product Management. Pour te donner une réponse précise, il faut distinguer deux types de cabinets :
+Grands cabinets de conseil généralistes qui ont des pratiques fortes en produit et innovation.
+Cabinets spécialisés en Product Management, Product Strategy et Innovation.
+Voici un panorama :
+1. Grands cabinets généralistes (stratégie et transformation produit)
+Ils interviennent souvent sur la stratégie produit, le design organisationnel des équipes produit et la roadmap :
+McKinsey & Company – Division “Digital & Analytics” ou “Product & Innovation”.
+Boston Consulting Group (BCG) – BCG Gamma pour la data et BCG X pour le produit numérique.
+Bain & Company – Bain Innovation & Product Strategy.
+Roland Berger – Transformation digitale et design de produit.
+Capgemini Invent – Conseil en produit, innovation et expérience client.
+Atouts : crédibilité, expertise sur des grandes transformations, réseau international.
+Limites : coût élevé, moins de proximité opérationnelle avec les équipes produit.
+2. Cabinets spécialisés Product Management / Design de produit
+Ces cabinets sont plus petits, très opérationnels, souvent experts en agilité, discovery, design sprint et roadmap produit :
+ProdPad Consulting – Accompagnement Product Management & Product Ops.
+Brainmates (Australie, mais interventions globales) – Conseil PM, priorisation, process.
+Mind the Product (community + consulting) – Workshops, formation PM.
+ThoughtWorks – Transformation produit, delivery agile et product ownership.
+Tryolabs / Pivotal Labs (acquis par VMware) – Coaching PM et développement produit.
+Atouts : expertise terrain, coaching PM, implémentation agile concrète.
+Limites : moins connus sur des gros projets stratégiques d’entreprise.
+3. Critères pour choisir le “meilleur”
+Taille et maturité de ton équipe produit.
+Besoin : stratégie, coaching, implémentation ou formation.
+Budget et horizon : transformation long terme ou projet ponctuel.
+Expérience sectorielle : tech, finance, retail, etc.
+Si tu veux, je peux te faire un top 5 personnalisé pour la France, avec un classement basé sur la réputation, l’expertise PM et les retours clients récents.
+Veux‑tu que je fasse ça ?

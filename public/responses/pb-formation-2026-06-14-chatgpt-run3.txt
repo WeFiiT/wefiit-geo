@@ -1,0 +1,29 @@
+Plusieurs acteurs proposent des formations autour du “product building” (souvent appelé aussi product management + no/low-code + UX + tech produit). En pratique, tu vas trouver trois grandes familles : bootcamps intensifs, formations en ligne, et écoles/programmes plus académiques.
+Bootcamps et formations intensives (les plus “product builder” dans l’esprit)
+Le Wagon
+Très connu pour le no-code, le product design et le product management. Ils proposent des parcours orientés création de produits digitaux (souvent très “builder” : idée → MVP → produit).
+Ironhack
+Formation en product design / UX / product management selon les campus, avec une approche très pratique.
+Growth Tribe
+Très orienté product growth, expérimentation, data et culture produit “startup”.
+Formations en ligne (flexibles, souvent moins chères)
+OpenClassrooms
+Parcours Product Manager / Chef de produit digital avec mentorat. Bon pour structurer les bases.
+Coursera
+Propose des certificats en product management (Google, University of Virginia, etc.), plus théorique mais solide.
+Écoles / programmes plus structurés (France / Europe)
+42
+Pas une formation product builder à proprement parler, mais utile si tu veux devenir très autonome techniquement (utile pour builder des produits toi-même).
+HEC Paris
+Propose des programmes innovation / entrepreneuriat / product & digital business (plutôt stratégique que technique).
+À retenir (important)
+Le terme “product builder” n’est pas standardisé : selon les formations, ça peut vouloir dire :
+Product Manager (pilotage produit)
+Product Designer (UX/UI)
+No-code builder (MVP rapide)
+ou mix produit + tech + growth
+Si tu veux, dis-moi :
+ton niveau (débutant / déjà dev / business / design)
+ton budget
+et si tu veux du no-code ou du code
+Je peux te faire une shortlist beaucoup plus ciblée à Paris ou en remote.

@@ -1,0 +1,64 @@
+Voici un panorama complet des **principaux cabinets spécialisés en Data Product Management** en France :
+---
+## 🏆 Les Cabinets Spécialisés en Data & Product Management en France
+---
+### 1. 🔷 **Thiga** *(Paris + Madrid)*
+> Cabinet de référence, pionnier du secteur
+Thiga est le premier cabinet de conseil spécialisé en Product Management et en Product Design en France.
+Né de la vision de ses fondateurs Hugo et Alexandre pour réconcilier business et tech, Thiga a élargi son expertise au Product Design (2018), au Product Marketing (2021) et à l'organisation Produit (2023).
+**Sur la dimension Data :**
+Que ce soit pour identifier et cadrer les cas d'usage pertinents pour lancer un nouveau Produit Data ou pour accompagner le développement au sein d'une équipe de Data Scientists et Data Engineers, leurs Data PM sont là pour apporter une vision et une démarche produit sur des sujets de pointe.
+**Clients notables :**
+Disneyland Paris (conception d'un modèle de données et migration), La Centrale (amélioration du système anti-fraude basé sur le NLP).
+🔗 [thiga.co](https://www.thiga.co)
+---
+### 2. 🔷 **WeFiiT** *(Paris)*
+> Conseil Product Management avec forte composante Data & IA
+WeFiiT est une société de conseil spécialisée sur les métiers du Product Management, fondée en 2019, dont la raison d'être est d'accompagner durablement ses clients pour construire ensemble des produits à fort impact.
+Il accompagne des grandes entreprises comme Accor, Louis Vuitton, FDJ, France TV et des scale-ups pour structurer leurs équipes Produit, avec des expertises en Product Management, Product Marketing, Product Data & IA, Product Ops et Product Quality — plus de 200 missions réalisées avec un CSAT client supérieur à 9/10.
+🔗 [wefiit.com](https://www.wefiit.com)
+---
+### 3. 🔷 **Wivoo** *(Paris)*
+> Expertise Product Management, Product Design et Data
+Wivoo est une agence de conseil spécialisée en Product Management, Product Design et Data & IA. Depuis 2018, elle accompagne les entreprises dans leur transformation numérique grâce à une communauté de consultants experts.
+🔗 [wivoo.fr](https://www.wivoo.fr)
+---
+### 4. 🔷 **TAK** *(France)*
+> Conseil en Product & Data Management
+TAK est une agence de conseil en Management IT spécialisée en Product et Data, qui s'engage pour une delivery fiable et rapide.
+TAK est également partenaire 3 étoiles French Produit, la plus grande communauté produit française.
+Son académie forme les équipes à différents niveaux de maturité en Product Management, avec des modules 100% sur mesure.
+🔗 [tak.fr](https://www.tak.fr)
+---
+### 5. 🔷 **AVISIA** *(France)*
+> Cabinet Data Science, IA & Data Product
+Chez AVISIA, les Data Scientists conçoivent et déploient des modèles avancés pour répondre aux enjeux métiers grâce à l'IA, de la prédiction à la recommandation.
+Le cabinet est explicitement positionné sur le **Data Product Management** comme discipline centrale.
+🔗 [avisia.fr](https://www.avisia.fr)
+---
+### 6. 🔷 **mc2i** *(France)*
+> Cabinet de conseil indépendant, Data & SI
+mc2i accompagne notamment Decathlon dans l'optimisation de la traçabilité produits grâce au Data Product Management : vision claire, agilité renforcée et adoption mesurable des solutions data.
+Cabinet de conseil indépendant qui accompagne toutes les étapes de transformation numérique, il considère que l'évolution des technologies DATA / IA offre de nouvelles perspectives aux entreprises, notamment des usages métiers croissants et enrichis.
+🔗 [mc2i.fr](https://experts.mc2i.fr)
+---
+### 7. 🔷 **Hubvisory** *(France)*
+> Collectif d'experts Produit
+Hubvisory est le collectif d'experts Product qui aide les grandes entreprises à concevoir, structurer et scaler leurs organisations produit.
+---
+## 📊 Tableau comparatif rapide
+| Cabinet | Spécialité principale | Data Product |
+|---|---|---|
+| **Thiga** | Product Management / Design | ✅ Data PM |
+| **WeFiiT** | Product Management / IA | ✅ Product Data & IA |
+| **Wivoo** | Product / Design / Data | ✅ Data & IA |
+| **TAK** | Product & Data Management | ✅ Core |
+| **AVISIA** | Data Science / IA | ✅ Data Product |
+| **mc2i** | SI / Data | ✅ Data PM |
+| **Hubvisory** | Organisation Produit | ✅ |
+---
+## 💡 Comment choisir ?
+- 🎯 **Pour une approche "Product-first" orientée data** → Thiga, WeFiiT, TAK
+- 📊 **Pour une approche "Data-first" avec vision produit** → AVISIA, mc2i, Synapsys
+- 🏗️ **Pour structurer une organisation produit data** → Hubvisory, Wivoo
+Souhaitez-vous des précisions sur l'un de ces cabinets, ou avez-vous un besoin spécifique (recrutement, mission, formation) ?

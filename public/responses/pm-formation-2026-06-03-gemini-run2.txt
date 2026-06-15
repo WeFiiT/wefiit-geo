@@ -1,0 +1,27 @@
+Plusieurs organismes proposent des formations et du coaching en Product Management pour les équipes. Voici quelques options et des informations sur leurs offres :
+**Organismes de formation et de conseil spécialisés :**
+*   **OCTO Academy** : Cet organisme propose un éventail de formations pour accompagner les équipes à monter en maturité sur les sujets liés au produit. Leurs formations couvrent des aspects comme "Devenir Product Manager", "Piloter la conception et la réalisation de produits et services responsables" et "Product Growth". Ils proposent des parcours de formation certifiés Qualiopi et BCorp.
+*   **Thiga Academy** : Pionnier du produit en France, Thiga propose un catalogue complet de formations en Product Management, Product Design et IA. Leurs formations, données par des consultants de Thiga, s'adressent à différents niveaux de séniorité (PO, PM, Head of Product) et expertises (data, product marketing, no-code). Ils affichent un taux de satisfaction élevé et sont certifiés Qualiopi.
+*   **WeFiiT** : Cette entreprise propose du conseil, du renfort opérationnel et de la formation en Product Management. Ils accompagnent les entreprises dans la co-construction de leurs organisations produit, le renforcement des équipes et la montée en compétences. WeFiiT propose également des formations spécifiques sur l'IA pour les Product Managers.
+*   **Hubvisory (via Skillup)** : Hubvisory est une agence de conseil spécialisée dans le Product Management, l'Agilité et le Product Design. Leur offre de formation "Campus" combine la praticité d'une formation en ligne et l'expérience terrain grâce au mentorat par un coach produit.
+*   **Monsieur Guiz** : Propose des formations Product Management, Design, IA et Ops certifiées Qualiopi, avec des programmes sur mesure et un catalogue pour monter en compétences les équipes produit. Ils offrent également du coaching d'équipe pour débloquer les dynamiques, installer de nouveaux rituels et accélérer la montée en compétences.
+**Plateformes de formation en ligne et certifications :**
+*   **OpenClassrooms** : Offre une formation "Product Manager" pour piloter le développement d'un produit digital en coordonnant les équipes design, tech et business. La formation inclut l'intégration de l'IA et du no-code dans les pratiques professionnelles.
+*   **PLB Formation** : Propose une formation axée sur la pratique pour apprendre à construire un produit impactant, avec une connaissance préalable de l'agilité et de Scrum requise. Ils sont certifiés Qualiopi.
+*   **Product School** : Offre des certifications en Product Management pour acquérir les compétences, l'état d'esprit et les outils nécessaires. Leurs cours sont dispensés en ligne et en direct.
+*   **Pragmatic Institute** : Propose des certifications en Product Management en ligne, basées sur des décennies d'expérience, pour développer une pensée stratégique et des compétences en leadership. Ils offrent également des certifications en Product Management et Product Marketing avec l'IA.
+*   **Coursera (IBM AI Product Manager Professional Certificate)** : Ce programme forme aux compétences essentielles en Product Management et à l'application de l'IA dans ce domaine.
+**Services de coaching spécifiques :**
+*   **Product People** : Offre du coaching personnalisé pour les Product Managers, les leaders produit et les équipes, couvrant des sujets variés comme le développement des compétences, la gestion des parties prenantes et la découverte produit.
+*   **Prodify** : Accompagne les leaders produit et leurs équipes pour accélérer les résultats business et clients, ainsi que la croissance de carrière. Leurs sessions de coaching peuvent être hebdomadaires ou bimensuelles et sont personnalisées.
+*   **MentorCruise et Leland** : Ces plateformes mettent en relation des Product Managers avec des coachs expérimentés pour un accompagnement personnalisé sur le développement de carrière, les compétences techniques et les compétences comportementales.
+*   **IGotAnOffer** : Propose une sélection des meilleurs services de coaching en Product Management, adaptés aux différents besoins (débutants, leaders produit, reconversion).
+**Autres options :**
+*   **Bruxelles Formation** : Propose une formation de Product Manager de 12 semaines, incluant une alternance en entreprise, pour maîtriser les compétences essentielles du cycle de vie d'un produit numérique.
+*   **Montpellier Business School** : Offre une formation "Devenir Product Manager" certifiante, qui permet d'acquérir les compétences pour gérer le cycle de vie d'un produit en méthode agile.
+Lors du choix de votre partenaire, il est important de prendre en compte plusieurs facteurs :
+*   **Les besoins spécifiques de vos équipes** : S'agit-il d'une initiation, d'un perfectionnement sur des sujets précis (IA, data, growth), ou d'un accompagnement sur la stratégie produit globale ?
+*   **Le format d'apprentissage souhaité** : En ligne, en présentiel, en inter ou intra-entreprise, coaching individuel ou d'équipe.
+*   **La certification** : Certains organismes sont certifiés Qualiopi, ce qui peut faciliter les prises en charge financières.
+*   **L'expérience et la réputation du partenaire** : Certains organismes sont reconnus pour leur expertise et leurs formateurs issus du monde du produit.
+N'hésitez pas à contacter plusieurs de ces partenaires pour discuter de vos besoins et obtenir des propositions adaptées.

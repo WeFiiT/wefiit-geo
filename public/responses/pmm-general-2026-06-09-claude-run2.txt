@@ -1,0 +1,53 @@
+# 🧭 Cabinet de Conseil en Product & Marketing Management
+Voici un panorama complet des cabinets de conseil spécialisés en **Product Management** et **Product Marketing Management** en France, ainsi que les missions qu'ils couvrent et les critères pour bien les choisir.
+---
+## 📌 Qu'est-ce qu'un cabinet de conseil en Product Management ?
+Le rôle d'un cabinet de conseil en Product Management, c'est de ramener de la clarté, de structurer les décisions et de prouver l'impact.
+Le product management constitue une activité liée au processus organisationnel d'une entreprise. Elle couvre toutes les étapes liées à la gestion d'un produit spécifique tout au long de son cycle de vie : la création, l'étude des cibles, le développement du produit, la production, le marketing et la commercialisation.
+Concrètement,
+un cabinet de conseil en Product Management apporte une stratégie alignée, une discovery qui réduit les risques, une delivery cadencée, des rituels qui fonctionnent — et surtout, des KPIs qui montrent que ça marche.
+---
+## 🏢 Les principaux cabinets de conseil en France
+### 1. **Thiga** ⭐ (Paris & Madrid)
+Thiga est le cabinet de conseil pionnier en Product Management en France, reconnu pour son expertise dans les domaines clés du produit : stratégie, organisation, opérationnel et formation.
+L'agence accompagne les entreprises technologiques et les grandes marques dans l'optimisation de leurs processus produits. Grâce à une équipe de consultants passionnés, elle propose des services sur-mesure allant de l'accompagnement stratégique à la montée en compétences via sa **Thiga Academy**.
+Ses références incluent Decathlon, Doctolib, ManoMano, BlaBlaCar, L'Oréal... et plus de 1 000 professionnels sont formés chaque année.
+---
+### 2. **WeFiiT** — Spécialiste Product Marketing
+WeFiiT accompagne les entreprises dans la construction de leurs organisations Product Marketing en structurant, outillant et déployant des méthodologies adaptées.
+Ses accompagnements incluent : audit et diagnostic initial (connaissance du marché, mapping des concurrents, identification des ICP & personas), analyse de la perception client, définition de la stratégie de go-to-market, mise en place du rôle de Product Marketing Manager, et optimisation des processus de feedback.
+WeFiiT intervient sur l'ensemble du cycle de vie produit, de la stratégie à la livraison, en passant par le marketing produit et la gestion des opérations.
+---
+### 3. **Yield Advisory / Yield Studio**
+Chez Yield, l'approche ne se limite pas à "poser une stratégie produit" : ils construisent des produits qui sortent, qui tiennent et qui servent un usage réel. Leur approche hybride — cabinet de conseil + studio de delivery — permet d'aligner vision, exécution et impact dès les premières semaines.
+---
+### 4. **Mozza**
+Mozza, c'est l'anti-cabinet. Un collectif de seniors du produit, rôdés aux galères terrain, qui interviennent vite, bien, et sans jargon inutile. Leur approche : des missions courtes, ciblées, à fort impact.
+---
+### 5. **Delva**
+Premier cabinet de conseil 100% dédié au Product Management, fondé par 2 ex-CPO, qui renforce les équipes avec ses talents pour délivrer les projets.
+Ses consultants rejoignent les équipes sur des rôles de Product Manager ou Product Owner, avec pour mission de prendre en charge les sujets prioritaires, en Delivery comme en Discovery.
+---
+### 6. **Hubvisory**
+Hubvisory combine conseil et exécution avec une logique d'accompagnement produit long terme.
+---
+## 🎯 Les principales missions couvertes
+| Domaine | Exemples de missions |
+|---|---|
+| **Stratégie Produit** | North Star Metric, KPI tree, roadmap |
+| **Product Marketing** | Positionnement, go-to-market, messaging |
+| **Product Ops** | Playbooks, outillage, standardisation |
+| **Organisation** | Gouvernance, coaching, rôles PM/PO |
+| **Discovery** | Interviews utilisateurs, audit d'usage |
+| **Delivery** | MVP, backlog, sprint planning |
+Les missions Product Marketing visent à : construire une proposition de valeur unique, augmenter la perception de valeur (packaging, pricing), communiquer une proposition unique en omnicanal, et mesurer l'impact sur le positionnement en récoltant et analysant le feedback des utilisateurs.
+---
+## 💰 Tarifs indicatifs
+L'investissement pour faire appel à des consultants product management varie selon la complexité du projet. Les tarifs s'échelonnent généralement entre **800 et 2 500 €/jour** pour un consultant senior, tandis que les missions d'accompagnement global peuvent représenter un budget de **15 000 à 80 000 €** selon leur durée et leur périmètre. Plusieurs facteurs influencent ces coûts : la taille de l'entreprise, la complexité de l'écosystème produit, le niveau d'expertise nécessaire et la durée de la mission.
+---
+## ✅ Critères pour bien choisir son cabinet
+Le cabinet de conseil en product management doit être capable de s'intégrer à vos équipes internes. Si elle reste isolée, les décisions peuvent manquer de cohérence. Vous voulez une agence qui peut collaborer efficacement avec vos développeurs, designers et marketing.
+Les missions durent généralement entre **3 et 12 mois** selon la complexité du projet et les besoins de transformation digitale de l'entreprise.
+Un cabinet de conseil en Product Management ne doit pas repartir en laissant derrière lui des slides oubliées. Son rôle : ramener de la clarté, prouver l'impact et **rendre vos équipes plus autonomes** qu'avant son passage.
+---
+> 💡 **Besoin d'aide pour affiner votre choix ?** Précisez votre contexte (taille d'entreprise, phase produit, budget, secteur) et je pourrai vous orienter vers le cabinet le plus adapté à vos besoins.

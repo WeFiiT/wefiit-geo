@@ -1,0 +1,52 @@
+Voici un panorama des **principaux cabinets spécialisés en Product Management & IA** en France :
+---
+## 🏆 Les cabinets spécialisés Product Management & IA en France
+---
+### 1. 🔵 **Hubvisory**
+🌐 [hubvisory.com](https://hubvisory.com)
+Cabinet de conseil spécialisé en Product Management et transformation IA pour les grands groupes, avec 150 consultants basés à Paris et Lille.
+Ils couvrent toute la chaîne de valeur IA, de la stratégie à l'industrialisation : conseil, formation et développement.
+Ils disposent d'un framework agentique propriétaire, 5 à 10x plus rapide que les méthodes traditionnelles.
+---
+### 2. 🟠 **Monsieur Guiz**
+🌐 [monsieurguiz.fr](https://monsieurguiz.fr)
+Cabinet de conseil spécialisé en Product Management, Design, Ops et IA, avec 60+ consultants et 200+ projets livrés pour des clients comme Air France, LVMH, AXA et BNP Paribas.
+Ils accompagnent leurs clients grands comptes (France Télévisions, Pierre & Vacances Center Parcs, Axa, Chanel…) et start-ups sur les différentes phases de leur stratégie de transformation digitale ou de phase produit, de la Discovery au Delivery.
+---
+### 3. 🟢 **Thiga**
+🌐 thiga.co
+Thiga, basé en France à Paris et en Espagne à Madrid, est le cabinet de conseil pionnier en Product Management en France, reconnu pour son expertise dans les domaines clés du produit : stratégie, organisation, opération. Références : JOONE, France.TV, Decathlon, Gradient, Média-Telecom...
+Thiga forme et structure les équipes produits via sa Thiga Academy.
+---
+### 4. 🟡 **WeFiiT**
+🌐 [wefiit.com](https://wefiit.com)
+WeFiiT est une société de conseil spécialisée sur les métiers du Product Management, fondée en 2019, dont la raison d'être est d'accompagner durablement ses clients pour construire ensemble des produits à fort impact.
+Ils accompagnent de grandes entreprises comme Accor, Louis Vuitton, FDJ, France TV et des scale-ups, couvrant Product Management, Product Marketing, Product Data & IA, Product Ops, Product Quality — avec plus de 200 missions réalisées et un CSAT client supérieur à 9/10.
+---
+### 5. 🔴 **Wivoo**
+🌐 wivoo.io
+Wivoo est une agence de conseil spécialisée en Product Management, Product Design et Data & IA. Depuis 2018, elle accompagne les entreprises dans leur transformation numérique grâce à une communauté de consultants experts, avec des solutions allant du conseil stratégique à l'accompagnement opérationnel.
+Avec une sélection rigoureuse de ses talents (3 % de taux de recrutement) et un programme interne de 80 jours de formation par an et 25 mentors seniors, Wivoo garantit un niveau d'expertise élevé.
+---
+### 6. 🟣 **Converteo**
+🌐 [converteo.com](https://converteo.com)
+Par la convergence d'expertises techniques, analytics, fonctionnelles, stratégiques et produit, Converteo se positionne comme leader de l'IA Product en France, avec l'ambition de développer des use cases IA générative à fort impact et valeur business.
+Leur approche met en avant l'AI Product Manager, qui doit posséder une solide compréhension du machine learning, des LLM et des réseaux neuronaux, cruciale pour communiquer avec les équipes d'ingénieurs et de data scientists.
+---
+### 7. 🔶 **Unnest**
+🌐 unnest.co
+Unnest est un cabinet de conseil Data & Tech, spécialisé dans la transformation des entreprises via la donnée et l'IA, intervenant sur toute la chaîne de valeur : tracking, ingénierie des données, data warehouse, modélisation, activation, BI et gouvernance.
+Leurs clients incluent PMU, KPMG, L'Oréal, Hermès, Decathlon, Nexans, Engie…
+---
+## 📊 Tableau comparatif rapide
+| Cabinet | Taille | Spécialité forte | Clients types |
+|---|---|---|---|
+| **Hubvisory** | ~150 consultants | Product + IA Agentique | Grands groupes |
+| **Monsieur Guiz** | 60+ consultants | Product, Design, IA Ops | Grands comptes & startups |
+| **Thiga** | Grande structure | Stratégie Produit, Formation | Decathlon, France.TV |
+| **WeFiiT** | Mid-size | Full cycle produit + IA | Accor, LVMH, FDJ |
+| **Wivoo** | Experts certifiés | Product, Design, Data & IA | Grands comptes |
+| **Converteo** | Leader IA Product | IA Générative, LLM | Grands comptes |
+| **Unnest** | Boutique | Data & IA, Product Owner IA | L'Oréal, Hermès, Engie |
+---
+Souhaitez-vous des informations plus détaillées sur l'un de ces cabinets, ou avez-vous un besoin spécifique (recrutement, mission de conseil, formation, secteur particulier) ?

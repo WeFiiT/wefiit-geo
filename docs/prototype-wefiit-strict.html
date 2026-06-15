@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>open-seo — WeFiiT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── RESET & BASE ─────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #002882;
+      --navy-90:    rgba(0,40,130,.9);
+      --navy-10:    rgba(0,40,130,.08);
+      --navy-06:    rgba(0,40,130,.06);
+      --slate:      #2a4cff;
+      --slate-15:   rgba(42,76,255,.15);
+      --slate-08:   rgba(42,76,255,.08);
+      --orange:     #f98f03;
+      --orange-15:  rgba(249,143,3,.15);
+      --orange-08:  rgba(249,143,3,.08);
+      --surface:    #f2f4ff;
+      --white:      #ffffff;
+      --text:       #1a1c30;
+      --text-muted: #6b7099;
+      --text-light: #9ea3c4;
+      --border:     rgba(0,40,130,.1);
+      --green:      #0eab67;
+      --green-bg:   rgba(14,171,103,.12);
+      --radius-card: 14px;
+      --radius-btn:  8px;
+      --radius-chip: 6px;
+      --shadow-sm:   0 1px 4px rgba(0,40,130,.06), 0 4px 16px rgba(0,40,130,.06);
+      --shadow-md:   0 2px 8px rgba(0,40,130,.08), 0 8px 32px rgba(0,40,130,.08);
+      --shadow-lg:   0 4px 16px rgba(0,40,130,.1), 0 16px 48px rgba(0,40,130,.1);
+      --transition:  200ms cubic-bezier(.4,0,.2,1);
+    }
+
+    html { font-size: 15px; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--surface);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      overflow: hidden;
+      /* Subtle dot grid texture */
+      background-image: radial-gradient(circle, rgba(42,76,255,.06) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+
+    /* ─── SIDEBAR ──────────────────────────────────────── */
+    .sidebar {
+      width: 264px;
+      min-width: 264px;
+      height: 100vh;
+      background: var(--white);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Decorative geometric accent in sidebar */
+    .sidebar::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      left: -60px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--slate-08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* ─── SIDEBAR HEADER ────────────────────────────────── */
+    .sidebar-header {
+      padding: 24px 20px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo-block {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      margin-bottom: 18px;
+    }
+
+    .logo-w {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--orange) 0%, #e87b00 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px var(--orange-15), 0 1px 3px rgba(0,0,0,.12);
+    }
+
+    .logo-w svg { display: block; }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .logo-text .brand {
+      font-family: 'Sora', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -.3px;
+    }
+
+    .logo-text .product {
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--text-muted);
+      letter-spacing: .5px;
+      margin-top: 2px;
+    }
+
+    /* Project selector */
+    .project-selector {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 9px 12px;
+      background: var(--navy-06);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      cursor: pointer;
+      transition: background var(--transition), border-color var(--transition);
+    }
+
+    .project-selector:hover {
+      background: var(--navy-10);
+      border-color: rgba(0,40,130,.2);
+    }
+
+    .project-selector-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .project-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--slate) 0%, var(--navy) 100%);
+    }
+
+    .project-label {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--navy);
+    }
+
+    .project-selector svg {
+      color: var(--text-muted);
+    }
+
+    /* ─── NAV ───────────────────────────────────────────── */
+    .sidebar-nav {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px 12px;
+      scrollbar-width: none;
+    }
+
+    .sidebar-nav::-webkit-scrollbar { display: none; }
+
+    .nav-group {
+      margin-bottom: 4px;
+    }
+
+    .nav-group-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-light);
+      padding: 8px 8px 4px;
+      margin-bottom: 2px;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 10px;
+      border-radius: var(--radius-btn);
+      cursor: pointer;
+      position: relative;
+      transition: background var(--transition), color var(--transition);
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 13.5px;
+      font-weight: 400;
+      margin-bottom: 1px;
+    }
+
+    .nav-item:hover {
+      background: var(--surface);
+      color: var(--navy);
+    }
+
+    .nav-item:hover .nav-icon { color: var(--navy); }
+
+    .nav-item.active {
+      background: var(--surface);
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    .nav-item.active::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 6px;
+      bottom: 6px;
+      width: 3px;
+      border-radius: 0 3px 3px 0;
+      background: linear-gradient(180deg, var(--orange) 0%, #e87b00 100%);
+    }
+
+    .nav-icon {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      color: var(--text-light);
+      transition: color var(--transition);
+    }
+
+    .nav-item.active .nav-icon {
+      color: var(--navy);
+    }
+
+    .nav-badge {
+      margin-left: auto;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 20px;
+      background: var(--orange-15);
+      color: var(--orange);
+    }
+
+    .nav-badge.blue {
+      background: var(--slate-15);
+      color: var(--slate);
+    }
+
+    /* ─── SIDEBAR FOOTER ────────────────────────────────── */
+    .sidebar-footer {
+      padding: 16px 12px;
+      border-top: 1px solid var(--border);
+    }
+
+    .user-block {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: var(--radius-btn);
+      cursor: pointer;
+      transition: background var(--transition);
+    }
+
+    .user-block:hover { background: var(--surface); }
+
+    .user-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--slate) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Sora', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .user-info { flex: 1; min-width: 0; }
+
+    .user-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .user-role {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* ─── MAIN CONTENT ──────────────────────────────────── */
+    .main {
+      flex: 1;
+      height: 100vh;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ─── TOP BAR ───────────────────────────────────────── */
+    .topbar {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 0 32px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .page-title {
+      font-family: 'Sora', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -.4px;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .breadcrumb-sep {
+      opacity: .4;
+    }
+
+    .breadcrumb-current {
+      color: var(--navy);
+      font-weight: 500;
+    }
+
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 18px;
+      border-radius: var(--radius-btn);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13.5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition);
+      border: 1.5px solid transparent;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--orange) 0%, #e87b00 100%);
+      color: white;
+      border-color: transparent;
+      box-shadow: 0 2px 8px var(--orange-15), 0 1px 2px rgba(0,0,0,.08);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px var(--orange-15), 0 2px 4px rgba(0,0,0,.1);
+    }
+
+    .btn-primary:active { transform: translateY(0); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--navy);
+      border-color: var(--border);
+    }
+
+    .btn-outline:hover {
+      background: var(--navy-06);
+      border-color: rgba(0,40,130,.2);
+    }
+
+    .btn-ghost {
+      background: var(--surface);
+      color: var(--text-muted);
+      border-color: transparent;
+      padding: 9px 12px;
+    }
+
+    .btn-ghost:hover {
+      background: var(--border);
+      color: var(--navy);
+    }
+
+    /* ─── PAGE CONTENT ──────────────────────────────────── */
+    .content {
+      padding: 28px 32px 40px;
+      flex: 1;
+    }
+
+    /* ─── PAGE HEADER ───────────────────────────────────── */
+    .page-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 28px;
+    }
+
+    .page-header-left {}
+
+    .page-heading {
+      font-family: 'Sora', sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -.6px;
+      margin-bottom: 4px;
+    }
+
+    .page-sub {
+      font-size: 13.5px;
+      color: var(--text-muted);
+    }
+
+    .page-header-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* ─── KPI CARDS ─────────────────────────────────────── */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .kpi-card {
+      background: var(--white);
+      border-radius: var(--radius-card);
+      padding: 22px 24px 20px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .kpi-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Colored accent bar on top */
+    .kpi-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--card-accent-a), var(--card-accent-b));
+      border-radius: var(--radius-card) var(--radius-card) 0 0;
+    }
+
+    .kpi-card:nth-child(1) { --card-accent-a: var(--slate); --card-accent-b: var(--navy); }
+    .kpi-card:nth-child(2) { --card-accent-a: var(--orange); --card-accent-b: #e87b00; }
+    .kpi-card:nth-child(3) { --card-accent-a: var(--green); --card-accent-b: #0a8f57; }
+
+    /* Decorative circle on card */
+    .kpi-card::after {
+      content: '';
+      position: absolute;
+      right: -20px;
+      bottom: -20px;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--card-bg-circle, var(--slate-08));
+    }
+
+    .kpi-card:nth-child(1)::after { background: var(--slate-08); }
+    .kpi-card:nth-child(2)::after { background: var(--orange-08); }
+    .kpi-card:nth-child(3)::after { background: rgba(14,171,103,.08); }
+
+    .kpi-label {
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .kpi-value {
+      font-family: 'Sora', sans-serif;
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -1.5px;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .kpi-value .kpi-unit {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--text-muted);
+      letter-spacing: -.3px;
+    }
+
+    .kpi-trend {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 20px;
+    }
+
+    .kpi-trend.up {
+      background: var(--green-bg);
+      color: var(--green);
+    }
+
+    .kpi-trend.neutral {
+      background: var(--orange-15);
+      color: var(--orange);
+    }
+
+    .kpi-icon-wrap {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .kpi-card:nth-child(1) .kpi-icon-wrap { background: var(--slate-15); color: var(--slate); }
+    .kpi-card:nth-child(2) .kpi-icon-wrap { background: var(--orange-15); color: var(--orange); }
+    .kpi-card:nth-child(3) .kpi-icon-wrap { background: var(--green-bg); color: var(--green); }
+
+    /* ─── TABLE CARD ────────────────────────────────────── */
+    .table-card {
+      background: var(--white);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .table-card-header {
+      padding: 20px 24px 18px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .table-card-title {
+      font-family: 'Sora', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -.3px;
+    }
+
+    .table-card-sub {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .table-card-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Search input */
+    .search-input {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      transition: border-color var(--transition), background var(--transition);
+    }
+
+    .search-input:focus-within {
+      border-color: var(--slate);
+      background: white;
+      box-shadow: 0 0 0 3px var(--slate-08);
+    }
+
+    .search-input svg { color: var(--text-light); flex-shrink: 0; }
+
+    .search-input input {
+      border: none;
+      background: transparent;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      color: var(--text);
+      outline: none;
+      width: 160px;
+    }
+
+    .search-input input::placeholder { color: var(--text-light); }
+
+    /* Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead {
+      background: var(--surface);
+    }
+
+    th {
+      padding: 11px 24px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .7px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    th:first-child { border-radius: 0; }
+
+    tbody tr {
+      border-top: 1px solid var(--border);
+      transition: background var(--transition);
+    }
+
+    tbody tr:hover { background: var(--surface); }
+
+    td {
+      padding: 16px 24px;
+      font-size: 13.5px;
+      color: var(--text);
+      vertical-align: middle;
+    }
+
+    .domain-cell {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .domain-favicon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--navy);
+      font-family: 'Sora', sans-serif;
+    }
+
+    .domain-favicon.wefiit { background: linear-gradient(135deg, var(--orange-15), var(--orange-08)); color: var(--orange); border-color: var(--orange-15); }
+    .domain-favicon.ce { background: linear-gradient(135deg, var(--slate-08), var(--navy-06)); color: var(--navy); border-color: var(--border); }
+    .domain-favicon.client { background: var(--surface); color: var(--text-muted); }
+
+    .domain-name {
+      font-weight: 600;
+      color: var(--navy);
+      font-size: 13.5px;
+    }
+
+    .domain-url {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      margin-top: 1px;
+    }
+
+    /* KW count pill */
+    .kw-count {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .kw-bar {
+      width: 60px;
+      height: 4px;
+      background: var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+      margin-top: 3px;
+    }
+
+    .kw-bar-fill {
+      height: 100%;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--slate), var(--navy));
+      transition: width .4s ease;
+    }
+
+    .date-cell {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .date-cell .date-value {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* Badges */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .badge-actif {
+      background: var(--green-bg);
+      color: var(--green);
+    }
+
+    .badge-actif::before { background: var(--green); }
+
+    .badge-pending {
+      background: var(--orange-15);
+      color: var(--orange);
+    }
+
+    .badge-pending::before { background: var(--orange); }
+
+    /* Actions cell */
+    .actions-cell {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-sm {
+      padding: 6px 14px;
+      font-size: 12.5px;
+      font-weight: 600;
+    }
+
+    .btn-icon {
+      width: 32px;
+      height: 32px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+    }
+
+    /* ─── TABLE FOOTER ───────────────────────────────────── */
+    .table-footer {
+      padding: 14px 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--surface);
+    }
+
+    .table-count {
+      font-size: 12.5px;
+      color: var(--text-muted);
+    }
+
+    .table-count strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .pagination {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .page-btn {
+      width: 30px;
+      height: 30px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: white;
+      font-size: 12.5px;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition);
+      font-weight: 500;
+    }
+
+    .page-btn:hover { background: var(--navy-06); color: var(--navy); }
+
+    .page-btn.active {
+      background: var(--navy);
+      color: white;
+      border-color: var(--navy);
+      font-weight: 700;
+    }
+
+    /* ─── FILTER ROW ─────────────────────────────────────── */
+    .filter-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .filter-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12.5px;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1.5px solid var(--border);
+      background: white;
+      color: var(--text-muted);
+      transition: all var(--transition);
+    }
+
+    .filter-chip:hover { border-color: var(--navy); color: var(--navy); }
+
+    .filter-chip.active {
+      border-color: var(--navy);
+      background: var(--navy);
+      color: white;
+    }
+
+    .filter-chip.active svg { color: white; }
+
+    .filter-sep { flex: 1; }
+
+    /* ─── STAT MINI (inline in topbar) ───────────────────── */
+    .topbar-stat {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 12px;
+      background: var(--surface);
+      border-radius: 8px;
+      font-size: 12.5px;
+    }
+
+    .topbar-stat-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: pulse-green 2s infinite;
+    }
+
+    @keyframes pulse-green {
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(14,171,103,.4); }
+      50% { box-shadow: 0 0 0 5px rgba(14,171,103,0); }
+    }
+
+    .topbar-stat-label { color: var(--text-muted); }
+    .topbar-stat-value { color: var(--green); font-weight: 600; }
+
+    /* ─── SCROLL ─────────────────────────────────────────── */
+    .main::-webkit-scrollbar { width: 5px; }
+    .main::-webkit-scrollbar-track { background: transparent; }
+    .main::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
+    .main::-webkit-scrollbar-thumb:hover { background: rgba(0,40,130,.2); }
+
+    /* ─── DIVIDER ────────────────────────────────────────── */
+    .nav-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 8px 0;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- SIDEBAR                                                -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <aside class="sidebar">
+
+    <!-- Header -->
+    <div class="sidebar-header">
+      <div class="logo-block">
+        <div class="logo-w">
+          <!-- W letter -->
+          <svg width="22" height="16" viewBox="0 0 22 16" fill="none">
+            <path d="M0 0L4 16L7.5 5.5L11 16L14.5 5.5L18 16L22 0H18.5L17 6L14.5 2L12 9.5L11 7L10 9.5L7.5 2L5 6L3.5 0H0Z" fill="white"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="brand">WeFiiT</span>
+          <span class="product">open-seo</span>
+        </div>
+      </div>
+
+      <div class="project-selector">
+        <div class="project-selector-left">
+          <div class="project-dot"></div>
+          <span class="project-label">Default</span>
+        </div>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 9l6 6 6-6"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Nav -->
+    <nav class="sidebar-nav">
+
+      <div class="nav-group">
+        <div class="nav-group-label">Suivi</div>
+
+        <a class="nav-item active" href="#">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+          Rank Tracking
+        </a>
+
+        <a class="nav-item" href="#">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="M21 21l-4.35-4.35"/>
+          </svg>
+          Keywords
+          <span class="nav-badge blue">147</span>
+        </a>
+      </div>
+
+      <div class="nav-divider"></div>
+
+      <div class="nav-group">
+        <div class="nav-group-label">Technique</div>
+
+        <a class="nav-item" href="#">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+          Audit de site
+        </a>
+
+        <a class="nav-item" href="#">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/>
+            <path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/>
+          </svg>
+          Backlinks
+        </a>
+      </div>
+
+      <div class="nav-divider"></div>
+
+      <div class="nav-group">
+        <div class="nav-group-label">IA & GEO</div>
+
+        <a class="nav-item" href="#">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+          </svg>
+          AI Search
+          <span class="nav-badge">New</span>
+        </a>
+
+        <a class="nav-item" href="#">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>
+          </svg>
+          GEO Visibility
+        </a>
+      </div>
+
+      <div class="nav-divider"></div>
+
+      <div class="nav-group">
+        <div class="nav-group-label">Rapports</div>
+
+        <a class="nav-item" href="#">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+            <line x1="3" y1="9" x2="21" y2="9"/>
+            <line x1="9" y1="21" x2="9" y2="9"/>
+          </svg>
+          Exports
+        </a>
+
+        <a class="nav-item" href="#">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/>
+          </svg>
+          Alertes
+        </a>
+      </div>
+
+    </nav>
+
+    <!-- Footer -->
+    <div class="sidebar-footer">
+      <div class="user-block">
+        <div class="user-avatar">AS</div>
+        <div class="user-info">
+          <div class="user-name">Antoine S.</div>
+          <div class="user-role">Lead Ops · WeFiiT</div>
+        </div>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--text-light)">
+          <circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/>
+        </svg>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- MAIN CONTENT                                           -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <main class="main">
+
+    <!-- Top bar -->
+    <div class="topbar">
+      <div class="topbar-left">
+        <div class="breadcrumb">
+          <span>open-seo</span>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-current">Rank Tracking</span>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <div class="topbar-stat">
+          <div class="topbar-stat-dot"></div>
+          <span class="topbar-stat-label">Dernière synchro :</span>
+          <span class="topbar-stat-value">il y a 3 min</span>
+        </div>
+        <button class="btn btn-ghost">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8h1a4 4 0 010 8h-1"/>
+            <path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/>
+            <line x1="6" y1="1" x2="6" y2="4"/>
+            <line x1="10" y1="1" x2="10" y2="4"/>
+            <line x1="14" y1="1" x2="14" y2="4"/>
+          </svg>
+          Paramètres
+        </button>
+        <button class="btn btn-ghost btn-icon">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 01-3.46 0"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Content area -->
+    <div class="content">
+
+      <!-- Page header -->
+      <div class="page-header">
+        <div class="page-header-left">
+          <h1 class="page-heading">Rank Tracking</h1>
+          <p class="page-sub">Suivez les positions de vos domaines sur les moteurs de recherche</p>
+        </div>
+        <div class="page-header-right">
+          <button class="btn btn-outline">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Exporter
+          </button>
+          <button class="btn btn-primary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19"/>
+              <line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+            Ajouter un domaine
+          </button>
+        </div>
+      </div>
+
+      <!-- KPI cards -->
+      <div class="kpi-grid">
+
+        <!-- Card 1 -->
+        <div class="kpi-card">
+          <div class="kpi-icon-wrap">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/>
+              <path d="M21 21l-4.35-4.35"/>
+            </svg>
+          </div>
+          <div class="kpi-label">Mots-clés suivis</div>
+          <div class="kpi-value">147</div>
+          <span class="kpi-trend up">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+            +12 ce mois
+          </span>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="kpi-card">
+          <div class="kpi-icon-wrap">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <div class="kpi-label">Position moyenne</div>
+          <div class="kpi-value">23<span class="kpi-unit">.4</span></div>
+          <span class="kpi-trend neutral">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Stable vs. mois dernier
+          </span>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="kpi-card">
+          <div class="kpi-icon-wrap">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+          </div>
+          <div class="kpi-label">Vérifications ce mois</div>
+          <div class="kpi-value">12</div>
+          <span class="kpi-trend up">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+            4 de plus qu'en avril
+          </span>
+        </div>
+
+      </div>
+
+      <!-- Filter row -->
+      <div class="filter-row">
+        <div class="filter-chip active">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+          Tous (3)
+        </div>
+        <div class="filter-chip">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42"/></svg>
+          Actifs (2)
+        </div>
+        <div class="filter-chip">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          En attente (1)
+        </div>
+        <div class="filter-sep"></div>
+        <button class="btn btn-ghost" style="font-size:12.5px; padding:6px 12px;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/>
+            <line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>
+          </svg>
+          Trier par
+        </button>
+      </div>
+
+      <!-- Domain table -->
+      <div class="table-card">
+
+        <div class="table-card-header">
+          <div>
+            <div class="table-card-title">Domaines suivis</div>
+            <div class="table-card-sub">3 domaines · Dernière mise à jour 26/05/2026</div>
+          </div>
+          <div class="table-card-actions">
+            <div class="search-input">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+              </svg>
+              <input type="text" placeholder="Rechercher un domaine..." />
+            </div>
+            <button class="btn btn-ghost btn-icon btn-sm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+              </svg>
+            </button>
+            <button class="btn btn-ghost btn-icon btn-sm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>
+                <div style="display:flex;align-items:center;gap:5px;">
+                  Domaine
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+                </div>
+              </th>
+              <th>Mots-clés</th>
+              <th>Dernière vérif.</th>
+              <th>Statut</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <!-- Row 1 — WeFiiT -->
+            <tr>
+              <td>
+                <div class="domain-cell">
+                  <div class="domain-favicon wefiit">W</div>
+                  <div>
+                    <div class="domain-name">wefiit.com</div>
+                    <div class="domain-url">https://wefiit.com</div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="kw-count">89 mots-clés</div>
+                <div class="kw-bar">
+                  <div class="kw-bar-fill" style="width:61%"></div>
+                </div>
+              </td>
+              <td>
+                <div class="date-cell">
+                  <div class="date-value">15/05/2026</div>
+                  <div style="font-size:11px; margin-top:1px;">il y a 11 jours</div>
+                </div>
+              </td>
+              <td><span class="badge badge-actif">Actif</span></td>
+              <td>
+                <div class="actions-cell">
+                  <button class="btn btn-outline btn-sm">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                    Voir
+                  </button>
+                  <button class="btn btn-ghost btn-icon btn-sm">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg>
+                  </button>
+                  <button class="btn btn-ghost btn-icon btn-sm">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+                  </button>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Row 2 — Caisse d'Epargne -->
+            <tr>
+              <td>
+                <div class="domain-cell">
+                  <div class="domain-favicon ce">CE</div>
+                  <div>
+                    <div class="domain-name">caisse-epargne.fr</div>
+                    <div class="domain-url">https://www.caisse-epargne.fr</div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="kw-count">34 mots-clés</div>
+                <div class="kw-bar">
+                  <div class="kw-bar-fill" style="width:23%"></div>
+                </div>
+              </td>
+              <td>
+                <div class="date-cell">
+                  <div class="date-value">12/05/2026</div>
+                  <div style="font-size:11px; margin-top:1px;">il y a 14 jours</div>
+                </div>
+              </td>
+              <td><span class="badge badge-actif">Actif</span></td>
+              <td>
+                <div class="actions-cell">
+                  <button class="btn btn-outline btn-sm">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                    Voir
+                  </button>
+                  <button class="btn btn-ghost btn-icon btn-sm">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg>
+                  </button>
+                  <button class="btn btn-ghost btn-icon btn-sm">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+                  </button>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Row 3 — Exemple client -->
+            <tr>
+              <td>
+                <div class="domain-cell">
+                  <div class="domain-favicon client">EC</div>
+                  <div>
+                    <div class="domain-name">exemple-client.com</div>
+                    <div class="domain-url">https://exemple-client.com</div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="kw-count">24 mots-clés</div>
+                <div class="kw-bar">
+                  <div class="kw-bar-fill" style="width:16%; background: linear-gradient(90deg, var(--orange), #e87b00);"></div>
+                </div>
+              </td>
+              <td>
+                <div class="date-cell">
+                  <div style="color:var(--text-light); font-size:12px; display:flex; align-items:center; gap:5px;">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    En attente
+                  </div>
+                </div>
+              </td>
+              <td><span class="badge badge-pending">En attente</span></td>
+              <td>
+                <div class="actions-cell">
+                  <button class="btn btn-primary btn-sm" style="font-size:12px; padding:6px 14px;">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg>
+                    Lancer
+                  </button>
+                  <button class="btn btn-ghost btn-icon btn-sm">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+                  </button>
+                </div>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+
+        <div class="table-footer">
+          <div class="table-count">Affichage de <strong>3</strong> domaines sur <strong>3</strong></div>
+          <div class="pagination">
+            <button class="page-btn">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+      <!-- /table-card -->
+
+    </div>
+    <!-- /content -->
+
+  </main>
+
+</body>
+</html>

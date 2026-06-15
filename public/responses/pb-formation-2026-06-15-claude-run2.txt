@@ -1,0 +1,37 @@
+Voici un panorama des principaux organismes qui proposent des **formations Product Builder** en France :
+---
+### 1. 🏫 **École Cube**
+[ecole.cube.fr](https://www.ecole.cube.fr/formations/metiers/product-builder)
+À l'issue de la formation Product Builder No-Code & IA, vous serez capable de concevoir et déployer des solutions digitales complètes sans dépendre d'une équipe technique.
+La formation est un bootcamp bien structuré, autour de contenus de qualité et de l'expertise de mentors, avec une approche centrée sur la pratique et l'insertion professionnelle.
+---
+### 2. 🎓 **Jedha**
+[jedha.co](https://www.jedha.co/formations/formation-product-builder)
+En 450 heures, vous apprendrez le métier de Product Builder et serez capable de bâtir des produits en toute autonomie, de l'idée à la mise en production.
+Vous maîtriserez une stack moderne, combinant la programmation assistée par l'IA avec Cursor ou Lovable, et des outils no-code robustes allant de Figma à n8n.
+---
+### 3. 🏛️ **Alegria Academy**
+[alegria.group](https://www.alegria.group/academy/product-builder-nocode-lowcode-ai)
+Alegria.academy prépare au diplôme de Concepteur Développeur d'Applications (RNCP 6 - BAC+3), une reconnaissance par l'État qui confirme le sérieux de la formation et le No-Code comme méthode de développement digital.
+Une fois admissible, vous bénéficiez d'un accompagnement personnalisé (onboarding, coaching, simulations d'entretiens) pour trouver votre entreprise d'accueil en alternance (12 mois).
+---
+### 4. 📊 **DataSuits**
+[datasuits.fr](https://www.datasuits.fr/formation-product-builder-no-code-ia)
+La formation Product Builder No Code & IA prépare au passage de la certification officielle RNCP41480BC03 « Développer un produit numérique avec des outils no-code ».
+Vous bénéficiez d'une triple certification : une certification RNCP reconnue par l'État, un certificat Product Builder No Code & IA délivré par l'université partenaire, et un certificat délivré par DataSuits.
+---
+### 5. 📡 **Liora.io**
+[liora.io](https://liora.io/formation/data-ia/product-builder-no-code)
+Plus de 300h de formation pour devenir Product Builder No-Code, avec des outils comme Webflow, Airtable, Make et Zapier, sur 5 mois.
+Cette formation est reconnue par l'État et enregistrée au Répertoire National des Certifications Professionnelles (RNCP) sous le code RNCP40593.
+Elle est également éligible au CPF.
+---
+### 📌 En résumé
+| Organisme | Durée | Certification | Éligible CPF |
+|---|---|---|---|
+| École Cube | Bootcamp | Oui | À vérifier |
+| Jedha | 450h | Oui | À vérifier |
+| Alegria Academy | 12 mois (alternance) | RNCP 6 (Bac+3) | Oui |
+| DataSuits | Variable | RNCP + triple certif | Oui |
+| Liora.io | +300h / 5 mois | RNCP40593 | ✅ Oui |
+Souhaitez-vous des informations plus détaillées sur l'une de ces formations (tarifs, prérequis, financement) ?

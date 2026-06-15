@@ -1,0 +1,38 @@
+Voici le **Top 5 des agences de Product Management à Paris** 🏆 :
+---
+## 🥇 1. Thiga
+**Site :** [thiga.co](https://thiga.co)
+Thiga a codifié les standards du métier, avec un apport structurant sur la culture produit.
+Thiga se démarque par son expertise pédagogique (formations, bootcamps PM) et le déploiement de PMs embarqués dans vos équipes internes pour accélérer la montée en maturité produit.
+Thiga forme et structure les équipes produits via sa Thiga Academy.
+---
+## 🥈 2. Yield Studio
+**Site :** [yieldstudio.fr](https://yieldstudio.fr)
+Yield Studio conçoit et développe des produits digitaux à fort impact, avec une équipe senior, une méthode produit rigoureuse et l'IA intégrée (app mobile, web, logiciel métier, data & IA).
+Yield Studio propose des "product squads" sur-mesure capables d'intervenir à différentes étapes : audit, cadrage, growth, pilotage produit.
+---
+## 🥉 3. WeFiiT
+**Site :** [wefiit.com](https://wefiit.com)
+WeFiiT est un cabinet de conseil spécialisé en Product Management à Paris, offrant du conseil stratégique, du renfort opérationnel et des formations en PM, Data & IA, Marketing et Quality.
+WeFiiT accompagne de grands comptes comme Accor, Louis Vuitton et FDJ, avec plus de 200 missions réalisées et un score de satisfaction client supérieur à 9/10.
+---
+## 4️⃣ Hubvisory
+**Site :** [hubvisory.com](https://hubvisory.com)
+Hubvisory combine conseil et exécution avec une logique d'accompagnement produit long terme.
+Des agences comme Thiga ou Hubvisory ont aidé de grands groupes à transformer leur culture produit et à renforcer leur impact business.
+Une grande entreprise cherchant à industrialiser sa démarche produit peut faire appel à Hubvisory pour un accompagnement global.
+---
+## 5️⃣ Wivoo
+**Site :** [wivoo.io](https://wivoo.io)
+Wivoo a développé une forte culture data et apporte des outils avancés de pilotage de la performance produit (tableaux de bord, OKR, tests utilisateurs).
+Wivoo propose des missions complètes allant du conseil stratégique à l'exécution opérationnelle.
+Les entreprises plus matures cherchant à structurer leur organisation se tournent vers Wivoo, qui propose des approches sur mesure et une expertise complète.
+---
+### 📌 Comment choisir ?
+| Agence | Idéal pour |
+|---|---|
+| **Thiga** | Formation, culture produit, grands groupes |
+| **Yield Studio** | Startups, MVPs, produits digitaux |
+| **WeFiiT** | DSI, environnements complexes, grands comptes |
+| **Hubvisory** | Transformation produit long terme |
+| **Wivoo** | Pilotage data, OKR, organisations matures |

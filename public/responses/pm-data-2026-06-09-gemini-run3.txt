@@ -1,0 +1,9 @@
+Un cabinet spécialisé en data product management est une société de conseil qui accompagne les entreprises dans la création, le développement et l'optimisation de produits basés sur la donnée et l'intelligence artificielle (IA). Ces cabinets combinent une expertise en product management avec une solide connaissance des enjeux liés à la data.
+Leurs services couvrent généralement un large éventail d'activités, incluant :
+*   **Stratégie et conseil** : Définir la vision produit alignée avec la stratégie de l'entreprise, explorer le potentiel inexploité des données, et ancrer les solutions data et IA dans les usages quotidiens.
+*   **Renfort opérationnel** : Mettre à disposition des consultants spécialisés tels que des Product Owners Data/IA, Product Managers, et Project Managers Data/IA pour piloter des projets, de l'idéation à l'industrialisation.
+*   **Gouvernance des données** : Accompagner les organisations dans la maîtrise de leurs données, incluant la qualité, la conformité, le catalogage et le pilotage des actifs data.
+*   **Développement de produits Data & IA** : Aider à transformer les données en produits à forte valeur ajoutée, en intégrant des mécanismes de gouvernance de données et en garantissant la qualité.
+*   **Formation** : Proposer des formations sur mesure pour monter en compétences les équipes internes des clients en product management et data.
+*   **Optimisation et amélioration continue** : Améliorer le delivery (priorisation, processus, cycle time) et proposer des rituels d'amélioration continue (Scrum, Agile, Kaizen).
+Ces cabinets se positionnent comme des partenaires pour aider les entreprises à transformer leurs données en décisions éclairées et en produits concrets, générant un impact utilisateur mesurable et un retour sur investissement tangible. Ils travaillent avec diverses entreprises, des grandes organisations aux scale-ups, dans des secteurs variés comme l'hôtellerie, le droit, l'industrie, ou les médias.

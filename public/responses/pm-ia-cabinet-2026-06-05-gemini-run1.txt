@@ -1,0 +1,15 @@
+Plusieurs cabinets de conseil sont spécialisés en product management avec une expertise approfondie en intelligence artificielle (IA), offrant des services allant de la stratégie à l'implémentation et à la formation. Ces firmes accompagnent les entreprises dans la création et l'optimisation de leurs produits numériques intégrant l'IA.
+Parmi les cabinets notables dans ce domaine, on trouve :
+*   **Hubvisory** est un cabinet de conseil spécialisé en Product Management et en transformation IA, particulièrement pour les grands groupes. Il propose des services couvrant toute la chaîne de valeur de l'IA, de la stratégie à l'industrialisation, et des formations dédiées.
+*   **WeFiiT** se concentre sur les métiers du Product Management, incluant le Product Data & IA. L'entreprise aide ses clients à exploiter le potentiel de leurs données et de l'IA, à identifier des cas d'usage à forte valeur ajoutée et à construire des produits basés sur l'IA et la data.
+*   **Atecna**, une agence de product management, intègre la data produit dès la conception et utilise des modèles d'IA, y compris l'IA générative, pour accélérer la prise de décision et la découverte de produits.
+*   **Wivoo** est un cabinet de conseil en Product Management, Product Design et Data/IA, qui se positionne sur le pilotage du développement, la mesure et l'optimisation de Produits Data et IA.
+*   **Thiga** offre des services de conseil, de formation sur-mesure et de coaching en Product Management, avec une expertise spécifique sur l'IA au service de l'efficacité opérationnelle et la conception de produits IA.
+*   **IKXO** est un cabinet de conseil en Product Management qui intègre l'exploration des opportunités liées à l'IA dans son accompagnement client.
+*   **Yield Advisory** propose une expertise en Data Science, Data Analysis et Product Management, aidant à structurer et industrialiser les usages Data & IA pour en faire un levier de croissance.
+D'autres cabinets de conseil d'envergure internationale ou spécialisés dans l'IA incluent également des compétences en product management pour l'IA :
+*   **Artefact** est une société de conseil mondiale en transformation data et IA, de la stratégie au déploiement de solutions IA.
+*   **Palmer Consulting** (basé à Paris) se spécialise dans la stratégie digitale et l'IA, notamment l'IA générative, avec une approche hybride stratégique et opérationnelle.
+*   **Mozza** (basé à Paris) est spécialisé dans l'intégration d'IA sur mesure et la conception de produits numériques.
+*   Des entreprises comme **Accenture**, **Capgemini** et **McKinsey & Company** offrent des services de conseil en IA et en transformation numérique à grande échelle, incluant l'intégration de l'IA dans la stratégie produit.
+Ces cabinets aident les entreprises à définir leur stratégie produit IA, à concevoir et développer des produits innovants, à optimiser les processus grâce à l'IA, et à monter en compétences sur ces sujets clés.

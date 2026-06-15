@@ -1,0 +1,17 @@
+Plusieurs cabinets se sont spécialisés dans le product management lié à l'intelligence artificielle (IA) en France, offrant à la fois des services de conseil et de recrutement pour répondre aux besoins croissants du marché.
+**Cabinets de Conseil en Product Management et IA :**
+De nombreuses entreprises proposent leur expertise pour accompagner l'intégration et la gestion de produits intégrant l'IA :
+*   **Hubvisory** est un cabinet de conseil spécialisé en Product Management et transformation IA, collaborant avec de grands groupes. Ils interviennent sur des enjeux de transformation IA et d'organisation produit.
+*   **Monsieur Guiz** se positionne comme un cabinet de conseil en Product Management, Design, Ops et IA, avec une expertise dans l'exploration de l'IA générative.
+*   **WeFiiT** accompagne les entreprises dans la construction de produits Data & IA, couvrant la stratégie, la discovery et le delivery. Ils proposent également des formations en Data Product Management et IA.
+*   **Thiga** met l'IA et la Data au service du Product Management, en aidant les organisations à transformer l'IA et la Data en valeur opérationnelle grâce à une approche stratégique et éthique. Leurs offres incluent la stratégie et l'accélération IA, la conception de produits IA et les expériences client centrées sur l'IA.
+*   **Converteo**, un cabinet de conseil "100% data-driven", se positionne comme un leader de l'IA Product en France, visant à développer des cas d'usage d'IA générative à fort impact business.
+*   **Yield Advisory** propose des experts en Data, IA et Product Management pour aider les entreprises à libérer le potentiel de leurs données, de l'audit stratégique à l'industrialisation.
+*   **Niji** se présente comme un partenaire de transformation digitale qui intègre l'IA nativement dans la conception et le pilotage de produits, de la stratégie à la delivery.
+*   D'autres cabinets de conseil généralistes en IA, tels qu'**AI Partners**, **Palmer Consulting**, **OSKI Solutions**, **SIA Partners**, **Astrak** et **Systelium**, peuvent également proposer des services liés au product management dans le cadre de leurs missions d'intégration de l'IA.
+**Cabinets de Recrutement spécialisés en Product Manager IA :**
+Face à l'émergence du rôle d'AI Product Manager, plusieurs cabinets et plateformes se sont positionnés sur le recrutement de ces profils hybrides :
+*   **Get in Talent** est un cabinet spécialisé dans le recrutement d'AI Product Managers, gérant des missions de pilotage de roadmap IA et de priorisation des cas d'usage. Ils soulignent la rareté des profils ayant déjà piloté une roadmap IA en production.
+*   **Licorne Society** est un cabinet de recrutement en IA qui accompagne les startups et scale-ups dans la structuration de leurs équipes techniques et le recrutement de profils comme les CTO IA ou Lead R&D AI Engineer, qui sont souvent en interaction avec le product management.
+*   Bien que plus généraliste, **Noe.pm** est un cabinet de recrutement de Product Managers qui pourrait également aider à trouver des profils spécialisés en IA, étant donné son expertise dans le recrutement de rôles produit variés.
+Ces structures aident les entreprises à naviguer dans la complexité de l'IA en assurant la définition, le développement et la mise sur le marché de produits basés sur cette technologie.

@@ -1,0 +1,12 @@
+Plusieurs organismes proposent des formations pour devenir "Product Builder", avec un accent particulier sur le No-Code et l'Intelligence Artificielle. Ces formations visent à doter les apprenants des compétences nécessaires pour concevoir, développer et lancer des produits digitaux de manière autonome.
+Parmi les principaux prestataires en France, on trouve :
+*   **Jedha** propose une formation de 450 heures intitulée "Product Builder IA & No code". Ce programme est conçu pour permettre aux participants de créer des produits digitaux complexes en s'appuyant sur l'IA et les outils no-code, en couvrant le design, le développement, l'intégration de l'IA, l'automatisation et la gestion de produit.
+*   **DataSuits** offre une formation "Product Builder No Code & IA" qui est triplement certifiée et prépare à la certification officielle RNCP41480BC03 "Développer un produit numérique avec des outils no-code".
+*   **Intelligence Academy** propose une "Formation Product Builder 2026 : No-Code + IA" menant à un titre RNCP de niveau Bac+4, permettant de créer des produits digitaux rapidement sans écrire de code.
+*   **Alegria.group (Alegria.academy)** offre une "Formation Product Builder Low code / NoCode & IA" qui prépare au diplôme de concepteur développeur d'applications (RNCP 6 - BAC + 3).
+*   L'**École Essin** propose un "Bachelor 3 Product Builder No Code & Prompt IA" en formation initiale, qui aboutit à un titre RNCP de niveau 6 et une certification professionnelle EXIN BCS Business Analysis.
+*   **Maestro** propose un bootcamp "Product Builder" en présentiel (245h) axé sur les solutions No-code.
+*   **The Bridge École** offre un "Bachelor Product Builder No Code" pour concevoir et déployer des solutions digitales avec des outils no-code.
+*   L'**ESED - École Supérieure d'Économie de Demain** propose un "Bachelor 3 Product Builder & Expert IA" qui combine l'intelligence artificielle, le marketing numérique et le No-Code/Low-Code.
+*   L'**EEDN** propose une formation "Product Builder No-code & IA" 100% à distance.
+D'autres structures proposent également des bootcamps et des cours plus généralistes sur le développement de produits ou la construction d'applications basées sur l'IA, tels que Plexal City, Product Builder Academy et Product School. Des plateformes comme Coursera listent aussi de nombreux cours et certifications en développement de produits.

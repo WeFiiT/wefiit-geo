@@ -1,0 +1,46 @@
+Voici un panorama complet des principaux **cabinets et agences de conseil spécialisés en Data Product Management** en France :
+---
+## 🏆 Cabinets spécialisés en Data Product Management
+---
+### 1. 🔵 **Thiga**
+Thiga, basé à Paris et Madrid, est le cabinet de conseil **pionnier en Product Management en France**, reconnu pour son expertise dans les domaines clés du produit : stratégie, organisation, opérationnel et formation.
+L'agence accompagne les entreprises technologiques et les grandes marques dans l'optimisation de leurs processus produits, du développement de nouvelles fonctionnalités à la mise en place de méthodes agiles centrées sur les utilisateurs.
+---
+### 2. 🟢 **WeFiiT**
+WeFiiT accompagne ses clients pour construire ensemble des **produits Data & IA** générant un impact utilisateur concret au ROI mesurable, en transformant les données en produits qui répondent aux véritables besoins métiers.
+Stratégie, Discovery, Delivery : ils interviennent à chaque étape du cycle de vie des produits Data & IA pour structurer, renforcer et faire grandir les équipes.
+WeFiiT brille particulièrement dans **les environnements complexes**, en apportant de la clarté dans le flou.
+---
+### 3. 🟣 **Wivoo**
+Wivoo est une agence de conseil spécialisée en **Product Management, Product Design et Data & IA**, qui accompagne depuis 2018 les entreprises dans leur transformation numérique et propose des solutions sur mesure allant du conseil stratégique à l'accompagnement opérationnel.
+Grâce à une sélection rigoureuse de ses talents (3 % de taux de recrutement) et un programme interne de montée en compétences (80 jours de formation par an et 25 mentors seniors), Wivoo garantit un niveau d'expertise élevé.
+---
+### 4. 🔴 **Hubvisory**
+Hubvisory est un cabinet de conseil spécialisé en **Product Management et transformation IA** pour les grands groupes, fort de 150 consultants à Paris et Lille.
+Hubvisory brouille les lignes entre cabinet et studio : conseil produit, discovery, UX, MVP… leur promesse est d'accompagner la transition produit de A à Z, avec des designers et PMs maison capables de passer du cadrage à la livraison.
+---
+### 5. 🟠 **Converteo**
+Pleinement intégrés dans les équipes produit, les consultants de Converteo développent une approche sur mesure et s'adaptent aux défis de leurs clients en Product Management, participant à l'analyse de l'environnement produit, à l'identification d'opportunités d'amélioration, à la mise en place de plans d'action et à l'optimisation de la stratégie.
+---
+### 6. 🔵 **mc2i**
+Les équipes de mc2i assument des missions de conseil aux CDO et des activités de **Data Product Owner, Chef de projet, Data Analyst, Data Scientist, Data Manager et Data Steward**.
+mc2i a notamment accompagné Decathlon dans l'**optimisation de la traçabilité produits grâce au Data Product Management**.
+---
+### 7. 🟡 **Artefact**
+Cabinet français spécialisé dans le **data marketing et l'IA appliquée à la personnalisation client**, Artefact est reconnu pour son expertise en marketing data et activation IA.
+---
+### 8. 🟤 **Synapsys**
+En tant que cabinet de conseil en data, Synapsys accompagne ses clients dans leurs projets de data analyse, data visualisation, data science et intelligence artificielle, en maîtrisant les outils et technologies pour soutenir les organisations dans leurs stratégies et projets data, la conception et le développement de **produits ou plateformes data**.
+---
+## 📊 Comment choisir ?
+| Cabinet | Points forts |
+|---|---|
+| **Thiga** | Pioneer PM, culture produit, formation |
+| **WeFiiT** | Data Product, cycle complet, ROI mesurable |
+| **Wivoo** | Product + Data + Design, full cycle |
+| **Hubvisory** | Grands groupes, Product & IA |
+| **Converteo** | Product augmenté par la data |
+| **mc2i** | Data Product Owner, gouvernance data |
+| **Artefact** | Data marketing, IA personnalisation |
+Analyser, structurer et valoriser les données n'est plus un luxe — c'est une nécessité pour piloter la performance et innover. La réussite d'une démarche data ne repose pas uniquement sur la technologie : elle dépend avant tout de l'**expertise et de l'accompagnement sur-mesure**.
+Souhaitez-vous un focus sur un type de besoin particulier (gouvernance data, data mesh, produit IA, formation, etc.) ou sur une taille d'entreprise spécifique ?

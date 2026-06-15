@@ -1,0 +1,39 @@
+Voici un panorama des **principaux cabinets spécialisés en Data Product Management** en France :
+---
+## 🏆 Cabinets spécialisés en Data Product Management
+---
+### 1. 🔵 **WeFiiT**
+WeFiiT accompagne ses clients pour construire des produits Data & IA générant un impact utilisateur concret au ROI mesurable, en transformant les données en produits répondant aux véritables besoins métiers.
+Ils interviennent à chaque étape du cycle de vie des produits Data & IA : Stratégie, Discovery et Delivery, pour structurer, renforcer et faire grandir les équipes.
+WeFiiT accompagne également dans la montée en compétences des équipes en Data Product Management et IA, avec des formations sur mesure.
+---
+### 2. 🔵 **Wivoo**
+Wivoo est une agence de conseil spécialisée en Product Management, Product Design et Data & IA. Depuis 2018, elle accompagne les entreprises dans leur transformation numérique grâce à une communauté de consultants experts.
+Wivoo propose des solutions sur mesure, allant du conseil stratégique à l'accompagnement opérationnel, avec une sélection rigoureuse de ses talents (3 % de taux de recrutement) et un programme interne de formation (80 jours par an).
+---
+### 3. 🔵 **Thiga**
+Thiga, basé à Paris et Madrid, est le cabinet de conseil pionnier en Product Management en France, reconnu pour son expertise dans les domaines clés du produit : stratégie, organisation, opérationnel et formation.
+Thiga forme et structure les équipes produits via sa **Thiga Academy**.
+Thiga s'appuie sur les meilleures pratiques du Lean Startup, Design Thinking, Agile et Growth Hacking.
+---
+### 4. 🔵 **Converteo**
+Pleinement intégrés dans les équipes Produit, les consultants Converteo développent une approche sur mesure et participent au développement de la stratégie produit : analyse de l'environnement produit, identification d'opportunités d'amélioration, élaboration du plan d'action, implémentation et optimisation.
+Ils accompagnent également les clients dans l'amélioration de l'agilité, l'adaptation aux frameworks agiles et la bonne intégration de la data au sein des équipes produit.
+---
+### 5. 🔵 **mc2i**
+Les équipes mc2i assument des missions de **Data Product Owner**, Chef de projet, Data Analyst, Data Scientist, Data Manager et Data Steward.
+Avec un pôle spécialisé en Data/IA, mc2i se positionne comme partenaire de confiance en Data Transformation, engagé dans la démocratisation de la donnée et un usage responsable.
+Par exemple, Decathlon a optimisé la traçabilité produits grâce au data product management accompagné par mc2i.
+---
+### 6. 🔵 **Artefact**
+Artefact est un cabinet français spécialisé dans le data marketing et l'IA appliquée à la personnalisation client, reconnu pour son expertise en marketing data et activation IA.
+---
+### 7. 🔵 **Hubvisory**
+Hubvisory est un collectif d'experts Product qui aide les grandes entreprises à concevoir, structurer et scaler leurs organisations produit.
+Il accompagne notamment les grands groupes dans la mise en place d'organisations produit performantes.
+---
+## 📌 Comment choisir ?
+Le bon choix dépend de vos besoins et de votre niveau de maturité produit. Une startup souhaitant accélérer son produit pourra s'orienter vers des acteurs spécialisés dans les produits innovants et l'IA, tandis qu'une entreprise plus mature cherchant à structurer son organisation préférera **WeFiiT** ou **Wivoo**, qui proposent des approches sur mesure et une expertise complète.
+Analyser, structurer et valoriser les données est désormais une nécessité pour piloter la performance et innover — et la réussite d'une démarche data dépend avant tout de l'expertise et de l'accompagnement sur-mesure.
+---
+Souhaitez-vous un focus plus détaillé sur l'un de ces cabinets, ou des informations sur un type de mission particulier (gouvernance, Data Mesh, Data Product Owner, etc.) ?

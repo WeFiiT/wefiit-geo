@@ -1,0 +1,50 @@
+Voici un tour d'horizon des principaux organismes qui proposent des formations **Product Builder** en France en 2026 :
+---
+## 🎓 Les principales formations Product Builder en France
+### 1. 🏫 **Jedha**
+Jedha propose une formation Product Builder IA & No-Code, présentée comme la seule en France intégrant pleinement l'IA, couvrant aussi bien le no-code que le vibe coding.
+-
+La formation dure **450 heures** et permet d'acquérir toutes les compétences pour concevoir et mettre en production des produits digitaux en totale autonomie.
+-
+Elle peut être suivie **entièrement en ligne** ou en présentiel sur l'un de leurs 17 campus en France et à l'étranger.
+- 🌐 jedha.co
+---
+### 2. 💻 **DataSuits**
+La formation Product Builder No Code & IA de DataSuits prépare au passage de la certification officielle **RNCP41480BC03** « Développer un produit numérique avec des outils no-code ».
+-
+Elle offre un accompagnement individuel illimité, des classes virtuelles interactives et un suivi personnalisé 7j/7 par les formateurs.
+-
+Éligible CPF, France Travail, OPCO. Paiement en plusieurs mensualités possible (jusqu'à 7 mensualités).
+- 🌐 datasuits.fr
+---
+### 3. 📊 **Liora.io / DataScientest**
+Cette formation vise la validation de la certification **RNCP de niveau 6** « Product Builder No‑Code », délivrée par DataScientest et enregistrée au RNCP sous le numéro RNCP40593.
+-
+Éligible CPF, +300h de formation pour apprendre à créer des apps sans coder avec **Webflow, Airtable, Make et Zapier**, sur **5 mois**.
+-
+Un partenariat permet d'obtenir un certificat délivré par **Paris Panthéon Sorbonne – Formation Continue**.
+- 🌐 liora.io
+---
+### 4. 🚀 **IQ Project**
+Le bootcamp IQ Project forme des Product Builders opérationnels en **8 soirées**. C'est une formation certifiée **Qualiopi**, finançable OPCO, qui a déjà formé plus de 500 builders.
+-
+Au programme : la maîtrise de **Lovable, Bolt et Cursor**, le prompting avancé, le déploiement et la mise en production.
+- 🌐 iq-project.ai
+---
+### 5. 🛠️ **Uncode School**
+Uncode School est une référence en France pour apprendre le no-code et l'IA avec une approche "Product Builder" orientée projet : problème → MVP → itérations → lancement, avec une culture produit (priorisation, UX, tests).
+-
+Des possibilités de financement selon le parcours (CPF, etc.) sont disponibles.
+- 🌐 uncodeschool.com
+---
+### 6. 🏭 **Contournement**
+Contournement est un acteur historique du no-code en France, avec des formations très orientées productivité, ops et mise en pratique. Idéal pour consolider une base no-code solide avant de viser un rôle "builder".
+---
+## 📋 Infos clés à retenir
+-
+Depuis 2024, une certification professionnelle est accessible, enregistrée au **RNCP sous le code RNCP 39108**.
+-
+En moyenne en France, un Product Builder gagne entre **40 000 et 50 000 € brut par an**.
+-
+Il est possible d'apprendre seul en 12-18 mois (gratuit, flexible) ou de suivre une formation certifiée en **3 à 6 mois** (avec structure et accompagnement emploi).
+Souhaitez-vous des détails sur une formation en particulier (durée, prix, financement) ?

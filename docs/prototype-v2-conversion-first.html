@@ -1,0 +1,1960 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>open-seo — WeFiiT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─── TOKENS ─────────────────────────────────────────────── */
+    :root {
+      --bg:              #f0f2ff;
+      --sidebar-bg:      #0f172a;
+      --sidebar-item:    #1e293b;
+      --sidebar-hover:   #1e293b;
+      --sidebar-border:  #f98f03;
+      --sidebar-text:    #94a3b8;
+      --sidebar-active:  #f1f5f9;
+      --sidebar-muted:   #475569;
+      --sidebar-w:       240px;
+
+      --card-bg:         #ffffff;
+      --card-border:     1px solid #e2e8f0;
+      --card-radius:     14px;
+      --card-shadow:     0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --card-shadow-md:  0 4px 16px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.06);
+
+      --primary:         #f98f03;
+      --primary-light:   rgba(249,143,3,0.1);
+      --accent:          #3b5bdb;
+      --accent-light:    rgba(59,91,219,0.1);
+
+      --text:            #0f172a;
+      --text-secondary:  #64748b;
+      --text-muted:      #94a3b8;
+
+      --success:         #16a34a;
+      --success-bg:      rgba(22,163,74,0.1);
+      --warning:         #d97706;
+      --warning-bg:      rgba(217,119,6,0.1);
+      --danger:          #dc2626;
+      --danger-bg:       rgba(220,38,38,0.1);
+
+      --chatgpt:         #10a37f;
+      --gemini:          #1a73e8;
+
+      --radius-sm:       6px;
+      --radius:          10px;
+      --radius-lg:       14px;
+      --radius-xl:       20px;
+      --radius-pill:     999px;
+
+      --transition:      150ms ease;
+    }
+
+    /* ─── RESET ──────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; overflow: hidden; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 13px;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ─── SIDEBAR ────────────────────────────────────────────── */
+    .sidebar {
+      width: var(--sidebar-w);
+      min-width: var(--sidebar-w);
+      height: 100vh;
+      background: var(--sidebar-bg);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .sidebar-logo {
+      padding: 20px 16px 18px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #f98f03, #e95400);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 800;
+      color: white;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(249,143,3,0.4);
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-text span {
+      font-size: 14px;
+      font-weight: 700;
+      color: #f1f5f9;
+      letter-spacing: -0.2px;
+    }
+
+    .logo-text small {
+      font-size: 10px;
+      color: #475569;
+      font-weight: 500;
+      letter-spacing: 0.4px;
+    }
+
+    .sidebar-section {
+      padding: 20px 8px 0;
+      flex: 1;
+      overflow-y: auto;
+    }
+
+    .sidebar-section::-webkit-scrollbar { width: 0; }
+
+    .sidebar-group-label {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--sidebar-muted);
+      padding: 0 8px 6px;
+      margin-bottom: 2px;
+    }
+
+    .sidebar-item {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--sidebar-text);
+      cursor: pointer;
+      transition: background var(--transition), color var(--transition);
+      border-left: 3px solid transparent;
+      margin-bottom: 2px;
+      position: relative;
+    }
+
+    .sidebar-item:hover {
+      background: var(--sidebar-hover);
+      color: #e2e8f0;
+    }
+
+    .sidebar-item.active {
+      background: var(--sidebar-item);
+      color: var(--sidebar-active);
+      border-left-color: var(--primary);
+    }
+
+    .sidebar-item .nav-icon {
+      width: 16px;
+      height: 16px;
+      opacity: 0.7;
+      flex-shrink: 0;
+    }
+
+    .sidebar-item.active .nav-icon {
+      opacity: 1;
+    }
+
+    .sidebar-badge {
+      margin-left: auto;
+      font-size: 10px;
+      font-weight: 600;
+      background: var(--primary-light);
+      color: var(--primary);
+      padding: 1px 6px;
+      border-radius: var(--radius-pill);
+    }
+
+    .sidebar-footer {
+      padding: 16px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .avatar {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3b5bdb, #7950f2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .avatar-info span {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: #e2e8f0;
+    }
+
+    .avatar-info small {
+      font-size: 10px;
+      color: #475569;
+    }
+
+    /* ─── MAIN ───────────────────────────────────────────────── */
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      min-width: 0;
+    }
+
+    /* ─── PAGE WRAPPER ───────────────────────────────────────── */
+    .page { display: none; flex: 1; flex-direction: column; overflow: hidden; }
+    .page.active { display: flex; }
+
+    /* ─── PAGE HEADER ────────────────────────────────────────── */
+    .page-header {
+      background: var(--card-bg);
+      border-bottom: 1px solid #e2e8f0;
+      padding: 20px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+
+    .page-header-left h1 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.3px;
+      margin-bottom: 3px;
+    }
+
+    .page-header-left p {
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    .page-header-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .last-run {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    .last-run-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 0 2px rgba(22,163,74,0.2);
+    }
+
+    /* ─── BUTTONS ────────────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      transition: all var(--transition);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 2px 8px rgba(249,143,3,0.3);
+    }
+
+    .btn-primary:hover {
+      background: #e8850a;
+      box-shadow: 0 4px 12px rgba(249,143,3,0.4);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-secondary);
+      border: 1px solid #e2e8f0;
+    }
+
+    .btn-ghost:hover {
+      background: var(--bg);
+      color: var(--text);
+      border-color: #cbd5e1;
+    }
+
+    .btn-outline-accent {
+      background: var(--accent-light);
+      color: var(--accent);
+      border: 1px solid rgba(59,91,219,0.2);
+    }
+
+    /* ─── TABS ───────────────────────────────────────────────── */
+    .tabs {
+      display: flex;
+      gap: 4px;
+      background: var(--bg);
+      padding: 4px;
+      border-radius: var(--radius);
+    }
+
+    .tab {
+      padding: 6px 14px;
+      border-radius: 7px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .tab.active {
+      background: white;
+      color: var(--accent);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+
+    .tab:hover:not(.active) {
+      background: rgba(255,255,255,0.5);
+      color: var(--text);
+    }
+
+    /* ─── PAGE BODY ──────────────────────────────────────────── */
+    .page-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 24px 28px;
+      scrollbar-width: thin;
+      scrollbar-color: #e2e8f0 transparent;
+    }
+
+    .page-body::-webkit-scrollbar { width: 6px; }
+    .page-body::-webkit-scrollbar-track { background: transparent; }
+    .page-body::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 3px; }
+
+    /* ─── GEO FILTER BAR ─────────────────────────────────────── */
+    .filter-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .filter-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--text-muted);
+    }
+
+    .filter-select {
+      appearance: none;
+      background: var(--card-bg);
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 7px 28px 7px 10px;
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 9px center;
+      transition: border-color var(--transition);
+    }
+
+    .filter-select:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(59,91,219,0.1);
+    }
+
+    /* ─── CARDS ──────────────────────────────────────────────── */
+    .card {
+      background: var(--card-bg);
+      border: var(--card-border);
+      border-radius: var(--card-radius);
+      box-shadow: var(--card-shadow);
+    }
+
+    .card-header {
+      padding: 16px 20px 12px;
+      border-bottom: 1px solid #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .card-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: -0.1px;
+    }
+
+    .card-subtitle {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .card-body {
+      padding: 20px;
+    }
+
+    /* ─── KPI CARDS ──────────────────────────────────────────── */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .kpi-card {
+      background: var(--card-bg);
+      border: var(--card-border);
+      border-radius: var(--card-radius);
+      box-shadow: var(--card-shadow);
+      padding: 22px 22px 18px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .kpi-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+    }
+
+    .kpi-card.kpi-presence::before { background: linear-gradient(90deg, var(--accent), #7950f2); }
+    .kpi-card.kpi-runs::before { background: linear-gradient(90deg, var(--success), #059669); }
+
+    .kpi-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .kpi-value {
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .kpi-value.presence-val { color: var(--accent); }
+    .kpi-value.runs-val { color: var(--success); }
+
+    .kpi-desc {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-bottom: 14px;
+    }
+
+    .kpi-progress {
+      height: 5px;
+      background: #f1f5f9;
+      border-radius: var(--radius-pill);
+      overflow: hidden;
+    }
+
+    .kpi-progress-bar {
+      height: 100%;
+      border-radius: var(--radius-pill);
+      background: linear-gradient(90deg, var(--accent), #7950f2);
+      transition: width 0.6s ease;
+    }
+
+    .kpi-delta {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+
+    .kpi-delta.up { color: var(--success); }
+    .kpi-delta.down { color: var(--danger); }
+
+    /* ─── GRID 2COL ──────────────────────────────────────────── */
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    /* ─── EVOLUTION CHART ────────────────────────────────────── */
+    .chart-legend {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    .legend-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    /* ─── CONCURRENTS CHART ──────────────────────────────────── */
+    .bar-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .bar-name {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text);
+      width: 100px;
+      flex-shrink: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .bar-track {
+      flex: 1;
+      height: 8px;
+      background: #f1f5f9;
+      border-radius: var(--radius-pill);
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: var(--radius-pill);
+      background: linear-gradient(90deg, #93c5fd, #3b5bdb);
+    }
+
+    .bar-pct {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      width: 32px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    /* ─── MATRICE TABLE ──────────────────────────────────────── */
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: var(--card-radius);
+      border: var(--card-border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+
+    thead th {
+      background: #f8fafc;
+      padding: 10px 14px;
+      text-align: left;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--text-muted);
+      border-bottom: 1px solid #e2e8f0;
+      white-space: nowrap;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid #f1f5f9;
+      transition: background var(--transition);
+    }
+
+    tbody tr:last-child { border-bottom: none; }
+
+    tbody tr:nth-child(even) { background: #fafbff; }
+
+    tbody tr:hover { background: #f0f4ff; }
+
+    tbody td {
+      padding: 11px 14px;
+      vertical-align: middle;
+    }
+
+    .query-text {
+      font-size: 12px;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* Score badges */
+    .score-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .score-full {
+      background: var(--success-bg);
+      color: var(--success);
+    }
+
+    .score-partial {
+      background: var(--warning-bg);
+      color: var(--warning);
+    }
+
+    .score-none {
+      background: var(--danger-bg);
+      color: var(--danger);
+    }
+
+    /* Provider badges */
+    .provider-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 8px;
+      border-radius: var(--radius-pill);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    .badge-chatgpt {
+      background: rgba(16,163,127,0.1);
+      color: var(--chatgpt);
+    }
+
+    .badge-gemini {
+      background: rgba(26,115,232,0.1);
+      color: var(--gemini);
+    }
+
+    /* ─── VERBATIMS ──────────────────────────────────────────── */
+    .verbatim-item {
+      padding: 14px 16px;
+      border-radius: var(--radius);
+      background: var(--card-bg);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 10px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      transition: box-shadow var(--transition);
+    }
+
+    .verbatim-item:hover { box-shadow: var(--card-shadow-md); }
+
+    .verbatim-bar {
+      width: 3px;
+      min-width: 3px;
+      border-radius: 2px;
+      align-self: stretch;
+    }
+
+    .verbatim-bar.cited { background: var(--success); }
+    .verbatim-bar.not-cited { background: #e2e8f0; }
+
+    .verbatim-content { flex: 1; min-width: 0; }
+
+    .verbatim-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 7px;
+      flex-wrap: wrap;
+    }
+
+    .verbatim-text {
+      font-size: 12px;
+      color: #374151;
+      line-height: 1.6;
+    }
+
+    .verbatim-text em {
+      font-style: normal;
+      background: rgba(249,143,3,0.12);
+      color: #92400e;
+      padding: 0 2px;
+      border-radius: 3px;
+    }
+
+    .verbatim-date {
+      margin-left: auto;
+      font-size: 11px;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    /* ─── RANK TRACKING ──────────────────────────────────────── */
+    .rt-header {
+      background: var(--card-bg);
+      border-bottom: 1px solid #e2e8f0;
+      padding: 0 28px;
+      flex-shrink: 0;
+    }
+
+    .rt-header-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 0 14px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .back-btn {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      cursor: pointer;
+      padding: 5px 8px;
+      border-radius: var(--radius-sm);
+      transition: all var(--transition);
+    }
+
+    .back-btn:hover { background: var(--bg); color: var(--text); }
+
+    .domain-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--card-bg);
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-pill);
+      padding: 5px 12px;
+    }
+
+    .domain-icon {
+      width: 18px;
+      height: 18px;
+      background: linear-gradient(135deg, #3b5bdb, #7950f2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .domain-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .domain-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: 4px;
+    }
+
+    .meta-chip {
+      font-size: 11px;
+      color: var(--text-secondary);
+      padding: 2px 8px;
+      border-radius: var(--radius-pill);
+      background: var(--bg);
+      border: 1px solid #e2e8f0;
+      font-weight: 500;
+    }
+
+    .meta-chip.cost { color: var(--warning); background: var(--warning-bg); border-color: transparent; }
+
+    .rt-actions { margin-left: auto; display: flex; gap: 8px; }
+
+    .rt-kpi-bar {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      padding: 12px 0;
+    }
+
+    .rt-kpi-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0 18px;
+      border-right: 1px solid #f1f5f9;
+    }
+
+    .rt-kpi-item:first-child { padding-left: 0; }
+    .rt-kpi-item:last-child { border-right: none; }
+
+    .rt-kpi-val {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.5px;
+    }
+
+    .rt-kpi-label {
+      font-size: 11px;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .rt-kpi-highlight .rt-kpi-val { color: var(--accent); }
+    .rt-kpi-highlight2 .rt-kpi-val { color: var(--success); }
+
+    /* ─── RT TOOLBAR ─────────────────────────────────────────── */
+    .rt-toolbar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 28px 14px;
+      border-bottom: 1px solid #f1f5f9;
+      flex-shrink: 0;
+      background: var(--card-bg);
+    }
+
+    .kw-count {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .toolbar-right {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .device-toggle {
+      display: flex;
+      background: var(--bg);
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .device-btn {
+      padding: 5px 12px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .device-btn.active {
+      background: var(--accent);
+      color: white;
+    }
+
+    /* ─── RT TABLE ───────────────────────────────────────────── */
+    .rt-table-wrap {
+      flex: 1;
+      overflow: auto;
+      scrollbar-width: thin;
+      scrollbar-color: #e2e8f0 transparent;
+    }
+
+    .rt-table-wrap::-webkit-scrollbar { width: 6px; height: 6px; }
+    .rt-table-wrap::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 3px; }
+
+    .rt-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+
+    .rt-table thead {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .rt-table thead th {
+      background: #f8fafc;
+      padding: 10px 14px;
+      text-align: left;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      color: var(--text-muted);
+      border-bottom: 1px solid #e2e8f0;
+      white-space: nowrap;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .rt-table thead th:hover { background: #f1f5f9; color: var(--text); }
+
+    .rt-table thead th.sort-active { color: var(--accent); }
+
+    .rt-table tbody tr {
+      border-bottom: 1px solid #f1f5f9;
+      transition: background var(--transition);
+    }
+
+    .rt-table tbody tr:last-child { border-bottom: none; }
+    .rt-table tbody tr:nth-child(even) { background: #fafbff; }
+    .rt-table tbody tr:hover { background: #f0f4ff; }
+
+    .rt-table tbody td {
+      padding: 11px 14px;
+      vertical-align: middle;
+    }
+
+    .cb { width: 14px; height: 14px; border: 1px solid #e2e8f0; border-radius: 3px; cursor: pointer; }
+
+    .kw-text {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .pos-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 9px;
+      border-radius: var(--radius-pill);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .pos-1 { background: rgba(22,163,74,0.12); color: #15803d; }
+    .pos-2 { background: rgba(59,91,219,0.1); color: var(--accent); }
+    .pos-4, .pos-6 { background: rgba(217,119,6,0.1); color: var(--warning); }
+
+    .pos-arrow { font-size: 9px; }
+
+    .url-link {
+      font-size: 11px;
+      color: var(--accent);
+      text-decoration: none;
+      display: block;
+      max-width: 200px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .url-link:hover { text-decoration: underline; }
+
+    .num-cell {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    .kd-cell {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+
+    .kd-low { background: var(--success-bg); color: var(--success); }
+    .kd-med { background: var(--warning-bg); color: var(--warning); }
+
+    .serp-badges { display: flex; gap: 4px; flex-wrap: wrap; }
+
+    .serp-badge {
+      font-size: 9px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .serp-paa { background: rgba(139,92,246,0.12); color: #7c3aed; }
+    .serp-video { background: rgba(239,68,68,0.12); color: #dc2626; }
+    .serp-tc { background: rgba(6,182,212,0.12); color: #0891b2; }
+
+    /* ─── SECTION TITLE ──────────────────────────────────────── */
+    .section-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #f1f5f9;
+    }
+
+    /* ─── GRAPH STYLES ───────────────────────────────────────── */
+    .chart-container {
+      position: relative;
+      width: 100%;
+      height: 180px;
+    }
+
+    /* ─── FULL WIDTH CARD ────────────────────────────────────── */
+    .card-full { margin-bottom: 16px; }
+
+    /* ─── SCORE TABLE SPECIFIC ───────────────────────────────── */
+    .score-col {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* ─── SECTION SPACER ─────────────────────────────────────── */
+    .spacer { height: 16px; }
+
+    /* ─── ANIMATIONS ─────────────────────────────────────────── */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .page.active .kpi-card,
+    .page.active .card {
+      animation: fadeIn 0.25s ease both;
+    }
+
+    .page.active .kpi-card:nth-child(1) { animation-delay: 0ms; }
+    .page.active .kpi-card:nth-child(2) { animation-delay: 60ms; }
+    .page.active .card:nth-child(1) { animation-delay: 80ms; }
+    .page.active .card:nth-child(2) { animation-delay: 120ms; }
+
+    /* ─── SCROLL AREA GEO ────────────────────────────────────── */
+    #geo-page .page-body { overflow-y: auto; }
+    #rank-page { overflow: hidden; }
+    #rank-page .rt-body { flex: 1; overflow: hidden; display: flex; flex-direction: column; }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════ SIDEBAR ══════════════════════ -->
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark">W</div>
+    <div class="logo-text">
+      <span>open-seo</span>
+      <small>wefiit.com</small>
+    </div>
+  </div>
+
+  <nav class="sidebar-section">
+    <div style="margin-bottom:20px">
+      <div class="sidebar-group-label">Vue d'ensemble</div>
+      <div class="sidebar-item" onclick="navigate('dashboard')">
+        <svg class="nav-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="1" y="1" width="6" height="6" rx="1.5"/>
+          <rect x="9" y="1" width="6" height="6" rx="1.5"/>
+          <rect x="1" y="9" width="6" height="6" rx="1.5"/>
+          <rect x="9" y="9" width="6" height="6" rx="1.5"/>
+        </svg>
+        Dashboard
+      </div>
+    </div>
+
+    <div style="margin-bottom:20px">
+      <div class="sidebar-group-label">SEO</div>
+      <div class="sidebar-item" onclick="navigate('rank')">
+        <svg class="nav-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+          <polyline points="1,11 5,7 9,9 15,3"/>
+          <polyline points="11,3 15,3 15,7"/>
+        </svg>
+        Rank Tracking
+        <span class="sidebar-badge">96</span>
+      </div>
+      <div class="sidebar-item" onclick="navigate('dashboard')">
+        <svg class="nav-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="6" cy="6" r="4"/>
+          <line x1="10.5" y1="10.5" x2="15" y2="15"/>
+        </svg>
+        Keyword Research
+      </div>
+      <div class="sidebar-item" onclick="navigate('dashboard')">
+        <svg class="nav-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M2 12 L4 8 L7 10 L10 5 L14 2"/>
+          <rect x="1" y="13" width="14" height="2" rx="1"/>
+        </svg>
+        Audit de site
+      </div>
+      <div class="sidebar-item" onclick="navigate('dashboard')">
+        <svg class="nav-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M8 1 L8 15 M1 8 L8 1 L15 8"/>
+        </svg>
+        Backlinks
+      </div>
+    </div>
+
+    <div style="margin-bottom:20px">
+      <div class="sidebar-group-label">GEO</div>
+      <div class="sidebar-item active" id="nav-geo" onclick="navigate('geo')">
+        <svg class="nav-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="8" cy="8" r="7"/>
+          <path d="M8 1 C5 4 5 12 8 15 C11 12 11 4 8 1"/>
+          <line x1="1" y1="8" x2="15" y2="8"/>
+        </svg>
+        GEO Visibility
+        <span class="sidebar-badge">New</span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="sidebar-footer">
+    <div class="avatar">AS</div>
+    <div class="avatar-info">
+      <span>Antoine S.</span>
+      <small>Admin</small>
+    </div>
+  </div>
+</aside>
+
+<!-- ══════════════════════ MAIN ══════════════════════ -->
+<main class="main">
+
+  <!-- ════════ PAGE GEO ════════ -->
+  <div id="geo-page" class="page active">
+
+    <!-- Header -->
+    <div class="page-header">
+      <div class="page-header-left">
+        <h1>GEO Visibility</h1>
+        <p>Présence de WeFiiT dans les réponses des IA génératives</p>
+      </div>
+      <div class="page-header-right">
+        <div class="last-run">
+          <div class="last-run-dot"></div>
+          Dernier run : 25 mai 2026
+        </div>
+        <div class="tabs">
+          <div class="tab active">ChatGPT + Gemini</div>
+          <div class="tab">ChatGPT</div>
+          <div class="tab">Gemini</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Body -->
+    <div class="page-body">
+
+      <!-- Filter bar -->
+      <div class="filter-bar">
+        <span class="filter-label">Période</span>
+        <select class="filter-select">
+          <option>30 derniers jours</option>
+          <option>7 derniers jours</option>
+          <option>90 derniers jours</option>
+        </select>
+        <span class="filter-label">Modèle</span>
+        <select class="filter-select">
+          <option>Tous les modèles</option>
+          <option>GPT-4o</option>
+          <option>Gemini 1.5 Pro</option>
+        </select>
+        <span class="filter-label">Requête</span>
+        <select class="filter-select">
+          <option>Toutes les requêtes</option>
+          <option>Product Management</option>
+          <option>Formation équipes</option>
+        </select>
+      </div>
+
+      <!-- KPI Cards -->
+      <div class="kpi-grid">
+        <div class="kpi-card kpi-presence">
+          <div class="kpi-label">Taux de présence</div>
+          <div class="kpi-value presence-val">37<span style="font-size:18px;font-weight:600;color:#94a3b8">%</span></div>
+          <div class="kpi-desc">des runs sur la période analysée</div>
+          <div class="kpi-progress">
+            <div class="kpi-progress-bar" style="width: 37%"></div>
+          </div>
+        </div>
+        <div class="kpi-card kpi-runs">
+          <div class="kpi-label">Runs analysés</div>
+          <div class="kpi-value runs-val">187</div>
+          <div class="kpi-desc">sessions analysées sur la période</div>
+          <div class="kpi-delta up">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8">
+              <polyline points="1,7 5,3 9,7"/>
+            </svg>
+            +12 ce mois
+          </div>
+        </div>
+      </div>
+
+      <!-- Charts row -->
+      <div class="grid-2col">
+
+        <!-- Évolution des citations -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Évolution des citations</div>
+              <div class="card-subtitle">Citations par run · 04 avr — 26 mai 2026</div>
+            </div>
+            <div class="chart-legend">
+              <div class="legend-item"><div class="legend-dot" style="background:#10a37f"></div>ChatGPT</div>
+              <div class="legend-item"><div class="legend-dot" style="background:#1a73e8"></div>Gemini</div>
+            </div>
+          </div>
+          <div class="card-body" style="padding:16px 16px 12px">
+            <div class="chart-container">
+              <svg viewBox="0 0 420 160" preserveAspectRatio="none" width="100%" height="100%" style="display:block">
+                <!-- Grid lines -->
+                <line x1="32" y1="10" x2="32" y2="128" stroke="#f1f5f9" stroke-width="1"/>
+                <line x1="32" y1="128" x2="408" y2="128" stroke="#f1f5f9" stroke-width="1"/>
+                <line x1="32" y1="96" x2="408" y2="96" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="3,3"/>
+                <line x1="32" y1="64" x2="408" y2="64" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="3,3"/>
+                <line x1="32" y1="32" x2="408" y2="32" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="3,3"/>
+
+                <!-- Y axis labels -->
+                <text x="28" y="132" font-size="9" fill="#94a3b8" text-anchor="end" font-family="Inter">0</text>
+                <text x="28" y="100" font-size="9" fill="#94a3b8" text-anchor="end" font-family="Inter">4</text>
+                <text x="28" y="68" font-size="9" fill="#94a3b8" text-anchor="end" font-family="Inter">8</text>
+                <text x="28" y="36" font-size="9" fill="#94a3b8" text-anchor="end" font-family="Inter">12</text>
+
+                <!-- X axis labels -->
+                <text x="46"  y="145" font-size="8.5" fill="#94a3b8" text-anchor="middle" font-family="Inter">04/29</text>
+                <text x="96"  y="145" font-size="8.5" fill="#94a3b8" text-anchor="middle" font-family="Inter">05/04</text>
+                <text x="146" y="145" font-size="8.5" fill="#94a3b8" text-anchor="middle" font-family="Inter">05/08</text>
+                <text x="196" y="145" font-size="8.5" fill="#94a3b8" text-anchor="middle" font-family="Inter">05/11</text>
+                <text x="246" y="145" font-size="8.5" fill="#94a3b8" text-anchor="middle" font-family="Inter">05/15</text>
+                <text x="296" y="145" font-size="8.5" fill="#94a3b8" text-anchor="middle" font-family="Inter">05/18</text>
+                <text x="346" y="145" font-size="8.5" fill="#94a3b8" text-anchor="middle" font-family="Inter">05/22</text>
+                <text x="396" y="145" font-size="8.5" fill="#94a3b8" text-anchor="middle" font-family="Inter">05/26</text>
+
+                <!-- Area fills -->
+                <!-- ChatGPT area -->
+                <defs>
+                  <linearGradient id="chatgptGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#10a37f" stop-opacity="0.18"/>
+                    <stop offset="100%" stop-color="#10a37f" stop-opacity="0.02"/>
+                  </linearGradient>
+                  <linearGradient id="geminiGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#1a73e8" stop-opacity="0.15"/>
+                    <stop offset="100%" stop-color="#1a73e8" stop-opacity="0.02"/>
+                  </linearGradient>
+                </defs>
+
+                <!-- ChatGPT area: points mapped from values [6,8,5,9,7,11,8,10] at x=46,96,146,196,246,296,346,396 -->
+                <!-- y = 128 - (val/16)*128 -->
+                <path d="M46,80 L96,64 L146,88 L196,56 L246,72 L296,40 L346,64 L396,48 L396,128 L46,128 Z"
+                      fill="url(#chatgptGrad)"/>
+                <!-- ChatGPT line -->
+                <polyline points="46,80 96,64 146,88 196,56 246,72 296,40 346,64 396,48"
+                          fill="none" stroke="#10a37f" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+                <!-- ChatGPT dots -->
+                <circle cx="46"  cy="80" r="3.5" fill="#10a37f" stroke="white" stroke-width="1.5"/>
+                <circle cx="96"  cy="64" r="3.5" fill="#10a37f" stroke="white" stroke-width="1.5"/>
+                <circle cx="146" cy="88" r="3.5" fill="#10a37f" stroke="white" stroke-width="1.5"/>
+                <circle cx="196" cy="56" r="3.5" fill="#10a37f" stroke="white" stroke-width="1.5"/>
+                <circle cx="246" cy="72" r="3.5" fill="#10a37f" stroke="white" stroke-width="1.5"/>
+                <circle cx="296" cy="40" r="3.5" fill="#10a37f" stroke="white" stroke-width="1.5"/>
+                <circle cx="346" cy="64" r="3.5" fill="#10a37f" stroke="white" stroke-width="1.5"/>
+                <circle cx="396" cy="48" r="3.5" fill="#10a37f" stroke="white" stroke-width="1.5"/>
+
+                <!-- Gemini area: values [4,5,3,6,5,7,5,8] -->
+                <path d="M46,96 L96,88 L146,104 L196,80 L246,88 L296,72 L346,88 L396,64 L396,128 L46,128 Z"
+                      fill="url(#geminiGrad)"/>
+                <!-- Gemini line -->
+                <polyline points="46,96 96,88 146,104 196,80 246,88 296,72 346,88 396,64"
+                          fill="none" stroke="#1a73e8" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="5,2"/>
+                <!-- Gemini dots -->
+                <circle cx="46"  cy="96"  r="3.5" fill="#1a73e8" stroke="white" stroke-width="1.5"/>
+                <circle cx="96"  cy="88"  r="3.5" fill="#1a73e8" stroke="white" stroke-width="1.5"/>
+                <circle cx="146" cy="104" r="3.5" fill="#1a73e8" stroke="white" stroke-width="1.5"/>
+                <circle cx="196" cy="80"  r="3.5" fill="#1a73e8" stroke="white" stroke-width="1.5"/>
+                <circle cx="246" cy="88"  r="3.5" fill="#1a73e8" stroke="white" stroke-width="1.5"/>
+                <circle cx="296" cy="72"  r="3.5" fill="#1a73e8" stroke="white" stroke-width="1.5"/>
+                <circle cx="346" cy="88"  r="3.5" fill="#1a73e8" stroke="white" stroke-width="1.5"/>
+                <circle cx="396" cy="64"  r="3.5" fill="#1a73e8" stroke="white" stroke-width="1.5"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Concurrents -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Concurrents — fréquence de citation</div>
+              <div class="card-subtitle">% de runs où le concurrent est mentionné</div>
+            </div>
+          </div>
+          <div class="card-body" style="padding:14px 20px">
+            <div class="bar-item">
+              <div class="bar-name">Thiga</div>
+              <div class="bar-track"><div class="bar-fill" style="width:49%"></div></div>
+              <div class="bar-pct">49%</div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-name">Wivoo</div>
+              <div class="bar-track"><div class="bar-fill" style="width:26%"></div></div>
+              <div class="bar-pct">26%</div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-name">McKinsey</div>
+              <div class="bar-track"><div class="bar-fill" style="width:23%"></div></div>
+              <div class="bar-pct">23%</div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-name">KXCO</div>
+              <div class="bar-track"><div class="bar-fill" style="width:22%"></div></div>
+              <div class="bar-pct">22%</div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-name">BCG</div>
+              <div class="bar-track"><div class="bar-fill" style="width:21%"></div></div>
+              <div class="bar-pct">21%</div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-name">Octo</div>
+              <div class="bar-track"><div class="bar-fill" style="width:21%"></div></div>
+              <div class="bar-pct">21%</div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-name">TAK</div>
+              <div class="bar-track"><div class="bar-fill" style="width:18%"></div></div>
+              <div class="bar-pct">18%</div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-name">Hubvisory</div>
+              <div class="bar-track"><div class="bar-fill" style="width:16%"></div></div>
+              <div class="bar-pct">16%</div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-name">Yield Studio</div>
+              <div class="bar-track"><div class="bar-fill" style="width:16%"></div></div>
+              <div class="bar-pct">16%</div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-name">Bain</div>
+              <div class="bar-track"><div class="bar-fill" style="width:16%"></div></div>
+              <div class="bar-pct">16%</div>
+            </div>
+            <div class="bar-item" style="margin-bottom:0">
+              <div class="bar-name">Delva</div>
+              <div class="bar-track"><div class="bar-fill" style="width:16%"></div></div>
+              <div class="bar-pct">16%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Matrice de visibilité -->
+      <div class="card card-full">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Matrice de visibilité</div>
+            <div class="card-subtitle">Score de présence WeFiiT par requête et par IA</div>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center">
+            <span class="score-badge score-full"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><polyline points="1.5,5 4,7.5 8.5,2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg> Cité</span>
+            <span class="score-badge score-partial">~ Partiel</span>
+            <span class="score-badge score-none"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="2" y1="2" x2="8" y2="8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="8" y1="2" x2="2" y2="8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg> Non cité</span>
+          </div>
+        </div>
+        <div class="table-wrap" style="border-radius:0 0 14px 14px;border:none">
+          <table>
+            <thead>
+              <tr>
+                <th style="width:50%">Requête</th>
+                <th>
+                  <div style="display:flex;align-items:center;gap:6px">
+                    <span style="width:8px;height:8px;border-radius:50%;background:#10a37f;display:inline-block"></span>
+                    ChatGPT
+                  </div>
+                </th>
+                <th>
+                  <div style="display:flex;align-items:center;gap:6px">
+                    <span style="width:8px;height:8px;border-radius:50%;background:#1a73e8;display:inline-block"></span>
+                    Gemini
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="query-text">meilleur cabinet conseil product management</td>
+                <td>
+                  <span class="score-badge score-full">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><polyline points="1.5,5 4,7.5 8.5,2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                    3/3
+                  </span>
+                </td>
+                <td>
+                  <span class="score-badge score-full">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><polyline points="1.5,5 4,7.5 8.5,2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                    1/1
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td class="query-text">top 5 agences product management Paris</td>
+                <td>
+                  <span class="score-badge score-full">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><polyline points="1.5,5 4,7.5 8.5,2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                    3/3
+                  </span>
+                </td>
+                <td>
+                  <span class="score-badge score-partial">~ 2/3</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="query-text">cabinet spécialisé data product management</td>
+                <td>
+                  <span class="score-badge score-none">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="2" y1="2" x2="8" y2="8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="8" y1="2" x2="2" y2="8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                    0/3
+                  </span>
+                </td>
+                <td>
+                  <span class="score-badge score-full">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><polyline points="1.5,5 4,7.5 8.5,2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                    1/1
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td class="query-text">cabinet conseil product marketing management</td>
+                <td>
+                  <span class="score-badge score-partial">~ 1/3</span>
+                </td>
+                <td>
+                  <span class="score-badge score-full">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><polyline points="1.5,5 4,7.5 8.5,2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                    1/1
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td class="query-text">je cherche un partenaire pour former mes équipes</td>
+                <td>
+                  <span class="score-badge score-partial">~ 1/3</span>
+                </td>
+                <td>
+                  <span class="score-badge score-full">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><polyline points="1.5,5 4,7.5 8.5,2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                    1/1
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td class="query-text">cabinet spécialisé product management ia</td>
+                <td>
+                  <span class="score-badge score-full">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><polyline points="1.5,5 4,7.5 8.5,2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                    3/3
+                  </span>
+                </td>
+                <td>
+                  <span class="score-badge score-partial">~ 2/3</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Verbatims -->
+      <div class="section-title">Verbatims récents</div>
+
+      <div class="verbatim-item">
+        <div class="verbatim-bar cited"></div>
+        <div class="verbatim-content">
+          <div class="verbatim-meta">
+            <span class="provider-badge badge-chatgpt">
+              <svg width="8" height="8" viewBox="0 0 24 24" fill="currentColor"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.8956zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg>
+              ChatGPT · GPT-4o
+            </span>
+            <span style="font-size:11px;font-weight:600;color:var(--success);background:var(--success-bg);padding:2px 8px;border-radius:999px">WeFiiT cité</span>
+            <span class="verbatim-date">25/05/2026</span>
+          </div>
+          <div class="verbatim-text">
+            "Pour le conseil en product management en France, plusieurs cabinets se distinguent : <em>WeFiiT</em> est reconnu pour sa spécialisation dans les métiers produit et son accompagnement d'experts chevronnés. Thiga reste également une référence, notamment sur les aspects de transformation agile..."
+          </div>
+        </div>
+      </div>
+
+      <div class="verbatim-item">
+        <div class="verbatim-bar cited"></div>
+        <div class="verbatim-content">
+          <div class="verbatim-meta">
+            <span class="provider-badge badge-gemini">
+              <svg width="8" height="8" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm0 2.4c5.302 0 9.6 4.298 9.6 9.6s-4.298 9.6-9.6 9.6S2.4 17.302 2.4 12 6.698 2.4 12 2.4zm0 2.4A7.2 7.2 0 0 0 4.8 12 7.2 7.2 0 0 0 12 19.2 7.2 7.2 0 0 0 19.2 12 7.2 7.2 0 0 0 12 4.8z"/></svg>
+              Gemini 1.5 Pro
+            </span>
+            <span style="font-size:11px;font-weight:600;color:var(--success);background:var(--success-bg);padding:2px 8px;border-radius:999px">WeFiiT cité</span>
+            <span class="verbatim-date">24/05/2026</span>
+          </div>
+          <div class="verbatim-text">
+            "Les meilleures agences spécialisées en product management à Paris incluent <em>WeFiiT</em>, cabinet boutique centré sur les métiers produit avec une forte expertise en IA et Data Product Management, ainsi que Wivoo et KXCO qui se positionnent sur des marchés adjacents..."
+          </div>
+        </div>
+      </div>
+
+      <div class="verbatim-item">
+        <div class="verbatim-bar not-cited"></div>
+        <div class="verbatim-content">
+          <div class="verbatim-meta">
+            <span class="provider-badge badge-chatgpt">
+              <svg width="8" height="8" viewBox="0 0 24 24" fill="currentColor"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.8956zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg>
+              ChatGPT · GPT-4o
+            </span>
+            <span style="font-size:11px;font-weight:600;color:var(--text-muted);background:#f1f5f9;padding:2px 8px;border-radius:999px">Non cité</span>
+            <span class="verbatim-date">23/05/2026</span>
+          </div>
+          <div class="verbatim-text">
+            "Pour trouver un cabinet spécialisé en data product management, je vous recommande de vous orienter vers Thiga, McKinsey Digital ou Octo Technology. Ces cabinets disposent d'une expertise reconnue dans les domaines de la data et de l'IA appliquée au product management..."
+          </div>
+        </div>
+      </div>
+
+      <div class="verbatim-item">
+        <div class="verbatim-bar cited"></div>
+        <div class="verbatim-content">
+          <div class="verbatim-meta">
+            <span class="provider-badge badge-gemini">
+              <svg width="8" height="8" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm0 2.4c5.302 0 9.6 4.298 9.6 9.6s-4.298 9.6-9.6 9.6S2.4 17.302 2.4 12 6.698 2.4 12 2.4zm0 2.4A7.2 7.2 0 0 0 4.8 12 7.2 7.2 0 0 0 12 19.2 7.2 7.2 0 0 0 19.2 12 7.2 7.2 0 0 0 12 4.8z"/></svg>
+              Gemini 1.5 Pro
+            </span>
+            <span style="font-size:11px;font-weight:600;color:var(--success);background:var(--success-bg);padding:2px 8px;border-radius:999px">WeFiiT cité</span>
+            <span class="verbatim-date">22/05/2026</span>
+          </div>
+          <div class="verbatim-text">
+            "Pour former vos équipes produit, <em>WeFiiT</em> propose des programmes sur mesure alliant immersion terrain et formation intensive. Leur approche combine coaching individuel et workshops collectifs, avec une forte composante pratique axée sur les cas réels de votre organisation..."
+          </div>
+        </div>
+      </div>
+
+      <div class="verbatim-item">
+        <div class="verbatim-bar not-cited"></div>
+        <div class="verbatim-content">
+          <div class="verbatim-meta">
+            <span class="provider-badge badge-chatgpt">
+              <svg width="8" height="8" viewBox="0 0 24 24" fill="currentColor"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.8956zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg>
+              ChatGPT · GPT-4o
+            </span>
+            <span style="font-size:11px;font-weight:600;color:var(--text-muted);background:#f1f5f9;padding:2px 8px;border-radius:999px">Non cité</span>
+            <span class="verbatim-date">21/05/2026</span>
+          </div>
+          <div class="verbatim-text">
+            "En matière de conseil en product marketing management, plusieurs acteurs se distinguent : Wivoo, agence spécialisée dans la transformation produit, ou encore des cabinets de conseil stratégique généralistes comme McKinsey et BCG qui ont développé des practices dédiées..."
+          </div>
+        </div>
+      </div>
+
+      <div style="height:32px"></div>
+    </div>
+  </div>
+
+  <!-- ════════ PAGE RANK TRACKING ════════ -->
+  <div id="rank-page" class="page">
+
+    <!-- RT Header -->
+    <div class="rt-header">
+      <div class="rt-header-top">
+        <div class="back-btn" onclick="navigate('dashboard')">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <polyline points="9,2 4,7 9,12"/>
+          </svg>
+          Domains
+        </div>
+
+        <div class="domain-pill">
+          <div class="domain-icon">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="white" stroke-width="1.5">
+              <circle cx="5" cy="5" r="4"/>
+              <path d="M5 1 C3.5 3 3.5 7 5 9 C6.5 7 6.5 3 5 1"/>
+              <line x1="1" y1="5" x2="9" y2="5"/>
+            </svg>
+          </div>
+          <span class="domain-name">wefiit.com</span>
+        </div>
+
+        <div class="domain-meta">
+          <span class="meta-chip">Desktop</span>
+          <span class="meta-chip">Mobile</span>
+          <span class="meta-chip">Weekly</span>
+          <span class="meta-chip">Dernier : 20/05/2026</span>
+          <span class="meta-chip cost">~$0.43 / check</span>
+        </div>
+
+        <div class="rt-actions">
+          <button class="btn btn-ghost">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="6" cy="6" r="2"/>
+              <path d="M6 1v1M6 10v1M1 6h1M10 6h1M2.5 2.5l.7.7M8.8 8.8l.7.7M2.5 9.5l.7-.7M8.8 3.2l.7-.7"/>
+            </svg>
+            Configure
+          </button>
+          <button class="btn btn-primary">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8">
+              <line x1="6" y1="1" x2="6" y2="11"/>
+              <line x1="1" y1="6" x2="11" y2="6"/>
+            </svg>
+            Add Keywords
+          </button>
+        </div>
+      </div>
+
+      <!-- KPI summary bar -->
+      <div class="rt-kpi-bar">
+        <div class="rt-kpi-item">
+          <div class="rt-kpi-val">96</div>
+          <div class="rt-kpi-label">mots-clés suivis</div>
+        </div>
+        <div class="rt-kpi-item rt-kpi-highlight">
+          <div class="rt-kpi-val">2.3</div>
+          <div class="rt-kpi-label">position moyenne</div>
+        </div>
+        <div class="rt-kpi-item rt-kpi-highlight2">
+          <div class="rt-kpi-val">8</div>
+          <div class="rt-kpi-label">kws en 1ère place</div>
+        </div>
+        <div class="rt-kpi-item">
+          <div class="rt-kpi-val">14</div>
+          <div class="rt-kpi-label">kws dans le Top 10</div>
+        </div>
+        <div class="rt-kpi-item">
+          <div class="rt-kpi-val" style="color:var(--primary)">+5</div>
+          <div class="rt-kpi-label">progressions vs sem. passée</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RT Toolbar -->
+    <div class="rt-toolbar">
+      <button class="btn btn-ghost" style="font-size:11px;padding:6px 12px">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+          <line x1="1" y1="3" x2="11" y2="3"/>
+          <line x1="3" y1="6" x2="9" y2="6"/>
+          <line x1="5" y1="9" x2="7" y2="9"/>
+        </svg>
+        Filters
+      </button>
+      <span class="kw-count">96 keywords</span>
+
+      <div class="toolbar-right">
+        <select class="filter-select" style="font-size:11px;padding:5px 24px 5px 9px">
+          <option>Since last week</option>
+          <option>Since last month</option>
+        </select>
+
+        <div class="device-toggle">
+          <div class="device-btn active">Desktop</div>
+          <div class="device-btn">Mobile</div>
+        </div>
+
+        <button class="btn btn-ghost" style="font-size:11px;padding:6px 10px">···</button>
+      </div>
+    </div>
+
+    <!-- RT Table -->
+    <div class="rt-table-wrap">
+      <table class="rt-table">
+        <thead>
+          <tr>
+            <th style="width:28px"><input type="checkbox" class="cb"></th>
+            <th class="sort-active">
+              KEYWORD
+              <svg width="8" height="8" viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.5" style="display:inline;margin-left:3px"><polyline points="1,5 4,2 7,5"/></svg>
+            </th>
+            <th>POSITION</th>
+            <th>URL</th>
+            <th>VOLUME</th>
+            <th>KD</th>
+            <th>CPC</th>
+            <th>SERP FEATURES</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="checkbox" class="cb"></td>
+            <td class="kw-text">agence conseil product management</td>
+            <td><span class="pos-pill pos-1"><span class="pos-arrow" style="color:var(--success)">↑</span> 1</span></td>
+            <td><a href="#" class="url-link">/</a></td>
+            <td class="num-cell">—</td>
+            <td><span class="kd-cell kd-low">4</span></td>
+            <td class="num-cell">—</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="cb"></td>
+            <td class="kw-text">cabinet conseil product management</td>
+            <td><span class="pos-pill pos-1"><span class="pos-arrow" style="color:var(--success)">↑</span> 1</span></td>
+            <td><a href="#" class="url-link">/</a></td>
+            <td class="num-cell">70</td>
+            <td><span class="kd-cell kd-low">4</span></td>
+            <td class="num-cell">—</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="cb"></td>
+            <td class="kw-text">cabinet de conseil product management</td>
+            <td><span class="pos-pill pos-1"><span class="pos-arrow" style="color:var(--success)">↑</span> 1</span></td>
+            <td><a href="#" class="url-link">/</a></td>
+            <td class="num-cell">—</td>
+            <td><span class="kd-cell kd-low">4</span></td>
+            <td class="num-cell">—</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="cb"></td>
+            <td class="kw-text">cabinet de conseil product marketing</td>
+            <td><span class="pos-pill pos-1"><span class="pos-arrow" style="color:var(--success)">↑</span> 1</span></td>
+            <td><a href="#" class="url-link">/product-marketing</a></td>
+            <td class="num-cell">—</td>
+            <td class="num-cell">—</td>
+            <td class="num-cell">—</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="cb"></td>
+            <td class="kw-text">conseil product management</td>
+            <td><span class="pos-pill pos-1"><span class="pos-arrow" style="color:var(--success)">↑</span> 1</span></td>
+            <td><a href="#" class="url-link">/product-marketing</a></td>
+            <td class="num-cell">—</td>
+            <td class="num-cell">—</td>
+            <td class="num-cell">—</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="cb"></td>
+            <td class="kw-text">consultant data pm</td>
+            <td><span class="pos-pill pos-1"><span class="pos-arrow" style="color:var(--success)">↑</span> 1</span></td>
+            <td><a href="#" class="url-link">/product-ia-data-mgt</a></td>
+            <td class="num-cell">—</td>
+            <td class="num-cell">—</td>
+            <td class="num-cell">—</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="cb"></td>
+            <td class="kw-text">consultant product marketing</td>
+            <td><span class="pos-pill pos-1"><span class="pos-arrow" style="color:var(--success)">↑</span> 1</span></td>
+            <td><a href="#" class="url-link">/product-marketing</a></td>
+            <td class="num-cell">—</td>
+            <td class="num-cell">—</td>
+            <td class="num-cell">—</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="cb"></td>
+            <td class="kw-text">consultant product marketing manager</td>
+            <td><span class="pos-pill pos-1"><span class="pos-arrow" style="color:var(--success)">↑</span> 1</span></td>
+            <td><a href="#" class="url-link">/product-marketing</a></td>
+            <td class="num-cell">—</td>
+            <td class="num-cell">—</td>
+            <td class="num-cell">—</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="cb"></td>
+            <td class="kw-text">daily meeting</td>
+            <td><span class="pos-pill pos-1"><span class="pos-arrow" style="color:var(--success)">↑</span> 1</span></td>
+            <td><a href="#" class="url-link">/blog/daily-scrum-...</a></td>
+            <td class="num-cell">260</td>
+            <td><span class="kd-cell kd-low">4</span></td>
+            <td class="num-cell">—</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="cb"></td>
+            <td class="kw-text">conseil product management</td>
+            <td><span class="pos-pill pos-2"><span class="pos-arrow" style="color:var(--accent)">↑</span> 2</span></td>
+            <td><a href="#" class="url-link">/</a></td>
+            <td class="num-cell">140</td>
+            <td><span class="kd-cell kd-med">10</span></td>
+            <td class="num-cell">—</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="cb"></td>
+            <td class="kw-text">consultant product data manager</td>
+            <td><span class="pos-pill pos-2"><span class="pos-arrow" style="color:var(--accent)">↑</span> 2</span></td>
+            <td><a href="#" class="url-link">/product-ia-data-mgt</a></td>
+            <td class="num-cell">—</td>
+            <td class="num-cell">—</td>
+            <td class="num-cell">—</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="cb"></td>
+            <td class="kw-text">consultant ia product manager</td>
+            <td><span class="pos-pill pos-2"><span class="pos-arrow" style="color:var(--accent)">↑</span> 2</span></td>
+            <td><a href="#" class="url-link">/blog/le-role-de-la-...</a></td>
+            <td class="num-cell">—</td>
+            <td class="num-cell">—</td>
+            <td class="num-cell">—</td>
+            <td>
+              <div class="serp-badges">
+                <span class="serp-badge serp-tc">TC</span>
+                <span class="serp-badge serp-video">Video</span>
+                <span class="serp-badge serp-paa">PAA</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="cb"></td>
+            <td class="kw-text">agence lean</td>
+            <td><span class="pos-pill pos-4"><span class="pos-arrow" style="color:var(--warning)">↑</span> 4</span></td>
+            <td><a href="#" class="url-link">/</a></td>
+            <td class="num-cell">1.9k</td>
+            <td class="num-cell">—</td>
+            <td class="num-cell">$5.78</td>
+            <td>
+              <div class="serp-badges">
+                <span class="serp-badge serp-paa">PAA</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="cb"></td>
+            <td class="kw-text">agence product management</td>
+            <td><span class="pos-pill pos-6"><span class="pos-arrow" style="color:var(--warning)">↑</span> 6</span></td>
+            <td><a href="#" class="url-link">/</a></td>
+            <td class="num-cell">170</td>
+            <td><span class="kd-cell kd-low">4</span></td>
+            <td class="num-cell">—</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="cb"></td>
+            <td class="kw-text">bdd</td>
+            <td><span class="pos-pill pos-6"><span style="color:var(--text-muted)">—</span> 6</span></td>
+            <td><a href="#" class="url-link">/blog/integration-...</a></td>
+            <td class="num-cell">6.4k</td>
+            <td class="num-cell">—</td>
+            <td class="num-cell">$2.23</td>
+            <td>
+              <div class="serp-badges">
+                <span class="serp-badge serp-paa">PAA</span>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  function navigate(dest) {
+    // Mise à jour des items sidebar
+    document.querySelectorAll('.sidebar-item').forEach(el => el.classList.remove('active'));
+
+    // Masquer toutes les pages
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+
+    if (dest === 'geo') {
+      document.getElementById('nav-geo').classList.add('active');
+      document.getElementById('geo-page').classList.add('active');
+    } else if (dest === 'rank') {
+      document.querySelectorAll('.sidebar-item')[1].classList.add('active');
+      document.getElementById('rank-page').classList.add('active');
+    } else {
+      // fallback : page GEO
+      document.getElementById('nav-geo').classList.add('active');
+      document.getElementById('geo-page').classList.add('active');
+    }
+  }
+
+  // Tabs GEO — interaction légère
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      tab.closest('.tabs').querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+    });
+  });
+
+  // Device toggle Rank Tracking
+  document.querySelectorAll('.device-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.closest('.device-toggle').querySelectorAll('.device-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+
+  // Animation sur les barres de progression au chargement
+  window.addEventListener('DOMContentLoaded', () => {
+    const bars = document.querySelectorAll('.bar-fill, .kpi-progress-bar');
+    bars.forEach(bar => {
+      const targetWidth = bar.style.width;
+      bar.style.width = '0%';
+      setTimeout(() => {
+        bar.style.transition = 'width 0.7s cubic-bezier(0.4, 0, 0.2, 1)';
+        bar.style.width = targetWidth;
+      }, 200);
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+Voici un panorama complet des **principaux cabinets spécialisés en Data Product Management** en France en 2026 :
+---
+## 🏆 Cabinets spécialisés en Data Product Management
+---
+### 1. 🔵 **WeFiiT**
+WeFiiT est un cabinet de conseil spécialisé en Product Management à Paris, proposant du conseil stratégique, du renfort opérationnel et de la formation en PM, Data & IA, Marketing, et Quality.
+WeFiiT accompagne ses clients pour construire des produits Data & IA générant un impact utilisateur concret au ROI mesurable, en transformant les données en produits qui répondent aux véritables besoins métiers.
+Stratégie, Discovery, Delivery : ils interviennent à chaque étape du cycle de vie des Produits Data & IA pour structurer, renforcer et faire grandir les équipes.
+---
+### 2. 🟢 **Wivoo**
+Wivoo est une agence de conseil spécialisée en Product Management, Product Design et Data & IA. Depuis 2018, elle accompagne les entreprises dans leur transformation numérique grâce à une communauté de consultants experts.
+Wivoo propose des solutions sur mesure, allant du conseil stratégique à l'accompagnement opérationnel, avec un fort engagement envers l'excellence et l'impact mesurable. Grâce à une sélection rigoureuse de ses talents (3 % de taux de recrutement) et un programme interne de montée en compétences (80 jours de formation par an et 25 mentors seniors), Wivoo garantit un niveau d'expertise élevé.
+---
+### 3. 🟠 **mc2i**
+Les équipes de mc2i assument des missions de Conseil aux CDO et des activités de Data Product Owner, Chef de projet, Data Analyst, Data Scientist, Data Manager et Data Steward.
+Un exemple concret : Decathlon a optimisé la traçabilité de ses produits grâce au data product management, avec une vision claire, une agilité renforcée et une adoption mesurable des solutions data.
+---
+### 4. 🔴 **Thiga**
+Thiga, basé en France à Paris et en Espagne à Madrid, est le cabinet de conseil pionnier en Product Management en France, reconnu pour son expertise dans les domaines clés du produit : stratégie, organisation, opérationnel et formation. L'agence accompagne les entreprises technologiques et les grandes marques dans l'optimisation de leurs processus produits.
+Grâce à une équipe de consultants passionnés et expérimentés, Thiga propose des services sur-mesure allant de l'accompagnement stratégique à la montée en compétences par le biais de sa **Thiga Academy**.
+---
+### 5. 🟣 **Converteo**
+Pleinement intégrés dans les équipes Produit, les consultants de Converteo développent une approche sur mesure adaptée aux défis de Product Management. Leurs experts participent au développement de la stratégie produit : analyse de l'environnement, identification des opportunités, proposition de plan d'action, mise en œuvre et analyse d'impact.
+---
+### 6. 🟡 **Monsieur Guiz**
+Cabinet de conseil spécialisé en Product Management, Design, Ops et IA, Monsieur Guiz compte plus de 60 consultants et 200+ projets livrés pour des clients comme Air France, LVMH, AXA ou BNP Paribas.
+---
+### 7. 🔷 **Synapsys**
+En tant que cabinet de conseil en data, Synapsys accompagne ses clients dans leurs projets de data analyse, data visualisation, data science et d'intelligence artificielle.
+Par ses expertises et sa maîtrise des outils et technologies, Synapsys accompagne les organisations et les départements data dans leurs stratégie et projets data, la conception et le développement de produits ou de plateformes data.
+---
+### 8. ⚫ **Artefact**
+Cabinet français spécialisé dans le data marketing et l'IA appliquée à la personnalisation client, Artefact est reconnu pour son expertise en marketing data et activation IA.
+---
+## 📊 Contexte du marché
+La France compte aujourd'hui plus de 800 agences et cabinets spécialisés dans la donnée, un chiffre en constante progression, tiré par l'essor des besoins en analyse et valorisation des données. L'écosystème intègre aussi bien des grands groupes que des startups issues de pôles régionaux comme Paris-Saclay, la French Tech de Lyon ou l'écosystème toulousain.
+La donnée est au cœur de la transformation des entreprises françaises. Analyser, structurer et valoriser les données n'est plus un luxe, c'est une nécessité pour piloter la performance, innover, et prendre des décisions éclairées. Pourtant, la réussite d'une démarche data ne repose pas uniquement sur la technologie : elle dépend avant tout de l'expertise et de l'accompagnement sur-mesure.
+---
+## 🔍 Comment choisir ?
+| Critère | Ce qu'il faut regarder |
+|---|---|
+| **Taille** | Cabinet boutique vs grand groupe |
+| **Spécialité** | Data Product Owner, gouvernance, analytics, IA |
+| **Secteur** | Finance, retail, santé, industrie... |
+| **Type de mission** | Stratégie, opérationnel, formation |
+| **Références clients** | Cas d'usage similaires |
+Avez-vous un besoin spécifique (ex. : Data Mesh, Data Product Owner, Data Governance, IA générative) ? Je peux affiner ma recommandation selon votre contexte.
