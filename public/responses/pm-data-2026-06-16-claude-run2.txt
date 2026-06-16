@@ -1,0 +1,33 @@
+Voici une vue d'ensemble des **cabinets de conseil spécialisés en Data Product Management** en France, ainsi que les concepts clés associés à cette discipline.
+---
+## 🏢 Cabinets de conseil spécialisés en Data & Data Product Management
+### 1. **AVISIA**
+AVISIA se positionne comme un cabinet permettant de « transformer les données en leviers de performance », avec des Data Scientists qui conçoivent et déploient des modèles avancés pour répondre aux enjeux métiers grâce à l'IA.
+Leurs Product Owners pilotent les produits data en tant que véritables chefs d'orchestre.
+### 2. **mc2i**
+Les équipes de mc2i assument des missions de conseil aux CDO et des activités de **Data Product Owner**, Chef de projet, Data Analyst, Data Scientist, Data Manager et Data Steward.
+Ils ont notamment accompagné **Decathlon** dans l'optimisation de la traçabilité produits grâce au data product management, avec une vision claire, une agilité renforcée et une adoption mesurable des solutions data.
+### 3. **WeFiiT**
+WeFiiT propose de créer une dynamique d'adoption des produits Data & IA et intervient à chaque étape du cycle de vie des produits Data — Stratégie, Discovery, Delivery — pour structurer, renforcer et faire grandir les équipes.
+### 4. **Limpida**
+Limpida est un cabinet de conseil Data spécialisé dans la réalisation de projets Data (gouvernance des données, acculturation data, automatisation…), avec des Data Designers & Product Designers qui créent des interfaces rendant la donnée lisible, intuitive et accessible.
+### 5. **Synapsys**
+Synapsys accompagne les organisations et les départements data dans leur stratégie et projets data, la conception et le développement de **produits ou de plateformes data**.
+### 6. **Cartelis**
+Cartelis est un cabinet de conseil opérationnel data & CRM qui fait le lien entre analyse et exploitation opérationnelle des données pour maximiser l'impact des investissements.
+### 7. **Artefact**
+Cabinet français spécialisé dans le data marketing et l'IA appliquée à la personnalisation client, Artefact est reconnu pour son expertise en marketing data et activation IA.
+---
+## 📌 Pourquoi ce marché est en forte croissance ?
+La donnée est au cœur de la transformation des entreprises françaises. Analyser, structurer et valoriser les données n'est plus un luxe, c'est une nécessité pour piloter la performance, innover et prendre des décisions éclairées. La réussite d'une démarche data ne repose pas uniquement sur la technologie : elle dépend avant tout de l'expertise et de l'accompagnement sur-mesure. D'où l'intérêt croissant pour les cabinets de conseil spécialisés en Data et Intelligence Artificielle.
+---
+## 🔑 Qu'est-ce que le Data Product Management ?
+Le **Data Product Manager** joue un rôle essentiel au sein des entreprises en exploitant la Data pour créer ou améliorer des produits et services. Véritable pivot stratégique, il assure la coordination entre les équipes techniques, les services marketing et les utilisateurs finaux.
+Le **Data Mesh** est un paradigme émergent qui traite la donnée comme un produit et met l'accent sur une propriété décentralisée orientée domaine. La donnée est traitée comme un produit avec un owner clairement défini, une roadmap et un cycle de vie, ce qui garantit qualité, maintenance et utilité pour les consommateurs.
+Le **Data Product Owner**, pièce centrale de ce dispositif,
+agit comme le « CEO » du produit de données : il définit la vision, priorise le backlog et est responsable du succès commercial et technique du produit.
+---
+## 💼 Profils et rémunérations
+Le salaire moyen du Data Product Manager en France en 2026 est d'environ **4 510 € brut/mois** (54 120 €/an), dans une fourchette allant de 39 000 € à plus de 80 000 € par an. Un profil junior peut toucher entre 35 000 € et 45 000 €, tandis qu'un profil senior dépasse souvent 70 000 €, voire 100 000 €/an pour des postes à responsabilités dans des entreprises internationales.
+---
+**Besoin d'aide pour choisir le bon cabinet** selon votre secteur, votre taille d'entreprise ou vos enjeux spécifiques (Data Mesh, gouvernance, IA générative…) ? Je peux affiner ma recherche pour vous.

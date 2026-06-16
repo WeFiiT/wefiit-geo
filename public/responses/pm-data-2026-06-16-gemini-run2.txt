@@ -1,0 +1,25 @@
+Un "cabinet spécialisé data product management" peut désigner plusieurs types d'organisations offrant des services liés à la gestion de produits basés sur les données, notamment des cabinets de conseil, des organismes de formation ou des agences de recrutement spécialisées.
+**Cabinets de Conseil en Data Product Management :**
+Ces cabinets accompagnent les entreprises dans la définition, la création et l'optimisation de leurs produits data. Leurs services incluent généralement :
+*   **Stratégie Data Produit et IA :** Ils aident à élaborer la vision et la stratégie produit, en identifiant les opportunités offertes par les données et l'intelligence artificielle pour créer de la valeur.
+*   **Conception et Développement de Produits Data :** Ils interviennent sur toutes les phases du cycle de vie du produit (framing, discovery, delivery, growth), depuis la définition des besoins utilisateurs jusqu'à la livraison de solutions concrètes. Cela peut concerner des chatbots IA, des plateformes de données, des outils d'analyse et de visualisation, ou des applications mobiles de suivi.
+*   **Accompagnement Opérationnel et Renforcement d'Équipes :** Ces cabinets peuvent mettre à disposition des Product Managers et Product Owners data pour structurer et optimiser le delivery des équipes data, ou former les équipes existantes à l'approche produit.
+*   **Gouvernance de la Donnée :** Ils aident à intégrer des mécanismes de gouvernance des données, incluant le contrôle qualité, la traçabilité et l'observabilité, pour construire des solutions performantes.
+*   **Approche centrée utilisateur :** Ils mettent l'accent sur l'optimisation de la prise de décision via des produits data restituant les insights de manière accessible et avec une valeur d'échange claire pour les utilisateurs.
+Parmi les acteurs identifiés, on retrouve des entreprises comme :
+*   **TAK - Conseil en Product et Data Management**
+*   **AVISIA**
+*   **WeFiiT**
+*   **Converteo**
+*   **Unnest**
+*   **Elevate**
+*   **Yield Advisory**
+*   **Onepoint**
+**Organismes de Formation en Data Product Management :**
+Plusieurs organismes proposent des formations pour acquérir les compétences nécessaires au rôle de Data Product Manager. Ces formations couvrent des aspects tels que la compréhension du rôle et des missions, la science des données en entreprise, l'acculturation et la gouvernance des données, le cloud et la modélisation des données, ainsi que la stratégie IA et l'IA générative. Des bootcamps intensifs sont également disponibles pour passer des équipes data en mode produit.
+Des exemples d'organismes offrant ces formations sont :
+*   **ORSYS**
+*   **Artefact School of Data**
+*   **Liora**
+**Recrutement de Data Product Managers :**
+Le rôle de Data Product Manager est essentiel pour transformer les données en produits et fonctionnalités qui génèrent de la valeur pour les entreprises et les utilisateurs. Ce professionnel fait le lien entre les données, la technologie et les besoins des utilisateurs. Les compétences requises incluent une solide expérience en analyse de données, en gestion de produit et en stratégie commerciale, souvent complétée par une expertise en outils de visualisation de données (comme Tableau), SQL et plateformes d'analyse. Des plateformes d'emploi comme ZipRecruiter et Indeed listent de nombreuses offres pour ce poste.

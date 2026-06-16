@@ -1,0 +1,34 @@
+Voici un tour d'horizon des principales **formations Product Builder** disponibles en France :
+---
+### 1. 🏫 **École Cube**
+🔗 [ecole.cube.fr](https://www.ecole.cube.fr/formations/metiers/product-builder)
+À l'issue de la formation **Product Builder No-Code & IA**, vous serez capable de concevoir et déployer des solutions digitales complètes sans dépendre d'une équipe technique.
+Le format est un **bootcamp**, bien structuré, autour de contenus de qualité et de l'expertise de mentors qui permettent un accompagnement humain de grande valeur.
+---
+### 2. 🎓 **Jedha**
+🔗 [jedha.co](https://www.jedha.co/formations/formation-product-builder)
+En **450 heures**, vous apprendrez le métier de Product Builder et serez capable de bâtir des produits en toute autonomie, de l'idée à la mise en production. Vous maîtriserez une stack radicalement moderne, combinant la programmation assistée par l'IA et le vibe coding.
+La formation inclut des outils comme **Cursor, Lovable, Figma ou n8n**.
+---
+### 3. 🏛️ **Alegria Academy**
+🔗 [alegria.group](https://www.alegria.group/academy/product-builder-nocode-lowcode-ai)
+Une fois admissible, vous bénéficierez d'un accompagnement personnalisé pour trouver votre entreprise d'accueil en **alternance (12 mois)**. Alegria.academy prépare au **diplôme de concepteur développeur d'applications (RNCP 6 - BAC+3)**.
+---
+### 4. 📊 **DataSuits**
+🔗 [datasuits.fr](https://www.datasuits.fr/formation-product-builder-no-code-ia)
+La formation Product Builder No Code & IA prépare au passage de la **certification officielle RNCP41480BC03**. Vous bénéficiez d'une **triple certification** : une certification RNCP reconnue par l'État, un certificat délivré par leur université partenaire, et un certificat DataSuits.
+---
+### 5. 🌐 **Liora.io**
+🔗 [liora.io](https://liora.io/formation/data-ia/product-builder-no-code)
+Éligible **CPF**, cette formation propose **+300h** pour devenir Product Builder No-Code, avec des outils comme **Webflow, Airtable, Make et Zapier**, sur **5 mois**.
+La formation est ouverte à tous, sans exigence de diplôme ou d'expérience préalable.
+---
+### 📌 En résumé :
+| École | Format | Durée | Certif. |
+|---|---|---|---|
+| **École Cube** | Bootcamp | Variable | Oui |
+| **Jedha** | Intensif | 450h | Oui |
+| **Alegria Academy** | Alternance | 12 mois | RNCP Bac+3 |
+| **DataSuits** | En ligne | Variable | RNCP + 2 autres |
+| **Liora.io** | En ligne | +300h / 5 mois | RNCP niv. 6 |
+Toutes ces formations sont axées sur le **No-Code, le Low-Code et l'IA**, et plusieurs sont **éligibles au CPF**. Souhaitez-vous plus de détails sur l'une d'elles ?

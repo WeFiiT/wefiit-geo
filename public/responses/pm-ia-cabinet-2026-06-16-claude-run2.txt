@@ -1,0 +1,43 @@
+Voici un panorama des **principaux cabinets spécialisés en Product Management & IA en France** :
+---
+## 🏆 Les cabinets spécialisés en Product Management & IA en France
+---
+### 1. 🔵 **Hubvisory**
+Cabinet de conseil spécialisé en Product Management et transformation IA pour les grands groupes, avec 150 consultants basés à Paris et Lille.
+Ils couvrent toute la chaîne de valeur IA, de la stratégie à l'industrialisation (conseil, formation, développement).
+---
+### 2. 🟣 **Thiga**
+Thiga, basé à Paris et à Madrid, est le cabinet de conseil pionnier en Product Management en France, reconnu pour son expertise dans les domaines clés du produit : stratégie, organisation, opérations.
+Thiga forme et structure les équipes produits via sa **Thiga Academy**.
+---
+### 3. 🟡 **Monsieur Guiz**
+Cabinet de conseil spécialisé en Product Management, Design, Ops et IA, avec 60+ consultants et 200+ projets livrés pour des clients comme Air France, LVMH, AXA, BNP Paribas.
+Il accompagne ses clients grands comptes (France Télévisions, Pierre & Vacances, AXA, Chanel…) et start-ups sur les différentes phases de leur stratégie de transformation digitale, de la Discovery au Delivery.
+---
+### 4. 🟢 **WeFiiT**
+WeFiiT est un cabinet de conseil spécialisé en Product Management à Paris, proposant du conseil stratégique, du renfort opérationnel et de la formation en PM, Data & IA, Marketing et Quality.
+Ils couvrent le Product Management, Product Marketing, Product Data & IA, Product Ops et Product Quality, forts de plus de 200 missions réalisées et d'un CSAT client supérieur à 9/10.
+---
+### 5. 🔴 **Converteo**
+Par la convergence d'expertises techniques, analytics, fonctionnelles, stratégiques et produit, Converteo se positionne comme **leader de l'IA Product en France**, avec l'ambition de développer des use cases en IA générative à forte valeur business.
+Tous leurs Product Managers sont formés aux sujets liés à l'IA, qui est un enjeu central pour le développement des produits digitaux.
+---
+### 6. 🟠 **Mozza**
+Mozza est présenté comme le partenaire des entreprises tech souhaitant transformer leur vision en produits innovants, avec une forte expertise IA et UX. Une startup qui souhaite accélérer le développement de son produit peut notamment s'appuyer sur Mozza.
+---
+### 7. 🔷 **Unnest**
+Unnest est un cabinet de conseil Data & Tech spécialisé dans la transformation des entreprises via la donnée et l'IA, avec pour mission d'aider ses clients à concevoir, construire et exploiter des plateformes data et IA modernes.
+Ses clients incluent PMU, KPMG, L'Oréal, Hermès, Decathlon, Engie, etc.
+---
+## 📊 Tableau récapitulatif
+| Cabinet | Spécialité principale | Taille | Localisation |
+|---|---|---|---|
+| **Hubvisory** | Product + IA transformation | 150 consultants | Paris, Lille |
+| **Thiga** | Product Management | Pionnier FR | Paris, Madrid |
+| **Monsieur Guiz** | Product, Design, IA | 60+ consultants | Paris |
+| **WeFiiT** | Product, Data & IA | ~200 missions | Paris |
+| **Converteo** | IA Product, Analytics | Expert | Paris |
+| **Mozza** | Product, IA, UX | Agile | Paris |
+| **Unnest** | Data & IA, Product | PME | Île-de-France |
+---
+> 💡 **Conseil** : Le choix du cabinet dépend de votre contexte — grands groupes, start-up, niveau de maturité produit, ou besoin spécifique IA (stratégie, développement, formation). Souhaitez-vous approfondir l'un de ces cabinets en particulier ?
