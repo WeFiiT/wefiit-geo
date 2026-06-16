@@ -7,7 +7,7 @@ import { LeadsTable } from "./LeadsTable";
 type Props = { projectId: string };
 
 const FILTRES_DEFAUT: LeadsFiltres = {
-  type: "",
+  type: "Business",
   typeLead: "",
 };
 

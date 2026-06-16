@@ -5,22 +5,29 @@ type Props = {
   onChange: (f: LeadsFiltres) => void;
 };
 
+const ONGLETS_TYPE: { valeur: LeadsFiltres["type"]; label: string }[] = [
+  { valeur: "Business", label: "Business" },
+  { valeur: "Candidat", label: "Candidats" },
+];
+
 export function LeadsFilters({ filtres, onChange }: Props) {
   return (
     <div className="flex flex-wrap items-center gap-3">
-      <div className="flex items-center gap-2">
-        <label className="text-xs text-base-content/50">Type</label>
-        <select
-          className="select select-sm select-bordered text-xs"
-          value={filtres.type}
-          onChange={(e) =>
-            onChange({ ...filtres, type: e.target.value as LeadsFiltres["type"] })
-          }
-        >
-          <option value="">Tous</option>
-          <option value="Business">Business</option>
-          <option value="Candidat">Candidat</option>
-        </select>
+      <div role="tablist" className="tabs tabs-boxed tabs-sm bg-base-200">
+        {ONGLETS_TYPE.map((onglet) => (
+          <button
+            key={onglet.valeur}
+            type="button"
+            role="tab"
+            aria-selected={filtres.type === onglet.valeur}
+            className={`tab text-xs ${
+              filtres.type === onglet.valeur ? "tab-active font-medium" : ""
+            }`}
+            onClick={() => onChange({ ...filtres, type: onglet.valeur })}
+          >
+            {onglet.label}
+          </button>
+        ))}
       </div>
 
       <div className="flex items-center gap-2">
