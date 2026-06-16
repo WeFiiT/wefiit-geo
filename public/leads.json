@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-16T12:46:25.918Z",
+  "generatedAt": "2026-06-16T13:18:48.132Z",
   "leads": [
     {
       "id": "2aaaf158dbaf",
@@ -49,7 +49,7 @@
     {
       "id": "05fc16de1916",
       "date": "2026-04-09T12:46:07Z",
-      "type": "Business",
+      "type": "Candidat",
       "typeLead": "demande de contact",
       "email": "nadineliza708@gmail.com",
       "entreprise": "Particulier",
@@ -58,7 +58,7 @@
     {
       "id": "b17cb07cc772",
       "date": "2026-04-07T21:48:29Z",
-      "type": "Business",
+      "type": "Candidat",
       "typeLead": "demande de contact",
       "email": "belkalebik@gmail.com",
       "entreprise": "C",
@@ -85,7 +85,7 @@
     {
       "id": "4887c77d33aa",
       "date": "2026-03-16T12:25:08Z",
-      "type": "Business",
+      "type": "Candidat",
       "typeLead": "demande de contact",
       "email": "pepochon@gmail.com",
       "entreprise": "Nextlane",
@@ -202,7 +202,7 @@
     {
       "id": "cbcc49255a82",
       "date": "2025-08-18T14:00:00.000Z",
-      "type": "Business",
+      "type": "Candidat",
       "typeLead": "réservation booking",
       "email": "medjber.ines@gmail.com",
       "entreprise": "Fin d'études, anciennement alternante chef de projet en sourcing excellence chez VEEPEE",
@@ -436,7 +436,7 @@
     {
       "id": "b958c7b72bd9",
       "date": "2024-12-05T10:00:00.000Z",
-      "type": "Business",
+      "type": "Candidat",
       "typeLead": "réservation booking",
       "email": "deryakale1993@gmail.com",
       "entreprise": "Demandeuse d'emploi en reconversion",
