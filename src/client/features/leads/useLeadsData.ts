@@ -26,6 +26,11 @@ export type LeadsFiltres = {
   typeLead: "" | "demande de contact" | "réservation booking";
 };
 
+export type LeadsCompteurs = {
+  Business: number;
+  Candidat: number;
+};
+
 function filtrer(leads: Lead[], filtres: LeadsFiltres): Lead[] {
   return leads.filter((l) => {
     if (filtres.type && l.type !== filtres.type) return false;
@@ -64,13 +69,23 @@ export function useLeadsData(filtres: LeadsFiltres) {
 
   const { data: brut, isLoading, isError } = query;
 
-  if (!brut) return { leads: null, generatedAt: null, isLoading, isError };
+  if (!brut) {
+    return { leads: null, generatedAt: null, compteurs: null, isLoading, isError };
+  }
 
   const leadsFiltres = filtrer(brut.leads, filtres);
+
+  // Compteurs calculés sur la liste COMPLÈTE (pas la filtrée) : sinon l'onglet
+  // inactif afficherait toujours 0.
+  const compteurs = {
+    Business: brut.leads.filter((l) => l.type === "Business").length,
+    Candidat: brut.leads.filter((l) => l.type === "Candidat").length,
+  };
 
   return {
     leads: leadsFiltres,
     generatedAt: brut.generatedAt,
+    compteurs,
     isLoading,
     isError,
   };

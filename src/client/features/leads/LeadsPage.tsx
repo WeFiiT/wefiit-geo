@@ -13,7 +13,8 @@ const FILTRES_DEFAUT: LeadsFiltres = {
 
 export function LeadsPage({ projectId: _projectId }: Props) {
   const [filtres, setFiltres] = useState<LeadsFiltres>(FILTRES_DEFAUT);
-  const { leads, generatedAt, isLoading, isError } = useLeadsData(filtres);
+  const { leads, generatedAt, compteurs, isLoading, isError } =
+    useLeadsData(filtres);
 
   return (
     <div className="px-4 py-4 md:px-6 md:py-6 pb-24 md:pb-8 overflow-auto">
@@ -41,7 +42,7 @@ export function LeadsPage({ projectId: _projectId }: Props) {
         </div>
 
         {/* Filtres */}
-        <LeadsFilters filtres={filtres} onChange={setFiltres} />
+        <LeadsFilters filtres={filtres} onChange={setFiltres} compteurs={compteurs} />
 
         {/* États */}
         {isLoading && (
