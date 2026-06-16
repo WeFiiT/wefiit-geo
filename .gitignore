@@ -36,3 +36,11 @@ dist-sourcemaps/
 
 # Local Claude config
 .claude/
+
+# Screenshots jetables generes a la racine par les outils de QA/rank-check.
+# Le slash initial limite aux PNG/JPG de la RACINE — les vrais assets dans
+# public/, audits/, web/ restent versionnes normalement.
+/*.png
+/*.jpg
+/*.jpeg
+/*.webp
