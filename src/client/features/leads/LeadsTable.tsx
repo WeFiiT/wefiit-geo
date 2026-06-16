@@ -47,7 +47,13 @@ function LeadModal({ lead, onClose }: { lead: Lead; onClose: () => void }) {
           </span>
         </div>
         <h3 className="mb-1 text-base font-semibold">
-          {lead.entreprise ?? <span className="text-base-content/40">Entreprise inconnue</span>}
+          {lead.type === "Candidat" || !lead.entreprise ? (
+            <span className="text-base-content/40">
+              {lead.type === "Candidat" ? "Candidat" : "Entreprise inconnue"}
+            </span>
+          ) : (
+            lead.entreprise
+          )}
         </h3>
         {lead.email && (
           <a href={`mailto:${lead.email}`} className="link link-hover mb-3 block text-sm text-base-content/60">
@@ -84,9 +90,9 @@ export function LeadsTable({ leads }: Props) {
           <thead>
             <tr className="text-xs text-base-content/50">
               <th>Date</th>
+              <th>Entreprise</th>
               <th>Type</th>
               <th>Canal</th>
-              <th>Entreprise</th>
               <th>Email</th>
               <th>Message</th>
               <th title="Besoins remontés dans Boond">Boond</th>
@@ -103,6 +109,13 @@ export function LeadsTable({ leads }: Props) {
                 <td className="whitespace-nowrap text-xs text-base-content/70">
                   {formatDate(lead.date)}
                 </td>
+                <td className="max-w-[160px] truncate text-sm font-medium">
+                  {lead.type === "Candidat" || !lead.entreprise ? (
+                    <span className="text-base-content/30">—</span>
+                  ) : (
+                    lead.entreprise
+                  )}
+                </td>
                 <td>
                   <span className={`badge badge-sm ${BADGE_TYPE[lead.type]}`}>
                     {lead.type}
@@ -112,9 +125,6 @@ export function LeadsTable({ leads }: Props) {
                   <span className={`text-xs ${COLOR_TYPE_LEAD[lead.typeLead]}`}>
                     {lead.typeLead}
                   </span>
-                </td>
-                <td className="max-w-[160px] truncate text-sm font-medium">
-                  {lead.entreprise ?? <span className="text-base-content/30">—</span>}
                 </td>
                 <td className="max-w-[180px]">
                   {lead.email ? (

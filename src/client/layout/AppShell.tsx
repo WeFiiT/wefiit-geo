@@ -16,7 +16,7 @@ const DATAFORSEO_HELP_PATH = "/help/dataforseo-api-key";
 function WeFiiTFavicon() {
   return (
     <img
-      src="/transparent-logo.png"
+      src="/favicon.png"
       alt="WeFiiT"
       className="h-7 w-7 shrink-0 object-contain"
     />
