@@ -1905,5 +1905,61 @@
       "anomalies": []
     },
     "regressions": null
+  },
+  {
+    "jobId": "job-20260617-075619-ffc397",
+    "démarré": "2026-06-17T07:56:19.171Z",
+    "terminé": "2026-06-17T08:13:01.351Z",
+    "durée": 1002,
+    "mode": "--all --model all",
+    "requêtes": 7,
+    "modèles": [
+      "chatgpt",
+      "gemini",
+      "claude"
+    ],
+    "statut": "partiel",
+    "résumé": {
+      "ok": 44,
+      "timeout": 0,
+      "erreur": 37,
+      "ignoré": 0
+    },
+    "evals": {
+      "completude": {
+        "attendu": 21,
+        "ok": 15,
+        "manquants": [
+          "pm-paris/claude",
+          "pm-data/claude",
+          "pmm-general/claude",
+          "pm-formation/claude",
+          "pm-ia-cabinet/claude",
+          "pb-formation/claude"
+        ]
+      },
+      "anomalies": [
+        "pm-general/claude: 3/3→2/2",
+        "pm-paris/gemini: 1/3→0/3"
+      ]
+    },
+    "regressions": [
+      {
+        "id": "pm-general",
+        "model": "claude",
+        "avant": "3/3",
+        "apres": "2/2",
+        "dateAvant": "2026-06-16",
+        "dateApres": "2026-06-17"
+      },
+      {
+        "id": "pm-paris",
+        "model": "gemini",
+        "avant": "1/3",
+        "apres": "0/3",
+        "dateAvant": "2026-06-16",
+        "dateApres": "2026-06-17"
+      }
+    ]
   }
 ]
