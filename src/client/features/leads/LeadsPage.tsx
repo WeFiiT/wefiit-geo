@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useLeadsData, type LeadsFiltres } from "./useLeadsData";
-import { LeadsKpiCards } from "./LeadsKpiCards";
 import { LeadsFilters } from "./LeadsFilters";
 import { LeadsTable } from "./LeadsTable";
 
@@ -65,10 +64,7 @@ export function LeadsPage({ projectId: _projectId }: Props) {
         )}
 
         {!isLoading && !isError && leads !== null && (
-          <>
-            <LeadsKpiCards leads={leads} />
-            <LeadsTable leads={leads} />
-          </>
+          <LeadsTable leads={leads} />
         )}
       </div>
     </div>
