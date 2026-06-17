@@ -155,7 +155,7 @@ Trois modes configurables via `AUTH_MODE` :
 
 | Ressource             | Valeur                                                                          |
 | --------------------- | ------------------------------------------------------------------------------- |
-| **URL prod**          | https://open-seo.wefiit-dash.workers.dev                                        |
+| **URL prod**          | https://geo-seo.wefiit-dash.workers.dev                                         |
 | **Compte Cloudflare** | antoine.simonian@wefiit.com                                                     |
 | **Account ID**        | 2c7270eaa80f93d3de09fd91284909b0                                                |
 | **Repo GitHub**       | github.com/WeFiiT/wefiit-geo                                                    |
@@ -196,7 +196,7 @@ Trois modes configurables via `AUTH_MODE` :
 Avant de partager l'URL à l'équipe, configurer **Cloudflare Access** :
 
 1. Dashboard Cloudflare → Zero Trust → Access → Applications
-2. Créer une app "Self-hosted" sur `open-seo.wefiit-dash.workers.dev`
+2. Créer une app "Self-hosted" sur `geo-seo.wefiit-dash.workers.dev`
 3. Policy : autoriser les emails de l'équipe WeFiiT
 4. Récupérer le AUD tag
 5. Ajouter secrets Worker : `AUTH_MODE=cloudflare_access`, `TEAM_DOMAIN`, `POLICY_AUD`
