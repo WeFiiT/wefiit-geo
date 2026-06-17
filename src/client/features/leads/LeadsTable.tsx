@@ -91,7 +91,6 @@ export function LeadsTable({ leads }: Props) {
             <tr className="text-xs text-base-content/50">
               <th>Date</th>
               <th>Entreprise</th>
-              <th>Type</th>
               <th>Canal</th>
               <th>Email</th>
               <th>Message</th>
@@ -115,11 +114,6 @@ export function LeadsTable({ leads }: Props) {
                   ) : (
                     lead.entreprise
                   )}
-                </td>
-                <td>
-                  <span className={`badge badge-sm ${BADGE_TYPE[lead.type]}`}>
-                    {lead.type}
-                  </span>
                 </td>
                 <td>
                   <span className={`text-xs ${COLOR_TYPE_LEAD[lead.typeLead]}`}>
