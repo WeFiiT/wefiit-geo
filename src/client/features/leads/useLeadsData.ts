@@ -24,18 +24,18 @@ type EnrichissementJson = {
   enrichissements: Record<string, { besoinsBoond?: number; source?: string }>;
 };
 
-// Catégorie métier affichée et filtrée dans le tableau. Dérivée de typeLead
-// (+ contenu du message pour distinguer les téléchargements).
+// Catégorie métier affichée et filtrée dans le tableau. Dérivée du type du lead
+// (Business / Candidat) et, pour les téléchargements, du contenu du message.
 export type LeadCategorie =
-  | "Prise de RDV"
-  | "Demande de contact"
+  | "Leads Business"
+  | "Leads Talent"
   | "Livre blanc PMM"
   | "Guide IA"
   | "Autre";
 
 export const CATEGORIES: LeadCategorie[] = [
-  "Prise de RDV",
-  "Demande de contact",
+  "Leads Business",
+  "Leads Talent",
   "Livre blanc PMM",
   "Guide IA",
 ];
@@ -48,16 +48,16 @@ export type LeadsFiltres = {
   recherche: string;
 };
 
-// Déduit la catégorie métier d'un lead à partir de son typeLead et, pour les
-// téléchargements, du contenu mentionné dans le message.
+// Déduit la catégorie métier d'un lead : les téléchargements sont éclatés par
+// contenu, les autres leads suivent leur type (Business / Candidat → Talent).
 function deriverCategorie(lead: Lead): LeadCategorie {
-  if (lead.typeLead === "réservation booking") return "Prise de RDV";
-  if (lead.typeLead === "demande de contact") return "Demande de contact";
   if (lead.typeLead === "téléchargement contenu premium") {
     const m = (lead.message ?? "").toLowerCase();
     if (m.includes("livre blanc pmm")) return "Livre blanc PMM";
     if (m.includes("guide ia")) return "Guide IA";
   }
+  if (lead.type === "Business") return "Leads Business";
+  if (lead.type === "Candidat") return "Leads Talent";
   return "Autre";
 }
 

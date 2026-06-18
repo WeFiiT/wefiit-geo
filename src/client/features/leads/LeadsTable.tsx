@@ -5,8 +5,8 @@ import type { LeadAffiche, LeadCategorie } from "./useLeadsData";
 type Props = { leads: LeadAffiche[] };
 
 const COLOR_CATEGORIE: Record<LeadCategorie, string> = {
-  "Prise de RDV": "text-info",
-  "Demande de contact": "text-accent",
+  "Leads Business": "text-primary",
+  "Leads Talent": "text-info",
   "Livre blanc PMM": "text-success",
   "Guide IA": "text-secondary",
   Autre: "text-base-content/50",
