@@ -44,9 +44,6 @@ export function LeadsPage({ projectId: _projectId }: Props) {
           )}
         </div>
 
-        {/* Compteurs par type */}
-        <LeadsKpiCards compteurs={compteurs} />
-
         {/* Filtres */}
         <LeadsFilters
           filtres={filtres}
@@ -54,6 +51,9 @@ export function LeadsPage({ projectId: _projectId }: Props) {
           compteurs={compteurs}
           annees={annees}
         />
+
+        {/* Compteurs par type */}
+        <LeadsKpiCards compteurs={compteurs} />
 
         {/* États */}
         {isLoading && (
