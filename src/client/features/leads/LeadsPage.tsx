@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useLeadsData, type LeadsFiltres } from "./useLeadsData";
 import { LeadsFilters } from "./LeadsFilters";
+import { LeadsKpiCards } from "./LeadsKpiCards";
 import { LeadsTable } from "./LeadsTable";
 
 type Props = { projectId: string };
@@ -42,6 +43,9 @@ export function LeadsPage({ projectId: _projectId }: Props) {
             </p>
           )}
         </div>
+
+        {/* Compteurs par type */}
+        <LeadsKpiCards compteurs={compteurs} />
 
         {/* Filtres */}
         <LeadsFilters

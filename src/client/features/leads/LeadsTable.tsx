@@ -162,8 +162,8 @@ export function LeadsTable({ leads }: Props) {
           <thead>
             <tr className="text-xs text-base-content/50">
               <EnteteTri colonne="date" label="Date" triCle={triCle} triAsc={triAsc} onTri={changerTri} />
-              <EnteteTri colonne="entreprise" label="Entreprise" triCle={triCle} triAsc={triAsc} onTri={changerTri} />
               <EnteteTri colonne="categorie" label="Type" triCle={triCle} triAsc={triAsc} onTri={changerTri} />
+              <EnteteTri colonne="entreprise" label="Entreprise" triCle={triCle} triAsc={triAsc} onTri={changerTri} />
               <EnteteTri colonne="email" label="Email" triCle={triCle} triAsc={triAsc} onTri={changerTri} />
               <th>Message</th>
               <th title="Besoins remontés dans Boond">Boond</th>
@@ -180,13 +180,13 @@ export function LeadsTable({ leads }: Props) {
                 <td className="whitespace-nowrap text-xs text-base-content/70">
                   {formatDate(lead.date)}
                 </td>
-                <td className="max-w-[160px] truncate text-sm font-medium">
-                  {lead.entreprise ?? <span className="text-base-content/30">—</span>}
-                </td>
                 <td>
                   <span className={`text-xs ${COLOR_CATEGORIE[lead.categorie]}`}>
                     {lead.categorie}
                   </span>
+                </td>
+                <td className="max-w-[160px] truncate text-sm font-medium">
+                  {lead.entreprise ?? <span className="text-base-content/30">—</span>}
                 </td>
                 <td className="max-w-[180px]">
                   {lead.email ? (
