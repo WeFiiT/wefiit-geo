@@ -8,11 +8,13 @@ type Props = { projectId: string };
 const FILTRES_DEFAUT: LeadsFiltres = {
   categorie: "",
   recherche: "",
+  mois: "",
+  annee: "",
 };
 
 export function LeadsPage({ projectId: _projectId }: Props) {
   const [filtres, setFiltres] = useState<LeadsFiltres>(FILTRES_DEFAUT);
-  const { leads, generatedAt, compteurs, isLoading, isError } =
+  const { leads, generatedAt, compteurs, annees, isLoading, isError } =
     useLeadsData(filtres);
 
   return (
@@ -42,7 +44,12 @@ export function LeadsPage({ projectId: _projectId }: Props) {
         </div>
 
         {/* Filtres */}
-        <LeadsFilters filtres={filtres} onChange={setFiltres} compteurs={compteurs} />
+        <LeadsFilters
+          filtres={filtres}
+          onChange={setFiltres}
+          compteurs={compteurs}
+          annees={annees}
+        />
 
         {/* États */}
         {isLoading && (

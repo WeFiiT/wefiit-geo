@@ -46,7 +46,26 @@ export type LeadAffiche = Lead & { categorie: LeadCategorie };
 export type LeadsFiltres = {
   categorie: "" | LeadCategorie;
   recherche: string;
+  // "" = tous. mois sur 1-12, annee sur 4 chiffres (string pour les <select>).
+  mois: string;
+  annee: string;
 };
+
+// Libellés des 12 mois pour le <select> (index 0 = Janvier).
+export const MOIS_LABELS = [
+  "Janvier",
+  "Février",
+  "Mars",
+  "Avril",
+  "Mai",
+  "Juin",
+  "Juillet",
+  "Août",
+  "Septembre",
+  "Octobre",
+  "Novembre",
+  "Décembre",
+];
 
 // Déduit la catégorie métier d'un lead : les téléchargements sont éclatés par
 // contenu, les autres leads suivent leur type (Business / Candidat → Talent).
@@ -65,12 +84,28 @@ function filtrer(leads: LeadAffiche[], filtres: LeadsFiltres): LeadAffiche[] {
   const q = filtres.recherche.trim().toLowerCase();
   return leads.filter((l) => {
     if (filtres.categorie && l.categorie !== filtres.categorie) return false;
+    if (filtres.mois || filtres.annee) {
+      if (!l.date) return false;
+      const d = new Date(l.date);
+      // getMonth() est 0-indexé → +1 pour comparer à la valeur 1-12 du select.
+      if (filtres.mois && String(d.getMonth() + 1) !== filtres.mois) return false;
+      if (filtres.annee && String(d.getFullYear()) !== filtres.annee) return false;
+    }
     if (q) {
       const cible = `${l.entreprise ?? ""} ${l.email ?? ""} ${l.message ?? ""}`.toLowerCase();
       if (!cible.includes(q)) return false;
     }
     return true;
   });
+}
+
+// Années présentes dans les leads, triées décroissant (pour le <select>).
+function anneesDisponibles(leads: LeadAffiche[]): string[] {
+  const set = new Set<string>();
+  for (const l of leads) {
+    if (l.date) set.add(String(new Date(l.date).getFullYear()));
+  }
+  return [...set].sort((a, b) => Number(b) - Number(a));
 }
 
 export function useLeadsData(filtres: LeadsFiltres) {
@@ -105,7 +140,14 @@ export function useLeadsData(filtres: LeadsFiltres) {
   const { data: brut, isLoading, isError } = query;
 
   if (!brut) {
-    return { leads: null, generatedAt: null, compteurs: null, isLoading, isError };
+    return {
+      leads: null,
+      generatedAt: null,
+      compteurs: null,
+      annees: [],
+      isLoading,
+      isError,
+    };
   }
 
   const leadsFiltres = filtrer(brut.leads, filtres);
@@ -119,6 +161,7 @@ export function useLeadsData(filtres: LeadsFiltres) {
     leads: leadsFiltres,
     generatedAt: brut.generatedAt,
     compteurs,
+    annees: anneesDisponibles(brut.leads),
     isLoading,
     isError,
   };
