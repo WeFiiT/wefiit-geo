@@ -1,18 +1,16 @@
 import {
   CATEGORIES,
   MOIS_LABELS,
-  type LeadCategorie,
   type LeadsFiltres,
 } from "./useLeadsData";
 
 type Props = {
   filtres: LeadsFiltres;
   onChange: (f: LeadsFiltres) => void;
-  compteurs: Record<LeadCategorie, number> | null;
   annees: string[];
 };
 
-export function LeadsFilters({ filtres, onChange, compteurs, annees }: Props) {
+export function LeadsFilters({ filtres, onChange, annees }: Props) {
   return (
     <div className="flex flex-wrap items-center gap-4 rounded-2xl border border-base-200 bg-base-100 px-4 py-3 shadow-sm">
       {/* Filtre Type — un seul axe à 4 valeurs */}
@@ -32,7 +30,6 @@ export function LeadsFilters({ filtres, onChange, compteurs, annees }: Props) {
           {CATEGORIES.map((c) => (
             <option key={c} value={c}>
               {c}
-              {compteurs ? ` (${compteurs[c]})` : ""}
             </option>
           ))}
         </select>

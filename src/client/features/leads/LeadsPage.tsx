@@ -48,7 +48,6 @@ export function LeadsPage({ projectId: _projectId }: Props) {
         <LeadsFilters
           filtres={filtres}
           onChange={setFiltres}
-          compteurs={compteurs}
           annees={annees}
         />
 

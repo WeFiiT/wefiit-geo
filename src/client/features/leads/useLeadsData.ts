@@ -152,9 +152,10 @@ export function useLeadsData(filtres: LeadsFiltres) {
 
   const leadsFiltres = filtrer(brut.leads, filtres);
 
-  // Compteurs par catégorie, calculés sur la liste COMPLÈTE.
+  // Compteurs par catégorie, calculés sur la liste FILTRÉE : ils reflètent les
+  // filtres actifs (Type, Mois, Année, Recherche).
   const compteurs = Object.fromEntries(
-    CATEGORIES.map((c) => [c, brut.leads.filter((l) => l.categorie === c).length]),
+    CATEGORIES.map((c) => [c, leadsFiltres.filter((l) => l.categorie === c).length]),
   ) as Record<LeadCategorie, number>;
 
   return {
