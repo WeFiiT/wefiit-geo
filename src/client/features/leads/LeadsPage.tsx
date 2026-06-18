@@ -6,8 +6,8 @@ import { LeadsTable } from "./LeadsTable";
 type Props = { projectId: string };
 
 const FILTRES_DEFAUT: LeadsFiltres = {
-  type: "Business",
-  typeLead: "",
+  categorie: "",
+  recherche: "",
 };
 
 export function LeadsPage({ projectId: _projectId }: Props) {
@@ -23,7 +23,8 @@ export function LeadsPage({ projectId: _projectId }: Props) {
           <div>
             <h1 className="text-lg font-semibold">Leads notoriété</h1>
             <p className="text-sm text-base-content/60">
-              Réservations Bookings et demandes de contact Webflow
+              Centralisation des demandes de leads et des téléchargements de
+              contenus premium
             </p>
           </div>
           {generatedAt && (
