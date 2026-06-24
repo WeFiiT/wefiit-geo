@@ -2175,5 +2175,34 @@
         "dateApres": "2026-06-23"
       }
     ]
+  },
+  {
+    "jobId": "job-20260624-073122-5ec848",
+    "démarré": "2026-06-24T07:31:22.032Z",
+    "terminé": "2026-06-24T07:48:29.544Z",
+    "durée": 1028,
+    "mode": "--all --model all",
+    "requêtes": 7,
+    "modèles": [
+      "chatgpt",
+      "gemini",
+      "claude"
+    ],
+    "statut": "succès",
+    "résumé": {
+      "ok": 63,
+      "timeout": 0,
+      "erreur": 0,
+      "ignoré": 0
+    },
+    "evals": {
+      "completude": {
+        "attendu": 21,
+        "ok": 21,
+        "manquants": []
+      },
+      "anomalies": []
+    },
+    "regressions": null
   }
 ]
