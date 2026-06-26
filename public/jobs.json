@@ -2262,5 +2262,99 @@
         "dateApres": "2026-06-25"
       }
     ]
+  },
+  {
+    "jobId": "job-20260626-075557-1b1bdb",
+    "démarré": "2026-06-26T07:55:57.815Z",
+    "terminé": "2026-06-26T08:10:16.475Z",
+    "durée": 859,
+    "mode": "--all --model all",
+    "requêtes": 7,
+    "modèles": [
+      "chatgpt",
+      "gemini",
+      "claude"
+    ],
+    "statut": "succès",
+    "résumé": {
+      "ok": 63,
+      "timeout": 0,
+      "erreur": 0,
+      "ignoré": 0
+    },
+    "evals": {
+      "completude": {
+        "attendu": 21,
+        "ok": 21,
+        "manquants": []
+      },
+      "anomalies": [
+        "pm-general/chatgpt: 3/3→1/3",
+        "pm-paris/chatgpt: 1/3→0/3",
+        "pm-paris/gemini: 2/3→1/3",
+        "pm-data/chatgpt: 1/3→0/3",
+        "pmm-general/chatgpt: 1/3→0/3",
+        "pmm-general/gemini: 1/3→0/3",
+        "pm-ia-cabinet/chatgpt: 3/3→2/3"
+      ]
+    },
+    "regressions": [
+      {
+        "id": "pm-general",
+        "model": "chatgpt",
+        "avant": "3/3",
+        "apres": "1/3",
+        "dateAvant": "2026-06-25",
+        "dateApres": "2026-06-26"
+      },
+      {
+        "id": "pm-paris",
+        "model": "chatgpt",
+        "avant": "1/3",
+        "apres": "0/3",
+        "dateAvant": "2026-06-25",
+        "dateApres": "2026-06-26"
+      },
+      {
+        "id": "pm-paris",
+        "model": "gemini",
+        "avant": "2/3",
+        "apres": "1/3",
+        "dateAvant": "2026-06-25",
+        "dateApres": "2026-06-26"
+      },
+      {
+        "id": "pm-data",
+        "model": "chatgpt",
+        "avant": "1/3",
+        "apres": "0/3",
+        "dateAvant": "2026-06-25",
+        "dateApres": "2026-06-26"
+      },
+      {
+        "id": "pmm-general",
+        "model": "chatgpt",
+        "avant": "1/3",
+        "apres": "0/3",
+        "dateAvant": "2026-06-25",
+        "dateApres": "2026-06-26"
+      },
+      {
+        "id": "pmm-general",
+        "model": "gemini",
+        "avant": "1/3",
+        "apres": "0/3",
+        "dateAvant": "2026-06-25",
+        "dateApres": "2026-06-26"
+      },
+      {
+        "id": "pm-ia-cabinet",
+        "model": "chatgpt",
+        "avant": "3/3",
+        "apres": "2/3",
+        "dateAvant": "2026-06-25",
+        "dateApres": "2026-06-26"
+      }
+    ]
   }
 ]
