@@ -87,9 +87,6 @@ function getProjectNavItems(projectId: string) {
 }
 
 export function getProjectNavGroups(projectId: string) {
-  const all = getProjectNavItems(projectId);
-  const bySegment = (seg: string) => all.find((i) => i.matchSegment === seg)!;
-
   const geoItem = linkOptions({
     to: "/p/$projectId/geo" as const,
     label: "GEO",
@@ -97,15 +94,6 @@ export function getProjectNavGroups(projectId: string) {
     matchSegment: "/geo",
     params: { projectId },
     search: {},
-  });
-
-  const domainItem = linkOptions({
-    to: "/p/$projectId/domain" as const,
-    label: "Vue d'ensemble domaine",
-    icon: Globe,
-    matchSegment: "/domain",
-    params: { projectId },
-    search: { domain: "wefiit.com" },
   });
 
   const leadsItem = linkOptions({
@@ -117,27 +105,55 @@ export function getProjectNavGroups(projectId: string) {
     search: {},
   });
 
+  // "SEO" dans la nav principale pointe directement sur Suivi de positions.
+  // Les autres vues SEO sont accessibles via les sous-onglets de la page
+  // (voir getSeoTabs et SeoTabs.tsx).
+  const seoItem = linkOptions({
+    to: "/p/$projectId/rank-tracking" as const,
+    label: "SEO",
+    icon: Search,
+    // matchSegment couvre toutes les vues SEO pour garder "SEO" actif
+    // quelle que soit la vue sous-onglet ouverte.
+    matchSegment: "/rank-tracking",
+    params: { projectId },
+    search: {},
+  });
+
   return [
     {
       type: "standalone" as const,
       item: geoItem,
     },
     {
-      type: "group" as const,
-      label: "SEO",
-      icon: Search,
-      matchSegments: ["/rank-tracking", "/keywords", "/audit", "/domain"],
-      items: [
-        bySegment("/rank-tracking"),
-        bySegment("/keywords"),
-        bySegment("/audit"),
-        domainItem,
-      ],
+      type: "standalone" as const,
+      item: seoItem,
     },
     {
       type: "standalone" as const,
       item: leadsItem,
     },
+  ];
+}
+
+// Sous-onglets affichés en haut des pages SEO (Suivi de positions, etc.).
+export function getSeoTabs(projectId: string) {
+  const all = getProjectNavItems(projectId);
+  const bySegment = (seg: string) => all.find((i) => i.matchSegment === seg)!;
+
+  const domainItem = linkOptions({
+    to: "/p/$projectId/domain" as const,
+    label: "Vue d'ensemble domaine",
+    icon: Globe,
+    matchSegment: "/domain",
+    params: { projectId },
+    search: { domain: "wefiit.com" },
+  });
+
+  return [
+    bySegment("/rank-tracking"),
+    bySegment("/keywords"),
+    bySegment("/audit"),
+    domainItem,
   ];
 }
 
