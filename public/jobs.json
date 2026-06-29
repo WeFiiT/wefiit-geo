@@ -2405,5 +2405,72 @@
         "dateApres": "2026-06-27"
       }
     ]
+  },
+  {
+    "jobId": "job-20260629-092614-c65943",
+    "démarré": "2026-06-29T09:26:14.779Z",
+    "terminé": "2026-06-29T09:40:40.138Z",
+    "durée": 865,
+    "mode": "--all --model all",
+    "requêtes": 7,
+    "modèles": [
+      "chatgpt",
+      "gemini",
+      "claude"
+    ],
+    "statut": "succès",
+    "résumé": {
+      "ok": 63,
+      "timeout": 0,
+      "erreur": 0,
+      "ignoré": 0
+    },
+    "evals": {
+      "completude": {
+        "attendu": 21,
+        "ok": 21,
+        "manquants": []
+      },
+      "anomalies": [
+        "pm-paris/chatgpt: 1/3→0/3",
+        "pm-data/gemini: 3/3→2/3",
+        "pm-formation/gemini: 3/3→2/3",
+        "pm-formation/claude: 1/3→0/3"
+      ]
+    },
+    "regressions": [
+      {
+        "id": "pm-paris",
+        "model": "chatgpt",
+        "avant": "1/3",
+        "apres": "0/3",
+        "dateAvant": "2026-06-27",
+        "dateApres": "2026-06-29"
+      },
+      {
+        "id": "pm-data",
+        "model": "gemini",
+        "avant": "3/3",
+        "apres": "2/3",
+        "dateAvant": "2026-06-27",
+        "dateApres": "2026-06-29"
+      },
+      {
+        "id": "pm-formation",
+        "model": "gemini",
+        "avant": "3/3",
+        "apres": "2/3",
+        "dateAvant": "2026-06-27",
+        "dateApres": "2026-06-29"
+      },
+      {
+        "id": "pm-formation",
+        "model": "claude",
+        "avant": "1/3",
+        "apres": "0/3",
+        "dateAvant": "2026-06-27",
+        "dateApres": "2026-06-29"
+      }
+    ]
   }
 ]
