@@ -2759,5 +2759,54 @@
         "dateApres": "2026-07-08"
       }
     ]
+  },
+  {
+    "jobId": "job-20260709-072108-4293fc",
+    "démarré": "2026-07-09T07:21:08.539Z",
+    "terminé": "2026-07-09T07:36:23.403Z",
+    "durée": 915,
+    "mode": "--all --model all",
+    "requêtes": 7,
+    "modèles": [
+      "chatgpt",
+      "gemini",
+      "claude"
+    ],
+    "statut": "succès",
+    "résumé": {
+      "ok": 63,
+      "timeout": 0,
+      "erreur": 0,
+      "ignoré": 0
+    },
+    "evals": {
+      "completude": {
+        "attendu": 21,
+        "ok": 21,
+        "manquants": []
+      },
+      "anomalies": [
+        "pmm-general/gemini: 3/3→2/3",
+        "pm-formation/gemini: 3/3→2/3"
+      ]
+    },
+    "regressions": [
+      {
+        "id": "pmm-general",
+        "model": "gemini",
+        "avant": "3/3",
+        "apres": "2/3",
+        "dateAvant": "2026-07-08",
+        "dateApres": "2026-07-09"
+      },
+      {
+        "id": "pm-formation",
+        "model": "gemini",
+        "avant": "3/3",
+        "apres": "2/3",
+        "dateAvant": "2026-07-08",
+        "dateApres": "2026-07-09"
+      }
+    ]
   }
 ]
