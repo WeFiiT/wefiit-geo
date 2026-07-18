@@ -2973,5 +2973,51 @@
         "dateApres": "2026-07-17"
       }
     ]
+  },
+  {
+    "jobId": "job-20260718-075647-2c3f65",
+    "démarré": "2026-07-18T07:56:47.596Z",
+    "terminé": "2026-07-18T08:20:44.851Z",
+    "durée": 1437,
+    "mode": "--all --model all",
+    "requêtes": 7,
+    "modèles": [
+      "chatgpt",
+      "gemini",
+      "claude"
+    ],
+    "statut": "partiel",
+    "résumé": {
+      "ok": 45,
+      "timeout": 0,
+      "erreur": 32,
+      "ignoré": 0
+    },
+    "evals": {
+      "completude": {
+        "attendu": 21,
+        "ok": 16,
+        "manquants": [
+          "pm-data/claude",
+          "pmm-general/claude",
+          "pm-formation/claude",
+          "pm-ia-cabinet/claude",
+          "pb-formation/claude"
+        ]
+      },
+      "anomalies": [
+        "pm-ia-cabinet/claude: 3/3→2/3"
+      ]
+    },
+    "regressions": [
+      {
+        "id": "pm-ia-cabinet",
+        "model": "claude",
+        "avant": "3/3",
+        "apres": "2/3",
+        "dateAvant": "2026-07-16",
+        "dateApres": "2026-07-17"
+      }
+    ]
   }
 ]
