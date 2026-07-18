@@ -1,9 +1,0 @@
-Le “meilleur” cabinet de conseil en product management dépend surtout de ton contexte : scale-up, grand groupe, transformation digitale, ou produit très tech. En pratique, il y a une poignée de cabinets qui reviennent systématiquement en tête à Paris et en Europe.
-Les cabinets les plus reconnus sur la stratégie produit et la transformation digitale côté “top tier” sont les grands cabinets de conseil en management. McKinsey & Company, Boston Consulting Group et Bain & Company interviennent souvent sur la vision produit, la stratégie “product-led” et l’organisation des équipes produit. Ils sont particulièrement adaptés si tu travailles sur des enjeux de roadmap globale, de positionnement marché ou de transformation à grande échelle.
-Pour des sujets plus “delivery produit”, discovery, UX et build de digital products, les cabinets hybrides tech/design sont souvent plus pertinents. Accenture (notamment Accenture Song), Capgemini via Capgemini Invent / frog, ou encore Publicis Sapient sont très présents sur les sujets product management, agile scaling, et construction de plateformes digitales.
-Si tu cherches des profils plus “product craft” (product discovery, lean product, UX research, delivery agile très terrain), des cabinets plus spécialisés sont souvent mieux adaptés. Thoughtworks est une référence sur les approches product/engineering, et Valtech est aussi très présent en Europe sur les sujets produit et expérience utilisateur.
-En résumé :
-Stratégie produit / direction / transformation → McKinsey, BCG, Bain
-Build digital products à grande échelle → Accenture, Capgemini, Publicis Sapient
-Approche product & engineering très terrain → Thoughtworks, Valtech
-Si tu veux, dis-moi ton cas (startup, grand groupe, type de produit, budget), et je peux te dire quel cabinet est le plus pertinent — voire lesquels éviter dans ton cas.

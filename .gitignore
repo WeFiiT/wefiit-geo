@@ -45,3 +45,7 @@ dist-sourcemaps/
 /*.jpeg
 /*.webp
 .gstack/
+
+# Reponses brutes des IA (copies de geo-monitoring/responses/) — jamais
+# consommees par le dashboard, ne pas les versionner ni les deployer.
+public/responses/
