@@ -3019,5 +3019,67 @@
         "dateApres": "2026-07-17"
       }
     ]
+  },
+  {
+    "jobId": "job-20260720-074207-d47573",
+    "démarré": "2026-07-20T07:42:07.200Z",
+    "terminé": "2026-07-20T08:01:12.146Z",
+    "durée": 1145,
+    "mode": "--all --model all",
+    "requêtes": 7,
+    "modèles": [
+      "chatgpt",
+      "gemini",
+      "claude"
+    ],
+    "statut": "partiel",
+    "résumé": {
+      "ok": 0,
+      "timeout": 0,
+      "erreur": 84,
+      "ignoré": 0
+    },
+    "evals": {
+      "completude": {
+        "attendu": 21,
+        "ok": 0,
+        "manquants": [
+          "pm-general/chatgpt",
+          "pm-general/gemini",
+          "pm-general/claude",
+          "pm-paris/chatgpt",
+          "pm-paris/gemini",
+          "pm-paris/claude",
+          "pm-data/chatgpt",
+          "pm-data/gemini",
+          "pm-data/claude",
+          "pmm-general/chatgpt",
+          "pmm-general/gemini",
+          "pmm-general/claude",
+          "pm-formation/chatgpt",
+          "pm-formation/gemini",
+          "pm-formation/claude",
+          "pm-ia-cabinet/chatgpt",
+          "pm-ia-cabinet/gemini",
+          "pm-ia-cabinet/claude",
+          "pb-formation/chatgpt",
+          "pb-formation/gemini",
+          "pb-formation/claude"
+        ]
+      },
+      "anomalies": [
+        "pm-ia-cabinet/claude: 3/3→2/3"
+      ]
+    },
+    "regressions": [
+      {
+        "id": "pm-ia-cabinet",
+        "model": "claude",
+        "avant": "3/3",
+        "apres": "2/3",
+        "dateAvant": "2026-07-16",
+        "dateApres": "2026-07-17"
+      }
+    ]
   }
 ]
