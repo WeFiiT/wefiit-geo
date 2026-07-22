@@ -15,6 +15,7 @@ function makeRow(
   return {
     trackingKeywordId: keyword,
     keyword,
+    category: null,
     searchVolume: null,
     keywordDifficulty: null,
     cpc: null,

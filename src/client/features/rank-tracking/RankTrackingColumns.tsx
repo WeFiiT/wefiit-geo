@@ -4,6 +4,11 @@ import type { ColumnDef, SortingFn } from "@tanstack/react-table";
 import { makeSelectionColumn } from "@/client/components/table/AppDataTable";
 import type { RankTrackingRow } from "@/types/schemas/rank-tracking";
 import {
+  keywordCategoryChipClass,
+  keywordCategoryDotClass,
+  keywordCategoryLabel,
+} from "@/shared/keyword-categories";
+import {
   comparePositions,
   CpcCell,
   DeviceRankCell,
@@ -127,6 +132,32 @@ const keywordColumn: ColumnDef<RankTrackingRow> = {
   sortingFn: "alphanumeric",
 };
 
+const categoryColumn: ColumnDef<RankTrackingRow> = {
+  id: "category",
+  accessorKey: "category",
+  header: ({ column }) => (
+    <SortableHeader column={column} label="Catégorie" id="category" />
+  ),
+  size: 160,
+  cell: ({ getValue }) => {
+    const category = getValue<RankTrackingRow["category"]>();
+    return (
+      <span
+        className={`inline-flex h-6 items-center gap-1.5 rounded-md px-2 text-xs font-medium ${keywordCategoryChipClass(category)}`}
+      >
+        <span
+          className={`size-1.5 shrink-0 rounded-full ${keywordCategoryDotClass(category)}`}
+        />
+        <span className="truncate">{keywordCategoryLabel(category)}</span>
+      </span>
+    );
+  },
+  sortingFn: (rowA, rowB) =>
+    keywordCategoryLabel(rowA.original.category).localeCompare(
+      keywordCategoryLabel(rowB.original.category),
+    ),
+};
+
 function makeDeviceColumn(
   device: "desktop" | "mobile",
 ): ColumnDef<RankTrackingRow> {
@@ -198,6 +229,7 @@ export function useRankTrackingColumns(
     const cols: ColumnDef<RankTrackingRow>[] = [
       makeSelectColumn(selectAnchorRef),
       keywordColumn,
+      categoryColumn,
     ];
     if (showDesktop) {
       cols.push(makeDeviceColumn("desktop"));

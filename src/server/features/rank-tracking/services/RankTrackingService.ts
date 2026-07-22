@@ -6,6 +6,7 @@ import { AppError } from "@/server/lib/errors";
 import type {
   RankTrackingConfig,
   RankCheckTriggerResult,
+  KeywordCategory,
 } from "@/types/schemas/rank-tracking";
 import {
   beginRankCheckRun,
@@ -173,6 +174,20 @@ async function removeKeywords(
 ) {
   await getValidatedConfig(configId, projectId);
   await RankTrackingRepository.removeKeywordsFromConfig(keywordIds, configId);
+}
+
+async function updateKeywordCategory(
+  configId: string,
+  projectId: string,
+  keywordIds: string[],
+  category: KeywordCategory | null,
+) {
+  await getValidatedConfig(configId, projectId);
+  await RankTrackingRepository.updateKeywordCategory(
+    keywordIds,
+    configId,
+    category,
+  );
 }
 
 // ---------------------------------------------------------------------------
@@ -379,6 +394,7 @@ export const RankTrackingService = {
   updateConfig,
   addKeywords,
   removeKeywords,
+  updateKeywordCategory,
   triggerCheck,
   getLatestRun,
   estimateCost,

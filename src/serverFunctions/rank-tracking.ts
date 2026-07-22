@@ -18,6 +18,7 @@ import {
   estimateCostSchema,
   addKeywordsSchema,
   removeKeywordsSchema,
+  updateKeywordCategorySchema,
   refreshMetricsSchema,
 } from "@/types/schemas/rank-tracking";
 
@@ -224,6 +225,21 @@ export const removeTrackingKeywords = createServerFn({ method: "POST" })
       data.keywordIds,
     );
     return { removed: data.keywordIds.length };
+  });
+
+export const updateTrackingKeywordsCategory = createServerFn({
+  method: "POST",
+})
+  .middleware(requireProjectContext)
+  .inputValidator((data: unknown) => updateKeywordCategorySchema.parse(data))
+  .handler(async ({ data, context }) => {
+    await RankTrackingService.updateKeywordCategory(
+      data.configId,
+      context.projectId,
+      data.keywordIds,
+      data.category,
+    );
+    return { updated: data.keywordIds.length };
   });
 
 export const refreshTrackingKeywordMetrics = createServerFn({ method: "POST" })

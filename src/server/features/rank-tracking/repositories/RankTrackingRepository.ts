@@ -349,6 +349,22 @@ async function updateKeywordMetrics(
   );
 }
 
+async function updateKeywordCategory(
+  keywordIds: string[],
+  configId: string,
+  category: InferInsertModel<typeof rankTrackingKeywords>["category"] | null,
+) {
+  await db
+    .update(rankTrackingKeywords)
+    .set({ category })
+    .where(
+      and(
+        inArray(rankTrackingKeywords.id, keywordIds),
+        eq(rankTrackingKeywords.configId, configId),
+      ),
+    );
+}
+
 async function getKeywordCountForConfig(configId: string) {
   const rows = await db
     .select({ value: count() })
@@ -375,6 +391,7 @@ export const RankTrackingRepository = {
   addKeywordsToConfig,
   removeKeywordsFromConfig,
   updateKeywordMetrics,
+  updateKeywordCategory,
   getKeywordCountForConfig,
   getConfigSummaries,
   getLatestSnapshotsForKeywords,

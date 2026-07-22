@@ -1,15 +1,25 @@
 import { useRef, useState } from "react";
 import { toast } from "sonner";
-import { Loader2, Trash2 } from "lucide-react";
+import { Loader2, Tag, Trash2 } from "lucide-react";
 import { Modal } from "@/client/components/Modal";
 import {
   AppDataTable,
   useAppTable,
 } from "@/client/components/table/AppDataTable";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { removeTrackingKeywords } from "@/serverFunctions/rank-tracking";
+import {
+  removeTrackingKeywords,
+  updateTrackingKeywordsCategory,
+} from "@/serverFunctions/rank-tracking";
 import { getStandardErrorMessage } from "@/client/lib/error-messages";
-import type { RankTrackingRow } from "@/types/schemas/rank-tracking";
+import type {
+  KeywordCategory,
+  RankTrackingRow,
+} from "@/types/schemas/rank-tracking";
+import {
+  KEYWORD_CATEGORY_ORDER,
+  keywordCategoryLabel,
+} from "@/shared/keyword-categories";
 import { useRankTrackingColumns } from "./RankTrackingColumns";
 import type { SelectionAnchor } from "@/client/components/table/tableSelection";
 
@@ -36,6 +46,7 @@ export function RankTrackingTable({
 }) {
   const queryClient = useQueryClient();
   const [showConfirm, setShowConfirm] = useState(false);
+  const [showCategoryMenu, setShowCategoryMenu] = useState(false);
   const selectAnchorRef = useRef<SelectionAnchor | null>(null);
 
   const columns = useRankTrackingColumns(
@@ -81,6 +92,32 @@ export function RankTrackingTable({
     },
   });
 
+  const categoryMutation = useMutation({
+    mutationFn: ({
+      keywordIds,
+      category,
+    }: {
+      keywordIds: string[];
+      category: KeywordCategory | null;
+    }) =>
+      updateTrackingKeywordsCategory({
+        data: { projectId, configId, keywordIds, category },
+      }),
+    onSuccess: (result) => {
+      table.resetRowSelection();
+      setShowCategoryMenu(false);
+      void queryClient.invalidateQueries({
+        queryKey: ["rankTrackingResults", projectId, configId],
+      });
+      toast.success(
+        `${result.updated} keyword${result.updated !== 1 ? "s" : ""} updated`,
+      );
+    },
+    onError: (error) => {
+      toast.error(getStandardErrorMessage(error, "Failed to update category"));
+    },
+  });
+
   if (resultsLoading) {
     return (
       <div className="flex items-center justify-center p-8">
@@ -108,6 +145,49 @@ export function RankTrackingTable({
             {selectedCount} keyword
             {selectedCount !== 1 ? "s" : ""} selected
           </span>
+          <div className="relative">
+            <button
+              className="btn btn-outline btn-xs gap-1"
+              onClick={() => setShowCategoryMenu((v) => !v)}
+            >
+              <Tag className="size-3" />
+              Set category
+            </button>
+            {showCategoryMenu && (
+              <div className="absolute left-0 top-full z-20 mt-1 w-56 rounded-lg border border-base-300 bg-base-100 py-1 shadow-2xl">
+                {KEYWORD_CATEGORY_ORDER.map((category) => (
+                  <button
+                    key={category}
+                    type="button"
+                    className="flex w-full items-center px-3 py-1.5 text-left text-sm hover:bg-base-200"
+                    disabled={categoryMutation.isPending}
+                    onClick={() =>
+                      categoryMutation.mutate({
+                        keywordIds: selectedRows.map((r) => r.id),
+                        category,
+                      })
+                    }
+                  >
+                    {keywordCategoryLabel(category)}
+                  </button>
+                ))}
+                <div className="my-1 border-t border-base-300" />
+                <button
+                  type="button"
+                  className="flex w-full items-center px-3 py-1.5 text-left text-sm text-base-content/60 hover:bg-base-200"
+                  disabled={categoryMutation.isPending}
+                  onClick={() =>
+                    categoryMutation.mutate({
+                      keywordIds: selectedRows.map((r) => r.id),
+                      category: null,
+                    })
+                  }
+                >
+                  Non classé
+                </button>
+              </div>
+            )}
+          </div>
           <button
             className="btn btn-error btn-xs gap-1"
             onClick={() => setShowConfirm(true)}

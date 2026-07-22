@@ -207,6 +207,19 @@ export const rankTrackingKeywords = sqliteTable(
     keywordDifficulty: integer("keyword_difficulty"),
     cpc: real("cpc"),
     metricsFetchedAt: text("metrics_fetched_at"),
+    // Single business category per keyword (not the multi-tag system used by
+    // savedKeywords — rank-tracking keywords map to exactly one WeFiiT persona).
+    category: text("category", {
+      enum: [
+        "product_management",
+        "product_ia",
+        "product_data",
+        "product_marketing",
+        "product_ops",
+        "product_quality",
+        "informational",
+      ],
+    }),
     createdAt: text("created_at")
       .notNull()
       .default(sql`(current_timestamp)`),

@@ -89,6 +89,7 @@ export async function getLatestResults(
       {
         trackingKeywordId: keyword.id,
         keyword: keyword.keyword,
+        category: keyword.category,
         searchVolume: keyword.searchVolume,
         keywordDifficulty: keyword.keywordDifficulty,
         cpc: keyword.cpc,

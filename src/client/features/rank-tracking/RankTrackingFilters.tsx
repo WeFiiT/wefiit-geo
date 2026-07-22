@@ -1,5 +1,14 @@
 import { RotateCcw } from "lucide-react";
-import type { RankTrackingRow } from "@/types/schemas/rank-tracking";
+import type {
+  KeywordCategory,
+  RankTrackingRow,
+} from "@/types/schemas/rank-tracking";
+import {
+  KEYWORD_CATEGORY_ORDER,
+  keywordCategoryChipClass,
+  keywordCategoryDotClass,
+  keywordCategoryLabel,
+} from "@/shared/keyword-categories";
 
 export type Filters = {
   include: string;
@@ -8,6 +17,7 @@ export type Filters = {
   maxDesktopPos: string;
   minMobilePos: string;
   maxMobilePos: string;
+  categories: (KeywordCategory | "uncategorized")[];
 };
 
 export const EMPTY_FILTERS: Filters = {
@@ -17,6 +27,7 @@ export const EMPTY_FILTERS: Filters = {
   maxDesktopPos: "",
   minMobilePos: "",
   maxMobilePos: "",
+  categories: [],
 };
 
 export function FilterPanel({
@@ -92,6 +103,60 @@ export function FilterPanel({
           onMinChange={(v) => update("minMobilePos", v)}
           onMaxChange={(v) => update("maxMobilePos", v)}
         />
+      </div>
+      <CategoryFilter
+        selected={filters.categories}
+        onChange={(categories) => setFilters({ ...filters, categories })}
+      />
+    </div>
+  );
+}
+
+function CategoryFilter({
+  selected,
+  onChange,
+}: {
+  selected: (KeywordCategory | "uncategorized")[];
+  onChange: (categories: (KeywordCategory | "uncategorized")[]) => void;
+}) {
+  const options: (KeywordCategory | "uncategorized")[] = [
+    ...KEYWORD_CATEGORY_ORDER,
+    "uncategorized",
+  ];
+
+  const toggle = (value: KeywordCategory | "uncategorized") => {
+    onChange(
+      selected.includes(value)
+        ? selected.filter((v) => v !== value)
+        : [...selected, value],
+    );
+  };
+
+  return (
+    <div className="space-y-1.5">
+      <p className="text-[11px] font-semibold uppercase tracking-wide text-base-content/60">
+        Catégorie
+      </p>
+      <div className="flex flex-wrap gap-1.5">
+        {options.map((option) => {
+          const isSelected = selected.includes(option);
+          const category = option === "uncategorized" ? null : option;
+          return (
+            <button
+              key={option}
+              type="button"
+              className={`inline-flex h-7 items-center gap-1.5 rounded-md px-2.5 text-xs font-medium transition ${keywordCategoryChipClass(category)} ${
+                isSelected ? "ring-2 ring-offset-1 ring-offset-base-100" : ""
+              }`}
+              onClick={() => toggle(option)}
+            >
+              <span
+                className={`size-1.5 shrink-0 rounded-full ${keywordCategoryDotClass(category)}`}
+              />
+              {keywordCategoryLabel(category)}
+            </button>
+          );
+        })}
       </div>
     </div>
   );
@@ -180,6 +245,11 @@ export function applyFilters(
     )
       return false;
 
+    if (filters.categories.length > 0) {
+      const value = row.category ?? "uncategorized";
+      if (!filters.categories.includes(value)) return false;
+    }
+
     return true;
   });
 }
@@ -206,5 +276,6 @@ export function countActiveFilters(filters: Filters): number {
   if (filters.exclude) count++;
   if (filters.minDesktopPos || filters.maxDesktopPos) count++;
   if (filters.minMobilePos || filters.maxMobilePos) count++;
+  if (filters.categories.length > 0) count++;
   return count;
 }

@@ -1,6 +1,6 @@
 import type { InferSelectModel } from "drizzle-orm";
 import { z } from "zod";
-import { rankTrackingConfigs } from "@/db/app.schema";
+import { rankTrackingConfigs, rankTrackingKeywords } from "@/db/app.schema";
 import { domainField } from "@/types/schemas/domain";
 
 // ---------------------------------------------------------------------------
@@ -8,6 +8,11 @@ import { domainField } from "@/types/schemas/domain";
 // ---------------------------------------------------------------------------
 
 export type RankTrackingConfig = InferSelectModel<typeof rankTrackingConfigs>;
+
+export const keywordCategoryEnum = z.enum(
+  rankTrackingKeywords.category.enumValues,
+);
+export type KeywordCategory = z.infer<typeof keywordCategoryEnum>;
 
 // ---------------------------------------------------------------------------
 // API / UI types
@@ -34,6 +39,7 @@ export interface RankTrackingDeviceResult {
 export interface RankTrackingRow {
   trackingKeywordId: string;
   keyword: string;
+  category: KeywordCategory | null;
   searchVolume: number | null;
   keywordDifficulty: number | null;
   cpc: number | null;
@@ -108,6 +114,13 @@ export const removeKeywordsSchema = z.object({
   projectId: z.string().uuid(),
   configId: z.string().uuid(),
   keywordIds: z.array(z.string().uuid()).min(1).max(2000),
+});
+
+export const updateKeywordCategorySchema = z.object({
+  projectId: z.string().uuid(),
+  configId: z.string().uuid(),
+  keywordIds: z.array(z.string().uuid()).min(1).max(2000),
+  category: keywordCategoryEnum.nullable(),
 });
 
 export const refreshMetricsSchema = z.object({
