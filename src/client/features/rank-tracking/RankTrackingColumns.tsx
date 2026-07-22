@@ -4,7 +4,7 @@ import type { ColumnDef, SortingFn } from "@tanstack/react-table";
 import { makeSelectionColumn } from "@/client/components/table/AppDataTable";
 import type { RankTrackingRow } from "@/types/schemas/rank-tracking";
 import {
-  keywordCategoryChipClass,
+  KEYWORD_CATEGORY_ORDER,
   keywordCategoryDotClass,
   keywordCategoryLabel,
 } from "@/shared/keyword-categories";
@@ -106,11 +106,24 @@ const cpcColumn: ColumnDef<RankTrackingRow> = {
   sortingFn: nullsLastNumeric,
 };
 
+function categorySortIndex(category: RankTrackingRow["category"]): number {
+  if (!category) return KEYWORD_CATEGORY_ORDER.length;
+  const index = KEYWORD_CATEGORY_ORDER.indexOf(category);
+  return index === -1 ? KEYWORD_CATEGORY_ORDER.length : index;
+}
+
 const positionSort: SortingFn<RankTrackingRow> = (rowA, rowB, columnId) => {
   const device = columnId === "desktopPosition" ? "desktop" : "mobile";
-  return comparePositions(
+  const positionDiff = comparePositions(
     rowA.original[device].position,
     rowB.original[device].position,
+  );
+  if (positionDiff !== 0) return positionDiff;
+  // Tie-break: group same-position keywords by category so a filtered
+  // view reads as clusters instead of an arbitrary alphabetical order.
+  return (
+    categorySortIndex(rowA.original.category) -
+    categorySortIndex(rowB.original.category)
   );
 };
 
@@ -142,9 +155,7 @@ const categoryColumn: ColumnDef<RankTrackingRow> = {
   cell: ({ getValue }) => {
     const category = getValue<RankTrackingRow["category"]>();
     return (
-      <span
-        className={`inline-flex h-6 items-center gap-1.5 rounded-md px-2 text-xs font-medium ${keywordCategoryChipClass(category)}`}
-      >
+      <span className="inline-flex h-6 items-center gap-1.5 text-xs text-base-content/70">
         <span
           className={`size-1.5 shrink-0 rounded-full ${keywordCategoryDotClass(category)}`}
         />

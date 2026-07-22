@@ -137,13 +137,15 @@ export function CategoryFilter({
           <button
             key={option}
             type="button"
-            className={`inline-flex h-7 items-center gap-1.5 rounded-md px-2.5 text-xs font-medium transition ${keywordCategoryChipClass(category)} ${
-              isSelected ? "ring-2 ring-offset-1 ring-offset-base-100" : ""
+            className={`inline-flex h-7 items-center gap-1.5 rounded-md border px-2.5 text-xs font-medium transition ${
+              isSelected
+                ? `border-transparent ${keywordCategoryChipClass(category)}`
+                : "border-base-300 bg-base-100 text-base-content/60 hover:border-base-content/30 hover:text-base-content"
             }`}
             onClick={() => toggle(option)}
           >
             <span
-              className={`size-1.5 shrink-0 rounded-full ${keywordCategoryDotClass(category)}`}
+              className={`size-1.5 shrink-0 rounded-full ${isSelected ? keywordCategoryDotClass(category) : "bg-base-content/25"}`}
             />
             {keywordCategoryLabel(category)}
           </button>
