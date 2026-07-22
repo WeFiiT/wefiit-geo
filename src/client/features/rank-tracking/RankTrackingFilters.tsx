@@ -104,15 +104,11 @@ export function FilterPanel({
           onMaxChange={(v) => update("maxMobilePos", v)}
         />
       </div>
-      <CategoryFilter
-        selected={filters.categories}
-        onChange={(categories) => setFilters({ ...filters, categories })}
-      />
     </div>
   );
 }
 
-function CategoryFilter({
+export function CategoryFilter({
   selected,
   onChange,
 }: {
@@ -133,31 +129,26 @@ function CategoryFilter({
   };
 
   return (
-    <div className="space-y-1.5">
-      <p className="text-[11px] font-semibold uppercase tracking-wide text-base-content/60">
-        Catégorie
-      </p>
-      <div className="flex flex-wrap gap-1.5">
-        {options.map((option) => {
-          const isSelected = selected.includes(option);
-          const category = option === "uncategorized" ? null : option;
-          return (
-            <button
-              key={option}
-              type="button"
-              className={`inline-flex h-7 items-center gap-1.5 rounded-md px-2.5 text-xs font-medium transition ${keywordCategoryChipClass(category)} ${
-                isSelected ? "ring-2 ring-offset-1 ring-offset-base-100" : ""
-              }`}
-              onClick={() => toggle(option)}
-            >
-              <span
-                className={`size-1.5 shrink-0 rounded-full ${keywordCategoryDotClass(category)}`}
-              />
-              {keywordCategoryLabel(category)}
-            </button>
-          );
-        })}
-      </div>
+    <div className="flex flex-wrap items-center gap-1.5">
+      {options.map((option) => {
+        const isSelected = selected.includes(option);
+        const category = option === "uncategorized" ? null : option;
+        return (
+          <button
+            key={option}
+            type="button"
+            className={`inline-flex h-7 items-center gap-1.5 rounded-md px-2.5 text-xs font-medium transition ${keywordCategoryChipClass(category)} ${
+              isSelected ? "ring-2 ring-offset-1 ring-offset-base-100" : ""
+            }`}
+            onClick={() => toggle(option)}
+          >
+            <span
+              className={`size-1.5 shrink-0 rounded-full ${keywordCategoryDotClass(category)}`}
+            />
+            {keywordCategoryLabel(category)}
+          </button>
+        );
+      })}
     </div>
   );
 }

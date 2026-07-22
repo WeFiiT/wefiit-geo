@@ -35,6 +35,7 @@ import { ActionsMenu } from "./ActionsMenu";
 import { AddKeywordsPanel } from "./AddKeywordsPanel";
 import {
   FilterPanel,
+  CategoryFilter,
   applyFilters,
   countActiveFilters,
   EMPTY_FILTERS,
@@ -363,6 +364,16 @@ function RankTrackingDomainDetailInner({
             isRunning={isBusy}
             hasData={filtered.length > 0}
             checkDisabled={isFreePlan}
+          />
+        </div>
+
+        {/* Category chips — always visible */}
+        <div className="shrink-0 px-4 py-2 border-b border-base-300">
+          <CategoryFilter
+            selected={filters.categories}
+            onChange={(categories) =>
+              setFilters({ ...filters, categories })
+            }
           />
         </div>
 
