@@ -127,3 +127,16 @@ export const refreshMetricsSchema = z.object({
   projectId: z.string().uuid(),
   configId: z.string().uuid(),
 });
+
+export const deviceEnum = z.enum(["desktop", "mobile"]);
+
+export const getPositionHistorySchema = z.object({
+  projectId: z.string().uuid(),
+  configId: z.string().uuid(),
+  device: deviceEnum,
+});
+
+export interface PositionHistoryPoint {
+  checkedAt: string;
+  averageByCategory: Partial<Record<KeywordCategory | "global", number>>;
+}

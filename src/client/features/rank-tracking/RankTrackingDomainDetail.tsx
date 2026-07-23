@@ -4,6 +4,7 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { AutumnProvider, useCustomer } from "autumn-js/react";
 import {
   getLatestRankResults,
+  getRankPositionHistory,
   estimateRankCheckCost,
 } from "@/serverFunctions/rank-tracking";
 import {
@@ -37,6 +38,7 @@ import {
   EMPTY_FILTERS,
   type Filters,
 } from "./RankTrackingFilters";
+import { RankTrackingEvolutionChart } from "./RankTrackingEvolutionChart";
 import { CheckConfirmModal } from "./CheckConfirmModal";
 import { SegmentedToggle } from "@/client/components/SegmentedToggle";
 import { useMetricsRefresh } from "./useMetricsRefresh";
@@ -100,6 +102,14 @@ function RankTrackingDomainDetailInner({
     queryFn: () =>
       getLatestRankResults({
         data: { projectId, configId: config.id, comparePeriod },
+      }),
+  });
+
+  const { data: positionHistory } = useQuery({
+    queryKey: ["rankPositionHistory", projectId, config.id, activeDevice],
+    queryFn: () =>
+      getRankPositionHistory({
+        data: { projectId, configId: config.id, device: activeDevice },
       }),
   });
 
@@ -301,6 +311,14 @@ function RankTrackingDomainDetailInner({
             onChange={(categories) =>
               setFilters({ ...filters, categories })
             }
+          />
+        </div>
+
+        {/* Evolution chart */}
+        <div className="px-4 pt-4">
+          <RankTrackingEvolutionChart
+            history={positionHistory ?? []}
+            selectedCategories={filters.categories}
           />
         </div>
 

@@ -3,6 +3,7 @@ import { waitUntil } from "cloudflare:workers";
 import { RankTrackingRepository } from "@/server/features/rank-tracking/repositories/RankTrackingRepository";
 import { RankTrackingService } from "@/server/features/rank-tracking/services/RankTrackingService";
 import { getLatestResults } from "@/server/features/rank-tracking/services/rankTrackingResults";
+import { getPositionHistory } from "@/server/features/rank-tracking/services/positionHistory";
 import { AppError, asAppError } from "@/server/lib/errors";
 import { isHostedServerAuthMode } from "@/server/lib/runtime-env";
 import { customerHasPaidPlan } from "@/server/billing/subscription";
@@ -20,6 +21,7 @@ import {
   removeKeywordsSchema,
   updateKeywordCategorySchema,
   refreshMetricsSchema,
+  getPositionHistorySchema,
 } from "@/types/schemas/rank-tracking";
 
 export const getRankTrackingConfigs = createServerFn({ method: "POST" })
@@ -129,6 +131,13 @@ export const getLatestRankResults = createServerFn({ method: "POST" })
       context.projectId,
       data.comparePeriod,
     );
+  });
+
+export const getRankPositionHistory = createServerFn({ method: "POST" })
+  .middleware(requireProjectContext)
+  .inputValidator((data: unknown) => getPositionHistorySchema.parse(data))
+  .handler(async ({ data, context }) => {
+    return getPositionHistory(data.configId, context.projectId, data.device);
   });
 
 export const getLatestRankRun = createServerFn({ method: "POST" })

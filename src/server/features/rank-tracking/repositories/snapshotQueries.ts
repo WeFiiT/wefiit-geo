@@ -1,6 +1,6 @@
 import { and, eq, inArray, lte, max, min } from "drizzle-orm";
 import { db } from "@/db";
-import { rankCheckRuns, rankSnapshots } from "@/db/schema";
+import { rankCheckRuns, rankSnapshots, rankTrackingKeywords } from "@/db/schema";
 
 /**
  * Pick one snapshot per keyword+device from completed runs, using SQL GROUP BY
@@ -67,6 +67,46 @@ export async function getSnapshotsForConfig(
 
 export async function getLatestSnapshotsForKeywords(configId: string) {
   return getSnapshotsForConfig(configId, { order: "latest" });
+}
+
+/**
+ * Full position history (one row per completed run) for a single device,
+ * joined to the keyword's current category. Left join so a snapshot for a
+ * keyword that's since been removed from tracking still comes back (with a
+ * null category) rather than disappearing — callers decide whether to keep
+ * it in an aggregate.
+ */
+export async function getPositionHistoryForConfig(
+  configId: string,
+  device: "desktop" | "mobile",
+) {
+  const completedRunIds = db
+    .select({ id: rankCheckRuns.id })
+    .from(rankCheckRuns)
+    .where(
+      and(
+        eq(rankCheckRuns.configId, configId),
+        eq(rankCheckRuns.status, "completed"),
+      ),
+    );
+
+  return db
+    .select({
+      checkedAt: rankSnapshots.checkedAt,
+      position: rankSnapshots.position,
+      category: rankTrackingKeywords.category,
+    })
+    .from(rankSnapshots)
+    .leftJoin(
+      rankTrackingKeywords,
+      eq(rankSnapshots.trackingKeywordId, rankTrackingKeywords.id),
+    )
+    .where(
+      and(
+        inArray(rankSnapshots.runId, completedRunIds),
+        eq(rankSnapshots.device, device),
+      ),
+    );
 }
 
 export async function getSnapshotsBeforeDate(
