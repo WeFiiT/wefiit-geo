@@ -226,14 +226,14 @@ function RankTrackingDomainDetailInner({
           <div className="flex gap-2">
             <button className="btn btn-outline btn-sm gap-1" onClick={onEdit}>
               <Settings className="size-3.5" />
-              Configure
+              Configurer
             </button>
             <button
               className="btn btn-primary btn-sm gap-1"
               onClick={() => setShowAddKeywords(!showAddKeywords)}
             >
               <Plus className="size-3.5" />
-              Add Keywords
+              Ajouter des mots-clés
             </button>
           </div>
         </div>
