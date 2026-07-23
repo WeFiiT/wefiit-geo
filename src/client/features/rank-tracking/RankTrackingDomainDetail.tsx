@@ -224,7 +224,8 @@ function RankTrackingDomainDetailInner({
             </div>
           ) : (
             <span className="text-sm text-base-content/60">
-              {filtered.length} keywords
+              {filtered.length} mot{filtered.length !== 1 ? "s" : ""}-clé
+              {filtered.length !== 1 ? "s" : ""}
             </span>
           )}
 
