@@ -32,11 +32,8 @@ export function GeoPage({ projectId: _projectId, tab: _tab }: Props) {
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
             <h1 className="text-lg font-semibold">
-              Visibilité GEO : WeFiiT est-il cité ?
+              Citations de WeFiiT dans les LLM
             </h1>
-            <p className="text-sm text-base-content/60">
-              Présence de WeFiiT dans les réponses des IA génératives
-            </p>
           </div>
           {data && (
             <p className="text-xs text-base-content/40 self-end">

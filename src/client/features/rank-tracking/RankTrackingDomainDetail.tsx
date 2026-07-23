@@ -8,12 +8,10 @@ import {
 } from "@/serverFunctions/rank-tracking";
 import {
   AlertTriangle,
-  ArrowLeft,
   Loader2,
   Monitor,
   Plus,
   Settings,
-  SlidersHorizontal,
   Smartphone,
 } from "lucide-react";
 import { useSession } from "@/lib/auth-client";
@@ -34,10 +32,8 @@ import { devicesLabel, scheduleLabel } from "@/shared/rank-tracking";
 import { ActionsMenu } from "./ActionsMenu";
 import { AddKeywordsPanel } from "./AddKeywordsPanel";
 import {
-  FilterPanel,
   CategoryFilter,
   applyFilters,
-  countActiveFilters,
   EMPTY_FILTERS,
   type Filters,
 } from "./RankTrackingFilters";
@@ -91,7 +87,6 @@ function RankTrackingDomainDetailInner({
 
   const queryClient = useQueryClient();
   const [showAddKeywords, setShowAddKeywords] = useState(false);
-  const [showFilters, setShowFilters] = useState(false);
   const [filters, setFilters] = useState<Filters>(EMPTY_FILTERS);
   const [comparePeriod, setComparePeriod] = useState<ComparePeriod>(
     config.scheduleInterval === "daily" ? "1d" : "7d",
@@ -181,19 +176,10 @@ function RankTrackingDomainDetailInner({
     () => applyFilters(rows ?? [], filters),
     [rows, filters],
   );
-  const activeFilterCount = countActiveFilters(filters);
   const defaultSortId = showDesktop ? "desktopPosition" : "mobilePosition";
 
   return (
     <div className="space-y-3">
-      <button
-        className="btn btn-ghost btn-xs gap-1 -ml-2 text-base-content/60"
-        onClick={onBack}
-      >
-        <ArrowLeft className="size-3" />
-        Back to domains
-      </button>
-
       {config.lastSkipReason === "insufficient_credits" && (
         <div className="alert alert-warning text-sm py-2">
           <AlertTriangle className="size-4" />
@@ -228,12 +214,12 @@ function RankTrackingDomainDetailInner({
               {run && (
                 <>
                   {" "}
-                  &middot; Last:{" "}
-                  {new Date(run.lastCheckedAt).toLocaleDateString()}
+                  &middot; Dernier check :{" "}
+                  {new Date(run.lastCheckedAt).toLocaleDateString("fr-FR")}
                 </>
               )}
               {costEstimate && costEstimate.keywordCount > 0 && (
-                <> &middot; ~${costEstimate.costUsd.toFixed(2)}/check</>
+                <> &middot; ~{costEstimate.costUsd.toFixed(2).replace(".", ",")} $/check</>
               )}
             </p>
           </div>
@@ -265,20 +251,6 @@ function RankTrackingDomainDetailInner({
 
         {/* Table toolbar */}
         <div className="shrink-0 flex items-center gap-2 px-4 py-2 border-y border-base-300">
-          <button
-            className={`btn btn-ghost btn-sm gap-1.5 ${showFilters ? "btn-active" : ""}`}
-            onClick={() => setShowFilters((c) => !c)}
-            title="Toggle table filters"
-          >
-            <SlidersHorizontal className="size-3.5" />
-            Filters
-            {activeFilterCount > 0 && (
-              <span className="badge badge-xs badge-primary border-0 text-primary-content">
-                {activeFilterCount}
-              </span>
-            )}
-          </button>
-
           {isRunning && latestRun ? (
             <div className="flex items-center gap-2 text-sm text-base-content/70">
               <Loader2 className="size-3.5 animate-spin text-primary" />
@@ -376,16 +348,6 @@ function RankTrackingDomainDetailInner({
             }
           />
         </div>
-
-        {/* Filters panel */}
-        {showFilters && (
-          <FilterPanel
-            filters={filters}
-            setFilters={setFilters}
-            activeFilterCount={activeFilterCount}
-            onReset={() => setFilters(EMPTY_FILTERS)}
-          />
-        )}
 
         {/* Table */}
         <div className="p-4">

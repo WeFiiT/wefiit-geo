@@ -98,16 +98,16 @@ export function computeNextCheckAt(
 // ---------------------------------------------------------------------------
 
 export function devicesLabel(devices: RankTrackingConfig["devices"]): string {
-  if (devices === "both") return "Desktop + Mobile";
-  return devices === "desktop" ? "Desktop" : "Mobile";
+  if (devices === "both") return "Ordinateur + Mobile";
+  return devices === "desktop" ? "Ordinateur" : "Mobile";
 }
 
 export function scheduleLabel(
   interval: RankTrackingConfig["scheduleInterval"],
 ): string {
-  if (interval === "daily") return "Daily";
-  if (interval === "weekly") return "Weekly";
-  return "Manual";
+  if (interval === "daily") return "Quotidien";
+  if (interval === "weekly") return "Hebdomadaire";
+  return "Manuel";
 }
 
 export function devicesCount(devices: RankTrackingConfig["devices"]): number {
