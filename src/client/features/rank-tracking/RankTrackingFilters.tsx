@@ -117,7 +117,6 @@ export function CategoryFilter({
 }) {
   const options: (KeywordCategory | "uncategorized")[] = [
     ...KEYWORD_CATEGORY_ORDER,
-    "uncategorized",
   ];
 
   const toggle = (value: KeywordCategory | "uncategorized") => {
@@ -141,7 +140,7 @@ export function CategoryFilter({
         }`}
         onClick={() => onChange([])}
       >
-        Toutes
+        Global
       </button>
       {options.map((option) => {
         const isSelected = selected.includes(option);

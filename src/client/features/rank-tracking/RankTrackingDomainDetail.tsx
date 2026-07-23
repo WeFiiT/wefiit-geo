@@ -238,10 +238,10 @@ function RankTrackingDomainDetailInner({
                 setComparePeriod(e.target.value);
             }}
           >
-            <option value="1d">Since yesterday</option>
-            <option value="7d">Since last week</option>
-            <option value="30d">Since last month</option>
-            <option value="90d">Since 90 days ago</option>
+            <option value="1d">Depuis hier</option>
+            <option value="7d">Depuis la semaine dernière</option>
+            <option value="30d">Depuis le mois dernier</option>
+            <option value="90d">Depuis 90 jours</option>
           </select>
 
           {hasBothDevices && (
