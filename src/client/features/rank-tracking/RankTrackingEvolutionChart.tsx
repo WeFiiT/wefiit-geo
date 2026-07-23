@@ -22,7 +22,7 @@ const CATEGORY_COLORS: Record<KeywordCategory | "global", string> = {
   product_ops: "#d97706",
   product_quality: "#e11d48",
   formation: "#65a30d",
-  global: "#475569",
+  global: "#f98f03",
 };
 
 export function RankTrackingEvolutionChart({
@@ -94,6 +94,7 @@ export function RankTrackingEvolutionChart({
             <Tooltip
               contentStyle={{ fontSize: 12 }}
               cursor={{ stroke: "currentColor", strokeOpacity: 0.2 }}
+              labelFormatter={(label) => `Semaine du ${label}`}
               formatter={(value: number | string | undefined) => [
                 typeof value === "number" ? `#${value.toFixed(1)}` : "",
               ]}
