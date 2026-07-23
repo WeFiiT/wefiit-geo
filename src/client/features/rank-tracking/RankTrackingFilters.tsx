@@ -134,10 +134,10 @@ export function CategoryFilter({
     <div className="flex flex-wrap items-center gap-1.5">
       <button
         type="button"
-        className={`inline-flex h-7 items-center rounded-md border px-2.5 text-xs font-medium transition ${
+        className={`shrink-0 rounded-full border px-3 py-1 text-xs font-medium transition-colors ${
           allSelected
-            ? "border-transparent bg-primary text-primary-content"
-            : "border-base-300 bg-base-100 text-base-content/60 hover:border-base-content/30 hover:text-base-content"
+            ? "bg-[#f98f03] border-[#f98f03] text-white"
+            : "bg-white border-base-300 text-base-content/70 hover:border-[#f98f03]/50 hover:text-[#f98f03]"
         }`}
         onClick={() => onChange([])}
       >
