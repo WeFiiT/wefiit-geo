@@ -8,16 +8,15 @@ Ajouter un filtre par catégorie métier sur l'écran "Suivi de positions" (`ran
 
 Colonne `category` en **enum fixe** sur `rank_tracking_keywords` (pas le système de tags multi-valeurs `savedKeywordTags` existant, qui est réservé au module "Recherche de mots-clés"). Chaque mot-clé suivi appartient à **une seule** catégorie — décision validée avec Antoine : plus simple qu'un système de tags multiples, un mot-clé de rank tracking a un persona dominant unique.
 
-8 valeurs (7 initiales + `formation` ajoutée le 2026-07-23) :
+7 valeurs (historique : 7 initiales avec `informational` → `formation` ajoutée le 2026-07-23 → `informational` supprimée le 2026-07-23, ses mots-clés reversés dans `product_management`) :
 
-- `product_management`
+- `product_management` (inclut désormais les mots-clés génériques de méthode/rituel produit — ex: "okr", "sprint planning", "definition of done" — Antoine a choisi de ne pas garder de catégorie "contenu informationnel" séparée)
 - `product_ia`
 - `product_data`
 - `product_marketing`
 - `product_ops`
 - `product_quality`
 - `formation` (tout mot-clé contenant "formation" — remplace le persona d'origine, catégorie transverse et prioritaire)
-- `informational` (contenu de notoriété, hors offre — ex: "okr", "gherkin", "definition of done")
 
 ## Fichiers à créer / modifier
 

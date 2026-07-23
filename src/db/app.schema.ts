@@ -217,7 +217,6 @@ export const rankTrackingKeywords = sqliteTable(
         "product_marketing",
         "product_ops",
         "product_quality",
-        "informational",
         "formation",
       ],
     }),
