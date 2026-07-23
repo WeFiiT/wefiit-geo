@@ -128,8 +128,21 @@ export function CategoryFilter({
     );
   };
 
+  const allSelected = selected.length === 0;
+
   return (
     <div className="flex flex-wrap items-center gap-1.5">
+      <button
+        type="button"
+        className={`inline-flex h-7 items-center rounded-md border px-2.5 text-xs font-medium transition ${
+          allSelected
+            ? "border-transparent bg-primary text-primary-content"
+            : "border-base-300 bg-base-100 text-base-content/60 hover:border-base-content/30 hover:text-base-content"
+        }`}
+        onClick={() => onChange([])}
+      >
+        Toutes
+      </button>
       {options.map((option) => {
         const isSelected = selected.includes(option);
         const category = option === "uncategorized" ? null : option;

@@ -203,52 +203,6 @@ function RankTrackingDomainDetailInner({
 
       {/* Results card */}
       <div className="flex-1 flex flex-col min-w-0 border border-base-300 rounded-xl bg-base-100 overflow-hidden">
-        {/* Domain header */}
-        <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 px-4 pt-4 pb-3">
-          <div>
-            <h2 className="text-lg font-semibold">{config.domain}</h2>
-            <p className="text-xs text-base-content/60">
-              {LOCATIONS[config.locationCode] ?? "US"} &middot;{" "}
-              {devicesLabel(config.devices)} &middot;{" "}
-              {scheduleLabel(config.scheduleInterval)}
-              {run && (
-                <>
-                  {" "}
-                  &middot; Dernier check :{" "}
-                  {new Date(run.lastCheckedAt).toLocaleDateString("fr-FR")}
-                </>
-              )}
-              {costEstimate && costEstimate.keywordCount > 0 && (
-                <> &middot; ~{costEstimate.costUsd.toFixed(2).replace(".", ",")} $/check</>
-              )}
-            </p>
-          </div>
-          <div className="flex gap-2">
-            <button className="btn btn-outline btn-sm gap-1" onClick={onEdit}>
-              <Settings className="size-3.5" />
-              Configurer
-            </button>
-            <button
-              className="btn btn-primary btn-sm gap-1"
-              onClick={() => setShowAddKeywords(!showAddKeywords)}
-            >
-              <Plus className="size-3.5" />
-              Ajouter des mots-clés
-            </button>
-          </div>
-        </div>
-
-        {showAddKeywords && (
-          <div className="px-4 pb-3">
-            <AddKeywordsPanel
-              configId={config.id}
-              projectId={projectId}
-              onSuccess={handleKeywordsAdded}
-              onCancel={() => setShowAddKeywords(false)}
-            />
-          </div>
-        )}
-
         {/* Table toolbar */}
         <div className="shrink-0 flex items-center gap-2 px-4 py-2 border-y border-base-300">
           {isRunning && latestRun ? (
@@ -363,6 +317,52 @@ function RankTrackingDomainDetailInner({
             configId={config.id}
             projectId={projectId}
           />
+        </div>
+
+        {showAddKeywords && (
+          <div className="px-4 pt-3">
+            <AddKeywordsPanel
+              configId={config.id}
+              projectId={projectId}
+              onSuccess={handleKeywordsAdded}
+              onCancel={() => setShowAddKeywords(false)}
+            />
+          </div>
+        )}
+
+        {/* Domain header */}
+        <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 px-4 pt-3 pb-4 border-t border-base-300">
+          <div>
+            <h2 className="text-lg font-semibold">{config.domain}</h2>
+            <p className="text-xs text-base-content/60">
+              {LOCATIONS[config.locationCode] ?? "US"} &middot;{" "}
+              {devicesLabel(config.devices)} &middot;{" "}
+              {scheduleLabel(config.scheduleInterval)}
+              {run && (
+                <>
+                  {" "}
+                  &middot; Dernier check :{" "}
+                  {new Date(run.lastCheckedAt).toLocaleDateString("fr-FR")}
+                </>
+              )}
+              {costEstimate && costEstimate.keywordCount > 0 && (
+                <> &middot; ~{costEstimate.costUsd.toFixed(2).replace(".", ",")} $/check</>
+              )}
+            </p>
+          </div>
+          <div className="flex gap-2">
+            <button className="btn btn-outline btn-sm gap-1" onClick={onEdit}>
+              <Settings className="size-3.5" />
+              Configurer
+            </button>
+            <button
+              className="btn btn-primary btn-sm gap-1"
+              onClick={() => setShowAddKeywords(!showAddKeywords)}
+            >
+              <Plus className="size-3.5" />
+              Ajouter des mots-clés
+            </button>
+          </div>
         </div>
       </div>
 
