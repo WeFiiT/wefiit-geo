@@ -3147,5 +3147,70 @@
         "dateApres": "2026-07-17"
       }
     ]
+  },
+  {
+    "jobId": "job-20260723-175553-3e2728",
+    "démarré": "2026-07-23T17:55:53.420Z",
+    "terminé": "2026-07-23T18:09:28.605Z",
+    "durée": 815,
+    "mode": "--all --model claude",
+    "requêtes": 7,
+    "modèles": [
+      "claude"
+    ],
+    "statut": "succès",
+    "résumé": {
+      "ok": 21,
+      "timeout": 0,
+      "erreur": 0,
+      "ignoré": 0
+    },
+    "evals": {
+      "completude": {
+        "attendu": 7,
+        "ok": 7,
+        "manquants": []
+      },
+      "anomalies": [
+        "pm-paris/claude: 3/3→2/3",
+        "pmm-general/gemini: 2/3→1/3",
+        "pmm-general/claude: 3/3→2/3",
+        "pm-formation/gemini: 3/3→2/3"
+      ]
+    },
+    "regressions": [
+      {
+        "id": "pm-paris",
+        "model": "claude",
+        "avant": "3/3",
+        "apres": "2/3",
+        "dateAvant": "2026-07-18",
+        "dateApres": "2026-07-23"
+      },
+      {
+        "id": "pmm-general",
+        "model": "gemini",
+        "avant": "2/3",
+        "apres": "1/3",
+        "dateAvant": "2026-07-18",
+        "dateApres": "2026-07-21"
+      },
+      {
+        "id": "pmm-general",
+        "model": "claude",
+        "avant": "3/3",
+        "apres": "2/3",
+        "dateAvant": "2026-07-17",
+        "dateApres": "2026-07-23"
+      },
+      {
+        "id": "pm-formation",
+        "model": "gemini",
+        "avant": "3/3",
+        "apres": "2/3",
+        "dateAvant": "2026-07-18",
+        "dateApres": "2026-07-21"
+      }
+    ]
   }
 ]
