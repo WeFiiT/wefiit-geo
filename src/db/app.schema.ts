@@ -218,6 +218,7 @@ export const rankTrackingKeywords = sqliteTable(
         "product_ops",
         "product_quality",
         "informational",
+        "formation",
       ],
     }),
     createdAt: text("created_at")

@@ -8,6 +8,7 @@ export const KEYWORD_CATEGORY_LABELS: Record<KeywordCategory, string> = {
   product_marketing: "Product Marketing",
   product_ops: "Product Ops",
   product_quality: "Product Quality",
+  formation: "Formation",
   informational: "Contenu informationnel",
 };
 
@@ -18,6 +19,7 @@ export const KEYWORD_CATEGORY_COLORS: Record<KeywordCategory, TagColorKey> = {
   product_marketing: "fuchsia",
   product_ops: "amber",
   product_quality: "rose",
+  formation: "lime",
   informational: "slate",
 };
 
@@ -28,6 +30,7 @@ export const KEYWORD_CATEGORY_ORDER: KeywordCategory[] = [
   "product_marketing",
   "product_ops",
   "product_quality",
+  "formation",
   "informational",
 ];
 
