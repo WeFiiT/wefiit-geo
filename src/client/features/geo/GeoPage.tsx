@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { PageTitle } from "@/client/components/PageTitle";
 import { useGeoDonneesFiltrees, type GeoFiltres } from "./useGeoData";
 import { GeoKpiCards } from "./GeoKpiCards";
 import { GeoEvolutionChart } from "./GeoEvolutionChart";
@@ -31,9 +32,7 @@ export function GeoPage({ projectId: _projectId, tab: _tab }: Props) {
         {/* Header */}
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
-            <h1 className="text-lg font-semibold">
-              Citations de WeFiiT dans les LLM
-            </h1>
+            <PageTitle>Citations de WeFiiT dans les LLM</PageTitle>
           </div>
           {data && (
             <p className="text-xs text-base-content/40 self-end">

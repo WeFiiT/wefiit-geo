@@ -3,6 +3,7 @@ import { useLeadsData, type LeadsFiltres } from "./useLeadsData";
 import { LeadsFilters } from "./LeadsFilters";
 import { LeadsKpiCards } from "./LeadsKpiCards";
 import { LeadsTable } from "./LeadsTable";
+import { PageTitle } from "@/client/components/PageTitle";
 
 type Props = { projectId: string };
 
@@ -24,7 +25,7 @@ export function LeadsPage({ projectId: _projectId }: Props) {
         {/* Header */}
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
-            <h1 className="text-lg font-semibold">Leads notoriété</h1>
+            <PageTitle>Leads notoriété</PageTitle>
             <p className="text-sm text-base-content/60">
               Centralisation des demandes de leads et des téléchargements de
               contenus premium

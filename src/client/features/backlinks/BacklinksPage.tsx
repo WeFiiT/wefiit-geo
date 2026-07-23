@@ -7,6 +7,7 @@ import {
 } from "./useBacklinksPageData";
 import { useBacklinksFilters } from "./useBacklinksFilters";
 import { useBacklinksSearchHistory } from "@/client/hooks/useBacklinksSearchHistory";
+import { PageTitle } from "@/client/components/PageTitle";
 
 export function BacklinksPage({
   projectId,
@@ -39,7 +40,7 @@ export function BacklinksPage({
     <div className="px-4 py-4 pb-24 overflow-auto md:px-6 md:py-6 md:pb-8">
       <div className="mx-auto max-w-7xl space-y-4">
         <div>
-          <h1 className="text-2xl font-semibold">Backlinks</h1>
+          <PageTitle>Backlinks</PageTitle>
           <p className="text-sm text-base-content/70">
             Understand who links to a site, what changed recently, and which
             pages attract links.

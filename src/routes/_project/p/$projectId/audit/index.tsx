@@ -8,6 +8,7 @@ import {
   getCrawlProgress,
 } from "@/serverFunctions/audit";
 import { auditSearchSchema } from "@/types/schemas/audit";
+import { PageTitle } from "@/client/components/PageTitle";
 import { LaunchView } from "@/client/features/audit/launch/LaunchView";
 import { ResultsView } from "@/client/features/audit/results/ResultsView";
 import {
@@ -126,7 +127,7 @@ function AuditDetail({
             &larr; All audits
           </button>
           <div className="flex items-center justify-between">
-            <h1 className="text-2xl font-semibold">Site Audit</h1>
+            <PageTitle>Site Audit</PageTitle>
             {status?.status !== "running" && status && (
               <StatusBadge status={status.status} />
             )}

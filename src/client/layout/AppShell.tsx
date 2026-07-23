@@ -15,11 +15,22 @@ const DATAFORSEO_HELP_PATH = "/help/dataforseo-api-key";
 
 function WeFiiTFavicon() {
   return (
-    <img
-      src="/favicon.png"
-      alt="WeFiiT"
-      className="h-7 w-7 shrink-0 object-contain"
-    />
+    <span className="grid h-[30px] w-[30px] shrink-0 place-items-center rounded-lg bg-gradient-to-br from-primary to-[#0a3ba8] p-1 shadow-[inset_0_0_0_1px_rgba(255,255,255,.08)]">
+      <img
+        src="/favicon.svg"
+        alt="WeFiiT"
+        className="h-full w-full object-contain"
+      />
+    </span>
+  );
+}
+
+function BrandName() {
+  return (
+    <span className="text-[15.5px] font-semibold tracking-[-0.1px] text-base-content">
+      Dashboard GEO
+      <span className="text-[1.4em] font-extrabold text-accent">.</span>
+    </span>
   );
 }
 export function AuthenticatedAppLayout({
@@ -153,57 +164,65 @@ function TopNav({
   const navGroups = projectId ? getProjectNavGroups(projectId) : [];
 
   return (
-    <div className="navbar shrink-0 gap-2 border-b border-base-300 bg-base-100">
-      <div className="flex flex-none items-center md:hidden">
-        {projectId ? (
-          <button
-            type="button"
-            className="btn btn-square btn-ghost"
-            aria-label="Toggle sidebar"
-            aria-expanded={drawerOpen}
-            onClick={onOpenDrawer}
-          >
-            <Menu className="h-6 w-6" />
-          </button>
-        ) : null}
-        <Link to="/" className="ml-1 flex items-center gap-2">
-          <WeFiiTFavicon />
-          <span className="font-semibold text-base-content">
-            Dashboard GEO & SEO
-          </span>
-        </Link>
-      </div>
+    <div className="navbar shrink-0 border-b border-base-300 bg-base-100 px-0">
+      <div className="mx-auto flex w-full max-w-7xl items-center gap-2 px-4 md:px-6">
+        <div className="flex flex-none items-center md:hidden">
+          {projectId ? (
+            <button
+              type="button"
+              className="btn btn-square btn-ghost"
+              aria-label="Toggle sidebar"
+              aria-expanded={drawerOpen}
+              onClick={onOpenDrawer}
+            >
+              <Menu className="h-6 w-6" />
+            </button>
+          ) : null}
+          <Link to="/" className="ml-1 flex items-center gap-2">
+            <WeFiiTFavicon />
+            <BrandName />
+          </Link>
+        </div>
 
-      <div className="hidden items-center gap-1 md:flex">
-        <Link to="/" className="flex items-center gap-2 px-2">
-          <WeFiiTFavicon />
-          <span className="text-base font-semibold text-base-content">
-            Dashboard GEO & SEO
-          </span>
-        </Link>
-        {projectId
-          ? navGroups.map((entry) => {
-              const { icon: Icon, matchSegment, ...linkProps } = entry.item;
-              const isActive = pathname.includes(matchSegment);
-              return (
-                <Link
-                  key={linkProps.to}
-                  {...linkProps}
-                  className={`btn btn-sm gap-2 ${
-                    isActive
-                      ? "border-transparent bg-primary/10 font-medium text-primary"
-                      : "btn-ghost text-base-content/60 hover:text-base-content"
-                  }`}
-                >
-                  <Icon className="h-4 w-4" />
-                  {entry.item.label}
-                </Link>
-              );
-            })
-          : null}
-      </div>
+        <div className="hidden items-center gap-2.5 md:flex">
+          <Link to="/" className="flex items-center gap-2.5">
+            <WeFiiTFavicon />
+            <BrandName />
+          </Link>
+          <nav className="flex items-center gap-1" aria-label="Sections">
+            {projectId
+              ? navGroups.map((entry) => {
+                  const { icon: Icon, matchSegment, ...linkProps } =
+                    entry.item;
+                  const isActive = pathname.includes(matchSegment);
+                  return (
+                    <Link
+                      key={linkProps.to}
+                      {...linkProps}
+                      className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[13.5px] font-semibold transition-colors ${
+                        isActive
+                          ? "bg-base-200 text-primary"
+                          : "text-base-content/60 hover:bg-base-200/60 hover:text-primary"
+                      }`}
+                    >
+                      <Icon className="h-[15px] w-[15px]" />
+                      {entry.item.label}
+                    </Link>
+                  );
+                })
+              : null}
+          </nav>
+        </div>
 
-      <div className="flex-1" />
+        <div className="flex-1" />
+
+        <div className="hidden items-center gap-3.5 md:flex">
+          <span className="flex items-center gap-2 whitespace-nowrap text-[12.5px] text-base-content/60">
+            <span className="h-[7px] w-[7px] rounded-full bg-success shadow-[0_0_0_3px_oklch(93%_0.05_145)]" />
+            Connecté à DataForSEO
+          </span>
+        </div>
+      </div>
     </div>
   );
 }

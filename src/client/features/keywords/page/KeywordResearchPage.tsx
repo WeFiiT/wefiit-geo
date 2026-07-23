@@ -9,6 +9,7 @@ import { KeywordResearchLoadingState } from "./KeywordResearchLoadingState";
 import { KeywordResearchResults } from "./KeywordResearchResults";
 import { KeywordResearchSearchBar } from "./KeywordResearchSearchBar";
 import type { KeywordResearchControllerState } from "./types";
+import { PageTitle } from "@/client/components/PageTitle";
 
 type Props = KeywordResearchControllerInput;
 
@@ -19,7 +20,7 @@ export function KeywordResearchPage(input: Props) {
     <div className="px-4 py-4 md:px-6 md:py-6 pb-24 md:pb-8 overflow-auto">
       <div className="mx-auto max-w-7xl space-y-4">
         <div>
-          <h1 className="text-2xl font-semibold">Keyword Research</h1>
+          <PageTitle>Keyword Research</PageTitle>
           <p className="text-sm text-base-content/70">
             Discover keyword ideas, search demand, and ranking opportunities.
           </p>
