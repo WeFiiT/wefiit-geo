@@ -122,11 +122,11 @@ export function getProjectNavGroups(projectId: string) {
   return [
     {
       type: "standalone" as const,
-      item: geoItem,
+      item: seoItem,
     },
     {
       type: "standalone" as const,
-      item: seoItem,
+      item: geoItem,
     },
     {
       type: "standalone" as const,

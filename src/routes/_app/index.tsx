@@ -21,7 +21,7 @@ function IndexRedirect() {
     mutationFn: () => getOrCreateDefaultProject(),
     onSuccess: (project) => {
       void navigate({
-        to: "/p/$projectId/geo",
+        to: "/p/$projectId/rank-tracking",
         params: { projectId: project.id },
       });
     },
