@@ -37,8 +37,8 @@ export function BacklinksPage({
   } = useBacklinksSearchHistory(projectId);
 
   return (
-    <div className="px-4 py-4 pb-24 overflow-auto md:px-6 md:py-6 md:pb-8">
-      <div className="mx-auto max-w-7xl space-y-4">
+    <div className="py-4 pb-24 overflow-auto md:py-6 md:pb-8">
+      <div className="wefiit-pad-x mx-auto max-w-7xl space-y-4">
         <div>
           <PageTitle>Backlinks</PageTitle>
           <p className="text-sm text-base-content/70">

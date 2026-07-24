@@ -20,8 +20,8 @@ export function LeadsPage({ projectId: _projectId }: Props) {
     useLeadsData(filtres);
 
   return (
-    <div className="px-4 py-4 md:px-6 md:py-6 pb-24 md:pb-8 overflow-auto">
-      <div className="mx-auto max-w-7xl space-y-4">
+    <div className="py-4 md:py-6 pb-24 md:pb-8 overflow-auto">
+      <div className="wefiit-pad-x mx-auto max-w-7xl space-y-4">
         {/* Header */}
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>

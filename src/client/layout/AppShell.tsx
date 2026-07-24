@@ -13,22 +13,10 @@ import { getOrCreateDefaultProject } from "@/serverFunctions/projects";
 
 const DATAFORSEO_HELP_PATH = "/help/dataforseo-api-key";
 
-function WeFiiTFavicon() {
-  return (
-    <span className="grid h-[30px] w-[30px] shrink-0 place-items-center rounded-lg bg-gradient-to-br from-primary to-[#0a3ba8] p-1 shadow-[inset_0_0_0_1px_rgba(255,255,255,.08)]">
-      <img
-        src="/favicon.svg"
-        alt="WeFiiT"
-        className="h-full w-full object-contain"
-      />
-    </span>
-  );
-}
-
 function BrandName() {
   return (
-    <span className="text-[15.5px] font-semibold tracking-[-0.1px] text-base-content">
-      Dashboard GEO
+    <span className="mr-[22px] text-[15.5px] font-semibold tracking-[-0.1px] text-base-content whitespace-nowrap">
+      Dashboard Acquisition
       <span className="text-[1.4em] font-extrabold text-accent">.</span>
     </span>
   );
@@ -165,7 +153,7 @@ function TopNav({
 
   return (
     <div className="navbar shrink-0 border-b border-base-300 bg-base-100 px-0">
-      <div className="mx-auto flex w-full max-w-7xl items-center gap-2 px-4 md:px-6">
+      <div className="mx-auto flex w-full max-w-7xl items-center gap-2 wefiit-pad-x">
         <div className="flex flex-none items-center md:hidden">
           {projectId ? (
             <button
@@ -178,15 +166,13 @@ function TopNav({
               <Menu className="h-6 w-6" />
             </button>
           ) : null}
-          <Link to="/" className="ml-1 flex items-center gap-2">
-            <WeFiiTFavicon />
+          <Link to="/" className="ml-1 flex items-center">
             <BrandName />
           </Link>
         </div>
 
-        <div className="hidden items-center gap-2.5 md:flex">
-          <Link to="/" className="flex items-center gap-2.5">
-            <WeFiiTFavicon />
+        <div className="hidden items-center md:flex">
+          <Link to="/" className="flex items-center">
             <BrandName />
           </Link>
           <nav className="flex items-center gap-1" aria-label="Sections">

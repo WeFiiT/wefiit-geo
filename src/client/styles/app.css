@@ -4,6 +4,20 @@
   --container-8xl: 88rem;
 }
 
+/* Padding horizontal de page — calqué sur --pad de boond-dashboard :
+   22px, puis 29px dès 1440px, pour garder le header et le contenu
+   alignés sur la même colonne à toute résolution. */
+.wefiit-pad-x {
+  padding-left: 22px;
+  padding-right: 22px;
+}
+@media (min-width: 1440px) {
+  .wefiit-pad-x {
+    padding-left: 29px;
+    padding-right: 29px;
+  }
+}
+
 :root {
   --trend-grid-color: oklch(56% 0.01 255 / 0.28);
   --trend-axis-color: oklch(42% 0.01 255 / 0.85);
