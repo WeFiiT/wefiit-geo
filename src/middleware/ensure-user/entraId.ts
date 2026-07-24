@@ -4,7 +4,10 @@ import {
   getSessionCookieFromHeaders,
   verifySessionCookieValue,
 } from "@/lib/entra-session-cookie";
-import { resolveDelegatedContext } from "./delegated";
+import {
+  SHARED_TEAM_ORGANIZATION_USER_ID,
+  resolveDelegatedContext,
+} from "./delegated";
 import type { EnsuredUserContext } from "./types";
 
 export async function resolveEntraIdContext(
@@ -31,5 +34,12 @@ export async function resolveEntraIdContext(
     throw new AppError("UNAUTHENTICATED");
   }
 
-  return resolveDelegatedContext(email, email);
+  // Tout compte @wefiit.com connecté via le SSO rejoint la même organisation
+  // partagée (celle de local-admin) : l'équipe voit les mêmes domaines suivis
+  // et projets, plutôt qu'un espace de travail vide isolé par personne.
+  return resolveDelegatedContext(
+    email,
+    email,
+    SHARED_TEAM_ORGANIZATION_USER_ID,
+  );
 }

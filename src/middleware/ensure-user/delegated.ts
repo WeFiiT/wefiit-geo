@@ -7,6 +7,12 @@ import type { EnsuredUserContext } from "./types";
 const LOCAL_ADMIN_USER_ID = "local-admin";
 const LOCAL_ADMIN_EMAIL = "admin@localhost";
 
+// L'organisation créée pour local-admin sert d'espace de travail partagé pour
+// toute l'équipe WeFiiT : chaque personne garde son propre userId/email (pour
+// la traçabilité) mais rejoint la même organisation, donc voit les mêmes
+// domaines suivis / projets que tout le monde plutôt qu'un espace vide isolé.
+export const SHARED_TEAM_ORGANIZATION_USER_ID = LOCAL_ADMIN_USER_ID;
+
 async function ensureUserRecord(userId: string, userEmail: string) {
   const existingUser = await db.query.delegatedUsers.findFirst({
     where: eq(delegatedUsers.id, userId),
@@ -36,11 +42,12 @@ async function ensureUserRecord(userId: string, userEmail: string) {
 export async function resolveDelegatedContext(
   userId: string,
   userEmail: string,
+  organizationUserId: string = userId,
 ): Promise<EnsuredUserContext> {
   const ensuredEmail = await ensureUserRecord(userId, userEmail);
   const organizationId = await ensureDelegatedOrganizationForUser(
-    userId,
-    ensuredEmail,
+    organizationUserId,
+    organizationUserId === userId ? ensuredEmail : LOCAL_ADMIN_EMAIL,
   );
 
   return {
