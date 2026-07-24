@@ -47,7 +47,10 @@ async function exchangeCodeForIdToken(
   );
 
   if (!response.ok) {
-    throw new Error(`Token exchange failed with status ${response.status}`);
+    const errorBody = await response.text();
+    throw new Error(
+      `Token exchange failed with status ${response.status}: ${errorBody}`,
+    );
   }
 
   const body = (await response.json()) as { id_token?: string };
