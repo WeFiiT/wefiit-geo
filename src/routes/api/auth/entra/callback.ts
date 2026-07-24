@@ -70,7 +70,10 @@ async function verifyIdTokenAndGetEmail(idToken: string): Promise<string> {
 
   const email = payload.preferred_username ?? payload.email;
 
-  if (typeof email !== "string" || !email.toLowerCase().endsWith(ALLOWED_EMAIL_DOMAIN)) {
+  if (
+    typeof email !== "string" ||
+    !email.toLowerCase().endsWith(ALLOWED_EMAIL_DOMAIN)
+  ) {
     throw new Error(`Compte non autorise : ${String(email ?? "email absent")}`);
   }
 
@@ -82,7 +85,11 @@ async function handleCallbackRequest(request: Request) {
     return new Response("Not found", { status: 404 });
   }
 
-  if (!env.ENTRA_TENANT_ID || !env.ENTRA_CLIENT_ID || !env.ENTRA_CLIENT_SECRET) {
+  if (
+    !env.ENTRA_TENANT_ID ||
+    !env.ENTRA_CLIENT_ID ||
+    !env.ENTRA_CLIENT_SECRET
+  ) {
     return new Response("Missing Entra ID configuration", { status: 500 });
   }
 
@@ -94,7 +101,9 @@ async function handleCallbackRequest(request: Request) {
 
   const requestUrl = new URL(request.url);
   const code = requestUrl.searchParams.get("code");
-  const redirectTo = normalizeAuthRedirect(requestUrl.searchParams.get("state"));
+  const redirectTo = normalizeAuthRedirect(
+    requestUrl.searchParams.get("state"),
+  );
 
   if (!code) {
     return new Response("Missing authorization code", { status: 400 });

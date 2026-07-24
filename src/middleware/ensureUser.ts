@@ -1,6 +1,10 @@
 import { createMiddleware } from "@tanstack/react-start";
 import { getRequest } from "@tanstack/react-start/server";
-import { getAuthMode, isEntraIdAuthMode, isHostedAuthMode } from "@/lib/auth-mode";
+import {
+  getAuthMode,
+  isEntraIdAuthMode,
+  isHostedAuthMode,
+} from "@/lib/auth-mode";
 import { resolveCloudflareAccessContext } from "@/middleware/ensure-user/cloudflareAccess";
 import { resolveLocalNoAuthContext } from "@/middleware/ensure-user/delegated";
 import { resolveEntraIdContext } from "@/middleware/ensure-user/entraId";

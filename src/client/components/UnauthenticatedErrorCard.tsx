@@ -1,6 +1,9 @@
 import { useEffect } from "react";
 import { getSignInHref, getSignInHrefForLocation } from "@/lib/auth-redirect";
-import { isEntraIdClientAuthMode, isHostedClientAuthMode } from "@/lib/auth-mode";
+import {
+  isEntraIdClientAuthMode,
+  isHostedClientAuthMode,
+} from "@/lib/auth-mode";
 
 type UnauthenticatedErrorCardProps = {
   message: string;

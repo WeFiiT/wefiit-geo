@@ -52,13 +52,18 @@ describe("entra session cookie", () => {
   });
 
   it("rejects a malformed cookie value", async () => {
-    expect(await verifySessionCookieValue("not-a-valid-cookie", SECRET)).toBeNull();
+    expect(
+      await verifySessionCookieValue("not-a-valid-cookie", SECRET),
+    ).toBeNull();
     expect(await verifySessionCookieValue("", SECRET)).toBeNull();
   });
 
   it("rejects an expired session", async () => {
     const encodedPayload = Buffer.from(
-      JSON.stringify({ email: "antoine.simonian@wefiit.com", exp: Date.now() - 1000 }),
+      JSON.stringify({
+        email: "antoine.simonian@wefiit.com",
+        exp: Date.now() - 1000,
+      }),
     )
       .toString("base64")
       .replace(/\+/g, "-")
@@ -73,7 +78,11 @@ describe("entra session cookie", () => {
       ["sign"],
     );
     const signatureBytes = new Uint8Array(
-      await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(encodedPayload)),
+      await crypto.subtle.sign(
+        "HMAC",
+        key,
+        new TextEncoder().encode(encodedPayload),
+      ),
     );
     const signature = Buffer.from(signatureBytes)
       .toString("base64")
