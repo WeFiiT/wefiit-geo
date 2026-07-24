@@ -26,10 +26,6 @@ export function LeadsPage({ projectId: _projectId }: Props) {
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
             <PageTitle>Leads notoriété</PageTitle>
-            <p className="text-sm text-base-content/60">
-              Centralisation des demandes de leads et des téléchargements de
-              contenus premium
-            </p>
           </div>
           {generatedAt && (
             <p className="text-xs text-base-content/40 self-end">
