@@ -1,9 +1,9 @@
 import { z } from "zod";
 
-type AuthMode = "cloudflare_access" | "local_noauth" | "hosted";
+type AuthMode = "cloudflare_access" | "local_noauth" | "hosted" | "entra_id";
 
 const authModeSchema = z
-  .enum(["cloudflare_access", "local_noauth", "hosted"])
+  .enum(["cloudflare_access", "local_noauth", "hosted", "entra_id"])
   .catch("cloudflare_access");
 
 export function getAuthMode(value: string | null | undefined): AuthMode {
@@ -21,4 +21,13 @@ export function isHostedClientAuthMode() {
   // backend which auth UI to render. Hosted deployments must therefore set
   // AUTH_MODE=hosted in both the client build environment and the runtime.
   return isHostedAuthMode(import.meta.env.AUTH_MODE);
+}
+
+export function isEntraIdAuthMode(value: string | null | undefined) {
+  return getAuthMode(value) === "entra_id";
+}
+
+export function isEntraIdClientAuthMode() {
+  // Same deploy-time contract as isHostedClientAuthMode above.
+  return isEntraIdAuthMode(import.meta.env.AUTH_MODE);
 }

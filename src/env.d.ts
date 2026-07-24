@@ -6,9 +6,13 @@ declare namespace Cloudflare {
     R2: R2Bucket;
     OAUTH_KV: KVNamespace;
 
-    AUTH_MODE?: "cloudflare_access" | "local_noauth" | "hosted";
+    AUTH_MODE?: "cloudflare_access" | "local_noauth" | "hosted" | "entra_id";
     TEAM_DOMAIN?: string;
     POLICY_AUD?: string;
+    ENTRA_TENANT_ID?: string;
+    ENTRA_CLIENT_ID?: string;
+    ENTRA_CLIENT_SECRET?: string;
+    ENTRA_SESSION_SECRET?: string;
     POSTHOG_PUBLIC_KEY?: string;
     POSTHOG_HOST?: string;
     BETTER_AUTH_SECRET?: string;
@@ -23,7 +27,7 @@ declare namespace Cloudflare {
 }
 
 interface ImportMetaEnv {
-  readonly AUTH_MODE?: "cloudflare_access" | "local_noauth" | "hosted";
+  readonly AUTH_MODE?: "cloudflare_access" | "local_noauth" | "hosted" | "entra_id";
   readonly POSTHOG_PUBLIC_KEY?: string;
   readonly POSTHOG_HOST?: string;
 }

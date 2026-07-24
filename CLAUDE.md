@@ -141,11 +141,22 @@ Le hook `useGeoData.ts` gère les deux : `run.verbatims ?? run.wefiit.verbatims 
 
 ## Authentification
 
-Trois modes configurables via `AUTH_MODE` :
+Quatre modes configurables via `AUTH_MODE` :
 
 - `local_noauth` — dev local, injecte `admin@localhost` (défaut `pnpm dev`)
 - `cloudflare_access` — valide les JWTs CF Access (prod self-hosted)
 - `hosted` — Better Auth email/password (prod SaaS)
+- `entra_id` — SSO Microsoft Entra ID géré directement par l'app (pas de
+  Cloudflare Access) : tout compte `@wefiit.com` peut se connecter, même
+  app Entra ID que `boond-dashboard` (Client ID/Tenant ID partagés, chaque
+  app filtre les emails de son côté). Session portée par un cookie signé
+  HMAC (`src/lib/entra-session-cookie.ts`), pas de stockage serveur — cohérent
+  avec le runtime Cloudflare Workers (pas de process persistant pour une
+  session en mémoire comme `express-session`). Flow : redirect vers
+  `/api/auth/entra/login` → Microsoft → callback `/api/auth/entra/callback`
+  (vérifie le JWT via `jose`/JWKS, pose le cookie) → `/api/auth/entra/logout`
+  pour se déconnecter. Variables requises : `ENTRA_TENANT_ID`,
+  `ENTRA_CLIENT_ID`, `ENTRA_CLIENT_SECRET`, `ENTRA_SESSION_SECRET`.
 
 ---
 

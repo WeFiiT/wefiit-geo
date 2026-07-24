@@ -30,6 +30,9 @@ import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 import { Route as AppHelpDataforseoApiKeyRouteImport } from './routes/_app/help/dataforseo-api-key'
 import { Route as ProjectPProjectIdRouteRouteImport } from './routes/_project/p/$projectId/route'
 import { Route as ProjectPProjectIdIndexRouteImport } from './routes/_project/p/$projectId/index'
+import { Route as ApiAuthEntraLogoutRouteImport } from './routes/api/auth/entra/logout'
+import { Route as ApiAuthEntraLoginRouteImport } from './routes/api/auth/entra/login'
+import { Route as ApiAuthEntraCallbackRouteImport } from './routes/api/auth/entra/callback'
 import { Route as ProjectPProjectIdSavedRouteImport } from './routes/_project/p/$projectId/saved'
 import { Route as ProjectPProjectIdRankTrackingRouteImport } from './routes/_project/p/$projectId/rank-tracking'
 import { Route as ProjectPProjectIdPromptExplorerRouteImport } from './routes/_project/p/$projectId/prompt-explorer'
@@ -147,6 +150,21 @@ const ProjectPProjectIdIndexRoute = ProjectPProjectIdIndexRouteImport.update({
   path: '/',
   getParentRoute: () => ProjectPProjectIdRouteRoute,
 } as any)
+const ApiAuthEntraLogoutRoute = ApiAuthEntraLogoutRouteImport.update({
+  id: '/api/auth/entra/logout',
+  path: '/api/auth/entra/logout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAuthEntraLoginRoute = ApiAuthEntraLoginRouteImport.update({
+  id: '/api/auth/entra/login',
+  path: '/api/auth/entra/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAuthEntraCallbackRoute = ApiAuthEntraCallbackRouteImport.update({
+  id: '/api/auth/entra/callback',
+  path: '/api/auth/entra/callback',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProjectPProjectIdSavedRoute = ProjectPProjectIdSavedRouteImport.update({
   id: '/saved',
   path: '/saved',
@@ -254,6 +272,9 @@ export interface FileRoutesByFullPath {
   '/p/$projectId/prompt-explorer': typeof ProjectPProjectIdPromptExplorerRoute
   '/p/$projectId/rank-tracking': typeof ProjectPProjectIdRankTrackingRouteWithChildren
   '/p/$projectId/saved': typeof ProjectPProjectIdSavedRoute
+  '/api/auth/entra/callback': typeof ApiAuthEntraCallbackRoute
+  '/api/auth/entra/login': typeof ApiAuthEntraLoginRoute
+  '/api/auth/entra/logout': typeof ApiAuthEntraLogoutRoute
   '/p/$projectId/': typeof ProjectPProjectIdIndexRoute
   '/p/$projectId/rank-tracking/$configId': typeof ProjectPProjectIdRankTrackingConfigIdRoute
   '/p/$projectId/audit/': typeof ProjectPProjectIdAuditIndexRoute
@@ -284,6 +305,9 @@ export interface FileRoutesByTo {
   '/p/$projectId/leads': typeof ProjectPProjectIdLeadsRoute
   '/p/$projectId/prompt-explorer': typeof ProjectPProjectIdPromptExplorerRoute
   '/p/$projectId/saved': typeof ProjectPProjectIdSavedRoute
+  '/api/auth/entra/callback': typeof ApiAuthEntraCallbackRoute
+  '/api/auth/entra/login': typeof ApiAuthEntraLoginRoute
+  '/api/auth/entra/logout': typeof ApiAuthEntraLogoutRoute
   '/p/$projectId': typeof ProjectPProjectIdIndexRoute
   '/p/$projectId/rank-tracking/$configId': typeof ProjectPProjectIdRankTrackingConfigIdRoute
   '/p/$projectId/audit': typeof ProjectPProjectIdAuditIndexRoute
@@ -322,6 +346,9 @@ export interface FileRoutesById {
   '/_project/p/$projectId/prompt-explorer': typeof ProjectPProjectIdPromptExplorerRoute
   '/_project/p/$projectId/rank-tracking': typeof ProjectPProjectIdRankTrackingRouteWithChildren
   '/_project/p/$projectId/saved': typeof ProjectPProjectIdSavedRoute
+  '/api/auth/entra/callback': typeof ApiAuthEntraCallbackRoute
+  '/api/auth/entra/login': typeof ApiAuthEntraLoginRoute
+  '/api/auth/entra/logout': typeof ApiAuthEntraLogoutRoute
   '/_project/p/$projectId/': typeof ProjectPProjectIdIndexRoute
   '/_project/p/$projectId/rank-tracking/$configId': typeof ProjectPProjectIdRankTrackingConfigIdRoute
   '/_project/p/$projectId/audit/': typeof ProjectPProjectIdAuditIndexRoute
@@ -357,6 +384,9 @@ export interface FileRouteTypes {
     | '/p/$projectId/prompt-explorer'
     | '/p/$projectId/rank-tracking'
     | '/p/$projectId/saved'
+    | '/api/auth/entra/callback'
+    | '/api/auth/entra/login'
+    | '/api/auth/entra/logout'
     | '/p/$projectId/'
     | '/p/$projectId/rank-tracking/$configId'
     | '/p/$projectId/audit/'
@@ -387,6 +417,9 @@ export interface FileRouteTypes {
     | '/p/$projectId/leads'
     | '/p/$projectId/prompt-explorer'
     | '/p/$projectId/saved'
+    | '/api/auth/entra/callback'
+    | '/api/auth/entra/login'
+    | '/api/auth/entra/logout'
     | '/p/$projectId'
     | '/p/$projectId/rank-tracking/$configId'
     | '/p/$projectId/audit'
@@ -424,6 +457,9 @@ export interface FileRouteTypes {
     | '/_project/p/$projectId/prompt-explorer'
     | '/_project/p/$projectId/rank-tracking'
     | '/_project/p/$projectId/saved'
+    | '/api/auth/entra/callback'
+    | '/api/auth/entra/login'
+    | '/api/auth/entra/logout'
     | '/_project/p/$projectId/'
     | '/_project/p/$projectId/rank-tracking/$configId'
     | '/_project/p/$projectId/audit/'
@@ -441,6 +477,9 @@ export interface RootRouteChildren {
   VerifyEmailRoute: typeof VerifyEmailRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
   ApiAutumnSplatRoute: typeof ApiAutumnSplatRoute
+  ApiAuthEntraCallbackRoute: typeof ApiAuthEntraCallbackRoute
+  ApiAuthEntraLoginRoute: typeof ApiAuthEntraLoginRoute
+  ApiAuthEntraLogoutRoute: typeof ApiAuthEntraLogoutRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -591,6 +630,27 @@ declare module '@tanstack/react-router' {
       fullPath: '/p/$projectId/'
       preLoaderRoute: typeof ProjectPProjectIdIndexRouteImport
       parentRoute: typeof ProjectPProjectIdRouteRoute
+    }
+    '/api/auth/entra/logout': {
+      id: '/api/auth/entra/logout'
+      path: '/api/auth/entra/logout'
+      fullPath: '/api/auth/entra/logout'
+      preLoaderRoute: typeof ApiAuthEntraLogoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/auth/entra/login': {
+      id: '/api/auth/entra/login'
+      path: '/api/auth/entra/login'
+      fullPath: '/api/auth/entra/login'
+      preLoaderRoute: typeof ApiAuthEntraLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/auth/entra/callback': {
+      id: '/api/auth/entra/callback'
+      path: '/api/auth/entra/callback'
+      fullPath: '/api/auth/entra/callback'
+      preLoaderRoute: typeof ApiAuthEntraCallbackRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/_project/p/$projectId/saved': {
       id: '/_project/p/$projectId/saved'
@@ -833,6 +893,9 @@ const rootRouteChildren: RootRouteChildren = {
   VerifyEmailRoute: VerifyEmailRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
   ApiAutumnSplatRoute: ApiAutumnSplatRoute,
+  ApiAuthEntraCallbackRoute: ApiAuthEntraCallbackRoute,
+  ApiAuthEntraLoginRoute: ApiAuthEntraLoginRoute,
+  ApiAuthEntraLogoutRoute: ApiAuthEntraLogoutRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

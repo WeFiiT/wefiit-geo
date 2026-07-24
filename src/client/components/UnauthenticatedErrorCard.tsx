@@ -1,31 +1,43 @@
 import { useEffect } from "react";
 import { getSignInHref, getSignInHrefForLocation } from "@/lib/auth-redirect";
-import { isHostedClientAuthMode } from "@/lib/auth-mode";
+import { isEntraIdClientAuthMode, isHostedClientAuthMode } from "@/lib/auth-mode";
 
 type UnauthenticatedErrorCardProps = {
   message: string;
   onRetry?: () => void;
 };
 
+function getEntraLoginHref() {
+  if (typeof window === "undefined") {
+    return "/api/auth/entra/login";
+  }
+
+  const redirect = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+  return `/api/auth/entra/login?redirect=${encodeURIComponent(redirect)}`;
+}
+
 export function UnauthenticatedErrorCard({
   message,
   onRetry,
 }: UnauthenticatedErrorCardProps) {
   const isHostedMode = isHostedClientAuthMode();
-  const signInHref =
-    typeof window === "undefined"
+  const isEntraIdMode = isEntraIdClientAuthMode();
+  const shouldRedirect = isHostedMode || isEntraIdMode;
+  const signInHref = isEntraIdMode
+    ? getEntraLoginHref()
+    : typeof window === "undefined"
       ? getSignInHref("/")
       : getSignInHrefForLocation(window.location);
 
   useEffect(() => {
-    if (typeof window === "undefined" || !isHostedMode) {
+    if (typeof window === "undefined" || !shouldRedirect) {
       return;
     }
 
     window.location.replace(signInHref);
-  }, [isHostedMode, signInHref]);
+  }, [shouldRedirect, signInHref]);
 
-  if (isHostedMode) {
+  if (shouldRedirect) {
     return null;
   }
 

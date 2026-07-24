@@ -1,8 +1,9 @@
 import { createMiddleware } from "@tanstack/react-start";
 import { getRequest } from "@tanstack/react-start/server";
-import { getAuthMode, isHostedAuthMode } from "@/lib/auth-mode";
+import { getAuthMode, isEntraIdAuthMode, isHostedAuthMode } from "@/lib/auth-mode";
 import { resolveCloudflareAccessContext } from "@/middleware/ensure-user/cloudflareAccess";
 import { resolveLocalNoAuthContext } from "@/middleware/ensure-user/delegated";
+import { resolveEntraIdContext } from "@/middleware/ensure-user/entraId";
 import { resolveHostedContext } from "@/middleware/ensure-user/hosted";
 import type {
   EnsuredProject,
@@ -34,6 +35,8 @@ export const ensureUserMiddleware = createMiddleware({
     context = await resolveLocalNoAuthContext();
   } else if (isHostedAuthMode(authMode)) {
     context = await resolveHostedContext(headers);
+  } else if (isEntraIdAuthMode(authMode)) {
+    context = await resolveEntraIdContext(headers);
   } else {
     context = await resolveCloudflareAccessContext(headers);
   }

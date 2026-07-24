@@ -36,13 +36,25 @@
   "cloudflare": {
     "bindings": {
       "AUTH_MODE": {
-        "description": "Set to `cloudflare_access` for secured deployments behind Cloudflare Access, or `local_noauth` for trusted local self-host mode only."
+        "description": "Set to `cloudflare_access` for secured deployments behind Cloudflare Access, `entra_id` for app-managed Microsoft SSO, or `local_noauth` for trusted local self-host mode only."
       },
       "TEAM_DOMAIN": {
         "description": "Cloudflare Access team domain (for example `https://your-team.cloudflareaccess.com`) used to validate `cf-access-jwt-assertion` JWTs."
       },
       "POLICY_AUD": {
         "description": "Cloudflare Access Application Audience (AUD) tag for this Worker route/domain."
+      },
+      "ENTRA_TENANT_ID": {
+        "description": "Microsoft Entra ID tenant ID used to validate SSO tokens when AUTH_MODE=entra_id."
+      },
+      "ENTRA_CLIENT_ID": {
+        "description": "Microsoft Entra ID app registration client ID when AUTH_MODE=entra_id."
+      },
+      "ENTRA_CLIENT_SECRET": {
+        "description": "Microsoft Entra ID app registration client secret when AUTH_MODE=entra_id."
+      },
+      "ENTRA_SESSION_SECRET": {
+        "description": "Long random secret used to sign the app's own session cookie when AUTH_MODE=entra_id."
       },
       "DATAFORSEO_API_KEY": {
         "description": "Base64-encoded `login:password` for DataForSEO API access."
